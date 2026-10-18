@@ -1,0 +1,40 @@
+/* SlideCraft launch reel — design tokens. Same palette as the launch GIF and the site. */
+@font-face { font-family: 'Liberation Sans'; src: url('assets/fonts/LiberationSans-Regular.ttf'); font-weight: 400; }
+@font-face { font-family: 'Liberation Sans'; src: url('assets/fonts/LiberationSans-Bold.ttf'); font-weight: 700; }
+@font-face { font-family: 'Liberation Serif'; src: url('assets/fonts/LiberationSerif-Italic.ttf'); font-style: italic; font-weight: 400; }
+@font-face { font-family: 'Liberation Serif'; src: url('assets/fonts/LiberationSerif-BoldItalic.ttf'); font-style: italic; font-weight: 700; }
+
+:root {
+  --rc-bg: #0b1f3a;          /* stage navy */
+  --rc-bg2: #16305a;         /* radial highlight */
+  --rc-night: #050a14;       /* the 1 a.m. room */
+  --rc-ink: #ffffff;
+  --rc-soft: #a9bcd6;        /* secondary text on navy */
+  --rc-dim: #5f7899;
+  --rc-line: #2c4a78;
+  --rc-accent: #4c8df6;      /* SlideCraft blue */
+  --rc-green: #35c08a;
+  --rc-red: #ff6b5e;
+  --rc-gold: #f5b94a;        /* lamp light, the approval stamp */
+  --rc-paper: #ffffff;       /* slides and cards */
+  --rc-paper-ink: #0b1f3a;
+  --rc-paper-muted: #5b6b7f;
+  --rc-font: 'Liberation Sans', Arial, sans-serif;
+  --rc-serif: 'Liberation Serif', Georgia, serif;
+  --rc-mono: ui-monospace, 'SF Mono', Menlo, monospace;
+  --rc-radius: 18px;
+  --rc-shadow: 0 30px 80px rgba(0, 0, 0, 0.45), 0 8px 24px rgba(0, 0, 0, 0.3);
+  /* safe area on a 1920×1080 stage: step bar above, captions below */
+  --rc-safe-top: 150px;
+  --rc-safe-bottom: 190px;
+  --rc-safe-x: 140px;
+  --rc-caption-bottom: 54px;
+}
+
+#stage {
+  font-family: var(--rc-font);
+  color: var(--rc-ink);
+  background: radial-gradient(ellipse 80% 70% at 50% 40%, var(--rc-bg2), var(--rc-bg) 70%);
+}
+.rc-scene { overflow: hidden; }
+.rc-caption { font-family: var(--rc-font); font-weight: 700; font-size: 40px; }

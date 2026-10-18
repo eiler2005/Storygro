@@ -1,0 +1,209 @@
+# SlideCraft in one minute: a night before a board meeting, told by a calm female narrator.
+# Arc: dread (1 a.m., an AI slide that fails) → turn (a slide is an argument) → the method in five
+# beats (prompt, storyline, build, checks, editable) → relief (deck done, go to bed) → call to act.
+reel: 1
+title: SlideCraft — editable PowerPoint decks from one prompt
+format: { width: 1920, height: 1080, fps: 30 }
+voice: { engine: kokoro, voice: af_heart, speed: 1.08 }
+music: { bpm: 100, key: D, progression: [vi, IV, I, V], gain: 0.5, drop: intro#logo }
+loudness: -14
+theme: theme.css
+overlay: overlay.js
+transition: { kind: fade, dur: 0.45 }
+data: { facts: assets/facts.json }
+allowNumbers: ['1:00', '1:20', '9:00', '1:12']
+hooks:
+  - Your AI makes slides fast. Your board can tell.
+  - Nine bullets, no source, and a picture you can't edit. Sound familiar?
+stills:
+  poster: cta@end
+  hook: night@this
+cards:
+  ph-card: { from: poster, width: 1270, height: 760, background: '#0b1f3a' }
+
+scenes:
+  - id: night
+    scene: scenes/night.js
+    say: >-
+      It's one in the morning. {#board} The board meets at nine. {#slide} And your AI just made
+      you... {#this} this.
+    pad: [0.35, 0.7]
+    energy: 0.15
+    sfx:
+      - { at: 0.2, kind: tick, gain: 0.6 }
+      - { at: slide, kind: whoosh, gain: 0.7 }
+      - { at: this, kind: scratch }
+    props: { clock: '1:00', mode: dread }
+
+  - id: verdict
+    scene: scenes/night.js
+    say: >-
+      A pretty picture of a slide. {#c1} A title that says nothing. {#c2} Numbers from nowhere.
+      {#c3} And you can't even edit it. {#c4}
+    pad: [0.15, 1.0]
+    energy: 0.2
+    transition: { kind: cut, dur: 0 }
+    sfx:
+      - { at: c1, kind: thud }
+      - { at: c2, kind: thud }
+      - { at: c3, kind: thud }
+      - { at: c4, kind: thud, gain: 1.2 }
+    props: { clock: '1:00', mode: verdict }
+
+  - id: turn
+    scene: statement
+    say: >-
+      Twenty years of board decks teach you one thing. {#claim} A slide is an argument, {#not} not a
+      picture.
+    pad: [0.4, 0.6]
+    energy: 0.3
+    transition: { kind: fade, dur: 0.8 }
+    sfx:
+      - { at: start, kind: swell, dur: 3 }
+      - { at: claim, kind: hit, gain: 0.8 }
+    props:
+      kicker: 20 years of board decks
+      lines:
+        - { text: A slide is an argument, at: claim }
+        - { text: not a picture., at: not, tone: muted }
+
+  - id: intro
+    scene: logo-reveal
+    say: So we wrote the method down. {#logo} Meet [SlideCraft](/slˈIdkɹˌæft/).
+    pad: [0.2, 0.7]
+    energy: 0.75
+    transition: { kind: fade, dur: 0.5 }
+    sfx:
+      - { at: 0.1, kind: riser, dur: 1.6 }
+      - { at: logo, kind: hit }
+    props:
+      at: logo
+      name: SlideCraft
+      tagline: Editable PowerPoint decks from one prompt
+
+  - id: prompt
+    scene: chat
+    say: Paste one prompt into Claude, ChatGPT or Codex. {#send} That's the whole setup.
+    pad: [0.2, 0.4]
+    energy: 0.7
+    transition: { kind: push, dur: 0.5 }
+    sfx:
+      - { at: 0.3, kind: type, dur: 1.8, gain: 0.5 }
+      - { at: send, kind: whoosh }
+    props:
+      send: send
+      assistants: [Claude, ChatGPT, Codex]
+      lines:
+        - Study github.com/eiler2005/slidecraft and make me an editable PowerPoint deck.
+        - 'Topic: Key concepts for understanding LLMs and AI agents'
+        - 'For whom: managers and engineers new to AI'
+        - 'Length: 10–12 slides · Style: calm consulting look'
+
+  - id: storyline
+    scene: stack
+    say: >-
+      First, the argument. {#titles} One claim per slide, {#approve} approved by you before
+      anything is drawn.
+    pad: [0.15, 0.4]
+    energy: 0.7
+    sfx:
+      - { at: titles, kind: pop, gain: 0.5 }
+      - { at: approve, kind: ding }
+    props:
+      heading: The argument first — one claim per slide
+      from: titles
+      stamp: { at: approve, text: Approved by you }
+      itemsFrom: facts.titles
+
+  - id: build
+    scene: grid
+    say: >-
+      Then the build. {#grid} Forty-six measured layouts. Text fits. Nothing shrinks. {#spill}
+      Nothing spills.
+    caption: Then the build. 46 measured layouts. Text fits. Nothing shrinks. Nothing spills.
+    pad: [0.15, 0.4]
+    energy: 0.85
+    sfx:
+      - { at: grid, kind: whoosh, gain: 0.6 }
+    props:
+      from: grid
+      imagesFrom: facts.slides
+      counter: { toFrom: facts.layouts, label: measured layouts }
+
+  - id: checks
+    scene: spotlight
+    say: >-
+      Then it checks itself. {#total} When a total doesn't add up... {#caught} it catches it.
+      {#boss} Before your boss does.
+    pad: [0.15, 0.5]
+    energy: 0.6
+    sfx:
+      - { at: total, kind: tick }
+      - { at: caught, kind: thud, gain: 1.1 }
+      - { at: boss, kind: chime }
+    props:
+      imageFrom: facts.budget
+      regionFrom: facts.totalRow
+      cellFrom: facts.wrongCell
+      zoomAt: total
+      ringAt: caught
+      pill: Items add up to $67k, not $69k
+      note: Caught at 1:12 AM
+      noteAt: boss
+      checks:
+        - { kind: tick, text: Every number has a source }
+        - { kind: tick, text: 'One metric, one value everywhere' }
+        - { kind: bang, text: Totals that don't add up — caught, at: caught }
+        - { kind: tick, text: A reviewer model checks every slide }
+
+  - id: editable
+    scene: pins
+    say: >-
+      And you get a real PowerPoint. {#chart} Native charts. {#text} [Editable](/ˈɛdɪtəbᵊl/) text.
+      {#notes} Sources in the notes.
+    pad: [0.15, 0.5]
+    energy: 0.85
+    sfx:
+      - { at: chart, kind: pop }
+      - { at: text, kind: pop }
+      - { at: notes, kind: pop }
+    props:
+      imageFrom: facts.chart
+      pins:
+        - { at: chart, x: 0.17, y: 0.66, text: Native chart — edit the numbers }
+        - { at: text, x: 0.74, y: 0.72, text: Editable text }
+        - { at: notes, x: 0.5, y: 0.04, text: Sources in the speaker notes }
+      ticks:
+        - A real .pptx — not a picture, not a web page
+        - Native text, tables and charts
+        - Sources in the notes for every slide
+        - Also PDF and HTML from the same source
+
+  - id: relief
+    scene: scenes/night.js
+    say: Twenty past one. {#done} Deck done. {#bed} Go to bed.
+    pad: [0.3, 0.5]
+    energy: 0.5
+    transition: { kind: fade, dur: 0.6 }
+    sfx:
+      - { at: done, kind: chime }
+    props: { clock: '1:20', mode: relief, coverFrom: facts.slides.0 }
+
+  - id: cta
+    scene: end-card
+    say: >-
+      [SlideCraft](/slˈIdkɹˌæft/). {#tag} [Editable](/ˈɛdɪtəbᵊl/) PowerPoint decks from one prompt.
+      {#try} Try it tonight.
+    pad: [0.5, 2.2]
+    energy: 1
+    transition: { kind: flash, dur: 0.5 }
+    sfx:
+      - { at: start, kind: hit, gain: 0.8 }
+    props:
+      name: SlideCraft
+      tagline: Editable PowerPoint decks from one prompt
+      taglineAt: tag
+      url: github.com/eiler2005/slidecraft
+      command: npx @eiler2005/slidecraft
+      ctaAt: try
+      imagesFrom: facts.slides

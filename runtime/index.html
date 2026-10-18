@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Storygro player</title>
+<style>
+  html, body { margin: 0; background: #000; overflow: hidden; }
+  #stage { position: relative; overflow: hidden; transform-origin: 0 0; background: var(--rc-bg, #0b1f3a); }
+  .rc-scene, .rc-overlay { position: absolute; inset: 0; }
+  .rc-overlay { z-index: 10; pointer-events: none; }
+  .rc-flash { position: absolute; inset: 0; background: #fff; opacity: 0; z-index: 30; pointer-events: none; }
+  .rc-caption {
+    position: absolute; left: 50%; bottom: var(--rc-caption-bottom, 56px); transform: translateX(-50%);
+    z-index: 20; max-width: 78%; text-align: center; padding: 12px 26px; border-radius: 14px;
+    font: 600 38px/1.3 var(--rc-font, system-ui, sans-serif); color: rgba(255,255,255,.55);
+    background: rgba(5, 14, 30, .62); backdrop-filter: blur(6px);
+  }
+  .rc-word.on { color: #fff; }
+  .rc-controls { position: fixed; left: 0; right: 0; bottom: 0; height: 64px; display: flex; gap: 16px; align-items: center; padding: 0 20px; background: #111; color: #ccc; font: 14px system-ui; }
+  .rc-scrub { flex: 1; }
+</style>
+</head>
+<body>
+<div id="stage"></div>
+<script>
+  addEventListener('error', (e) => { window.__reelError = String(e.error?.stack ?? e.message); });
+  addEventListener('unhandledrejection', (e) => { window.__reelError = String(e.reason?.stack ?? e.reason); });
+</script>
+<script type="module" src="player.js"></script>
+</body>
+</html>

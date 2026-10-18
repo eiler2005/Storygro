@@ -1,0 +1,36 @@
+{
+  "name": "storygro",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A toolkit for AI agents to turn ideas into reels, videos, carousels, and social posts. Build your audience and grow your brand through content.",
+  "type": "module",
+  "license": "UNLICENSED",
+  "bin": {
+    "storygro": "src/cli.ts"
+  },
+  "scripts": {
+    "setup": "sh scripts/setup.sh",
+    "storygro": "tsx src/cli.ts",
+    "reel": "tsx src/cli.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "node --import tsx --test tests/*.test.ts",
+    "check": "npm run typecheck && npm test"
+  },
+  "dependencies": {
+    "yaml": "2.9.1",
+    "zod": "4.6.5"
+  },
+  "devDependencies": {
+    "@types/node": "22.20.5",
+    "tsx": "4.23.15",
+    "typescript": "7.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eiler2005/Storygro.git"
+  },
+  "keywords": ["ai-agents", "storytelling", "content-creation", "video-generation", "social-media", "content-marketing", "reels", "automation"],
+  "engines": {
+    "node": ">=22.12"
+  }
+}

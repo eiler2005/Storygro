@@ -13,3 +13,6 @@ coverage/
 out/
 dist/
 *.log
+
+# local-only notes (never committed)
+/private/

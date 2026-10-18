@@ -1,0 +1,204 @@
+# «Что ИИ значит для рынка труда — и где настоящая опасность». Русская версия, 9:16.
+# Механизм: ИИ берёт не профессии, а задачи → самые проверяемые задачи были первыми ступенями
+# карьеры → новичков меньше нанимают → через годы некому стать опытными. Источники: sources.md.
+reel: 1
+title: ИИ и работа — где настоящая опасность
+lang: ru
+format: { preset: vertical, fps: 30 }
+voice: { engine: qwen3, voice: assets/voice/narrator-ru.wav, speed: 1.12 }
+music: { bpm: 84, key: A, progression: [vi, IV, I, V], gain: 0.3 }
+loudness: -14
+theme: theme.css
+captions: { show: true, maxWords: 5 }
+transition: { kind: fade, dur: 0.4 }
+data: { facts: facts.json }
+hooks:
+  - Компании не увольняют вас из-за ИИ. Они просто не нанимают следующего вас.
+  - Сорок процентов рабочих мест затронуты ИИ. Так где же увольнения?
+stills:
+  cover: hook
+  ladder: ladder@gap
+post:
+  title: ИИ не отнимает профессии. Он убирает первые ступени
+  text: |
+    Почему ИИ пока почти не увольняет людей — и почему это не повод расслабиться.
+
+    • Работа — это набор задач. ИИ забирает те, что проще всего проверить: сбор данных, черновики, сводки.
+    • Именно на них учились новички. В США у 22–25-летних в самых затронутых ИИ профессиях занятость с конца 2022 года упала примерно на 11%, в наименее затронутых — выросла на 10%. Их не увольняют — их меньше нанимают (Stanford Digital Economy Lab, 2026). Авторы называют это ранним сигналом, а не доказанной причиной.
+    • В России, по оценке НИУ ВШЭ, высокому риску от ИИ подвержено каждое десятое рабочее место, полной автоматизации — меньше 1%.
+
+    Опасность не в массовых увольнениях завтра, а в том, что через десять лет некому будет стать опытными.
+
+    Источники — в первом комментарии. Озвучка синтезирована (Qwen3-TTS), голос не принадлежит реальному человеку.
+  tags: [ИИ, рыноктруда, карьера, работа, нейросети, джуны]
+
+scenes:
+  - id: hook
+    scene: headline
+    say: Из-за [ИИ](=искусственного интеллекта) людей пока почти не увольняют. {#next}Их просто перестают нанимать.
+    pad: [0.2, 0.6]
+    energy: 0.25
+    sfx:
+      - { at: next, kind: thud, gain: 0.7 }
+    props:
+      kicker: ИИ и работа
+      lines:
+        - { text: Не увольняют., at: -1 }
+        - { text: Перестают, at: next, tone: red }
+        - { text: нанимать., at: next, tone: red, mark: нанимать }
+      stamp: { text: набор закрыт, at: next, tone: ink }
+
+  - id: risk
+    scene: crowd
+    say: >-
+      По оценке [ВШЭ](=Высшей школы экономики), в России высокому риску от [ИИ](=и-и) подвержено {#share}каждое десятое рабочее место.
+      {#full}А полностью автоматизировать можно меньше одного процента.
+    pad: [0.25, 0.6]
+    energy: 0.3
+    sfx:
+      - { at: share, kind: pop, gain: 0.5 }
+      - { at: full, kind: tick, gain: 0.6 }
+    props:
+      title: Риск — не значит замена
+      cols: 20
+      rows: 5
+      groups:
+        - { shareFrom: facts.hse.highRiskShare, label: высокий риск от ИИ, at: share }
+      value: { textFrom: facts.hse.highRiskLabel, at: share }
+      note: { text: 'полная автоматизация — менее 1%', at: full }
+      sourceFrom: facts.hse.sourceLine
+
+  - id: tasks
+    scene: task-stack
+    say: >-
+      Потому что работа — это набор задач. {#cut}[ИИ](=Искусственный интеллект) забирает те, что проще всего проверить:
+      сбор данных, черновики, сводки. {#after}Должность остаётся — задачи меняются.
+    pad: [0.25, 0.7]
+    energy: 0.35
+    sfx:
+      - { at: cut, kind: whoosh, gain: 0.5 }
+      - { at: after, kind: pop, gain: 0.5 }
+    props:
+      title: Работа — это набор задач
+      role: начинающий аналитик
+      from: 0.3
+      cutAt: cut
+      tasks:
+        - { text: Собрать данные, ai: true }
+        - { text: Написать черновик отчёта, ai: true }
+        - { text: Проверить выводы }
+        - { text: Сделать сводку встречи, ai: true }
+        - { text: Обсудить с клиентом }
+        - { text: Принять решение }
+      aiLabel: ИИ
+      after: { text: Должность осталась. Задачи — другие., at: after, mark: другие }
+
+  - id: ladder
+    scene: ladder
+    say: >-
+      Но именно на таких задачах учились новички. {#cut}Это нижние ступени карьеры.
+      {#gap}Опытным [ИИ](=и-и) помогает, а новичку теперь не на что встать.
+    pad: [0.25, 0.7]
+    energy: 0.35
+    sfx:
+      - { at: cut, kind: whoosh, gain: 0.6 }
+      - { at: gap, kind: thud, gain: 0.6 }
+    props:
+      title: Нижние ступени исчезают
+      rungs:
+        - { text: черновики }
+        - { text: сбор данных }
+        - { text: проверка }
+        - { text: клиенты }
+        - { text: решения }
+      figures:
+        - { rung: 0, kind: junior }
+        - { rung: 1, kind: junior }
+        - { rung: 3, kind: worker }
+        - { rung: 5, kind: senior }
+      cut: 2
+      cutAt: cut
+      gap: { text: первой ступени нет, at: gap }
+
+  - id: data
+    scene: stat
+    say: >-
+      {#a}В США у молодых в самых затронутых [ИИ](=и-и) профессиях занятость с конца
+      [2022](=двадцать второго) года упала на [11%](=одиннадцать процентов). {#b}В наименее затронутых —
+      выросла на [10%](=десять процентов). {#c}Их не увольняют — их меньше нанимают.
+    pad: [0.25, 0.8]
+    energy: 0.4
+    sfx:
+      - { at: a, kind: hit, gain: 0.5 }
+      - { at: b, kind: pop, gain: 0.5 }
+    props:
+      title: Новичков нанимают меньше
+      items:
+        - { valueFrom: facts.stanford.exposedChange, labelFrom: facts.stanford.exposedLabelRu, tone: red, at: a }
+        - { valueFrom: facts.stanford.leastExposedChange, labelFrom: facts.stanford.leastLabelRu, tone: teal, at: b }
+      note: { text: не увольняют — меньше нанимают, at: c }
+      sourceFrom: facts.stanford.sourceLineRu
+
+  - id: danger
+    scene: ladder
+    say: >-
+      Опасность не в том, что завтра всех уволят. {#future}А в том, что через десять лет некому
+      будет стать опытными.
+    pad: [0.25, 0.8]
+    energy: 0.3
+    transition: { kind: fade, dur: 0.5 }
+    sfx:
+      - { at: future, kind: swell, gain: 0.5, dur: 2.5 }
+    props:
+      title: Нижние ступени исчезают
+      instant: true
+      rungs:
+        - { text: черновики }
+        - { text: сбор данных }
+        - { text: проверка }
+        - { text: клиенты }
+        - { text: решения }
+      figures:
+        - { rung: 0, kind: junior }
+        - { rung: 1, kind: junior }
+        - { rung: 3, kind: worker }
+        - { rung: 5, kind: senior }
+      cut: 2
+      gap: { text: первой ступени нет }
+      future: { text: через 10 лет, at: future, note: кто будет наверху? }
+
+  - id: todo
+    scene: steps
+    say: >-
+      Что делать? {#a}Учиться на реальных задачах. {#b}Раньше брать ответственность.
+      {#c}Пользоваться [ИИ](=и-и) — и проверять его. {#d}А компаниям — нанимать джунов: это будущие сеньоры.
+    pad: [0.25, 0.7]
+    energy: 0.45
+    sfx:
+      - { at: a, kind: pop, gain: 0.4 }
+      - { at: b, kind: pop, gain: 0.4 }
+      - { at: c, kind: pop, gain: 0.4 }
+      - { at: d, kind: pop, gain: 0.4 }
+    props:
+      title: Что с этим делать
+      items:
+        - { text: Учиться на реальных задачах, sub: 'проекты, стажировки, наставник', at: a }
+        - { text: Раньше брать ответственность, sub: 'клиент, решение, результат', at: b }
+        - { text: 'ИИ — ускоритель, а не замена', sub: проверяй каждый его ответ, at: c }
+        - { text: Компаниям — нанимать джунов, sub: это ваши будущие сеньоры, at: d }
+
+  - id: outro
+    scene: outro
+    say: '[ИИ](=Искусственный интеллект) не отнимает профессии. {#rung}Он убирает первые ступени. {#cta}Перешлите тому, кто только начинает.'
+    pad: [0.25, 2.2]
+    energy: 0.35
+    sfx:
+      - { at: cta, kind: chime, gain: 0.5 }
+    props:
+      lines:
+        - { text: ИИ не отнимает, at: 0.2 }
+        - { text: профессии., at: 0.2 }
+        - { text: Он убирает, at: rung, tone: red }
+        - { text: первые ступени., at: rung, tone: red }
+      cta: { text: 'Перешли тому, кто только начинает →', at: cta }
+      sign: Источники — в описании · Storygro

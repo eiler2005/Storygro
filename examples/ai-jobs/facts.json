@@ -1,0 +1,44 @@
+{
+  "_about": "Every number on screen comes from this file. Each entry names its source (see sources.md for quotes, dates and caveats). Checked 2026-10-18.",
+  "hse": {
+    "_source": "Kapelyushnikov R., HSE working paper WP3/2026/01 (2026), Rosstat LFS 2019 microdata; abstract quoted in sources.md [S5]",
+    "highRiskShare": 0.1,
+    "highRiskLabel": "1 из 10",
+    "fullAutomation": "менее 1%",
+    "sourceLine": "НИУ ВШЭ, Р. Капелюшников, 2026 · оценка риска на данных Росстата за 2019 г."
+  },
+  "ilo": {
+    "_source": "ILO Working Paper 140, 20 May 2025 [S4]",
+    "someExposureShare": 0.25,
+    "someExposureLabel": "1 in 4",
+    "topExposureShare": 0.033,
+    "topExposure": "3.3%",
+    "sourceLine": "ILO Working Paper 140, May 2025 · generative-AI exposure index"
+  },
+  "stanford": {
+    "_source": "Brynjolfsson, Chandar, Chen, 'Canaries in the Coal Mine?', Stanford Digital Economy Lab, Aug 2026, ADP payroll data, US [S1]",
+    "ages": "22–25",
+    "exposedChange": "−11%",
+    "leastExposedChange": "+10%",
+    "belowTrend": "19%",
+    "totalChange": "+6%",
+    "period": "Nov 2022 – Jun 2026",
+    "periodRu": "ноябрь 2022 — июнь 2026",
+    "exposedLabelRu": "22–25 лет · профессии, сильнее всего затронутые ИИ",
+    "leastLabelRu": "22–25 лет · наименее затронутые профессии",
+    "exposedLabelEn": "ages 22–25 · the jobs most exposed to AI",
+    "leastLabelEn": "ages 22–25 · the least exposed jobs",
+    "sourceLineRu": "Stanford Digital Economy Lab, 2026 · данные ADP, США · ранний сигнал, не доказанная причина",
+    "sourceLineEn": "Stanford Digital Economy Lab, 2026 · ADP payroll data, US · an early signal, not proof of cause"
+  },
+  "anthropic": {
+    "_source": "Massenkoff, McCrory, 'Labor market impacts of AI', Anthropic, 5 Mar 2026 [S2]",
+    "computerTheoretical": "94%",
+    "computerObserved": "33%"
+  },
+  "imf": {
+    "_source": "Georgieva, IMF blog, 14 Jan 2024 [S3]",
+    "globalExposed": "40%"
+  },
+  "years": { "horizon": "10" }
+}

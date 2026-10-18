@@ -9,7 +9,24 @@ import { ffmpeg, run } from './tools.ts';
 
 const READY = "document.documentElement.dataset.ready === '1'";
 
-async function openPlayer(l: LoadedSpec, tl: Timeline, scale: number) {
+/** Errors the player recorded: failed scene modules, draw exceptions, missing images and fonts. */
+export async function playerErrors(tab: Tab): Promise<string[]> {
+  return tab.eval<string[]>('[...(window.__reelErrors ?? []), ...(window.__reelError ? [window.__reelError] : [])]');
+}
+
+/** Rendering a broken frame is refused unless explicitly allowed (--allow-errors). */
+export async function assertNoErrors(tab: Tab, where: string): Promise<void> {
+  const errs = await playerErrors(tab);
+  if (!errs.length) return;
+  const msg = `${where}: ${errs.length} player error(s)\n${errs.map((e) => `  ✖ ${e.split('\n')[0]}`).join('\n')}`;
+  if (process.env.STORYGRO_ALLOW_ERRORS === '1') console.error(`! ${msg}`);
+  else throw new Error(`${msg}\n(fix the scene; --allow-errors renders anyway)`);
+}
+
+export const playerUrl = (origin: string, tl: Timeline, query = '') =>
+  `${origin}/rc/runtime/index.html?timeline=${tl.work ?? '/spec/.reel'}/timeline.json${query}`;
+
+async function openPlayer(l: LoadedSpec, tl: Timeline, scale: number, query = '') {
   const { server, origin } = await serve(l.dir);
   const w = Math.round(tl.width * scale);
   const h = Math.round(tl.height * scale);
@@ -22,7 +39,7 @@ async function openPlayer(l: LoadedSpec, tl: Timeline, scale: number) {
     mobile: false,
   });
   try {
-    await tab.goto(`${origin}/rc/runtime/index.html?timeline=/spec/.reel/timeline.json`, READY);
+    await tab.goto(playerUrl(origin, tl, query), READY);
   } catch (e) {
     tab.close();
     server.close();
@@ -39,9 +56,15 @@ async function openPlayer(l: LoadedSpec, tl: Timeline, scale: number) {
 }
 
 /** PNG stills at chosen moments. */
-export async function stills(l: LoadedSpec, tl: Timeline, shots: Record<string, number>, outDir: string, scale = 1) {
+export async function stills(
+  l: LoadedSpec,
+  tl: Timeline,
+  shots: Record<string, number>,
+  outDir: string,
+  opts: { scale?: number; guides?: boolean } = {},
+) {
   mkdirSync(outDir, { recursive: true });
-  const p = await openPlayer(l, tl, scale);
+  const p = await openPlayer(l, tl, opts.scale ?? 1, opts.guides ? '&guides=1' : '');
   const files: string[] = [];
   try {
     for (const [name, t] of Object.entries(shots)) {
@@ -50,7 +73,7 @@ export async function stills(l: LoadedSpec, tl: Timeline, shots: Record<string, 
       writeFileSync(f, await p.tab.shot('png'));
       files.push(f);
     }
-    for (const e of await p.tab.eval<string[]>('window.__reelErrors ?? []')) console.error(`✖ ${e}`);
+    await assertNoErrors(p.tab, 'stills');
   } finally {
     p.close();
   }
@@ -69,6 +92,12 @@ export async function frames(
   const to = Math.min(opts.to ?? tl.duration, tl.duration);
   const n = Math.ceil((to - from) * fps);
   const p = await openPlayer(l, tl, scale);
+  try {
+    await assertNoErrors(p.tab, 'render');
+  } catch (e) {
+    p.close();
+    throw e;
+  }
   const enc = spawn(
     ffmpeg(),
     [
@@ -112,6 +141,7 @@ export async function frames(
     { stdio: ['pipe', 'inherit', 'inherit'] },
   );
   const done = new Promise<void>((r, j) => enc.on('close', (c) => (c === 0 ? r() : j(new Error(`ffmpeg ${c}`)))));
+  done.catch(() => {}); // awaited below; a refused render must not also crash on the killed encoder
   const t0 = Date.now();
   try {
     for (let i = 0; i < n; i++) {
@@ -123,6 +153,10 @@ export async function frames(
         process.stdout.write(`\r  frames ${i + 1}/${n}  ${(((i + 1) / el) | 0) || 0} fps  eta ${Math.round(((n - i - 1) * el) / (i + 1))}s   `);
       }
     }
+    await assertNoErrors(p.tab, 'render');
+  } catch (e) {
+    enc.kill();
+    throw e;
   } finally {
     enc.stdin.end();
     p.close();

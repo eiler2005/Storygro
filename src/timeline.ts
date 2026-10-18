@@ -13,6 +13,8 @@ export interface VoiceMeta {
   duration: number;
   words: Word[];
   cues: Record<string, number>;
+  /** who spoke the line: engine, model, voice and how word times were found */
+  provider?: Record<string, unknown>;
 }
 export interface TimedScene {
   id: string;
@@ -32,16 +34,29 @@ export interface TimedScene {
   props: Record<string, unknown>;
   wav: string | null;
 }
+/** Platform UI margins on this stage, px. */
+export interface SafeArea {
+  profile: string;
+  top: number;
+  bottom: number;
+  left: number;
+  right: number;
+  caption: number;
+}
 export interface Timeline {
   title: string;
+  lang: string;
   width: number;
   height: number;
   fps: number;
   duration: number;
   base: string;
+  /** URL of the work folder (timeline, mix) under /spec/ */
+  work: string;
   theme: string | null;
   overlay: string | null;
   audio: string;
+  safe: SafeArea;
   captions: { show: boolean; maxWords: number };
   music: LoadedSpec['spec']['music'] & { dropAt: number | null };
   loudness: number;
@@ -50,11 +65,30 @@ export interface Timeline {
   scenes: TimedScene[];
 }
 
-export const workDir = (l: LoadedSpec) => join(l.dir, '.reel');
+/** Work folder: `.reel/` for reel.yaml, `.reel/<variant>/` for `<variant>.reel.yaml`. */
+export const workDir = (l: LoadedSpec) => (l.variant ? join(l.dir, '.reel', l.variant) : join(l.dir, '.reel'));
+/** The work folder as the player sees it. */
+export const workUrl = (l: LoadedSpec) => `/spec/${relative(l.dir, workDir(l))}`;
 
 const hash = (s: string) => createHash('sha1').update(s).digest('hex').slice(0, 12);
 
-/** Narrate every scene with Kokoro, reusing cached lines whose text and voice did not change. */
+/** Safe-area margins for this stage: the named profile (or one chosen by aspect), scaled to the width. */
+export function safeArea(l: LoadedSpec): SafeArea {
+  const zones = JSON.parse(readFileSync(join(REEL_ROOT, 'runtime', 'safe-zones.json'), 'utf8')) as Record<
+    string,
+    { ref: [number, number]; top: number; bottom: number; left: number; right: number; caption: number }
+  >;
+  const { width, height } = l.spec.format;
+  const profile =
+    l.spec.safe ?? (height > width * 1.5 ? 'vertical' : height > width ? 'portrait' : height === width ? 'square' : 'landscape');
+  const z = zones[profile];
+  if (!z || profile.startsWith('_')) throw new Error(`unknown safe-area profile "${profile}" (runtime/safe-zones.json)`);
+  const k = width / z.ref[0];
+  const r = (v: number) => Math.round(v * k);
+  return { profile, top: r(z.top), bottom: r(z.bottom), left: r(z.left), right: r(z.right), caption: r(z.caption) };
+}
+
+/** Narrate every scene, reusing cached lines whose text, provider and settings did not change. */
 export async function narrate(l: LoadedSpec): Promise<Map<string, { meta: VoiceMeta; wav: string | null }>> {
   const dir = join(workDir(l), 'voice');
   mkdirSync(dir, { recursive: true });
@@ -66,7 +100,9 @@ export async function narrate(l: LoadedSpec): Promise<Map<string, { meta: VoiceM
       out.set(s.id, { meta: estimate(s), wav: null });
       continue;
     }
-    const key = hash(JSON.stringify([s.say, v.voice, v.speed, v.lang]));
+    // Kokoro keys stay as they were, so existing caches remain valid
+    const settings = v.engine === 'kokoro' && !v.model ? [s.say, v.voice, v.speed, v.lang] : [s.say, v.engine, v.model, v.voice, v.speed, l.spec.lang];
+    const key = hash(JSON.stringify(settings));
     const wav = join(dir, `${s.id}-${key}.wav`);
     const json = join(dir, `${s.id}-${key}.json`);
     if (!existsSync(json)) todo.push({ id: s.id, say: s.say, wav, json });
@@ -74,7 +110,10 @@ export async function narrate(l: LoadedSpec): Promise<Map<string, { meta: VoiceM
   }
   if (todo.length) {
     const job = join(dir, 'job.json');
-    writeFileSync(job, JSON.stringify({ voice: v.voice, speed: v.speed, lang: v.lang, lines: todo }));
+    writeFileSync(
+      job,
+      JSON.stringify({ engine: v.engine, model: v.model, voice: v.voice, speed: v.speed, lang: v.lang, language: l.spec.lang, dir: l.dir, lines: todo }),
+    );
     await run(python(), [join(REEL_ROOT, 'py', 'voice.py'), job]);
   }
   for (const s of l.spec.scenes) {
@@ -89,7 +128,8 @@ function estimate(s: SceneSpec): VoiceMeta {
   const words: Word[] = [];
   const cues: Record<string, number> = {};
   let t = 0;
-  for (const part of s.say.split(/(\{#[a-z0-9-]+\}|\{\+[\d.]+\})/)) {
+  const say = s.say.replace(/\[([^\]]+)\]\((?:\/[^)]*\/|=[^)]*)\)/g, '$1');
+  for (const part of say.split(/(\{#[a-z0-9-]+\}|\{\+[\d.]+\})/)) {
     const pause = part.match(/^\{\+([\d.]+)\}$/);
     if (pause) {
       t += Number(pause[1]);
@@ -107,7 +147,7 @@ function estimate(s: SceneSpec): VoiceMeta {
       if (/[.!?]$/.test(w)) t += 0.3;
     }
   }
-  return { duration: t, words, cues };
+  return { duration: t, words, cues, provider: { engine: 'estimate' } };
 }
 
 /** Caption words: TTS timings, with the caption spelling when the scene overrides it. */
@@ -137,8 +177,9 @@ function bind(props: Record<string, unknown>, data: Record<string, unknown>): Re
       for (const p of path) cur = (cur as Record<string, unknown> | undefined)?.[p];
       if (cur === undefined) throw new Error(`prop ${k}: ${v} is not in the data`);
       out[k.slice(0, -4)] = cur;
-    } else if (v && typeof v === 'object' && !Array.isArray(v))
-      out[k] = bind(v as Record<string, unknown>, data);
+    } else if (Array.isArray(v))
+      out[k] = v.map((x) => (x && typeof x === 'object' && !Array.isArray(x) ? bind(x as Record<string, unknown>, data) : x));
+    else if (v && typeof v === 'object') out[k] = bind(v as Record<string, unknown>, data);
     else out[k] = v;
   }
   return out;
@@ -204,12 +245,15 @@ export async function buildTimeline(l: LoadedSpec, opts: { voice?: boolean } = {
   }
   return {
     title: spec.title,
+    lang: spec.lang,
     ...spec.format,
     duration: t,
     base: '/spec/',
+    work: workUrl(l),
     theme: spec.theme ? rel(spec.theme) : null,
     overlay: spec.overlay ? rel(spec.overlay) : null,
-    audio: '/spec/.reel/mix.wav',
+    audio: `${workUrl(l)}/mix.wav`,
+    safe: safeArea(l),
     captions: spec.captions,
     music: { ...spec.music, dropAt },
     loudness: spec.loudness,

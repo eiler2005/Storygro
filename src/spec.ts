@@ -1,7 +1,18 @@
 import { readFileSync } from 'node:fs';
-import { dirname, resolve } from 'node:path';
+import { basename, dirname, resolve } from 'node:path';
 import { parse } from 'yaml';
 import { z } from 'zod';
+
+export const FORMAT_PRESETS = {
+  landscape: [1920, 1080],
+  vertical: [1080, 1920],
+  square: [1080, 1080],
+  portrait: [1080, 1350],
+} as const;
+type FormatPreset = keyof typeof FORMAT_PRESETS;
+
+/** Narration providers; each has a module in py/voices/. `none` estimates timings without audio. */
+export const VOICE_ENGINES = ['kokoro', 'silero', 'qwen3', 'none'] as const;
 
 export const SFX_KINDS = [
   'whoosh',
@@ -53,19 +64,32 @@ const SceneSpec = z.object({
 export const ReelSpec = z.object({
   reel: z.literal(1),
   title: z.string(),
+  /** language of the narration and captions (BCP 47, e.g. en, ru); drives ASR and text checks */
+  lang: z.string().default('en'),
   format: z
     .object({
-      width: z.number().int().default(1920),
-      height: z.number().int().default(1080),
+      /** landscape 1920×1080, vertical 1080×1920 (Reels, Shorts), square 1080×1080, portrait 1080×1350 */
+      preset: z.enum(Object.keys(FORMAT_PRESETS) as [FormatPreset, ...FormatPreset[]]).optional(),
+      width: z.number().int().optional(),
+      height: z.number().int().optional(),
       fps: z.number().int().default(30),
     })
-    .default({ width: 1920, height: 1080, fps: 30 }),
+    .default({ fps: 30 })
+    .transform(({ preset, width, height, fps }) => {
+      const [w, h] = FORMAT_PRESETS[preset ?? 'landscape'];
+      return { width: width ?? w, height: height ?? h, fps };
+    }),
+  /** platform UI margins to keep text out of: a profile from runtime/safe-zones.json */
+  safe: z.string().optional(),
   voice: z
     .object({
-      engine: z.enum(['kokoro', 'none']).default('kokoro'),
+      engine: z.enum(VOICE_ENGINES).default('kokoro'),
       voice: z.string().default('af_heart'),
       speed: z.number().default(1),
+      /** Kokoro language code (a = US English, b = UK English) */
       lang: z.string().default('a'),
+      /** provider model id when the engine has several */
+      model: z.string().optional(),
     })
     .default({ engine: 'kokoro', voice: 'af_heart', speed: 1, lang: 'a' }),
   music: z
@@ -89,6 +113,10 @@ export const ReelSpec = z.object({
   captions: z
     .object({ show: z.boolean().default(true), maxWords: z.number().int().default(7) })
     .default({ show: true, maxWords: 7 }),
+  /** text for the publication of this variant: description, hashtags, pinned comment */
+  post: z
+    .object({ title: z.string().optional(), text: z.string().default(''), tags: z.array(z.string()).default([]) })
+    .optional(),
   /** default transition between scenes */
   transition: Transition.default({ kind: 'fade', dur: 0.45 }),
   /** numbers allowed on screen although no data file holds them (clock faces, years) */
@@ -114,6 +142,13 @@ export interface LoadedSpec {
   spec: ReelSpec;
   path: string;
   dir: string;
+  /**
+   * Variant name: '' for `reel.yaml`, otherwise the file stem (`ru.reel.yaml` → `ru`), so several
+   * language variants can share one folder, its scenes and its assets.
+   */
+  variant: string;
+  /** output name: the folder name, plus `-<variant>` */
+  name: string;
 }
 
 export function loadSpec(path: string): LoadedSpec {
@@ -123,18 +158,57 @@ export function loadSpec(path: string): LoadedSpec {
   for (const s of spec.scenes) {
     if (ids.has(s.id)) throw new Error(`duplicate scene id: ${s.id}`);
     ids.add(s.id);
+    const stray = strayKeys(s.props);
+    if (stray.length)
+      throw new Error(
+        `${s.id}: props have keys without values (${stray.map((k) => `"${k}"`).join(', ')}) — a comma inside { text: … } splits the text; quote it: text: 'a, b'`,
+      );
   }
-  return { spec, path: abs, dir: dirname(abs) };
+  const file = basename(abs);
+  const variant = file === 'reel.yaml' ? '' : file.replace(/(\.reel)?\.ya?ml$/, '');
+  const folder = basename(dirname(abs));
+  return { spec, path: abs, dir: dirname(abs), variant, name: variant ? `${folder}-${variant}` : folder };
+}
+
+/** Keys like "кто только начинает →" with a null value: YAML split an unquoted text at a comma. */
+function strayKeys(v: unknown, out: string[] = []): string[] {
+  if (Array.isArray(v)) for (const x of v) strayKeys(x, out);
+  else if (v && typeof v === 'object')
+    for (const [k, x] of Object.entries(v)) {
+      if (x === null && /\s/.test(k)) out.push(k);
+      else strayKeys(x, out);
+    }
+  return out;
 }
 
 const CUE = /\{#([a-z0-9-]+)\}/g;
 const PAUSE = /\{\+[\d.]+\}/g;
 const PHONEME = /\[([^\]]+)\]\(\/[^)]*\/\)/g;
+/** `[written](=spoken)`: captions show the written form, the voice says the spoken one */
+const SAY_AS = /\[([^\]]+)\]\(=[^)]*\)/g;
 
-/** Caption text: cue markers removed, phoneme hints reduced to the written word. */
+/** Caption text: cue markers removed, phoneme and say-as hints reduced to the written word. */
 export function captionText(s: SceneSpec): string {
   const raw = s.caption ?? s.say;
-  return raw.replace(CUE, '').replace(PAUSE, '').replace(PHONEME, '$1').replace(/\s+/g, ' ').trim();
+  return raw
+    .replace(CUE, '')
+    .replace(PAUSE, '')
+    .replace(PHONEME, '$1')
+    .replace(SAY_AS, '$1')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+/** What the narrator says, as plain words: say-as hints resolved to the spoken form. */
+export function spokenText(s: SceneSpec): string {
+  return s.say
+    .replace(CUE, '')
+    .replace(PAUSE, '')
+    .replace(PHONEME, '$1')
+    .replace(/\[[^\]]+\]\(=([^)]*)\)/g, '$1')
+    .replace(/́/g, '')
+    .replace(/\s+/g, ' ')
+    .trim();
 }
 
 export function cueNames(say: string): string[] {

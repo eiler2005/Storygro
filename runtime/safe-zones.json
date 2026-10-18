@@ -1,0 +1,11 @@
+{
+  "_note": "Platform UI margins in px on the reference canvas (ref width × ref height); the player scales them to the reel's width. Platforms publish margins for ads only and change their UI; the organic numbers are conservative estimates from third-party measurements. Check a real upload on a phone. Sources and dates: docs/formats.md.",
+  "landscape": { "ref": [1920, 1080], "top": 150, "bottom": 190, "left": 140, "right": 140, "caption": 54 },
+  "square": { "ref": [1080, 1080], "top": 90, "bottom": 150, "left": 80, "right": 80, "caption": 40 },
+  "portrait": { "ref": [1080, 1350], "top": 110, "bottom": 170, "left": 80, "right": 80, "caption": 44 },
+  "reels": { "ref": [1080, 1920], "top": 220, "bottom": 460, "left": 60, "right": 150, "caption": 490 },
+  "shorts": { "ref": [1080, 1920], "top": 250, "bottom": 400, "left": 50, "right": 200, "caption": 430 },
+  "vertical": { "ref": [1080, 1920], "top": 250, "bottom": 460, "left": 60, "right": 200, "caption": 490 },
+  "reels-ads": { "ref": [1080, 1920], "top": 270, "bottom": 670, "left": 65, "right": 65, "caption": 690 },
+  "shorts-ads": { "ref": [1080, 1920], "top": 288, "bottom": 672, "left": 48, "right": 192, "caption": 690 }
+}

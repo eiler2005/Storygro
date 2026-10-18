@@ -11,10 +11,37 @@ const tl = await (await fetch(timelineUrl)).json();
 const base = new URL(tl.base ?? './', new URL(timelineUrl, location.href));
 const url = (p) => new URL(p, base).href;
 
+const errors = (window.__reelErrors = window.__reelErrors ?? []);
 const stage = document.getElementById('stage');
 stage.style.width = `${tl.width}px`;
 stage.style.height = `${tl.height}px`;
-if (tl.theme) document.head.append(kit.h('link', { rel: 'stylesheet', href: url(tl.theme) }));
+if (tl.lang) document.documentElement.lang = tl.lang;
+// safe-area tokens from the format's platform profile; a theme loaded after may override them
+if (tl.safe) {
+  const s = tl.safe;
+  const wide = s.profile === 'landscape';
+  const vars = {
+    '--rc-safe-top': `${s.top}px`,
+    '--rc-safe-bottom': `${s.bottom}px`,
+    '--rc-safe-left': `${s.left}px`,
+    '--rc-safe-right': `${s.right}px`,
+    '--rc-safe-x': `${Math.max(s.left, s.right)}px`,
+    '--rc-caption-bottom': `${s.caption}px`,
+    ...(wide
+      ? {}
+      : {
+          '--rc-caption-x': `${s.left + (tl.width - s.left - s.right) / 2}px`,
+          '--rc-caption-max': `${tl.width - s.left - s.right}px`,
+          '--rc-caption-width': 'max-content',
+        }),
+  };
+  document.head.prepend(kit.h('style', { id: 'rc-safe' }, `:root{${Object.entries(vars).map(([k, v]) => `${k}:${v}`).join(';')}}`));
+}
+if (tl.theme) {
+  const link = kit.h('link', { rel: 'stylesheet', href: url(tl.theme) });
+  link.addEventListener('error', () => errors.push(`theme: ${tl.theme} did not load`));
+  document.head.append(link);
+}
 
 const layers = [];
 for (const s of tl.scenes) {
@@ -29,6 +56,8 @@ for (const s of tl.scenes) {
     words: s.words,
     width: tl.width,
     height: tl.height,
+    safe: tl.safe,
+    lang: tl.lang,
     kit,
     asset: (p) => url(p),
   };
@@ -37,8 +66,8 @@ for (const s of tl.scenes) {
     const mod = (await import(url(s.module))).default;
     draw = await mod.mount(root, ctx);
   } catch (e) {
-    // a broken scene shows itself instead of taking the whole reel down
-    window.__reelErrors = [...(window.__reelErrors ?? []), `${s.id}: ${e?.stack ?? e}`];
+    // a broken scene shows itself instead of taking the whole reel down; the renderer refuses it
+    errors.push(`${s.id}: ${e?.stack ?? e}`);
     root.replaceChildren(
       kit.h('pre', { style: { position: 'absolute', inset: '200px 140px', color: '#ff6b5e', font: '24px/1.4 monospace', whiteSpace: 'pre-wrap' } }, `scene ${s.id} failed:\n${e?.stack ?? e}`),
     );
@@ -55,7 +84,7 @@ if (tl.overlay) {
     const mod = (await import(url(tl.overlay))).default;
     overlay = await mod.mount(root, { width: tl.width, height: tl.height, kit, scenes: tl.scenes, asset: (p) => url(p) });
   } catch (e) {
-    window.__reelErrors = [...(window.__reelErrors ?? []), `overlay: ${e?.stack ?? e}`];
+    errors.push(`overlay: ${e?.stack ?? e}`);
   }
 }
 
@@ -121,7 +150,7 @@ function drawFrame(T) {
     try {
       l.draw(T - s.start);
     } catch (e) {
-      if (!l.failed) window.__reelErrors = [...(window.__reelErrors ?? []), `${s.id} @${(T - s.start).toFixed(2)}: ${e?.stack ?? e}`];
+      if (!l.failed) errors.push(`${s.id} @${(T - s.start).toFixed(2)}: ${e?.stack ?? e}`);
       l.failed = true;
     }
     let opacity = 1;
@@ -160,11 +189,42 @@ function drawFrame(T) {
   if (tl.captions?.show) drawCaption(T);
 }
 
-const fontsReady = document.fonts.ready;
+// a missing image or font is an error, not a silently different frame
+const imageDone = (img) => {
+  if (img.complete && img.naturalWidth === 0 && img.getAttribute('src')) errors.push(`image did not load: ${img.getAttribute('src')}`);
+};
 const imagesReady = Promise.all(
-  [...document.images].map((img) => (img.complete ? null : new Promise((r) => img.addEventListener('load', r, { once: true })))),
+  [...document.images].map((img) =>
+    img.complete
+      ? imageDone(img)
+      : new Promise((r) => {
+          img.addEventListener('load', r, { once: true });
+          img.addEventListener('error', () => r(imageDone(img)), { once: true });
+        }),
+  ),
 );
-await Promise.all([fontsReady, imagesReady]);
+await Promise.all([document.fonts.ready, imagesReady]);
+for (const f of document.fonts) if (f.status === 'error') errors.push(`font did not load: ${f.family} ${f.weight} ${f.style}`);
+
+if (params.has('guides') && tl.safe) {
+  // review aid: platform UI zones in red, the safe box outlined
+  const s = tl.safe;
+  const band = (style) => kit.h('div', { style: { position: 'absolute', background: 'rgba(255,40,40,.28)', ...style } });
+  stage.append(
+    kit.h(
+      'div',
+      { class: 'rc-guides', style: { position: 'absolute', inset: '0', zIndex: 40, pointerEvents: 'none' } },
+      band({ left: 0, right: 0, top: 0, height: `${s.top}px` }),
+      band({ left: 0, right: 0, bottom: 0, height: `${s.bottom}px` }),
+      band({ left: 0, top: `${s.top}px`, bottom: `${s.bottom}px`, width: `${s.left}px` }),
+      band({ right: 0, top: `${s.top}px`, bottom: `${s.bottom}px`, width: `${s.right}px` }),
+      kit.h('div', {
+        style: { position: 'absolute', left: `${s.left}px`, right: `${s.right}px`, top: `${s.top}px`, bottom: `${s.bottom}px`, outline: '3px dashed rgba(255,255,255,.8)' },
+      }),
+      kit.h('div', { style: { position: 'absolute', left: '12px', top: '10px', font: '600 22px monospace', color: '#fff' } }, `safe: ${s.profile}`),
+    ),
+  );
+}
 
 window.reel = {
   timeline: tl,

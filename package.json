@@ -10,6 +10,7 @@
   },
   "scripts": {
     "setup": "sh scripts/setup.sh",
+    "setup:ru": "sh scripts/setup.sh ru",
     "storygro": "tsx src/cli.ts",
     "reel": "tsx src/cli.ts",
     "typecheck": "tsc --noEmit",

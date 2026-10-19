@@ -4,68 +4,120 @@
 
 A toolkit for AI agents to turn ideas into reels, videos, carousels, and social posts. Build your audience and grow your brand through content.
 
-Storygro starts with a working video engine extracted from the SlideCraft launch-video project. The wider workflow—topic research, bilingual content packages, publishing, and growth analytics—is planned. Those capabilities are not all implemented yet.
+<p align="center"><img src="docs/media/ai-jobs-ru-strip.jpg" alt="Frames of the Russian 9:16 explainer 'AI and jobs': the hook, a crowd of 100 figures, a job as a stack of tasks cut by scissors, a career ladder losing its bottom rungs, the data, what to do" width="100%"></p>
 
-For the next coding agent, start with [the handoff](docs/planning/HANDOFF.md), [implementation plan](docs/planning/IMPLEMENTATION_PLAN.md), and [research](docs/planning/RESEARCH.md). The planning documents preserve the owner's decisions in Russian.
+<p align="center"><b>Example:</b> “What AI means for jobs — and where the real danger is”, 9:16, Russian and English, 84–85 s · <a href="https://github.com/eiler2005/Storygro/releases/tag/ai-jobs-2026-10-19">watch the videos and carousels</a> · <a href="examples/ai-jobs/">source</a> · <a href="examples/ai-jobs/sources.md">sources</a></p>
+
+Storygro gives an agent (Claude Code, Codex, ChatGPT agent mode — anything that can run commands) a production line: research and facts → a script per language → narration → storyboard → rendered video, subtitles, cover and carousel → technical QA → a release folder with checksums. Every step leaves a file a person can read and approve. It runs locally; no account, server or paid API is needed for the included examples.
 
 ## What works today
 
-- YAML scripts with narration cues, pauses, scene properties, and external fact files.
-- Eight built-in animated scenes and a contract for custom DOM scenes.
-- Local English narration with Kokoro, preview, stills, and HTML/PDF storyboards.
-- A script-and-facts approval gate, procedural music, MP4 rendering, and technical QA.
-- Frame exports and share cards derived from the rendered composition.
+- **Scripts as data.** One YAML file per language variant: narration with `{#cue}` markers, pauses, say-as hints (`[11%](=eleven percent)`), scene props bound to a `facts.json`.
+- **Native 9:16 and other formats** with platform safe-area profiles (Reels, Shorts, feed), checked automatically at every cue.
+- **Sixteen animated scenes**: eight vertical-first cut-paper explainer scenes (headline, crowd, task-stack, ladder, stat, chart, steps, outro) and eight landscape product scenes from the SlideCraft launch film. Custom scenes are small ES modules with a pure `draw(t)`.
+- **Local narration in Russian and English** behind one provider interface: Qwen3-TTS (cloned narrator, Apple silicon), Kokoro (English baseline), Silero CIS (Russian, explicit stress). Word timings come from the engine or from Whisper alignment against the script.
+- **Storyboards** (HTML/PDF) from the live player, an **approval gate** that hashes every input (script, facts, scene code, theme, fonts, assets), procedural **music and sound effects** mixed to −14 LUFS.
+- **Rendering** through headless Chrome and ffmpeg: master and ≤ 25 MB web MP4, burned-in captions, SRT/VTT, covers, share cards, carousel cards.
+- **QA that fails loudly:** codec, size, length, loudness, black frames, scene/image/font errors, every on-screen number traced to the data, text clear of platform UI, Whisper hearing ≥ 85 % of each scene (RU and EN). Skipped checks are reported as skipped.
+- **Releases:** `deliver` and `package` refuse incomplete or unchecked outputs and write `manifest.json` with SHA-256, the engine commit, voice providers and QA verdicts.
 
-Scenes implement `mount` and `draw(time)`, so the renderer can seek directly to any frame. The runtime does not require SlideCraft, React, or Remotion. Current scene layouts and the bundled launch example primarily target landscape video. Native portrait explainers, Russian narration, independently authored carousels, publishing, and analytics are next steps.
+**Not yet:** publishing to Instagram/YouTube and growth analytics (planned, need the owner's accounts), brand and series models, screen-recorded tutorials. `deliver` and `package` write local folders; nothing posts to a social account. See the [implementation plan](docs/planning/IMPLEMENTATION_PLAN.md).
+
+## How it works
+
+```mermaid
+flowchart LR
+  Y[ru.reel.yaml<br/>en.reel.yaml] --> V[narration<br/>Qwen3 · Kokoro · Silero]
+  F[facts.json] --> T[timeline]
+  V --> T --> B[storyboard] --> A{approve}
+  A --> R[frames in headless Chrome<br/>draw t → JPEG → ffmpeg]
+  M[procedural score] --> X[mux]
+  R --> X --> Q{QA}
+  Q --> P[package: video, subtitles,<br/>cover, carousel, post, manifest]
+```
+
+Durations come from the voice; scenes react to cues, so rewriting a line re-times the whole video. Each scene is a pure function of time, so any frame can be drawn in any order — stills, storyboards and the final render are the same pixels. Details: [architecture](docs/architecture.md).
 
 ## Quick start
 
-Requirements: Node.js ≥22.12 and Chrome/Chromium. Voice and final video rendering also need the Python environment below. The current ASR checker uses MLX Whisper on Apple Silicon.
+Requirements: macOS or Linux, Node.js ≥ 22.12, Chrome or Chromium, [uv](https://docs.astral.sh/uv/). The Qwen3 voice and the speech check use MLX and need Apple silicon; elsewhere the check is reported as skipped and Kokoro/Silero work.
 
 ```sh
-git clone https://github.com/eiler2005/Storygro.git
-cd Storygro
+git clone https://github.com/eiler2005/Storygro.git && cd Storygro
 npm ci
-npm run storygro -- help
-npm run storygro -- preview examples/slidecraft-launch/reel.yaml --no-voice
+npm run check                      # TypeScript + tests
+
+# preview without any Python: estimated timings
+npm run storygro -- board examples/ai-jobs/en.reel.yaml --no-voice
+
+# voices, Whisper, ffmpeg in ~/.storygro/venv (models download on first use)
+npm run setup                      # English (Kokoro), ASR, audio
+npm run setup:ru                   # + Russian voices (Qwen3-TTS via mlx-audio, Silero CIS)
+
+npm run storygro -- voice   examples/ai-jobs/ru.reel.yaml
+npm run storygro -- board   examples/ai-jobs/ru.reel.yaml     # read board.pdf
+npm run storygro -- approve examples/ai-jobs/ru.reel.yaml
+npm run storygro -- render  examples/ai-jobs/ru.reel.yaml     # MP4 + subtitles + QA
+npm run storygro -- package examples/ai-jobs/episode.yaml     # after both variants and carousels
 ```
 
-The bundled [SlideCraft launch example](examples/slidecraft-launch/README.md) includes its assets. It does not need a neighboring SlideCraft checkout. Its claims describe the historical SlideCraft example, not Storygro's current feature set.
+Outputs go to the ignored `.reel/` folder next to the spec. `STORYGRO_HOME` / `STORYGRO_PYTHON` relocate the Python environment (the prototype's `REELCRAFT_*` variables still work); `CHROME_PATH` and `FFMPEG` override binaries.
 
-For narration and video, install [uv](https://docs.astral.sh/uv/) first, then:
+## Working with an agent
 
-```sh
-npm run setup
-npm run storygro -- voice examples/slidecraft-launch/reel.yaml
-npm run storygro -- board examples/slidecraft-launch/reel.yaml
-# Inspect the storyboard before approving its script and facts.
-npm run storygro -- approve examples/slidecraft-launch/reel.yaml
-npm run storygro -- render examples/slidecraft-launch/reel.yaml
-npm run storygro -- deliver examples/slidecraft-launch/reel.yaml
+> Read AGENTS.md and docs/workflows.md. Make a 60–90 second vertical explainer about "[topic]" in Russian and English for "[audience]". Research current sources and keep each number with its source and quote. Show the mechanism with recurring objects. Stop after the storyboard so I can approve it.
+
+The [workflows](docs/workflows.md) page shows what the agent does at each step and which files you review.
+
+## Technology
+
+| Layer | Stack |
+|---|---|
+| CLI and orchestration | Node.js, TypeScript (run with `tsx`, checked with `tsc`), `yaml`, `zod` |
+| Pictures | plain DOM/SVG/CSS scenes, headless Chrome over the DevTools protocol (no Puppeteer), ffmpeg (`libx264`, AAC) |
+| Voices | Qwen3-TTS via mlx-audio, Kokoro-82M, Silero CIS base + silero-stress — all locally, licences that allow published use |
+| Speech check and alignment | Whisper (small.en, large-v3-turbo) via mlx-whisper |
+| Audio | NumPy/SciPy synthesis, pyloudnorm loudness, soundfile |
+| Environment | Python 3.12 managed by uv in `~/.storygro/venv`; ffmpeg from `imageio-ffmpeg` |
+
+Full table with versions, licences and the reasons for each choice: [architecture → technology](docs/architecture.md#technology-and-libraries).
+
+## Repository layout
+
+```text
+src/            CLI and pipeline: spec, timeline, board/approval, render, QA, subtitles, package
+runtime/        browser player, animation kit, cut-paper kit, safe-area profiles
+scenes/         built-in scene modules
+py/             voice providers (py/voices/), alignment, ASR, procedural score, voice design
+examples/       ai-jobs (RU/EN explainer, carousels, episode) · slidecraft-launch (historical film + GIF)
+docs/           architecture, workflows, quality, voices, formats, scenes, contract, history, planning
+agents/         role notes for director, scene-builder and QA
+tests/          contract tests (node:test)
 ```
-
-Setup creates `~/.storygro/venv` and installs the audio dependencies; voice/ASR models may download on first use. Set `STORYGRO_HOME` or `STORYGRO_PYTHON` to use another location. The original `REELCRAFT_HOME` and `REELCRAFT_PYTHON` overrides remain compatible. `CHROME_PATH` and `FFMPEG` override the corresponding binaries.
-
-The initial extraction retains `reel: 1`, `reel.yaml`, `.reel/` outputs, and the `npm run reel -- …` alias. This is a local source project, not a published npm package. `render` and `deliver` create local files; they do not publish to social accounts.
-
-Technical QA and number matching help find defects. They do not establish factual accuracy or replace watching and listening to the result.
 
 ## Documentation
 
-- [Writing a reel](docs/writing-a-reel.md), [scene catalog](docs/scenes.md), [scene contract](docs/scene-contract.md), [architecture](docs/architecture.md).
-- [Product decisions](docs/planning/README.md), [research and alternatives](docs/planning/RESEARCH.md).
-- [Implementation plan](docs/planning/IMPLEMENTATION_PLAN.md), [guide](docs/planning/GUIDE.md), [agent handoff](docs/planning/HANDOFF.md).
-- [Migration record and validation](docs/planning/MIGRATION.md).
+| Read | For |
+|---|---|
+| [Architecture](docs/architecture.md) | how the pipeline, player, voices, audio and gates fit; libraries; design choices; limits |
+| [Workflows](docs/workflows.md) | commands and step-by-step flows: explainer, variants, carousel, package, new scene |
+| [Writing a reel](docs/writing-a-reel.md) | the spec, script syntax, budgets, story shapes |
+| [Scene catalog](docs/scenes.md) · [scene contract](docs/scene-contract.md) | every scene's props; how to write one |
+| [Voices](docs/voices.md) | engines, licences, designing a narrator, pronunciation, adding a provider |
+| [Formats](docs/formats.md) | presets, safe areas and their sources, captions, subtitles, carousels |
+| [Quality](docs/quality.md) | approval, QA checks and what they do not prove, release manifests |
+| [ADRs](docs/adr/) | decisions with evidence (renderer, voices) |
+| [History](docs/history/slidecraft-launch.md) | the SlideCraft launch film and GIF Storygro grew out of |
+| [Planning (RU)](docs/planning/README.md) | the owner's decisions, research, implementation plan, handoff, migration record |
 
 ## Development
 
 ```sh
-npm ci
-npm run check
+npm ci && npm run check
 ```
 
-Read [AGENTS.md](AGENTS.md) before modifying the project. Browser/audio checks have additional local requirements; the migration record distinguishes them from unit checks.
+Read [AGENTS.md](AGENTS.md) before changing the project. Rendering, voice and ASR checks need the local Python environment and Chrome; when you change the runtime, scenes, timing or audio, render and look at the result, not only the tests.
 
 ## License
 
-The owner has not selected a project license. The repository is public, but it does not currently grant an open-source license. Third-party notices remain with the included [Liberation fonts](examples/slidecraft-launch/assets/fonts/).
+The owner has not selected a project license. The repository is public, but it does not currently grant an open-source license. Third-party components keep their own terms; font notices are next to the fonts ([ai-jobs](examples/ai-jobs/assets/fonts/), [slidecraft-launch](examples/slidecraft-launch/assets/fonts/)).

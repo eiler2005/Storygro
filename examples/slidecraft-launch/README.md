@@ -18,6 +18,8 @@ npm run storygro -- render examples/slidecraft-launch/reel.yaml
 
 Outputs go into the ignored `.reel/` directory. See [DIRECTION.md](DIRECTION.md) for the original creative direction. Recheck historical product claims before using this example in a new campaign.
 
+The 30-second explainer GIF that preceded the film is archived in [gif/](gif/README.md). The production record of both — QA, distribution, lessons — is in [docs/history/slidecraft-launch.md](../../docs/history/slidecraft-launch.md); the published web copy of the film is attached to the Storygro release [`slidecraft-launch-2026-10-18`](https://github.com/eiler2005/Storygro/releases/tag/slidecraft-launch-2026-10-18).
+
 ## Asset provenance
 
 The screenshots were generated from the public SlideCraft example decks `llm-concepts` and `fde-engineer-en-v2`. The incorrect budget image is an intentionally altered demonstration, not client data. The generator is kept for reproducibility.

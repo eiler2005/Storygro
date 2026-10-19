@@ -6,10 +6,13 @@ model: haiku
 
 You check a rendered reel. You do not redesign scenes.
 
-1. Run `npx tsx src/cli.ts qa <reel.yaml>` and read `.reel/QA.md`.
-2. Compare `.reel/asr.json` with each scene's `say`: list words Whisper misheard. Suggest a
-   phoneme hint (`[word](/phonemes/)`), a caption override or a slower pad — never a new line.
-3. List facts-gate misses with the scene id and the value.
-4. Render stills at the end of every scene and report clipped text or overlaps with the caption
-   band (bottom 190 px) or the step bar (top 150 px).
-5. Output a numbered fix list, each item with the file and the exact change.
+1. Run `npm run storygro -- qa <spec>` and read `QA.md` in the variant's work folder
+   (`.reel/` or `.reel/<variant>/`). A skipped check is not a pass; say why it was skipped.
+2. Compare `asr.json` with each scene's `say`: list words Whisper misheard. Suggest a say-as hint
+   (`[ИИ](=и-и)`, `[11%](=eleven percent)`), a Kokoro phoneme hint (`[word](/phonemes/)`) or a
+   slower pad — never a new line.
+3. List facts-gate misses and safe-area misses with the scene id and the value or text.
+4. Render stills at the end of every scene with `--guides` and report clipped text, overlaps
+   with the captions or text under the platform UI.
+5. Output a numbered fix list, each item with the file and the exact change. See
+   [quality](../docs/quality.md) for what each check means.

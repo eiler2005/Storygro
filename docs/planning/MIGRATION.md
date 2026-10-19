@@ -61,10 +61,26 @@ STORYGRO_PYTHON=/Users/DenisErmilov/.reelcraft/venv/bin/python \
 
 Это проверка переноса и короткого кодирования, **не новый полный релизный QA**: TTS/ASR не запускались заново, весь ролик не прослушивался, native vertical и русский язык не проверены. Чистая установка Python с нуля также не проверялась. Старый отчёт о 65,18 секунды относится к донорскому launch-ролику с реальным голосом; оценочный timeline нового smoke-запуска составляет 87 секунд.
 
-## Точка остановки и следующая работа
+## Завершение переноса: история и чистка SlideCraft (18–19 октября 2026)
 
-По последнему поручению владельца после переноса, документации, коммита и push дальнейшая разработка останавливается. Следующая LLM начинает с [HANDOFF.md](HANDOFF.md) и [IMPLEMENTATION_PLAN.md](IMPLEMENTATION_PLAN.md).
+По поручению владельца вся работа с видео вынесена из SlideCraft, SlideCraft при необходимости обращается к Storygro.
 
-Приоритет: один оригинальный вертикальный explainer → проверенная RU/EN озвучка и ASR → воспроизводимый guide → пакет контента → publishing adapter → аналитика. В частности, нужно усилить обработку ошибок сцен, учитывать все assets в release, проверять комплектность `deliver` и не считать текущий landscape-пример готовым решением для Reels.
+| Что | Куда | Проверка |
+|---|---|---|
+| Архивный GIF-ролик SlideCraft: `scripts/launch/story.ts`, `gif-story.ts`, `gif.ts`, GIF-файлы и ключевые кадры | `examples/slidecraft-launch/gif/` (генератор берёт модули SlideCraft только через явный `SLIDECRAFT_ROOT`) | запуск против SlideCraft `4ac9890` воспроизвёл `slidecraft-story.gif` побайтно (одинаковый SHA-256) |
+| Финальная сборка launch-фильма из донора (мастер 154 МБ, голосовой кэш, QA, storyboard, review-кадры) | локально в игнорируемый `examples/slidecraft-launch/.reel/` | файлы скопированы `rsync`; повторный рендер возможен без нового TTS |
+| Web-копия фильма (23,6 МБ), постер, storyboard, QA | релиз GitHub [`slidecraft-launch-2026-10-18`](https://github.com/eiler2005/Storygro/releases/tag/slidecraft-launch-2026-10-18) | ссылка на MP4 отдаёт файл (HTTP 206) |
+| История производства, уроки, распространение | [docs/history/slidecraft-launch.md](../history/slidecraft-launch.md) | без приватных данных |
+| Приватные заметки о видео (`private/launch/video.md`, `linkedin-video.md`, `gif-storyboard.md`, `gif-improve-prompt.md`) | локально в игнорируемый `private/slidecraft-launch/` Storygro | в Git не попадают |
 
-Донор сохранён; автоматического удаления или изменения функциональности SlideCraft не выполнялось.
+Изменения в SlideCraft (коммит `46b53a1`, отправлен в `main`):
+
+- удалены видеофайлы и генератор GIF, скрипт `npm run launch:gif`; `README`, страница GitHub Pages и `ROADMAP` ссылаются на фильм на YouTube и на MP4 в релизе Storygro, указан Storygro как инструмент; запись в `CHANGELOG`;
+- откатаны незакоммиченные строки про `reelcraft/` в `.gitignore` и `biome.json`; донор `reelcraft/` и приватные заметки перенесены в Корзину (`~/.Trash/slidecraft-video-2026-10-19/`), а не удалены безвозвратно;
+- `npm run check` в SlideCraft: lint, TypeScript и 1243 теста прошли (1 тест пропущен, как и до изменений); сайт собран локально, блок демо показывает постер со ссылкой на YouTube.
+
+Постер `docs/media/launch/slidecraft-launch-poster.png` и изображения для Product Hunt остались в SlideCraft как статичные материалы продукта.
+
+## Что сделано после переноса
+
+Этапы 1–3 плана выполнены в объёме, описанном в [IMPLEMENTATION_PLAN.md](IMPLEMENTATION_PLAN.md) (раздел «Статус»): нативный 9:16, RU/EN голоса и ASR, первый оригинальный explainer в двух языковых версиях, карусели, пакет релиза и документация. Подробности и проверки — в [HANDOFF.md](HANDOFF.md).

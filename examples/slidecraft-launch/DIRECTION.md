@@ -26,7 +26,7 @@ the first two and the turn.
 
 ---
 
-## 1 · night (`scenes/night.js`, props `{ clock: '1:00', mode: 'dread' }`)
+## 1 · night (`production/scenes/night.js`, props `{ clock: '1:00', mode: 'dread' }`)
 Cues: `board`, `slide`, `this`.
 - 0 s: dark room is already visible (frame 0 must work as a hook, no fade from black). A big
   bedside-style digital clock top-right `1:00` in red-orange LED segments (`--rc-red`, glow),
@@ -121,7 +121,7 @@ props `{ image, pins: [{ at, x, y, text }], ticks }`.
   over a bar region) "gets selected" — a selection box with 8 handles, like a real editor.
 - Right column: the four `ticks` rows with green tick badges appearing after the last pin.
 
-## 10 · relief (`scenes/night.js`, `mode: 'relief'`)
+## 10 · relief (`production/scenes/night.js`, `mode: 'relief'`)
 Back in the room, but warmer: the lamp glow is larger, the clock reads `1:20` in calm white
 (not red). On the laptop screen: the real cover slide (`assets/llm-01.png`) with a green tick
 badge. At `done`: a tidy stack of three real slides appears beside the laptop like printed

@@ -16,11 +16,11 @@
 
 | Из донора | В Storygro | Содержание |
 |---|---|---|
-| `reelcraft/src/` | `src/` | CLI, spec, timeline, storyboard/approval, server, CDP, render, QA |
-| `reelcraft/runtime/` | `runtime/` | HTML player и JS animation helpers |
-| `reelcraft/scenes/` | `scenes/` | Восемь готовых типов сцен |
-| `reelcraft/py/` | `py/` | Voice, score, ASR |
-| `reelcraft/scripts/` | `scripts/` | Setup Python окружения |
+| `reelcraft/src/` | `production/src/` | CLI, spec, timeline, storyboard/approval, server, CDP, render, QA |
+| `reelcraft/runtime/` | `production/runtime/` | HTML player и JS animation helpers |
+| `reelcraft/scenes/` | `production/scenes/` | Восемь готовых типов сцен |
+| `reelcraft/py/` | `production/py/` | Voice, score, ASR |
+| `reelcraft/scripts/` | `production/scripts/` | Setup Python окружения |
 | `reelcraft/agents/` | `agents/` | Director, scene-builder, QA |
 | `reelcraft/docs/` | `docs/` | Архитектура, авторинг, каталог и контракт сцен |
 | `reelcraft/examples/slidecraft-launch/` | `examples/slidecraft-launch/` | Сценарий, direction, theme, overlay, custom scene, генератор и готовые assets |
@@ -28,7 +28,7 @@
 
 Дополнительно созданы README, AGENTS.md, package-lock.json, собственные `.gitignore`/`.gitattributes`, тесты и GitHub Actions workflow. Сохранены уведомления к Liberation Sans и Liberation Serif рядом со шрифтами.
 
-Не включены генерируемые `.reel/`, `node_modules`, `.env`, приватные клиентские материалы и лицензированные системные шрифты. Связанные с самим SlideCraft/Product Hunt скрипты `scripts/launch/` описаны в research, но не являются частью извлечённого видеоядра и не копировались. Старый опубликованный MP4 остаётся в SlideCraft; в Storygro перенесены его исходники и материалы для воспроизведения.
+Не включены генерируемые `.reel/`, `node_modules`, `.env`, приватные клиентские материалы и лицензированные системные шрифты. Связанные с самим SlideCraft/Product Hunt скрипты `production/scripts/launch/` описаны в research, но не являются частью извлечённого видеоядра и не копировались. Старый опубликованный MP4 остаётся в SlideCraft; в Storygro перенесены его исходники и материалы для воспроизведения.
 
 ## Изменения для самостоятельной работы
 
@@ -69,7 +69,7 @@ STORYGRO_PYTHON=/Users/DenisErmilov/.reelcraft/venv/bin/python \
 
 | Что | Куда | Проверка |
 |---|---|---|
-| Архивный GIF-ролик SlideCraft: `scripts/launch/story.ts`, `gif-story.ts`, `gif.ts`, GIF-файлы и ключевые кадры | `examples/slidecraft-launch/gif/` (генератор берёт модули SlideCraft только через явный `SLIDECRAFT_ROOT`) | запуск против SlideCraft `4ac9890` воспроизвёл `slidecraft-story.gif` побайтно (одинаковый SHA-256) |
+| Архивный GIF-ролик SlideCraft: `production/scripts/launch/story.ts`, `gif-story.ts`, `gif.ts`, GIF-файлы и ключевые кадры | `examples/slidecraft-launch/gif/` (генератор берёт модули SlideCraft только через явный `SLIDECRAFT_ROOT`) | запуск против SlideCraft `4ac9890` воспроизвёл `slidecraft-story.gif` побайтно (одинаковый SHA-256) |
 | Финальная сборка launch-фильма из донора (мастер 154 МБ, голосовой кэш, QA, storyboard, review-кадры) | локально в игнорируемый `examples/slidecraft-launch/.reel/` | файлы скопированы `rsync`; повторный рендер возможен без нового TTS |
 | Web-копия фильма (23,6 МБ), постер, storyboard, QA | релиз GitHub [`slidecraft-launch-2026-10-18`](https://github.com/eiler2005/Storygro/releases/tag/slidecraft-launch-2026-10-18) | ссылка на MP4 отдаёт файл (HTTP 206) |
 | История производства, уроки, распространение | [docs/history/slidecraft-launch.md](../history/slidecraft-launch.md) | без приватных данных |

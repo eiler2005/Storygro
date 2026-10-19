@@ -25,9 +25,9 @@ npx hyperframes init hook-comp --example blank --resolution portrait --non-inter
 ./prepare-assets.sh                                   # copies the 2 fonts + the hook voice take (ignored)
 cd hook-comp && npx hyperframes lint --verbose && npx hyperframes check
 npx hyperframes render --output ../renders/hook-hf.mp4
-# bridge: Storygro's own scenes/headline.js driven by a GSAP clock
+# bridge: Storygro's own production/scenes/headline.js driven by a GSAP clock
 node bridge/build.mjs && npx hyperframes render hook-bridge --output renders/hook-bridge.mp4
-# Storygro baseline: frames()/stills() from src/render.ts on the existing timeline, output here only
+# Storygro baseline: frames()/stills() from production/src/render.ts on the existing timeline, output here only
 node_modules/.bin/tsx experiments/hyperframes-pilot/storygro-baseline/run.ts run1     # from the repo root
 ```
 
@@ -48,7 +48,7 @@ The ~1.3× gain comes from parallel capture, not a faster capture path; with one
 
 - Composition timing in HTML `data-*` attributes (`data-start`, `data-duration`, …); animation as a paused GSAP timeline in `window.__timelines`, seeked by the runtime. Easings map 1:1 (`outQuint` → `power4.out`, `outBack` → `back.out(1.70158)`).
 - Layout is not recomputed per frame: `fitText` ran once on a `document.fonts.load()` promise; the safe box from `box(ctx)` and the cue time (`next` = 3.88 s) were hard-coded — an adapter would inject them.
-- **Bridge:** the unchanged `scenes/headline.js` + `runtime/kit.js`/`paper.js`, bundled with esbuild and driven by `tl.to(clock, { t: D, duration: D, ease: 'none', onUpdate: () => draw(clock.t) })`, rendered correctly after a 3-line "wait for fonts before the first draw" guard. Total glue: 66 lines. Existing scenes can be rendered through HyperFrames without rewriting them.
+- **Bridge:** the unchanged `production/scenes/headline.js` + `production/runtime/kit.js`/`paper.js`, bundled with esbuild and driven by `tl.to(clock, { t: D, duration: D, ease: 'none', onUpdate: () => draw(clock.t) })`, rendered correctly after a 3-line "wait for fonts before the first draw" guard. Total glue: 66 lines. Existing scenes can be rendered through HyperFrames without rewriting them.
 
 ## 5. Manual fixes and gates
 
@@ -62,7 +62,7 @@ Render errors: 0. HyperFrames' own `check` flagged the brand red `#dd4b26` on th
 ## 6. Determinism and seeking
 
 - **HyperFrames:** five renders (auto workers ×3, one worker, vendored GSAP) were byte-identical (MD5 `25b5858d…`); snapshots at the same times in different orders were byte-identical. Docker is offered for cross-machine reproducibility (not tested).
-- **Storygro:** three sequential renders were byte-identical (`ebc598e9…`). Out-of-order PNG stills in fresh tabs differed at the 1-LSB level (PSNR 54–105 dB; the 54 dB frame sits inside a cross-fade) — raster noise hidden by JPEG/x264, cause not found. One transient tab launch failure (`ECONNREFUSED 127.0.0.1:80`, about 1 in 10) — traced afterwards to reading Chrome's `DevToolsActivePort` before it was fully written, fixed in `src/cdp.ts`.
+- **Storygro:** three sequential renders were byte-identical (`ebc598e9…`). Out-of-order PNG stills in fresh tabs differed at the 1-LSB level (PSNR 54–105 dB; the 54 dB frame sits inside a cross-fade) — raster noise hidden by JPEG/x264, cause not found. One transient tab launch failure (`ECONNREFUSED 127.0.0.1:80`, about 1 in 10) — traced afterwards to reading Chrome's `DevToolsActivePort` before it was fully written, fixed in `production/src/cdp.ts`.
 
 ## 7. Fonts, audio, output
 
@@ -72,7 +72,7 @@ Render errors: 0. HyperFrames' own `check` flagged the brand red `#dd4b26` on th
 
 ## 8. Size and parity
 
-- Native composition: 122 lines in one file (the kit helpers inlined). `scenes/headline.js`: 86 lines plus the shared `paper.js` (~140 used lines), `kit.js` (79) and `theme.css` (33).
+- Native composition: 122 lines in one file (the kit helpers inlined). `production/scenes/headline.js`: 86 lines plus the shared `paper.js` (~140 used lines), `kit.js` (79) and `theme.css` (33).
 - SSIM on the top 1200 px (captions excluded): native vs Storygro 0.929–0.942, bridge vs Storygro 0.934–0.942, native vs bridge 0.989–0.999, against a noise floor of 0.940–0.950 between two encodes of the same renderer (paper grain + H.264). Visually the same at 0.3 s, during the stamp slam, at the marker sweep and in the hold — see `frames/compare-hf-left-storygro-right.png`.
 
 ## 9. Better and worse than a DOM scene with `draw(t)` over CDP

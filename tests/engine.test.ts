@@ -4,11 +4,11 @@ import { tmpdir } from 'node:os';
 import { join, resolve } from 'node:path';
 import { test, type TestContext } from 'node:test';
 import { stringify } from 'yaml';
-import { approval, approve } from '../src/board.ts';
-import { serve } from '../src/serve.ts';
-import { captionText, loadSpec, spokenText } from '../src/spec.ts';
-import { subtitleCues, toSrt, toVtt } from '../src/subtitles.ts';
-import { buildTimeline, resolveAt, workDir } from '../src/timeline.ts';
+import { approval, approve } from '../production/src/board.ts';
+import { serve } from '../production/src/serve.ts';
+import { captionText, loadSpec, spokenText } from '../production/src/spec.ts';
+import { subtitleCues, toSrt, toVtt } from '../production/src/subtitles.ts';
+import { buildTimeline, resolveAt, workDir } from '../production/src/timeline.ts';
 
 const root = resolve(import.meta.dirname, '..');
 const example = join(root, 'examples/slidecraft-launch/reel.yaml');
@@ -52,7 +52,7 @@ test('runtime, all built-in scenes, custom scenes and bundled assets are served 
   }
   const paths = new Set([
     '/rc/runtime/index.html', '/rc/runtime/player.js', '/rc/runtime/kit.js',
-    ...files(join(root, 'scenes'), '/rc/scenes'),
+    ...files(join(root, 'production/scenes'), '/rc/scenes'),
     ...tl.scenes.map(s => s.module), tl.theme!, tl.overlay!,
     ...files(join(l.dir, 'assets'), '/spec/assets'),
   ]);

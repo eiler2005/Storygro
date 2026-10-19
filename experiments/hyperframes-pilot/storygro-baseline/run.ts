@@ -5,9 +5,9 @@
 import { mkdirSync, readFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { frames, stills } from '../../../src/render.ts';
-import { loadSpec } from '../../../src/spec.ts';
-import type { Timeline } from '../../../src/timeline.ts';
+import { frames, stills } from '../../../production/src/render.ts';
+import { loadSpec } from '../../../production/src/spec.ts';
+import type { Timeline } from '../../../production/src/timeline.ts';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const l = loadSpec(join(here, '../../../examples/ai-jobs/ru.reel.yaml'));

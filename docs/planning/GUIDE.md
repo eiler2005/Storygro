@@ -29,7 +29,7 @@ npm run storygro -- render  examples/ai-jobs/ru.reel.yaml   # MP4, SRT/VTT, об
 
 > Сделай explainer по теме «[тема]» для «[аудитория]» на русском и английском, 9:16, 60–90 секунд. После просмотра человек должен понять «[одна мысль]». Сначала собери актуальные источники с цитатами, каждое число — с источником. Покажи механизм через повторяющиеся объекты. Используй сцены «бумажной аппликации» и мужской голос. Остановись после storyboard, чтобы я его утвердил.
 
-Агент создаёт `content/episodes/<id>/`: `sources.md` → `facts.json` → `ru.reel.yaml` и `en.reel.yaml` (отдельные сценарии, не перевод) → при необходимости `DIRECTION.md` → озвучка → кадры с `--guides` → storyboard. Правила сценария — [writing-a-reel](../writing-a-reel.md), сцены — [каталог](../scenes.md).
+Агент создаёт `content/videos/<id>/`: `sources.md` → `facts.json` → `ru.reel.yaml` и `en.reel.yaml` (отдельные сценарии, не перевод) → при необходимости `DIRECTION.md` → озвучка → кадры с `--guides` → storyboard. Правила сценария — [writing-a-reel](../writing-a-reel.md), сцены — [каталог](../scenes.md).
 
 ## 4. Голос рассказчика — доступно
 
@@ -38,7 +38,7 @@ npm run storygro -- render  examples/ai-jobs/ru.reel.yaml   # MP4, SRT/VTT, об
 Один раз спроектировать синтетический голос и использовать его во всех сценах:
 
 ```sh
-~/.storygro/venv/bin/python py/design_voice.py examples/<эпизод>/assets/voice/narrator-ru.wav --lang ru --seed 7 \
+~/.storygro/venv/bin/python production/py/design_voice.py examples/<эпизод>/assets/voice/narrator-ru.wav --lang ru --seed 7 \
   --instruct "Calm, warm adult male narrator, native Russian speaker, standard literary pronunciation, documentary tone"
 ```
 
@@ -64,7 +64,7 @@ npm run storygro -- package  examples/ai-jobs/episode.yaml       # все вар
 ## 8. Выбрать следующую тему — доступно
 
 ```sh
-npm run storygro -- trends content/ideas/trends.yaml --out content/.signals/latest.json
+npm run storygro -- trends production/trends/sources.yaml --out content/.signals/latest.json
 npm run storygro -- ideas content/ideas/backlog.yaml --out content/.signals/ranked.json
 ```
 

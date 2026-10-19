@@ -58,15 +58,15 @@
 2. Перед началом документирования уже существовали изменения `.gitignore`, `biome.json` и весь `reelcraft/`. Не приписывать их текущей работе, не сбрасывать и не коммитить автоматически вместе с документами.
 3. `reelcraft/examples/slidecraft-launch/assets.ts` импортирует внутренние модули SlideCraft, использует его примеры и копирует шрифты. Независимость ядра не означает независимость этого генератора.
 4. Несколько сцен рассчитаны на горизонтальные размеры. Возможность задать width/height в спецификации ещё не обеспечивает качественную вертикальную композицию.
-5. `py/asr.py` содержит `mlx-community/whisper-small.en-mlx` и `language="en"`. Нормализация текста в QA ориентирована на латиницу. RU и переносимость за пределы Apple Silicon требуют отдельной работы.
+5. `production/py/asr.py` содержит `mlx-community/whisper-small.en-mlx` и `language="en"`. Нормализация текста в QA ориентирована на латиницу. RU и переносимость за пределы Apple Silicon требуют отдельной работы.
 6. Пакет имеет `private: true` и `license: UNLICENSED`. Выбор владельца для Storygro — пока не назначать лицензию.
 7. Отдельного зрелого набора тестов прототипа в исследованной структуре не найдено; нельзя переносить уверенность от тестов основного SlideCraft.
 
 ### Дополнительные материалы
 
-- `scripts/launch/media.ts`: изображения для запуска продукта, social preview и иконка.
-- `scripts/launch/story.ts`, `gif-story.ts`, `gif.ts`: сценарии/генерация launch-GIF.
-- `scripts/launch/ph-watch.ts`: наблюдение за голосами, комментариями и позицией Product Hunt; не готовая аналитика Instagram/YouTube.
+- `production/scripts/launch/media.ts`: изображения для запуска продукта, social preview и иконка.
+- `production/scripts/launch/story.ts`, `gif-story.ts`, `gif.ts`: сценарии/генерация launch-GIF.
+- `production/scripts/launch/ph-watch.ts`: наблюдение за голосами, комментариями и позицией Product Hunt; не готовая аналитика Instagram/YouTube.
 - [eiler2005/tg-media-saver](https://github.com/eiler2005/tg-media-saver): сохранение доступных медиаматериалов Telegram. Возможный вспомогательный инструмент подготовки исходников, не часть обязательного ядра.
 
 ## 2. Пользовательские референсы

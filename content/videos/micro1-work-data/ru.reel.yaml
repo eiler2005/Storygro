@@ -1,0 +1,171 @@
+reel: 1
+title: Зачем micro1 покупает рабочие данные компаний
+lang: ru
+format: { preset: vertical, fps: 30 }
+voice: { engine: kokoro, voice: dima, speed: 1.0 }
+music: { bpm: 108, key: D, progression: [vi, IV, I, V], gain: 0.23 }
+loudness: -14
+theme: theme.css
+data: { facts: facts.json }
+captions: { show: true, maxWords: 4 }
+transition: { kind: cut, dur: 0 }
+stills: { cover: hook, budget: budget, mechanism: environment, prices: pricing }
+post:
+  title: Зачем micro1 покупает рабочие данные компаний
+  text: |
+    Внутри рабочих папок — регламенты, исключения и решения. Такие материалы становятся сырьём для обучения ИИ-агентов.
+
+    По мотивам поста, присланного владельцем Storygro; фактчек по первоисточникам micro1. Заявленный бюджет — план компании, не подтверждение уже совершённых расходов. Ценовые уровни программы зависят от отбора и свойств данных. Сценка сверки платежа — учебная иллюстрация.
+
+    Вывод о том, какие процессы изучать предпринимателю, — авторская гипотеза. Покупка данных не доказывает готовность автоматизации или будущую прибыльность.
+
+    Источники: https://www.micro1.ai/blog/micro1-commits-1b-to-enterprise-data-acquisition и https://www.micro1.ai/data-partnerships. Подробные границы утверждений — в sources.md репозитория Storygro.
+
+    Голос синтезирован Kokoro-RU Dima. Персонажи сгенерированы; визуальная сцена и текст оригинальные. Кадры, голос и музыка автора YouTube-референса не использованы.
+  tags: [ИИ, бизнес, агенты, данные, автоматизация]
+scenes:
+  - id: hook
+    scene: collage
+    say: 'Зачем лаборатории искусственного интеллекта платить {#folders}за ваши рабочие папки?'
+    pad: [0.15, 0.55]
+    energy: 0.6
+    sfx: [{ at: folders, kind: hit, gain: 0.45 }]
+    props:
+      layers:
+        - { kind: text, text: "ВАШИ ПАПКИ\nНУЖНЫ ИИ?", x: 0, y: 0.02, w: 1, h: 0.26, size: 82, at: -1, enter: pop }
+        - { kind: label, text: 'ЗА ЭТО ПЛАТЯТ', x: 0.03, y: 0.32, w: 0.94, h: 0.13, at: folders, size: 54, background: blue, rotate: -3, enter: drop }
+        - { kind: image, srcFrom: facts.assets.analyst, x: -0.03, y: 0.45, w: 0.80, h: 0.50, at: -1, enter: left }
+        - { kind: image, srcFrom: facts.assets.robot, x: 0.54, y: 0.47, w: 0.49, h: 0.48, at: folders, enter: right }
+  - id: budget
+    scene: collage
+    say: >-
+      Компания [micro1](=майкро уан) объявила: {#money}миллиард долларов на покупку и лицензирование
+      данных компаний. Срок — [12](=двенадцать) месяцев. {#plan}Это заявленный план будущих расходов.
+    pad: [0.15, 0.55]
+    energy: 0.7
+    sfx: [{ at: money, kind: thud, gain: 0.5 }, { at: plan, kind: tick, gain: 0.3 }]
+    props:
+      layers:
+        - { kind: label, textFrom: facts.company, x: 0.23, y: 0.02, w: 0.54, h: 0.11, at: -1, size: 56, rotate: -2 }
+        - { kind: text, textFrom: facts.announcement.budget, x: 0, y: 0.20, w: 1, h: 0.21, at: money, size: 110, color: blue, enter: pop }
+        - { kind: text, textFrom: facts.announcement.horizon, x: 0.02, y: 0.43, w: 0.96, h: 0.12, at: money, size: 46 }
+        - { kind: label, text: 'ЗАЯВЛЕННЫЙ ПЛАН', x: 0.01, y: 0.62, w: 0.98, h: 0.13, at: plan, size: 43, background: blue, rotate: 2, enter: drop }
+        - { kind: text, textFrom: facts.announcement.sourceLabel, x: 0.02, y: 0.84, w: 0.96, h: 0.06, at: -1, size: 25, color: muted }
+  - id: records
+    scene: collage
+    say: >-
+      В списке — регламенты, история проектов, данные продаж {#finance}и бухгалтерские сверки.
+      Ценность — в том, как работа проходит на практике.
+    pad: [0.15, 0.55]
+    energy: 0.5
+    sfx: [{ at: finance, kind: pop, gain: 0.35 }]
+    props:
+      layers:
+        - { kind: text, text: 'КАК УСТРОЕНА РАБОТА', x: 0, y: 0, w: 1, h: 0.18, at: -1, size: 65, enter: pop }
+        - kind: panel
+          title: Рабочие материалы
+          x: 0.01
+          y: 0.28
+          w: 0.98
+          h: 0.49
+          at: -1
+          rotate: -2
+          rows:
+            - { text: Регламенты и проекты, at: 0.2 }
+            - { text: Продажи и решения, at: 1.2 }
+            - { text: Сверки и согласования, at: finance, color: blue }
+        - { kind: label, text: 'ОПЫТ ВНУТРИ ДАННЫХ', x: 0.02, y: 0.84, w: 0.96, h: 0.11, at: finance, size: 39, background: blue, rotate: 2 }
+  - id: environment
+    scene: collage
+    say: >-
+      Из обезличенных данных компания строит {#training}тренировочные среды для агентов.
+      Там нужно проходить рабочие процессы, {#choice}принимать решения и справляться с исключениями.
+    pad: [0.15, 0.55]
+    energy: 0.6
+    sfx: [{ at: training, kind: ding, gain: 0.35 }]
+    props:
+      layers:
+        - { kind: label, text: 'ТРЕНАЖЁР РАБОТЫ', x: 0.01, y: 0.03, w: 0.98, h: 0.13, at: -1, size: 48, background: blue, rotate: -2 }
+        - { kind: image, srcFrom: facts.assets.robot, x: -0.03, y: 0.23, w: 0.59, h: 0.57, at: training, enter: left }
+        - kind: panel
+          title: Задание агенту
+          x: 0.34
+          y: 0.38
+          w: 0.65
+          h: 0.40
+          at: training
+          rotate: 3
+          rows:
+            - { text: Пройти процесс, at: training }
+            - { text: Найти исключение, at: choice, color: red }
+            - { text: Принять решение, at: choice, color: blue }
+        - { kind: text, text: 'ДАННЫЕ → СРЕДА → ДЕЙСТВИЕ', x: 0, y: 0.88, w: 1, h: 0.09, at: choice, size: 35 }
+  - id: example
+    scene: collage
+    say: >-
+      Представьте сверку платежа: сумма есть, {#missing}назначение неполное, документы расходятся.
+      Одного расчёта мало. {#next}Нужно понять, что проверить дальше.
+    pad: [0.15, 0.6]
+    energy: 0.4
+    sfx: [{ at: missing, kind: scratch, gain: 0.4 }, { at: next, kind: pop, gain: 0.3 }]
+    props:
+      layers:
+        - { kind: label, textFrom: facts.illustration.label, x: 0.08, y: 0.02, w: 0.84, h: 0.10, at: -1, size: 39, background: ink, rotate: -2 }
+        - kind: panel
+          title: Сверка платежа
+          x: 0.01
+          y: 0.25
+          w: 0.98
+          h: 0.48
+          at: -1
+          rotate: -2
+          rows:
+            - { text: Сумма указана, at: 0.1, color: teal }
+            - { text: Назначение неполное, at: missing, color: red }
+            - { text: Документы расходятся, at: missing, color: red }
+        - { kind: label, text: 'ЧТО ПРОВЕРИТЬ ДАЛЬШЕ?', x: 0.01, y: 0.82, w: 0.98, h: 0.13, at: next, size: 39, background: blue, rotate: 2, enter: drop }
+  - id: pricing
+    scene: collage
+    say: >-
+      На странице программы — {#base}от ста тысяч долларов за подходящее партнёрство,
+      {#unique}миллион плюс — за особо уникальные данные. {#conditions}Сумму определяют после оценки.
+    pad: [0.15, 0.65]
+    energy: 0.65
+    sfx: [{ at: base, kind: tick, gain: 0.3 }, { at: unique, kind: ding, gain: 0.35 }]
+    props:
+      layers:
+        - { kind: text, text: 'СКОЛЬКО В ПРОГРАММЕ?', x: 0, y: 0, w: 1, h: 0.18, at: -1, size: 63, enter: pop }
+        - { kind: label, textFrom: facts.partnerships.qualified, x: 0.03, y: 0.29, w: 0.94, h: 0.15, at: base, size: 60, background: blue, rotate: -2 }
+        - { kind: text, text: 'ПОДХОДЯЩЕЕ ПАРТНЁРСТВО', x: 0.03, y: 0.45, w: 0.94, h: 0.07, at: base, size: 30 }
+        - { kind: label, textFrom: facts.partnerships.unique, x: 0.05, y: 0.59, w: 0.90, h: 0.15, at: unique, size: 69, rotate: 2, background: ink, enter: pop }
+        - { kind: text, text: 'ОСОБО УНИКАЛЬНЫЕ ДАННЫЕ', x: 0.03, y: 0.76, w: 0.94, h: 0.07, at: unique, size: 28 }
+        - { kind: text, text: 'После оценки · выплаты не гарантированы', x: 0, y: 0.89, w: 1, h: 0.08, at: conditions, size: 28, color: muted }
+  - id: opportunity
+    scene: collage
+    say: >-
+      Для предпринимателя это {#signal}сигнал изучать конкретный процесс: где теряется время,
+      кто платит, как проверяют результат. {#proof}Спрос на данные ещё не доказывает готовность автоматизации.
+    pad: [0.15, 0.6]
+    energy: 0.5
+    sfx: [{ at: signal, kind: pop, gain: 0.35 }]
+    props:
+      layers:
+        - { kind: text, text: "ИЩИТЕ\nКОНКРЕТНЫЙ\nПРОЦЕСС", x: 0, y: 0, w: 1, h: 0.31, at: -1, size: 74, color: blue, enter: pop }
+        - { kind: image, srcFrom: facts.assets.analyst, x: 0.05, y: 0.32, w: 0.90, h: 0.42, at: signal, enter: left }
+        - { kind: label, text: 'СПРОС — СИГНАЛ', x: 0.02, y: 0.78, w: 0.96, h: 0.12, at: proof, size: 48, background: ink, rotate: -2 }
+        - { kind: text, text: 'Авторская гипотеза о возможностях', x: 0, y: 0.93, w: 1, h: 0.06, at: signal, size: 24, color: muted }
+  - id: outro
+    scene: collage
+    say: >-
+      За эти деньги покупают знания о том, {#work}как устроена работа.
+      Начните с одного процесса. {#save}Соберите примеры. Проверьте результат.
+    pad: [0.15, 1.25]
+    energy: 0.45
+    sfx: [{ at: save, kind: chime, gain: 0.35 }]
+    props:
+      layers:
+        - { kind: label, text: 'ЦЕННОСТЬ — В ОПЫТЕ', x: 0.02, y: 0.02, w: 0.96, h: 0.13, at: -1, size: 48, background: blue, rotate: -2, enter: pop }
+        - { kind: text, text: "КАК ДЕЛАЕТСЯ\nРАБОТА", x: 0, y: 0.24, w: 1, h: 0.24, at: work, size: 76, enter: drop }
+        - { kind: image, srcFrom: facts.assets.analyst, x: -0.02, y: 0.48, w: 0.72, h: 0.42, at: -1, enter: left }
+        - { kind: image, srcFrom: facts.assets.robot, x: 0.53, y: 0.51, w: 0.48, h: 0.40, at: -1, enter: right }
+        - { kind: label, text: 'СОБЕРИТЕ ПРИМЕРЫ', x: 0.03, y: 0.92, w: 0.94, h: 0.08, at: save, size: 32, enter: rise }

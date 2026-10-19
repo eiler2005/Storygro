@@ -1,0 +1,19 @@
+{
+  "company": "micro1",
+  "announcement": {
+    "budget": "$1 МЛРД",
+    "horizon": "НА 12 МЕСЯЦЕВ",
+    "sourceLabel": "micro1 · анонс 09.10.2026",
+    "source": "https://www.micro1.ai/blog/micro1-commits-1b-to-enterprise-data-acquisition",
+    "status": "Announced commitment, not verified expenditure. Acquisition and licensing, not unrestricted purchase of all data."
+  },
+  "partnerships": {
+    "qualified": "ОТ $100 ТЫС.",
+    "unique": "$1 МЛН+",
+    "sourceLabel": "micro1 · условия программы",
+    "source": "https://www.micro1.ai/data-partnerships",
+    "status": "Published tiers for qualified partnerships and highly unique data; individual evaluation, not guaranteed payouts."
+  },
+  "assets": { "analyst": "assets/analyst.png", "robot": "assets/robot.png" },
+  "illustration": { "label": "УЧЕБНЫЙ ПРИМЕР", "source": "Author-created payment reconciliation scenario; not micro1 customer records or an actual model benchmark." }
+}

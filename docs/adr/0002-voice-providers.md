@@ -9,7 +9,7 @@ The extracted engine narrated English only (Kokoro-82M) and assumed Kokoro word 
 
 ## Decision
 
-1. **A provider interface in Python** (`py/voices/<engine>.py`): providers return audio and, if they can, word timings. `py/voice.py` keeps the script syntax (cues, pauses, say-as, stress) and aligns providers without timings to the script with Whisper word timestamps. Each line records engine, model, voice, licence, timing method and the share of words aligned exactly.
+1. **A provider interface in Python** (`production/py/voices/<engine>.py`): providers return audio and, if they can, word timings. `production/py/voice.py` keeps the script syntax (cues, pauses, say-as, stress) and aligns providers without timings to the script with Whisper word timestamps. Each line records engine, model, voice, licence, timing method and the share of words aligned exactly.
 2. **Engines shipped:** `kokoro` (English baseline, unchanged timings), `qwen3` (Qwen3-TTS 1.7B through mlx-audio, cloned from a designed reference clip so one narrator speaks every scene), `silero` (Silero CIS base, MIT, explicit stress control), `none`.
 3. **Default for the example:** a designed male narrator on `qwen3` for both languages (the owner asked for a male voice).
 

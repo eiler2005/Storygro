@@ -1,6 +1,6 @@
 # SlideCraft launch GIF (archived)
 
-The 30-second explainer GIF that headed SlideCraft's README and Product Hunt gallery before the narrated film. Moved here from SlideCraft `scripts/launch/` and `docs/media/launch/` on 2026-10-18. Production record: [docs/history/slidecraft-launch.md](../../../docs/history/slidecraft-launch.md).
+The 30-second explainer GIF that headed SlideCraft's README and Product Hunt gallery before the narrated film. Moved here from SlideCraft `production/scripts/launch/` and `docs/media/launch/` on 2026-10-18. Production record: [docs/history/slidecraft-launch.md](../../../docs/history/slidecraft-launch.md).
 
 | File | What |
 |---|---|

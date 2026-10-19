@@ -1,0 +1,146 @@
+reel: 1
+title: Код пишет ИИ. Кто отвечает за ошибку?
+lang: ru
+format: { preset: vertical, fps: 30 }
+voice: { engine: kokoro, voice: dima, speed: 1.0 }
+music: { bpm: 104, key: D, progression: [vi, IV, I, V], gain: 0.25 }
+loudness: -14
+theme: theme.css
+data: { facts: facts.json }
+captions: { show: true, maxWords: 4 }
+transition: { kind: cut, dur: 0 }
+stills: { cover: hook, bug: bug, review: review }
+post:
+  title: Код готов. А проверка?
+  text: |
+    ИИ-агент может написать код и запустить приложение. Проверка должна быть частью задания.
+
+    В учебном примере форма принимает правильный адрес, но пропускает и пустую строку. Обычный сценарий выглядит рабочим — ошибка видна на граничном случае. Пример иллюстративный, не статистика ошибок какой-либо модели.
+
+    Задавайте критерии приёмки, требуйте результатов тестов и проверяйте изменения перед выпуском. Основание: Anthropic, Building effective agents, и актуальная документация Claude Code, Best practices. Подробности и воспроизводимый пример — в sources.md.
+
+    Оригинальная постановка Storygro по визуальным приёмам редакционного коллажа. Изображения персонажей сгенерированы; голос синтезирован Kokoro-RU Dima. Материалы и голос автора референса не использованы.
+  tags: [ИИ, программирование, агенты, разработка, качествокода]
+scenes:
+  - id: hook
+    scene: collage
+    say: 'Код написал искусственный интеллект. {#who}А ошибку заметит кто?'
+    pad: [0.2, 0.7]
+    energy: 0.45
+    sfx: [{ at: who, kind: hit, gain: 0.45 }]
+    props:
+      layers:
+        - { kind: text, text: 'КОД ГОТОВ.', x: 0, y: 0.04, w: 1, h: 0.17, size: 88, at: -1, enter: pop }
+        - { kind: label, text: 'А ПРОВЕРКА?', x: 0.05, y: 0.24, w: 0.9, h: 0.13, size: 58, at: who, rotate: -3, background: blue, enter: drop }
+        - { kind: image, srcFrom: facts.assets.developer, x: -0.03, y: 0.40, w: 0.84, h: 0.52, at: -1, enter: left }
+        - { kind: image, srcFrom: facts.assets.robot, x: 0.51, y: 0.43, w: 0.52, h: 0.50, at: who, rotate: 4, enter: right }
+  - id: generate
+    scene: collage
+    say: >-
+      Агент собирает функцию, запускает приложение — и сообщает, {#ready}что всё готово.
+      Выглядит убедительно. {#check}Но приложение ещё нужно проверить.
+    pad: [0.2, 0.6]
+    energy: 0.6
+    sfx: [{ at: ready, kind: ding, gain: 0.4 }]
+    props:
+      layers:
+        - { kind: label, text: '«ВСЁ ГОТОВО»', x: 0.05, y: 0.02, w: 0.9, h: 0.13, at: -1, size: 62, rotate: -2, enter: pop }
+        - kind: panel
+          title: Сообщение агента
+          x: 0.01
+          y: 0.24
+          w: 0.98
+          h: 0.36
+          at: -1
+          rotate: 2
+          rows:
+            - { text: Функция написана, at: 0.2, color: blue }
+            - { text: Приложение запущено, at: 1.5, color: blue }
+            - { text: Можно выпускать?, at: check, color: red }
+        - { kind: image, srcFrom: facts.assets.robot, x: 0.40, y: 0.53, w: 0.61, h: 0.43, at: ready, enter: right }
+        - { kind: arrow, x: 0.05, y: 0.64, w: 0.25, h: 0.17, at: check, rotate: -18 }
+  - id: bug
+    scene: collage
+    say: >-
+      Например, форма принимает правильный адрес. {#empty}А пустую строку тоже пропускает.
+      {#logic}Красивый экран скрывает ошибку в логике.
+    pad: [0.2, 0.7]
+    energy: 0.35
+    sfx: [{ at: empty, kind: scratch, gain: 0.55 }, { at: logic, kind: thud, gain: 0.4 }]
+    props:
+      layers:
+        - { kind: text, text: "ВЫГЛЯДИТ\nРАБОЧИМ.", x: 0, y: 0.02, w: 1, h: 0.23, size: 76, at: -1, enter: pop }
+        - kind: panel
+          title: Учебный пример · форма
+          x: 0.01
+          y: 0.33
+          w: 0.98
+          h: 0.36
+          at: -1
+          rotate: -2
+          rows:
+            - { textFrom: facts.demo.normal, at: 0.3, color: teal }
+            - { textFrom: facts.demo.empty, at: empty, color: red }
+        - { kind: label, text: 'ОШИБКА В ЛОГИКЕ', x: 0.02, y: 0.77, w: 0.96, h: 0.13, size: 44, at: logic, background: red, rotate: 3, enter: drop }
+  - id: review
+    scene: collage
+    say: >-
+      Здесь и меняется работа разработчика. {#cases}Поставить условия, проверить крайние случаи,
+      понять последствия. {#human}Тесты помогают. Решение за человека они не принимают.
+    pad: [0.2, 0.65]
+    energy: 0.5
+    sfx: [{ at: cases, kind: pop, gain: 0.4 }]
+    props:
+      layers:
+        - { kind: label, text: 'РАБОТА МЕНЯЕТСЯ', x: 0.01, y: 0.02, w: 0.98, h: 0.13, size: 47, at: -1, enter: pop, rotate: -2 }
+        - { kind: image, srcFrom: facts.assets.developer, x: 0.03, y: 0.18, w: 0.94, h: 0.50, at: -1, enter: left }
+        - kind: panel
+          title: Задача разработчика
+          x: 0.10
+          y: 0.60
+          w: 0.88
+          h: 0.35
+          at: cases
+          rotate: 2
+          rows:
+            - { text: Задать условия, at: cases }
+            - { text: Проверить границы, at: cases }
+            - { text: Понять последствия, at: human, color: blue }
+  - id: gate
+    scene: collage
+    say: >-
+      Поэтому задайте агенту {#criteria}критерии приёмки. Пусть показывает результат проверок,
+      а не только уверенный ответ. {#review}А перед выпуском проверьте изменения сами.
+    pad: [0.2, 0.65]
+    energy: 0.6
+    sfx: [{ at: criteria, kind: tick, gain: 0.4 }, { at: review, kind: chime, gain: 0.4 }]
+    props:
+      layers:
+        - { kind: text, text: "КРИТЕРИИ →\nПРОВЕРКА →\nВЫПУСК", x: 0, y: 0, w: 1, h: 0.31, size: 68, at: -1, enter: pop, color: blue }
+        - kind: panel
+          title: Пример после исправления
+          x: 0.01
+          y: 0.40
+          w: 0.98
+          h: 0.32
+          at: criteria
+          rotate: -2
+          rows:
+            - { textFrom: facts.demo.normal, at: criteria, color: teal }
+            - { textFrom: facts.demo.fixed, at: review, color: teal }
+        - { kind: label, text: 'ПОКАЖИ ПРОВЕРКУ', x: 0.03, y: 0.81, w: 0.94, h: 0.13, at: review, rotate: 2, background: blue, size: 44, enter: drop }
+  - id: outro
+    scene: collage
+    say: >-
+      Код можно поручить модели. {#quality}Критерии качества и проверку тоже нужно кому-то продумать.
+      {#save}Сохраните как правило работы с агентом.
+    pad: [0.2, 1.6]
+    energy: 0.45
+    sfx: [{ at: save, kind: chime, gain: 0.4 }]
+    props:
+      layers:
+        - { kind: label, text: 'КОД МОЖНО ПОРУЧИТЬ.', x: 0, y: 0.03, w: 1, h: 0.14, at: -1, size: 44, rotate: -2, background: blue, enter: pop }
+        - { kind: text, text: "ПРОВЕРКУ\nНУЖНО\nПРОДУМАТЬ.", x: 0, y: 0.23, w: 1, h: 0.33, size: 74, at: quality, enter: drop }
+        - { kind: image, srcFrom: facts.assets.developer, x: -0.02, y: 0.52, w: 0.70, h: 0.40, at: -1, enter: left }
+        - { kind: image, srcFrom: facts.assets.robot, x: 0.52, y: 0.53, w: 0.48, h: 0.40, at: -1, enter: right }
+        - { kind: label, text: 'СОХРАНИ ЭТО ПРАВИЛО', x: 0.06, y: 0.92, w: 0.88, h: 0.08, at: save, size: 32, background: ink, enter: rise }

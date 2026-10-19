@@ -16,7 +16,7 @@ Read [the handoff](docs/planning/HANDOFF.md), [architecture](docs/architecture.m
 - Social publication is a future explicit operation with a named destination and release. Local `deliver` and `package` are not publication.
 - Every on-screen number lives in a data file with a quoted source (`sources.md`); never type numbers into scenes. Label predictions as predictions and keep the source's caveats.
 - Narration is synthetic: disclose it in post texts. Never clone a real person's voice without their written consent. Model-provided voices may come from consented human performers; preserve accurate provenance rather than claiming no real person supplied the voice. Check model terms ([voices](docs/voices.md)).
-- New production content belongs in `content/episodes/<id>/`; examples remain regression/reference material. Use `content/ideas/` and the `ideas`/`trends` commands for editorial selection. Signals are not proof of claims or a forecast of reach.
+- New production content belongs in `content/videos/<id>/`; examples remain regression/reference material. Use `content/ideas/` and the `ideas`/`trends` commands for editorial selection. Signals are not proof of claims or a forecast of reach.
 - Changing scene code, theme, facts or assets resets the storyboard approval; re-render after the last change before packaging.
 - Technical documentation and architecture labels use English; the product planning and handoff remain in Russian. User content keeps its intended language.
 

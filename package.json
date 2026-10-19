@@ -6,13 +6,13 @@
   "type": "module",
   "license": "PolyForm-Shield-1.0.0",
   "bin": {
-    "storygro": "src/cli.ts"
+    "storygro": "production/src/cli.ts"
   },
   "scripts": {
-    "setup": "sh scripts/setup.sh",
-    "setup:ru": "sh scripts/setup.sh ru",
-    "storygro": "tsx src/cli.ts",
-    "reel": "tsx src/cli.ts",
+    "setup": "sh production/scripts/setup.sh",
+    "setup:ru": "sh production/scripts/setup.sh ru",
+    "storygro": "tsx production/src/cli.ts",
+    "reel": "tsx production/src/cli.ts",
     "typecheck": "tsc --noEmit",
     "test": "node --import tsx --test tests/*.test.ts",
     "check": "npm run typecheck && npm test"

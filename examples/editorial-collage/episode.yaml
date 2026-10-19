@@ -1,0 +1,8 @@
+episode: 1
+id: code-and-accountability
+title: Код пишет ИИ. Кто отвечает за ошибку?
+series: editorial-collage
+sources: sources.md
+credits: CREDITS.md
+variants:
+  - { id: ru, spec: ru.reel.yaml }

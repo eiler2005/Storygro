@@ -1,6 +1,6 @@
 # Workflows
 
-For editorial selection before these production steps, use [ideas and trends](ideas.md). New production projects live in [content/](../content/README.md); the current Russian business example is [future-of-work](../content/episodes/future-of-work/README.md). The complete component/product inventory is [technology](technology.md).
+For editorial selection before these production steps, use [ideas and trends](ideas.md). New production projects live in [content/](../content/README.md); the current Russian business example is [future-of-work](../content/videos/future-of-work/README.md). The complete component/product inventory is [technology](technology.md).
 
 > **Audience:** people and AI agents producing content with Storygro · **Status:** v0.2 (October 2026)
 
@@ -100,7 +100,7 @@ Changing the script re-times everything from the voice; changing scene code, the
 
 ```sh
 npm run setup:ru
-~/.storygro/venv/bin/python py/design_voice.py examples/<ep>/assets/voice/narrator-en.wav --lang en --seed 7 \
+~/.storygro/venv/bin/python production/py/design_voice.py examples/<ep>/assets/voice/narrator-en.wav --lang en --seed 7 \
   --instruct "Calm, warm adult male narrator, native General American English, clear diction, documentary tone"
 ```
 
@@ -109,8 +109,8 @@ Then `voice: { engine: qwen3, voice: assets/voice/narrator-en.wav }`. Compare ca
 ## 6. A new scene
 
 1. Prefer props on an existing scene; write a new module only when the explanation needs a new visual mechanism.
-2. One-off scenes live next to the reel (`examples/<ep>/scenes/x.js`); reusable ones in `scenes/`.
-3. Follow the [scene contract](scene-contract.md): `mount(root, ctx)` builds the DOM and returns `draw(t)`, a pure function of time. Use `runtime/kit.js` and, for the cut-paper look, `runtime/paper.js`.
+2. One-off scenes live next to the reel (`examples/<ep>/scenes/x.js`); reusable ones in `production/scenes/`.
+3. Follow the [scene contract](scene-contract.md): `mount(root, ctx)` builds the DOM and returns `draw(t)`, a pure function of time. Use `production/runtime/kit.js` and, for the cut-paper look, `production/runtime/paper.js`.
 4. Check it with stills at every cue, at 9:16 and with `--guides`; add it to the [catalog](scenes.md).
 
 ## 7. The historical SlideCraft launch film and GIF
@@ -130,4 +130,4 @@ Today the last automated step is `package`. The review checklist is in [quality]
 
 ## Roles for agents
 
-[`agents/`](../agents/) describes three responsibilities — **director** (story, script, direction, review of stills and storyboard), **scene-builder** (scene modules against the direction and contract) and **qa** (gates and the fix loop). They are a division of responsibility, not an instruction to run several agents; one agent can play all three in turn.
+[`agents/`](../agents) describes three responsibilities — **director** (story, script, direction, review of stills and storyboard), **scene-builder** (scene modules against the direction and contract) and **qa** (gates and the fix loop). They are a division of responsibility, not an instruction to run several agents; one agent can play all three in turn.

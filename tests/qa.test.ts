@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
-import { heardInRange, similarity } from '../src/qa.ts';
+import { heardInRange, similarity } from '../production/src/qa.ts';
 
 test('a segment crossing a scene boundary does not lose the next scene first words', () => {
   const segments = [{ start: 37.1, end: 43.44, text: 'интеллект помогает В Соединённых Штатах', words: [

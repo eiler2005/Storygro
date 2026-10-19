@@ -1,0 +1,131 @@
+{
+  "checkedAt": "2026-10-19T08:48:21.856Z",
+  "topic": "micro1-work-data",
+  "status": "ready-for-owner-review",
+  "socialPublished": false,
+  "inputHash": "5b6102800cf0",
+  "duration": 77.13,
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "scenes": 8,
+  "voice": "Kokoro-RU Dima",
+  "checks": [
+    {
+      "name": "Codec and pixels",
+      "status": "pass",
+      "detail": "h264, yuv420p"
+    },
+    {
+      "name": "Size",
+      "status": "pass",
+      "detail": "1080×1920"
+    },
+    {
+      "name": "Audio track",
+      "status": "pass",
+      "detail": "Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 196 kb/s (default)"
+    },
+    {
+      "name": "Length",
+      "status": "pass",
+      "detail": "77.13 s (planned 77.13 s)"
+    },
+    {
+      "name": "Loudness",
+      "status": "pass",
+      "detail": "-14 LUFS integrated (target -14), true peak -1.2 dBFS"
+    },
+    {
+      "name": "Frame 0 is a hook",
+      "status": "pass",
+      "detail": "contrast 1247 (needs content, not a black frame)"
+    },
+    {
+      "name": "No black stretches",
+      "status": "pass",
+      "detail": "none ≥ 0.4 s"
+    },
+    {
+      "name": "Scenes render without errors",
+      "status": "pass",
+      "detail": "8 scenes, missing images/fonts included"
+    },
+    {
+      "name": "Numbers come from the facts",
+      "status": "pass",
+      "detail": "8 scenes read"
+    },
+    {
+      "name": "Text clear of platform UI (vertical)",
+      "status": "pass",
+      "detail": "every cue checked"
+    },
+    {
+      "name": "Whisper hears the script",
+      "status": "pass",
+      "detail": "every scene ≥ 85% of its words (lowest 94%)"
+    }
+  ],
+  "development": {
+    "npmCi": true,
+    "typecheck": "pass",
+    "tests": {
+      "passed": 22,
+      "failed": 0,
+      "skipped": 0
+    },
+    "legacyCommand": "pass",
+    "experimentalBridgeImport": "pass",
+    "trendSources": [
+      {
+        "source": "wikipedia-ru",
+        "date": "2026-10-16",
+        "status": "ok"
+      },
+      {
+        "source": "wikipedia-en",
+        "date": "2026-10-16",
+        "status": "ok"
+      },
+      {
+        "source": "hacker-news",
+        "date": "2026-10-19",
+        "status": "ok"
+      }
+    ]
+  },
+  "audioListening": "not performed; ASR and instrumental checks only",
+  "files": [
+    {
+      "path": ".reel/ru/micro1-work-data-ru.mp4",
+      "bytes": 11545673,
+      "sha256": "e2615dc985e3a135de2bb441c4575056ebb171e0580d680d5343b80c5c5f7b3e"
+    },
+    {
+      "path": ".reel/ru/micro1-work-data-ru-web.mp4",
+      "bytes": 14750726,
+      "sha256": "3a205ef6e1054e261aebb7ea34565f0a0ac1a45e3ef63cf73490bccf39b01640"
+    },
+    {
+      "path": ".reel/ru/micro1-work-data-ru.srt",
+      "bytes": 3561,
+      "sha256": "111e629dfe4762ebda89f486443e104c36fade17fcd2b090575f56a39c0f5958"
+    },
+    {
+      "path": ".reel/ru/micro1-work-data-ru.vtt",
+      "bytes": 3440,
+      "sha256": "63caf71093502003c3bbf6a0a1ab3aa163c8d9c459ab367aa82ec9e3fbc7cb8c"
+    },
+    {
+      "path": ".reel/ru/board.pdf",
+      "bytes": 1112057,
+      "sha256": "81d3aa03fa3273f0fc783a5bcece9f88fd8c1c01dece85f4a721cdda460e4ceb"
+    },
+    {
+      "path": ".reel/ru/QA.md",
+      "bytes": 1274,
+      "sha256": "21c7ff4bd68e02ca06e1b0cbb1959d7db5d841ac126e0288eb953437524a3ae6"
+    }
+  ]
+}

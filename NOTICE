@@ -16,7 +16,8 @@ imageio-ffmpeg: BSD wrapper; ffmpeg's own licence depends on the downloaded buil
 Fonts are included with notices beside the actual files:
   examples/slidecraft-launch/assets/fonts/LICENSE-Liberation-*.txt
   examples/ai-jobs/assets/fonts/OFL-*.txt
-  content/episodes/future-of-work/assets/fonts/OFL-*.txt
+  content/videos/*/assets/fonts/OFL-*.txt
+  examples/editorial-collage/assets/fonts/OFL-*.txt
 
 Runtime dependencies and model weights are installed or downloaded separately. The end user
 must retain applicable notices when redistributing them. Storygro's licence does not replace

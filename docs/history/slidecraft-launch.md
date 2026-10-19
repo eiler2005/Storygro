@@ -8,8 +8,8 @@ Storygro's engine began as `reelcraft/`, a prototype built inside the SlideCraft
 
 | Date (2026) | Piece | Format | Made with | Now |
 |---|---|---|---|---|
-| Oct 13–14 | Explainer GIF, 8 scenes, ~30 s, loops | 1280×720 GIF (~2 MB) + 1280×768 Product Hunt copy + 8 key frames | SlideCraft's own SVG renderer and a small GIF89a encoder | [examples/slidecraft-launch/gif/](../../examples/slidecraft-launch/gif/) |
-| Oct 17–18 | Narrated launch film, 11 scenes, 65.18 s | 1920×1080, 30 fps, H.264 + AAC, −14 LUFS | reelcraft: DOM scenes, Kokoro voice, procedural score, Chrome/CDP capture, ffmpeg | Source: [examples/slidecraft-launch/](../../examples/slidecraft-launch/); web copy: Storygro release `slidecraft-launch-2026-10-18`; public: [YouTube](https://www.youtube.com/watch?v=vNpDca4648Q) |
+| Oct 13–14 | Explainer GIF, 8 scenes, ~30 s, loops | 1280×720 GIF (~2 MB) + 1280×768 Product Hunt copy + 8 key frames | SlideCraft's own SVG renderer and a small GIF89a encoder | [examples/slidecraft-launch/gif/](../../examples/slidecraft-launch/gif) |
+| Oct 17–18 | Narrated launch film, 11 scenes, 65.18 s | 1920×1080, 30 fps, H.264 + AAC, −14 LUFS | reelcraft: DOM scenes, Kokoro voice, procedural score, Chrome/CDP capture, ffmpeg | Source: [examples/slidecraft-launch/](../../examples/slidecraft-launch); web copy: Storygro release `slidecraft-launch-2026-10-18`; public: [YouTube](https://www.youtube.com/watch?v=vNpDca4648Q) |
 | Oct 18 | Engine extracted | — | — | This repository; [migration record](../planning/MIGRATION.md) |
 
 The film's master (154 MB) is not in Git. The 23.6 MB web copy, poster, storyboard and QA report are attached to the Storygro GitHub release named above. A local checkout that ran the migration keeps the full build folder (`examples/slidecraft-launch/.reel/`, ignored by Git) including the voice cache, so the film re-renders without new TTS.
@@ -17,7 +17,7 @@ The film's master (154 MB) is not in Git. The 23.6 MB web copy, poster, storyboa
 ## The film
 
 - **Story:** a night before a board meeting. Dread (1 a.m., an AI slide that fails) → the turn ("a slide is an argument, not a picture") → five beats of the method (prompt, storyline, build, checks, editable) → relief → call to action. Direction: [DIRECTION.md](../../examples/slidecraft-launch/DIRECTION.md).
-- **Voice:** Kokoro-82M `af_heart` at speed 1.08, about 2.7 words per second. Music and sound effects are generated in code (`py/score.py`); no samples or licensed tracks.
+- **Voice:** Kokoro-82M `af_heart` at speed 1.08, about 2.7 words per second. Music and sound effects are generated in code (`production/py/score.py`); no samples or licensed tracks.
 - **Captions:** burned in, so the film works muted in a feed.
 - **Honesty notes:** slides are the real deck an assistant made from one prompt. The "caught total" is SlideCraft's own example budget with a deliberately planted error (`SC-CONSIST-002`); the GIF shows the same case.
 

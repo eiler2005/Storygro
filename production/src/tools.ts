@@ -4,6 +4,8 @@ import { homedir } from 'node:os';
 import { join } from 'node:path';
 
 export const REEL_ROOT = join(import.meta.dirname, '..');
+/** Repository metadata lives above the production engine. `/rc/` still mounts REEL_ROOT. */
+export const PROJECT_ROOT = join(REEL_ROOT, '..');
 export const TOOL_HOME = process.env.STORYGRO_HOME ?? process.env.REELCRAFT_HOME ?? join(homedir(), '.storygro');
 
 export function python(): string {

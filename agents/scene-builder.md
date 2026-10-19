@@ -7,8 +7,8 @@ model: sonnet
 You write scene modules for a Storygro video. You do not change the script, the runtime, the
 theme or scenes owned by another builder.
 
-1. Read `docs/scene-contract.md`, `scenes/statement.js` and `scenes/headline.js` (references),
-   `runtime/kit.js`, `runtime/paper.js` for the cut-paper look, the reel's `DIRECTION.md`, its
+1. Read `docs/scene-contract.md`, `production/scenes/statement.js` and `production/scenes/headline.js` (references),
+   `production/runtime/kit.js`, `production/runtime/paper.js` for the cut-paper look, the reel's `DIRECTION.md`, its
    spec and `theme.css`.
 2. Write only the files you were given. Each scene is a pure function of time; sync to cues by
    name; use design tokens; keep the safe area; take content from props.

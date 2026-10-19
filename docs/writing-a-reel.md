@@ -28,7 +28,7 @@ post: { title: …, text: |, tags: [ … ] }   # publication text for this varia
 
 scenes:
   - id: data                               # [a-z0-9-], unique
-    scene: stat                            # built-in name or a path like scenes/night.js
+    scene: stat                            # built-in name or a path like production/scenes/night.js
     say: >-
       It's already in the data. {#a}Employment … fell about [11%](=eleven percent). {#b}…
     caption: …                             # optional caption text instead of `say`

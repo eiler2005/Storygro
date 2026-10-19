@@ -2,7 +2,7 @@
 
 > **Audience:** people choosing or tuning narration, and contributors adding a TTS provider · **Status:** v0.2 (October 2026)
 
-Narration drives the timeline, so the voice is chosen before the pictures are polished. Storygro keeps TTS engines behind one small interface: the script syntax and timing logic live in `py/voice.py`; an engine only turns text into audio.
+Narration drives the timeline, so the voice is chosen before the pictures are polished. Storygro keeps TTS engines behind one small interface: the script syntax and timing logic live in `production/py/voice.py`; an engine only turns text into audio.
 
 ## Engines
 
@@ -25,7 +25,7 @@ voice: { engine: silero, voice: ru_alexandr }                               # fa
 
 ## How a line is made
 
-1. `py/voice.py` splits the line at `{+s}` pauses and parses `{#cue}` markers and `[written](=spoken)` hints, producing the plain text the narrator says and the positions of cues and hints in it.
+1. `production/py/voice.py` splits the line at `{+s}` pauses and parses `{#cue}` markers and `[written](=spoken)` hints, producing the plain text the narrator says and the positions of cues and hints in it.
 2. The provider synthesises the text. Kokoro reads its `[word](/phonemes/)` markup directly; other engines get plain text.
 3. If the provider has no speed control and `speed ≠ 1`, ffmpeg `atempo` changes the tempo without changing pitch.
 4. If the provider returns no word timings, Whisper transcribes the audio with word timestamps and `align()` maps the heard words onto the **script's** words (exact runs take Whisper's times, replaced runs such as "11%" heard for "eleven percent" share the span of what was heard, missed words sit between their neighbours). Captions therefore keep the script's spelling.
@@ -49,7 +49,7 @@ The former session established a working RU provider and corrected pronunciation
 A cloned voice keeps one identity across scenes; generating each scene from a text description would drift. Make a reference once, listen to it, commit it with the episode:
 
 ```sh
-~/.storygro/venv/bin/python py/design_voice.py examples/my-episode/assets/voice/narrator-ru.wav \
+~/.storygro/venv/bin/python production/py/design_voice.py examples/my-episode/assets/voice/narrator-ru.wav \
   --lang ru --seed 7 \
   --instruct "Calm, warm, confident adult male narrator in his thirties, native Russian speaker from Moscow, standard literary pronunciation, clear diction, medium pace, documentary explainer tone, close studio microphone, no background noise"
 ```
@@ -58,7 +58,7 @@ This writes the WAV and its transcript (`.txt`). The voice is synthetic — not 
 
 ## How the voices in the example were chosen
 
-For [examples/ai-jobs](../examples/ai-jobs/) the candidates were compared on the same sentences on an M5 Pro, by numbers that can be re-measured (none of this replaces listening):
+For [examples/ai-jobs](../examples/ai-jobs) the candidates were compared on the same sentences on an M5 Pro, by numbers that can be re-measured (none of this replaces listening):
 
 | Candidate | Word error (Whisper large-v3-turbo) | UTMOS (predicted naturalness, English-trained) | Speed |
 |---|---|---|---|
@@ -103,7 +103,7 @@ Paid APIs (ElevenLabs, OpenAI TTS, Yandex SpeechKit, Azure, Google) can be added
 
 ## Adding a provider
 
-Create `py/voices/<engine>.py` with a `Provider(job)` class:
+Create `production/py/voices/<engine>.py` with a `Provider(job)` class:
 
 ```python
 class Provider:
@@ -118,4 +118,4 @@ class Provider:
         ...                              # words: [{"w", "start", "end", "pos"}], pos = char offset in text
 ```
 
-Add the engine name to `VOICE_ENGINES` in `src/spec.ts`, its install step to `scripts/setup.sh`, and a row to this page. Fail with a clear message (`SystemExit`) when the voice or a required file is missing.
+Add the engine name to `VOICE_ENGINES` in `production/src/spec.ts`, its install step to `production/scripts/setup.sh`, and a row to this page. Fail with a clear message (`SystemExit`) when the voice or a required file is missing.

@@ -9,7 +9,7 @@ Storygro renders with its own player: scenes are DOM/SVG modules with a pure `dr
 
 ## What was done
 
-The `hook` scene of [examples/ai-jobs](../../examples/ai-jobs/) (1080×1920, 6.5 s: paper background, word-by-word reveal, marker sweep, rubber stamp, Cyrillic fonts, voice) was rebuilt twice in HyperFrames 0.8.174 — as a native GSAP composition and as a 66-line bridge that drives the unchanged `scenes/headline.js` — and compared with Storygro's own `frames()` on the same machine (Apple M5 Pro). Full report, commands and numbers: [experiments/hyperframes-pilot/FINDINGS.md](../../experiments/hyperframes-pilot/FINDINGS.md).
+The `hook` scene of [examples/ai-jobs](../../examples/ai-jobs) (1080×1920, 6.5 s: paper background, word-by-word reveal, marker sweep, rubber stamp, Cyrillic fonts, voice) was rebuilt twice in HyperFrames 0.8.174 — as a native GSAP composition and as a 66-line bridge that drives the unchanged `production/scenes/headline.js` — and compared with Storygro's own `frames()` on the same machine (Apple M5 Pro). Full report, commands and numbers: [experiments/hyperframes-pilot/FINDINGS.md](../../experiments/hyperframes-pilot/FINDINGS.md).
 
 | Criterion | HyperFrames | Storygro |
 |---|---|---|
@@ -27,7 +27,7 @@ The `hook` scene of [examples/ai-jobs](../../examples/ai-jobs/) (1080×1920, 6.5
 
 1. Storygro's DOM/CDP renderer stays the default. Scenes are not rewritten as HyperFrames compositions.
 2. HyperFrames is a candidate **optional backend** behind a small render interface; the bridge shows that existing scenes can be rendered through it unchanged when cross-machine byte-identical output (Docker) or its export formats are needed.
-3. Two improvements from the pilot are taken into Storygro itself: a race when reading Chrome's DevTools port (one launch in ten failed) is fixed in `src/cdp.ts`; parallel capture across tabs — possible because frames are seekable — is the next performance step, to be measured on a full reel.
+3. Two improvements from the pilot are taken into Storygro itself: a race when reading Chrome's DevTools port (one launch in ten failed) is fixed in `production/src/cdp.ts`; parallel capture across tabs — possible because frames are seekable — is the next performance step, to be measured on a full reel.
 
 ## Consequences
 

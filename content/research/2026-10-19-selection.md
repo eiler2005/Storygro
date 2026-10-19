@@ -6,7 +6,7 @@
 
 ## Что реально проверено
 
-- `storygro trends content/ideas/trends.yaml --out content/.signals/latest.json` получил данные всех трёх включённых источников без ключей.
+- `storygro trends production/trends/sources.yaml --out content/.signals/latest.json` получил данные всех трёх включённых источников без ключей.
 - RU и EN Wikipedia: доступный суточный срез **15 октября 2026**, получен **19 октября 2026**. Запросы более поздних дат возвращали 404, collector выбрал ближайший доступный прошлый день.
 - Hacker News: текущий top-stories snapshot с points/comments и ссылкой на первичную историю и обсуждение.
 - Настройка: до 15 сигналов от каждого источника, 7 дней поиска доступного Wikipedia-среза, не более 5 параллельных запросов отдельных HN items.
@@ -24,5 +24,5 @@
 
 - [Wikipedia pageviews API](https://doc.wikimedia.org/generated-data-platform/aqs/analytics-api/reference/page-views.html).
 - [Hacker News official API](https://github.com/HackerNews/API).
-- [Источники и границы делового выпуска](../episodes/future-of-work/sources.md).
+- [Источники и границы делового выпуска](../videos/future-of-work/sources.md).
 - [Критерии и алгоритм отбора](../../docs/ideas.md).

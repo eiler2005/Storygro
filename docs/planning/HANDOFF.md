@@ -27,7 +27,7 @@ A toolkit for AI agents to turn ideas into reels, videos, carousels, and social 
 - `ideas` ранжирует редакционный бэклог; `trends` собирает открытые Wikipedia/HN сигналы с датами и ошибками. Веса и границы — в [ideas](../ideas.md).
 - Новые выпуски: [content/](../../content/README.md). `examples/` остаётся библиотекой примеров, а `.reel/`/`.signals/` — локальными выходами.
 - Русский Kokoro: community fine-tune `zaakirio/kokoro-ru`, голос Dima; OpenRAIL weights, Apache-2.0 code, RUAccent. Не путать с официальным английским Kokoro. EN `ai-jobs` сохраняет Qwen3.
-- Новый деловой выпуск: [future-of-work](../../content/episodes/future-of-work/README.md). Фактический рендер и проверки — в его REVIEW.md.
+- Новый деловой выпуск: [future-of-work](../../content/videos/future-of-work/README.md). Фактический рендер и проверки — в его REVIEW.md.
 - Обновлён исходный RU `ai-jobs`: Kokoro Dima, произношение и формулировка про первые ступени. Исторический опубликованный релиз не перезаписывается.
 
 Следующему агенту сначала проверить текущее состояние Git и отчёты выпусков; не повторять перенос, выбор названия, исследование или голосовые эксперименты заново.
@@ -40,16 +40,16 @@ A toolkit for AI agents to turn ideas into reels, videos, carousels, and social 
 
 | Возможность | Где | Проверка |
 |---|---|---|
-| Нативный 9:16, пресеты форматов, профили safe-zone платформ | `src/spec.ts`, `runtime/safe-zones.json`, [formats](../formats.md) | автоматическая проверка текста под интерфейсом на каждом cue |
-| Языковые варианты в одной папке (`ru.reel.yaml`, `en.reel.yaml`) | `src/spec.ts`, `src/timeline.ts` | тесты; пример ai-jobs |
-| Голоса за общим интерфейсом: Kokoro (EN), Qwen3-TTS через mlx-audio (RU/EN, клон спроектированного голоса), Silero CIS (RU, ударения) | `py/voice.py`, `py/voices/`, [voices](../voices.md), [ADR 0002](../adr/0002-voice-providers.md) | Kokoro даёт тайминги, идентичные прототипу; RU/EN озвучка проверена распознаванием |
-| Выравнивание слов Whisper по тексту сценария, say-as `[11%](=одиннадцать процентов)` | `py/voice.py` | субтитры в написании сценария |
-| 8 новых вертикальных сцен «бумажной аппликации» + библиотека `runtime/paper.js` | `scenes/`, [каталог](../scenes.md) | кадры просмотрены на всех cue |
-| Явные ошибки: сцена, картинка, шрифт, тема останавливают рендер | `runtime/player.js`, `src/render.ts` | — |
-| Approval-хеш всех входов (сценарий, факты, код сцен, тема, шрифты, ассеты) | `src/board.ts` | тест; на практике дважды поймал устаревший рендер |
-| QA: pass/fail/skip, чёрные кадры, ошибки сцен, safe-zone, мультиязычный Whisper | `src/qa.ts`, `py/asr.py`, [quality](../quality.md) | оба ролика примера — 11/11 pass |
-| Субтитры SRT/VTT, карусели, `deliver` и `package` с manifest и SHA-256 | `src/subtitles.ts`, `src/package.ts`, `src/cli.ts` | релиз ai-jobs собран |
-| Пример «Что ИИ значит для рынка труда» RU + EN, карусели, тексты постов, источники | [examples/ai-jobs](../../examples/ai-jobs/) | исследование 34 фактов; ключевые цифры сверены с первоисточниками (Stanford 2026, ВШЭ 2026, МОТ 2025, МВФ, Anthropic) |
+| Нативный 9:16, пресеты форматов, профили safe-zone платформ | `production/src/spec.ts`, `production/runtime/safe-zones.json`, [formats](../formats.md) | автоматическая проверка текста под интерфейсом на каждом cue |
+| Языковые варианты в одной папке (`ru.reel.yaml`, `en.reel.yaml`) | `production/src/spec.ts`, `production/src/timeline.ts` | тесты; пример ai-jobs |
+| Голоса за общим интерфейсом: Kokoro (EN), Qwen3-TTS через mlx-audio (RU/EN, клон спроектированного голоса), Silero CIS (RU, ударения) | `production/py/voice.py`, `production/py/voices/`, [voices](../voices.md), [ADR 0002](../adr/0002-voice-providers.md) | Kokoro даёт тайминги, идентичные прототипу; RU/EN озвучка проверена распознаванием |
+| Выравнивание слов Whisper по тексту сценария, say-as `[11%](=одиннадцать процентов)` | `production/py/voice.py` | субтитры в написании сценария |
+| 8 новых вертикальных сцен «бумажной аппликации» + библиотека `production/runtime/paper.js` | `production/scenes/`, [каталог](../scenes.md) | кадры просмотрены на всех cue |
+| Явные ошибки: сцена, картинка, шрифт, тема останавливают рендер | `production/runtime/player.js`, `production/src/render.ts` | — |
+| Approval-хеш всех входов (сценарий, факты, код сцен, тема, шрифты, ассеты) | `production/src/board.ts` | тест; на практике дважды поймал устаревший рендер |
+| QA: pass/fail/skip, чёрные кадры, ошибки сцен, safe-zone, мультиязычный Whisper | `production/src/qa.ts`, `production/py/asr.py`, [quality](../quality.md) | оба ролика примера — 11/11 pass |
+| Субтитры SRT/VTT, карусели, `deliver` и `package` с manifest и SHA-256 | `production/src/subtitles.ts`, `production/src/package.ts`, `production/src/cli.ts` | релиз ai-jobs собран |
+| Пример «Что ИИ значит для рынка труда» RU + EN, карусели, тексты постов, источники | [examples/ai-jobs](../../examples/ai-jobs) | исследование 34 фактов; ключевые цифры сверены с первоисточниками (Stanford 2026, ВШЭ 2026, МОТ 2025, МВФ, Anthropic) |
 | История SlideCraft launch-фильма и GIF | [history](../history/slidecraft-launch.md) | GIF воспроизводится побайтно |
 
 `npm run check`: TypeScript и тесты контрактов (`tests/engine.test.ts`). CI на GitHub запускает то же.
@@ -92,3 +92,27 @@ npm run storygro -- package examples/ai-jobs/episode.yaml
 - Отсутствие приватных материалов, ключей, кэшей и `node_modules` в Git; действующая лицензия Shield и отдельные условия моделей/шрифтов.
 
 Роли `director`, `scene-builder`, `qa` — разделение обязанностей, а не требование запускать параллельных агентов.
+
+## Текущая задача: micro1 и разделение контента / производства
+
+Владелец уточнил: YouTube-ролик — только визуальный референс. Тема берётся из его поста про покупку micro1 операционных данных компаний. Не продолжать выпуск о программистах: его исходники сохранены как внутренний `examples/editorial-collage`, без публичного релиза.
+
+Текущий контент — `content/videos/micro1-work-data/`; фактчек — `content/research/micro1-work-data/`. Подтверждённые заявления компании отделены от прогноза прибыльности/замены профессий. Голос RU Kokoro Dima, редакционный коллаж, оригинальные персонажи. Проверки и артефакты — в README/REVIEW выпуска.
+
+Финальный рендер: **77,13 с, 1080×1920, 11/11 QA pass**, минимум сверки речи 94%; TypeScript и **22/22 теста pass**. [Видео и пакет](https://github.com/eiler2005/Storygro/releases/tag/micro1-work-data-2026-10-19). Кадры готового MP4 просмотрены; естественность голоса на слух ещё не оценена. Владелец просматривает прототип перед решением о публикации.
+
+Структура по запросу владельца:
+
+- `content/videos/` — исходники роликов и выбранные assets; `content/ideas/` — беклог; `content/research/` — результаты исследований конкретных тем.
+- `production/research/` — переиспользуемый workflow фактчека; `production/trends/` — конфигурация и команды сигналов; `production/video/` — инструкция производства.
+- `production/src`, `runtime`, `scenes`, `py`, `scripts` — физически отделённый движок. Внутренний entry point: `production/src/cli.ts`; команды npm, `/rc/`, `reel: 1`, `.reel/`, старые env-алиасы сохранены.
+- `examples/` — исторические примеры и внутренний тестовый контент. Не считать их текущими выпусками.
+
+### Что делать следующей LLM
+
+1. Прочитать текущий выпуск и его REVIEW, открыть MP4; получить конкретный отзыв владельца на темп, стиль и голос. Не переизобретать название и исследование продукта.
+2. Править тот же выпуск. После изменения входов — board → визуальный просмотр → approve → render → QA → package. Технический pass не равен редакционному одобрению.
+3. Если подача подходит — короткая версия с одной мыслью, затем профиль бренда/серии. Скринкасты, публикация и аналитика ещё не реализованы; для внешней публикации нужны выбранные аккаунты и отдельная явная операция.
+4. Новые темы вести в `content/ideas/backlog.yaml`; `produced` означает собранный материал, а не публикацию. Условия сторонних моделей/шрифтов и Shield сохраняются.
+
+Перенос исходных каталогов меняет пути входов и сбрасывает одобрение старых локальных кэшей. Сами исторические файлы и GitHub-релизы сохранены; повторная упаковка старого выпуска требует актуальной сборки/QA, не ручного исправления manifest.

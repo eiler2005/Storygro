@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
-import { collectTrends, HttpError, rankIdeas } from '../src/ideas.ts';
+import { collectTrends, HttpError, rankIdeas } from '../production/src/ideas.ts';
 
 const item = (id: string, evidence = 5) => ({ id, title: 'A topic', thesis: 'One claim', sources: ['https://www.ilo.org/'],
   ratings: { evidence, audience: 5, utility: 4, visual: 3, timeliness: 2, ease: 4 }, rationale: 'Editorial estimate, not audience data' });

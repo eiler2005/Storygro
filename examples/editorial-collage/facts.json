@@ -1,0 +1,9 @@
+{
+  "assets": { "developer": "assets/developer.png", "robot": "assets/robot.png" },
+  "demo": {
+    "normal": "Правильный адрес → принят",
+    "empty": "Пустая строка → принята",
+    "fixed": "Пустая строка → отклонена",
+    "source": "Author's illustrative fixture in demo.mjs; not a measured failure rate or a record of any specific AI product."
+  }
+}

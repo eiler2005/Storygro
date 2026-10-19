@@ -6,12 +6,12 @@
 
 ```sh
 npm run setup:ru
-npm run storygro -- voice content/episodes/future-of-work/ru.reel.yaml
-npm run storygro -- board content/episodes/future-of-work/ru.reel.yaml
+npm run storygro -- voice content/videos/future-of-work/ru.reel.yaml
+npm run storygro -- board content/videos/future-of-work/ru.reel.yaml
 # Inspect the storyboard before approving.
-npm run storygro -- approve content/episodes/future-of-work/ru.reel.yaml
-npm run storygro -- render content/episodes/future-of-work/ru.reel.yaml
-npm run storygro -- package content/episodes/future-of-work/episode.yaml
+npm run storygro -- approve content/videos/future-of-work/ru.reel.yaml
+npm run storygro -- render content/videos/future-of-work/ru.reel.yaml
+npm run storygro -- package content/videos/future-of-work/episode.yaml
 ```
 
 Исходники, [факты](facts.json), [источники](sources.md) и [credits](CREDITS.md) входят в Git. MP4, субтитры, обложка, storyboard и QA лежат в `.reel/ru/`; пакет — в `.reel/releases/`. Состояние финальной проверки записывается в [REVIEW.md](REVIEW.md). Соцсети автоматически не публикуются.

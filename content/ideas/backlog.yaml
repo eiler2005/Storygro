@@ -5,7 +5,7 @@ items:
     title: Будущее работы — кто отвечает за результат
     thesis: При внедрении ИИ нужно проектировать проверку и ответственность вместе с автоматизацией задач.
     status: produced
-    episode: ../episodes/future-of-work/episode.yaml
+    episode: ../videos/future-of-work/episode.yaml
     sources:
       - https://www.ilo.org/resource/article/how-might-generative-ai-impact-different-occupations
       - https://www.anthropic.com/research/anthropic-economic-index-january-2026-report
@@ -13,12 +13,21 @@ items:
     rationale: 'Первый деловой выпуск по запросу владельца; исследования поддерживают изменение задач, рекомендации о процессе — авторская рамка. Оценки редакционные.'
   - id: ai-review
     title: Где проверять работу ИИ-агента
-    thesis: Проверка нужна на границах передачи результата и до необратимого действия.
+    thesis: Проверку нужно проектировать вместе с задачей агенту.
     status: candidate
-    sources:
-      - https://www.anthropic.com/engineering/building-effective-agents
+    sources: [https://www.anthropic.com/engineering/building-effective-agents]
     ratings: { evidence: 4, audience: 5, utility: 5, visual: 5, timeliness: 3, ease: 4 }
-    rationale: Полезный workflow для своей аудитории; перед сценарием нужны конкретные примеры ошибок и подтверждённые ограничения.
+    rationale: 'Сцена коллажа отработана во внутреннем примере; текущий заказ владельца переключён на micro1. Эта тема остаётся кандидатом, не опубликованным материалом.'
+  - id: micro1-work-data
+    title: Зачем micro1 покупает рабочие данные компаний
+    thesis: Спрос на опыт рабочих процессов показывает интерес к их обучению и оценке, но сам по себе не доказывает готовую автоматизацию.
+    status: produced
+    episode: ../videos/micro1-work-data/episode.yaml
+    sources:
+      - https://www.micro1.ai/blog/micro1-commits-1b-to-enterprise-data-acquisition
+      - https://www.micro1.ai/data-partnerships
+    ratings: { evidence: 5, audience: 5, utility: 5, visual: 5, timeliness: 5, ease: 4 }
+    rationale: 'Выбрано владельцем по присланному посту; заявления проверены по micro1. Компания — первичный источник о своей программе, не независимое подтверждение исполнения бюджета. Оценки редакционные.'
   - id: junior-training
     title: Как обучать новичков, когда черновик пишет нейросеть
     thesis: Практику нужно организовать вокруг объяснения и проверки решений, сохраняя задачи для обучения.

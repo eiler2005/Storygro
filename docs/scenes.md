@@ -6,6 +6,29 @@ A reel.yaml entry sets `scene:` to one of the modules below and passes its props
 
 A **cue** is a named marker in the `say:` text, such as `{#claim}`. A cue prop accepts either a cue name or a number of seconds from the start of the scene.
 
+## collage
+
+An editorial collage on cream graph paper: original photo/illustration cut-outs, torn labels, large type, UI windows and drawn arrows. This is a reusable scene; the video supplies all content, images, placement and cues. Current example: [micro1-work-data](../content/videos/micro1-work-data/README.md). Internal style fixture: [editorial-collage](../examples/editorial-collage/README.md).
+
+| Prop | Type | Required | Meaning |
+|---|---|---|---|
+| `brand` | string | No | Small top label; defaults to `Storygro`. |
+| `layers` | array | Yes | Nonempty stack, painted in array order. |
+| `layers[].kind` | `image`, `text`, `label`, `panel`, `arrow` | Yes | Cut-out, large heading, torn banner, framed window or drawn arrow. |
+| `layers[].x/y/w/h` | finite numbers | Yes | Fractions of the safe content box below the brand. Width/height must be positive. Intentional image overhang is possible; keep text safe after rotation and scale. |
+| `layers[].at/until` | cue or seconds | No | Entrance/exit times. Defaults to `0`/no exit. Unknown cue names throw. Use `at: -1` for fully visible content at frame zero. |
+| `layers[].enter` | `rise`, `drop`, `left`, `right`, `pop` | No | Entrance motion, defaults to `rise`. |
+| `layers[].rotate` | number | No | Settled rotation in degrees, defaults to zero. |
+| `layers[].src` | file path | For `image` | Relative to the reel; `srcFrom` can bind it from facts. Preserve native alpha for paper cut-outs. |
+| `layers[].text` | string | For `text`/`label` | Plain text; explicit newlines supported. In YAML flow maps use double quotes for `\n`. |
+| `layers[].size` | number | No | Starting font size at a 1080-pixel stage width; shrinks to fit. |
+| `layers[].align` | `left`, `center`, `right` | No | Text alignment; defaults to center. |
+| `layers[].color/background` | tone or CSS colour | No | Content and label/window-bar colours, using paper-kit theme tokens. |
+| `layers[].title` | string | No | Panel title; defaults to `Проверка`. |
+| `layers[].rows` | nonempty array | For `panel` | Rows with required `text` and optional `at` and `color`. Bind with `textFrom` as needed. |
+
+Images are registered during mount so missing assets stop capture. All movement and row reveals derive from scene time; no timers or CSS animations. Allow a brief entrance before selecting a still: a layer is transparent exactly at its `at` cue. The new scene's animation helpers have backward-seek regression tests; the example is also checked in headless Chrome with frame hashes.
+
 ## statement
 
 Shows one big idea as large italic lines that appear one by one, with an optional small kicker above them.
@@ -252,11 +275,11 @@ Excerpt from the `cta` entry. `say`, `pad`, `energy`, `transition` and `sfx` are
 
 ## Cut-paper scenes
 
-`headline`, `crowd`, `task-stack`, `ladder`, `stat`, `chart`, `steps` and `outro` share one look: grain paper, cards with hand-cut edges and drop shadows, hand-drawn strokes, rubber stamps and handwritten notes. They are designed for 9:16 first and also work on landscape stages. They share the helper library `runtime/paper.js`. Everything in them is seeded (no `Math.random`) and drawn from `draw(t)` only, so any moment can be sought and gives the same frame.
+`headline`, `crowd`, `task-stack`, `ladder`, `stat`, `chart`, `steps` and `outro` share one look: grain paper, cards with hand-cut edges and drop shadows, hand-drawn strokes, rubber stamps and handwritten notes. They are designed for 9:16 first and also work on landscape stages. They share the helper library `production/runtime/paper.js`. Everything in them is seeded (no `Math.random`) and drawn from `draw(t)` only, so any moment can be sought and gives the same frame.
 
-**Safe content box.** Each scene lays out inside `box(ctx)` from `runtime/paper.js`, not on the full stage.
+**Safe content box.** Each scene lays out inside `box(ctx)` from `production/runtime/paper.js`, not on the full stage.
 
-- Left, right and top: the platform safe area of the format profile (`runtime/safe-zones.json`, chosen by `safe:` in reel.yaml, otherwise by the aspect ratio, and scaled to the stage width), plus an inset of 2.4 % of the shorter stage side. The inset leaves room for the slow camera drift and for tilted cards.
+- Left, right and top: the platform safe area of the format profile (`production/runtime/safe-zones.json`, chosen by `safe:` in reel.yaml, otherwise by the aspect ratio, and scaled to the stage width), plus an inset of 2.4 % of the shorter stage side. The inset leaves room for the slow camera drift and for tilted cards.
 - Bottom: the larger of the profile's `bottom` and `caption` margins, plus a reserve that keeps the captions free: 17 % of the width on a vertical stage, 10 % of the height otherwise.
 
 On a 1080 × 1920 stage with the `vertical` profile the box runs from x 86 to 854 and from y 276 to 1246. Sizes inside the scenes are written for a stage 1080 px wide and scale with the stage width. Only `headline` picks a different type size for landscape.

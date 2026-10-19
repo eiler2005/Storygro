@@ -2,7 +2,7 @@
 
 > **Audience:** anyone (person or model) writing a scene module · **Status:** v0.2 (backwards compatible with v0.1)
 
-A scene is an ES module in `scenes/<name>.js` (reusable) or next to a reel (`examples/<reel>/scenes/<name>.js`, one-off). Reference implementations: [`scenes/statement.js`](../scenes/statement.js) (minimal) and [`scenes/headline.js`](../scenes/headline.js) (cut-paper, vertical-first).
+A scene is an ES module in `production/scenes/<name>.js` (reusable) or next to a reel (`examples/<reel>/scenes/<name>.js`, one-off). Reference implementations: [`production/scenes/statement.js`](../production/scenes/statement.js) (minimal) and [`production/scenes/headline.js`](../production/scenes/headline.js) (cut-paper, vertical-first).
 
 ```js
 export default {
@@ -41,14 +41,14 @@ export default {
 | `safe` | `{ profile, top, bottom, left, right, caption }` — platform UI margins on this stage, px |
 | `lang` | narration language (`en`, `ru`, …) |
 | `captions` | `true` when burned-in captions are on |
-| `kit` | helpers from [`runtime/kit.js`](../runtime/kit.js) |
+| `kit` | helpers from [`production/runtime/kit.js`](../production/runtime/kit.js) |
 | `asset(path)` | URL of a file relative to the reel |
 
-## `kit` (runtime/kit.js)
+## `kit` (production/runtime/kit.js)
 
 `clamp`, `lerp`, `ease.{linear,out,in,inOut,outBack,outElastic,outQuint}`, `p(t, t0, dur, ease)` progress 0..1, `win(t, t0, t1, fade)` in-hold-out window, `h(tag, attrs, ...children)` DOM/SVG builder, `set(el, styles)`, `fadeUp`, `pop`, `type(t, t0, text, cps)` typewriter, `count(t, t0, dur, from, to, fmt)`, `rand(seed)`, `cue(ctx, name, fallback)`, `drift(t, amount)` camera drift transform, `icon.{tick,cross,bang}(size, color)` SVG strings.
 
-## Paper kit (runtime/paper.js)
+## Paper kit (production/runtime/paper.js)
 
 Import it from a built-in scene as `'../runtime/paper.js'` (or `/rc/runtime/paper.js` from a reel's own scene):
 

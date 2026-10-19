@@ -3,7 +3,7 @@
 Storygro now has two small editorial tools. `trends` collects public signals; `ideas` ranks a curated backlog. Neither generates a researched script or predicts audience growth. The shared workspace is [content/](../content/README.md).
 
 ```sh
-npm run storygro -- trends content/ideas/trends.yaml --out content/.signals/latest.json
+npm run storygro -- trends production/trends/sources.yaml --out content/.signals/latest.json
 npm run storygro -- ideas content/ideas/backlog.yaml --out content/.signals/ranked.json
 ```
 
@@ -43,7 +43,7 @@ Score = `sum(rating × weight / 5)`, from 0 to 100. Ties sort by id. Candidate, 
 2. Propose a few relevant questions, not a list of copied headlines. Record where the idea came from.
 3. Open primary sources; separate measured facts, forecasts and the author's advice.
 4. Add/update the backlog with explicit ratings and a rationale. Run ranking, then record the editorial selection.
-5. Create `content/episodes/<id>/` with the episode, specs, fact data, sources and credits. Follow [workflows](workflows.md).
+5. Create `content/videos/<id>/` with the episode, specs, fact data, sources and credits. Follow [workflows](workflows.md).
 6. After producing the package, record its location and status. Actual social publishing and growth measurement remain separate future adapters.
 
 The initial future-of-work topic came from the owner's request, not from a claim that the live signals proved it would perform well.

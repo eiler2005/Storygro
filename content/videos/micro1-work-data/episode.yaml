@@ -1,0 +1,8 @@
+episode: 1
+id: micro1-work-data
+title: Зачем micro1 покупает рабочие данные компаний
+series: business-explainers
+sources: sources.md
+credits: CREDITS.md
+variants:
+  - { id: ru, spec: ru.reel.yaml }

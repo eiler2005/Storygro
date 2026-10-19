@@ -1,0 +1,18 @@
+{
+  "_about": "Every number on screen, with its source. Checked 2026-10-19; see sources.md.",
+  "tau": {
+    "_source": "Yao et al., τ-bench, arXiv 2406.12045 (June 2024): gpt-4o function calling, retail domain",
+    "pass1": "61%",
+    "pass8": "<25%",
+    "repeats": "8",
+    "year": "2024",
+    "pass1Label": "задач в рознице — с первой попытки",
+    "pass8Label": "те же задачи — все 8 повторов подряд",
+    "sourceLine": "τ-bench (Sierra, 2024), лучший агент того года GPT-4o · новые модели сильнее, но разрыв между «один раз» и «каждый раз» остаётся"
+  },
+  "airCanada": {
+    "_source": "Moffatt v. Air Canada, 2024 BCCRT 149, 14 Feb 2024",
+    "year": "2024",
+    "sourceLine": "Moffatt v. Air Canada, трибунал Британской Колумбии, февраль 2024"
+  }
+}

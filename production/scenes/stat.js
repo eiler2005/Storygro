@@ -65,7 +65,8 @@ export default {
       if (head) revealWords([...head.children], t, 0.05, 0.06);
       for (const c of cards) {
         drop(c.el, t, c.at, { from: -80 * u, rot: c.rot, base: `rotate(${c.rot}deg)` });
-        if (c.m) {
+        // a bound such as «<25%» or «≈61%» must never pass through other values: no count-up
+        if (c.m && !/[<>≈~≤≥]/.test(c.m[1])) {
           const [, pre, digits, post] = c.m;
           const dec = digits.includes(',') || digits.includes('.') ? digits.split(/[.,]/)[1].length : 0;
           const target = Number(digits.replace(',', '.'));

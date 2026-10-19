@@ -8,6 +8,7 @@ voice: { engine: qwen3, voice: assets/voice/narrator-ru.wav, speed: 0.96 }
 music: { bpm: 100, key: D, progression: [I, V, vi, IV], gain: 0.22 }
 loudness: -14
 theme: theme.css
+brand: ../../brand.yaml
 captions: { show: true, maxWords: 4 }
 transition: { kind: fade, dur: 0.35 }
 allowNumbers: ['1', '2', '3']   # step numbers in the titles, not facts

@@ -1,6 +1,7 @@
 import { spawnSync } from 'node:child_process';
 import { existsSync, readFileSync, writeFileSync } from 'node:fs';
-import { join } from 'node:path';
+import { join, resolve } from 'node:path';
+import { brandFindings, loadBrand } from './brand.ts';
 import { captureScenes, factsGate, safeAreaMisses, type SceneShot } from './board.ts';
 import { captionText, type LoadedSpec, spokenText } from './spec.ts';
 import { type Timeline, workDir } from './timeline.ts';
@@ -43,20 +44,60 @@ export const norm = (s: string) =>
     .filter(Boolean);
 
 /** Word overlap of the script and what Whisper heard, per scene (bag of words, order-free). */
+/** Number words (RU/EN cardinals and ordinals, any ending) — ASR usually writes them as digits. */
+const NUMBER_WORD =
+  /^(ноль|нол|один|одн|перв|два|две|двух|втор|три|трех|трет|четыр|четвер|пят|шест|сем|седьм|восем|восьм|девят|десят|одиннадцат|двенадцат|тринадцат|четырнадцат|пятнадцат|шестнадцат|семнадцат|восемнадцат|девятнадцат|двадцат|тридцат|сорок|пятьдесят|пятидесят|шестьдесят|шестидесят|семьдесят|семидесят|восемьдесят|восьмидесят|девяност|сто|двест|трист|четырест|пятьсот|пятисот|тысяч|миллион|миллиард|zero|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty|thirty|forty|fifty|sixty|seventy|eighty|ninety|hundred|thousand|million|billion|first|second|third|fourth|fifth|sixth|seventh|eighth|ninth|tenth|twelfth)/;
+const PERCENT_WORD = /^(процент|percent)/;
+const PERCENT_TOKEN = 'percentsign';
+
+/**
+ * Word overlap of the script and what Whisper heard, per scene (bag of words, order-free). Beyond exact
+ * matches it accepts the forms ASR writes differently: a run of number words heard as one number in
+ * digits («шестьдесят один» ↔ «61»), «процент» heard as «%», and a compound heard as two adjacent
+ * words («таубенч» ↔ «тау бенч»). Each heard token is used once.
+ */
 export function similarity(script: string, heard: string): { score: number; missing: string[] } {
   const a = norm(script);
+  const heardTokens = norm(heard.replace(/%/g, ` ${PERCENT_TOKEN} `));
   const b = new Map<string, number>();
-  for (const w of norm(heard)) b.set(w, (b.get(w) ?? 0) + 1);
-  const missing: string[] = [];
-  let hit = 0;
-  for (const w of a) {
+  for (const w of heardTokens) b.set(w, (b.get(w) ?? 0) + 1);
+  const take = (w: string) => {
     const n = b.get(w) ?? 0;
-    if (n > 0) {
-      hit++;
-      b.set(w, n - 1);
-    } else missing.push(w);
+    if (n <= 0) return false;
+    b.set(w, n - 1);
+    return true;
+  };
+  const matched = a.map((w) => take(w));
+  // compounds heard as two adjacent words
+  for (const [i, w] of a.entries()) {
+    if (matched[i]) continue;
+    for (let j = 0; j + 1 < heardTokens.length; j++) {
+      const x = heardTokens[j]!;
+      const y = heardTokens[j + 1]!;
+      if (x + y === w && (b.get(x) ?? 0) > 0 && (b.get(y) ?? 0) > 0) {
+        take(x);
+        take(y);
+        matched[i] = true;
+        break;
+      }
+    }
   }
-  return { score: a.length ? hit / a.length : 1, missing };
+  // «процент» heard as the % sign
+  for (const [i, w] of a.entries()) if (!matched[i] && PERCENT_WORD.test(w)) matched[i] = take(PERCENT_TOKEN);
+  // a run of number words heard as one token with digits
+  for (let i = 0; i < a.length; i++) {
+    if (matched[i] || !NUMBER_WORD.test(a[i]!)) continue;
+    let j = i;
+    while (j + 1 < a.length && !matched[j + 1] && NUMBER_WORD.test(a[j + 1]!)) j++;
+    const digit = [...b.entries()].find(([k, n]) => n > 0 && /\d/.test(k));
+    if (digit) {
+      take(digit[0]);
+      for (let k = i; k <= j; k++) matched[k] = true;
+    }
+    i = j;
+  }
+  const missing = a.filter((_, i) => !matched[i]);
+  return { score: a.length ? (a.length - missing.length) / a.length : 1, missing };
 }
 
 const ok = (b: boolean): Status => (b ? 'pass' : 'fail');
@@ -169,6 +210,12 @@ export async function qa(l: LoadedSpec, tl: Timeline, video: string) {
         detail: bad.length ? bad.join('; ') : `every scene ≥ 85% of its words (lowest ${(worst * 100) | 0}%)`,
       });
     }
+  }
+
+  // brand profile: phrases we avoid and the disclosure every post must carry
+  if (l.spec.brand) {
+    const f = brandFindings(loadBrand(resolve(l.dir, l.spec.brand)), l);
+    checks.push({ name: 'Brand rules', status: ok(f.ok), detail: f.ok ? f.disclosure : f.problems.slice(0, 4).join('; ') });
   }
 
   const count = (st: Status) => checks.filter((c) => c.status === st).length;

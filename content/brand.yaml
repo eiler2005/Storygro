@@ -1,0 +1,24 @@
+brand: 1
+name: Storygro
+# Who the channel speaks to. Used by people and agents writing new episodes; QA checks the rules below.
+audience: Руководители, предприниматели и специалисты, которые решают, как ИИ меняет их работу и бизнес; русскоязычная аудитория первой, англоязычная — вторая.
+languages: [ru, en]
+# Default narrator for new episodes. Existing episodes keep their own voice (micro1 and the series below use Qwen audition C at 0.96).
+voice:
+  ru: { engine: qwen3, voice: assets/voice/narrator-ru.wav, speed: 0.96 }
+  en: { engine: kokoro, voice: am_michael }
+# Every post must say that the narration is synthetic.
+disclosure:
+  ru: { mustMention: [синтез, сгенерир, Kokoro, Qwen] }
+  en: { mustMention: [synthetic, generated, Kokoro, Qwen] }
+# Phrases we do not use: hype and promises a short explainer cannot back with a source.
+avoid:
+  - { phrase: революц, reason: hype without a measurable claim }
+  - { phrase: заменит всех, reason: absolute claim no source supports }
+  - { phrase: гарантируем, reason: we do not promise outcomes (a disclaimer like «не гарантированы» is fine) }
+  - { phrase: гарантированн, reason: we do not promise outcomes }
+  - { phrase: шок, reason: clickbait tone }
+  - { phrase: game changer, reason: hype without a measurable claim }
+  - { phrase: will replace everyone, reason: absolute claim no source supports }
+  - { phrase: we guarantee, reason: we do not promise outcomes }
+  - { phrase: guaranteed results, reason: we do not promise outcomes }

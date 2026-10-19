@@ -1,0 +1,8 @@
+episode: 1
+id: ai-agent-checks
+title: Где проверять работу ИИ-агента
+series: business-explainers
+sources: sources.md
+credits: CREDITS.md
+variants:
+  - { id: ru, spec: ru.reel.yaml }

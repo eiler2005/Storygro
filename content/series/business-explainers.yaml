@@ -1,0 +1,10 @@
+series: 1
+id: business-explainers
+title: ИИ и работа — деловые объяснения
+audience: Руководители и специалисты, русскоязычные
+format: Вертикальный ролик 45–90 с, одна мысль, каждая цифра с источником
+cadence: 1 выпуск в неделю (план)
+episodes:
+  - ../videos/future-of-work/episode.yaml
+  - ../videos/micro1-work-data/episode.yaml
+  - ../videos/ai-agent-checks/episode.yaml

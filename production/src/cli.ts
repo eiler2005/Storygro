@@ -6,6 +6,7 @@ import { join } from 'node:path';
 import { approval, approve, keyMoment, specHash, writeBoard } from './board.ts';
 import { engineVersion, fileEntry } from './manifest.ts';
 import { recordCapture } from './capture.ts';
+import { seriesMarkdown, seriesStatus } from './brand.ts';
 import * as P from './publish.ts';
 import { collectTrends, loadIdeas, loadTrendsConfig, type TrendsReport, trendsMarkdown } from './ideas.ts';
 import { parse as parseYaml } from 'yaml';
@@ -32,6 +33,7 @@ const HELP = `storygro — explainer videos as code
   storygro qa       <reel.yaml>             check the rendered file, scenes, numbers, safe area, speech
   storygro subs     <reel.yaml>             write <name>.srt and <name>.vtt from the timeline
   storygro carousel <carousel.yaml>         one PNG per scene at its key moment → carousel/
+  storygro series   <series.yaml> [--md f]  episodes of a series: length, approval, QA verdict, latest package
   storygro capture  <x.capture.yaml>        record a scripted browser session (frames + finger) for a screencast scene
   storygro publish  plan <release-dir> --variant ru --platform instagram --account @handle
                     | approve <id> | mark <id> <state> [--url …] [--note …] | checklist <id> | list
@@ -118,6 +120,17 @@ if (cmd === 'capture') {
   const r = await recordCapture(specPath, { out: opt('--out'), log: (m) => process.stdout.write(`${m}\r`) });
   console.log(`\n✔ ${r.meta.frames} frames, ${r.meta.duration} s at ${r.meta.fps} fps, ${r.meta.pixels.width}×${r.meta.pixels.height} → ${r.out}`);
   if (r.meta.taps.length) console.log(`  taps at ${r.meta.taps.map((t) => `${t.t}s`).join(', ')}`);
+  process.exit(0);
+}
+
+if (cmd === 'series') {
+  const r = seriesStatus(specPath);
+  const md = seriesMarkdown(r);
+  const dest = opt('--md');
+  if (dest) {
+    writeFileSync(dest, `${md}\n`);
+    console.log(`✔ ${dest}`);
+  } else console.log(md);
   process.exit(0);
 }
 

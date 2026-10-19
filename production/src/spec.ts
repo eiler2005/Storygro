@@ -113,6 +113,8 @@ export const ReelSpec = z.object({
   captions: z
     .object({ show: z.boolean().default(true), maxWords: z.number().int().default(7) })
     .default({ show: true, maxWords: 7 }),
+  /** brand profile to check against (brand.yaml, relative to the spec) */
+  brand: z.string().optional(),
   /** text for the publication of this variant: description, hashtags, pinned comment */
   post: z
     .object({ title: z.string().optional(), text: z.string().default(''), tags: z.array(z.string()).default([]) })

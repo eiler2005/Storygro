@@ -1,0 +1,91 @@
+# Short format (~45 s): a topic picked by the trend scan, one mechanism, one action.
+reel: 1
+title: Где проверять работу ИИ-агента
+lang: ru
+format: { preset: vertical, fps: 30 }
+voice: { engine: qwen3, voice: assets/voice/narrator-ru.wav, speed: 0.96 }
+music: { bpm: 104, key: D, progression: [vi, IV, I, V], gain: 0.22 }
+loudness: -14
+theme: theme.css
+brand: ../../brand.yaml
+data: { facts: facts.json }
+captions: { show: true, maxWords: 4 }
+transition: { kind: fade, dur: 0.35 }
+allowNumbers: ['1', '2', '3']   # step numbers, not facts
+stills: { cover: hook, data: data }
+post:
+  title: Где проверять работу ИИ-агента
+  text: |
+    Один успешный запуск ещё не делает агента надёжным. В тесте τ-bench лучший агент 2024 года решал около 61% задач в рознице с первой попытки, а одну и ту же задачу восемь раз подряд — меньше чем в 25% случаев. Новые модели сильнее, но разрыв между «один раз» и «каждый раз» никуда не делся.
+
+    Что делать:
+    • ставить проверку на дорогие шаги — деньги, клиенты, удаление данных;
+    • назначать человека, который подтверждает действие;
+    • записывать, кто и что одобрил.
+
+    Ответственность остаётся на компании: в 2024 году трибунал в Канаде обязал Air Canada отвечать за неверный ответ её чат-бота (Moffatt v. Air Canada).
+
+    Источники: τ-bench (arXiv 2406.12045), Moffatt v. Air Canada 2024 BCCRT 149, Anthropic «Building effective agents». Тема выбрана по сканированию трендов Storygro от 19.10.2026. Голос синтезирован (Qwen3-TTS).
+  tags: [ИИ, агенты, бизнес, автоматизация, качество]
+scenes:
+  - id: hook
+    scene: headline
+    say: 'Ваш [ИИ-агент](=агент на нейросети) справился с задачей. {#again}Но справится ли он восемь раз подряд?'
+    pad: [0.15, 0.5]
+    energy: 0.45
+    sfx: [{ at: again, kind: thud, gain: 0.6 }]
+    props:
+      kicker: ИИ-агенты в работе
+      lines:
+        - { text: Один успех, at: -1 }
+        - { text: ≠ надёжность, at: again, tone: red, mark: надёжность }
+  - id: data
+    scene: stat
+    say: 'В тесте тау-бенч лучший агент [2024](=двадцать четвёртого) года с первой попытки решал [61%](=шестьдесят один процент) задач. {#eight}Восемь раз подряд — меньше четверти.'
+    pad: [0.2, 0.7]
+    energy: 0.5
+    sfx: [{ at: eight, kind: hit, gain: 0.5 }]
+    props:
+      title: Один раз ≠ каждый раз
+      items:
+        - { valueFrom: facts.tau.pass1, labelFrom: facts.tau.pass1Label, tone: blue, at: 0.6 }
+        - { valueFrom: facts.tau.pass8, labelFrom: facts.tau.pass8Label, tone: red, at: eight }
+      sourceFrom: facts.tau.sourceLine
+  - id: where
+    scene: steps
+    say: 'Значит, проверку встраивают в задачу. {#a}На дорогих шагах: деньги, клиенты, данные. {#b}С человеком, который подтверждает. {#c}И с журналом решений.'
+    pad: [0.2, 0.6]
+    energy: 0.5
+    sfx: [{ at: a, kind: pop, gain: 0.4 }, { at: b, kind: pop, gain: 0.4 }, { at: c, kind: pop, gain: 0.4 }]
+    props:
+      title: Где ставить проверку
+      tone: blue
+      items:
+        - { text: На дорогих шагах, sub: 'деньги, клиенты, удаление данных', at: a }
+        - { text: Человек подтверждает, sub: у действия есть ответственный, at: b }
+        - { text: Журнал решений, sub: кто и что одобрил, at: c }
+  - id: liability
+    scene: headline
+    say: 'Ответственность — на компании: {#court}в [2024](=двадцать четвёртом) году трибунал в Канаде обязал авиакомпанию отвечать за ответ её чат-бота.'
+    pad: [0.2, 0.6]
+    energy: 0.45
+    sfx: [{ at: court, kind: thud, gain: 0.5 }]
+    props:
+      kicker: Ответственность
+      lines:
+        - { text: За ответ бота, at: 0.2 }
+        - { text: отвечает, at: court, tone: red }
+        - { text: компания, at: court, tone: red, mark: компания }
+      note: { textFrom: facts.airCanada.sourceLine, at: court }
+  - id: outro
+    scene: headline
+    say: 'Проверка — часть постановки задачи. {#cta}Перешлите тому, кто внедряет агентов.'
+    pad: [0.2, 1.8]
+    energy: 0.4
+    sfx: [{ at: cta, kind: chime, gain: 0.5 }]
+    props:
+      kicker: вывод
+      lines:
+        - { text: Проверка —, at: -1 }
+        - { text: часть задачи, at: 0.3, tone: blue, mark: задачи }
+      note: { text: 'перешлите тому, кто внедряет агентов', at: cta }

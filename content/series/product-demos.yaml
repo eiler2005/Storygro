@@ -1,0 +1,7 @@
+series: 1
+id: product-demos
+title: Демо продуктов
+audience: Пользователи и покупатели продуктов автора
+format: Вертикальный ролик 30–60 с с записью реального экрана (storygro capture → screencast)
+episodes:
+  - ../videos/slidecraft-demo/episode.yaml

@@ -2,7 +2,7 @@
 // Everything is deterministic (seeded jitter, no Math.random) and animated only through draw(t).
 // Colours come from theme tokens with fallbacks, so a theme can restyle every scene:
 //   --pp-paper, --pp-paper2, --pp-ink, --pp-muted, --pp-red, --pp-yellow, --pp-teal, --pp-blue,
-//   --pp-card, --pp-shadow, --pp-font, --pp-display, --pp-hand
+//   --pp-card, --pp-font, --pp-display, --pp-hand (shadows are fixed: SHADOW)
 import { clamp, ease, h, lerp, p, rand, set } from './kit.js';
 
 export const C = {
@@ -114,7 +114,7 @@ export function words(str, style = {}) {
     .map((w) => h('span', { style: { display: 'inline-block', marginRight: '.26em', ...style } }, w));
 }
 
-/** Reveal word spans from t0, one every `gap` seconds, rising and unblurring. */
+/** Reveal word spans from t0, one every `gap` seconds, rising, fading in and settling a slight tilt. */
 export function revealWords(spans, t, t0, gap = 0.07, dur = 0.45) {
   spans.forEach((w, j) => {
     const q = p(t, t0 + j * gap, dur, ease.outQuint);
@@ -260,12 +260,12 @@ export function sourceLine(str, { size = 26, color = C.muted } = {}) {
  */
 export function box(ctx, captionReserve, inset) {
   const s = ctx.safe ?? { top: 0, bottom: 0, left: 0, right: 0, caption: 0 };
-  const reserve = captionReserve ?? (ctx.height > ctx.width ? Math.round(ctx.width * 0.17) : Math.round(ctx.height * 0.1));
+  const reserve = captionReserve ?? (ctx.captions === false ? 0 : ctx.height > ctx.width ? Math.round(ctx.width * 0.17) : Math.round(ctx.height * 0.1));
   const m = inset ?? Math.round(Math.min(ctx.width, ctx.height) * 0.024);
   const left = s.left + m;
   const right = ctx.width - s.right - m;
   const top = s.top + m;
-  const bottom = ctx.height - Math.max(s.bottom, s.caption) - reserve;
+  const bottom = ctx.height - (ctx.captions === false ? s.bottom : Math.max(s.bottom, s.caption)) - reserve - (ctx.captions === false ? m : 0);
   return { left, right, top, bottom, width: right - left, height: bottom - top, cx: left + (right - left) / 2 };
 }
 

@@ -58,6 +58,7 @@ for (const s of tl.scenes) {
     height: tl.height,
     safe: tl.safe,
     lang: tl.lang,
+    captions: !!tl.captions?.show,
     kit,
     asset: (p) => url(p),
   };

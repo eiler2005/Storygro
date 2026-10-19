@@ -8,7 +8,8 @@
 //   cut?: number                            bottom rungs to cut (default 0 = no cut)
 //   cutAt?: cue|s                           default cue `cut`
 //   gap?: { text, at?: cue|s }              handwritten note pointing at the gap
-//   future?: { text, at: cue|s, note?: string }   stamp (e.g. "in 10 years"); top figures leave
+//   future?: { text, at?: cue|s, note?: string }  stamp (e.g. "in 10 years"; default at: cutAt + 3 s);
+//                                           the top figures leave
 //   instant?: boolean                       start fully built and already cut (the ladder returning later)
 import { C, box, card, drop, fitText, paperBackground, person, scissors, scribble, stamp, tone, words, revealWords } from '../runtime/paper.js';
 
@@ -83,7 +84,7 @@ export default {
     layer.append(sc.el);
 
     // the gap: a dashed bracket from the ground to the first kept rung, and a handwritten note
-    const gapAt = gap ? (instant ? -3 : at(gap.at, cutAt + 1.2)) : 0;
+    const gapAt = instant ? -3 : gap ? at(gap.at, cutAt + 1.2) : cutAt + 1.2;
     const bracket = cut ? scribble(`M ${ladX + ladW / 2} ${ground - 14 * u} L ${ladX + ladW / 2} ${rungY(cut) + 36 * u}`, { color: C.red, width: 6 * u, w: W, hgt: ctx.height }) : null;
     if (bracket) {
       bracket.el.querySelector('path').setAttribute('stroke-dasharray', `${14 * u} ${12 * u}`);
@@ -130,7 +131,9 @@ export default {
         const t0 = 0.25 + r.i * 0.12;
         const fall = r.i < cut ? clamp((t - cutAt - 0.1 * r.i) / 0.8) : 0;
         build(r.el, t0);
+        // a falling rung may cross the frame edge; that is motion, not layout
         if (fall > 0) r.el.setAttribute('data-rc-safe-ignore', '');
+        else r.el.removeAttribute('data-rc-safe-ignore');
         if (fall > 0) set(r.el, { transform: `translate(${fall * (r.i % 2 ? 120 : -90) * u}px, ${fall * fall * 700 * u}px) rotate(${fall * (r.i % 2 ? 40 : -35)}deg)`, opacity: 1 - clamp((fall - 0.6) / 0.4) });
         set(r.label, { opacity: p(t, t0 + 0.2, 0.4) * (r.i < cut ? 1 - 0.6 * p(t, cutAt + 0.3, 0.5) - 0.4 * p(t, gapAt - 0.2, 0.4) : 1), textDecoration: r.i < cut && t > cutAt + 0.3 ? 'line-through' : 'none' });
         set(r.lead, { opacity: p(t, t0 + 0.2, 0.4) * (r.i < cut ? 1 - p(t, cutAt, 0.4) : 1) });

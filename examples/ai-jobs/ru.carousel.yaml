@@ -1,0 +1,107 @@
+# Карусель к выпуску: 7 карточек 1080×1350, свой сценарий (не кадры из видео).
+# Озвучки нет: `say` задаёт только порядок и тайминг появления; кадр карточки — конец её анимации.
+reel: 1
+title: ИИ и работа — карусель
+lang: ru
+format: { preset: portrait, fps: 30 }
+voice: { engine: none }
+theme: theme.css
+captions: { show: false }
+data: { facts: facts.json }
+
+scenes:
+  - id: cover
+    scene: headline
+    say: '{#a}ИИ не увольняет. {#b}Он перестаёт нанимать новичков.'
+    props:
+      kicker: ИИ и работа · листайте →
+      lines:
+        - { text: Не увольняют., at: a }
+        - { text: Перестают, at: b, tone: red }
+        - { text: нанимать., at: b, tone: red, mark: нанимать }
+      note: { text: 'почему это опаснее, чем кажется', at: b }
+
+  - id: tasks
+    scene: task-stack
+    say: 'Работа — набор задач. {#cut}ИИ забирает проверяемые. {#after}Должность остаётся.'
+    props:
+      title: Работа — это набор задач
+      role: начинающий аналитик
+      cutAt: cut
+      tasks:
+        - { text: Собрать данные, ai: true }
+        - { text: Написать черновик отчёта, ai: true }
+        - { text: Проверить выводы }
+        - { text: Сделать сводку встречи, ai: true }
+        - { text: Обсудить с клиентом }
+        - { text: Принять решение }
+      aiLabel: ИИ
+      keep: true
+      after: { text: 'ИИ забирает то, что проще проверить', at: after, mark: проверить }
+
+  - id: ladder
+    scene: ladder
+    say: 'На этих задачах учились новички. {#cut}Это нижние ступени. {#gap}Новичку не на что встать.'
+    props:
+      title: Нижние ступени карьеры исчезают
+      rungs:
+        - { text: черновики }
+        - { text: сбор данных }
+        - { text: проверка }
+        - { text: клиенты }
+        - { text: решения }
+      figures:
+        - { rung: 0, kind: junior }
+        - { rung: 1, kind: junior }
+        - { rung: 3, kind: worker }
+        - { rung: 5, kind: senior }
+      cut: 2
+      cutAt: cut
+      gap: { text: первой ступени нет, at: gap }
+
+  - id: data
+    scene: stat
+    say: '{#a}Минус одиннадцать. {#b}Плюс десять. {#c}Меньше нанимают.'
+    props:
+      title: В США новичков уже нанимают меньше
+      items:
+        - { valueFrom: facts.stanford.exposedChange, labelFrom: facts.stanford.exposedLabelRu, tone: red, at: a }
+        - { valueFrom: facts.stanford.leastExposedChange, labelFrom: facts.stanford.leastLabelRu, tone: teal, at: b }
+      note: { text: не увольняют — меньше нанимают, at: c }
+      sourceFrom: facts.stanford.sourceLineRu
+
+  - id: risk
+    scene: crowd
+    say: 'В России {#share}каждое десятое место под высоким риском. {#full}Полная автоматизация — меньше процента.'
+    props:
+      title: В России риск — не значит замена
+      cols: 20
+      rows: 5
+      groups:
+        - { shareFrom: facts.hse.highRiskShare, label: высокий риск от ИИ, at: share }
+      value: { textFrom: facts.hse.highRiskLabel, at: share }
+      note: { text: 'полная автоматизация — менее 1%', at: full }
+      sourceFrom: facts.hse.sourceLine
+
+  - id: todo
+    scene: steps
+    say: '{#a}Первое. {#b}Второе. {#c}Третье. {#d}Четвёртое.'
+    props:
+      title: Что с этим делать
+      items:
+        - { text: Учиться на реальных задачах, sub: 'проекты, стажировки, наставник', at: a }
+        - { text: Раньше брать ответственность, sub: 'клиент, решение, результат', at: b }
+        - { text: 'ИИ — ускоритель, а не замена', sub: проверяй каждый его ответ, at: c }
+        - { text: Компаниям — нанимать джунов, sub: это ваши будущие сеньоры, at: d }
+
+  - id: outro
+    scene: outro
+    say: '{#a}ИИ не отнимает профессии. {#cta}Он убирает первые ступени.'
+    props:
+      lines:
+        - { text: ИИ не отнимает, at: a }
+        - { text: профессии., at: a }
+        - { text: Он убирает, at: a, tone: red }
+        - { text: первые ступени., at: a, tone: red }
+      cta: { text: 'Сохрани и перешли тому, кто только начинает', at: cta }
+      sign: 'Источники: Stanford Digital Economy Lab 2026, НИУ ВШЭ 2026 · Storygro'

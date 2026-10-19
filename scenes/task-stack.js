@@ -5,15 +5,18 @@
 //   role?: string                      chip next to a small figure (whose job this is)
 //   tasks: [{ text, ai?: boolean, at?: cue|s }]   `at` is when that card is cut (ai cards only)
 //   from?: cue|s                       first card drops (default 0.4 s), the rest follow 0.22 s apart
-//   cutAt?: cue|s                      first cut (default cue `cut`); later ai cards follow 0.55 s apart
+//   cutAt?: cue|s                      first cut (default cue `cut`, else from + 0.22 s × cards + 1.2 s);
+//                                      later ai cards follow 0.55 s apart
 //   after?: { text, at?: cue|s, mark?: string }   line under the stack once the cuts are done
-//   aiLabel?: string                   small tag on each cut card while it flies (default "AI")
+//   aiLabel?: string                   tag shown on each card 0.5 s before it is cut (default "AI")
+//   keep?: boolean                     cut cards stay in place, struck through and tagged (for stills
+//                                      and carousels, where a card that flew away explains nothing)
 import { C, box, card, drop, fitText, markWord, paperBackground, person, revealWords, scissors, tone, words } from '../runtime/paper.js';
 
 export default {
   mount(root, ctx) {
     const { h, set, p, ease, cue, clamp, lerp, drift } = ctx.kit;
-    const { title, role, tasks = [], after, aiLabel = 'AI' } = ctx.props;
+    const { title, role, tasks = [], after, aiLabel = 'AI', keep = false } = ctx.props;
     if (!tasks.length) throw new Error('task-stack: tasks are required');
     const b = box(ctx);
     const W = ctx.width;
@@ -47,7 +50,8 @@ export default {
     // cards
     const n = tasks.length;
     const gap = 12 * u;
-    const space = b.bottom - y - 10 * u; // the `after` line appears once the stack is shorter
+    // the `after` line appears once the stack is shorter; with `keep` the stack stays full height
+    const space = b.bottom - y - (keep && after ? 150 * u : 10 * u);
     const cardH = Math.min(136 * u, (space - gap * (n - 1)) / n);
     const cardW = b.width * 0.94;
     const left = b.left + (b.width - cardW) / 2;
@@ -128,11 +132,17 @@ export default {
       sc.draw(open);
 
       // every card closes up under the cards already cut above it
-      const off = (i, tt) => cuts.filter((c) => c.i < i).reduce((a, c) => a + p(tt, c.cutAt + 0.25, 0.45, ease.inOut) * (cardH + gap), 0);
-      const centre = p(t, lastCut + 0.5, 0.6, ease.inOut) * shift;
+      const off = (i, tt) => keep ? 0 : cuts.filter((c) => c.i < i).reduce((a, c) => a + p(tt, c.cutAt + 0.25, 0.45, ease.inOut) * (cardH + gap), 0);
+      const centre = keep ? 0 : p(t, lastCut + 0.5, 0.6, ease.inOut) * shift;
       for (const it of items) {
         const appear = from + it.i * 0.22;
-        if (it.cutAt !== null) {
+        if (it.cutAt !== null && keep) {
+          const k = p(t, it.cutAt, 0.35);
+          drop(it.el, t, appear, { from: -50 * u, rot: it.rot, base: `translateY(${slotY(it.i)}px)` });
+          set(it.face, { opacity: 1 - 0.45 * k });
+          set(it.label, { textDecoration: k > 0.5 ? 'line-through' : 'none', textDecorationColor: C.red, textDecorationThickness: `${4 * u}px` });
+          if (it.tag) set(it.tag, { opacity: k, transform: `scale(${lerp(0.6, 1, p(t, it.cutAt, 0.3, ease.outBack))})` });
+        } else if (it.cutAt !== null) {
           // the cut card flies off to the right and falls from where it was
           const baseY = slotY(it.i) - off(it.i, Math.min(t, it.cutAt));
           const f = clamp((t - it.cutAt) / 0.9);
@@ -151,7 +161,7 @@ export default {
       }
 
       if (afterEl) {
-        const ay = slotY(kept) + shift + 30 * u;
+        const ay = keep ? slotY(n) + 20 * u : slotY(kept) + shift + 30 * u;
         set(afterEl, { top: `${ay}px` });
         revealWords(afterSpans, t, afterAt, 0.06);
         afterMark?.draw(p(t, afterAt + 0.5, 0.5, ease.inOut));

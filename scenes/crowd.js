@@ -1,13 +1,15 @@
-// crowd — a hundred paper figures stand for a whole workforce; groups light up on cues, so shares
-// read as people ("40 in 100"), and a later, smaller group shows that exposed is not replaced.
+// crowd — a grid of paper figures (100 by default) stands for a whole workforce; groups light up on
+// cues, so shares read as people ("1 in 10"), and a later, smaller group shows that exposed is not
+// replaced. All groups draw from one seeded shuffle, so a smaller group always lies inside a larger one.
 // props:
 //   title?: string
 //   cols?: number, rows?: number            grid size (default 10 × 10)
-//   groups: [{ share: number (0..1 or a percent string like "40%"), tone?: string, label: string,
-//              at?: cue|s, within?: number }]   `within` = index of an earlier group to pick from
-//   value?: { text: string, at?: cue|s }       big number on a card over the grid
+//   groups: [{ share: number 0..1 | percent string ("40%" — a string is always read as percent),
+//              tone?: string, label: string, at?: cue|s, within?: number }]
+//            `within` = index of an earlier group whose figures this one is limited to
+//   value?: { text: string, at?: cue|s }       big number on a card above the grid
 //   source?: string
-//   note?: { text, at?: cue|s }             handwritten remark over the bottom of the grid
+//   note?: { text, at?: cue|s }             handwritten remark in the legend, under the grid
 import { C, box, card, fitText, paperBackground, revealWords, sourceLine, tone, words } from '../runtime/paper.js';
 
 const FIG = (fill) =>
@@ -64,6 +66,7 @@ export default {
     const picked = [];
     const gs = groups.map((g, k) => {
       const count = Math.round(share(g.share) * N);
+      if (g.within !== undefined && !picked[g.within]) throw new Error(`crowd: groups[${k}].within must name an earlier group (0…${k - 1})`);
       const pool = g.within !== undefined ? picked[g.within] : order;
       const set_ = pool.slice(0, count);
       picked.push(set_);

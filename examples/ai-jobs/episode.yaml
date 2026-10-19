@@ -1,0 +1,11 @@
+# One episode, two self-contained language variants. `storygro package episode.yaml` collects the
+# checked outputs of every variant into one release folder with a manifest (nothing is published).
+episode: 1
+id: ai-jobs
+title: What AI means for jobs — and where the real danger is
+series: explainers
+sources: sources.md
+credits: CREDITS.md
+variants:
+  - { id: ru, spec: ru.reel.yaml, carousel: ru.carousel.yaml }
+  - { id: en, spec: en.reel.yaml, carousel: en.carousel.yaml }

@@ -2,10 +2,11 @@
 // word, a hand-drawn strike-through and a rubber stamp. Vertical-first; also works landscape.
 // props:
 //   kicker?: string                       small capitals above the lines
-//   lines: [{ text, at?: cue|s, tone?: ink|red|muted|teal|blue, mark?: string, markAt?: cue|s,
-//             strike?: cue|s }]
-//   stamp?: { text, at: cue|s, tone? }    rubber stamp under the lines
-//   note?: { text, at: cue|s }            handwritten note at the bottom
+//   lines: [{ text, at?: cue|s, tone?: string, mark?: string, markAt?: cue|s, strike?: cue|s }]
+//          tone: ink, red, muted, teal, blue, yellow or any CSS colour; a negative `at` shows the
+//          line (and the kicker) from frame 0
+//   stamp?: { text, at?: cue|s (default 2.5 s), tone? }   rubber stamp under the lines
+//   note?: { text, at?: cue|s (default 3 s) }              handwritten note at the bottom
 //   align?: center|left                   default center
 import { C, box, fitText, markWord, paperBackground, revealWords, scribble, stamp, tone, words } from '../runtime/paper.js';
 

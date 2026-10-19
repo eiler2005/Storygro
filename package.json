@@ -1,6 +1,6 @@
 {
   "name": "storygro",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "description": "A toolkit for AI agents to turn ideas into reels, videos, carousels, and social posts. Build your audience and grow your brand through content.",
   "type": "module",
@@ -30,7 +30,16 @@
     "type": "git",
     "url": "git+https://github.com/eiler2005/Storygro.git"
   },
-  "keywords": ["ai-agents", "storytelling", "content-creation", "video-generation", "social-media", "content-marketing", "reels", "automation"],
+  "keywords": [
+    "ai-agents",
+    "storytelling",
+    "content-creation",
+    "video-generation",
+    "social-media",
+    "content-marketing",
+    "reels",
+    "automation"
+  ],
   "engines": {
     "node": ">=22.12"
   }

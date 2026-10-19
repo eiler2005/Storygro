@@ -1,0 +1,108 @@
+# Carousel for the episode: 7 cards at 1080×1350 with their own copy (not frames from the video).
+# No narration: `say` only orders and times the reveals; each card is the end state of its scene.
+reel: 1
+title: AI and jobs — carousel
+lang: en
+format: { preset: portrait, fps: 30 }
+voice: { engine: none }
+theme: theme.css
+captions: { show: false }
+data: { facts: facts.json }
+
+scenes:
+  - id: cover
+    scene: headline
+    say: '{#a}AI is not firing people. {#b}It is closing first jobs.'
+    props:
+      kicker: AI and work · swipe →
+      lines:
+        - { text: No mass layoffs., at: a }
+        - { text: Fewer first, at: b, tone: red }
+        - { text: jobs., at: b, tone: red, mark: jobs. }
+      note: { text: "and why that's the real danger", at: b }
+
+  - id: tasks
+    scene: task-stack
+    say: 'A job is a bundle of tasks. {#cut}AI takes the checkable ones. {#after}The job stays.'
+    props:
+      title: A job is a bundle of tasks
+      role: junior analyst
+      cutAt: cut
+      tasks:
+        - { text: Gather the data, ai: true }
+        - { text: Write the first draft, ai: true }
+        - { text: Check the conclusions }
+        - { text: Summarise the meeting, ai: true }
+        - { text: Talk to the client }
+        - { text: Make the call }
+      aiLabel: AI
+      keep: true
+      after: { text: AI takes what is easiest to check, at: after, mark: check }
+
+  - id: ladder
+    scene: ladder
+    say: 'Beginners learned on those tasks. {#cut}They were the bottom rungs. {#gap}Nowhere to step.'
+    props:
+      title: The bottom rungs of a career disappear
+      rungs:
+        - { text: drafts }
+        - { text: data }
+        - { text: checks }
+        - { text: clients }
+        - { text: decisions }
+      figures:
+        - { rung: 0, kind: junior }
+        - { rung: 1, kind: junior }
+        - { rung: 3, kind: worker }
+        - { rung: 5, kind: senior }
+      cut: 2
+      cutAt: cut
+      gap: { text: no first rung, at: gap }
+
+  - id: data
+    scene: stat
+    say: '{#a}Minus eleven. {#b}Plus ten. {#c}Fewer hired.'
+    props:
+      title: In the US, fewer beginners are hired
+      items:
+        - { valueFrom: facts.stanford.exposedChange, labelFrom: facts.stanford.exposedLabelEn, tone: red, at: a }
+        - { valueFrom: facts.stanford.leastExposedChange, labelFrom: facts.stanford.leastLabelEn, tone: teal, at: b }
+      note: { text: not fired — not hired, at: c }
+      sourceFrom: facts.stanford.sourceLineEn
+
+  - id: risk
+    scene: crowd
+    say: '{#share}One in four is exposed. {#top}Three in a hundred are highly exposed.'
+    props:
+      title: Exposed is not replaced
+      cols: 20
+      rows: 5
+      groups:
+        - { shareFrom: facts.ilo.someExposureShare, label: AI can do some of the tasks, at: share }
+        - { shareFrom: facts.ilo.topExposureShare, within: 0, label: 'highest exposure: 3.3%', tone: red, at: top }
+      value: { textFrom: facts.ilo.someExposureLabel, at: share }
+      note: { text: most jobs change rather than vanish, at: top }
+      sourceFrom: facts.ilo.sourceLine
+
+  - id: todo
+    scene: steps
+    say: '{#a}One. {#b}Two. {#c}Three. {#d}Four.'
+    props:
+      title: So what do you do
+      items:
+        - { text: Learn on real work, sub: 'projects, internships, a mentor', at: a }
+        - { text: Take responsibility early, sub: 'a client, a decision, a result', at: b }
+        - { text: 'Use AI, and check it', sub: 'it drafts, you decide', at: c }
+        - { text: 'Companies: keep hiring juniors', sub: they are your future seniors, at: d }
+
+  - id: outro
+    scene: outro
+    say: "{#a}AI isn't taking away professions. {#cta}It's taking away the first rungs."
+    props:
+      lines:
+        - { text: "AI isn't taking", at: a }
+        - { text: away professions., at: a }
+        - { text: "It's taking", at: a, tone: red }
+        - { text: the first rungs., at: a, tone: red }
+      cta: { text: 'Save it and send it to someone just starting out', at: cta }
+      sign: 'Sources: Stanford Digital Economy Lab 2026, ILO 2025 · Storygro'

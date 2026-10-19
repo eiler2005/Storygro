@@ -2,8 +2,8 @@
 
 Model `v5_cis_base_nostress` (default) takes stress marks as `+` before the stressed vowel; the MIT
 `silero-stress` accentor places them, and the script can override any word:
-  - a combining acute accent after the vowel (заб́ерёт is wrong, забер́ёт → `забер+ёт`) or
-  - an explicit `+` before the vowel.
+  - an explicit `+` before the stressed vowel (`зам+ок`, the lock; `з+амок`, the castle) or
+  - a combining acute accent (U+0301) after it (`замо́к`), converted to `+`.
 The model reads Cyrillic only: Latin words and digits must be spelled with `[written](=spoken)`.
 Licences: code and the CIS base models MIT (github.com/snakers4/silero-models, LICENSE_CIS);
 the `v4_ru`/`v5_*_ru` speakers are CC BY-NC-SA and are not used here.

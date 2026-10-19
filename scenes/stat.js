@@ -1,8 +1,8 @@
-// stat — one to three numbers on torn paper cards, each with a label, dropping on cues; numbers count
-// up from zero when they are plain numbers. Values must come from the data (`itemsFrom` or `valueFrom`).
+// stat — numbers on torn paper cards (one to three read best), each with a label, dropping on cues;
+// numbers count up from zero. Values must come from the data (`itemsFrom` or `items[].valueFrom`).
 // props:
 //   title?: string
-//   items: [{ value: string, label: string, tone?: string, at?: cue|s, note?: string }]
+//   items: [{ value: string, label: string, tone?: string, at?: cue|s }]
 //   source?: string
 //   note?: { text, at?: cue|s }        handwritten remark under the cards
 import { C, box, card, drop, fitText, paperBackground, revealWords, sourceLine, tone, words } from '../runtime/paper.js';

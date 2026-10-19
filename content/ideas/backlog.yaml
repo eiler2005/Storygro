@@ -17,10 +17,13 @@ items:
   - id: ai-review
     title: Где проверять работу ИИ-агента
     thesis: Проверку нужно проектировать вместе с задачей агенту.
-    status: candidate
-    sources: [https://www.anthropic.com/engineering/building-effective-agents]
-    ratings: { evidence: 4, audience: 5, utility: 5, visual: 5, timeliness: 3, ease: 4 }
-    rationale: 'Сцена коллажа отработана во внутреннем примере; текущий заказ владельца переключён на micro1. Эта тема остаётся кандидатом, не опубликованным материалом.'
+    status: produced
+    episode: ../videos/ai-agent-checks/episode.yaml
+    sources:
+      - https://arxiv.org/abs/2406.12045
+      - https://www.anthropic.com/engineering/building-effective-agents
+    ratings: { evidence: 5, audience: 5, utility: 5, visual: 5, timeliness: 4, ease: 4 }
+    rationale: 'Выбрано по сканированию трендов 19.10.2026: единственная идея с растущим вниманием (медиана 1.27) и прямой сигнал HN про тихие сбои агентов. Ход выбора — content/research/ai-agent-checks/README.md. Оценки редакционные; тренд — контекст, не доказательство тезиса.'
     watch:
       wikipedia: { en: [AI_agent], ru: [Искусственный_интеллект] }
       hn: [AI agent, agentic]
@@ -56,3 +59,12 @@ items:
       - https://github.com/eiler2005/Storygro
     ratings: { evidence: 5, audience: 4, utility: 4, visual: 5, timeliness: 2, ease: 5 }
     rationale: Демонстрация уже работающих сценариев Storygro; без обещаний автоматического роста или публикации.
+  - id: slidecraft-demo
+    title: Презентация из одного промпта — демо SlideCraft
+    thesis: Запись настоящего экрана объясняет продукт быстрее, чем пересказ возможностей.
+    status: produced
+    episode: ../videos/slidecraft-demo/episode.yaml
+    sources:
+      - https://github.com/eiler2005/slidecraft
+    ratings: { evidence: 5, audience: 3, utility: 4, visual: 5, timeliness: 2, ease: 4 }
+    rationale: 'Первый ролик серии product-demos; проверка конвейера storygro capture → screencast на реальном сайте. Продуктовое демо, не независимый обзор.'

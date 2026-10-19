@@ -214,7 +214,7 @@ switch (cmd) {
   }
   case 'approve': {
     if (!existsSync(join(out, 'board.html'))) throw new Error('no storyboard yet — run storygro board first');
-    console.log(`✔ approved inputs ${approve(l, process.env.USER ?? 'owner')}`);
+    console.log(`✔ approved inputs ${approve(l, process.env.STORYGRO_APPROVER ?? process.env.USER ?? 'owner')}`);
     break;
   }
   case 'preview': {

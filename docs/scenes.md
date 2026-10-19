@@ -619,6 +619,43 @@ Excerpt from the `todo` entry. `say`, `pad`, `energy` and `sfx` are left out.
         - { text: Компаниям — нанимать джунов, sub: это ваши будущие сеньоры, at: d }
 ```
 
+## screencast
+
+Shows a recorded browser session inside a phone on paper: the real screens frame by frame, a finger that travels and taps, a ripple on each tap, short notes beside the phone, an optional zoom and a magnifier card that enlarges the region the narration talks about. The recording comes from `storygro capture` ([workflow](workflows.md#8-a-product-demo-from-a-real-website)); `draw(t)` picks the frame for its time and returns the image-decode promise, which the player awaits before the screenshot.
+
+| Prop | Type | Required | Meaning |
+|---|---|---|---|
+| `capture` | string | Yes | The capture spec, e.g. `captures/site.capture.yaml`. Its frames are read from `<dir>/.reel/captures/<name>/`; the scene throws an error naming the `storygro capture` command when they are missing. |
+| `title` | string | No | Heading above the phone. |
+| `from` | seconds | No (default 0) | Recording second shown at the start of the scene. |
+| `to` | seconds | No (default: the end) | Recording second to stop at; the frame then holds. |
+| `rate` | number | No (default 1) | Playback speed of the recording. |
+| `align` | `{ at: cue\|s, rec: s }` | No | Recording second `rec` plays exactly at cue `at`, so a recorded tap lands on the narrated word. With `from` as well, the rate is solved so the recording runs from `from` (scene start) to `rec` (the cue). |
+| `notes[]` | `{ text, at, until?, tone? }` | No | Labels on the lower edge of the phone, one at a time; a note lasts until the next one unless `until` is set. |
+| `zoom[]` | `{ at, until?, x, y, scale? }` | No | Enlarges the screen around a point (CSS px of the recorded viewport), default scale 1.6. |
+| `focus[]` | `{ at, until?, x, y, w, h }` or `{ rec: [from, to?], x, y, w, h }` | No | A magnifier card at the content width showing that region of the current frame. `rec` times it by the recording instead of the scene. |
+| `finger` | boolean | No (default true) | Draw the finger and tap ripples. |
+
+**Cue names:** `align.at`, `notes[].at/until`, `zoom[].at/until`, `focus[].at/until`.
+
+Excerpt from the `prompt` entry of [slidecraft-demo](../content/videos/slidecraft-demo/ru.reel.yaml):
+
+```yaml
+  - id: prompt
+    scene: screencast
+    say: 'Открываете сайт и копируете готовый промпт. {#copy}Вставляете его в чат с нейросетью {#paste}и пишете тему.'
+    props:
+      capture: captures/site.capture.yaml
+      title: Шаг 1 — один промпт
+      align: { at: copy, rec: 4.4 }
+      to: 5.3
+      focus:
+        - { rec: [4.0], x: 0, y: 176, w: 430, h: 300 }
+      notes:
+        - { text: скопируйте промпт, at: copy }
+        - { text: 'Claude, ChatGPT или Codex', at: paste, tone: blue }
+```
+
 ## outro
 
 Shows the closing card: a few big lines that land the idea, a handwritten call to action, a small sign-off, and a short paper ladder where a newcomer figure steps up onto the first rung.

@@ -310,7 +310,7 @@ export async function watchIdeas(backlog: Backlog, opts: { fetchJson?: FetchJSON
     const ratios = signals.map(s => s.ratio).filter((r): r is number => r !== undefined).sort((a, b) => a - b);
     const mid = ratios.length >> 1;
     const median = !ratios.length ? undefined : ratios.length % 2 ? ratios[mid] : (ratios[mid - 1]! + ratios[mid]!) / 2;
-    out.push({ idea: item.id, title: item.title, status: item.status, momentum: momentum(median), signals });
+    out.push({ idea: item.id, title: item.title, status: item.status, momentum: momentum(median), median: median === undefined ? undefined : Math.round(median * 100) / 100, signals });
   }
   return out;
 }
@@ -338,11 +338,13 @@ export function trendsMarkdown(report: TrendsReport, opts: { top?: number } = {}
       ...items.map((s, i) => `| ${i + 1} | [${cell(s.title)}](${s.url})${s.relevant ? ' ★' : ''} | ${metric(s.metrics)} |`), '');
   }
   if (report.watch?.length) {
-    lines.push('## Watchlist: ideas in the backlog', '', 'Wikipedia: average daily views, last 28 available days vs the 56 before. Hacker News: matching stories in the last 30 days vs the 30-day average of the 90 before.', '',
-      '| Idea | Momentum | Source | Subject | Recent | Previous | Ratio |', '|---|---|---|---|---|---|---|');
+    lines.push('## Watchlist: ideas in the backlog', '', 'Wikipedia: average daily views, last 28 available days vs the 56 before. Hacker News: matching stories in the last 30 days vs the 30-day average of the 90 before. Momentum is the median ratio of the signals with enough volume: ≥ 1.25 rising, ≤ 0.8 falling.', '',
+      '| Idea | Status | Momentum | Median ratio | Signals with enough volume |', '|---|---|---|---|---|',
+      ...report.watch.map(w => `| ${cell(w.title)} | ${w.status} | **${w.momentum}** | ${w.median ?? '—'} | ${w.signals.filter(s => s.ratio !== undefined).length} of ${w.signals.length} |`), '',
+      '| Idea | Source | Subject | Recent | Previous | Ratio |', '|---|---|---|---|---|---|');
     for (const w of report.watch)
       for (const s of w.signals)
-        lines.push(`| ${cell(w.title)} | ${w.momentum} | ${s.source} | ${cell(s.subject.replaceAll('_', ' '))} | ${s.recent ?? '—'} | ${s.previous ?? '—'} | ${s.ratio ?? cell(s.error ? `error: ${s.error}` : s.note ?? '—')} |`);
+        lines.push(`| ${cell(w.title)} | ${s.source} | ${cell(s.subject.replaceAll('_', ' '))} | ${s.recent ?? '—'} | ${s.previous ?? '—'} | ${s.ratio ?? cell(s.error ? `error: ${s.error}` : s.note ?? '—')} |`);
     lines.push('');
   }
   return lines.join('\n');

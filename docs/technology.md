@@ -1,14 +1,15 @@
 # Technology and product map
 
-This is the inventory of what Storygro actually uses and where. [Architecture](architecture.md) explains the internals; [workflows](workflows.md) gives commands. Snapshot: 19 October 2026.
+This is the inventory of what Storygro actually uses and where. [The pipeline](pipeline.md) shows one run with real artefacts; [architecture](architecture.md) explains the internals; [workflows](workflows.md) gives commands. Snapshot: 19 October 2026.
 
 ## Production path
 
 ```mermaid
 flowchart LR
-  W[Wikipedia / Hacker News] --> T[Interest signals]
+  W[Google Trends RSS / Wikipedia / Hacker News] --> T[Interest signals + watchlist]
   T --> I[Curated ideas / sources]
   I --> S[YAML script + facts]
+  CAP[Chrome screen capture] --> S
   S --> V[Kokoro RU/EN / Qwen3 / Silero]
   V --> TL[Word timings + scene cues]
   TL --> B[Storyboard and approval]
@@ -16,6 +17,7 @@ flowchart LR
   C --> F[ffmpeg + procedural audio]
   F --> Q[Technical QA / Whisper]
   Q --> R[Local release: MP4 + subtitles + post + manifest]
+  R --> L[Manual publication ledger + metric snapshots]
 ```
 
 ## Required and optional components
@@ -25,7 +27,7 @@ flowchart LR
 | Storygro | CLI, schemas, scenes, orchestration, QA and packaging | `production/src/`, `production/runtime/`, `production/scenes/` | Core | [PolyForm Shield](../LICENSE), [commercial use](../COMMERCIAL.md) |
 | Node ≥22.12, TypeScript, tsx | Run and check CLI code | `package.json`, `tsconfig.json` | Yes | MIT / Apache-2.0; JS versions pinned in lockfile |
 | yaml, zod | Parse/validate specs, backlog and trend config | `production/src/spec.ts`, `production/src/ideas.ts`, `production/src/package.ts` | Yes | ISC / MIT |
-| Chrome / Chromium | Lay out DOM, SVG, fonts and CSS; screenshots/PDF over CDP | `production/src/cdp.ts`, `production/src/render.ts` | For pictures | Installed browser's terms; no Puppeteer/Playwright dependency |
+| Chrome / Chromium | Lay out DOM, SVG, fonts and CSS; screenshots/PDF over CDP; scripted phone-browser recording | `production/src/cdp.ts`, `production/src/render.ts`, `production/src/capture.ts` | For pictures | Installed browser's terms; no Puppeteer/Playwright dependency |
 | Python 3.12 + uv | Isolated local voice/audio environment | `production/scripts/setup.sh`, `~/.storygro/venv` | For narration/video | Downloads runtime packages and models separately |
 | Kokoro-82M | English narration and native word timestamps | `production/py/voices/kokoro.py` | Choice | [Model](https://huggingface.co/hexgrad/Kokoro-82M), Apache-2.0 |
 | Kokoro-RU + RUAccent + model G2P | Russian Dima/Sveta/Masha, stress and pronunciation | `production/py/voices/kokoro.py`, setup `ru` | Default for new RU episode | [Model card](https://huggingface.co/zaakirio/kokoro-ru): OpenRAIL weights, Apache-2.0 code; not the official English model gaining RU merely from a flag |
@@ -35,18 +37,20 @@ flowchart LR
 | NumPy, SciPy, soundfile, pyloudnorm | Synthesize music/SFX, mix and measure loudness | `production/py/score.py` | For score/video | BSD / MIT terms; no downloaded music samples |
 | imageio-ffmpeg / ffmpeg | H.264/AAC encoding, mux, rescale and audio processing | `production/src/tools.ts`, `production/src/render.ts`, Python audio | For MP4 | BSD wrapper; ffmpeg build has its own LGPL/GPL terms |
 | Golos Text, Unbounded, Caveat, Liberation | Typography in bundled projects | Per-episode font folders | Per theme | Retained notices; no proprietary system fonts redistributed |
-| Wikipedia pageviews / HN official API | Public attention snapshots without credentials | `production/src/ideas.ts` | Optional | Retain source URLs and dates; these are interest signals, not factual verification |
+| Wikipedia pageviews / HN official API + Algolia search / Google Trends RSS | Public attention snapshots and per-idea watchlist without credentials | `production/src/ideas.ts`, `production/trends/sources.yaml` | Optional | Retain source URLs and dates; interest signals, not factual verification; the Trends RSS is a public feed, not an API, and can change |
 | GitHub / Actions | Source control, tests and downloadable release assets | `.github/workflows/check.yml` | Collaboration/distribution | No social-account publication implied |
 
 Kokoro-RU downloads and imports its community G2P frontend from the model repository. The runtime uses model/provider assets outside the Git tree; record the provider metadata with each line. See [voices](voices.md) for exact setup and pronunciation controls.
 
 ## What is implemented
 
-- Idea backlog with transparent scoring and fresh interest snapshots with visible source errors/date lag.
-- Source-backed scripts, separate language variants, 17 built-in scenes (including image-based editorial collage), native vertical formats and captions.
+- Idea backlog with transparent scoring; interest snapshots (Google Trends, Wikipedia, HN) with visible errors and data dates, focus matching, a per-idea watchlist and a Markdown report.
+- Source-backed scripts, separate language variants, 18 built-in scenes (including editorial collage and `screencast` for real recordings), native vertical formats and captions.
+- `storygro capture`: scripted phone-browser recording in virtual time with the finger path.
 - Local voice, music/SFX, arbitrary seeking, storyboard and input approval.
 - MP4/web copy, covers, standalone carousel specs, SRT/VTT and post text.
-- Technical QA and packages with checksums/provider metadata; no network publication during render/package.
+- Technical QA (including speech and brand rules) and packages with checksums/provider metadata; no network publication during render/package.
+- Brand profile and series status; manual publication ledger and metric snapshots (`publish`, `metrics`).
 
 ## Evaluated or planned products
 
@@ -57,6 +61,6 @@ Kokoro-RU downloads and imports its community G2P frontend from the model reposi
 | Ryze | UX/guide reference | Inspiration for the agent-first workflow, no service dependency |
 | Postiz | Candidate publishing adapter | Not integrated; account capabilities and integration terms still need checking |
 | ElevenLabs / OpenAI TTS / Yandex / other paid generators | Possible provider adapters | Not required or connected in the current workflow; needs a specific use case and budget |
-| Instagram / YouTube Shorts | Target distribution channels | Native layouts/export work; account publishing, scheduling and metrics not implemented |
+| Instagram / YouTube Shorts | Target distribution channels | Native layouts/export work; a person uploads and the ledger records it; API publishing, scheduling and analytics not implemented |
 
 There is no hidden hosted LLM or generation bill in the CLI. The authoring agent can be Claude, Codex or another tool; it writes files and runs commands. Research and creative decisions remain the agent/editor's responsibility.

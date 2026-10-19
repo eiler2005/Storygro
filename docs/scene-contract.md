@@ -25,6 +25,7 @@ export default {
 6. **Frame 0 of the first scene is a hook:** something meaningful is visible at `t = 0`.
 7. **Real material only:** images and numbers come from props (bound from data files with `xxxFrom: facts.path`). Never type a number into a scene.
 8. **Assets:** `ctx.asset('assets/x.png')` gives the URL of a file next to the reel. Create `<img>` elements during `mount` so the player waits for them before the first frame; a missing image stops the render.
+8a. **Frames from files:** a scene that swaps an image per frame (a screen recording) may return a promise from `draw(t)`, e.g. `img.decode()` after setting `src`. The player awaits all returned promises before a still, a storyboard frame or a render frame is taken. Return nothing when no new image is needed; the visible state must still depend on `t` alone. Example: `production/scenes/screencast.js`.
 9. **Fail loud, not silent:** throw in `mount` for a missing or invalid required prop with a message that names the prop. The player records the error and the renderer refuses the frame (`--allow-errors` to look at it anyway).
 
 ## `ctx`

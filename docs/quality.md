@@ -57,7 +57,8 @@ The player records, and the storyboard, stills and render refuse:
 | Scenes render without errors | the live player loads every scene, image and font | — |
 | Numbers come from the facts | every number visible on screen appears in a data file, `allowNumbers` or the narration | whether the source is right |
 | Text clear of platform UI | at every cue, no visible text box reaches into the format's safe-area margins (elements marked `data-rc-safe-ignore` excepted) | how a specific phone renders the app UI |
-| Whisper hears the script | per scene, ≥ 85 % of the script's words appear in what Whisper hears on the final mix (voice over music); Unicode-normalised, `ё` = `е`, spoken or written form | naturalness, stress, tone, factual accuracy |
+| Whisper hears the script | per scene, ≥ 85 % of the script's words appear in what Whisper hears on the final mix (voice over music); Unicode-normalised, `ё` = `е`, spoken or written form; hyphenated and split compounds match («ИИ-агент» = «ИИ агент»), a run of number words matches its digits («двадцать четыре» = 24), «процент» matches `%` | naturalness, stress, tone, factual accuracy |
+| Brand rules (only when the spec sets `brand:`) | no phrase from the profile's `avoid` list appears in narration, captions, on-screen props or the post, and the post mentions one of the disclosure words for its language | whether the tone fits; a disclaimer that quotes an avoided word needs a narrower phrase |
 
 The speech check uses `whisper-small.en` for English and `whisper-large-v3-turbo` for other languages through mlx-whisper, with word timestamps. ASR segments can cross a scene boundary: individual words are assigned by their own times, rather than sending the entire segment to the scene containing its midpoint. Missing word timestamps fail the check. The overlap threshold stays at 85%.
 

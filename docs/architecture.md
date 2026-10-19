@@ -16,7 +16,10 @@ flowchart LR
     Y[reel.yaml / ru.reel.yaml<br/>script, scenes, props]
     F[facts.json<br/>numbers + sources]
     T[theme.css, fonts,<br/>assets, scene modules]
+    C[x.capture.yaml<br/>screen recording]
   end
+  C --> CP[Capture<br/>production/src/capture.ts]
+  CP --> R
   Y --> S[Spec<br/>production/src/spec.ts]
   S --> V[Voice<br/>production/py/voice.py + production/py/voices/*]
   V --> TL[Timeline<br/>production/src/timeline.ts]
@@ -28,11 +31,13 @@ flowchart LR
   R --> M[Mux + web copy<br/>ffmpeg]
   M --> Q[QA<br/>production/src/qa.ts + production/py/asr.py]
   Q --> D[deliver / package<br/>manifest.json]
+  D --> L[publish / metrics<br/>production/src/publish.ts]
   T --> R
 ```
 
 | Stage | Code | Reads | Writes (in the variant's work folder) |
 |---|---|---|---|
+| Capture | `production/src/capture.ts` | `*.capture.yaml` | `.reel/captures/<name>/f-NNNNN.jpg` + `capture.json` (beside the capture spec) |
 | Spec | `production/src/spec.ts` | `*.reel.yaml` | validated spec (zod); rejects duplicate ids and YAML texts split by a comma |
 | Voice | `production/py/voice.py`, `production/py/voices/<engine>.py` via `production/src/timeline.ts` | `say` per scene | `voice/<scene>-<hash>.wav` + `.json` (words, cues, provider) |
 | Timeline | `production/src/timeline.ts` | spec, voice, data files, safe-area profile | `timeline.json` |
@@ -43,9 +48,12 @@ flowchart LR
 | Mux | `production/src/render.ts` | video + mix | `<name>.mp4` (master), `<name>-web.mp4` (≤ 25 MB) |
 | Subtitles | `production/src/subtitles.ts` | timeline words | `<name>.srt`, `<name>.vtt` |
 | Stills, cards | `production/src/render.ts` | timeline | `stills/*.png`, letterboxed share cards |
-| QA | `production/src/qa.ts`, `production/py/asr.py` | master, mix, live DOM | `QA.md`, `qa.json`, `asr.json` |
+| QA | `production/src/qa.ts`, `production/py/asr.py`, `production/src/brand.ts` | master, mix, live DOM, brand profile | `QA.md`, `qa.json`, `asr.json` |
 | Deliver | `production/src/cli.ts` | work folder | a folder with the complete set + `manifest.json` |
 | Package | `production/src/package.ts` | `episode.yaml` and its variants | `.reel/releases/<episode>-<date>/` + `manifest.json` |
+| Series | `production/src/brand.ts` | `content/series/*.yaml`, episodes' work folders | status table (stdout or `--md`) |
+| Publication | `production/src/publish.ts` | release manifest, ledger | `content/publishing/publications.json`, `metrics.json` (manual adapter) |
+| Signals | `production/src/ideas.ts` | `production/trends/sources.yaml`, backlog | trend JSON + Markdown report |
 
 The work folder is `.reel/` next to `reel.yaml`, or `.reel/<variant>/` for `<variant>.reel.yaml`. It is ignored by Git and can be deleted at any time; voice lines are cached there by content.
 
@@ -67,7 +75,7 @@ erDiagram
 
 - **Reel spec** (`reel: 1`, unchanged since the prototype): title, `lang`, `format`, `safe`, `voice`, `music`, `theme`, `overlay`, `captions`, `data`, `stills`, `cards`, `post`, `scenes[]`. Each scene has an `id`, a `scene` module, the narration `say`, optional `caption`, `pad`, `min`, `energy`, `sfx`, `transition` and `props`.
 - **Facts** are JSON files bound into props with `xxxFrom: facts.path` (also inside arrays of objects). Numbers shown on screen must exist in a data file; QA reads them back from the rendered DOM.
-- **Episode** (`episode: 1`) ties variants, carousels, sources and credits together for packaging. It is deliberately small; brand, series and publication records are planned (see the [implementation plan](planning/IMPLEMENTATION_PLAN.md)).
+- **Episode** (`episode: 1`) ties variants, carousels, sources and credits together for packaging. It names its `series`. A **series** (`series: 1`, `content/series/`) lists episodes of a rubric; the **brand profile** (`brand: 1`, `content/brand.yaml`) holds audience, voices, disclosure and avoided phrases and is checked by QA when a spec sets `brand:`. Publication records live in a separate ledger ([publishing](publishing.md)).
 
 ## Timing model
 
@@ -105,7 +113,7 @@ sequenceDiagram
 
 The visual layer is plain DOM, SVG and CSS driven by JavaScript — no React, no build step.
 
-- `production/runtime/index.html` + `production/runtime/player.js` load `timeline.json`, mount every scene once, then expose `reel.seek(T)`. Each scene module returns `draw(t)`, a pure function of scene time ([scene contract](scene-contract.md)). Any frame can be drawn in any order, which is what makes stills, storyboards and frame-by-frame capture identical.
+- `production/runtime/index.html` + `production/runtime/player.js` load `timeline.json`, mount every scene once, then expose `reel.seek(T)`. Each scene module returns `draw(t)`, a pure function of scene time ([scene contract](scene-contract.md)). Any frame can be drawn in any order, which is what makes stills, storyboards and frame-by-frame capture identical. A scene whose frame depends on an image file (`screencast`) may return a promise from `draw(t)`; `seek` awaits every returned promise before the screenshot, so a frame is never captured before its image is decoded.
 - Transitions (`fade`, `push`, `zoom`, `flash`, `cut`) are centred on scene boundaries; both scenes draw during the overlap.
 - Captions are drawn by the player from the timeline's words, phrase by phrase with the spoken word highlighted.
 - The player injects safe-area tokens (`--rc-safe-*`) from the format's platform profile before the theme loads, so a theme can still override them. `?guides=1` paints the platform UI zones for review.

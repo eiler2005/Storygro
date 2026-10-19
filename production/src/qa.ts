@@ -1,6 +1,6 @@
 import { spawnSync } from 'node:child_process';
 import { existsSync, readFileSync, writeFileSync } from 'node:fs';
-import { join, resolve } from 'node:path';
+import { join, relative, resolve } from 'node:path';
 import { brandFindings, loadBrand } from './brand.ts';
 import { captureScenes, factsGate, safeAreaMisses, type SceneShot } from './board.ts';
 import { captionText, type LoadedSpec, spokenText } from './spec.ts';
@@ -220,7 +220,7 @@ export async function qa(l: LoadedSpec, tl: Timeline, video: string) {
 
   const count = (st: Status) => checks.filter((c) => c.status === st).length;
   const verdict = count('fail') ? 'fail' : count('skip') ? 'incomplete' : 'pass';
-  const md = `# QA — ${tl.title}\n\nFile: \`${video}\`\n\n**${verdict.toUpperCase()}** · ${count('pass')} passed · ${count('fail')} failed · ${count('skip')} skipped\n\n| Check | Result | Detail |\n|---|---|---|\n${checks
+  const md = `# QA — ${tl.title}\n\nFile: \`${relative(l.dir, video)}\` (relative to the spec)\n\n**${verdict.toUpperCase()}** · ${count('pass')} passed · ${count('fail')} failed · ${count('skip')} skipped\n\n| Check | Result | Detail |\n|---|---|---|\n${checks
     .map((c) => `| ${c.name} | ${c.status === 'fail' ? '**fail**' : c.status} | ${c.detail.replace(/\|/g, '/')} |`)
     .join(
       '\n',

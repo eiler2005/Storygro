@@ -1,6 +1,6 @@
 # Workflows
 
-For editorial selection before these production steps, use [ideas and trends](ideas.md). New production projects live in [content/](../content/README.md); the current Russian business example is [future-of-work](../content/videos/future-of-work/README.md). The complete component/product inventory is [technology](technology.md).
+The whole path with real screenshots of one run is [the pipeline](pipeline.md). For editorial selection before these production steps, use [ideas and trends](ideas.md). New production projects live in [content/](../content/README.md); the current Russian business example is [future-of-work](../content/videos/future-of-work/README.md). The complete component/product inventory is [technology](technology.md).
 
 > **Audience:** people and AI agents producing content with Storygro · **Status:** v0.2 (October 2026)
 
@@ -19,12 +19,12 @@ flowchart LR
   A --> P[Render + QA]
   P --> K[Package<br/>video, subtitles, cover,<br/>carousel, post, manifest]
   K --> H[Human review]
-  H -.planned.-> PUB[Publish to a named account]
-  PUB -.planned.-> M[Metrics snapshots]
-  M -.planned.-> R
+  H --> PUB[Publication ledger<br/>manual upload recorded]
+  PUB --> M[Metrics snapshots]
+  M -.editor.-> R
 ```
 
-Everything up to the package and the human review is implemented. Publishing and analytics are planned and need the owner's accounts ([implementation plan](planning/IMPLEMENTATION_PLAN.md)).
+Everything in the diagram is implemented locally. Uploading is done by a person; `publish` records it and `metrics` stores the numbers they copy from the platform. Platform APIs (upload, analytics) are planned and need the owner's accounts ([implementation plan](planning/IMPLEMENTATION_PLAN.md)).
 
 ## Commands
 
@@ -42,6 +42,12 @@ Everything up to the package and the human review is implemented. Publishing and
 | `storygro carousel <carousel-spec>` | one PNG per scene at its key moment | `carousel/NN-<id>.png` |
 | `storygro deliver <spec> [dir]` | copies one variant's complete set + manifest (refuses gaps) | `~/Downloads/<name>/` |
 | `storygro package <episode.yaml> [dir]` | collects all variants into one release + manifest (refuses gaps) | `.reel/releases/<id>/` |
+| `storygro trends <sources.yaml> [--backlog b.yaml] [--md r.md]` | interest signals and a watchlist per backlog idea | JSON, Markdown report |
+| `storygro ideas <backlog.yaml>` | editorial ranking | JSON |
+| `storygro capture <x.capture.yaml>` | scripted phone-browser recording in virtual time | `.reel/captures/<name>/` frames + `capture.json` |
+| `storygro series <series.yaml> [--md f]` | episodes of a series: length, approval, QA, latest package | Markdown table |
+| `storygro publish plan\|approve\|mark\|checklist\|list` | manual publication ledger; uploads nothing | `content/publishing/publications.json` |
+| `storygro metrics add\|report` | metric snapshots with source and window | `content/publishing/metrics.json` |
 
 Options: `--no-voice` (estimated timings), `--force` (skip the approval/QA gate, recorded), `--allow-errors`, `--partial`, `--allow-incomplete`, `--out <dir>`, `--port <n>`. Run `npm run storygro -- help` for the full list.
 
@@ -124,9 +130,22 @@ SLIDECRAFT_ROOT=/path/to/slidecraft npx tsx examples/slidecraft-launch/gif/gif-s
 
 See the [production record](history/slidecraft-launch.md).
 
-## 8. Review and (planned) publishing
+## 8. A product demo from a real website
 
-Today the last automated step is `package`. The review checklist is in [quality](quality.md#the-human-review-that-no-gate-replaces). Publishing will be an explicit command against a named account and an approved release, with deduplication and recorded states (draft → approved → queued → uploading → processing → published, failed/cancelled with reasons); metrics will be stored as snapshots tied to the release and variant. Until then, upload the files from the package by hand.
+1. Write `captures/<name>.capture.yaml`: URL, phone viewport, fps, duration and timed steps (`goto`, `scroll`, `tap`, `type`, `key`). Taps must hit elements that are on screen; scroll first.
+2. `storygro capture captures/<name>.capture.yaml` records frames and the finger path. It prints the tap times.
+3. In the spec, use the `screencast` scene: `from`/`to` pick the part of the recording, `align: { at: <cue>, rec: <second> }` puts a recorded tap on a narrated word, `focus` adds a magnifier over the region the voice names, `notes` add short labels.
+4. Board, approve, render and QA as usual. Example: [slidecraft-demo](../content/videos/slidecraft-demo/README.md).
+
+## 9. Brand profile and series
+
+`content/brand.yaml` holds the audience, default voices per language, the disclosure every post must carry and phrases we avoid (with a reason each). A spec opts in with `brand: ../../brand.yaml`; QA then adds the **Brand rules** check. Keep avoided phrases narrow: «гарантируем» rather than «гарантир», so a disclaimer like «выплаты не гарантированы» stays allowed.
+
+`content/series/<id>.yaml` names a rubric (title, audience, format, cadence) and lists its `episode.yaml` files; each `episode.yaml` also names its series. `storygro series content/series/<id>.yaml` prints every episode's variants with length, approval, QA verdict and the latest local package.
+
+## 10. Review and manual publishing
+
+Today the last automated step is `package`. The review checklist is in [quality](quality.md#the-human-review-that-no-gate-replaces). A person uploads the files; the ledger records it: `publish plan <release-dir> --variant ru --platform instagram --account @handle` → `publish approve <id>` → `publish checklist <id>` → `publish mark <id> published --url …`. Metrics are added as snapshots: `metrics add <id> --window 7d --source "Instagram Insights" views=1200 likes=80`. Details and states: [publishing](publishing.md). API upload and analytics adapters remain planned.
 
 ## Roles for agents
 

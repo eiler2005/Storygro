@@ -35,6 +35,9 @@ export const norm = (s: string) =>
     .toLowerCase()
     .replace(/ё/g, 'е')
     .replace(/[’'`]/g, '')
+    // a hyphenated compound is one word however it is written: «слайд-крафт», «слайд -крафт» and
+    // «слайдкрафт» compare equal (a dash between spaced words is punctuation and stays a break)
+    .replace(/(\p{L})\s?[-‐‑](?=\p{L})/gu, '$1')
     .replace(/[^\p{L}\p{N}\s]/gu, ' ')
     .split(/\s+/)
     .filter(Boolean);

@@ -1,0 +1,32 @@
+@font-face { font-family: 'Unbounded'; src: url('assets/fonts/Unbounded-wght.ttf'); font-weight: 200 900; }
+@font-face { font-family: 'Golos Text'; src: url('assets/fonts/GolosText-wght.ttf'); font-weight: 400 900; }
+:root {
+  --pp-paper: #fbf8ef;
+  --pp-paper2: #e9e4db;
+  --pp-ink: #131d4e;
+  --pp-muted: #74777f;
+  --pp-red: #d54c40;
+  --pp-yellow: #e8dc84;
+  --pp-teal: #267d65;
+  --pp-blue: #3d4df1;
+  --pp-card: #fffefa;
+  --pp-font: 'Golos Text', Arial, sans-serif;
+  --pp-display: 'Unbounded', 'Golos Text', Arial, sans-serif;
+  --pp-hand: 'Golos Text', Arial, sans-serif;
+  --cc-grid: #aba79e;
+  --rc-font: 'Golos Text', Arial, sans-serif;
+  --rc-bg: #fbf8ef;
+}
+#stage { font-family: var(--pp-font); color: var(--pp-ink); background: var(--pp-paper); }
+.rc-scene { overflow: hidden; }
+.rc-caption {
+  font: 800 48px/1.18 var(--pp-font);
+  color: rgba(19,29,78,.43);
+  background: #fffefa;
+  border-radius: 2px;
+  padding: 12px 20px 16px;
+  box-shadow: 4px 7px 0 rgba(19,29,78,.16);
+  backdrop-filter: none;
+  text-wrap: balance;
+}
+.rc-word.on { color: #3d4df1; }

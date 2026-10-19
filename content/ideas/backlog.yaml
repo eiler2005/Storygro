@@ -11,6 +11,9 @@ items:
       - https://www.anthropic.com/research/anthropic-economic-index-january-2026-report
     ratings: { evidence: 5, audience: 5, utility: 5, visual: 4, timeliness: 3, ease: 4 }
     rationale: 'Первый деловой выпуск по запросу владельца; исследования поддерживают изменение задач, рекомендации о процессе — авторская рамка. Оценки редакционные.'
+    watch:
+      wikipedia: { ru: [Технологическая_безработица], en: [Technological_unemployment] }
+      hn: [future of work, reskilling]
   - id: ai-review
     title: Где проверять работу ИИ-агента
     thesis: Проверку нужно проектировать вместе с задачей агенту.
@@ -18,6 +21,9 @@ items:
     sources: [https://www.anthropic.com/engineering/building-effective-agents]
     ratings: { evidence: 4, audience: 5, utility: 5, visual: 5, timeliness: 3, ease: 4 }
     rationale: 'Сцена коллажа отработана во внутреннем примере; текущий заказ владельца переключён на micro1. Эта тема остаётся кандидатом, не опубликованным материалом.'
+    watch:
+      wikipedia: { en: [AI_agent], ru: [Искусственный_интеллект] }
+      hn: [AI agent, agentic]
   - id: micro1-work-data
     title: Зачем micro1 покупает рабочие данные компаний
     thesis: Спрос на опыт рабочих процессов показывает интерес к их обучению и оценке, но сам по себе не доказывает готовую автоматизацию.
@@ -28,6 +34,9 @@ items:
       - https://www.micro1.ai/data-partnerships
     ratings: { evidence: 5, audience: 5, utility: 5, visual: 5, timeliness: 5, ease: 4 }
     rationale: 'Выбрано владельцем по присланному посту; заявления проверены по micro1. Компания — первичный источник о своей программе, не независимое подтверждение исполнения бюджета. Оценки редакционные.'
+    watch:
+      wikipedia: { en: ['Training,_validation,_and_test_data_sets', Labeled_data] }
+      hn: [training data, data labeling]
   - id: junior-training
     title: Как обучать новичков, когда черновик пишет нейросеть
     thesis: Практику нужно организовать вокруг объяснения и проверки решений, сохраняя задачи для обучения.
@@ -36,6 +45,9 @@ items:
       - https://www.ilo.org/publications/generative-ai-and-jobs-2025-update
     ratings: { evidence: 3, audience: 5, utility: 4, visual: 4, timeliness: 3, ease: 4 }
     rationale: Продолжение ai-jobs; нужны исследования обучения, чтобы отделить методику от рабочей гипотезы автора.
+    watch:
+      wikipedia: { ru: [Стажировка], en: [Entry-level_job] }
+      hn: [junior developers, entry-level]
   - id: content-from-source
     title: Как превратить исследование в несколько материалов
     thesis: Один набор проверенных источников связывает видео, карусель и текст поста.

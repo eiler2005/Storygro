@@ -5,7 +5,10 @@ import { homedir } from 'node:os';
 import { join } from 'node:path';
 import { approval, approve, keyMoment, specHash, writeBoard } from './board.ts';
 import { engineVersion, fileEntry } from './manifest.ts';
-import { collectTrends, loadIdeas, loadTrendsConfig } from './ideas.ts';
+import { recordCapture } from './capture.ts';
+import * as P from './publish.ts';
+import { collectTrends, loadIdeas, loadTrendsConfig, type TrendsReport, trendsMarkdown } from './ideas.ts';
+import { parse as parseYaml } from 'yaml';
 import { deliverables, packageEpisode, qaState, writeSubtitles } from './package.ts';
 import { qa } from './qa.ts';
 import { cards, frames, mux, stills } from './render.ts';
@@ -17,7 +20,8 @@ import { python, REEL_ROOT, run } from './tools.ts';
 const HELP = `storygro — explainer videos as code
 
   storygro ideas    <backlog.yaml>          rank editorial ideas (explicit 0–5 ratings, no network)
-  storygro trends   <sources.yaml>          fetch Wikipedia/Hacker News interest signals, no API keys
+  storygro trends   <sources.yaml>          fetch Google Trends / Wikipedia / Hacker News interest signals, no API keys
+                    [--backlog backlog.yaml] [--md report.md]   watchlist per idea, human-readable report
   storygro voice    <reel.yaml>             narrate, write .reel/timeline.json (prints scene lengths)
   storygro score    <reel.yaml>             music + sound effects + voice → mix.wav (−14 LUFS)
   storygro still    <reel.yaml> <at>...     PNG stills; <at> = seconds | scene | scene@cue | scene@seconds
@@ -28,6 +32,11 @@ const HELP = `storygro — explainer videos as code
   storygro qa       <reel.yaml>             check the rendered file, scenes, numbers, safe area, speech
   storygro subs     <reel.yaml>             write <name>.srt and <name>.vtt from the timeline
   storygro carousel <carousel.yaml>         one PNG per scene at its key moment → carousel/
+  storygro capture  <x.capture.yaml>        record a scripted browser session (frames + finger) for a screencast scene
+  storygro publish  plan <release-dir> --variant ru --platform instagram --account @handle
+                    | approve <id> | mark <id> <state> [--url …] [--note …] | checklist <id> | list
+                                             manual publication ledger: records uploads, uploads nothing
+  storygro metrics  add <id> --window 7d --source "…" views=1200 likes=80 | report
   storygro deliver  <reel.yaml> [dir]       copy the complete set + manifest.json to one folder
                                              (default ~/Downloads/<name>); refuses missing files
   storygro package  <episode.yaml> [dir]    all variants of an episode → one release folder + manifest
@@ -46,7 +55,7 @@ const opt = (f: string) => {
   const i = argv.indexOf(f);
   return i >= 0 ? argv[i + 1] : undefined;
 };
-const VALUED = ['--from', '--to', '--out', '--port'];
+const VALUED = ['--from', '--to', '--out', '--port', '--backlog', '--md', '--variant', '--platform', '--account', '--note', '--url', '--external-id', '--window', '--source', '--at', '--ledger', '--metrics'];
 const positional = argv.filter((a, i) => !a.startsWith('--') && !VALUED.includes(argv[i - 1] ?? ''));
 const [cmd, specPath, ...rest] = positional;
 if (flag('--allow-errors')) process.env.STORYGRO_ALLOW_ERRORS = '1';
@@ -63,15 +72,74 @@ if (cmd === 'package') {
   process.exit(0);
 }
 
+if (cmd === 'publish' || cmd === 'metrics') {
+  // the publication ledger and metrics snapshots: a manual adapter, nothing is uploaded from here
+  const ledgerPath = opt('--ledger') ?? P.DEFAULT_LEDGER_PATH;
+  const metricsPath = opt('--metrics') ?? P.DEFAULT_METRICS_PATH;
+  const sub = specPath;
+  const ledger = P.loadLedger(ledgerPath);
+  if (cmd === 'publish' && sub === 'plan') {
+    const dir = rest[0];
+    if (!dir) throw new Error('usage: storygro publish plan <release-dir> --variant ru --platform instagram --account @handle');
+    const r = P.planPublication(ledger, {
+      releaseDir: dir, manifest: JSON.parse(readFileSync(join(dir, 'manifest.json'), 'utf8')),
+      variant: opt('--variant') ?? '', platform: opt('--platform') ?? '', account: opt('--account') ?? '', again: flag('--again'),
+    });
+    P.saveLedger(ledgerPath, r.ledger);
+    console.log(`✔ draft ${r.publication.id}\n  next: storygro publish approve '${r.publication.id}'`);
+  } else if (cmd === 'publish' && sub === 'approve') {
+    P.saveLedger(ledgerPath, P.transition(ledger, rest[0] ?? '', 'approved', { note: opt('--note') }).ledger);
+    console.log(`✔ approved ${rest[0]}`);
+  } else if (cmd === 'publish' && sub === 'mark') {
+    const r = P.transition(ledger, rest[0] ?? '', rest[1] ?? '', { note: opt('--note'), url: opt('--url'), externalId: opt('--external-id') });
+    P.saveLedger(ledgerPath, r.ledger);
+    console.log(`✔ ${r.publication.id} → ${r.publication.state}`);
+  } else if (cmd === 'publish' && sub === 'checklist') {
+    const pub = P.findPublication(ledger, rest[0] ?? '');
+    const post = pub.files.find((f) => f.role === 'post');
+    console.log(P.checklist(pub, post ? readFileSync(join(pub.releaseDir, post.path), 'utf8') : undefined));
+  } else if (cmd === 'publish' && sub === 'list') {
+    console.log(P.publicationsMarkdown(ledger));
+  } else if (cmd === 'metrics' && sub === 'add') {
+    const pairs = rest.slice(1).filter((x) => x.includes('='));
+    const r = P.addSnapshot(ledger, P.loadMetrics(metricsPath), {
+      publicationId: rest[0] ?? '', window: opt('--window') ?? '', capturedAt: opt('--at') ?? new Date().toISOString(),
+      source: opt('--source') ?? '', values: P.parseMetricPairs(pairs),
+    });
+    P.saveMetrics(metricsPath, r.store);
+    console.log(`✔ snapshot ${r.snapshot.window} for ${rest[0]}`);
+  } else if (cmd === 'metrics' && sub === 'report') {
+    console.log(P.metricsReport(ledger, P.loadMetrics(metricsPath)));
+  } else throw new Error(`unknown: ${cmd} ${sub} — see storygro help`);
+  process.exit(0);
+}
+
+if (cmd === 'capture') {
+  const r = await recordCapture(specPath, { out: opt('--out'), log: (m) => process.stdout.write(`${m}\r`) });
+  console.log(`\n✔ ${r.meta.frames} frames, ${r.meta.duration} s at ${r.meta.fps} fps, ${r.meta.pixels.width}×${r.meta.pixels.height} → ${r.out}`);
+  if (r.meta.taps.length) console.log(`  taps at ${r.meta.taps.map((t) => `${t.t}s`).join(', ')}`);
+  process.exit(0);
+}
+
 if (cmd === 'ideas' || cmd === 'trends') {
-  const report = cmd === 'ideas' ? loadIdeas(specPath) : await collectTrends(loadTrendsConfig(specPath));
+  const backlogPath = opt('--backlog');
+  const report =
+    cmd === 'ideas'
+      ? loadIdeas(specPath)
+      : await collectTrends(loadTrendsConfig(specPath), backlogPath ? { backlog: parseYaml(readFileSync(backlogPath, 'utf8')) } : {});
   const json = JSON.stringify(report, null, 2);
   const dest = opt('--out');
   if (dest) {
     mkdirSync(join(dest, '..'), { recursive: true });
     writeFileSync(dest, `${json}\n`);
     console.log(`✔ ${dest}`);
-  } else console.log(json);
+  } else if (!opt('--md')) console.log(json);
+  const md = opt('--md');
+  if (md && cmd === 'trends') {
+    mkdirSync(join(md, '..'), { recursive: true });
+    writeFileSync(md, `${trendsMarkdown(report as TrendsReport)}\n`);
+    console.log(`✔ ${md}`);
+  }
   if ('status' in report && report.status === 'unavailable') process.exitCode = 1;
   process.exit(process.exitCode ?? 0);
 }

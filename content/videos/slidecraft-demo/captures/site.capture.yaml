@@ -1,0 +1,17 @@
+# The public SlideCraft gallery on a phone: one prompt → example decks → paging through a real deck.
+# Recorded with `storygro capture`; frames stay in the ignored .reel/ folder next to this file.
+capture: 1
+title: SlideCraft gallery on a phone
+url: https://eiler2005.github.io/slidecraft/
+viewport: { width: 430, height: 932, scale: 2, mobile: true }
+fps: 15
+duration: 19
+steps:
+  - { at: 1.6, do: scroll, to: '#start', offset: -24, dur: 1.4 }
+  - { at: 4.4, do: tap, selector: '#copy' }
+  - { at: 5.6, do: scroll, to: '#examples', offset: -24, dur: 1.6 }
+  - { at: 8.6, do: tap, selector: '#examples + p + .grid .card a', navigate: true }
+  - { at: 11.0, do: tap, selector: '#btn-next' }
+  - { at: 13.0, do: tap, selector: '#btn-next' }
+  - { at: 15.0, do: tap, selector: '#btn-next' }
+  - { at: 17.0, do: tap, selector: '#btn-next' }

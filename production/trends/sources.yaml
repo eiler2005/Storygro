@@ -1,6 +1,40 @@
 trends: 1
+# Wikipedia daily tops (RU/EN). Data can arrive late: the nearest available past UTC day is used and reported.
 wikipedia: [ru, en]
-hackerNews: true
-limit: 15
-# Wikimedia daily tops can arrive late. Use the nearest available past UTC day and report it.
 lookbackDays: 7
+hackerNews: true
+# Google Trends daily search trends per region. Public RSS feed, not an official API: the format can change.
+googleTrends: [RU, US]
+limit: 20
+# Word stems that mark a signal as relevant to our audience (leaders, founders and specialists adopting AI).
+# A rough text filter, not a classifier: always read the item before using it.
+focus:
+  - ии
+  - искусствен
+  - нейросет
+  - чат-бот
+  - робот
+  - работ
+  - вакан
+  - зарплат
+  - бизнес
+  - стартап
+  - компани
+  - технолог
+  - автоматиз
+  - ' ai '
+  - 'ai '
+  - artificial intelligence
+  - agent
+  - llm
+  - openai
+  - anthropic
+  - gpt
+  - claude
+  - gemini
+  - automation
+  - layoff
+  - hiring
+  - jobs
+  - startup
+  - productivity

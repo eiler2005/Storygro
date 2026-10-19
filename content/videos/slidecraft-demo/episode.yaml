@@ -1,0 +1,8 @@
+episode: 1
+id: slidecraft-demo
+title: Презентация из одного промпта — демо SlideCraft
+series: product-demos
+sources: sources.md
+credits: CREDITS.md
+variants:
+  - { id: ru, spec: ru.reel.yaml }

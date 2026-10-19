@@ -133,7 +133,10 @@ function drawCaption(T) {
   caption.style.opacity = html ? '1' : '0';
 }
 
+// Returns the promises of scenes that need a moment to finish a frame (e.g. decoding a screencast
+// image); seek() waits for them, so a captured frame is always complete. Draw stays a function of T.
 function drawFrame(T) {
+  const pending = [];
   let current = 0;
   layers.forEach((l, i) => {
     const s = l.s;
@@ -149,7 +152,9 @@ function drawFrame(T) {
     }
     l.root.style.display = '';
     try {
-      l.draw(T - s.start);
+      const r = l.draw(T - s.start);
+      if (r && typeof r.then === 'function')
+        pending.push(r.catch((e) => errors.push(`${s.id} @${(T - s.start).toFixed(2)}: ${e?.stack ?? e}`)));
     } catch (e) {
       if (!l.failed) errors.push(`${s.id} @${(T - s.start).toFixed(2)}: ${e?.stack ?? e}`);
       l.failed = true;
@@ -188,6 +193,7 @@ function drawFrame(T) {
   const s = layers[current].s;
   overlay?.({ T, id: s.id, index: current, t: T - s.start, scene: s, duration: tl.duration });
   if (tl.captions?.show) drawCaption(T);
+  return pending;
 }
 
 // a missing image or font is an error, not a silently different frame
@@ -231,12 +237,12 @@ window.reel = {
   timeline: tl,
   duration: tl.duration,
   async seek(T) {
-    drawFrame(T);
+    await Promise.all(drawFrame(T));
     await new Promise((r) => requestAnimationFrame(() => r()));
     return T;
   },
 };
-drawFrame(0);
+await Promise.all(drawFrame(0));
 document.documentElement.dataset.ready = '1';
 
 if (preview) {

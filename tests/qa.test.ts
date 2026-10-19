@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
-import { heardInRange, similarity } from '../production/src/qa.ts';
+import { heardInRange, norm, similarity } from '../production/src/qa.ts';
 
 test('a segment crossing a scene boundary does not lose the next scene first words', () => {
   const segments = [{ start: 37.1, end: 43.44, text: 'интеллект помогает В Соединённых Штатах', words: [
@@ -14,4 +14,11 @@ test('a segment crossing a scene boundary does not lose the next scene first wor
 
 test('speech checks require word timestamps rather than silently accepting untimed segments', () => {
   assert.throws(() => heardInRange([{ start: 0, end: 10, text: 'Wrong scene assignment' }], 5, 10), /word timestamps are missing/);
+});
+
+test('hyphenated compounds compare equal however ASR spaces them; spaced dashes stay breaks', () => {
+  assert.deepEqual(norm('Ссылка на слайд -крафт'), norm('Ссылка на слайдкрафт'));
+  assert.deepEqual(norm('кто-то пришёл'), ['ктото', 'пришел']);
+  assert.deepEqual(norm('работа - это задачи'), ['работа', 'это', 'задачи']);
+  assert.equal(similarity('Ссылка на Слайдкрафт в описании', 'Ссылка на слайд-крафт в описании.').score, 1);
 });

@@ -1,0 +1,101 @@
+# Product demo (plan stage 4): a real recording of the public SlideCraft site, ~40 s, 9:16.
+# Record first:  npm run storygro -- capture content/videos/slidecraft-demo/captures/site.capture.yaml
+reel: 1
+title: Презентация из одного промпта — демо SlideCraft
+lang: ru
+format: { preset: vertical, fps: 30 }
+voice: { engine: qwen3, voice: assets/voice/narrator-ru.wav, speed: 0.96 }
+music: { bpm: 100, key: D, progression: [I, V, vi, IV], gain: 0.22 }
+loudness: -14
+theme: theme.css
+captions: { show: true, maxWords: 4 }
+transition: { kind: fade, dur: 0.35 }
+allowNumbers: ['1', '2', '3']   # step numbers in the titles, not facts
+stills: { cover: hook, deck: deck@edit }
+post:
+  title: Презентация из одного промпта — и её можно править
+  text: |
+    Как получить редактируемую презентацию из одного запроса к ИИ-ассистенту. Запись сделана на публичном сайте SlideCraft.
+
+    • Копируете готовый промпт и вставляете в Claude, ChatGPT или Codex (на сайте указано, что проверено с Codex и Claude Code).
+    • Ассистент строит сюжет; вы утверждаете заголовки и обложку.
+    • На выходе — PowerPoint, PDF и HTML: заголовки-тезисы, цифры с источниками, текст и графики редактируются.
+
+    Ссылка: https://eiler2005.github.io/slidecraft/
+    Голос синтезирован (Qwen3-TTS), не принадлежит реальному человеку. Ролик собран в Storygro.
+  tags: [презентации, ИИ, PowerPoint, SlideCraft, продуктивность]
+scenes:
+  - id: hook
+    scene: headline
+    say: 'Презентация из одного запроса к [ИИ](=искусственному интеллекту) — и её можно править. {#show}Показываю на [SlideCraft](=Слайдкрафт).'
+    pad: [0.2, 0.5]
+    energy: 0.45
+    sfx: [{ at: show, kind: pop, gain: 0.5 }]
+    props:
+      kicker: SlideCraft · демо
+      lines:
+        - { text: Один промпт →, at: -1 }
+        - { text: редактируемая, at: show, tone: blue }
+        - { text: презентация, at: show, tone: blue, mark: презентация }
+  - id: prompt
+    scene: screencast
+    say: 'Открываете сайт и копируете готовый промпт. {#copy}Вставляете его в чат с нейросетью {#paste}и пишете тему.'
+    pad: [0.2, 0.4]
+    energy: 0.4
+    sfx: [{ at: copy, kind: tick, gain: 0.6 }]
+    props:
+      capture: captures/site.capture.yaml
+      title: Шаг 1 — один промпт
+      align: { at: copy, rec: 4.4 }
+      to: 5.3
+      focus:
+        - { rec: [4.0], x: 0, y: 176, w: 430, h: 300 }
+      notes:
+        - { text: скопируйте промпт, at: copy }
+        - { text: 'Claude, ChatGPT или Codex', at: paste, tone: blue }
+  - id: gallery
+    scene: screencast
+    say: 'Ассистент сам строит сюжет: вы утверждаете заголовки и обложку. {#open}На выходе — PowerPoint, PDF и HTML.'
+    pad: [0.2, 0.4]
+    energy: 0.45
+    sfx: [{ at: open, kind: tick, gain: 0.6 }]
+    props:
+      capture: captures/site.capture.yaml
+      title: Шаг 2 — сюжет на утверждение
+      from: 5.4
+      align: { at: open, rec: 8.6 }
+      to: 10.6
+      focus:
+        - { rec: [7.3, 8.6], x: 0, y: 40, w: 430, h: 330 }
+        - { rec: [8.7], x: 0, y: 343, w: 430, h: 246 }
+      notes:
+        - { text: заголовки и обложка — за вами, at: 0.4 }
+        - { text: PowerPoint · PDF · HTML, at: open, tone: blue }
+  - id: deck
+    scene: screencast
+    say: 'Каждый слайд — это тезис, а не тема. {#next}Цифры со ссылками на источники, {#edit}а текст и графики можно править.'
+    pad: [0.2, 0.5]
+    energy: 0.5
+    sfx: [{ at: next, kind: tick, gain: 0.5 }, { at: edit, kind: tick, gain: 0.5 }]
+    props:
+      capture: captures/site.capture.yaml
+      title: Шаг 3 — готовая колода
+      from: 9.0
+      focus:
+        - { at: 0, x: 0, y: 343, w: 430, h: 246 }
+      notes:
+        - { text: заголовок — это вывод, at: 0.4 }
+        - { text: источники в каждом слайде, at: next }
+        - { text: 'это PowerPoint, а не картинка', at: edit, tone: blue }
+  - id: outro
+    scene: headline
+    say: 'Ссылка на [SlideCraft](=Слайдкрафт) — в описании. {#made}А этот ролик тоже собран из сценария.'
+    pad: [0.2, 1.8]
+    energy: 0.4
+    sfx: [{ at: made, kind: chime, gain: 0.5 }]
+    props:
+      kicker: попробуйте сами
+      lines:
+        - { text: SlideCraft, at: -1, tone: blue }
+        - { text: ссылка в описании, at: 0.3 }
+      note: { text: 'собрано в Storygro: сценарий → запись экрана → озвучка → QA', at: made }

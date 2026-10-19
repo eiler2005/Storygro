@@ -46,7 +46,7 @@ The former session established a working RU provider and corrected pronunciation
 
 ## Designing a narrator (qwen3)
 
-A cloned voice keeps one identity across scenes; generating each scene from a text description would drift. Make a reference once, listen to it, commit it with the episode:
+A cloned voice keeps one identity across scenes; generating each scene from a text description would drift. Make a reference once and listen to it. Keep the WAV outside Git; record its provenance, transcript, storage URL and SHA-256 with the episode ([media policy](media-policy.md)):
 
 ```sh
 ~/.storygro/venv/bin/python production/py/design_voice.py examples/my-episode/assets/voice/narrator-ru.wav \

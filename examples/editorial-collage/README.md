@@ -7,3 +7,5 @@ The current video is [micro1-work-data](../../content/videos/micro1-work-data/RE
 ![Historical style exploration](preview/strip.jpg)
 
 The fixture preserves its source files and local ignored artifacts; no public video release was created for it. Its old cached QA is historical evidence only: moving the folder and changing input paths invalidates approval and does not certify a new render.
+
+Original image cut-outs are off Git. Restore them with `npm run assets:fetch`; paths and SHA-256 are recorded in [content/media-assets.json](../../content/media-assets.json). Small preview strips remain in Git; full-resolution covers remain local.

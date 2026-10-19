@@ -6,9 +6,8 @@ hook-bridge/assets/
 hook-comp/.hyperframes/
 hook-bridge/.hyperframes/
 bin/
-# large outputs stay local; the comparison image and the bridge strip are kept
+# Large outputs stay local; only the small documentation strip is kept (≤300 KiB).
 renders/
 logs/
 frames/*
-!frames/compare-hf-left-storygro-right.png
 !frames/hf-bridge-strip-n9-119-147-180.png

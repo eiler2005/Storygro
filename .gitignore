@@ -17,3 +17,49 @@ dist/
 
 # local-only notes (never committed)
 /private/
+
+# Generated media/exports never belong in public Git; use local .reel or release/object storage.
+*.[mM][pP]4
+*.[mM][oO][vV]
+*.[mM]4[vV]
+*.[wW][eE][bB][mM]
+*.[mM][kK][vV]
+*.[aA][vV][iI]
+*.mpeg
+*.mpg
+*.[gG][iI][fF]
+*.[wW][aA][vV]
+*.[mM][pP]3
+*.flac
+*.ogg
+*.aac
+*.m4a
+*.aiff
+*.opus
+*.zip
+*.tar
+*.gz
+*.tgz
+*.7z
+*.rar
+*.bz2
+*.xz
+*.pdf
+*.pptx
+*.ppt
+*.onnx
+*.safetensors
+*.pt
+*.pth
+
+# Original render inputs restored by npm run assets:fetch (SHA-256 in content/media-assets.json).
+/content/videos/micro1-work-data/assets/analyst.png
+/content/videos/micro1-work-data/assets/robot.png
+/examples/editorial-collage/assets/developer.png
+/examples/editorial-collage/assets/robot.png
+
+# Full-resolution generated covers and QA comparisons; small documentation strips stay in Git.
+/docs/media/future-of-work-ru-cover.png
+/content/videos/*/preview/cover.png
+/examples/*/preview/cover.png
+/experiments/hyperframes-pilot/frames/compare-hf-left-storygro-right.png

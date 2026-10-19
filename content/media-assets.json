@@ -1,0 +1,42 @@
+{
+  "assets": 1,
+  "description": "Original render inputs stored outside Git. See per-project CREDITS and source notices.",
+  "files": [
+    {
+      "path": "content/videos/micro1-work-data/assets/analyst.png",
+      "url": "https://github.com/eiler2005/Storygro/releases/download/media-inputs-2026-10-19/collage-developer.png",
+      "bytes": 2179184,
+      "sha256": "01c4a806df961805080e547ea2092a6e76d00918bd70a758789c0e7de7935271"
+    },
+    {
+      "path": "content/videos/micro1-work-data/assets/robot.png",
+      "url": "https://github.com/eiler2005/Storygro/releases/download/media-inputs-2026-10-19/collage-robot.png",
+      "bytes": 1770452,
+      "sha256": "9d025bc1cd7d21751023eb81becb08c944ae741be744c1f077bf83ae13ecacf7"
+    },
+    {
+      "path": "examples/editorial-collage/assets/developer.png",
+      "url": "https://github.com/eiler2005/Storygro/releases/download/media-inputs-2026-10-19/collage-developer.png",
+      "bytes": 2179184,
+      "sha256": "01c4a806df961805080e547ea2092a6e76d00918bd70a758789c0e7de7935271"
+    },
+    {
+      "path": "examples/editorial-collage/assets/robot.png",
+      "url": "https://github.com/eiler2005/Storygro/releases/download/media-inputs-2026-10-19/collage-robot.png",
+      "bytes": 1770452,
+      "sha256": "9d025bc1cd7d21751023eb81becb08c944ae741be744c1f077bf83ae13ecacf7"
+    },
+    {
+      "path": "examples/ai-jobs/assets/voice/narrator-en.wav",
+      "url": "https://github.com/eiler2005/Storygro/releases/download/media-inputs-2026-10-19/narrator-en.wav",
+      "bytes": 311084,
+      "sha256": "33cb6a60b9c1263e5b05a35a9d48c723f4e3cc8ae12f9a0658f316d2fa26ac5e"
+    },
+    {
+      "path": "examples/ai-jobs/assets/voice/narrator-ru.wav",
+      "url": "https://github.com/eiler2005/Storygro/releases/download/media-inputs-2026-10-19/narrator-ru.wav",
+      "bytes": 457004,
+      "sha256": "23a831504c2c7f2cf0c6f3fc1b07818b67b94221c98931bbb465d38836e6fe98"
+    }
+  ]
+}

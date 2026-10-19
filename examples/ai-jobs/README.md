@@ -13,13 +13,14 @@ A 9:16 explainer in Russian and English (84–85 s each), with a 7-card carousel
 | [sources.md](sources.md) | quotes, dates, caveats and the misquotes the episode avoids |
 | [DIRECTION.md](DIRECTION.md) | the visual idea and what happens at each cue |
 | [theme.css](theme.css) | cut-paper palette and fonts |
-| `assets/voice/` | designed synthetic narrator references (RU, EN) for the `qwen3` voice |
+| `assets/voice/` | transcripts/provenance in Git; original synthetic WAV references restored with `npm run assets:fetch` |
 | `assets/fonts/` | Unbounded, Golos Text, Caveat (OFL 1.1) |
 | [CREDITS.md](CREDITS.md) | what was used under which terms |
 
 ## Reproduce
 
 ```sh
+npm run assets:fetch                                  # original Qwen reference WAVs, verified by SHA-256
 npm run setup:ru                                      # Qwen3-TTS, Silero, Whisper (Apple silicon for qwen3)
 for v in ru en; do
   npm run storygro -- board   examples/ai-jobs/$v.reel.yaml

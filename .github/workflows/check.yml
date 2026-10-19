@@ -14,4 +14,5 @@ jobs:
           node-version: '22'
           cache: npm
       - run: npm ci
-      - run: npm run check
+      - name: Media policy, TypeScript and tests
+        run: npm run check

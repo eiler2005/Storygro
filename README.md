@@ -20,6 +20,8 @@ Storygro runs locally: research → script and facts → narration → storyboar
 
 Generated videos, audio caches, storyboards and QA live in ignored `.reel/` folders beside each video project. Public media packages are attached to GitHub Releases. No project content is stored inside the tool directories.
 
+**Public Git media policy:** no video/audio/GIF/archives/exports in Git; files ≤1 MiB, documentation preview images ≤300 KiB. Large original render inputs are restored with `npm run assets:fetch` from a [checksum manifest](content/media-assets.json). [Storage rules and checks](docs/media-policy.md).
+
 ## Current video
 
 [**Why micro1 buys companies’ work data**](content/videos/micro1-work-data/README.md): original Russian explainer based on the owner's supplied post, checked against micro1's primary sources. A graph-paper collage with fictional character cut-outs, torn banners, UI inserts and Kokoro-RU Dima narration.
@@ -49,7 +51,9 @@ Run from the repository root. Requirements: Node.js ≥22.12, Chrome/Chromium, u
 
 ```sh
 npm ci
+npm run hooks:install
 npm run check
+npm run assets:fetch
 npm run setup:ru
 
 npm run storygro -- ideas content/ideas/backlog.yaml

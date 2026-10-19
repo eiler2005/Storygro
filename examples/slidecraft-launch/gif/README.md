@@ -4,8 +4,8 @@ The 30-second explainer GIF that headed SlideCraft's README and Product Hunt gal
 
 | File | What |
 |---|---|
-| `slidecraft-story.gif` | 1280×720, 28 frames, 29.6 s, loops |
-| `ph-story.gif` | the same story at 5:3 for the Product Hunt gallery (shown at 1270×760) |
+| `slidecraft-story.gif` (local output, not in Git) | 1280×720, 28 frames, 29.6 s, loops |
+| `ph-story.gif` (local output, not in Git) | the same story at 5:3 for the Product Hunt gallery (shown at 1270×760) |
 | `frames/` | one key frame per scene |
 | `story.ts` | the eight scenes as SVG frames |
 | `gif-story.ts` | renders the slides from SlideCraft's example decks and writes the files above |

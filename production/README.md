@@ -15,6 +15,8 @@ Run commands from the repository root. Public npm command names and file formats
 
 ```sh
 npm ci && npm run check
+npm run hooks:install
+npm run assets:fetch
 npm run setup:ru
 npm run storygro -- ideas content/ideas/backlog.yaml
 npm run storygro -- trends production/trends/sources.yaml --out content/.signals/latest.json
@@ -22,3 +24,5 @@ npm run storygro -- board content/videos/micro1-work-data/ru.reel.yaml
 ```
 
 The internal TypeScript entry point is now `production/src/cli.ts`. `src/tools.ts` distinguishes the production root used by the player from the repository root used for Git/package metadata. No episode data or final videos are stored in the tool directories. Publishing and growth analytics remain planned, not implemented.
+
+Large original render inputs live outside Git and are listed in `content/media-assets.json`; `scripts/fetch-assets.mjs` restores verified copies without replacing edited originals. `scripts/check-git-media.mjs` enforces [the public-Git media policy](../docs/media-policy.md) from `npm run check`, CI and the local pre-commit hook.

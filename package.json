@@ -15,7 +15,10 @@
     "reel": "tsx production/src/cli.ts",
     "typecheck": "tsc --noEmit",
     "test": "node --import tsx --test tests/*.test.ts",
-    "check": "npm run typecheck && npm test"
+    "check:media": "node production/scripts/check-git-media.mjs",
+    "assets:fetch": "node production/scripts/fetch-assets.mjs",
+    "hooks:install": "node production/scripts/install-hooks.mjs",
+    "check": "npm run check:media && npm run typecheck && npm test"
   },
   "dependencies": {
     "yaml": "2.9.1",

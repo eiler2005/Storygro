@@ -9,10 +9,11 @@
 [Источники](sources.md) · [фактчек поста](../../research/micro1-work-data/README.md) · [постановка](DIRECTION.md) · [credits](CREDITS.md) · [проверки](REVIEW.md).
 
 ```sh
+npm run assets:fetch
 npm run storygro -- board content/videos/micro1-work-data/ru.reel.yaml
 npm run storygro -- approve content/videos/micro1-work-data/ru.reel.yaml
 npm run storygro -- render content/videos/micro1-work-data/ru.reel.yaml
 npm run storygro -- package content/videos/micro1-work-data/episode.yaml
 ```
 
-Генерируемые результаты находятся в `.reel/ru/`, пакеты — в `.reel/releases/`. Исходники, факты и выбранные assets входят в Git. Автоматической публикации в соцсети нет.
+Генерируемые результаты находятся в `.reel/ru/`, пакеты — в `.reel/releases/`. В Git входят сценарий, факты, источники и маленькое превью. Картинки персонажей загружаются по [manifest с SHA-256](../../media-assets.json) и остаются локальными: `npm run assets:fetch`. [Правила хранения](../../../docs/media-policy.md). Автоматической публикации в соцсети нет.

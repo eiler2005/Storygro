@@ -9,6 +9,7 @@
 | [research/](research/) | Проверки источников и выводы для конкретных материалов |
 | `.signals/` | Игнорируемые снимки сигналов интереса, не доказательства и не прогнозы охвата |
 | `videos/<id>/.reel/` | Локальные рендеры, аудио, storyboard, QA и пакеты |
+| [media-assets.json](media-assets.json) | Ссылки, размер и SHA-256 исходников, хранящихся вне Git |
 
 Текущий проект — [micro1-work-data](videos/micro1-work-data/README.md), по посту, присланному владельцем. Ранее собранный выпуск — [future-of-work](videos/future-of-work/README.md). Исторические примеры движка находятся в `examples/`.
 

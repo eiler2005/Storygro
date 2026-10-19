@@ -36,7 +36,7 @@ Lines are cached by text, engine, model, voice, speed and language; English Koko
 
 ## Russian Kokoro
 
-At the owner's request on 19 October, the Russian examples use the community fine-tune [zaakirio/kokoro-ru](https://huggingface.co/zaakirio/kokoro-ru), male voice **Dima**. The original English Kokoro remains available. Sveta and Masha are additional model-provided voices; only Dima is validated in the current episode.
+The Russian `ai-jobs` and `future-of-work` specs use the community fine-tune [zaakirio/kokoro-ru](https://huggingface.co/zaakirio/kokoro-ru), male voice **Dima**. The original English Kokoro remains available. Sveta and Masha are additional model-provided voices; they have short local audition samples, not full validated episode variants. The owner later rejected Dima's youthful timbre for `micro1-work-data` and selected its previous Russian Qwen3 narrator (audition C, speed 0.96).
 
 RUAccent resolves stress and ё; the model's Russian G2P/espeak data turn text into phonemes. Explicit `+` before the stressed vowel (`зам+ок`) or combining acute after it (`замо́к`) overrides automatic stress. `[word](/phonemes/)` can override a word; `[written](=spoken)` handles abbreviations and numbers. Whisper aligns the result back to the script's spelling.
 
@@ -71,7 +71,7 @@ For [examples/ai-jobs](../examples/ai-jobs) the candidates were compared on the 
 
 \* The Silero errors were "сорок процентов" written as "40%" — a normalisation difference, not mispronunciation. Whisper's language ID gave every Russian candidate P(ru) ≈ 1.0, so it could not separate accents.
 
-Historical decision for the first release: a designed male narrator cloned with `qwen3` for both variants. The later owner instruction selects Kokoro-RU Dima for the current Russian specs; the English `ai-jobs` example keeps its Qwen3 reference narrator. Silero remains a fallback.
+Historical decision for the first release: a designed male narrator cloned with `qwen3` for both variants. A later owner instruction selected Kokoro-RU Dima for the Russian examples; the English `ai-jobs` example keeps its Qwen3 reference narrator. After comparing the micro1 auditions, the owner selected **C: the original Russian Qwen3 reference** for that episode. Its provenance, transcript and off-Git restoration are recorded in [the episode voice notes](../content/videos/micro1-work-data/assets/voice/README.md). This is an episode choice, not a migration of the other existing specs. Silero remains a fallback.
 
 ## Pronunciation notes (Russian)
 

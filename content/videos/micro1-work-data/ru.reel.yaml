@@ -2,7 +2,7 @@ reel: 1
 title: Зачем micro1 покупает рабочие данные компаний
 lang: ru
 format: { preset: vertical, fps: 30 }
-voice: { engine: kokoro, voice: dima, speed: 1.0 }
+voice: { engine: qwen3, voice: assets/voice/narrator-ru.wav, speed: 0.96 }
 music: { bpm: 108, key: D, progression: [vi, IV, I, V], gain: 0.23 }
 loudness: -14
 theme: theme.css
@@ -21,7 +21,7 @@ post:
 
     Источники: https://www.micro1.ai/blog/micro1-commits-1b-to-enterprise-data-acquisition и https://www.micro1.ai/data-partnerships. Подробные границы утверждений — в sources.md репозитория Storygro.
 
-    Голос синтезирован Kokoro-RU Dima. Персонажи сгенерированы; визуальная сцена и текст оригинальные. Кадры, голос и музыка автора YouTube-референса не использованы.
+    Голос синтезирован Qwen3-TTS по оригинальному спроектированному референсу Storygro. Персонажи сгенерированы; визуальная сцена и текст оригинальные. Кадры, голос и музыка автора YouTube-референса не использованы.
   tags: [ИИ, бизнес, агенты, данные, автоматизация]
 scenes:
   - id: hook

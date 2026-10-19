@@ -24,11 +24,11 @@ Generated videos, audio caches, storyboards and QA live in ignored `.reel/` fold
 
 ## Current video
 
-[**Why micro1 buys companies’ work data**](content/videos/micro1-work-data/README.md): original Russian explainer based on the owner's supplied post, checked against micro1's primary sources. A graph-paper collage with fictional character cut-outs, torn banners, UI inserts and Kokoro-RU Dima narration.
+[**Why micro1 buys companies’ work data**](content/videos/micro1-work-data/README.md): original Russian explainer based on the owner's supplied post, checked against micro1's primary sources. A graph-paper collage with fictional character cut-outs, torn banners, UI inserts and the original Russian Qwen3 narrator selected by the owner (audition C).
 
 [Research and claim boundaries](content/research/micro1-work-data/README.md) · [script](content/videos/micro1-work-data/ru.reel.yaml) · [review](content/videos/micro1-work-data/REVIEW.md).
 
-**77.13 s · 1080×1920 · 11/11 QA pass.** [Watch/download](https://github.com/eiler2005/Storygro/releases/tag/micro1-work-data-2026-10-19).
+**94.18 s · 1080×1920 · 11/11 QA pass.** [Watch/download](https://github.com/eiler2005/Storygro/releases/tag/micro1-work-data-qwen-2026-10-19).
 
 ![Frames from the micro1 explainer](content/videos/micro1-work-data/preview/strip.jpg)
 
@@ -63,7 +63,7 @@ npm run storygro -- board content/videos/micro1-work-data/ru.reel.yaml
 # Inspect the storyboard before approving its current inputs.
 npm run storygro -- approve content/videos/micro1-work-data/ru.reel.yaml
 npm run storygro -- render content/videos/micro1-work-data/ru.reel.yaml
-npm run storygro -- package content/videos/micro1-work-data/episode.yaml
+npm run storygro -- package content/videos/micro1-work-data/episode.yaml content/videos/micro1-work-data/.reel/releases/micro1-work-data-qwen-2026-10-19
 ```
 
 The internal entry point is `production/src/cli.ts`. `npm run reel`, `reel: 1`, `/rc/`, `.reel/` and legacy `REELCRAFT_*` environment aliases remain supported. `STORYGRO_HOME`, `STORYGRO_PYTHON`, `CHROME_PATH` and `FFMPEG` override local tools.

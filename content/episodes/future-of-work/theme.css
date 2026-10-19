@@ -1,0 +1,32 @@
+/* Business explainer. SIL OFL 1.1 fonts with notices in assets/fonts/. */
+@font-face { font-family: 'Unbounded'; src: url('assets/fonts/Unbounded-wght.ttf'); font-weight: 200 900; }
+@font-face { font-family: 'Golos Text'; src: url('assets/fonts/GolosText-wght.ttf'); font-weight: 400 900; }
+:root {
+  --pp-paper: #edf1f5;
+  --pp-paper2: #dce4ec;
+  --pp-ink: #14253b;
+  --pp-muted: #526377;
+  --pp-red: #315b83;
+  --pp-yellow: #c6d8e6;
+  --pp-teal: #21776f;
+  --pp-blue: #244b78;
+  --pp-card: #ffffff;
+  --pp-font: 'Golos Text', Arial, sans-serif;
+  --pp-display: 'Unbounded', 'Golos Text', Arial, sans-serif;
+  --pp-hand: 'Golos Text', Arial, sans-serif;
+  --rc-font: 'Golos Text', Arial, sans-serif;
+  --rc-bg: #edf1f5;
+}
+#stage { font-family: var(--pp-font); color: var(--pp-ink); background: var(--pp-paper); }
+.rc-scene { overflow: hidden; }
+.rc-caption {
+  font: 700 48px/1.22 var(--pp-font);
+  color: rgba(20, 37, 59, .42);
+  background: #fff;
+  backdrop-filter: none;
+  border-radius: 8px;
+  padding: 14px 24px 16px;
+  box-shadow: 0 5px 16px rgba(20, 37, 59, .12);
+  text-wrap: balance;
+}
+.rc-word.on { color: #14253b; }

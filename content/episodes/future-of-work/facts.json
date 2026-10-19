@@ -1,0 +1,15 @@
+{
+  "ilo": {
+    "share": 0.25,
+    "label": "1 из 4",
+    "sourceLine": "МОТ · 2025 · потенциальное воздействие",
+    "published": "2025-05-20",
+    "checked": "2026-10-19",
+    "source": "https://www.ilo.org/resource/article/how-might-generative-ai-impact-different-occupations",
+    "caveat": "Potential exposure to GenAI, not observed job losses or a forecast of eliminated jobs. Approximate global employment share."
+  },
+  "workflow": {
+    "order": [1, 2, 3],
+    "source": "Author's illustrative workflow, not an empirical statistic."
+  }
+}

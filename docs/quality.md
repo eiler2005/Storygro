@@ -59,7 +59,9 @@ The player records, and the storyboard, stills and render refuse:
 | Text clear of platform UI | at every cue, no visible text box reaches into the format's safe-area margins (elements marked `data-rc-safe-ignore` excepted) | how a specific phone renders the app UI |
 | Whisper hears the script | per scene, ≥ 85 % of the script's words appear in what Whisper hears on the final mix (voice over music); Unicode-normalised, `ё` = `е`, spoken or written form | naturalness, stress, tone, factual accuracy |
 
-The speech check uses `whisper-small.en` for English and `whisper-large-v3-turbo` for other languages through mlx-whisper. Where MLX is unavailable the check is **skipped** and the verdict is `incomplete`, never `pass`.
+The speech check uses `whisper-small.en` for English and `whisper-large-v3-turbo` for other languages through mlx-whisper, with word timestamps. ASR segments can cross a scene boundary: individual words are assigned by their own times, rather than sending the entire segment to the scene containing its midpoint. Missing word timestamps fail the check. The overlap threshold stays at 85%.
+
+Where MLX is unavailable the check is **skipped** and the verdict is `incomplete`, never `pass`. A full `render` now exits nonzero for failed or incomplete QA as well as writing the report.
 
 ### Fixing common failures
 

@@ -5,6 +5,7 @@ import { homedir } from 'node:os';
 import { join } from 'node:path';
 import { approval, approve, keyMoment, specHash, writeBoard } from './board.ts';
 import { engineVersion, fileEntry } from './manifest.ts';
+import { collectTrends, loadIdeas, loadTrendsConfig } from './ideas.ts';
 import { deliverables, packageEpisode, qaState, writeSubtitles } from './package.ts';
 import { qa } from './qa.ts';
 import { cards, frames, mux, stills } from './render.ts';
@@ -15,6 +16,8 @@ import { python, REEL_ROOT, run } from './tools.ts';
 
 const HELP = `storygro — explainer videos as code
 
+  storygro ideas    <backlog.yaml>          rank editorial ideas (explicit 0–5 ratings, no network)
+  storygro trends   <sources.yaml>          fetch Wikipedia/Hacker News interest signals, no API keys
   storygro voice    <reel.yaml>             narrate, write .reel/timeline.json (prints scene lengths)
   storygro score    <reel.yaml>             music + sound effects + voice → mix.wav (−14 LUFS)
   storygro still    <reel.yaml> <at>...     PNG stills; <at> = seconds | scene | scene@cue | scene@seconds
@@ -58,6 +61,19 @@ if (cmd === 'package') {
   console.log(`✔ release ${r.id} (${r.manifest.status})\n  ${r.root}`);
   for (const f of r.manifest.files) console.log(`  ${f.path}  ${(f.bytes / 1048576).toFixed(2)} MB`);
   process.exit(0);
+}
+
+if (cmd === 'ideas' || cmd === 'trends') {
+  const report = cmd === 'ideas' ? loadIdeas(specPath) : await collectTrends(loadTrendsConfig(specPath));
+  const json = JSON.stringify(report, null, 2);
+  const dest = opt('--out');
+  if (dest) {
+    mkdirSync(join(dest, '..'), { recursive: true });
+    writeFileSync(dest, `${json}\n`);
+    console.log(`✔ ${dest}`);
+  } else console.log(json);
+  if ('status' in report && report.status === 'unavailable') process.exitCode = 1;
+  process.exit(process.exitCode ?? 0);
 }
 
 const l = loadSpec(specPath);
@@ -145,7 +161,10 @@ switch (cmd) {
     for (const f of writeSubtitles(l, tl)) console.log(`✔ subs   ${f}`);
     if (Object.keys(tl.stills).length) for (const f of await stills(l, tl, tl.stills, join(out, 'stills'))) console.log(`✔ still  ${f}`);
     for (const f of await cards(l, tl, join(out, 'stills'))) console.log(`✔ card   ${f}`);
-    if (!draft && from === undefined && !opt('--to')) await qa(l, tl, r.master);
+    if (!draft && from === undefined && !opt('--to')) {
+      const result = await qa(l, tl, r.master);
+      if (result.verdict !== 'pass') process.exitCode = 1;
+    }
     break;
   }
   case 'qa': {

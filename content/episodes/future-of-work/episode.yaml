@@ -1,0 +1,8 @@
+episode: 1
+id: future-of-work
+title: Будущее работы — кто отвечает за результат
+series: business-explainers
+sources: sources.md
+credits: CREDITS.md
+variants:
+  - { id: ru, spec: ru.reel.yaml }

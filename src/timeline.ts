@@ -100,8 +100,9 @@ export async function narrate(l: LoadedSpec): Promise<Map<string, { meta: VoiceM
       out.set(s.id, { meta: estimate(s), wav: null });
       continue;
     }
-    // Kokoro keys stay as they were, so existing caches remain valid
-    const settings = v.engine === 'kokoro' && !v.model ? [s.say, v.voice, v.speed, v.lang] : [s.say, v.engine, v.model, v.voice, v.speed, l.spec.lang];
+    // English Kokoro keys stay as they were, so existing caches remain valid
+    const settings =
+      v.engine === 'kokoro' && !v.model && l.spec.lang === 'en' ? [s.say, v.voice, v.speed, v.lang] : [s.say, v.engine, v.model, v.voice, v.speed, l.spec.lang];
     const key = hash(JSON.stringify(settings));
     const wav = join(dir, `${s.id}-${key}.wav`);
     const json = join(dir, `${s.id}-${key}.json`);

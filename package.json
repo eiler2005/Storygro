@@ -4,7 +4,7 @@
   "private": true,
   "description": "A toolkit for AI agents to turn ideas into reels, videos, carousels, and social posts. Build your audience and grow your brand through content.",
   "type": "module",
-  "license": "UNLICENSED",
+  "license": "PolyForm-Shield-1.0.0",
   "bin": {
     "storygro": "src/cli.ts"
   },

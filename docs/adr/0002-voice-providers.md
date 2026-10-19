@@ -36,3 +36,9 @@ In the rendered example, QA's speech check heard ≥ 89 % (RU) and ≥ 95 % (EN)
 - Alignment adds a Whisper pass per new line (seconds on Apple silicon) and depends on mlx-whisper.
 - Paid APIs (ElevenLabs, Yandex SpeechKit, OpenAI) can be added as providers once a budget exists, without touching scenes or timing.
 - Automatic metrics do not replace listening; QA cannot hear wrong stress or an odd tone.
+
+## Amendment — 19 October 2026, owner preference
+
+The owner asked to use Kokoro for Russian. A separately verified community fine-tune, [zaakirio/kokoro-ru](https://huggingface.co/zaakirio/kokoro-ru), provides Dima/Sveta/Masha; the current RU examples select Dima. The same `kokoro` provider dispatches to the RU checkpoint with RUAccent stress and the model's G2P/espeak frontend. It returns audio for Whisper alignment; English native timings and legacy keys are retained.
+
+This supersedes the default for new Russian material, not the historical comparison above. The community model card declares OpenRAIL weights and Apache-2.0 code, rather than the English model's Apache-2.0 weights. No model weights are bundled. See [voices](../voices.md#russian-kokoro) and the episode review for current validation.

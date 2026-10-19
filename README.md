@@ -15,7 +15,8 @@ Storygro gives an agent (Claude Code, Codex, ChatGPT agent mode — anything tha
 - **Scripts as data.** One YAML file per language variant: narration with `{#cue}` markers, pauses, say-as hints (`[11%](=eleven percent)`), scene props bound to a `facts.json`.
 - **Native 9:16 and other formats** with platform safe-area profiles (Reels, Shorts, feed), checked automatically at every cue.
 - **Sixteen animated scenes**: eight vertical-first cut-paper explainer scenes (headline, crowd, task-stack, ladder, stat, chart, steps, outro) and eight landscape product scenes from the SlideCraft launch film. Custom scenes are small ES modules with a pure `draw(t)`.
-- **Local narration in Russian and English** behind one provider interface: Qwen3-TTS (cloned narrator, Apple silicon), Kokoro (English baseline), Silero CIS (Russian, explicit stress). Word timings come from the engine or from Whisper alignment against the script.
+- **Local narration in Russian and English** behind one provider interface: Kokoro-82M (English), Kokoro-RU with RUAccent (Russian, Dima/Sveta/Masha), Qwen3-TTS (reference narrator, Apple silicon), Silero CIS (Russian, explicit stress). Word timings come from the engine or from Whisper alignment against the script.
+- **Topic selection:** public Wikipedia/Hacker News interest snapshots and a curated idea backlog with transparent editorial scoring. Sources, dates and failures stay visible.
 - **Storyboards** (HTML/PDF) from the live player, an **approval gate** that hashes every input (script, facts, scene code, theme, fonts, assets), procedural **music and sound effects** mixed to −14 LUFS.
 - **Rendering** through headless Chrome and ffmpeg: master and ≤ 25 MB web MP4, burned-in captions, SRT/VTT, covers, share cards, carousel cards.
 - **QA that fails loudly:** codec, size, length, loudness, black frames, scene/image/font errors, every on-screen number traced to the data, text clear of platform UI, Whisper hearing ≥ 85 % of each scene (RU and EN). Skipped checks are reported as skipped.
@@ -52,7 +53,7 @@ npm run storygro -- board examples/ai-jobs/en.reel.yaml --no-voice
 
 # voices, Whisper, ffmpeg in ~/.storygro/venv (models download on first use)
 npm run setup                      # English (Kokoro), ASR, audio
-npm run setup:ru                   # + Russian voices (Qwen3-TTS via mlx-audio, Silero CIS)
+npm run setup:ru                   # + Kokoro-RU/RUAccent, Qwen3-TTS via mlx-audio, Silero CIS
 
 npm run storygro -- voice   examples/ai-jobs/ru.reel.yaml
 npm run storygro -- board   examples/ai-jobs/ru.reel.yaml     # read board.pdf
@@ -75,12 +76,12 @@ The [workflows](docs/workflows.md) page shows what the agent does at each step a
 |---|---|
 | CLI and orchestration | Node.js, TypeScript (run with `tsx`, checked with `tsc`), `yaml`, `zod` |
 | Pictures | plain DOM/SVG/CSS scenes, headless Chrome over the DevTools protocol (no Puppeteer), ffmpeg (`libx264`, AAC) |
-| Voices | Qwen3-TTS via mlx-audio, Kokoro-82M, Silero CIS base + silero-stress — all locally, licences that allow published use |
+| Voices | Kokoro EN, Kokoro-RU + RUAccent, Qwen3-TTS via mlx-audio, Silero CIS base + silero-stress; separate model terms |
 | Speech check and alignment | Whisper (small.en, large-v3-turbo) via mlx-whisper |
 | Audio | NumPy/SciPy synthesis, pyloudnorm loudness, soundfile |
 | Environment | Python 3.12 managed by uv in `~/.storygro/venv`; ffmpeg from `imageio-ffmpeg` |
 
-Full table with versions, licences and the reasons for each choice: [architecture → technology](docs/architecture.md#technology-and-libraries).
+Full map of technologies, products, licences and implementation status: [technology](docs/technology.md). Internal design: [architecture](docs/architecture.md#technology-and-libraries).
 
 ## Repository layout
 
@@ -90,6 +91,7 @@ runtime/        browser player, animation kit, cut-paper kit, safe-area profiles
 scenes/         built-in scene modules
 py/             voice providers (py/voices/), alignment, ASR, procedural score, voice design
 examples/       ai-jobs (RU/EN explainer, carousels, episode) · slidecraft-launch (historical film + GIF)
+content/        idea backlog, public interest signals, research and new production episodes
 docs/           architecture, workflows, quality, voices, formats, scenes, contract, history, planning
 agents/         role notes for director, scene-builder and QA
 experiments/    bounded pilots, e.g. the HyperFrames renderer comparison (ADR 0001)
@@ -100,6 +102,8 @@ tests/          contract tests (node:test)
 
 | Read | For |
 |---|---|
+| [Technology and product map](docs/technology.md) | every component, where it is used, required/optional status and licence |
+| [Ideas and trends](docs/ideas.md) · [content workspace](content/README.md) | editorial selection, interest snapshots, new episodes |
 | [Architecture](docs/architecture.md) | how the pipeline, player, voices, audio and gates fit; libraries; design choices; limits |
 | [Workflows](docs/workflows.md) | commands and step-by-step flows: explainer, variants, carousel, package, new scene |
 | [Writing a reel](docs/writing-a-reel.md) | the spec, script syntax, budgets, story shapes |
@@ -121,4 +125,12 @@ Read [AGENTS.md](AGENTS.md) before changing the project. Rendering, voice and AS
 
 ## License
 
-The owner has not selected a project license. The repository is public, but it does not currently grant an open-source license. Third-party components keep their own terms; font notices are next to the fonts ([ai-jobs](examples/ai-jobs/assets/fonts/), [slidecraft-launch](examples/slidecraft-launch/assets/fonts/)).
+Storygro is source-available under [PolyForm Shield 1.0.0](LICENSE), using the SlideCraft licensing model. Creating content for yourself, your employer or clients is a permitted noncompeting use; competing products need a separate agreement. See [COMMERCIAL.md](COMMERCIAL.md). Third-party models, components and fonts retain their own terms ([NOTICE](NOTICE)).
+
+## New business explainer
+
+[Future of work — who owns the result](content/episodes/future-of-work/README.md): original Russian narration with Kokoro-RU Dima, 9:16, an ILO source and an explicit distinction between research findings and the author's workflow advice. Source files live in `content/`; generated files and the review report are linked from the episode.
+
+**68.63 s · 1080×1920 · 11/11 QA pass.** [Watch/download](https://github.com/eiler2005/Storygro/releases/tag/business-explainers-2026-10-19) · [review](content/episodes/future-of-work/REVIEW.md).
+
+<p align="center"><img src="docs/media/future-of-work-ru-cover.png" alt="Business explainer cover: who owns the result? A draft is not a decision." width="280"></p>

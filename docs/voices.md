@@ -9,17 +9,19 @@ Narration drives the timeline, so the voice is chosen before the pictures are po
 | `voice.engine` | Languages | Install | Word timings | Speed | Licence of what you publish |
 |---|---|---|---|---|---|
 | `kokoro` | English (US `lang: a`, UK `lang: b`) | `npm run setup` | native | native (`speed`) | Apache-2.0 model |
+| `kokoro` (RU) | Russian (`lang: ru` on the spec, voice `dima`, `sveta` or `masha`) | `npm run setup:ru` | Whisper alignment | native (`speed`) | [Kokoro-RU](https://huggingface.co/zaakirio/kokoro-ru): weights OpenRAIL, code Apache-2.0; RUAccent Apache-2.0 |
 | `qwen3` | Russian, English, German, French, Spanish, Italian, Portuguese, Japanese, Korean, Chinese | `npm run setup:ru` (Apple silicon) | Whisper alignment | tempo change after synthesis (`speed`, pitch kept) | Qwen3-TTS Apache-2.0, mlx-audio MIT |
 | `silero` | Russian | `npm run setup:ru` | Whisper alignment | native (SSML rate) | MIT — **only** the CIS base models; Silero's `v4_ru` / `v5_*_ru` speakers are CC BY-NC-SA and are not offered |
 | `none` | — | — | estimated (~2.6 words/s) | — | — |
 
 ```yaml
 voice: { engine: kokoro, voice: af_heart, speed: 1.08 }                     # English baseline
+voice: { engine: kokoro, voice: dima, speed: 1.0 }                         # Russian, top-level lang: ru
 voice: { engine: qwen3, voice: assets/voice/narrator-ru.wav, speed: 1.12 }  # cloned narrator
 voice: { engine: silero, voice: ru_alexandr }                               # fast, explicit stress
 ```
 
-`lang:` at the top of the spec (e.g. `ru`) is the language of the narration and captions; it selects the ASR model and the text normalisation. `voice.lang` is Kokoro's own code and only matters for Kokoro.
+`lang:` at the top of the spec (e.g. `ru`) is the language of the narration and captions; it selects the ASR model and the text normalisation. `voice.lang` selects the US/UK English frontend. Russian Kokoro uses a separate community checkpoint, not the official English frontend with `voice.lang: ru`.
 
 ## How a line is made
 
@@ -30,7 +32,17 @@ voice: { engine: silero, voice: ru_alexandr }                               # fa
 5. Words inside a say-as span are merged back into one caption word with the written form (`11%`).
 6. The line's JSON stores `duration`, `words`, `cues` and `provider` (engine, model, voice, licence, `timing: native | whisper-aligned`, `matched` — the share of script words Whisper heard exactly). A line below 70 % prints a warning: listen to it.
 
-Lines are cached by text, engine, model, voice, speed and language; Kokoro lines keep the prototype's cache keys, so old caches stay valid. Qwen3 generation is seeded from the text, so a cached line can be reproduced.
+Lines are cached by text, engine, model, voice, speed and language; English Kokoro lines keep the prototype's keys. Russian keys include language and provider settings. Qwen3 generation is seeded from the text, so a cached line can be reproduced.
+
+## Russian Kokoro
+
+At the owner's request on 19 October, the Russian examples use the community fine-tune [zaakirio/kokoro-ru](https://huggingface.co/zaakirio/kokoro-ru), male voice **Dima**. The original English Kokoro remains available. Sveta and Masha are additional model-provided voices; only Dima is validated in the current episode.
+
+RUAccent resolves stress and ё; the model's Russian G2P/espeak data turn text into phonemes. Explicit `+` before the stressed vowel (`зам+ок`) or combining acute after it (`замо́к`) overrides automatic stress. `[word](/phonemes/)` can override a word; `[written](=spoken)` handles abbreviations and numbers. Whisper aligns the result back to the script's spelling.
+
+Setup installs `ruaccent`. Weights, voicepack, G2P code and espeak data download from the model repository into the local Hugging Face cache. The model card declares OpenRAIL weights, Apache-2.0 code and consented studio actors for the voice recordings. Model terms remain separate from Storygro's Shield licence. Do not claim that the synthetic voice has no human source, or that all third-party assets are Apache-2.0.
+
+The former session established a working RU provider and corrected pronunciation in `ai-jobs`. The new business episode and the refreshed RU render validate this path end to end. Per-line alignment and final QA are recorded with the outputs; they do not measure naturalness or guarantee correct stress on every future script.
 
 ## Designing a narrator (qwen3)
 
@@ -59,7 +71,7 @@ For [examples/ai-jobs](../examples/ai-jobs/) the candidates were compared on the
 
 \* The Silero errors were "сорок процентов" written as "40%" — a normalisation difference, not mispronunciation. Whisper's language ID gave every Russian candidate P(ru) ≈ 1.0, so it could not separate accents.
 
-Decision: a designed male narrator cloned with `qwen3` for both variants (the owner asked for a male voice). Kokoro stays the English baseline and Silero the fast fallback with deterministic stress.
+Historical decision for the first release: a designed male narrator cloned with `qwen3` for both variants. The later owner instruction selects Kokoro-RU Dima for the current Russian specs; the English `ai-jobs` example keeps its Qwen3 reference narrator. Silero remains a fallback.
 
 ## Pronunciation notes (Russian)
 
@@ -85,7 +97,7 @@ Recorded so nobody re-adds them by accident (research of 18 Oct 2026; verify aga
 | MMS-TTS (rus), OmniVoice, Higgs Audio v3 | non-commercial weights |
 | macOS `say` voices (Milena, Yuri) | the macOS licence allows system voices for personal, non-commercial use only |
 | Unofficial Edge read-aloud endpoints | not licensed for content production |
-| Kokoro for Russian | no Russian voice |
+| Official English Kokoro frontend for Russian | no official RU voice; the separately integrated Kokoro-RU community checkpoint is used instead |
 
 Paid APIs (ElevenLabs, OpenAI TTS, Yandex SpeechKit, Azure, Google) can be added as providers when a budget is agreed; keys go in the local environment, never in specs, chat or Git.
 

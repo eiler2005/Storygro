@@ -1,5 +1,7 @@
 # Workflows
 
+For editorial selection before these production steps, use [ideas and trends](ideas.md). New production projects live in [content/](../content/README.md); the current Russian business example is [future-of-work](../content/episodes/future-of-work/README.md). The complete component/product inventory is [technology](technology.md).
+
 > **Audience:** people and AI agents producing content with Storygro · **Status:** v0.2 (October 2026)
 
 Storygro is a toolkit an agent operates for you: you describe the outcome in plain language, the agent writes files and runs commands, and every step leaves an artifact you can check. This page walks through the workflows that work today and marks the ones that are planned.

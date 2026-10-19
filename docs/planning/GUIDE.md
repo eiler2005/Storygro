@@ -29,9 +29,11 @@ npm run storygro -- render  examples/ai-jobs/ru.reel.yaml   # MP4, SRT/VTT, об
 
 > Сделай explainer по теме «[тема]» для «[аудитория]» на русском и английском, 9:16, 60–90 секунд. После просмотра человек должен понять «[одна мысль]». Сначала собери актуальные источники с цитатами, каждое число — с источником. Покажи механизм через повторяющиеся объекты. Используй сцены «бумажной аппликации» и мужской голос. Остановись после storyboard, чтобы я его утвердил.
 
-Агент создаёт папку примера: `sources.md` → `facts.json` → `ru.reel.yaml` и `en.reel.yaml` (отдельные сценарии, не перевод) → при необходимости `DIRECTION.md` → озвучка → кадры с `--guides` → storyboard. Правила сценария — [writing-a-reel](../writing-a-reel.md), сцены — [каталог](../scenes.md).
+Агент создаёт `content/episodes/<id>/`: `sources.md` → `facts.json` → `ru.reel.yaml` и `en.reel.yaml` (отдельные сценарии, не перевод) → при необходимости `DIRECTION.md` → озвучка → кадры с `--guides` → storyboard. Правила сценария — [writing-a-reel](../writing-a-reel.md), сцены — [каталог](../scenes.md).
 
 ## 4. Голос рассказчика — доступно
+
+Для нового русского ролика по предпочтению владельца: top-level `lang: ru`, `voice: { engine: kokoro, voice: dima, speed: 1.0 }`, установка `npm run setup:ru`. Это отдельная community-модель Kokoro-RU; подробнее — [voices](../voices.md#russian-kokoro).
 
 Один раз спроектировать синтетический голос и использовать его во всех сценах:
 
@@ -58,3 +60,12 @@ npm run storygro -- package  examples/ai-jobs/episode.yaml       # все вар
 ## 7. Публикация и аналитика — запланировано
 
 Нужны аккаунты Instagram/YouTube владельца и выбор адаптера. Пока файлы из пакета загружаются вручную; в manifest стоит `published: false`. Рост аудитории не гарантируется количеством роликов — сначала несколько выпусков с ручной проверкой.
+
+## 8. Выбрать следующую тему — доступно
+
+```sh
+npm run storygro -- trends content/ideas/trends.yaml --out content/.signals/latest.json
+npm run storygro -- ideas content/ideas/backlog.yaml --out content/.signals/ranked.json
+```
+
+Агент проверяет дату и доступность источников, предлагает связанные с аудиторией вопросы, исследует первоисточники и обосновывает оценки в backlog. Популярность страницы сама по себе не подтверждает тезис и не обещает охват. [Правила отбора](../ideas.md), [пространство контента](../../content/README.md), [карта технологий и продуктов](../technology.md).

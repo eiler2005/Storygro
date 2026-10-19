@@ -1,0 +1,23 @@
+Storygro
+Copyright (c) 2026 Denis Ermilov
+Source-available under PolyForm Shield License 1.0.0. See LICENSE and COMMERCIAL.md.
+
+Third-party components retain their own terms. This file identifies the components used by
+the current workflow; it is not a substitute for their full licence texts.
+
+Node.js / tsx: MIT; TypeScript: Apache-2.0; yaml: ISC; zod: MIT.
+Kokoro-82M English weights and code: Apache-2.0.
+Kokoro-RU (zaakirio/kokoro-ru): model card declares OpenRAIL weights and Apache-2.0 code;
+studio-voice provenance is documented by that model's authors. RUAccent: Apache-2.0.
+Qwen3-TTS: Apache-2.0; mlx-audio: MIT. Silero CIS base models: MIT.
+Whisper / mlx-whisper: MIT. NumPy / SciPy: BSD; soundfile / pyloudnorm: BSD/MIT terms.
+imageio-ffmpeg: BSD wrapper; ffmpeg's own licence depends on the downloaded build and enabled codecs.
+
+Fonts are included with notices beside the actual files:
+  examples/slidecraft-launch/assets/fonts/LICENSE-Liberation-*.txt
+  examples/ai-jobs/assets/fonts/OFL-*.txt
+  content/episodes/future-of-work/assets/fonts/OFL-*.txt
+
+Runtime dependencies and model weights are installed or downloaded separately. The end user
+must retain applicable notices when redistributing them. Storygro's licence does not replace
+the usage terms of downloaded models, voice data, browsers, or external data APIs.

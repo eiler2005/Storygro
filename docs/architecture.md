@@ -124,7 +124,7 @@ Two families live in `scenes/` ([catalog](scenes.md)):
 
 | Engine | Languages | Word timings | Speed | Licence | Notes |
 |---|---|---|---|---|---|
-| `kokoro` | English (US/UK) | native | native | Apache-2.0 | baseline; timings identical to the prototype |
+| `kokoro` | English (US/UK), Russian via Kokoro-RU | EN native; RU Whisper alignment | native | EN Apache-2.0; RU weights OpenRAIL, code Apache-2.0 | RU uses a separate community checkpoint and RUAccent |
 | `qwen3` | ru, en and others | Whisper alignment | tempo change after synthesis | Apache-2.0 (weights), MIT (mlx-audio) | Apple silicon; cloned from one reference clip so every scene has the same voice |
 | `silero` | Russian | Whisper alignment | native (SSML rate) | MIT (CIS base models only) | explicit stress control; Cyrillic only |
 | `none` | — | estimated | — | — | storyboards and carousels before recording |
@@ -154,17 +154,17 @@ Four gates stand between a script and a release. Each is explained in [quality](
 | Runtime | plain ES modules (`runtime/kit.js`, `runtime/paper.js`, `scenes/*.js`) | `draw(t)` is easy to write for people and models | repository terms |
 | Python env | Python 3.12 in `~/.storygro/venv`, created with [uv](https://docs.astral.sh/uv/) | isolated, reproducible, nothing system-wide | — |
 | English voice | [Kokoro-82M](https://huggingface.co/hexgrad/Kokoro-82M) (`kokoro`, `misaki`, spaCy `en_core_web_sm`) | local, fast, word timings | Apache-2.0 / MIT |
-| Russian and other voices | [Qwen3-TTS](https://github.com/QwenLM/Qwen3-TTS) via [mlx-audio](https://github.com/Blaizzy/mlx-audio); [Silero](https://github.com/snakers4/silero-models) CIS base + [silero-stress](https://github.com/snakers4/silero-stress) | commercially usable licences, local | Apache-2.0, MIT |
+| Russian and other voices | [Kokoro-RU](https://huggingface.co/zaakirio/kokoro-ru) + RUAccent; [Qwen3-TTS](https://github.com/QwenLM/Qwen3-TTS) via [mlx-audio](https://github.com/Blaizzy/mlx-audio); [Silero](https://github.com/snakers4/silero-models) CIS base + [silero-stress](https://github.com/snakers4/silero-stress) | local providers with separate model terms | Kokoro-RU weights OpenRAIL, code Apache-2.0; Qwen3/Silero Apache-2.0/MIT |
 | Speech recognition | [mlx-whisper](https://github.com/ml-explore/mlx-examples) (`whisper-small.en`, `whisper-large-v3-turbo`) | QA and word alignment on Apple silicon | MIT |
 | DSP | NumPy, SciPy, soundfile, [pyloudnorm](https://github.com/csteinmetz1/pyloudnorm) | music, effects, ducking, loudness | BSD / MIT |
 | Encoding | ffmpeg from [`imageio-ffmpeg`](https://github.com/imageio/imageio-ffmpeg) (static binary in the venv) | no system ffmpeg needed | LGPL/GPL build of ffmpeg, BSD wrapper |
 | Example fonts | Unbounded, Golos Text, Caveat; Liberation Sans/Serif | Cyrillic, open licences | OFL 1.1 |
 
-Storygro itself has no chosen licence yet ([README](../README.md#license)); third-party components keep their own terms.
+Storygro uses [PolyForm Shield 1.0.0](../LICENSE), with [commercial-use guidance](../COMMERCIAL.md). Third-party components keep their own terms. The [technology/product map](technology.md) includes Kokoro-RU, idea selection and external signal sources.
 
 ## Design choices and their trade-offs
 
-- **DOM + CDP instead of React/Remotion or a video editor.** A scene is a small ES module; any frame is reproducible; there is no build step and no licence question around the renderer. The cost is that capture is sequential (about 15–20 frames per second on an M5 Pro at 1080×1920). An alternative renderer (HyperFrames) is evaluated in [ADR 0001](adr/0001-renderer.md).
+- **DOM + CDP.** A scene is a small ES module; any frame is reproducible; there is no scene build step. Capture is sequential (about 15–20 frames per second on an M5 Pro at 1080×1920). An alternative renderer (HyperFrames) is evaluated in [ADR 0001](adr/0001-renderer.md). Software, browser and asset licences remain distinct.
 - **Python only where the models are.** Voices, ASR and DSP live in Python; everything else is TypeScript.
 - **Voice first, picture second.** The storyboard is approved on real timings; visuals never set the pace.
 - **Facts as data.** Scenes may not type numbers; the facts gate reads the DOM to enforce it.

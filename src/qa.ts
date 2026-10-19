@@ -13,6 +13,21 @@ export interface Check {
   detail: string;
 }
 
+export interface AsrSegment {
+  start: number;
+  end: number;
+  text: string;
+  words?: { w: string; start: number; end: number }[];
+}
+
+/** An ASR segment can straddle two scenes. Assign its individual words by their own times. */
+export function heardInRange(segments: AsrSegment[], start: number, end: number): string {
+  if (segments.some(segment => !segment.words)) throw new Error('ASR word timestamps are missing — rerun with --words');
+  return segments.flatMap(segment => segment.words!)
+    .filter(word => (word.start + word.end) / 2 >= start && (word.start + word.end) / 2 < end)
+    .map(word => word.w).join(' ');
+}
+
 /** Words for comparison in any script: lower case, letters and digits only, ё = е. */
 export const norm = (s: string) =>
   s
@@ -127,19 +142,18 @@ export async function qa(l: LoadedSpec, tl: Timeline, video: string) {
   if (!voiced) checks.push({ name: 'Whisper hears the script', status: 'skip', detail: 'no narration (estimated timings)' });
   else if (!existsSync(mix)) checks.push({ name: 'Whisper hears the script', status: 'skip', detail: 'no mix.wav' });
   else {
-    const r = spawnSync(python(), [join(REEL_ROOT, 'py', 'asr.py'), mix, asr, '--lang', tl.lang ?? 'en'], { encoding: 'utf8' });
+    const r = spawnSync(python(), [join(REEL_ROOT, 'py', 'asr.py'), mix, asr, '--lang', tl.lang ?? 'en', '--words'], { encoding: 'utf8' });
     if (r.status === 3) checks.push({ name: 'Whisper hears the script', status: 'skip', detail: r.stderr.trim().split('\n').at(-1) ?? 'ASR unavailable' });
     else if (r.status !== 0) checks.push({ name: 'Whisper hears the script', status: 'fail', detail: `ASR failed: ${r.stderr.slice(-300)}` });
     else {
-      const segs = JSON.parse(readFileSync(asr, 'utf8')) as { start: number; end: number; text: string }[];
+      const segs = JSON.parse(readFileSync(asr, 'utf8')) as AsrSegment[];
       const bad: string[] = [];
       let worst = 1;
       for (const [i, s] of tl.scenes.entries()) {
         if (!s.wav) continue;
-        const heard = segs
-          .filter((g) => (g.start + g.end) / 2 >= s.start && (g.start + g.end) / 2 < s.end)
-          .map((g) => g.text)
-          .join(' ');
+        let heard: string;
+        try { heard = heardInRange(segs, s.start, s.end); }
+        catch (error) { bad.push(`${s.id}: ${(error as Error).message}`); continue; }
         const sc = l.spec.scenes[i]!;
         // the narrator says the spoken form; captions may show digits; either may match what ASR writes
         const sim = [similarity(spokenText(sc), heard), similarity(captionText(sc), heard)].sort((a, b) => b.score - a.score)[0]!;

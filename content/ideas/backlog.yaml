@@ -1,0 +1,37 @@
+ideas: 1
+audience: Руководители, основатели и специалисты, внедряющие ИИ в работу
+items:
+  - id: future-of-work
+    title: Будущее работы — кто отвечает за результат
+    thesis: При внедрении ИИ нужно проектировать проверку и ответственность вместе с автоматизацией задач.
+    status: produced
+    episode: ../episodes/future-of-work/episode.yaml
+    sources:
+      - https://www.ilo.org/resource/article/how-might-generative-ai-impact-different-occupations
+      - https://www.anthropic.com/research/anthropic-economic-index-january-2026-report
+    ratings: { evidence: 5, audience: 5, utility: 5, visual: 4, timeliness: 3, ease: 4 }
+    rationale: 'Первый деловой выпуск по запросу владельца; исследования поддерживают изменение задач, рекомендации о процессе — авторская рамка. Оценки редакционные.'
+  - id: ai-review
+    title: Где проверять работу ИИ-агента
+    thesis: Проверка нужна на границах передачи результата и до необратимого действия.
+    status: candidate
+    sources:
+      - https://www.anthropic.com/engineering/building-effective-agents
+    ratings: { evidence: 4, audience: 5, utility: 5, visual: 5, timeliness: 3, ease: 4 }
+    rationale: Полезный workflow для своей аудитории; перед сценарием нужны конкретные примеры ошибок и подтверждённые ограничения.
+  - id: junior-training
+    title: Как обучать новичков, когда черновик пишет нейросеть
+    thesis: Практику нужно организовать вокруг объяснения и проверки решений, сохраняя задачи для обучения.
+    status: candidate
+    sources:
+      - https://www.ilo.org/publications/generative-ai-and-jobs-2025-update
+    ratings: { evidence: 3, audience: 5, utility: 4, visual: 4, timeliness: 3, ease: 4 }
+    rationale: Продолжение ai-jobs; нужны исследования обучения, чтобы отделить методику от рабочей гипотезы автора.
+  - id: content-from-source
+    title: Как превратить исследование в несколько материалов
+    thesis: Один набор проверенных источников связывает видео, карусель и текст поста.
+    status: candidate
+    sources:
+      - https://github.com/eiler2005/Storygro
+    ratings: { evidence: 5, audience: 4, utility: 4, visual: 5, timeliness: 2, ease: 5 }
+    rationale: Демонстрация уже работающих сценариев Storygro; без обещаний автоматического роста или публикации.

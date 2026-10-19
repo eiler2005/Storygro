@@ -1,0 +1,6 @@
+trends: 1
+wikipedia: [ru, en]
+hackerNews: true
+limit: 15
+# Wikimedia daily tops can arrive late. Use the nearest available past UTC day and report it.
+lookbackDays: 7

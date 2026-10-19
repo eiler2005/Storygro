@@ -60,6 +60,8 @@ export default {
     return (t) => {
       if (!fitted) {
         for (const r of rows) fitText(r.row, { maxWidth: b.width });
+        // Stamps also contain display text; reserve room for their border and rotation.
+        if (st) fitText(st.el, { maxWidth: b.width * 0.82 });
         // strike-through paths need the final row size
         for (const r of rows)
           if (r.strikeAt !== null) {

@@ -2,8 +2,8 @@
 # One-time setup: a private Python environment with the voices, Whisper and ffmpeg.
 # Nothing is installed system-wide. Override the location with STORYGRO_HOME.
 #   sh scripts/setup.sh        English narration (Kokoro), ASR check, audio mixing
-#   sh scripts/setup.sh ru     also the Russian voices: Silero CIS (MIT) and, on Apple silicon,
-#                              Qwen3-TTS through mlx-audio (Apache-2.0 / MIT)
+#   sh scripts/setup.sh ru     also the Russian voices: Kokoro-RU with RUAccent stress (default),
+#                              Silero CIS (MIT) and, on Apple silicon, Qwen3-TTS through mlx-audio
 set -e
 HOME_DIR="${STORYGRO_HOME:-${REELCRAFT_HOME:-$HOME/.storygro}}"
 mkdir -p "$HOME_DIR"
@@ -22,7 +22,7 @@ if [ $APPLE = 1 ]; then uv pip install --python "$PY" mlx-whisper; else echo "Wh
 for extra in "$@"; do
   case "$extra" in
     ru)
-      uv pip install --python "$PY" "silero>=0.5" "silero-stress>=1.5"
+      uv pip install --python "$PY" "ruaccent>=1.5.8" "silero>=0.5" "silero-stress>=1.5"
       if [ $APPLE = 1 ]; then uv pip install --python "$PY" "mlx-audio>=0.5.9"; else echo "qwen3 voice needs Apple silicon (mlx-audio); silero works everywhere"; fi
       ;;
     *) echo "unknown extra: $extra (known: ru)" >&2; exit 1 ;;

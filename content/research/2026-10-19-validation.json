@@ -1,0 +1,335 @@
+{
+  "date": "2026-10-19",
+  "localChecks": {
+    "typescript": "pass",
+    "tests": 20,
+    "failed": 0,
+    "skipped": 0,
+    "cleanNpmCi": "pass"
+  },
+  "videos": [
+    {
+      "id": "future-of-work-ru",
+      "format": "1080x1920@30",
+      "durationSeconds": 68.63,
+      "inputsHash": "91d9a676c8ca",
+      "qa": {
+        "at": "2026-10-19T07:47:29.615Z",
+        "verdict": "pass",
+        "passed": 11,
+        "checks": [
+          {
+            "name": "Codec and pixels",
+            "status": "pass",
+            "detail": "h264, yuv420p"
+          },
+          {
+            "name": "Size",
+            "status": "pass",
+            "detail": "1080×1920"
+          },
+          {
+            "name": "Audio track",
+            "status": "pass",
+            "detail": "Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 195 kb/s (default)"
+          },
+          {
+            "name": "Length",
+            "status": "pass",
+            "detail": "68.63 s (planned 68.63 s)"
+          },
+          {
+            "name": "Loudness",
+            "status": "pass",
+            "detail": "-14 LUFS integrated (target -14), true peak -1.1 dBFS"
+          },
+          {
+            "name": "Frame 0 is a hook",
+            "status": "pass",
+            "detail": "contrast 731 (needs content, not a black frame)"
+          },
+          {
+            "name": "No black stretches",
+            "status": "pass",
+            "detail": "none ≥ 0.4 s"
+          },
+          {
+            "name": "Scenes render without errors",
+            "status": "pass",
+            "detail": "6 scenes, missing images/fonts included"
+          },
+          {
+            "name": "Numbers come from the facts",
+            "status": "pass",
+            "detail": "6 scenes read"
+          },
+          {
+            "name": "Text clear of platform UI (vertical)",
+            "status": "pass",
+            "detail": "every cue checked"
+          },
+          {
+            "name": "Whisper hears the script",
+            "status": "pass",
+            "detail": "every scene ≥ 85% of its words (lowest 91%)"
+          }
+        ]
+      },
+      "providers": [
+        {
+          "engine": "kokoro",
+          "model": "zaakirio/kokoro-ru/kokoro-ru-v2-dima.pth",
+          "voice": "dima",
+          "speed": 1,
+          "lang": "ru",
+          "license": "weights OpenRAIL (kokoro-ru), code Apache-2.0; RUAccent Apache-2.0",
+          "timing": "whisper-aligned",
+          "matched": 1
+        }
+      ],
+      "artifacts": [
+        {
+          "path": "content/episodes/future-of-work/.reel/ru/future-of-work-ru.mp4",
+          "bytes": 20978951,
+          "sha256": "ae6d062a2883914a154a82acf61e8f8235ab060e2b08cb33d62035166c9da186"
+        },
+        {
+          "path": "content/episodes/future-of-work/.reel/ru/future-of-work-ru-web.mp4",
+          "bytes": 21889751,
+          "sha256": "e9bb49996489067a245dd9c29fbfe68eeffc2bdc1cda8ce628901f0076cb41f6"
+        }
+      ]
+    },
+    {
+      "id": "ai-jobs-ru",
+      "format": "1080x1920@30",
+      "durationSeconds": 84.65,
+      "inputsHash": "526cc33f5595",
+      "qa": {
+        "at": "2026-10-19T07:47:30.398Z",
+        "verdict": "pass",
+        "passed": 11,
+        "checks": [
+          {
+            "name": "Codec and pixels",
+            "status": "pass",
+            "detail": "h264, yuv420p"
+          },
+          {
+            "name": "Size",
+            "status": "pass",
+            "detail": "1080×1920"
+          },
+          {
+            "name": "Audio track",
+            "status": "pass",
+            "detail": "Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 195 kb/s (default)"
+          },
+          {
+            "name": "Length",
+            "status": "pass",
+            "detail": "84.65 s (planned 84.65 s)"
+          },
+          {
+            "name": "Loudness",
+            "status": "pass",
+            "detail": "-14 LUFS integrated (target -14), true peak -0.9 dBFS"
+          },
+          {
+            "name": "Frame 0 is a hook",
+            "status": "pass",
+            "detail": "contrast 447 (needs content, not a black frame)"
+          },
+          {
+            "name": "No black stretches",
+            "status": "pass",
+            "detail": "none ≥ 0.4 s"
+          },
+          {
+            "name": "Scenes render without errors",
+            "status": "pass",
+            "detail": "8 scenes, missing images/fonts included"
+          },
+          {
+            "name": "Numbers come from the facts",
+            "status": "pass",
+            "detail": "8 scenes read"
+          },
+          {
+            "name": "Text clear of platform UI (vertical)",
+            "status": "pass",
+            "detail": "every cue checked"
+          },
+          {
+            "name": "Whisper hears the script",
+            "status": "pass",
+            "detail": "every scene ≥ 85% of its words (lowest 86%)"
+          }
+        ]
+      },
+      "providers": [
+        {
+          "engine": "kokoro",
+          "model": "zaakirio/kokoro-ru/kokoro-ru-v2-dima.pth",
+          "voice": "dima",
+          "speed": 1,
+          "lang": "ru",
+          "license": "weights OpenRAIL (kokoro-ru), code Apache-2.0; RUAccent Apache-2.0",
+          "timing": "whisper-aligned",
+          "matched": 0.917
+        },
+        {
+          "engine": "kokoro",
+          "model": "zaakirio/kokoro-ru/kokoro-ru-v2-dima.pth",
+          "voice": "dima",
+          "speed": 1,
+          "lang": "ru",
+          "license": "weights OpenRAIL (kokoro-ru), code Apache-2.0; RUAccent Apache-2.0",
+          "timing": "whisper-aligned",
+          "matched": 1
+        },
+        {
+          "engine": "kokoro",
+          "model": "zaakirio/kokoro-ru/kokoro-ru-v2-dima.pth",
+          "voice": "dima",
+          "speed": 1,
+          "lang": "ru",
+          "license": "weights OpenRAIL (kokoro-ru), code Apache-2.0; RUAccent Apache-2.0",
+          "timing": "whisper-aligned",
+          "matched": 0.958
+        },
+        {
+          "engine": "kokoro",
+          "model": "zaakirio/kokoro-ru/kokoro-ru-v2-dima.pth",
+          "voice": "dima",
+          "speed": 1,
+          "lang": "ru",
+          "license": "weights OpenRAIL (kokoro-ru), code Apache-2.0; RUAccent Apache-2.0",
+          "timing": "whisper-aligned",
+          "matched": 0.913
+        }
+      ],
+      "artifacts": [
+        {
+          "path": "examples/ai-jobs/.reel/ru/ai-jobs-ru.mp4",
+          "bytes": 26431895,
+          "sha256": "a7134d287585c3b1c3fda2afd3b05b06c8e2c07a4fdda5f5de0f116efb2a594e"
+        },
+        {
+          "path": "examples/ai-jobs/.reel/ru/ai-jobs-ru-web.mp4",
+          "bytes": 22593954,
+          "sha256": "67151697cae5cb99eaff70ef0b66496b1fb96ba1d1e09fc618890be79fcf8e0a"
+        }
+      ]
+    },
+    {
+      "id": "ai-jobs-en",
+      "format": "1080x1920@30",
+      "durationSeconds": 85.23,
+      "inputsHash": "b1c908c30d99",
+      "qa": {
+        "at": "2026-10-19T07:47:32.220Z",
+        "verdict": "pass",
+        "passed": 11,
+        "checks": [
+          {
+            "name": "Codec and pixels",
+            "status": "pass",
+            "detail": "h264, yuv420p"
+          },
+          {
+            "name": "Size",
+            "status": "pass",
+            "detail": "1080×1920"
+          },
+          {
+            "name": "Audio track",
+            "status": "pass",
+            "detail": "Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 195 kb/s (default)"
+          },
+          {
+            "name": "Length",
+            "status": "pass",
+            "detail": "85.23 s (planned 85.23 s)"
+          },
+          {
+            "name": "Loudness",
+            "status": "pass",
+            "detail": "-14 LUFS integrated (target -14), true peak -1.2 dBFS"
+          },
+          {
+            "name": "Frame 0 is a hook",
+            "status": "pass",
+            "detail": "contrast 420 (needs content, not a black frame)"
+          },
+          {
+            "name": "No black stretches",
+            "status": "pass",
+            "detail": "none ≥ 0.4 s"
+          },
+          {
+            "name": "Scenes render without errors",
+            "status": "pass",
+            "detail": "8 scenes, missing images/fonts included"
+          },
+          {
+            "name": "Numbers come from the facts",
+            "status": "pass",
+            "detail": "8 scenes read"
+          },
+          {
+            "name": "Text clear of platform UI (vertical)",
+            "status": "pass",
+            "detail": "every cue checked"
+          },
+          {
+            "name": "Whisper hears the script",
+            "status": "pass",
+            "detail": "every scene ≥ 85% of its words (lowest 95%)"
+          }
+        ]
+      },
+      "providers": [
+        {
+          "engine": "qwen3",
+          "model": "mlx-community/Qwen3-TTS-12Hz-1.7B-Base-bf16",
+          "voice": "assets/voice/narrator-en.wav",
+          "language": "English",
+          "license": "Apache-2.0 (Qwen3-TTS), MIT (mlx-audio)",
+          "timing": "whisper-aligned",
+          "matched": 1
+        },
+        {
+          "engine": "qwen3",
+          "model": "mlx-community/Qwen3-TTS-12Hz-1.7B-Base-bf16",
+          "voice": "assets/voice/narrator-en.wav",
+          "language": "English",
+          "license": "Apache-2.0 (Qwen3-TTS), MIT (mlx-audio)",
+          "timing": "whisper-aligned",
+          "matched": 0.971
+        },
+        {
+          "engine": "qwen3",
+          "model": "mlx-community/Qwen3-TTS-12Hz-1.7B-Base-bf16",
+          "voice": "assets/voice/narrator-en.wav",
+          "language": "English",
+          "license": "Apache-2.0 (Qwen3-TTS), MIT (mlx-audio)",
+          "timing": "whisper-aligned",
+          "matched": 0.911
+        }
+      ],
+      "artifacts": [
+        {
+          "path": "examples/ai-jobs/.reel/en/ai-jobs-en.mp4",
+          "bytes": 26266687,
+          "sha256": "44a4dee5d7031edb3071d5713314b45bceadf3ccbf3aee87fdc59f655b6e9bf6"
+        },
+        {
+          "path": "examples/ai-jobs/.reel/en/ai-jobs-en-web.mp4",
+          "bytes": 22630983,
+          "sha256": "222ebe93347fb5aaa79814ebdf244f3941160e2017a595e31710dfb63710ba83"
+        }
+      ]
+    }
+  ]
+}

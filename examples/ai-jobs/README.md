@@ -35,3 +35,9 @@ Qwen3 lines are seeded from their text, so re-voicing gives the same narration o
 ## Status
 
 Technically checked (QA passes for both variants, every number traced to a quoted source). Editorial approval and publication are the owner's decisions; the post texts disclose the synthetic narration. The Stanford finding is presented as the authors present it: an early, descriptive signal, not proof of cause.
+
+## Later Russian voice revision — 19 October
+
+The owner selected Kokoro-RU Dima. The current Russian spec uses that provider, explicit pronunciation for difficult words and say-as for «США». `npm run setup:ru` now also installs RUAccent. English keeps Qwen3. The earlier published release is a historical snapshot; the new Kokoro files are built and checked separately, with provenance in [CREDITS.md](CREDITS.md).
+
+The original headline stamp was found to overflow with longer labels in a new business episode. It now fits its display text within the content width. Re-render after this scene-code change before packaging either language.

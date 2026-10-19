@@ -1,6 +1,7 @@
 node_modules/
 .reel/
 .storygro/
+content/.signals/
 .venv/
 venv/
 __pycache__/

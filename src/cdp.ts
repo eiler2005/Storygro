@@ -43,9 +43,19 @@ export class Tab {
       ],
       { stdio: 'ignore' },
     );
+    // Chrome creates DevToolsActivePort before it has written the port into it; wait for a number,
+    // or the fetch below goes to port 80 (ECONNREFUSED 127.0.0.1:80, about one launch in ten)
     const portFile = join(profile, 'DevToolsActivePort');
-    for (let i = 0; i < 200 && !existsSync(portFile); i++) await new Promise((r) => setTimeout(r, 50));
-    const port = readFileSync(portFile, 'utf8').split('\n')[0];
+    const readPort = () => (existsSync(portFile) ? readFileSync(portFile, 'utf8').split('\n')[0]!.trim() : '');
+    let port = readPort();
+    for (let i = 0; i < 300 && !/^\d+$/.test(port); i++) {
+      await new Promise((r) => setTimeout(r, 50));
+      port = readPort();
+    }
+    if (!/^\d+$/.test(port)) {
+      proc.kill();
+      throw new Error(`Chrome did not report a DevTools port within 15 s (${chrome()})`);
+    }
     const list = (await (await fetch(`http://127.0.0.1:${port}/json/list`)).json()) as {
       type: string;
       webSocketDebuggerUrl: string;

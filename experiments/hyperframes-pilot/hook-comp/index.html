@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="ru" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      /* Fonts: the two OFL files of examples/ai-jobs (Cyrillic), declared exactly as in its theme.css. */
+      @font-face { font-family: 'Unbounded'; src: url('assets/fonts/Unbounded-wght.ttf'); font-weight: 200 900; }
+      @font-face { font-family: 'Golos Text'; src: url('assets/fonts/GolosText-wght.ttf'); font-weight: 400 900; }
+      :root {
+        --pp-paper: #efe6d4; --pp-paper2: #e3d6bd; --pp-ink: #1c2230; --pp-red: #dd4b26;
+        --pp-yellow: #f3b23a; --pp-teal: #23877b; --pp-blue: #31509e;
+      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: var(--pp-paper); }
+      #root { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: var(--pp-paper);
+              font-family: 'Golos Text', sans-serif; color: var(--pp-ink); }
+      .fill { position: absolute; inset: 0; }
+      #vignette { background: radial-gradient(ellipse 85% 70% at 50% 45%, transparent 55%, rgba(60,40,15,.16)); }
+      .scrap { position: absolute; filter: drop-shadow(0 2px 0 rgba(40,28,10,.22)) drop-shadow(0 12px 18px rgba(40,28,10,.16)); }
+
+      /* Safe box of the vertical profile: left 86, top 276, 768 x 970 (see runtime/paper.js box()). */
+      #wrap { position: absolute; left: 86px; top: 276px; width: 768px; height: 970px;
+              display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+      #kicker { font: 700 32px/1.2 'Golos Text', sans-serif; letter-spacing: .18em; text-transform: uppercase;
+                color: var(--pp-red); margin-bottom: 37.8px; }
+      .row { font: 800 108px/1.08 'Unbounded', 'Golos Text', sans-serif; white-space: nowrap;
+             display: inline-block; position: relative; margin: 6.48px 0; }
+      .ink { color: var(--pp-ink); } .red { color: var(--pp-red); }
+      .w { display: inline-block; margin-right: .26em; }
+      #markword { position: relative; z-index: 0; }
+      #mark { position: absolute; left: -.12em; right: -.12em; bottom: .06em; height: .62em; z-index: -1;
+              background: var(--pp-yellow); border-radius: .12em; opacity: .9; transform-origin: 0 50%; }
+      #stampbox { position: relative; height: 140.4px; width: 100%; margin-top: 43.2px; }
+      #stamp { position: absolute; left: 50%; top: 0; opacity: 0; white-space: nowrap; text-transform: uppercase;
+               font: 800 59px/1 'Unbounded', 'Golos Text', sans-serif; letter-spacing: .04em; color: var(--pp-ink);
+               border: 4.92px solid var(--pp-ink); padding: 10.62px 18.88px; border-radius: 8.26px; mix-blend-mode: multiply; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="hook" data-start="0" data-duration="6.465" data-width="1080" data-height="1920">
+      <!-- paper: base colour, two fibre-grain turbulence layers, vignette, torn scraps (scraps are built by the script below) -->
+      <div class="fill">
+        <svg class="fill" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" preserveAspectRatio="none">
+          <filter id="gb" x="0" y="0" width="100%" height="100%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.012 0.03" numOctaves="2" seed="16" />
+            <feColorMatrix type="matrix" values="0 0 0 0 0.4  0 0 0 0 0.3  0 0 0 0 0.18  0 0 0 0.11 0" />
+          </filter>
+          <filter id="gg" x="0" y="0" width="100%" height="100%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" seed="11" stitchTiles="stitch" />
+            <feColorMatrix type="matrix" values="0 0 0 0 0.35  0 0 0 0 0.27  0 0 0 0 0.15  0 0 0 0.275 0" />
+          </filter>
+          <rect width="100%" height="100%" filter="url(#gb)" />
+          <rect width="100%" height="100%" filter="url(#gg)" />
+        </svg>
+      </div>
+      <div id="vignette" class="fill"></div>
+      <div id="scraps" class="fill"></div>
+
+      <div id="wrap">
+        <div id="kicker">ИИ и работа</div>
+        <div><div class="row ink"><span class="w">Не</span><span class="w">увольняют.</span></div></div>
+        <div><div class="row red"><span class="w">Перестают</span></div></div>
+        <div><div class="row red"><span class="w" id="markword"><i id="mark"></i>нанимать.</span></div></div>
+        <div id="stampbox"><div id="stamp">набор закрыт</div></div>
+      </div>
+
+      <audio id="voice" src="assets/hook-voice.wav" data-start="0.2" data-duration="5.665" data-track-index="2" data-volume="1"></audio>
+    </div>
+
+    <script>
+      // ---- deterministic helpers ported from runtime/kit.js + runtime/paper.js (seeded, no Math.random) ----
+      const rand = (seed = 1) => { let s = seed >>> 0 || 1; return () => { s ^= s << 13; s ^= s >>> 17; s ^= s << 5; return ((s >>> 0) % 1000000) / 1000000; }; };
+      function roughClip(seed, wobble, steps) {
+        const r = rand(seed * 7919 + 13), pts = [], j = () => (r() * wobble).toFixed(2);
+        for (let i = 0; i <= steps; i++) pts.push(`${((100 * i) / steps).toFixed(2)}% ${j()}%`);
+        for (let i = 1; i <= steps; i++) pts.push(`${100 - j()}% ${((100 * i) / steps).toFixed(2)}%`);
+        for (let i = steps - 1; i >= 0; i--) pts.push(`${((100 * i) / steps).toFixed(2)}% ${100 - j()}%`);
+        for (let i = steps - 1; i >= 1; i--) pts.push(`${j()}% ${((100 * i) / steps).toFixed(2)}%`);
+        return `polygon(${pts.join(',')})`;
+      }
+      (function scraps(seed) {
+        const r = rand(seed * 31 + 7), tones = ['yellow', 'blue', 'teal', 'red', 'paper2'];
+        const spots = [{ left: -6, top: -3, w: 34, h: 9 }, { left: 70, top: 86, w: 40, h: 12 }, { left: -8, top: 90, w: 26, h: 8 }, { left: 84, top: 4, w: 22, h: 7 }];
+        spots.forEach((sp, i) => {
+          const c = tones[Math.floor(r() * tones.length)], rot = (r() - 0.5) * 16, el = document.createElement('div');
+          el.className = 'scrap';
+          el.style.cssText = `left:${sp.left + (r() - 0.5) * 6}%;top:${sp.top + (r() - 0.5) * 3}%;width:${sp.w}%;height:${sp.h}%;background:var(--pp-${c});opacity:${0.55 + r() * 0.25};clip-path:${roughClip(seed * 10 + i, 3.2, 12)};transform:rotate(${rot}deg)`;
+          document.getElementById('scraps').append(el);
+        });
+      })(11);
+
+      // ---- fit each row into the 768 px safe box (port of paper.js fitText); runs once the fonts are loaded ----
+      const fit = (el, maxWidth) => {
+        let size = parseFloat(getComputedStyle(el).fontSize); const range = document.createRange();
+        const ok = () => (range.selectNodeContents(el), range.getBoundingClientRect().width <= maxWidth + 1);
+        for (let i = 0; i < 40 && !ok() && size > 18; i++) el.style.fontSize = `${(size = Math.max(18, size * 0.95))}px`;
+      };
+      window.__fontsFitted = Promise.all([document.fonts.load("800 108px 'Unbounded'"), document.fonts.load("700 32px 'Golos Text'")])
+        .then(() => document.querySelectorAll('.row').forEach((r) => fit(r, 768)));
+
+      // ---- timeline: seekable GSAP, registered for the runtime; times are the cue `next` of timeline.json ----
+      const NEXT = 3.88, D = 6.465;
+      const tl = gsap.timeline({ paused: true });
+      // red lines, word by word: rise + unrotate + fade, 0.07 s apart, 0.45 s, easeOutQuint (= power4.out)
+      document.querySelectorAll('.row.red').forEach((row) =>
+        tl.fromTo(row.querySelectorAll('.w'), { opacity: 0, yPercent: 37.04, rotation: -3 }, { opacity: 1, yPercent: 0, rotation: 0, duration: 0.45, ease: 'power4.out', stagger: 0.07 }, NEXT));
+      // yellow marker sweeps behind "нанимать." 0.8 s after the words start, easeInOutCubic (= power3.inOut)
+      tl.fromTo('#mark', { scaleX: 0, skewX: -4 }, { scaleX: 1, skewX: -4, duration: 0.45, ease: 'power3.inOut' }, NEXT + 0.8);
+      // rubber stamp slams in with overshoot: 0.32 s, easeOutBack; opacity jumps in over the first 0.08 s
+      tl.fromTo('#stamp', { xPercent: -50, rotation: -8, scale: 2.2 }, { xPercent: -50, rotation: -8, scale: 1, duration: 0.32, ease: 'back.out(1.70158)' }, NEXT);
+      tl.fromTo('#stamp', { opacity: 0 }, { opacity: 0.92, duration: 0.08, ease: 'none' }, NEXT);
+      // slow camera drift of the text block (the DOM scene uses sin/cos; approximated here by three native tweens)
+      tl.fromTo('#wrap', { scale: 1 }, { scale: 1.00776, duration: D, ease: 'none' }, 0);
+      tl.fromTo('#wrap', { x: 0 }, { x: 2, duration: 4.24, ease: 'sine.out' }, 0).to('#wrap', { x: 1.4, duration: D - 4.24, ease: 'sine.inOut' });
+      tl.fromTo('#wrap', { y: 1.5 }, { y: -0.45, duration: D, ease: 'sine.in' }, 0);
+      window.__timelines = window.__timelines || {};
+      window.__timelines['hook'] = tl;
+    </script>
+  </body>
+</html>

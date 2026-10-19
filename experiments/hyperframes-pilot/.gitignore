@@ -1,0 +1,14 @@
+node_modules/
+# copies made by prepare-assets.sh (fonts are OFL but stay single-sourced in examples/ai-jobs; the voice is a generated take)
+hook-comp/assets/
+hook-bridge/assets/
+# HyperFrames scratch
+hook-comp/.hyperframes/
+hook-bridge/.hyperframes/
+bin/
+# large outputs stay local; the comparison image and the bridge strip are kept
+renders/
+logs/
+frames/*
+!frames/compare-hf-left-storygro-right.png
+!frames/hf-bridge-strip-n9-119-147-180.png

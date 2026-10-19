@@ -92,6 +92,7 @@ py/             voice providers (py/voices/), alignment, ASR, procedural score, 
 examples/       ai-jobs (RU/EN explainer, carousels, episode) · slidecraft-launch (historical film + GIF)
 docs/           architecture, workflows, quality, voices, formats, scenes, contract, history, planning
 agents/         role notes for director, scene-builder and QA
+experiments/    bounded pilots, e.g. the HyperFrames renderer comparison (ADR 0001)
 tests/          contract tests (node:test)
 ```
 

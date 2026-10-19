@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ru" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      /* theme.css of examples/ai-jobs, reduced to what the hook scene uses */
+      @font-face { font-family: 'Unbounded'; src: url('assets/fonts/Unbounded-wght.ttf'); font-weight: 200 900; }
+      @font-face { font-family: 'Golos Text'; src: url('assets/fonts/GolosText-wght.ttf'); font-weight: 400 900; }
+      :root { --pp-paper: #efe6d4; --pp-paper2: #e3d6bd; --pp-ink: #1c2230; --pp-muted: #6e6555; --pp-red: #dd4b26; --pp-yellow: #f3b23a;
+              --pp-teal: #23877b; --pp-blue: #31509e; --pp-card: #fbf6ec; --pp-font: 'Golos Text', sans-serif; --pp-display: 'Unbounded', 'Golos Text', sans-serif;
+              --pp-hand: cursive; --rc-font: 'Golos Text', sans-serif; --rc-bg: #efe6d4; }
+      html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; background: #efe6d4; }
+      #root { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: var(--pp-paper); font-family: var(--pp-font); color: var(--pp-ink); }
+      .rc-scene { position: absolute; inset: 0; overflow: hidden; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="hook-bridge" data-start="0" data-duration="__DUR__" data-width="1080" data-height="1920">
+      <div id="scene" class="rc-scene"></div>
+      <audio id="voice" src="assets/hook-voice.wav" data-start="__VOICE_AT__" data-duration="__VOICE_DUR__" data-track-index="2" data-volume="1"></audio>
+    </div>
+    <script src="assets/headline.bundle.js"></script>
+    <script>
+      // Storygro's scene contract, driven by a GSAP clock: draw(t) is called with the timeline time.
+      const ctx = __CTX__;
+      const D = ctx.duration;
+      const draw = Bridge.mountHook(document.getElementById('scene'), ctx);
+      const clock = { t: 0 };
+      // Storygro's player draws only after the fonts have loaded (fitText measures glyphs on its first draw);
+      // HyperFrames may seek earlier, so hold the scene back until the two faces are in.
+      let fontsReady = false;
+      Promise.all([document.fonts.load("800 108px 'Unbounded'"), document.fonts.load("700 32px 'Golos Text'")]).then(() => { fontsReady = true; draw(clock.t); });
+      const tl = gsap.timeline({ paused: true });
+      tl.to(clock, { t: D, duration: D, ease: 'none', onUpdate: () => { if (fontsReady) draw(clock.t); } }, 0);
+      window.__timelines = window.__timelines || {};
+      window.__timelines['hook-bridge'] = tl;
+    </script>
+  </body>
+</html>

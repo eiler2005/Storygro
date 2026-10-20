@@ -170,6 +170,7 @@ const RU = {
   factsTitle: 'Факты и источники', post: 'Текст поста', next: 'Что дальше', missingNumbers: 'Числа не из фактов', none: 'нет',
   howTo: 'Одобрить: `storygro approve <spec> --step script|storyboard|release` (агент — с `--agent`).',
   sec: 'с', scenesWord: 'сцен',
+  stressLabel: 'Ударения', auto: 'авто, проверьте', byAuthor: 'автор',
 } as const;
 const EN = {
   stage: { script: 'script', storyboard: 'storyboard', release: 'watch the cut', ready: 'ready', published: 'published' },
@@ -185,6 +186,7 @@ const EN = {
   factsTitle: 'Facts and sources', post: 'Post text', next: 'Next', missingNumbers: 'Numbers not from the facts', none: 'none',
   howTo: 'Approve: `storygro approve <spec> --step script|storyboard|release` (agents add `--agent`).',
   sec: 's', scenesWord: 'scenes',
+  stressLabel: 'Stress', auto: 'auto, check it', byAuthor: 'author',
 };
 const words = (lang: string) => (lang.startsWith('ru') ? RU : EN);
 
@@ -306,6 +308,9 @@ export async function writePlan(l: LoadedSpec, tl: Timeline, captured?: SceneSho
       }
       lines.push('');
     }
+    const stress = (s as { voice?: { stress?: { word: string; stressed: string; by: string }[] } }).voice?.stress ?? [];
+    if (stress.length)
+      lines.push(`**${w.stressLabel}:** ${stress.map((d) => `${d.word} → ${d.stressed.replace(/\+([аеёиоуыэюяАЕЁИОУЫЭЮЯ])/g, '$1\u0301')} (${d.by === 'auto' ? w.auto : w.byAuthor})`).join(' · ')}`, '');
     if (s.sfx.length) lines.push(`**${w.sound}:** ${s.sfx.map((x) => `${x.kind} @${(x.t - s.start).toFixed(1)}`).join(', ')}`, '');
     if (refs.length) lines.push(`**${w.facts}:** ${refs.map((r) => `\`${r.ref}\` = «${cell(r.value)}»`).join(' · ')}`, '');
     const miss = misses.filter((m) => m.scene === s.id);

@@ -9,10 +9,13 @@ Script syntax handled here for every provider:
   {+1.5}             1.5 s of exact silence inside the line
   [word](=spoken)    captions show `word`, the voice says `spoken` (numbers, abbreviations, names)
   [word](/phonemes/) Kokoro phonemes; other providers say `word`
-  a combining acute accent (U+0301) after a vowel marks stress for providers that support it
+  зам+ок / замо́к     stress: `+` before or a combining acute (U+0301) after the stressed vowel;
+                     Russian lines also get the stress of listed homographs from RUAccent (py/stress.py),
+                     rendered in the form the provider reads (its `stress` attribute)
 
 Providers live in py/voices/<engine>.py and expose `Provider(job)` with `sample_rate`, `info()`
-and `synth(text) -> (audio, words | None)`. Providers without word timings are aligned with
+and `synth(text) -> (audio, words | None)`; `stress` (plus | acute | upper | None) says how the
+engine reads stress marks (None: it places stress itself and gets the text unchanged). Providers without word timings are aligned with
 Whisper against the script, so caption words keep the script's spelling.
 """
 import importlib
@@ -24,6 +27,9 @@ from difflib import SequenceMatcher
 
 import numpy as np
 import soundfile as sf
+
+sys.path.insert(0, __file__.rsplit("/", 1)[0])
+import stress as stress_marks  # noqa: E402
 
 CUE = re.compile(r"\{#([a-z0-9-]+)\}")
 PAUSE = re.compile(r"\{\+([\d.]+)\}")
@@ -134,7 +140,7 @@ def caption_words(words, spans):
         w = words[i]
         span = next((s for s in spans if s[0] <= w["pos"] < s[1]), None)
         if not span:
-            out.append({"w": w["w"].replace(STRESS, ""), "start": w["start"], "end": w["end"]})
+            out.append({"w": stress_marks.clean(w["w"]), "start": w["start"], "end": w["end"]})
             i += 1
             continue
         j = i
@@ -162,12 +168,15 @@ def stretch(audio, sr, speed):
     return out
 
 
-def synth_segment(provider, text, language, speed=1.0):
+def synth_segment(provider, text, language, speed=1.0, stress="auto"):
     plain, marked, cues, spans = parse(text)
     speech = re.sub(r"\s+", " ", plain).strip()
     if not speech:
-        return np.zeros(0, dtype=np.float32), {"duration": 0.0, "words": [], "cues": {n: 0.0 for n, _ in cues}, "aligned": 1.0}
-    audio, words = provider.synth(marked if getattr(provider, "reads_markup", False) else plain)
+        return np.zeros(0, dtype=np.float32), {"duration": 0.0, "words": [], "cues": {n: 0.0 for n, _ in cues}, "aligned": 1.0, "stress": []}
+    source = marked if getattr(provider, "reads_markup", False) else plain
+    style = getattr(provider, "stress", None) if language == "ru" else None
+    spoken, decisions = stress_marks.prepare(source, style, stress, getattr(provider, "stress_scope", "homographs"))
+    audio, words = provider.synth(spoken)
     audio = np.asarray(audio, dtype=np.float32)
     if abs(speed - 1) > 0.01 and not getattr(provider, "native_speed", False):
         if words is not None:
@@ -176,27 +185,28 @@ def synth_segment(provider, text, language, speed=1.0):
     dur = len(audio) / provider.sample_rate
     ratio = 1.0
     if words is None:
-        heard = whisper_words(audio, provider.sample_rate, language, plain.replace(STRESS, ""))
+        heard = whisper_words(audio, provider.sample_rate, language, " ".join(stress_marks.clean(w) for w in plain.split()))
         words, ratio = align(plain, heard, dur)
     cue_t = {}
     for name, off in cues:
         nxt = next((w for w in words if w["pos"] >= off), None)
         cue_t[name] = nxt["start"] if nxt else round(dur, 3)
-    return audio, {"duration": round(dur, 3), "words": caption_words(words, spans), "cues": cue_t, "aligned": ratio}
+    return audio, {"duration": round(dur, 3), "words": caption_words(words, spans), "cues": cue_t, "aligned": ratio, "stress": decisions}
 
 
-def synth_line(provider, text, language, speed=1.0):
+def synth_line(provider, text, language, speed=1.0, stress="auto"):
     """Synthesize segment by segment so {+s} pauses become exact silence."""
     sr = provider.sample_rate
     parts = PAUSE.split(text)
-    audio, words, cues, t, ratios = [], [], {}, 0.0, []
+    audio, words, cues, t, ratios, decisions = [], [], {}, 0.0, [], []
     for i, part in enumerate(parts):
         if i % 2:
             gap = np.zeros(int(float(part) * sr), dtype=np.float32)
             audio.append(gap)
             t += len(gap) / sr
             continue
-        a, meta = synth_segment(provider, part, language, speed)
+        a, meta = synth_segment(provider, part, language, speed, stress)
+        decisions += meta["stress"]
         audio.append(a)
         words += [{**w, "start": round(w["start"] + t, 3), "end": round(w["end"] + t, 3)} for w in meta["words"]]
         cues.update({k: round(v + t, 3) for k, v in meta["cues"].items()})
@@ -207,24 +217,28 @@ def synth_line(provider, text, language, speed=1.0):
         "words": words,
         "cues": cues,
         "aligned": round(min(ratios) if ratios else 1.0, 3),
+        "stress": decisions,
     }
 
 
 def main():
     job = json.load(open(sys.argv[1]))
     engine = job.get("engine", "kokoro")
-    sys.path.insert(0, __file__.rsplit("/", 1)[0])
     provider = importlib.import_module(f"voices.{engine}").Provider(job)
     language = job.get("language", "en")
     info = provider.info()
     for line in job["lines"]:
-        audio, meta = synth_line(provider, line["say"], language, job.get("speed", 1.0))
+        audio, meta = synth_line(provider, line["say"], language, job.get("speed", 1.0), job.get("stress", "auto"))
         aligned = meta.pop("aligned")
+        if not meta["stress"]:
+            meta.pop("stress")
         meta["provider"] = {**info, "timing": "native" if getattr(provider, "native_words", False) else "whisper-aligned", "matched": aligned}
         sf.write(line["wav"], audio, provider.sample_rate)
         json.dump(meta, open(line["json"], "w"), indent=1, ensure_ascii=False)
         warn = "" if aligned >= 0.7 else f"  ! only {aligned:.0%} of the words aligned — listen to this line"
         print(f"voice {line['id']}: {meta['duration']:.2f}s, {len(meta['words'])} words{warn}", flush=True)
+        for d in meta.get("stress", []):
+            print(f"  stress: {d['word']} → {d['stressed']} ({d['by']})", flush=True)
 
 
 if __name__ == "__main__":

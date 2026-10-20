@@ -15,6 +15,9 @@ out/
 dist/
 *.log
 
+# the silero package writes its model list into the current directory
+latest_silero_models.yml
+
 # local-only notes (never committed)
 /private/
 

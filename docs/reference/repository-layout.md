@@ -46,6 +46,8 @@ Storygro/
 
 ## Ignored, local only
 
+Sizes, what each folder is for and what must never be deleted: [local setup](local-setup.md) (`npm run storage`).
+
 | Path | Holds |
 |---|---|
 | `.reel/` beside each spec | voice takes, `timeline.json`, frames, storyboard, QA, MP4/WAV, stills, releases |

@@ -36,7 +36,7 @@
 - [Styles](reference/styles.md) — `style.yaml`, picture generation, cast and approval
 - [Formats, safe areas and captions](reference/formats.md) · [Voices](reference/voices.md)
 - [Publication ledger](reference/publication-ledger.md) · [Media policy](reference/media-policy.md)
-- [Repository layout](reference/repository-layout.md)
+- [Repository layout](reference/repository-layout.md) · [What is installed on this machine](reference/local-setup.md) (`npm run storage`)
 
 ## Explanation
 

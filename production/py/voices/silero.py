@@ -21,6 +21,7 @@ class Provider:
     native_words = False
     native_speed = True
     reads_markup = False
+    stress = "plus"
 
     def __init__(self, job):
         import torch

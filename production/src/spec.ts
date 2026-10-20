@@ -13,7 +13,7 @@ export const FORMAT_PRESETS = {
 type FormatPreset = keyof typeof FORMAT_PRESETS;
 
 /** Narration providers; each has a module in py/voices/. `none` estimates timings without audio. */
-export const VOICE_ENGINES = ['kokoro', 'silero', 'qwen3', 'none'] as const;
+export const VOICE_ENGINES = ['kokoro', 'silero', 'qwen3', 'chatterbox', 'yandex', 'none'] as const;
 
 export const SFX_KINDS = [
   'whoosh',
@@ -91,8 +91,13 @@ export const ReelSpec = z.object({
       lang: z.string().default('a'),
       /** provider model id when the engine has several */
       model: z.string().optional(),
+      /**
+       * Russian stress: auto = hand marks (зам+ок, замо́к) plus the homographs in py/homographs-ru.txt,
+       * resolved by RUAccent from the sentence; marks = hand marks only; off = marks removed.
+       */
+      stress: z.enum(['auto', 'marks', 'off']).default('auto'),
     })
-    .default({ engine: 'kokoro', voice: 'af_heart', speed: 1, lang: 'a' }),
+    .default({ engine: 'kokoro', voice: 'af_heart', speed: 1, lang: 'a', stress: 'auto' }),
   music: z
     .object({
       bpm: z.number().default(96),

@@ -17,7 +17,7 @@
 
 | Выпуск | Вариант | Серия | Этап | Чей ход | Сценарий · раскадровка · выпуск | Длит. | QA | Факты с источником | Вопросы | Опубликовано |
 |---|---|---|---|---|---|---|---|---|---|---|
-| [Не бунт, а открытая дверь](videos/agents-open-door/PLAN.ru.md) | ru (ru) | open-door | сценарий | ждёт тебя: одобрить сценарий | ⏳ ⚙️ ⏳ | 94.6 с | pass | 5/5 | 3 | — |
+| [Не бунт, а открытая дверь](videos/agents-open-door/PLAN.ru.md) | ru (ru) | open-door | сценарий | ждёт тебя: одобрить сценарий | ⏳ ⚙️ ⏳ | 82.4 с | pass | 5/5 | 3 | — |
 | [Где проверять работу ИИ-агента](videos/ai-agent-checks/README.md) | ru (ru) | business-explainers | раскадровка | ждёт тебя: одобрить раскадровку | — ⚙️ ⏳ | 51.6 с | pass | 2/2 | — | — |
 | [The AI industry is buying what you know about your job](videos/ai-buys-work-knowledge/README.md) | en (en) | — | раскадровка | ждёт тебя: одобрить раскадровку | — ⚙️ ⏳ | 62.3 с | pass | 5/5 | — | — |
 | [Будущее работы — кто отвечает за результат](videos/future-of-work/README.md) | ru (ru) | business-explainers | раскадровка | ждёт тебя: одобрить раскадровку | — ✏️ ⏳ | 68.6 с | pass | 2/2 | — | — |

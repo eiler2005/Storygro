@@ -5,7 +5,11 @@ Every line is cloned from one reference clip, so the voice stays the same across
 Make a reference once with `py/design_voice.py` (Qwen3-TTS VoiceDesign from a text description).
 Generation is seeded per line, so a cached line can be reproduced. `speed` is applied afterwards
 (tempo change without pitch shift), because Qwen3-TTS has no speed control. Qwen3-TTS guesses stress and
-ignores stress marks: listen, and rephrase a line if a word is stressed wrongly.
+reads "+" aloud and garbles acutes, but follows an uppercase stressed vowel ("замОк") most of the time:
+in the voice bench of 21 Oct 2026 the homographs came out right in 9 of 12 takes with it and in 0 of 12
+without (voices.md). So voice.py renders stress marks that way. It is not certain — "замок" was still the
+castle in one take of three — so listen to lines with homographs, or use an engine that follows marks
+every time (kokoro-ru 12/12).
 """
 import hashlib
 import os
@@ -19,6 +23,7 @@ LANGS = {"ru": "Russian", "en": "English", "de": "German", "fr": "French", "es":
 class Provider:
     native_words = False
     reads_markup = False
+    stress = "upper"  # bench 21 Oct 2026: right stress in 9 of 12 homograph takes with an uppercase vowel, 0 of 12 without
 
     def __init__(self, job):
         import mlx.core as mx
@@ -44,8 +49,10 @@ class Provider:
     def info(self):
         return {"engine": "qwen3", "model": self.model_id, "voice": self.ref, "language": self.lang, "license": "Apache-2.0 (Qwen3-TTS), MIT (mlx-audio)"}
 
+    take = 0  # another take of the same line gets another seed (voice_bench.py); 0 keeps the cache
+
     def synth(self, text):
-        seed = int(hashlib.sha1(text.encode()).hexdigest()[:8], 16)
+        seed = int(hashlib.sha1((text if not self.take else f"{text}#{self.take}").encode()).hexdigest()[:8], 16)
         self.mx.random.seed(seed)
         parts = list(self.model.generate(text=text, ref_audio=self.ref_audio, ref_text=self.ref_text, lang_code=self.lang.lower(), temperature=0.7, verbose=False))
         audio = np.concatenate([np.asarray(p.audio, dtype=np.float32) for p in parts])

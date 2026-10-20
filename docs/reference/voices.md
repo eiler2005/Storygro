@@ -12,6 +12,8 @@ Narration drives the timeline, so the voice is chosen before the pictures are po
 | `kokoro` (RU) | Russian (`lang: ru` on the spec, voice `dima`, `sveta` or `masha`) | `npm run setup:ru` | Whisper alignment | native (`speed`) | [Kokoro-RU](https://huggingface.co/zaakirio/kokoro-ru): weights OpenRAIL, code Apache-2.0; RUAccent Apache-2.0 |
 | `qwen3` | Russian, English, German, French, Spanish, Italian, Portuguese, Japanese, Korean, Chinese | `npm run setup:ru` (Apple silicon) | Whisper alignment | tempo change after synthesis (`speed`, pitch kept) | Qwen3-TTS Apache-2.0, mlx-audio MIT |
 | `silero` | Russian | `npm run setup:ru` | Whisper alignment | native (SSML rate) | MIT — **only** the CIS base models; Silero's `v4_ru` / `v5_*_ru` speakers are CC BY-NC-SA and are not offered |
+| `chatterbox` | Russian, English and 21 more | `npm run setup:chatterbox` (own environment) | Whisper alignment | tempo change after synthesis | MIT (Resemble AI); outputs carry an imperceptible PerTh watermark |
+| `yandex` | Russian | none (cloud); `YANDEX_API_KEY` | Whisper alignment | native (`speed`) | Yandex Cloud terms, paid per request — **not yet run against the live API** |
 | `none` | — | — | estimated (~2.6 words/s) | — | — |
 
 ```yaml
@@ -19,6 +21,9 @@ voice: { engine: kokoro, voice: af_heart, speed: 1.08 }                     # En
 voice: { engine: kokoro, voice: dima, speed: 1.0 }                         # Russian, top-level lang: ru
 voice: { engine: qwen3, voice: assets/voice/narrator-ru.wav, speed: 1.12 }  # cloned narrator
 voice: { engine: silero, voice: ru_alexandr }                               # fast, explicit stress
+voice: { engine: chatterbox, voice: assets/voice/narrator-ru.wav }          # same narrator, takes stress marks
+voice: { engine: yandex, voice: filipp, speed: 1.1 }                        # cloud, takes stress marks
+voice: { engine: qwen3, voice: assets/voice/narrator-ru.wav, stress: auto } # stress: auto | marks | off
 ```
 
 `lang:` at the top of the spec (e.g. `ru`) is the language of the narration and captions; it selects the ASR model and the text normalisation. `voice.lang` selects the US/UK English frontend. Russian Kokoro uses a separate community checkpoint, not the official English frontend with `voice.lang: ru`.
@@ -73,6 +78,35 @@ For [examples/ai-jobs](../../examples/ai-jobs) the candidates were compared on t
 
 Historical decision for the first release: a designed male narrator cloned with `qwen3` for both variants. A later owner instruction selected Kokoro-RU Dima for the Russian examples; the English `ai-jobs` example keeps its Qwen3 reference narrator. After comparing the micro1 auditions, the owner selected **C: the original Russian Qwen3 reference** for that episode. Its provenance, transcript and off-Git restoration are recorded in [the episode voice notes](../../content/videos/micro1-work-data/assets/voice/README.md). This is an episode choice, not a migration of the other existing specs. Silero remains a fallback.
 
+## Russian voices compared
+
+On 21 October 2026 every Russian candidate spoke the same ten lines through Storygro's own pipeline ([bench set](../../production/voices/bench-ru.yaml), `production/py/voice_bench.py`): homographs whose wrong reading is the likely one (замок and замка as the lock, стоит as "costs", органе as the instrument), three brand names in Latin letters and in Cyrillic, three ordinary sentences. Sampling engines say a homograph differently with every seed, so those lines were spoken in three takes each.
+
+How each number was measured: **UTMOS** — predicted naturalness 1–5 (UTMOS22, trained on English listening tests: a comparison on the same lines, not an absolute grade); **WER** — Whisper large-v3-turbo word errors on the ordinary lines; **stress** — espeak-IPA phonemes (wav2vec2-xlsr-53-espeak-cv-ft) matched against the right and the wrong reading (an unstressed о/а reduces, so замóк [zɐˈmok] and зáмок [ˈzamək] differ; Silero references with explicit marks were recognised correctly); **brands** — whether Whisper wrote the brand; **words/s** at `speed: 1`; **compute** — seconds of computing per second of speech on the M5 Pro.
+
+| Candidate | UTMOS ↑ | WER | Homograph stress (12 takes) | Brands, Latin | Brands, Cyrillic | Words/s | Compute | Licence |
+|---|---|---|---|---|---|---|---|---|
+| Qwen3, owner's narrator, stress marks → uppercase vowel (**default**) | **4.32** | 0 | 9/12 | 2/3 | 1/3 | 1.98 | 0.9 | Apache-2.0 |
+| the same without stress marks | 4.32 | 0 | **0/12** | 2/3 | 1/3 | 1.98 | 0.9 | Apache-2.0 |
+| the same at `speed: 1.12` | 4.25 | 0 | — | 2/3 | 2/3 | 2.21 | 1.0 | Apache-2.0 |
+| Chatterbox, clone of the same narrator, acute on every word | 3.89 | 0.02 | 8/12, none wrong (4 unclear) | 2/3 | 2/3 | 1.82 | 3.4 | MIT, watermarked |
+| Chatterbox, no stress marks | 3.93 | 0 | 3/12 (5 unclear) | 2/3 | 1/3 | 1.77 | 3.5 | MIT, watermarked |
+| Kokoro-RU Dima (RUAccent inside) | 4.01 | 0 | **12/12** | — | 2/3 | 1.93 | 0.25 | OpenRAIL weights |
+| Silero CIS `ru_alexandr` | 3.41 | 0 | 9/12 (3 unclear) | — | 1/3 | 2.36 | 0.2 | MIT |
+
+The 1.12 line was a speed check: its stress row ran before the uppercase rendering was restored and is not comparable.
+
+What it means:
+
+- **Qwen3 sounds best and cannot be trusted with homographs on its own.** Without marks it chose the wrong reading in all 12 takes ("замок" is the castle even in «Дверь закрыта на замок»). It reads `+` aloud as «плюс» and garbles acutes, but follows an uppercase stressed vowel most of the time, so voice.py now renders stress that way for it. One take in three of «замок» was still wrong: listen to such lines.
+- **Kokoro-RU is the only engine that got every stress right**, fast and fully local — the owner rejected Dima's timbre for micro1, which is why it is not the default.
+- **Chatterbox clones our narrator and follows acutes**: no take had the wrong reading (8 right, 4 the recogniser could not decide), against 3 of 12 right without marks. It was trained on Russian with every word stressed, so voice.py marks every word for it; in a separate six-line run that scored higher than marking only homographs (UTMOS 3.99 vs 3.82), in the full bench the two were level (3.89 vs 3.90). It is about 3.4 times slower than real time and sounds less natural than Qwen3.
+- **Silero** is the fast fallback; UTMOS is lowest.
+- **Brand names for Qwen3: write them in Latin letters.** «OpenAI» and «Gemini» in Latin were heard right; the transliterations «Оупен Эй-Ай» and «Джемини» came out as "OPEN-A. I" and "Jiminy". Replit was the exception (the Cyrillic «Реплит» was heard right). Test a new brand on one line before an episode.
+- **Pace.** At `speed: 1` the narrator says about 2 words a second; the owner found 0.96 slow. `speed: 1.12` gives 2.2 words a second at almost the same UTMOS.
+
+**Decision for new Russian episodes:** Qwen3 with the owner's narrator at `speed: 1.12`, `stress: auto` (the default), brands in Latin unless a test says otherwise; read the plan's stress line and mark what RUAccent cannot know (`зам+ок` in a phrase without context). When a script is full of homographs or terms whose stress must be exact, use Kokoro-RU or a Chatterbox clone of the narrator. Re-run the bench before switching engines, and listen — the bench page (`index.html` in `--out`) plays every line.
+
 ## Pronunciation notes (Russian)
 
 Found by transcribing the rendered lines and comparing them with the script:
@@ -80,7 +114,8 @@ Found by transcribing the rendered lines and comparing them with the script:
 - **"ИИ"** is read by Qwen3 as a single «и» at the start of a sentence. Inside a phrase `[ИИ](=и-и)` works; at the start, write it out: `[ИИ](=Искусственный интеллект)`. Captions still show «ИИ».
 - **Abbreviations** such as «ВШЭ» are swallowed («ВШ»); spell them as words: `[ВШЭ](=Высшей школы экономики)`.
 - **Numbers**: write the spoken, correctly inflected form — `[2022](=двадцать второго)`, `[11%](=одиннадцать процентов)`. Captions keep the digits.
-- **Stress**: Qwen3 guesses stress and ignores stress marks — if a word is stressed wrongly, rephrase. Silero takes `+` before the stressed vowel (`зам+ок` for the lock, `з+амок` for the castle) or a combining acute accent after it (`замо́к`); `silero-stress` places the rest.
+- **Stress**: write `+` before the stressed vowel (`зам+ок` for the lock, `з+амок` for the castle) or a combining acute after it (`замо́к`) — for every engine. By default (`voice.stress: auto`) RUAccent also stresses the homographs in [homographs-ru.txt](../../production/py/homographs-ru.txt) from the sentence, and adds ё in pairs like все/всё. `py/stress.py` turns the marks into what each engine reads: an uppercase vowel for Qwen3, an acute (on every word) for Chatterbox, `+` for Silero and Yandex; Kokoro-RU runs RUAccent itself. The voice log prints every decision (`stress: замок → з+амок (auto)`) and the plan shows it per scene — RUAccent can be wrong when the sentence gives no context («Замок, а не табличка.» → castle), so mark such words. `stress: marks` uses only hand marks, `stress: off` removes them.
+- **Brand names**: see the comparison above — Latin for Qwen3, test one line first.
 - Silero reads Cyrillic only: Latin words and digits must have a `[written](=spoken)` hint, or voicing stops with a list of what to fix.
 
 ## Licences we checked and rejected for published content

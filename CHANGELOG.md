@@ -4,6 +4,12 @@ Notable changes to the Storygro engine and repository. Content releases (videos)
 
 ## [Unreleased]
 
+### Voices: Russian stress, more engines, a bench
+- Russian stress layer (`production/py/stress.py`): hand marks `зам+ок` / `замо́к`, and by default RUAccent resolves the homographs in `production/py/homographs-ru.txt` from the sentence (plus ё in все/всё-type pairs); each engine gets the marks in the form it reads, or none. `voice.stress: auto | marks | off`. The voice log, the line JSON and the plan list every decision. `+` is no longer read aloud by Qwen3 as «плюс».
+- New engines: `chatterbox` (Chatterbox Multilingual, MIT, clones the narrator; `npm run setup:chatterbox`) and `yandex` (SpeechKit API v1; request unit-tested, not yet run against the live service).
+- `production/py/voice_bench.py` with `production/voices/bench-ru.yaml`: the same lines through every candidate — Whisper WER, homograph stress from phonemes over several takes, brand names, UTMOS, words a second, compute time — and a page to listen. Results and the decision are in [voices](docs/reference/voices.md#russian-voices-compared).
+- `npm run storage` and [local setup](docs/reference/local-setup.md): what Storygro keeps on the machine, sizes, what must not be deleted and how to restore the rest.
+
 ### Content workflow
 - Each episode keeps its review in Git: `review.yaml` with open questions, notes and three approvals — script, storyboard, release — each with a hash of what it covers; any later change shows as "changed since approval". `storygro approve --step …`; agents record technical approvals with `--agent`. The storyboard approval moved from the ignored `.reel/approved.json` (still read) to `review.yaml`.
 - `storygro plan <spec>`: `PLAN.<variant>.md` with a strip per scene (rendered frame + pictures), narration, on-screen text, facts with sources, approvals and questions; small previews in `preview/plan/`.

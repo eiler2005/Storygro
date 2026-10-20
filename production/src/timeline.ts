@@ -15,6 +15,8 @@ export interface VoiceMeta {
   cues: Record<string, number>;
   /** who spoke the line: engine, model, voice and how word times were found */
   provider?: Record<string, unknown>;
+  /** Russian stress given to the engine: by the author (зам+ок) or chosen by RUAccent for a listed homograph */
+  stress?: { word: string; stressed: string; by: 'author' | 'auto' }[];
 }
 export interface TimedScene {
   id: string;
@@ -88,6 +90,10 @@ export function safeArea(l: LoadedSpec): SafeArea {
   return { profile, top: r(z.top), bottom: r(z.bottom), left: r(z.left), right: r(z.right), caption: r(z.caption) };
 }
 
+/** Engines whose Russian stress comes from py/stress.py; bump the version when its output changes. */
+const STRESSED_ENGINES = new Set(['qwen3', 'silero', 'chatterbox', 'yandex']);
+const STRESS_VERSION = 'stress-1';
+
 /** Narrate every scene, reusing cached lines whose text, provider and settings did not change. */
 export async function narrate(l: LoadedSpec): Promise<Map<string, { meta: VoiceMeta; wav: string | null }>> {
   const dir = join(workDir(l), 'voice');
@@ -101,8 +107,10 @@ export async function narrate(l: LoadedSpec): Promise<Map<string, { meta: VoiceM
       continue;
     }
     // English Kokoro keys stay as they were, so existing caches remain valid
+    // Russian lines of engines that get stress from py/stress.py also key on its version and mode
+    const stressed = l.spec.lang === 'ru' && STRESSED_ENGINES.has(v.engine) ? [`${STRESS_VERSION}:${v.stress}`] : [];
     const settings =
-      v.engine === 'kokoro' && !v.model && l.spec.lang === 'en' ? [s.say, v.voice, v.speed, v.lang] : [s.say, v.engine, v.model, v.voice, v.speed, l.spec.lang];
+      v.engine === 'kokoro' && !v.model && l.spec.lang === 'en' ? [s.say, v.voice, v.speed, v.lang] : [s.say, v.engine, v.model, v.voice, v.speed, l.spec.lang, ...stressed];
     const key = hash(JSON.stringify(settings));
     const wav = join(dir, `${s.id}-${key}.wav`);
     const json = join(dir, `${s.id}-${key}.json`);
@@ -113,7 +121,7 @@ export async function narrate(l: LoadedSpec): Promise<Map<string, { meta: VoiceM
     const job = join(dir, 'job.json');
     writeFileSync(
       job,
-      JSON.stringify({ engine: v.engine, model: v.model, voice: v.voice, speed: v.speed, lang: v.lang, language: l.spec.lang, dir: l.dir, lines: todo }),
+      JSON.stringify({ engine: v.engine, model: v.model, voice: v.voice, speed: v.speed, lang: v.lang, stress: v.stress, language: l.spec.lang, dir: l.dir, lines: todo }),
     );
     await run(python(), [join(REEL_ROOT, 'py', 'voice.py'), job]);
   }

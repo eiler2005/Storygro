@@ -1,0 +1,49 @@
+# Russian narration benchmark: the same lines through every candidate voice, measured the same way.
+#   ~/.storygro/venv/bin/python production/py/voice_bench.py production/voices/bench-ru.yaml --out <dir>
+# Results of 21 Oct 2026 and the decision: docs/reference/voices.md#russian-voices-compared.
+bench: 1
+language: ru
+# a candidate is a reel's voice block; paths are relative to this file. latin: false = the engine
+# cannot read Latin letters, so brand lines use their `translit` text only. stress_style overrides how
+# the engine gets stress marks (none | plus | acute | upper), to measure whether marks help at all
+candidates:
+  - { id: qwen3-narrator, engine: qwen3, voice: ../../content/videos/agents-open-door/assets/voice/narrator-ru.wav, stress_style: none }
+  - { id: qwen3-narrator-1.12, engine: qwen3, voice: ../../content/videos/agents-open-door/assets/voice/narrator-ru.wav, speed: 1.12 }
+  - { id: qwen3-narrator-upper, engine: qwen3, voice: ../../content/videos/agents-open-door/assets/voice/narrator-ru.wav, stress_style: upper }
+  - { id: chatterbox-narrator, engine: chatterbox, voice: ../../content/videos/agents-open-door/assets/voice/narrator-ru.wav }
+  - { id: chatterbox-narrator-unmarked, engine: chatterbox, voice: ../../content/videos/agents-open-door/assets/voice/narrator-ru.wav, stress_style: none }
+  - { id: kokoro-dima, engine: kokoro, voice: dima, latin: false }
+  - { id: silero-alexandr, engine: silero, voice: ru_alexandr, latin: false }
+# check: espeak-IPA patterns (regex over space-separated phonemes) for the right and the wrong
+# reading of a homograph; an unstressed о/а reduces, so the patterns separate замóк from зáмок
+sentences:
+  - id: lock
+    text: Дверь склада закрыта на замок, а не на табличку.
+    check: { word: замок (lock), right: 'z aː? m oː? k', wrong: 'z aː? m [ʌəɐa]ː? k' }
+  - id: lock-genitive
+    text: Табличка вместо замка никого не остановит.
+    check: { word: замка (lock), right: 'm k aː?( |$)', wrong: 'm k [ɐə]' }
+  - id: costs
+    text: Такая ошибка стоит компании дорого.
+    check: { word: стоит (costs), right: 's t oː? [iɪj]', wrong: 's t ([aɐʌ]ː? (j )?[iɪ]|aɪ)' }
+  - id: organ
+    text: На концерте звучала музыка на органе.
+    check: { word: органе (instrument), right: 'r ɡ aː? ɲ', wrong: 'o r ɡ [ʌəɐ]' }
+  - id: brand-openai
+    text: Модели OpenAI выбрались из тестовой среды.
+    translit: Модели Оупен Эй-Ай выбрались из тестовой среды.
+    brand: 'open ?a\.?i|оу?пен.?эй.?ай'
+  - id: brand-replit
+    text: Агент Replit стёр рабочую базу во время заморозки кода.
+    translit: Агент Реплит стёр рабочую базу во время заморозки кода.
+    brand: 'replit|реплит'
+  - id: brand-gemini
+    text: Gemini угадывала пароли или брала их из открытого репозитория.
+    translit: Джемини угадывала пароли или брала их из открытого репозитория.
+    brand: 'gemini|джемини'
+  - id: long-experts
+    text: Специалисты по безопасности говорят, что это не бунт машин, а дыры, которые известны десятилетиями.
+  - id: long-checklist
+    text: Прежде чем пускать агента на склад, проверьте, кто смотрит в монитор и где лежат ключи.
+  - id: question
+    text: Какую дверь вы оставили открытой?

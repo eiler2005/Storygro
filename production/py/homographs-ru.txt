@@ -1,0 +1,41 @@
+# Russian homographs whose stress the narrator must get from context. `storygro voice` asks RUAccent
+# for the reading that fits the sentence and marks only these words (plus ё in все/всё-type pairs).
+# Listed because TTS engines read them wrongly by default (measured 20–21 Oct 2026, voices.md):
+# Qwen3 and Chatterbox said "зáмок" for the lock and "стои́т" for "costs". One word form per line;
+# add forms when a script needs them. Words not listed keep the engine's own stress; mark any word
+# by hand with `+` (зам+ок) or an acute (замо́к) to override.
+замок
+замка
+замку
+замком
+замке
+замки
+замков
+замкам
+замками
+замках
+стоит
+стоят
+орган
+органа
+органе
+органы
+органов
+мука
+муки
+муку
+мукой
+атлас
+атласа
+атласе
+белки
+кружки
+писать
+плачу
+полки
+стрелки
+дорогой
+ведение
+провода
+пропасть
+парить

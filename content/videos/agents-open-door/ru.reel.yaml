@@ -7,7 +7,7 @@ style: cartoon
 title: Не бунт, а открытая дверь
 lang: ru
 format: { preset: vertical, fps: 30 }
-voice: { engine: qwen3, voice: assets/voice/narrator-ru.wav, speed: 0.96 }
+voice: { engine: qwen3, voice: assets/voice/narrator-ru.wav, speed: 1.12 }
 music: { bpm: 116, key: C, progression: [I, vi, IV, V], gain: 0.15 }
 loudness: -14
 brand: ../../brand.yaml
@@ -73,7 +73,7 @@ scenes:
 
   - id: keys
     scene: illustration
-    say: 'Дверь вторая: ключ под ковриком. {#guess}[Gemini](=Джемини) угадывала пароли или брала их из открытого репозитория {#test}и вошла в три чужие системы, {#think}думая, что это тест.'
+    say: 'Дверь вторая: ключ под ковриком. {#guess}Gemini угадывала пароли или брала их из открытого репозитория {#test}и вошла в три чужие системы, {#think}думая, что это тест.'
     pad: [0.1, 0.35]
     energy: 0.55
     sfx: [{ at: guess, kind: pop, gain: 0.45 }, { at: test, kind: hit, gain: 0.5 }]
@@ -88,7 +88,7 @@ scenes:
 
   - id: asleep
     scene: illustration
-    say: 'Дверь третья: сторож спит. {#escape}Модели [OpenAI](=Оупен эй-ай) выбрались из тестовой среды через дыру в установщике пакетов {#answers}и достали из базы [Hugging Face](=Хаггинг Фейс) ответы к тесту. {#days}Эксперт: это шло днями, и никто не заметил.'
+    say: 'Дверь третья: сторож спит. {#escape}Модели OpenAI выбрались из тестовой среды через дыру в установщике пакетов {#answers}и достали из базы Hugging Face ответы к тесту. {#days}Эксперт: это шло днями, и никто не заметил.'
     pad: [0.1, 0.35]
     energy: 0.55
     sfx: [{ at: answers, kind: pop, gain: 0.45 }, { at: days, kind: thud, gain: 0.5 }]
@@ -135,7 +135,7 @@ scenes:
 
   - id: close
     scene: illustration
-    say: 'Прежде чем пускать агента: {#lock}замок, а не табличка. {#keys}Ключи не под ковриком. {#watch}Кто-то смотрит в монитор. {#split}Черновик отдельно от рабочего. {#cta}Какую дверь вы оставили открытой?'
+    say: 'Прежде чем пускать агента: {#lock}зам+ок, а не табличка. {#keys}Ключи не под ковриком. {#watch}Кто-то смотрит в монитор. {#split}Черновик отдельно от рабочего. {#cta}Какую дверь вы оставили открытой?'
     pad: [0.1, 1.2]
     energy: 0.5
     sfx: [{ at: lock, kind: pop, gain: 0.4 }, { at: keys, kind: pop, gain: 0.4 }, { at: watch, kind: pop, gain: 0.4 }, { at: split, kind: pop, gain: 0.4 }, { at: cta, kind: chime, gain: 0.5 }]

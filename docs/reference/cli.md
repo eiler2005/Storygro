@@ -110,6 +110,8 @@ Guides: [carousel and release](../how-to/carousel-and-release.md), [brand and se
 |---|---|
 | `npm run setup` / `setup:ru` | creates `~/.storygro/venv` with uv: Kokoro, audio tools, ffmpeg and (Apple silicon) mlx-whisper; `:ru` adds RUAccent, Silero and (Apple silicon) Qwen3-TTS via mlx-audio |
 | `npm run setup:images` | Apple silicon: `~/.storygro/image-venv` with mflux for generated pictures; the model (about 11 GB) downloads on first use |
+| `npm run setup:chatterbox` | `~/.storygro/chatterbox-venv` with Chatterbox Multilingual (`engine: chatterbox`) and the UTMOS scorer of the voice bench; the model (about 3 GB) downloads on first use |
+| `npm run storage` | prints what Storygro keeps on this machine — environments, models, renders — with sizes; deletes nothing ([local setup](local-setup.md)) |
 | `npm run check` | media policy, doc links, TypeScript and tests — what CI runs |
 | `npm run check:media` | rejects indexed videos, audio, archives, files > 1 MiB and doc images > 300 KiB |
 | `npm run check:links` | every relative link and heading anchor in Markdown resolves |

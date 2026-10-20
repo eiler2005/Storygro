@@ -340,7 +340,7 @@ entries:
     kind: tool
     stage: voice
     title: Local narration and timing
-    what: Narrates each scene (cached), measures it and resolves cues to seconds; providers Kokoro (EN), Kokoro-RU, Qwen3-TTS (Apple silicon), Silero; Whisper aligns words when a provider has no timings.
+    what: Narrates each scene (cached), measures it and resolves cues to seconds; providers Kokoro (EN), Kokoro-RU, Qwen3-TTS (Apple silicon), Silero, Chatterbox (optional); Whisper aligns words when a provider has no timings.
     when: As soon as the script exists — before designing pictures.
     commands: [voice]
     how: npm run storygro -- voice content/videos/<id>/en.reel.yaml
@@ -365,6 +365,35 @@ entries:
     when: Numbers, abbreviations, names, Russian stress.
     status: stable
     docs: docs/how-to/write-a-script.md
+
+  - id: russian-stress
+    kind: method
+    stage: voice
+    title: Russian stress and homographs
+    what: "Mark stress with `+` (зам+ок) or an acute (замо́к); by default RUAccent resolves the listed homographs (замок, стоит, органе …) from the sentence, and each engine gets the marks in the form it reads — an uppercase vowel for Qwen3, an acute for Chatterbox, `+` for Silero. The voice log and the plan list every decision."
+    when: Every Russian script; check the plan's stress line and mark what RUAccent cannot know from context.
+    status: pilot
+    docs: docs/reference/voices.md
+
+  - id: voice-bench
+    kind: tool
+    stage: voice
+    title: Voice bench
+    what: The same lines through every candidate voice, measured the same way — Whisper word error, homograph stress from phonemes, brand names, UTMOS naturalness, words a second, compute time — with a page to listen to every line.
+    when: Choosing or adding a voice engine; after changing stress handling.
+    how: ~/.storygro/venv/bin/python production/py/voice_bench.py production/voices/bench-ru.yaml --out ~/Downloads/storygro-voice-bench-ru
+    status: pilot
+    docs: docs/reference/voices.md
+
+  - id: chatterbox
+    kind: provider
+    stage: voice
+    title: Chatterbox Multilingual
+    what: Resemble AI's MIT-licensed multilingual voice (Russian among 23 languages) that clones a narrator from a reference clip; separate ~/.storygro/chatterbox-venv; about four seconds of compute per second of speech on an M5 Pro.
+    when: A second Russian voice to compare with Qwen3; see the bench results before choosing.
+    how: npm run setup:chatterbox
+    status: pilot
+    docs: docs/reference/voices.md
 
   - id: score
     kind: tool

@@ -2,7 +2,7 @@
 
 <!-- Generated from production/toolkit.yaml by `npm run docs:toolkit`. Edit the YAML, not this page. -->
 
-Every way Storygro makes content, in one bank: **17 methods**, **21 tools**, **3 styles**, **5 scene families** and **3 providers**, by production stage. Agents read [`production/toolkit.yaml`](../../production/toolkit.yaml) to pick an approach; this page is generated from it, and `npm test` fails when a command, style or scene is missing from the bank or a link is broken.
+Every way Storygro makes content, in one bank: **18 methods**, **22 tools**, **3 styles**, **5 scene families** and **4 providers**, by production stage. Agents read [`production/toolkit.yaml`](../../production/toolkit.yaml) to pick an approach; this page is generated from it, and `npm test` fails when a command, style or scene is missing from the bank or a link is broken.
 
 **Status:** *stable* — used across pieces · *pilot* — works, reviewed on one or two pieces · *planned* — not implemented.
 
@@ -12,7 +12,7 @@ Every way Storygro makes content, in one bank: **17 methods**, **21 tools**, **3
 | **research** — Find and check what is true | [Primary-source research](#primary-source-research) · [Facts as data](#facts-as-data) · [Reference analysis](#reference-analysis) · [Transcript and pace statistics](#transcript-and-pace-statistics) · [Whisper (mlx-whisper)](#whisper-mlx-whisper) |
 | **write** — Turn it into a script as data | [Script as data](#script-as-data) · [Story structures](#story-structures) · [One worked example](#one-worked-example) · [Language variants](#language-variants) · [Brand profile and series](#brand-profile-and-series) |
 | **look** — Decide how it looks | [Cartoon explainer](#cartoon-explainer) · [Cut-paper explainer](#cut-paper-explainer) · [Editorial collage](#editorial-collage) · [Cut-paper scenes](#cut-paper-scenes) · [Collage scene](#collage-scene) · [Illustration scene](#illustration-scene) · [Screencast scene](#screencast-scene) · [Landscape product scenes](#landscape-product-scenes) · [Generated illustrations](#generated-illustrations) · [Z-Image-Turbo via mflux](#z-image-turbo-via-mflux) · [Recurring cast](#recurring-cast) · [No text in pictures](#no-text-in-pictures) · [Screen capture](#screen-capture) · [A new scene module](#a-new-scene-module) |
-| **voice** — Narration, sound and timing | [Local narration and timing](#local-narration-and-timing) · [Narrator design](#narrator-design) · [Pronunciation and say-as](#pronunciation-and-say-as) · [Music and sound effects](#music-and-sound-effects) |
+| **voice** — Narration, sound and timing | [Local narration and timing](#local-narration-and-timing) · [Narrator design](#narrator-design) · [Pronunciation and say-as](#pronunciation-and-say-as) · [Russian stress and homographs](#russian-stress-and-homographs) · [Voice bench](#voice-bench) · [Chatterbox Multilingual](#chatterbox-multilingual) · [Music and sound effects](#music-and-sound-effects) |
 | **make** — Storyboard, approval and rendering | [Stills and live preview](#stills-and-live-preview) · [Storyboard and approval](#storyboard-and-approval) · [Plan document and stepped approvals](#plan-document-and-stepped-approvals) · [Render](#render) · [Formats, safe areas and captions](#formats-safe-areas-and-captions) · [Carousel cards](#carousel-cards) |
 | **check** — Technical QA and the human review | [Technical QA](#technical-qa) · [Human review](#human-review) |
 | **ship** — Release, publication record and metrics | [Episode tracker](#episode-tracker) · [Release package](#release-package) · [Publication ledger and metrics](#publication-ledger-and-metrics) · [Platform upload and analytics APIs](#platform-upload-and-analytics-apis) |
@@ -370,7 +370,7 @@ A deterministic mount() → draw(t) module when no existing scene and props can 
 
 *tool · stable* · commands: `voice`
 
-Narrates each scene (cached), measures it and resolves cues to seconds; providers Kokoro (EN), Kokoro-RU, Qwen3-TTS (Apple silicon), Silero; Whisper aligns words when a provider has no timings.
+Narrates each scene (cached), measures it and resolves cues to seconds; providers Kokoro (EN), Kokoro-RU, Qwen3-TTS (Apple silicon), Silero, Chatterbox (optional); Whisper aligns words when a provider has no timings.
 
 **Use when:** As soon as the script exists — before designing pictures.
 
@@ -399,6 +399,40 @@ Design a synthetic narrator with Qwen3 VoiceDesign, then clone it per line so ev
 **Use when:** Numbers, abbreviations, names, Russian stress.
 
 **See:** [docs](../../docs/how-to/write-a-script.md)
+
+### Russian stress and homographs
+
+*method · pilot*
+
+Mark stress with `+` (зам+ок) or an acute (замо́к); by default RUAccent resolves the listed homographs (замок, стоит, органе …) from the sentence, and each engine gets the marks in the form it reads — an uppercase vowel for Qwen3, an acute for Chatterbox, `+` for Silero. The voice log and the plan list every decision.
+
+**Use when:** Every Russian script; check the plan's stress line and mark what RUAccent cannot know from context.
+
+**See:** [docs](../../docs/reference/voices.md)
+
+### Voice bench
+
+*tool · pilot*
+
+The same lines through every candidate voice, measured the same way — Whisper word error, homograph stress from phonemes, brand names, UTMOS naturalness, words a second, compute time — with a page to listen to every line.
+
+**Use when:** Choosing or adding a voice engine; after changing stress handling.
+
+**How:** `~/.storygro/venv/bin/python production/py/voice_bench.py production/voices/bench-ru.yaml --out ~/Downloads/storygro-voice-bench-ru`
+
+**See:** [docs](../../docs/reference/voices.md)
+
+### Chatterbox Multilingual
+
+*provider · pilot*
+
+Resemble AI's MIT-licensed multilingual voice (Russian among 23 languages) that clones a narrator from a reference clip; separate ~/.storygro/chatterbox-venv; about four seconds of compute per second of speech on an M5 Pro.
+
+**Use when:** A second Russian voice to compare with Qwen3; see the bench results before choosing.
+
+**How:** `npm run setup:chatterbox`
+
+**See:** [docs](../../docs/reference/voices.md)
 
 ### Music and sound effects
 

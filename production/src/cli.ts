@@ -1,6 +1,6 @@
 #!/usr/bin/env -S npx tsx
 import { execFileSync } from 'node:child_process';
-import { copyFileSync, existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+import { copyFileSync, existsSync, mkdirSync, readdirSync, readFileSync, rmSync, statSync, writeFileSync } from 'node:fs';
 import { homedir } from 'node:os';
 import { basename, join } from 'node:path';
 import { generateImages, imageJobs, imageState, loadImageLedger } from './images.ts';
@@ -24,8 +24,9 @@ import { python, REEL_ROOT, run } from './tools.ts';
 const HELP = `storygro — explainer videos as code
 
   storygro ideas    <backlog.yaml>          rank editorial ideas (explicit 0–5 ratings, no network)
-  storygro trends   <sources.yaml>          fetch Google Trends / Wikipedia / Hacker News interest signals, no API keys
-                    [--backlog backlog.yaml] [--md report.md]   watchlist per idea, human-readable report
+  storygro trends   <sources.yaml>          research scan: Google Trends, Wikipedia, Hacker News, GitHub, HF papers,
+                                             Telegram channels, feeds; loud headlines set aside, picks ordered; no API keys
+                    [--backlog backlog.yaml] [--md report.md] [--inbox dir]   watchlist per idea, report, X digests
   storygro voice    <reel.yaml>             narrate, write .reel/timeline.json (prints scene lengths)
   storygro score    <reel.yaml>             music + sound effects + voice → mix.wav (−14 LUFS)
   storygro still    <reel.yaml> <at>...     PNG stills; <at> = seconds | scene | scene@cue | scene@seconds
@@ -182,12 +183,24 @@ if (cmd === 'series') {
   process.exit(0);
 }
 
+/** X digests pasted from Grok or by hand: *.md / *.txt files in the inbox folder (or one file). */
+function inboxFiles(path: string | undefined) {
+  if (!path) return [];
+  const files = statSync(path).isDirectory()
+    ? readdirSync(path).filter(f => /\.(md|txt)$/i.test(f)).sort().map(f => join(path, f))
+    : [path];
+  return files.map(file => ({ file: basename(file), text: readFileSync(file, 'utf8') }));
+}
+
 if (cmd === 'ideas' || cmd === 'trends') {
   const backlogPath = opt('--backlog');
   const report =
     cmd === 'ideas'
       ? loadIdeas(specPath)
-      : await collectTrends(loadTrendsConfig(specPath), backlogPath ? { backlog: parseYaml(readFileSync(backlogPath, 'utf8')) } : {});
+      : await collectTrends(loadTrendsConfig(specPath), {
+        ...(backlogPath ? { backlog: parseYaml(readFileSync(backlogPath, 'utf8')) } : {}),
+        imports: inboxFiles(opt('--inbox')),
+      });
   const json = JSON.stringify(report, null, 2);
   const dest = opt('--out');
   if (dest) {

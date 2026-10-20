@@ -68,3 +68,128 @@ items:
       - https://github.com/eiler2005/slidecraft
     ratings: { evidence: 5, audience: 3, utility: 4, visual: 5, timeliness: 2, ease: 4 }
     rationale: 'Первый ролик серии product-demos; проверка конвейера storygro capture → screencast на реальном сайте. Продуктовое демо, не независимый обзор.'
+  # ── Research scan 2026-10-20: content/research/2026-10-20-scan.md ──
+  - id: solve-vs-discover
+    title: Решить задачу и сделать открытие — не одно и то же
+    thesis: Агенты почти безошибочно решают задачи с проверяемым ответом, но в открытом исследовании выдают несделанную работу за сделанную.
+    status: candidate
+    sources:
+      - https://arxiv.org/abs/2610.16733
+      - https://arxiv.org/abs/2610.19159
+    ratings: { evidence: 5, audience: 5, utility: 4, visual: 5, timeliness: 5, ease: 4 }
+    rationale: 'Скан 2026-10-20: HF papers + Data Secrets; линза — связка двух статей. Числа из аннотаций: 98% и < $3 против 0 из 135 и 114 провалов проверки честности. Продолжает серию о проверке ИИ. Оценки редакционные.'
+    watch:
+      wikipedia: { en: [AI_agent] }
+      hn: [AI scientist, research agent]
+  - id: bottleneck-moved
+    title: Узкое место переехало — из кода в проверку
+    thesis: Когда агенты пишут код в десятки раз быстрее, пробкой становится всё, что вокруг кода — проверка, сборка и слияние.
+    status: candidate
+    sources:
+      - https://www.anthropic.com/engineering/redesigning-source-control
+    ratings: { evidence: 4, audience: 5, utility: 5, visual: 5, timeliness: 5, ease: 5 }
+    rationale: 'Скан 2026-10-20: HN best (896 points, 1 012 комментариев); линза — что за этим стоит. ~2 500 → 30 000+ слияний в день — данные Anthropic о себе, не независимое измерение. Оценки редакционные.'
+    watch:
+      wikipedia: { en: [Theory_of_constraints, Version_control] }
+      hn: [code review bottleneck, merge queue]
+  - id: ecdsa-detective
+    title: Детектив — как модель нашла происхождение констант ECDSA
+    thesis: Модель решила 25-летнюю загадку не перебором, а сменой гипотезы о том, как работала программа 1990-х.
+    status: candidate
+    sources:
+      - https://www.anthropic.com/research/ecdsa-curve-origins
+    ratings: { evidence: 4, audience: 3, utility: 3, visual: 5, timeliness: 5, ease: 4 }
+    rationale: 'Скан 2026-10-20: первый pick — HN (1 062 points) и Data Secrets независимо. Рассказ Anthropic о своей модели; авторы подчёркивают, что это не взлом. Сильный сюжет для мультика, польза — приём «сменить вопрос». Оценки редакционные.'
+    watch:
+      wikipedia: { en: [Elliptic_Curve_Digital_Signature_Algorithm] }
+      hn: [ECDSA]
+  - id: agent-notebook
+    title: Агенту нужен блокнот, а не длинный чат
+    thesis: Явное состояние задачи — что известно, чего не хватает, какой вывод — делает агента точнее той же модели с длинной историей.
+    status: candidate
+    sources:
+      - https://arxiv.org/abs/2610.13075
+      - https://arxiv.org/abs/2610.18784
+    ratings: { evidence: 5, audience: 4, utility: 5, visual: 4, timeliness: 4, ease: 4 }
+    rationale: 'Скан 2026-10-20: X-дайджест #8 (omarsar0) + #5 (mattpocockuk) + HF papers; линза — связка. 4,4% → 61,1% — из аннотации LongHarness на одном бенчмарке. Оценки редакционные.'
+    watch:
+      hn: [agent memory, context engineering]
+  - id: right-result-wrong-process
+    title: Результат верный, процесс — нет
+    thesis: У бизнес-агента нужно проверять не только итог, но и правила, нарушенные по дороге к нему.
+    status: candidate
+    sources:
+      - https://arxiv.org/abs/2610.20424
+      - https://arxiv.org/abs/2610.09872
+    ratings: { evidence: 5, audience: 5, utility: 5, visual: 4, timeliness: 4, ease: 4 }
+    rationale: 'Скан 2026-10-20: HF papers (BizAgentBench 364 upvotes); линза — цена. Продолжение ai-review. Бенчмарк на процедурах одной платёжной компании, не на рынке в целом. Оценки редакционные.'
+    watch:
+      hn: [agent benchmark]
+  - id: check-premises
+    title: Проверять посылки, а не текст целиком
+    thesis: Текст от ИИ надёжнее проверять, разбив его на отдельные утверждения и сверив каждое с источником.
+    status: candidate
+    sources:
+      - https://arxiv.org/abs/2610.21046
+    ratings: { evidence: 5, audience: 4, utility: 5, visual: 3, timeliness: 3, ease: 4 }
+    rationale: 'Скан 2026-10-20: HF papers; линза — перенос метода из рецензирования в проверку рабочих отчётов. Перенос — авторская рамка, исследование — о рецензиях. Оценки редакционные.'
+    watch:
+      wikipedia: { en: [Fact-checking] }
+      hn: [fact-checking LLM]
+  - id: not-rogue-open-door
+    title: Не бунт машин, а открытая дверь
+    thesis: Инциденты с «вышедшими из-под контроля» агентами объясняются пропуском базовых мер безопасности, а не волей модели.
+    status: candidate
+    sources:
+      - https://www.csoonline.com/article/4234854/ai-agents-arent-going-rogue-frontier-labs-are-skipping-security-basics.html
+    ratings: { evidence: 3, audience: 5, utility: 5, visual: 4, timeliness: 4, ease: 4 }
+    rationale: 'Скан 2026-10-20: HN best (951 points); линза — против течения. Аналитика с мнениями экспертов; до сценария открыть первичные отчёты компаний об инцидентах. Оценки редакционные.'
+    watch:
+      wikipedia: { en: [Principle_of_least_privilege] }
+      hn: [AI agent security]
+  - id: unread-ai-text
+    title: Не заставляйте читать то, чего вы не писали
+    thesis: Текст, сгенерированный ИИ, полезен коллегам, только если человек сформулировал в нём зачем, какой риск и что нужно от читателя.
+    status: candidate
+    sources:
+      - https://habr.com/ru/companies/ruvds/articles/1093900/
+    ratings: { evidence: 3, audience: 5, utility: 5, visual: 3, timeliness: 4, ease: 5 }
+    rationale: 'Скан 2026-10-20: первый pick Habr (перевод эссе Colin Breck). Мнение автора, не исследование; практическое правило — наша рамка. Оценки редакционные.'
+    watch:
+      hn: [AI slop, AI-generated text]
+  - id: ai-unit-economics
+    title: Экономика ИИ-продукта, которая не сошлась
+    thesis: ИИ-продукт без маржи на каждом ответе не спасают ни аудитория, ни оценка компании.
+    status: parked
+    sources:
+      - https://t.me/data_secrets/10166
+    ratings: { evidence: 2, audience: 5, utility: 4, visual: 4, timeliness: 5, ease: 3 }
+    rationale: 'Скан 2026-10-20: Data Secrets о банкротстве Character.AI. Отложено: только вторичный источник; нужны документы о банкротстве и цифры из них. Оценки редакционные.'
+    watch:
+      wikipedia: { en: [Character.ai] }
+      hn: [Character.AI]
+  - id: who-is-on-call
+    title: Кто будет дежурить ночью
+    thesis: Агент делает незнакомый стек дешёвым на старте, но стоимость поддержки ложится на компанию позже.
+    status: candidate
+    sources:
+      - https://habr.com/ru/articles/1094430/
+    ratings: { evidence: 2, audience: 5, utility: 4, visual: 3, timeliness: 3, ease: 4 }
+    rationale: 'Скан 2026-10-20: Habr; линза — цена. Мнение практика; для ролика нужны данные о стоимости поддержки. Подходит для блога сейчас. Оценки редакционные.'
+  - id: portable-context
+    title: Ваш контекст — ваш актив
+    thesis: Инструкции и контекст для ассистента стоит хранить в своих файлах, чтобы не зависеть от одного сервиса.
+    status: candidate
+    sources:
+      - https://x.com/BrianRoemmele/status/2109853221808435364
+    ratings: { evidence: 2, audience: 4, utility: 4, visual: 3, timeliness: 3, ease: 5 }
+    rationale: 'Скан 2026-10-20: X-дайджест #1 (3 221 закладка, saveRate 1,56). Пост о продукте — сигнал интереса, не доказательство; тема — практика. Оценки редакционные.'
+  - id: agent-motion-studio
+    title: Как агент собирает ролик из кода
+    thesis: Видео можно описать как данные и код, и тогда агент делает его так же, как программу — с проверкой каждого кадра.
+    status: candidate
+    sources:
+      - https://x.com/RoundtableSpace/status/2108456177029845346
+      - https://github.com/eiler2005/Storygro
+    ratings: { evidence: 4, audience: 3, utility: 3, visual: 5, timeliness: 4, ease: 5 }
+    rationale: 'Скан 2026-10-20: X-дайджест #2 и #6 (2 680 и 874 закладки) + новые видео-репозитории на GitHub. Демо собственного инструмента — серия product-demos, не независимый обзор. Оценки редакционные.'

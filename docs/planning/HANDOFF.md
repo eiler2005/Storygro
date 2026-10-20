@@ -24,7 +24,7 @@ A toolkit for AI agents to turn ideas into reels, videos, carousels, and social 
 
 - Карта технологий/продуктов: [technology](../explanation/technology.md), архитектура и workflow; отдельно перечислены работающие и только рассматриваемые компоненты.
 - Лицензия: PolyForm Shield, сохранены сторонние notices. Предыдущее «лицензия не выбрана» больше не актуально.
-- `ideas` ранжирует редакционный бэклог; `trends` собирает открытые Wikipedia/HN сигналы с датами и ошибками. Веса и границы — в [ideas](../how-to/choose-a-topic.md).
+- `ideas` ранжирует редакционный бэклог; `trends` собирает открытые сигналы с датами и ошибками: Wikipedia, HN, Google Trends, а для поиска идей — новые репозитории GitHub, статьи HF, русские Telegram-каналы, RSS и дайджесты X из Grok (`--inbox`). Громкие заголовки откладываются, совпадения ссылок в разных источниках поднимаются в picks; идеи из picks агент делает по [плейбуку](../../production/trends/angles-prompt.md). Веса и границы — в [ideas](../how-to/choose-a-topic.md).
 - Новые выпуски: [content/](../../content/README.md). `examples/` остаётся библиотекой примеров, а `.reel/`/`.signals/` — локальными выходами.
 - Русский Kokoro: community fine-tune `zaakirio/kokoro-ru`, голос Dima; OpenRAIL weights, Apache-2.0 code, RUAccent. Не путать с официальным английским Kokoro. EN `ai-jobs` сохраняет Qwen3.
 - Новый деловой выпуск: [future-of-work](../../content/videos/future-of-work/README.md). Фактический рендер и проверки — в его REVIEW.md.

@@ -4,7 +4,7 @@
 
 ## Pick a topic with evidence, not hype
 
-`storygro trends` reads Google Trends RSS, Wikipedia pageviews and Hacker News without API keys, matches them against your focus terms and shows momentum for every idea in the backlog. `storygro ideas` ranks the backlog by six explicit editorial ratings — attention never enters the score.
+`storygro trends` reads Google Trends RSS, Wikipedia pageviews and Hacker News without API keys, matches them against your focus terms and shows momentum for every idea in the backlog. The research part adds new GitHub repositories, Hugging Face papers, Russian Telegram channels, RSS feeds and X digests imported from Grok, sets loud headlines aside and orders a short list of picks, with links seen in several sources first. `storygro ideas` ranks the backlog by six explicit editorial ratings — attention never enters the score.
 
 ![Trend report: sources, focus matches and momentum per backlog idea](media/pipeline/01-trends.jpg)
 

@@ -1,6 +1,8 @@
 import { readFileSync } from 'node:fs';
 import { parse } from 'yaml';
 import { z } from 'zod';
+import { sift, type Pick } from './sift.ts';
+import { feed, FeedConfig, GitHubConfig, githubNew, hackerNewsBest, HNBestConfig, huggingFacePapers, PapersConfig, parseXDigest, telegramChannels } from './sources.ts';
 
 const Rating = z.number().min(0).max(5);
 export const Backlog = z.object({
@@ -55,6 +57,24 @@ export const TrendsConfig = z.object({
   googleTrends: z.array(z.string().regex(/^[A-Z]{2}$/)).max(6).default([]),
   /** lower-case word stems that mark a signal as relevant to our audience (a rough filter, not a classifier) */
   focus: z.array(z.string().min(2)).default([]),
+  /** new repositories by stars (GitHub search; GITHUB_TOKEN raises the rate limit) */
+  github: GitHubConfig.optional(),
+  /** Hugging Face daily papers by upvotes */
+  huggingFacePapers: PapersConfig.optional(),
+  /** Hacker News stories of the last days above a points threshold */
+  hackerNewsBest: HNBestConfig.optional(),
+  /** public Telegram channels read from their web preview (t.me/s/<name>) */
+  telegram: z.array(z.string().regex(/^[A-Za-z0-9_]{4,}$/)).max(20).default([]),
+  telegramDays: z.number().int().min(1).max(30).default(7),
+  /** RSS/Atom feeds already scoped to our subject (a hub's weekly top, a blog) */
+  feeds: z.array(FeedConfig).max(20).default([]),
+  /** loud-headline markers: such items stay in the source lists but are set aside from the picks */
+  hype: z.array(z.string().min(1)).default([]),
+  /** markers of items we never want (adult, gambling, …): dropped and only counted */
+  block: z.array(z.string().min(1)).default([]),
+  /** at most this many picks from one author or channel */
+  perAuthor: z.number().int().min(1).max(10).default(2),
+  picks: z.number().int().min(1).max(50).default(15),
 });
 export type TrendsConfig = z.infer<typeof TrendsConfig>;
 export interface Signal {
@@ -70,6 +90,16 @@ export interface Signal {
   relevant?: boolean;
   /** news items Google Trends attaches to a search trend */
   related?: { title: string; url: string; source?: string }[];
+  /** account, channel or repository owner */
+  author?: string;
+  /** other links the item points to (a post's outbound links, a paper's arXiv page) */
+  links?: string[];
+  /** the source is already scoped to our subject, so the item needs no focus match */
+  topical?: boolean;
+  /** loud-headline or block markers found in the title */
+  hype?: string[];
+  /** other sources that carry the same repository, paper or page */
+  echo?: string[];
 }
 export interface SourceResult {
   source: string;
@@ -84,7 +114,8 @@ type FetchJSON = (url: string) => Promise<unknown>;
 type FetchText = (url: string) => Promise<string>;
 const UA = 'Storygro/0.2 (https://github.com/eiler2005/Storygro)';
 export const fetchJSON: FetchJSON = async url => {
-  const response = await fetch(url, { headers: { 'User-Agent': UA, Accept: 'application/json' }, signal: AbortSignal.timeout(12_000) });
+  const token = url.startsWith('https://api.github.com/') ? process.env.GITHUB_TOKEN : undefined;
+  const response = await fetch(url, { headers: { 'User-Agent': UA, Accept: 'application/json', ...(token ? { Authorization: `Bearer ${token}` } : {}) }, signal: AbortSignal.timeout(12_000) });
   if (!response.ok) throw new HttpError(response.status, url);
   return response.json();
 };
@@ -141,7 +172,7 @@ const WikiResponse = z.object({ items: z.array(z.object({ articles: z.array(z.ob
 const HNItem = z.object({ id: z.number(), title: z.string().optional(), type: z.string(), url: z.string().url().optional(), score: z.number().optional(), descendants: z.number().optional(), time: z.number().optional(), deleted: z.boolean().optional(), dead: z.boolean().optional() }).nullable();
 
 /** Interest signals, not evidence of a claim or a forecast of a post's performance. */
-export async function collectTrends(input: unknown, opts: { fetchJson?: FetchJSON; fetchText?: FetchText; now?: Date; backlog?: unknown } = {}) {
+export async function collectTrends(input: unknown, opts: { fetchJson?: FetchJSON; fetchText?: FetchText; now?: Date; backlog?: unknown; imports?: { file: string; text: string }[] } = {}) {
   const config = TrendsConfig.parse(input);
   const request = opts.fetchJson ?? fetchJSON;
   const requestText = opts.fetchText ?? fetchText;
@@ -215,16 +246,44 @@ export async function collectTrends(input: unknown, opts: { fetchJson?: FetchJSO
       sources.push({ source, status: 'ok', period: fetchedAt });
     } catch (error) { sources.push({ source, status: 'unavailable', error: errorText(error) }); }
   }
+  const topical = async (source: string, fetch: () => Promise<Signal[]>, period = fetchedAt) => {
+    try {
+      const got = await fetch();
+      signals.push(...got);
+      sources.push({ source, status: 'ok', period });
+    } catch (error) { sources.push({ source, status: 'unavailable', error: errorText(error) }); }
+  };
+  if (config.hackerNewsBest) await topical('hn-best', () => hackerNewsBest(config.hackerNewsBest!, request, now, config.limit));
+  if (config.github) await topical('github', () => githubNew(config.github!, request, now, config.limit));
+  if (config.huggingFacePapers) await topical('hf-papers', () => huggingFacePapers(config.huggingFacePapers!, request, now, config.limit));
+  if (config.telegram.length) {
+    const channels = await telegramChannels(config.telegram, requestText, now, config.telegramDays, config.limit);
+    for (const c of channels) signals.push(...c.signals);
+    const failed = channels.filter(c => c.error);
+    sources.push({ source: 'telegram', period: fetchedAt,
+      status: failed.length === channels.length ? 'unavailable' : failed.length ? 'partial' : 'ok',
+      ...(failed.length ? { error: failed.map(c => `${c.channel}: ${c.error}`).join('; ') } : {}) });
+  }
+  for (const f of config.feeds) await topical(f.id, () => feed(f, requestText, now, config.limit));
+  for (const imp of opts.imports ?? []) {
+    const got = parseXDigest(imp.text, fetchedAt, imp.file);
+    signals.push(...got);
+    sources.push(got.length ? { source: `x (${imp.file})`, status: 'ok', period: 'imported digest' }
+      : { source: `x (${imp.file})`, status: 'unavailable', error: 'no x.com/…/status/… links found' });
+  }
   const unique = [...new Map(signals.map(signal => [signal.id, signal])).values()];
   if (config.focus.length)
     for (const signal of unique)
       if (matchesFocus([signal.title, ...(signal.related ?? []).map(r => r.title)].join(' '), config.focus)) signal.relevant = true;
+  const sifted = sift(unique, { hype: config.hype, block: config.block, perAuthor: config.perAuthor, picks: config.picks });
   const watch = opts.backlog ? await watchIdeas(Backlog.parse(opts.backlog), { fetchJson: request, now }) : undefined;
   return {
     fetchedAt,
     status: sources.length && sources.every(s => s.status === 'ok') ? 'ok' : sources.some(s => s.status !== 'unavailable') ? 'partial' : 'unavailable',
     sources,
-    signals: unique,
+    signals: sifted.signals,
+    picks: sifted.picks.map(p => ({ id: p.signal.id, score: p.score, percentile: p.percentile, reasons: p.reasons })),
+    blocked: sifted.blocked.length,
     ...(watch ? { watch } : {}),
   };
 }
@@ -326,13 +385,26 @@ export function trendsMarkdown(report: TrendsReport, opts: { top?: number } = {}
     `Status: **${report.status}**. Signals are attention snapshots, not evidence for a claim and not a forecast of reach.`, '',
     '| Source | Status | Data date | Note |', '|---|---|---|---|',
     ...report.sources.map(s => `| ${s.source} | ${s.status} | ${s.period?.slice(0, 10) ?? '—'} | ${cell(s.error ?? '')} |`), ''];
+  const byId = new Map(report.signals.map(s => [s.id, s]));
+  lines.push('## Picks', '', 'Reading order, not a forecast: percentile on the main metric within its own source (half for general lists such as search trends), +0.5 for each other source carrying the same link (up to two), +0.25 when an X post is saved more than liked or a channel post has twice the median views. Loud headlines and blocked items are excluded; at most a few picks per author. Open the original before using anything.', '');
+  if (report.picks.length)
+    lines.push('| # | Signal | Source | Metrics | Why | Score |', '|---|---|---|---|---|---|',
+      ...report.picks.map((p, i) => {
+        const s = byId.get(p.id)!;
+        return `| ${i + 1} | [${cell(s.title)}](${s.url}) | ${s.source}${s.author ? ` · ${cell(s.author)}` : ''} | ${metric(s.metrics)} | ${cell(p.reasons.join('; ')) || '—'} | ${p.score} |`;
+      }), '');
+  else lines.push('No topical or focus-matching signals in this scan.', '');
+  const loud = report.signals.filter(s => s.hype?.length && (s.topical || s.relevant));
+  if (loud.length || report.blocked)
+    lines.push('## Set aside: loud headlines', '', `${report.blocked} blocked item(s) dropped. Loud items stay listed so a real story behind a loud title is not lost.`, '',
+      ...(loud.length ? ['| Signal | Source | Markers |', '|---|---|---|', ...loud.map(s => `| [${cell(s.title)}](${s.url}) | ${s.source} | ${cell(s.hype!.join(', '))} |`)] : []), '');
   const relevant = report.signals.filter(s => s.relevant);
   lines.push('## Matches our focus', '');
   if (relevant.length)
     lines.push('| Signal | Source | Metrics | Link |', '|---|---|---|---|',
       ...relevant.map(s => `| ${cell(s.title)} | ${s.source} | ${metric(s.metrics)} | [open](${s.url}) |`), '');
   else lines.push('Nothing in the current snapshots matches the focus stems.', '');
-  for (const source of report.sources.filter(s => s.status !== 'unavailable').map(s => s.source)) {
+  for (const source of new Set(report.signals.map(s => s.source))) {
     const items = report.signals.filter(s => s.source === source).slice(0, top);
     lines.push(`## ${source}`, '', '| # | Signal | Metrics |', '|---|---|---|',
       ...items.map((s, i) => `| ${i + 1} | [${cell(s.title)}](${s.url})${s.relevant ? ' ★' : ''} | ${metric(s.metrics)} |`), '');

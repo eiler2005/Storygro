@@ -44,6 +44,38 @@ entries:
     docs: docs/how-to/choose-a-topic.md
     examples: [content/research/ai-agent-checks/README.md]
 
+  - id: research-scan
+    kind: tool
+    stage: choose
+    title: Research scan with picks
+    what: New GitHub repositories, Hugging Face papers, Hacker News best of the week, public Telegram channels, RSS feeds and imported X digests in one report; loud headlines set aside, the same link across sources noticed, a short ordered reading list.
+    when: Looking for what is useful and new this week, not only what is loud; before writing angles.
+    commands: [trends]
+    how: npm run storygro -- trends production/trends/sources.yaml --inbox content/.signals/inbox --md content/.signals/latest.md
+    status: pilot
+    docs: docs/explanation/research-approach.md
+    examples: [content/research/2026-10-20-scan.md]
+
+  - id: x-digest
+    kind: method
+    stage: choose
+    title: X digest through Grok
+    what: A prompt that asks Grok for the week's most bookmarked useful posts with clickbait, giveaways and repeat authors excluded, in a format the scan imports.
+    when: X has no free API; once a week, or when a topic needs the X conversation.
+    how: Paste production/trends/x-digest-prompt.md into Grok; save the answer to content/.signals/inbox/; run the scan with --inbox.
+    status: pilot
+    docs: production/trends/x-digest-prompt.md
+
+  - id: angle-lenses
+    kind: method
+    stage: choose
+    title: Angles from a scan
+    what: An agent playbook that reads the originals behind the picks, drops what lacks a primary source, and applies lenses (mechanism, cost, what it reveals, transfer, against the current, pairing two signals) to propose 3–5 backlog candidates.
+    when: After a scan, before ranking; the source of non-obvious topics.
+    how: Give the agent production/trends/angles-prompt.md with the latest report and the backlog.
+    status: pilot
+    docs: production/trends/angles-prompt.md
+
   - id: primary-source-research
     kind: method
     stage: research

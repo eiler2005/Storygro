@@ -9,7 +9,7 @@ A spec named `<variant>.reel.yaml` (for example `ru.reel.yaml`) works in `.reel/
 | Command | Does | Writes |
 |---|---|---|
 | `ideas <backlog.yaml>` | ranks editorial ideas from explicit 0–5 ratings; no network | JSON to stdout |
-| `trends <sources.yaml> [--backlog backlog.yaml] [--md report.md]` | fetches Google Trends RSS, Wikipedia and Hacker News signals without API keys; a watchlist per backlog idea | JSON; Markdown report with `--md` |
+| `trends <sources.yaml> [--backlog backlog.yaml] [--md report.md] [--inbox dir]` | research scan without API keys: Google Trends RSS, Wikipedia, Hacker News (front page and best of the week), new GitHub repositories, Hugging Face papers, Telegram channels, RSS feeds and imported X digests; loud headlines set aside, picks ordered; a watchlist per backlog idea | JSON; Markdown report with `--md` |
 
 Guide: [choose a topic](../how-to/choose-a-topic.md).
 

@@ -2,13 +2,13 @@
 
 <!-- Generated from production/toolkit.yaml by `npm run docs:toolkit`. Edit the YAML, not this page. -->
 
-Every way Storygro makes content, in one bank: **15 methods**, **18 tools**, **3 styles**, **5 scene families** and **3 providers**, by production stage. Agents read [`production/toolkit.yaml`](../../production/toolkit.yaml) to pick an approach; this page is generated from it, and `npm test` fails when a command, style or scene is missing from the bank or a link is broken.
+Every way Storygro makes content, in one bank: **17 methods**, **19 tools**, **3 styles**, **5 scene families** and **3 providers**, by production stage. Agents read [`production/toolkit.yaml`](../../production/toolkit.yaml) to pick an approach; this page is generated from it, and `npm test` fails when a command, style or scene is missing from the bank or a link is broken.
 
 **Status:** *stable* — used across pieces · *pilot* — works, reviewed on one or two pieces · *planned* — not implemented.
 
 | Stage | Methods and tools |
 |---|---|
-| **choose** — Pick a topic worth a piece | [Editorial ranking](#editorial-ranking) · [Trend scan and watchlist](#trend-scan-and-watchlist) |
+| **choose** — Pick a topic worth a piece | [Editorial ranking](#editorial-ranking) · [Trend scan and watchlist](#trend-scan-and-watchlist) · [Research scan with picks](#research-scan-with-picks) · [X digest through Grok](#x-digest-through-grok) · [Angles from a scan](#angles-from-a-scan) |
 | **research** — Find and check what is true | [Primary-source research](#primary-source-research) · [Facts as data](#facts-as-data) · [Reference analysis](#reference-analysis) · [Transcript and pace statistics](#transcript-and-pace-statistics) · [Whisper (mlx-whisper)](#whisper-mlx-whisper) |
 | **write** — Turn it into a script as data | [Script as data](#script-as-data) · [Story structures](#story-structures) · [One worked example](#one-worked-example) · [Language variants](#language-variants) · [Brand profile and series](#brand-profile-and-series) |
 | **look** — Decide how it looks | [Cartoon explainer](#cartoon-explainer) · [Cut-paper explainer](#cut-paper-explainer) · [Editorial collage](#editorial-collage) · [Cut-paper scenes](#cut-paper-scenes) · [Collage scene](#collage-scene) · [Illustration scene](#illustration-scene) · [Screencast scene](#screencast-scene) · [Landscape product scenes](#landscape-product-scenes) · [Generated illustrations](#generated-illustrations) · [Z-Image-Turbo via mflux](#z-image-turbo-via-mflux) · [Recurring cast](#recurring-cast) · [No text in pictures](#no-text-in-pictures) · [Screen capture](#screen-capture) · [A new scene module](#a-new-scene-module) |
@@ -45,6 +45,42 @@ Google Trends RSS, Wikipedia pageviews and Hacker News without API keys; focus m
 **How:** `npm run storygro -- trends production/trends/sources.yaml --backlog content/ideas/backlog.yaml --md content/.signals/latest.md`
 
 **See:** [docs](../../docs/how-to/choose-a-topic.md) · [ai-agent-checks/README.md](../../content/research/ai-agent-checks/README.md)
+
+### Research scan with picks
+
+*tool · pilot* · commands: `trends`
+
+New GitHub repositories, Hugging Face papers, Hacker News best of the week, public Telegram channels, RSS feeds and imported X digests in one report; loud headlines set aside, the same link across sources noticed, a short ordered reading list.
+
+**Use when:** Looking for what is useful and new this week, not only what is loud; before writing angles.
+
+**How:** `npm run storygro -- trends production/trends/sources.yaml --inbox content/.signals/inbox --md content/.signals/latest.md`
+
+**See:** [docs](../../docs/explanation/research-approach.md) · [research/2026-10-20-scan.md](../../content/research/2026-10-20-scan.md)
+
+### X digest through Grok
+
+*method · pilot*
+
+A prompt that asks Grok for the week's most bookmarked useful posts with clickbait, giveaways and repeat authors excluded, in a format the scan imports.
+
+**Use when:** X has no free API; once a week, or when a topic needs the X conversation.
+
+**How:** `Paste production/trends/x-digest-prompt.md into Grok; save the answer to content/.signals/inbox/; run the scan with --inbox.`
+
+**See:** [docs](../../production/trends/x-digest-prompt.md)
+
+### Angles from a scan
+
+*method · pilot*
+
+An agent playbook that reads the originals behind the picks, drops what lacks a primary source, and applies lenses (mechanism, cost, what it reveals, transfer, against the current, pairing two signals) to propose 3–5 backlog candidates.
+
+**Use when:** After a scan, before ranking; the source of non-obvious topics.
+
+**How:** `Give the agent production/trends/angles-prompt.md with the latest report and the backlog.`
+
+**See:** [docs](../../production/trends/angles-prompt.md)
 
 ## 2 · Research — Find and check what is true
 

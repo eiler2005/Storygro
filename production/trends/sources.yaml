@@ -38,3 +38,56 @@ focus:
   - jobs
   - startup
   - productivity
+
+# ── Topical sources: already about our subject, so their items need no focus match ──
+# Hacker News stories of the last days above a points threshold (not just the current front page).
+hackerNewsBest: { days: 7, minPoints: 150 }
+# New repositories (created in the window) by stars: skills, agents, tools people adopt this week.
+# Unauthenticated GitHub search allows 10 requests a minute; export GITHUB_TOKEN for more.
+github:
+  days: 7
+  minStars: 50
+  queries: [claude, 'agent skill', mcp, llm, 'ai video']
+# Hugging Face daily papers by community upvotes.
+huggingFacePapers: { days: 3 }
+# Public Russian-language channels read from t.me/s/<name>. A web preview, not an API: markup may change.
+# Views are compared with the median of the same channel (lift), so a small channel's hit still shows.
+telegram: [ai_newz, seeallochnaya, llm_under_hood, data_secrets, denissexy, gonzo_ML]
+telegramDays: 7
+feeds:
+  - { id: habr-ai, url: 'https://habr.com/ru/rss/hubs/artificial_intelligence/articles/top/weekly/?fl=ru' }
+# X has no free API: paste a Grok digest (prompt: production/trends/x-digest-prompt.md) into
+# content/.signals/inbox/ and pass --inbox content/.signals/inbox.
+
+# ── Sifting ──
+# Loud-headline markers. Matching items are not deleted: they are set aside from the picks and listed
+# separately, because a real story sometimes hides behind a loud title.
+hype:
+  - insane
+  - f*ck
+  - fuck
+  - mind-blowing
+  - mind blowing
+  - game changer
+  - game-changer
+  - changes everything
+  - you won't believe
+  - nobody is talking
+  - no one is talking
+  - is dead
+  - just killed
+  - rip
+  - breaking
+  - 10x
+  - leaked
+  - 🤯
+  - 🚨
+  - шок
+  - взорвал
+  - убийца
+  - это конец
+  - больше не нужн
+# Items we never want; dropped and only counted.
+block: [nsfw, porn, casino, betting, airdrop, memecoin]
+perAuthor: 2
+picks: 15

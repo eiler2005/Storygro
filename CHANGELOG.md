@@ -4,6 +4,11 @@ Notable changes to the Storygro engine and repository. Content releases (videos)
 
 ## [Unreleased]
 
+### Research scan
+- `storygro trends` gains topical sources without API keys: Hacker News best of the week, new GitHub repositories by stars, Hugging Face daily papers, public Telegram channels (views against the channel median) and RSS/Atom feeds; X digests from Grok import with `--inbox` (bookmarks, likes, save rate).
+- Sifting: `block:` drops unwanted items, `hype:` sets loud headlines aside, the same repository/paper/page across sources is marked as an echo, and a short **Picks** list orders reading (one per story, a cap per author).
+- [Grok prompt for the X digest](production/trends/x-digest-prompt.md) and an [angles playbook](production/trends/angles-prompt.md) that turns picks into backlog candidates.
+
 ### Toolkit
 - A bank of every method and tool for making content: [`production/toolkit.yaml`](production/toolkit.yaml) (44 entries — methods, tools, styles, scene families, providers — across nine stages) and the generated [toolkit page](docs/reference/toolkit.md) (`npm run docs:toolkit`). Tests fail when a CLI command, style or scene is missing from it, a path does not exist or the page is stale.
 

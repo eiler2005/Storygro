@@ -2,11 +2,13 @@
 import { execFileSync } from 'node:child_process';
 import { copyFileSync, existsSync, mkdirSync, readdirSync, readFileSync, rmSync, statSync, writeFileSync } from 'node:fs';
 import { homedir } from 'node:os';
-import { basename, join } from 'node:path';
+import { basename, dirname, join, relative, resolve } from 'node:path';
 import { generateImages, imageJobs, imageState, loadImageLedger } from './images.ts';
 import { listStyles, loadStyle, scaffold, stylesMarkdown } from './style.ts';
 import { clock, transcribe, transcriptStats } from './transcript.ts';
-import { approval, approve, keyMoment, specHash, writeBoard } from './board.ts';
+import { approval, keyMoment, specHash, writeBoard } from './board.ts';
+import { STEPS, type Step } from './review.ts';
+import { approveStep, tracker, trackerMarkdown, writePlan } from './workflow.ts';
 import { engineVersion, fileEntry } from './manifest.ts';
 import { recordCapture } from './capture.ts';
 import { seriesMarkdown, seriesStatus } from './brand.ts';
@@ -31,7 +33,10 @@ const HELP = `storygro — explainer videos as code
   storygro score    <reel.yaml>             music + sound effects + voice → mix.wav (−14 LUFS)
   storygro still    <reel.yaml> <at>...     PNG stills; <at> = seconds | scene | scene@cue | scene@seconds
   storygro board    <reel.yaml>             storyboard before recording → board.html + board.pdf
-  storygro approve  <reel.yaml>             approve the storyboard (any change to its inputs resets it)
+  storygro plan     <reel.yaml>             review document: PLAN.<variant>.md with frames, pictures, text, facts, approvals
+  storygro approve  <reel.yaml> [--step script|storyboard|release] [--agent | --by name]
+                                             record an approval in review.yaml (any change resets it)
+  storygro tracker  <videos-dir> [--md f]   every episode: stage, whose move, approvals, QA, questions
   storygro preview  <reel.yaml>             live preview with sound in the browser
   storygro render   <reel.yaml> [--draft]   voice → score → frames → master + web MP4 → subtitles → QA
   storygro qa       <reel.yaml>             check the rendered file, scenes, numbers, safe area, speech
@@ -68,7 +73,7 @@ const opt = (f: string) => {
   const i = argv.indexOf(f);
   return i >= 0 ? argv[i + 1] : undefined;
 };
-const VALUED = ['--from', '--to', '--out', '--port', '--backlog', '--md', '--variant', '--platform', '--account', '--note', '--url', '--external-id', '--window', '--source', '--at', '--ledger', '--metrics', '--style', '--lang', '--title', '--only'];
+const VALUED = ['--from', '--to', '--out', '--port', '--backlog', '--md', '--variant', '--platform', '--account', '--note', '--url', '--external-id', '--window', '--source', '--at', '--ledger', '--metrics', '--style', '--lang', '--title', '--only', '--inbox', '--step', '--by'];
 const positional = argv.filter((a, i) => !a.startsWith('--') && !VALUED.includes(argv[i - 1] ?? ''));
 const [cmd, specPath, ...rest] = positional;
 if (flag('--allow-errors')) process.env.STORYGRO_ALLOW_ERRORS = '1';
@@ -169,6 +174,17 @@ if (cmd === 'images') {
   }
   const r = await generateImages(ls, { force: flag('--force'), only: opt('--only') });
   console.log(`✔ ${r.made.length} made, ${r.kept.length} up to date${r.handMade.length ? `, ${r.handMade.length} hand-made kept (${r.handMade.join(', ')})` : ''}`);
+  process.exit(0);
+}
+
+if (cmd === 'tracker') {
+  // every episode under a folder: stage, whose move, approvals, QA, facts, questions, publications
+  const md = trackerMarkdown(tracker(specPath, { ledgerPath: opt('--ledger') }), dirname(resolve(opt('--md') ?? 'TRACKER.md')));
+  const dest = opt('--md');
+  if (dest) {
+    writeFileSync(dest, md);
+    console.log(`✔ ${dest}`);
+  } else console.log(md);
   process.exit(0);
 }
 
@@ -274,8 +290,24 @@ switch (cmd) {
     break;
   }
   case 'approve': {
-    if (!existsSync(join(out, 'board.html'))) throw new Error('no storyboard yet — run storygro board first');
-    console.log(`✔ approved inputs ${approve(l, process.env.STORYGRO_APPROVER ?? process.env.USER ?? 'owner')}`);
+    // script → storyboard → release, recorded in review.yaml; an agent records only technical approvals
+    const step = opt('--step') ?? 'storyboard';
+    if (!(STEPS as readonly string[]).includes(step)) throw new Error(`--step must be one of ${STEPS.join(', ')}`);
+    const agent = flag('--agent');
+    if (!agent && !opt('--by') && !process.env.STORYGRO_APPROVER && !process.stdin.isTTY)
+      throw new Error('not run from a terminal: an agent records a technical approval with --agent; a person passes --by <name>');
+    const by = opt('--by') ?? (agent ? 'agent' : (process.env.STORYGRO_APPROVER ?? process.env.USER ?? 'owner'));
+    const hash = approveStep(l, step as Step, by, agent ? 'agent' : 'owner');
+    console.log(`✔ ${step} ${agent ? 'technically approved (agent)' : `approved by ${by}`} · ${hash} → ${relative(process.cwd(), join(l.dir, 'review.yaml'))}`);
+    break;
+  }
+  case 'plan': {
+    // the review document: storyboard frames + pictures + text per scene, approvals, questions, facts
+    const tl = await timeline();
+    const b = await writeBoard(l, tl);
+    const p = await writePlan(l, tl, b.shots);
+    console.log(`✔ ${relative(process.cwd(), p.plan)}\n  previews: ${relative(process.cwd(), p.previews)}`);
+    if (p.misses.length) console.log(`! facts gate: ${p.misses.map((m) => `${m.scene}: ${m.value}`).join(', ')}`);
     break;
   }
   case 'preview': {

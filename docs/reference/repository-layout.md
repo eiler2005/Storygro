@@ -24,10 +24,12 @@ Storygro/
 │
 ├── content/            what we make
 │   ├── videos/<id>/    one folder per video: episode.yaml, <lang>.reel.yaml, facts.json,
-│   │                   sources.md, CREDITS.md, REVIEW.md, theme.css, assets/ (fonts, small files)
+│   │                   sources.md, CREDITS.md, images.json, review.yaml (questions, approvals),
+│   │                   PLAN.<variant>.md + preview/plan/ (generated plan), theme.css, assets/
+│   ├── TRACKER.md      every episode: stage, whose move, approvals (storygro tracker)
 │   ├── ideas/          backlog.yaml — thesis, sources, editorial ratings, status
 │   ├── research/       topic research and selection records
-│   ├── series/         rubrics and their episodes
+│   ├── series/         rubrics, their episodes and series bibles (open-door.md)
 │   ├── brand.yaml      audience, voices, disclosure, avoided phrases
 │   └── media-assets.json  SHA-256 of large render inputs kept outside Git
 │

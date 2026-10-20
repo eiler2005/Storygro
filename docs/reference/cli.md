@@ -47,7 +47,8 @@ Guides: [write a script](../how-to/write-a-script.md), [design a voice](../how-t
 |---|---|---|
 | `still <spec> <at>… [--guides]` | PNG frames; `<at>` is seconds, `scene`, `scene@cue` or `scene@seconds` | `stills/` |
 | `board <spec>` | storyboard from the live player with facts and safe-area warnings | `board.html`, `board.pdf`, `board/` |
-| `approve <spec>` | records a hash of every input; any change to them resets it | `approved.json` |
+| `plan <spec> [--no-voice]` | the review document: storyboard frames + pictures per scene, narration, on-screen text, facts with sources, approvals, open questions | `PLAN.<variant>.md`, `preview/plan/<variant>/*.jpg` (committed) |
+| `approve <spec> [--step script\|storyboard\|release] [--agent \| --by name]` | records an approval with a hash of what it covers (default step: storyboard); any change resets it. Outside a terminal it needs `--agent` (technical) or `--by` | `review.yaml` |
 | `preview <spec> [--guides]` | live preview with sound in the browser | — |
 
 ## Render and check
@@ -68,6 +69,7 @@ Gates and checks: [quality](../explanation/quality.md).
 | `deliver <spec> [dir]` | copies one variant's complete set + manifest; refuses gaps | `~/Downloads/<name>/` by default |
 | `package <episode.yaml> [dir]` | all variants of an episode → one release folder + manifest; refuses gaps | `.reel/releases/<episode>-<date>/` |
 | `series <series.yaml> [--md f]` | episodes of a series: length, approval, QA verdict, latest package | Markdown table |
+| `tracker <videos-dir> [--md f] [--ledger f]` | every episode and variant: stage, whose move, approvals, length, QA, sourced facts, open questions, publications | `content/TRACKER.md` |
 | `publish plan <release-dir> --variant ru --platform instagram --account @handle` | adds a `draft` publication for one variant and one named account | `content/publishing/publications.json` |
 | `publish approve <id>` · `mark <id> <state> [--url …] [--note …]` · `checklist <id>` · `list` | manual ledger; records uploads, uploads nothing | same ledger |
 | `metrics add <id> --window 7d --source "…" views=1200 likes=80` · `metrics report` | metric snapshots with source and window | `content/publishing/metrics.json` |
@@ -98,7 +100,7 @@ Guides: [carousel and release](../how-to/carousel-and-release.md), [brand and se
 | `STORYGRO_PYTHON` | `$STORYGRO_HOME/venv/bin/python` | Python for voices, ASR and audio (`REELCRAFT_PYTHON` still works) |
 | `CHROME_PATH` | detected | Chrome or Chromium for frames, stills, storyboards and capture |
 | `FFMPEG` | the venv's `imageio-ffmpeg` binary | ffmpeg for encoding and muxing |
-| `STORYGRO_APPROVER` | `$USER` | name recorded by `approve` |
+| `STORYGRO_APPROVER` | `$USER` | name recorded by `approve` as the owner |
 | `STORYGRO_IMAGE_BIN` | `$STORYGRO_HOME/image-venv/bin` | where the mflux commands are |
 | `STORYGRO_YTDLP` | `yt-dlp` on the PATH or in the venv | downloader for page URLs in `transcript` |
 

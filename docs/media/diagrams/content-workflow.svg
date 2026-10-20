@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 560" width="1280" height="560" role="img" aria-labelledby="t d">
+  <title id="t">Storygro content workflow</title>
+  <desc id="d">Five stages of an episode — script, storyboard, render and QA, package, publish — with three approvals between them recorded in review.yaml in Git: the script and the release by the owner, the storyboard by the owner or technically by the agent. A plan document shows frames, pictures and text per scene; a tracker shows every episode's stage and whose move it is.</desc>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#6b6760"/>
+    </marker>
+    <style>
+      text { font-family: -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #24262b; }
+      .h { font-size: 17px; font-weight: 700; fill: #fff; }
+      .n { font-size: 13px; font-weight: 700; fill: #ffffffb3; }
+      .b { font-size: 13px; }
+      .c { font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace; font-size: 12px; font-weight: 600; fill: #8a3a1b; }
+      .y { font-size: 13px; font-weight: 700; fill: #2f5d8a; }
+      .m { font-size: 13px; fill: #6b6760; }
+      .g { font-size: 12.5px; font-weight: 700; fill: #6a4a05; }
+      .gs { font-size: 11.5px; fill: #7d6531; }
+      .card { fill: #fffdf9; stroke: #e2dcd0; }
+      .gate { fill: #fff3d6; stroke: #d9a43b; }
+      .band { fill: #eef3f8; stroke: #c8d6e5; }
+    </style>
+  </defs>
+  <rect width="1280" height="560" rx="16" fill="#f6f2ea"/>
+  <text x="25" y="40" style="font-size:21px;font-weight:700">An episode from script to publication</text>
+  <text x="25" y="62" class="m">The agent produces, you decide. Three approvals are written to review.yaml in Git; editing what was approved resets it.</text>
+
+  <!-- stage headers -->
+  <g>
+    <rect x="25" y="82" width="196" height="44" rx="10" fill="#3c7a5a"/>
+    <text x="39" y="109" class="n">1</text><text x="56" y="109" class="h">Script</text>
+    <rect x="281" y="82" width="196" height="44" rx="10" fill="#b5532c"/>
+    <text x="295" y="109" class="n">2</text><text x="312" y="109" class="h">Storyboard</text>
+    <rect x="537" y="82" width="196" height="44" rx="10" fill="#6b4f9e"/>
+    <text x="551" y="109" class="n">3</text><text x="568" y="109" class="h">Render + QA</text>
+    <rect x="793" y="82" width="196" height="44" rx="10" fill="#3a3f4b"/>
+    <text x="807" y="109" class="n">4</text><text x="824" y="109" class="h">Package</text>
+    <rect x="1049" y="82" width="196" height="44" rx="10" fill="#2f5d8a"/>
+    <text x="1063" y="109" class="n">5</text><text x="1080" y="109" class="h">Publish</text>
+  </g>
+  <g stroke="#6b6760" stroke-width="2" marker-end="url(#a)">
+    <line x1="223" y1="104" x2="278" y2="104"/>
+    <line x1="479" y1="104" x2="534" y2="104"/>
+    <line x1="735" y1="104" x2="790" y2="104"/>
+    <line x1="991" y1="104" x2="1046" y2="104"/>
+  </g>
+
+  <!-- gates -->
+  <g>
+    <rect x="191" y="134" width="120" height="40" rx="9" class="gate"/>
+    <text x="251" y="151" class="g" text-anchor="middle">✓ script</text>
+    <text x="251" y="166" class="gs" text-anchor="middle">you</text>
+    <rect x="447" y="134" width="120" height="40" rx="9" class="gate"/>
+    <text x="507" y="151" class="g" text-anchor="middle">✓ storyboard</text>
+    <text x="507" y="166" class="gs" text-anchor="middle">you · or agent, technical</text>
+    <rect x="703" y="134" width="120" height="40" rx="9" class="gate"/>
+    <text x="763" y="151" class="g" text-anchor="middle">✓ release</text>
+    <text x="763" y="166" class="gs" text-anchor="middle">you, after watching</text>
+    <rect x="959" y="134" width="120" height="40" rx="9" class="gate"/>
+    <text x="1019" y="151" class="g" text-anchor="middle">publish approve</text>
+    <text x="1019" y="166" class="gs" text-anchor="middle">you, in the ledger</text>
+  </g>
+
+  <!-- cards -->
+  <g>
+    <rect x="25" y="184" width="196" height="216" rx="10" class="card"/>
+    <text x="39" y="208" class="b">Agent writes narration,</text>
+    <text x="39" y="226" class="b">on-screen text, facts</text>
+    <text x="39" y="244" class="b">with quoted sources.</text>
+    <text x="39" y="272" class="c">ru.reel.yaml</text>
+    <text x="39" y="290" class="c">facts.json · sources.md</text>
+    <text x="39" y="308" class="c">review.yaml</text>
+    <text x="39" y="340" class="y">You: edit the text,</text>
+    <text x="39" y="358" class="y">answer the questions.</text>
+
+    <rect x="281" y="184" width="196" height="216" rx="10" class="card"/>
+    <text x="295" y="208" class="b">Agent makes pictures,</text>
+    <text x="295" y="226" class="b">voice and the plan:</text>
+    <text x="295" y="244" class="b">frame + text per scene.</text>
+    <text x="295" y="272" class="c">shots/ · images.json</text>
+    <text x="295" y="290" class="c">PLAN.ru.md</text>
+    <text x="295" y="308" class="c">preview/plan/</text>
+    <text x="295" y="340" class="y">You: read the plan,</text>
+    <text x="295" y="358" class="y">comment, approve.</text>
+
+    <rect x="537" y="184" width="196" height="216" rx="10" class="card"/>
+    <text x="551" y="208" class="b">Agent renders; QA hears</text>
+    <text x="551" y="226" class="b">the speech, checks every</text>
+    <text x="551" y="244" class="b">number and the safe area.</text>
+    <text x="551" y="272" class="c">.reel/ru/*.mp4</text>
+    <text x="551" y="290" class="c">QA.md (local)</text>
+    <text x="551" y="340" class="y">You: watch and listen.</text>
+
+    <rect x="793" y="184" width="196" height="216" rx="10" class="card"/>
+    <text x="807" y="208" class="b">One release folder:</text>
+    <text x="807" y="226" class="b">video, subtitles, cover,</text>
+    <text x="807" y="244" class="b">post, manifest.</text>
+    <text x="807" y="272" class="c">.reel/releases/…</text>
+    <text x="807" y="340" class="m">Refuses missing files</text>
+    <text x="807" y="358" class="m">and unchecked variants.</text>
+
+    <rect x="1049" y="184" width="196" height="216" rx="10" class="card"/>
+    <text x="1063" y="208" class="b">A person uploads;</text>
+    <text x="1063" y="226" class="b">the ledger records</text>
+    <text x="1063" y="244" class="b">where and when.</text>
+    <text x="1063" y="272" class="c">publications.json</text>
+    <text x="1063" y="290" class="c">metrics.json</text>
+    <text x="1063" y="340" class="y">You: publish, then</text>
+    <text x="1063" y="358" class="y">copy the numbers.</text>
+  </g>
+
+  <!-- shared records -->
+  <g>
+    <rect x="25" y="420" width="1220" height="54" rx="10" class="band"/>
+    <text x="41" y="443" class="c">review.yaml</text>
+    <text x="140" y="443" class="b">in Git: open questions for you or the agent, notes, and the three approvals with a hash of what was approved.</text>
+    <text x="140" y="462" class="m">Change the text, a picture, a fact or the master and the matching approval shows "changed since approval" — the render and release gates close again.</text>
+    <rect x="25" y="486" width="1220" height="54" rx="10" class="band"/>
+    <text x="41" y="509" class="c">content/TRACKER.md</text>
+    <text x="196" y="509" class="b">every episode: stage, whose move (you or the agent), approvals, length, QA, facts with a source, open questions, publications.</text>
+    <text x="196" y="528" class="m">Generated by storygro tracker; the "waiting for you" list at the top is the owner's to-do.</text>
+  </g>
+</svg>

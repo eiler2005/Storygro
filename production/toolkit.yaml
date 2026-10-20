@@ -399,6 +399,29 @@ entries:
     status: stable
     docs: docs/explanation/quality.md
 
+  - id: plan-and-approvals
+    kind: tool
+    stage: make
+    title: Plan document and stepped approvals
+    what: PLAN.<variant>.md with the rendered frame and pictures of every scene, narration, on-screen text, facts and open questions; approvals for script, storyboard and release written to review.yaml in Git with a hash each.
+    when: Before rendering, so the owner can read, change and approve the whole episode; again after the cut for the release.
+    commands: [plan, approve]
+    how: npm run storygro -- plan <spec>; npm run storygro -- approve <spec> --step script|storyboard|release (agents add --agent)
+    status: pilot
+    docs: docs/how-to/review-and-approve.md
+    examples: [content/videos/agents-open-door/PLAN.ru.md]
+
+  - id: episode-tracker
+    kind: tool
+    stage: ship
+    title: Episode tracker
+    what: One table across every episode and variant — stage, whose move, the three approvals, length, QA, facts with a source, open questions, publications — with the owner's waiting list on top.
+    when: Planning the week; checking what waits for the owner or the agent.
+    commands: [tracker]
+    how: npm run storygro -- tracker content/videos --md content/TRACKER.md
+    status: pilot
+    docs: docs/explanation/content-workflow.md
+
   - id: render
     kind: tool
     stage: make

@@ -1,0 +1,26 @@
+# Review record of this episode, kept in Git — see docs/how-to/review-and-approve.md.
+# Edit questions and notes by hand. `storygro approve` writes the approvals; do not edit them.
+review: 1
+questions:
+  - id: catchphrase
+    ask: Реплика Серого — «Ну, обожди!» (своя, не «Ну, погоди!»); только внутри ролика, не в названиях
+    for: owner
+    open: false
+    answer: Выбрано владельцем 20.10.2026
+  - id: characters
+    ask: Дизайн героев — волк Серый (сторож в форме) и Зайбот (заяц-робот). Похожи, узнаются, не слишком близки к чужим персонажам?
+    for: owner
+  - id: length
+    ask: Длительность около 94 с при скорости голоса 0,96. Оставить или сократить до 60–75 с (убрать сюжет про Replit)?
+    for: owner
+  - id: format
+    ask: Нужна ли горизонтальная версия 16:9 для YouTube, или хватит вертикальной для Shorts/Reels?
+    for: owner
+notes: Первый выпуск серии open-door. Факты — sources.md; сюжеты на будущее — content/series/open-door.md.
+approvals:
+  ru:
+    storyboard:
+      hash: ead7b0a13e7b
+      at: 2026-10-20T20:33:32.943Z
+      by: claude-agent
+      role: agent

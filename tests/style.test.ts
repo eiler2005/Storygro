@@ -4,7 +4,7 @@ import { tmpdir } from 'node:os';
 import { join, resolve } from 'node:path';
 import { test } from 'node:test';
 import { specInputs } from '../production/src/board.ts';
-import { generateImages, imageJobs } from '../production/src/images.ts';
+import { generateImages, imageJobs, styleImages } from '../production/src/images.ts';
 import { loadSpec } from '../production/src/spec.ts';
 import { applyStyle, expandCast, listStyles, loadStyle, scaffold, shotPrompt } from '../production/src/style.ts';
 import { buildTimeline } from '../production/src/timeline.ts';
@@ -52,6 +52,20 @@ test('shot prompts expand the cast and keep stable seeds; unknown names fail', (
   assert.ok(jobs.some((j) => j.side === 'split'));
   assert.throws(() => expandCast('@nobody waves', { host: 'a host' }), /@nobody/);
   assert.equal(shotPrompt(loadStyle('cartoon').def.images!, '@bot waves').includes('blue face screen'), true);
+});
+
+test('a reel can override the picture size of its style, for a vertical cut', (t) => {
+  const dir = mkdtempSync(join(tmpdir(), 'storygro-size-'));
+  t.after(() => rmSync(dir, { recursive: true, force: true }));
+  const project = join(dir, 'vertical-cartoon');
+  scaffold(project, loadStyle('cartoon'), { title: 'Vertical' });
+  const spec = join(project, 'en.reel.yaml');
+  writeFileSync(spec, readFileSync(spec, 'utf8').replace(/^  seed: 7$/m, '  seed: 7\n  width: 720\n  height: 1280'));
+  const l = loadSpec(spec);
+  assert.deepEqual([styleImages(l).width, styleImages(l).height], [720, 1280]);
+  assert.deepEqual([styleImages(loadSpec(cartoonEpisode)).width, styleImages(loadSpec(cartoonEpisode)).height], [1280, 720]);
+  writeFileSync(spec, readFileSync(spec, 'utf8').replace('width: 720', 'width: 721'));
+  assert.throws(() => loadSpec(spec));
 });
 
 test('new <folder> --style scaffolds a project that loads', (t) => {

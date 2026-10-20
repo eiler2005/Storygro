@@ -45,7 +45,8 @@ const sha256 = (file: string) => createHash('sha256').update(readFileSync(file))
 export function styleImages(l: LoadedSpec): StyleImages {
   const images = l.style?.def.images;
   if (!images) throw new Error(`${l.path}: generated pictures need a style with an images section (for example style: cartoon)`);
-  return { ...images, provider: l.spec.images?.provider ?? images.provider };
+  const own = l.spec.images;
+  return { ...images, provider: own?.provider ?? images.provider, width: own?.width ?? images.width, height: own?.height ?? images.height };
 }
 
 /** Every picture the reel asks for, with its full prompt and a stable seed. */

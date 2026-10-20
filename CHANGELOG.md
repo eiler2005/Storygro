@@ -4,6 +4,13 @@ Notable changes to the Storygro engine and repository. Content releases (videos)
 
 ## [Unreleased]
 
+### Content workflow
+- Each episode keeps its review in Git: `review.yaml` with open questions, notes and three approvals — script, storyboard, release — each with a hash of what it covers; any later change shows as "changed since approval". `storygro approve --step …`; agents record technical approvals with `--agent`. The storyboard approval moved from the ignored `.reel/approved.json` (still read) to `review.yaml`.
+- `storygro plan <spec>`: `PLAN.<variant>.md` with a strip per scene (rendered frame + pictures), narration, on-screen text, facts with sources, approvals and questions; small previews in `preview/plan/`.
+- `storygro tracker <videos-dir>`: every episode's stage, whose move, approvals, length, QA, sourced facts, questions and publications, with the owner's waiting list (`content/TRACKER.md`).
+- A reel can set `images.width/height` (vertical pictures for 9:16 cartoons).
+- First episode made this way: the chase cartoon [«Не бунт, а открытая дверь»](content/videos/agents-open-door/README.md) and the [«Открытая дверь» series bible](content/series/open-door.md) with fourteen sourced plots.
+
 ### Research scan
 - `storygro trends` gains topical sources without API keys: Hacker News best of the week, new GitHub repositories by stars, Hugging Face daily papers, public Telegram channels (views against the channel median) and RSS/Atom feeds; X digests from Grok import with `--inbox` (bookmarks, likes, save rate).
 - Sifting: `block:` drops unwanted items, `hype:` sets loud headlines aside, the same repository/paper/page across sources is marked as an echo, and a short **Picks** list orders reading (one per story, a cap per author).

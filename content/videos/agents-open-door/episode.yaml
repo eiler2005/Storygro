@@ -1,0 +1,8 @@
+episode: 1
+id: agents-open-door
+title: "Не бунт, а открытая дверь"
+series: open-door
+sources: sources.md
+credits: CREDITS.md
+variants:
+  - { id: ru, spec: ru.reel.yaml }

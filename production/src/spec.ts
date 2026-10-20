@@ -144,6 +144,9 @@ export const ReelSpec = z.object({
       seed: z.number().int().default(7),
       /** overrides the style's provider, e.g. `manual` on a machine without Apple silicon */
       provider: z.enum(['mflux', 'manual']).optional(),
+      /** overrides the style's picture size, e.g. 720×1280 for a vertical reel (multiples of 16) */
+      width: z.number().int().min(256).max(2048).multipleOf(16).optional(),
+      height: z.number().int().min(256).max(2048).multipleOf(16).optional(),
     })
     .optional(),
   scenes: z.array(SceneSpec).min(1),

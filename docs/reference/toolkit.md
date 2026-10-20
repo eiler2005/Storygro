@@ -2,7 +2,7 @@
 
 <!-- Generated from production/toolkit.yaml by `npm run docs:toolkit`. Edit the YAML, not this page. -->
 
-Every way Storygro makes content, in one bank: **17 methods**, **19 tools**, **3 styles**, **5 scene families** and **3 providers**, by production stage. Agents read [`production/toolkit.yaml`](../../production/toolkit.yaml) to pick an approach; this page is generated from it, and `npm test` fails when a command, style or scene is missing from the bank or a link is broken.
+Every way Storygro makes content, in one bank: **17 methods**, **21 tools**, **3 styles**, **5 scene families** and **3 providers**, by production stage. Agents read [`production/toolkit.yaml`](../../production/toolkit.yaml) to pick an approach; this page is generated from it, and `npm test` fails when a command, style or scene is missing from the bank or a link is broken.
 
 **Status:** *stable* — used across pieces · *pilot* — works, reviewed on one or two pieces · *planned* — not implemented.
 
@@ -13,9 +13,9 @@ Every way Storygro makes content, in one bank: **17 methods**, **19 tools**, **3
 | **write** — Turn it into a script as data | [Script as data](#script-as-data) · [Story structures](#story-structures) · [One worked example](#one-worked-example) · [Language variants](#language-variants) · [Brand profile and series](#brand-profile-and-series) |
 | **look** — Decide how it looks | [Cartoon explainer](#cartoon-explainer) · [Cut-paper explainer](#cut-paper-explainer) · [Editorial collage](#editorial-collage) · [Cut-paper scenes](#cut-paper-scenes) · [Collage scene](#collage-scene) · [Illustration scene](#illustration-scene) · [Screencast scene](#screencast-scene) · [Landscape product scenes](#landscape-product-scenes) · [Generated illustrations](#generated-illustrations) · [Z-Image-Turbo via mflux](#z-image-turbo-via-mflux) · [Recurring cast](#recurring-cast) · [No text in pictures](#no-text-in-pictures) · [Screen capture](#screen-capture) · [A new scene module](#a-new-scene-module) |
 | **voice** — Narration, sound and timing | [Local narration and timing](#local-narration-and-timing) · [Narrator design](#narrator-design) · [Pronunciation and say-as](#pronunciation-and-say-as) · [Music and sound effects](#music-and-sound-effects) |
-| **make** — Storyboard, approval and rendering | [Stills and live preview](#stills-and-live-preview) · [Storyboard and approval](#storyboard-and-approval) · [Render](#render) · [Formats, safe areas and captions](#formats-safe-areas-and-captions) · [Carousel cards](#carousel-cards) |
+| **make** — Storyboard, approval and rendering | [Stills and live preview](#stills-and-live-preview) · [Storyboard and approval](#storyboard-and-approval) · [Plan document and stepped approvals](#plan-document-and-stepped-approvals) · [Render](#render) · [Formats, safe areas and captions](#formats-safe-areas-and-captions) · [Carousel cards](#carousel-cards) |
 | **check** — Technical QA and the human review | [Technical QA](#technical-qa) · [Human review](#human-review) |
-| **ship** — Release, publication record and metrics | [Release package](#release-package) · [Publication ledger and metrics](#publication-ledger-and-metrics) · [Platform upload and analytics APIs](#platform-upload-and-analytics-apis) |
+| **ship** — Release, publication record and metrics | [Episode tracker](#episode-tracker) · [Release package](#release-package) · [Publication ledger and metrics](#publication-ledger-and-metrics) · [Platform upload and analytics APIs](#platform-upload-and-analytics-apis) |
 | **maintain** — Keep the repository and its media healthy | [Local environments](#local-environments) · [Repository checks](#repository-checks) · [Documentation previews and the toolkit page](#documentation-previews-and-the-toolkit-page) · [CLI help](#cli-help) |
 
 A new piece usually takes one entry per stage: a topic (choose), sources and facts (research), a script in a style (write, look), narration (voice), storyboard and render (make), QA and your own review (check), a package (ship).
@@ -438,6 +438,18 @@ Key frame, narration, on-screen text and warnings per scene; approval stores a h
 
 **See:** [docs](../../docs/explanation/quality.md)
 
+### Plan document and stepped approvals
+
+*tool · pilot* · commands: `plan`, `approve`
+
+PLAN.<variant>.md with the rendered frame and pictures of every scene, narration, on-screen text, facts and open questions; approvals for script, storyboard and release written to review.yaml in Git with a hash each.
+
+**Use when:** Before rendering, so the owner can read, change and approve the whole episode; again after the cut for the release.
+
+**How:** `npm run storygro -- plan <spec>; npm run storygro -- approve <spec> --step script|storyboard|release (agents add --agent)`
+
+**See:** [docs](../../docs/how-to/review-and-approve.md) · [agents-open-door/PLAN.ru.md](../../content/videos/agents-open-door/PLAN.ru.md)
+
 ### Render
 
 *tool · stable* · commands: `render`, `subs`
@@ -497,6 +509,18 @@ Watch and listen on a phone; check claims against sources, character drift, stra
 **See:** [docs](../../docs/explanation/quality.md#the-human-review-that-no-gate-replaces)
 
 ## 8 · Ship — Release, publication record and metrics
+
+### Episode tracker
+
+*tool · pilot* · commands: `tracker`
+
+One table across every episode and variant — stage, whose move, the three approvals, length, QA, facts with a source, open questions, publications — with the owner's waiting list on top.
+
+**Use when:** Planning the week; checking what waits for the owner or the agent.
+
+**How:** `npm run storygro -- tracker content/videos --md content/TRACKER.md`
+
+**See:** [docs](../../docs/explanation/content-workflow.md)
 
 ### Release package
 

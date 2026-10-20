@@ -7,6 +7,7 @@ import { serve } from './serve.ts';
 import { captionText, type LoadedSpec } from './spec.ts';
 import { type SafeArea, type Timeline, workDir } from './timeline.ts';
 import { REEL_ROOT } from './tools.ts';
+import { stepRecord, writeApproval } from './review.ts';
 
 const READY = "document.documentElement.dataset.ready === '1'";
 const esc = (s: string) =>
@@ -93,7 +94,8 @@ export async function captureScenes(l: LoadedSpec, tl: Timeline, opts: { samples
       const seen = await tab.eval<{ text: string; boxes: TextBox[] }>(VISIBLE_TEXT(s.id));
       const boxes = [...seen.boxes];
       if (opts.samples)
-        for (const c of new Set(Object.values(s.cues).map((v) => Math.min(Math.max(v + 0.6, tIn), tOut)))) {
+        // twice per cue: early (an overlay that leaves soon) and late (one still growing into its full size)
+        for (const c of new Set(Object.values(s.cues).flatMap((v) => [0.6, 1.4].map((d) => Math.min(Math.max(v + d, tIn), tOut))))) {
           await tab.eval(`reel.seek(${s.start + c})`);
           boxes.push(...(await tab.eval<{ boxes: TextBox[] }>(VISIBLE_TEXT(s.id))).boxes);
         }
@@ -184,20 +186,24 @@ export function specHash(l: LoadedSpec): string {
   return h.digest('hex').slice(0, 12);
 }
 
-export function approval(l: LoadedSpec): { approved: boolean; hash: string; at?: string } {
+/**
+ * The storyboard approval that gates rendering: the `storyboard` step in the episode's review.yaml
+ * (in Git), or a local `.reel/<variant>/approved.json` written before review records existed.
+ */
+export function approval(l: LoadedSpec): { approved: boolean; hash: string; at?: string; by?: string; role?: 'owner' | 'agent' } {
   const hash = specHash(l);
+  const rec = stepRecord(l, 'storyboard');
+  if (rec) return { approved: rec.hash === hash, hash, at: rec.at, by: rec.by, role: rec.role };
   const f = join(workDir(l), 'approved.json');
   if (!existsSync(f)) return { approved: false, hash };
-  const a = JSON.parse(readFileSync(f, 'utf8'));
-  return { approved: a.hash === hash, hash, at: a.at };
+  const a = JSON.parse(readFileSync(f, 'utf8')) as { hash: string; at: string; by?: string };
+  return { approved: a.hash === hash, hash, at: a.at, by: a.by, role: /agent|claude|technical/i.test(a.by ?? '') ? 'agent' : 'owner' };
 }
 
-export function approve(l: LoadedSpec, by: string): string {
+/** Records the storyboard approval of the current inputs in review.yaml. */
+export function approve(l: LoadedSpec, by: string, role: 'owner' | 'agent' = 'owner'): string {
   const hash = specHash(l);
-  writeFileSync(
-    join(workDir(l), 'approved.json'),
-    JSON.stringify({ hash, at: new Date().toISOString(), by, inputs: specInputs(l).map((f) => relative(l.dir, f)) }, null, 1),
-  );
+  writeApproval(l, 'storyboard', { hash, at: new Date().toISOString(), by, role });
   return hash;
 }
 

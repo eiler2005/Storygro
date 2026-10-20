@@ -12,19 +12,19 @@ Storygro is a toolkit an agent operates for you: you describe the outcome in pla
 flowchart LR
   R[Topic research<br/>sources.md] --> F[Facts<br/>facts.json]
   F --> S[Script per language<br/>ru.reel.yaml, en.reel.yaml]
-  S --> D[Direction<br/>DIRECTION.md]
-  D --> V[Voice + timing]
-  V --> B[Storyboard<br/>board.pdf]
-  B --> A[Approve]
+  S --> AS{{Approve script<br/>owner}}
+  AS --> D[Pictures, voice + timing]
+  D --> B[Plan<br/>PLAN.ru.md + frames]
+  B --> A{{Approve storyboard<br/>owner · agent technical}}
   A --> P[Render + QA]
-  P --> K[Package<br/>video, subtitles, cover,<br/>carousel, post, manifest]
-  K --> H[Human review]
-  H --> PUB[Publication ledger<br/>manual upload recorded]
+  P --> H{{Approve release<br/>owner watches}}
+  H --> K[Package<br/>video, subtitles, cover,<br/>carousel, post, manifest]
+  K --> PUB[Publication ledger<br/>manual upload recorded]
   PUB --> M[Metrics snapshots]
   M -.editor.-> R
 ```
 
-Everything in the diagram is implemented locally. Uploading is done by a person; `publish` records it and `metrics` stores the numbers they copy from the platform. Platform APIs (upload, analytics) are planned and need the owner's accounts ([implementation plan](../planning/IMPLEMENTATION_PLAN.md)).
+The three approvals are recorded in each episode's `review.yaml` in Git; the plan and the tracker show what is waiting for whom — see [the content workflow](content-workflow.md) and [review and approve](../how-to/review-and-approve.md). Everything in the diagram is implemented locally. Uploading is done by a person; `publish` records it and `metrics` stores the numbers they copy from the platform. Platform APIs (upload, analytics) are planned and need the owner's accounts ([implementation plan](../planning/IMPLEMENTATION_PLAN.md)).
 
 ## Workflows that work today
 
@@ -33,6 +33,7 @@ Everything in the diagram is implemented locally. Uploading is done by a person;
 | Pick a topic worth a video | [Choose a topic](../how-to/choose-a-topic.md) | `trends`, `ideas` |
 | Make an explainer from a topic, end to end | [Tutorial](../tutorials/explainer-from-a-topic.md) | `voice`, `still`, `board`, `approve`, `render` |
 | Write or edit the script | [Write a script](../how-to/write-a-script.md) | — |
+| Review an episode, answer questions, approve step by step | [Review and approve](../how-to/review-and-approve.md) | `plan`, `approve --step`, `tracker` |
 | Ship Russian and English cuts | [Language variants](../how-to/language-variants.md) | `voice` per spec |
 | Give the narrator a voice | [Design a voice](../how-to/design-a-voice.md) | `design_voice.py` |
 | Demo a product on its real website | [Product demo](../how-to/product-demo-from-a-website.md) | `capture` |

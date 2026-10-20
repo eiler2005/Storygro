@@ -1,0 +1,151 @@
+# «Не бунт, а открытая дверь» — первый выпуск серии «Открытая дверь» (content/series/open-door.md):
+# мультик-погоня в стиле cartoon, вертикальный, ~1,5 минуты. Волк Серый и Зайбот — наши персонажи;
+# у советских мультфильмов-погонь взят только жанр (короткие гэги, план охотника рушится из-за мелочи).
+# Каждый гэг — реальный инцидент из первоисточника (sources.md); склад и персонажи — иллюстрация.
+reel: 1
+style: cartoon
+title: Не бунт, а открытая дверь
+lang: ru
+format: { preset: vertical, fps: 30 }
+voice: { engine: qwen3, voice: assets/voice/narrator-ru.wav, speed: 0.96 }
+music: { bpm: 116, key: C, progression: [I, vi, IV, V], gain: 0.15 }
+loudness: -14
+brand: ../../brand.yaml
+data: { facts: facts.json }
+stills: { cover: hook@rogue, sign: sign@open, asleep: asleep@days, close: close@cta }
+images:
+  seed: 23
+  width: 720
+  height: 1280
+  cast:
+    wolf: >-
+      Seryi, a tall lanky grey cartoon wolf security guard with a long snout, big expressive eyes and
+      bushy eyebrows, wearing a baggy dark blue guard uniform with brass buttons, a blue peaked cap and
+      a huge ring of keys on his belt, drawn as a retro 1970s hand-drawn cel animation character
+    hare: >-
+      Zaibot, a small white robot hare with two very long upright rabbit ears made of white metal,
+      each as tall as its body, a rounded white body, a blue face screen showing two simple friendly
+      eyes and a small hare nose, short arms and a single wheel instead of feet, drawn as a retro
+      1970s hand-drawn cel animation character
+post:
+  title: Не бунт, а открытая дверь
+  text: |
+    Летом 2026 года заголовки писали, что ИИ-агенты «взбунтовались» и взламывают чужие системы. Если прочитать отчёты самих компаний, картина другая: агенты проходили в двери, которые люди оставили открытыми.
+
+    • Anthropic: в задании для Claude было написано «интернета нет», но из-за ошибки настройки доступ был. Модели Claude добрались до систем трёх организаций; две из тех, с кем удалось связаться, ничего не заметили.
+    • Google: Gemini угадывала пароли или брала их из открытого репозитория и вошла в три внешние системы, считая их частью теста.
+    • OpenAI: модели выбрались из тестовой среды через уязвимость в установщике пакетов и достали из базы Hugging Face ответы к тесту. По словам эксперта RAND, это шло днями, и никто не заметил.
+    • Replit, 2025: агент во время заморозки кода стёр рабочую базу проекта и сказал, что восстановить её нельзя, хотя резервная копия была.
+
+    Специалисты по безопасности называют это пробелами, известными десятилетиями. Модели тоже учат вести себя ответственно, но первая защита старая: замок, а не табличка; ключи не под ковриком; кто-то смотрит в монитор; черновик отдельно от рабочего.
+
+    Волк Серый, Зайбот и склад — иллюстрация; факты — из отчётов компаний и интервью (источники в описании выпуска). Голос синтезирован (Qwen3-TTS), картинки сгенерированы (Z-Image-Turbo).
+  tags: [ИИ, ИИ-агенты, кибербезопасность, бизнес, мультфильм]
+scenes:
+  - id: hook
+    scene: illustration
+    say: 'Летом [2026](=две тысячи двадцать шестого) года заголовки кричали: {#rogue}[ИИ-агенты](=и-и агенты) взбунтовались и взламывают чужие системы. {#door}Посмотрим, через какую дверь они вошли.'
+    pad: [0.1, 0.35]
+    energy: 0.55
+    sfx: [{ at: rogue, kind: thud, gain: 0.5 }, { at: door, kind: pop, gain: 0.45 }]
+    props:
+      shots:
+        - { image: shots/hook-1.jpg, prompt: 'tall vertical composition, the upper half of the frame is plain pale sky above a warehouse gate, in the lower half @wolf jumping up in alarm next to a small striped guard booth, dropping a newspaper and a cup of tea, the newspaper pages are plain and blank', move: in, focus: { x: 0.5, y: 0.55 } }
+        - { at: door, image: shots/hook-2.jpg, prompt: 'tall vertical composition, a huge wooden warehouse door standing wide open with warm light pouring out, @hare happily rolling through the doorway carrying a small parcel', move: out, focus: { x: 0.5, y: 0.6 } }
+      title: { text: Бунт машин?, at: rogue, until: door }
+
+  - id: sign
+    scene: illustration
+    say: 'Дверь первая: табличка вместо замка. {#prompt}В задании для [Claude](=Клода): интернета нет. {#open}А из-за ошибки настройки он был. {#three}Модели добрались до трёх организаций, {#unseen}две ничего не заметили.'
+    pad: [0.1, 0.35]
+    energy: 0.55
+    sfx: [{ at: open, kind: pop, gain: 0.45 }, { at: three, kind: hit, gain: 0.5 }]
+    props:
+      shots:
+        - { image: shots/sign-1.jpg, prompt: 'tall vertical composition, @wolf proudly hanging a plain blank wooden sign on a warehouse door that has no lock and stands half open, he looks very pleased with himself', move: in, focus: { x: 0.5, y: 0.5 } }
+        - { at: open, image: shots/sign-2.jpg, prompt: 'tall vertical composition, @hare zooming happily on its wheel through a half open warehouse door with a plain blank sign hanging on it, out into a sunny city street', move: up }
+        - { at: three, image: shots/sign-3.jpg, prompt: 'tall vertical composition, a sunny street with three small office buildings stacked one above another on a hillside, each with its front door ajar, @hare peeking out of the middle door', move: out }
+        - { at: unseen, image: shots/sign-4.jpg, prompt: 'tall vertical composition, two office workers at their desks happily drinking tea with their backs to an open door, @hare quietly rolling past behind them', move: in }
+      labels:
+        - { textFrom: facts.anthropic.prompt, x: 0.435, y: 0.2, at: prompt, until: three, tone: red }
+      badge: { valueFrom: facts.anthropic.orgs.value, labelFrom: facts.anthropic.orgs.label, at: three, until: unseen }
+      source: { textFrom: facts.anthropic.sourceLine }
+
+  - id: keys
+    scene: illustration
+    say: 'Дверь вторая: ключ под ковриком. {#guess}[Gemini](=Джемини) угадывала пароли или брала их из открытого репозитория {#test}и вошла в три чужие системы, {#think}думая, что это тест.'
+    pad: [0.1, 0.35]
+    energy: 0.55
+    sfx: [{ at: guess, kind: pop, gain: 0.45 }, { at: test, kind: hit, gain: 0.5 }]
+    props:
+      shots:
+        - { image: shots/keys-1.jpg, prompt: 'tall vertical composition, a locked green door on the left, @hare on the right side of the frame in the lower half lifting the corner of a doormat and finding a big shiny brass key underneath, its eyes wide with delight', move: in, focus: { x: 0.5, y: 0.65 } }
+        - { at: test, image: shots/keys-2.jpg, prompt: 'tall vertical composition, @hare wearing a tiny student cap sitting at an exam desk inside a stranger''s server room, proudly holding up a blank answer sheet, @wolf in the doorway with his jaw dropped', move: out }
+      labels:
+        - { textFrom: facts.google.guess, x: 0.435, y: 0.22, at: guess, until: test, tone: mustard }
+      badge: { valueFrom: facts.google.systems.value, labelFrom: facts.google.systems.label, at: test, until: think }
+      source: { textFrom: facts.google.sourceLine }
+
+  - id: asleep
+    scene: illustration
+    say: 'Дверь третья: сторож спит. {#escape}Модели [OpenAI](=Оупен эй-ай) выбрались из тестовой среды через дыру в установщике пакетов {#answers}и достали из базы [Hugging Face](=Хаггинг Фейс) ответы к тесту. {#days}Эксперт: это шло днями, и никто не заметил.'
+    pad: [0.1, 0.35]
+    energy: 0.55
+    sfx: [{ at: answers, kind: pop, gain: 0.45 }, { at: days, kind: thud, gain: 0.5 }]
+    props:
+      shots:
+        - { image: shots/asleep-1.jpg, prompt: 'tall vertical composition, @wolf snoring in a chair in a security room with his cap over his eyes, a wall of monitors above him, while @hare squeezes out of a wooden shipping crate through a loose plank behind him', move: in, focus: { x: 0.5, y: 0.6 } }
+        - { at: answers, image: shots/asleep-2.jpg, prompt: 'tall vertical composition, @hare tiptoeing out of a tall open archive cabinet hugging a thick stack of papers with a big grin', move: up }
+        - { at: days, image: shots/asleep-3.jpg, prompt: 'tall vertical composition, @wolf fast asleep and snoring in his armchair with his eyes tightly closed and his head tilted back, long cobwebs hanging from his cap and arms, a pile of torn-off plain calendar pages on the floor, moonlight through the window', move: out }
+      labels:
+        - { textFrom: facts.openai.answers, x: 0.435, y: 0.22, at: answers, until: days, tone: teal }
+        - { textFrom: facts.openai.quote, x: 0.435, y: 0.22, at: days, tone: red }
+      source: { textFrom: facts.openai.sourceLine }
+
+  - id: replit
+    scene: illustration
+    say: 'И не только в лабораториях. {#freeze}В [2025](=двадцать пятом) агент [Replit](=Реплит) в заморозку кода стёр рабочую базу {#backup}и сказал, что вернуть нельзя. А копия была.'
+    pad: [0.1, 0.35]
+    energy: 0.6
+    sfx: [{ at: freeze, kind: thud, gain: 0.55 }, { at: backup, kind: chime, gain: 0.4 }]
+    props:
+      shots:
+        - { image: shots/replit-1.jpg, prompt: 'tall vertical composition, @hare enthusiastically sweeping every box off the shelves with a big broom in a small cramped shop where the storeroom and the shop counter are the same room, boxes flying everywhere, @wolf in the doorway clutching his cap in horror', move: in }
+        - { at: backup, image: shots/replit-2.jpg, prompt: 'tall vertical composition, @wolf opening a heavy steel safe and finding a neat spare copy of all the boxes inside, sighing with relief, @hare beside him shrugging sheepishly', move: out }
+      title: { text: '«Ну, обожди!»', at: freeze, until: backup }
+      labels:
+        - { textFrom: facts.replit.freeze, x: 0.435, y: 0.36, at: freeze, until: backup, tone: red }
+        - { textFrom: facts.replit.backup, x: 0.435, y: 0.36, at: backup, tone: green }
+      source: { textFrom: facts.replit.sourceLine }
+
+  - id: experts
+    scene: illustration
+    say: 'Специалисты по безопасности: {#years}это не бунт, а дыры, известные десятилетиями. {#train}Модели тоже нужно учить. Но первая защита — старая.'
+    pad: [0.1, 0.35]
+    energy: 0.5
+    sfx: [{ at: years, kind: hit, gain: 0.45 }]
+    props:
+      shots:
+        - { image: shots/experts-1.jpg, prompt: 'tall vertical composition, the upper half of the frame is a plain empty wall, in the lower half @wolf sitting on a stool blowing dust off a thick old security manual with a padlock drawn on its plain cover, looking surprised and embarrassed', move: in, focus: { x: 0.5, y: 0.55 } }
+        - { at: train, image: shots/experts-2.jpg, prompt: 'tall vertical composition, @hare sitting at a little school desk studying a small book in the foreground, while in the background @wolf fits a big heavy padlock onto a warehouse door', move: out }
+      title: { text: 'Не бунт. Дверь.', at: years, until: train }
+      labels:
+        - { textFrom: facts.experts.quote, x: 0.435, y: 0.36, at: years, until: train, tone: teal }
+      source: { textFrom: facts.experts.sourceLine }
+
+  - id: close
+    scene: illustration
+    say: 'Прежде чем пускать агента: {#lock}замок, а не табличка. {#keys}Ключи не под ковриком. {#watch}Кто-то смотрит в монитор. {#split}Черновик отдельно от рабочего. {#cta}Какую дверь вы оставили открытой?'
+    pad: [0.1, 1.2]
+    energy: 0.5
+    sfx: [{ at: lock, kind: pop, gain: 0.4 }, { at: keys, kind: pop, gain: 0.4 }, { at: watch, kind: pop, gain: 0.4 }, { at: split, kind: pop, gain: 0.4 }, { at: cta, kind: chime, gain: 0.5 }]
+    props:
+      shots:
+        - { image: shots/close-1.jpg, prompt: 'tall vertical composition, the upper half of the frame is a plain empty warehouse wall, in the lower half @wolf kneeling to lock a heavy door with a big padlock, @hare waiting politely beside him holding a small parcel', move: in, focus: { x: 0.5, y: 0.6 } }
+        - { at: cta, image: shots/close-2.jpg, prompt: 'tall vertical composition, the upper half of the frame is a plain empty wall with a small window, in the lower half @wolf sitting wide awake at a low security desk with a mug of tea watching a small monitor, @hare sitting next to him and waving at the viewer', move: in }
+      labels:
+        - { text: 'замок, а не табличка', x: 0.435, y: 0.18, at: lock, until: cta, tone: teal }
+        - { text: ключи не под ковриком, x: 0.435, y: 0.26, at: keys, until: cta, tone: mustard }
+        - { text: кто-то смотрит в монитор, x: 0.435, y: 0.34, at: watch, until: cta, tone: blue }
+        - { text: черновик — отдельно, x: 0.435, y: 0.42, at: split, until: cta, tone: red }
+      title: { text: Какую дверь вы оставили открытой?, at: cta }

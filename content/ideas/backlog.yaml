@@ -139,11 +139,12 @@ items:
   - id: not-rogue-open-door
     title: Не бунт машин, а открытая дверь
     thesis: Инциденты с «вышедшими из-под контроля» агентами объясняются пропуском базовых мер безопасности, а не волей модели.
-    status: candidate
+    status: selected
+    episode: ../videos/agents-open-door/episode.yaml
     sources:
       - https://www.csoonline.com/article/4234854/ai-agents-arent-going-rogue-frontier-labs-are-skipping-security-basics.html
     ratings: { evidence: 3, audience: 5, utility: 5, visual: 4, timeliness: 4, ease: 4 }
-    rationale: 'Скан 2026-10-20: HN best (951 points); линза — против течения. Аналитика с мнениями экспертов; до сценария открыть первичные отчёты компаний об инцидентах. Оценки редакционные.'
+    rationale: 'Скан 2026-10-20: HN best (951 points); линза — против течения. Выбрано владельцем 20.10.2026 как мультфильм-погоня; первичные отчёты Anthropic и Google и сообщения о OpenAI и Replit проверены (sources.md выпуска). Оценки редакционные.'
     watch:
       wikipedia: { en: [Principle_of_least_privilege] }
       hn: [AI agent security]

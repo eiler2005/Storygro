@@ -16,6 +16,7 @@
 | Start a video in a ready-made look (cartoon, cut-paper, collage) | [Use a style](how-to/use-a-style.md) · [Styles reference](reference/styles.md) |
 | Study a reference video: transcript, pace, structure | [Transcribe and analyse a reference](how-to/transcribe-a-reference.md) |
 | Pick a topic worth a video | [Choose a topic](how-to/choose-a-topic.md) · [How we find ideas](explanation/research-approach.md) |
+| Read an episode before rendering, change it, approve it; see what waits for me | [Review and approve](how-to/review-and-approve.md) · [The content workflow](explanation/content-workflow.md) · [Tracker](../content/TRACKER.md) |
 | Write or edit a script | [Write a script](how-to/write-a-script.md) |
 | Ship Russian and English cuts | [Language variants](how-to/language-variants.md) |
 | Give the narrator a voice | [Design a voice](how-to/design-a-voice.md) · [Voices](reference/voices.md) |
@@ -39,7 +40,7 @@
 
 ## Explanation
 
-[Workflow](explanation/workflow.md) · [How we find ideas](explanation/research-approach.md) · [The pipeline, with pictures](explanation/pipeline.md) · [Architecture](explanation/architecture.md) · [Quality gates](explanation/quality.md) · [Technology and product map](explanation/technology.md) · [How we work](explanation/how-we-work.md) · [Decision records](adr/README.md)
+[Workflow](explanation/workflow.md) · [Content workflow: plan, approvals, tracker](explanation/content-workflow.md) · [How we find ideas](explanation/research-approach.md) · [The pipeline, with pictures](explanation/pipeline.md) · [Architecture](explanation/architecture.md) · [Quality gates](explanation/quality.md) · [Technology and product map](explanation/technology.md) · [How we work](explanation/how-we-work.md) · [Decision records](adr/README.md)
 
 ## Background
 

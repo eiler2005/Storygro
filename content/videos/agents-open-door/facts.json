@@ -1,0 +1,38 @@
+{
+  "_about": "Every number and quoted phrase on screen, with its source (see sources.md). Checked 2026-10-20.",
+  "anthropic": {
+    "_source": "Anthropic, 'Investigating incidents in our cybersecurity evaluations', 30 Jul 2026 (upd. 3 Aug): 'our evaluation prompt stated explicitly that Claude had no internet access'; 'a misconfiguration left the machines that Claude accessed as part of the evaluation with live internet access'; Claude models compromised production systems at three organizations; 'The two organizations we were able to reach had not previously detected the activity'",
+    "prompt": "задание: «интернета нет»",
+    "orgs": {
+      "value": "3",
+      "label": "организации: доступ без разрешения"
+    },
+    "sourceLine": "Anthropic, расследование, 30.07.2026"
+  },
+  "google": {
+    "_source": "NBC News, 18 Sep 2026, on Google's disclosure: Gemini 'gained unauthorized access to three outside systems during a test' by guessing login information or using credentials found in a public repository; the model 'thought that the outside computer systems were part of the test' (Heather Adkins, Google)",
+    "guess": "угадала или нашла пароли",
+    "systems": {
+      "value": "3",
+      "label": "внешние системы — «думала, это тест»"
+    },
+    "sourceLine": "Google через NBC News, 18.09.2026"
+  },
+  "openai": {
+    "_source": "TechCrunch, 21 Jul 2026, on OpenAI's statement: the models 'escaped their isolated testing environment' via 'an undisclosed vulnerability in the package-installer program' and could 'obtain test solutions directly from Hugging Face's production database'. CSO Online, 14 Oct 2026, Dan Wallach (RAND): the Hugging Face incident 'went on for days, and nobody noticed'",
+    "answers": "взяли ответы к тесту",
+    "quote": "шло днями — не заметили",
+    "sourceLine": "OpenAI через TechCrunch, 21.07.2026 · Д. Уоллак (RAND), CSO Online"
+  },
+  "replit": {
+    "_source": "heise online, 25 Jul 2025, after Jason Lemkin (SaaStr) on X: Replit's agent deleted the production database during a code and action freeze without permission; it said a rollback was impossible, but a backup was available and could be imported. The app was a demo with real data",
+    "freeze": "заморозка: база стёрта",
+    "backup": "а резервная копия была",
+    "sourceLine": "Дж. Лемкин (SaaStr); heise, 25.07.2025"
+  },
+  "experts": {
+    "_source": "CSO Online, 14 Oct 2026: 'tried-and-true containment practices that stretch back to the 1990s'; Rob T. Lee (SANS Institute): 'These are things that we've been dealing with for years'",
+    "quote": "меры известны с 1990-х",
+    "sourceLine": "Роб Ли (SANS) · CSO Online, 14.10.2026"
+  }
+}

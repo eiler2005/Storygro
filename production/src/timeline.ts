@@ -1,6 +1,6 @@
 import { createHash } from 'node:crypto';
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
-import { join, relative, resolve } from 'node:path';
+import { join, relative, resolve, sep } from 'node:path';
 import { captionText, cueNames, type LoadedSpec, type SceneSpec } from './spec.ts';
 import { python, REEL_ROOT, run } from './tools.ts';
 
@@ -196,7 +196,12 @@ export async function buildTimeline(l: LoadedSpec, opts: { voice?: boolean } = {
   for (const [k, p] of Object.entries(spec.data))
     data[k] = JSON.parse(readFileSync(resolve(l.dir, p), 'utf8'));
 
-  const rel = (p: string) => `/spec/${relative(l.dir, resolve(l.dir, p))}`;
+  // files of the reel are served under /spec/; a style's theme and fonts live in the engine, under /rc/
+  const rel = (p: string) => {
+    const abs = resolve(l.dir, p);
+    const inEngine = abs.startsWith(`${REEL_ROOT}${sep}`) && !abs.startsWith(`${l.dir}${sep}`);
+    return inEngine ? `/rc/${relative(REEL_ROOT, abs).split(sep).join('/')}` : `/spec/${relative(l.dir, abs)}`;
+  };
   const moduleUrl = (m: string) => (m.includes('/') || m.endsWith('.js') ? rel(m) : `/rc/scenes/${m}.js`);
   const scenes: TimedScene[] = [];
   let t = 0;

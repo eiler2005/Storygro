@@ -1,0 +1,39 @@
+style: 1
+id: cut-paper
+title: Cut-paper explainer
+summary: >-
+  Vertical explainers on paper: hand-cut cards, paper figures, marker strokes and stamps, one visual
+  mechanism per scene, every number on a card with its source. Built from code, so no pictures need
+  generating. Made for Reels and Shorts, 45–90 seconds.
+status: stable
+
+defaults:
+  format: { preset: vertical, fps: 30 }
+  safe: vertical
+  captions: { show: true, maxWords: 4 }
+  transition: { kind: fade, dur: 0.35 }
+  music: { bpm: 104, key: D, progression: [vi, IV, I, V], gain: 0.22 }
+
+theme: theme.css
+scenes: [headline, crowd, task-stack, ladder, stat, chart, steps, outro]
+
+pacing:
+  wordsPerMinute: [130, 165]
+  length: [45, 95]
+
+structure:
+  - part: hook
+    does: One line that names the tension, visible at frame 0.
+  - part: mechanism
+    does: Show how it works with recurring objects (people, tasks, a ladder), not a list of facts.
+  - part: evidence
+    does: Two or three sourced numbers on cards.
+  - part: action
+    does: What to do, in three steps at most.
+  - part: close
+    does: The takeaway, then who to send it to.
+
+examples:
+  - examples/ai-jobs/en.reel.yaml
+  - content/videos/ai-agent-checks/ru.reel.yaml
+  - content/videos/future-of-work/ru.reel.yaml

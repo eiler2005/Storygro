@@ -14,6 +14,17 @@ export function python(): string {
   return p;
 }
 
+/**
+ * The image environment (mflux) is separate from the voice environment: image models pin their own
+ * MLX and Pillow versions, which must not move the versions the voices and Whisper were checked with.
+ */
+export function imageBin(tool: string): string {
+  const dir = process.env.STORYGRO_IMAGE_BIN ?? join(TOOL_HOME, 'image-venv', 'bin');
+  const p = join(dir, tool);
+  if (!existsSync(p)) throw new Error(`no ${tool} at ${dir} — run: npm run setup:images (Apple silicon), or use images.provider: manual`);
+  return p;
+}
+
 let ff: string | undefined;
 export function ffmpeg(): string {
   if (ff) return ff;

@@ -10,6 +10,30 @@
 
 → [Choose a topic](how-to/choose-a-topic.md)
 
+## Study a reference video
+
+`storygro transcript` turns a transcript pasted from a video page, a media file or a direct media URL into timed segments, Markdown and SRT, with the pace: words per minute for every minute, sentence length, every question and every number with its time. Frames show the cut rate and the visual language; the analysis goes into `content/research/references/`.
+
+```text
+✔ pasted: 18:26, 2377 words, 129 words/min, 214 sentences, 3 questions, 95 numbers
+```
+
+→ [Transcribe and analyse a reference](how-to/transcribe-a-reference.md) · [the analysis behind the cartoon style](../content/research/references/cYlePq4WQsk.md)
+
+## Styles you can reuse
+
+A style is a way of making videos that many episodes share: defaults, theme, scenes, pacing, script structure and, for illustrated styles, the picture model and a recurring cast. `storygro new <folder> --style cartoon` starts a project in it.
+
+![Frames of a one-minute cartoon explainer: generated illustrations with a recurring character, headline bands and sourced numbers drawn on top](media/styles/cartoon.jpg)
+
+| Style | For | Pictures |
+|---|---|---|
+| `cartoon` | narrated explainers told through comic illustrations with a recurring cast, 16:9 by default | generated locally (mflux, Z-Image-Turbo) and recorded in `images.json` |
+| `cut-paper` | vertical explainers on paper | drawn by code |
+| `editorial-collage` | vertical explainers on graph paper with cut-outs | cut-outs you supply |
+
+→ [Use a style](how-to/use-a-style.md) · [Cartoon tutorial](tutorials/cartoon-explainer.md) · [Styles reference](reference/styles.md)
+
 ## Write a video as data
 
 A video is a YAML script: scenes, narration with `{#cue}` marks where pictures react, props, a post text. Numbers live in `facts.json` with a quoted source; scenes bind them and never type them.
@@ -30,7 +54,7 @@ Durations come from the voice: rewrite a line and the whole video re-times; cues
 
 → [Write a script](how-to/write-a-script.md) · [Language variants](how-to/language-variants.md)
 
-## Eighteen animated scenes
+## Nineteen animated scenes
 
 Each scene is a small JavaScript module whose frame is a pure function of time, so any moment renders identically in stills, storyboards and the final video.
 
@@ -52,6 +76,10 @@ Each scene is a small JavaScript module whose frame is a pure function of time, 
     <td align="center" valign="top"><img src="media/scenes/screencast.jpg" width="150" alt="screencast scene: the SlideCraft site in a phone with the prompt magnified"><br><sub><b>screencast</b><br>real screen recording</sub></td>
   </tr>
 </table>
+
+**Illustrated**, for the `cartoon` style — generated pictures that change on cues with a slow camera move, and overlays drawn by the page:
+
+<p><img src="media/scenes/illustration.jpg" width="420" alt="illustration scene: a generated comic picture of a procurement manager with a headline band drawn on top"><br><sub><b>illustration</b> · shots, camera moves, headline band, number badge, labels, source line</sub></p>
 
 **Landscape product scenes**, from the SlideCraft launch film:
 

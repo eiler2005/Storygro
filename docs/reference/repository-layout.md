@@ -10,9 +10,12 @@ Storygro/
 ├── .githooks/          pre-commit media guard (npm run hooks:install)
 │
 ├── production/         the engine — reusable, content-free
+│   ├── toolkit.yaml    the bank of every method and tool for making content, by stage
 │   ├── src/            TypeScript CLI: spec, timeline, board, render, qa, package, capture, publish, ideas
 │   ├── runtime/        the browser player: index.html, player.js, kit.js, paper.js, safe-zones.json
-│   ├── scenes/         18 built-in scene modules, each mount() → draw(t)
+│   ├── scenes/         19 built-in scene modules, each mount() → draw(t)
+│   ├── styles/         reusable ways of making videos: cartoon, cut-paper, editorial-collage
+│   │                   (style.yaml, theme.css, fonts/, template.reel.yaml)
 │   ├── py/             Python: voice providers, Whisper alignment/ASR, music and mix
 │   ├── scripts/        setup, media guard, link check, asset fetch, docs previews
 │   ├── trends/         signal sources and focus terms for `storygro trends`
@@ -45,6 +48,8 @@ Storygro/
 |---|---|
 | `.reel/` beside each spec | voice takes, `timeline.json`, frames, storyboard, QA, MP4/WAV, stills, releases |
 | `content/.signals/` | trend reports |
+| `shots/` beside a reel | generated pictures; `images.json` beside the reel records how to regenerate them |
+| `~/.storygro/image-venv` | mflux and the image model, for generated pictures (outside the repository) |
 | `~/.storygro/venv` | Python environment, models, ffmpeg (outside the repository) |
 | `/private/` | the owner's local notes |
 | `node_modules/` | npm packages |
@@ -57,6 +62,7 @@ Large render inputs listed in `content/media-assets.json` are ignored by path an
 |---|---|---|
 | A video's words, scenes or numbers | `content/videos/<id>/*.reel.yaml`, `facts.json` | `board` → `approve` → `render` |
 | How a scene looks for every video | `production/scenes/<scene>.js` | render every reel that uses it |
+| A style's defaults, theme, cast or picture model | `production/styles/<id>/` | approvals of every reel in the style reset; re-render them |
 | Timing, captions, safe areas | `production/src/timeline.ts`, `production/runtime/` | render and inspect frames |
 | Voices, alignment, music | `production/py/` | listen to a full render |
 | QA checks or release rules | `production/src/qa.ts`, `package.ts`, `board.ts` | `npm test`, a render |

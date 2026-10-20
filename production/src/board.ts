@@ -154,6 +154,8 @@ export function specInputs(l: LoadedSpec): string[] {
   const add = (p: string) => {
     if (existsSync(p) && statSync(p).isFile()) files.add(p);
   };
+  // a style supplies defaults and the theme; its definition is an input like the reel itself
+  if (l.style) files.add(l.style.path);
   for (const p of Object.values(l.spec.data)) files.add(resolve(l.dir, p));
   if (l.spec.theme) add(resolve(l.dir, l.spec.theme));
   if (l.spec.overlay) add(resolve(l.dir, l.spec.overlay));

@@ -27,8 +27,15 @@ const GALLERY = 'examples/scene-gallery/.reel/en/stills';
 /** Moments of the gallery reel; the still command names each file after its moment. */
 const GALLERY_AT = ['chart@6.5', 'collage@2.4', 'screencast', 'screencast-gallery', 'screencast-deck'];
 
+/** The first cartoon-style short: its stills feed the illustration thumbnail and the style strip. */
+const CARTOON_SPEC = 'content/videos/ai-buys-work-knowledge/en.reel.yaml';
+const CARTOON = 'content/videos/ai-buys-work-knowledge/.reel/en/stills';
+const CARTOON_AT = ['hook@4.2', 'news@7', 'why@6', 'example@3.5', 'example@12', 'value@9', 'close@10'];
+const CARTOON_STRIP = ['hook_4.2', 'news_7', 'why_6', 'example_3.5', 'value_9', 'close_10'].map((f) => `${CARTOON}/${f}.png`);
+
 /** One English key frame per scene module; landscape scenes come from the SlideCraft launch film. */
 const SCENES: [scene: string, still: string][] = [
+  ['illustration', `${CARTOON}/example_12.png`],
   ['headline', `${BOARD}/hook.png`],
   ['crowd', `${BOARD}/risk.png`],
   ['task-stack', `${BOARD}/tasks.png`],
@@ -75,6 +82,10 @@ if (have(GALLERY_SPEC.replace('en.reel.yaml', 'assets/robot.png')))
   });
 else console.warn('skip: gallery stills need `npm run assets:fetch` for the collage images');
 
+if (have('content/videos/ai-buys-work-knowledge/shots/hook-1.jpg'))
+  execFileSync(process.execPath, ['--import', 'tsx', 'production/src/cli.ts', 'still', CARTOON_SPEC, ...CARTOON_AT], { cwd: ROOT, stdio: 'inherit' });
+else console.warn('skip: cartoon stills need `storygro images` for the episode first');
+
 const work = mkdtempSync(join(tmpdir(), 'storygro-doc-media-'));
 const tab = await Tab.open(1600, 900);
 let written = 0;
@@ -107,7 +118,7 @@ function missing(paths: string[]): boolean {
 try {
   for (const [scene, still] of SCENES) {
     if (missing([still])) continue;
-    const landscape = still.includes('slidecraft-launch');
+    const landscape = still.includes('slidecraft-launch') || still.startsWith(CARTOON);
     const fill = `<img src="${src(still)}" style="display:block;width:100vw;height:100vh;object-fit:cover">`;
     await shoot(`scenes/${scene}.jpg`, landscape ? 480 : 270, landscape ? 270 : 480, fill, 78);
   }
@@ -144,6 +155,18 @@ try {
         img{display:block;width:178px;height:316px;object-fit:cover;border-radius:10px}
       </style><main>${cards}</main>`,
       82,
+    );
+  }
+
+  if (!missing(CARTOON_STRIP)) {
+    const cells = CARTOON_STRIP.map((f) => `<img src="${src(f)}">`).join('');
+    await shoot(
+      'styles/cartoon.jpg',
+      1600,
+      0,
+      `<style>body{background:#14161b} main{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;padding:20px}
+        img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:10px}</style><main>${cells}</main>`,
+      80,
     );
   }
 

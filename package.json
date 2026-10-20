@@ -11,6 +11,7 @@
   "scripts": {
     "setup": "sh production/scripts/setup.sh",
     "setup:ru": "sh production/scripts/setup.sh ru",
+    "setup:images": "sh production/scripts/setup-images.sh",
     "storygro": "tsx production/src/cli.ts",
     "reel": "tsx production/src/cli.ts",
     "typecheck": "tsc --noEmit",
@@ -20,6 +21,7 @@
     "hooks:install": "node production/scripts/install-hooks.mjs",
     "check:links": "node production/scripts/check-doc-links.mjs",
     "docs:media": "tsx production/scripts/doc-media.ts",
+    "docs:toolkit": "tsx production/scripts/toolkit-doc.ts",
     "check": "npm run check:media && npm run check:links && npm run typecheck && npm test"
   },
   "dependencies": {

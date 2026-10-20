@@ -2,6 +2,7 @@ import { readFileSync } from 'node:fs';
 import { basename, dirname, resolve } from 'node:path';
 import { parse } from 'yaml';
 import { z } from 'zod';
+import { applyStyle, type LoadedStyle, loadStyle } from './style.ts';
 
 export const FORMAT_PRESETS = {
   landscape: [1920, 1080],
@@ -134,6 +135,17 @@ export const ReelSpec = z.object({
       z.object({ from: z.string(), width: z.number().int(), height: z.number().int(), background: z.string().default('#000000') }),
     )
     .default({}),
+  /** a style from production/styles/ whose defaults, theme and picture settings this reel uses */
+  style: z.string().optional(),
+  /** generated pictures: the episode's own cast (@name in shot prompts) and the base seed */
+  images: z
+    .object({
+      cast: z.record(z.string(), z.string()).default({}),
+      seed: z.number().int().default(7),
+      /** overrides the style's provider, e.g. `manual` on a machine without Apple silicon */
+      provider: z.enum(['mflux', 'manual']).optional(),
+    })
+    .optional(),
   scenes: z.array(SceneSpec).min(1),
 });
 
@@ -151,11 +163,15 @@ export interface LoadedSpec {
   variant: string;
   /** output name: the folder name, plus `-<variant>` */
   name: string;
+  /** the style named by `style:`, already applied to `spec` */
+  style?: LoadedStyle;
 }
 
 export function loadSpec(path: string): LoadedSpec {
   const abs = resolve(path);
-  const spec = ReelSpec.parse(parse(readFileSync(abs, 'utf8')));
+  const raw = parse(readFileSync(abs, 'utf8')) as Record<string, unknown>;
+  const style = raw && typeof raw.style === 'string' ? loadStyle(raw.style) : undefined;
+  const spec = ReelSpec.parse(style ? applyStyle(raw, style) : raw);
   const ids = new Set<string>();
   for (const s of spec.scenes) {
     if (ids.has(s.id)) throw new Error(`duplicate scene id: ${s.id}`);
@@ -169,7 +185,7 @@ export function loadSpec(path: string): LoadedSpec {
   const file = basename(abs);
   const variant = file === 'reel.yaml' ? '' : file.replace(/(\.reel)?\.ya?ml$/, '');
   const folder = basename(dirname(abs));
-  return { spec, path: abs, dir: dirname(abs), variant, name: variant ? `${folder}-${variant}` : folder };
+  return { spec, path: abs, dir: dirname(abs), variant, name: variant ? `${folder}-${variant}` : folder, style };
 }
 
 /** Keys like "кто только начинает →" with a null value: YAML split an unquoted text at a comma. */

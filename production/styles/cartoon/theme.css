@@ -1,0 +1,42 @@
+/* Style "cartoon" — generated comic illustrations with crisp overlays.
+   Fonts: Oswald (headlines, numbers) and Golos Text (captions, labels); both SIL OFL 1.1 with Cyrillic,
+   notices in fonts/. Tokens --ct-* are read by production/scenes/illustration.js. */
+@font-face { font-family: 'Oswald'; src: url('fonts/Oswald-wght.ttf'); font-weight: 200 700; }
+@font-face { font-family: 'Golos Text'; src: url('fonts/GolosText-wght.ttf'); font-weight: 400 900; }
+
+:root {
+  --ct-paper: #f3ead8;
+  --ct-ink: #1f1a14;
+  --ct-band: #fbf4e4;
+  --ct-card: #fffaf0;
+  --ct-line: #f6f1e7;
+  --ct-accent: #e0663a;
+  --ct-teal: #1f7a72;
+  --ct-mustard: #d9a21f;
+  --ct-red: #c8432b;
+  --ct-green: #3f8a4b;
+  --ct-blue: #2f5d8a;
+  --ct-display: 'Oswald', 'Golos Text', Impact, sans-serif;
+  --ct-display-weight: 600;
+  --ct-font: 'Golos Text', Arial, sans-serif;
+  --rc-font: 'Golos Text', Arial, sans-serif;
+  --rc-bg: #f3ead8;
+}
+
+#stage { font-family: var(--ct-font); color: var(--ct-ink); background: var(--ct-paper); }
+.rc-scene { overflow: hidden; }
+
+/* captions: bold white words with a dark outline straight on the picture, the spoken word brightest */
+.rc-caption {
+  font: 800 54px/1.18 var(--ct-font);
+  color: rgba(255, 255, 255, 0.78);
+  background: none;
+  backdrop-filter: none;
+  box-shadow: none;
+  padding: 0 14px;
+  -webkit-text-stroke: 7px rgba(18, 14, 10, 0.92);
+  paint-order: stroke fill;
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.45);
+  text-wrap: balance;
+}
+.rc-word.on { color: #ffd65a; }

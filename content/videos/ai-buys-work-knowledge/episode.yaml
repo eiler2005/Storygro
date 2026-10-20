@@ -1,0 +1,7 @@
+episode: 1
+id: ai-buys-work-knowledge
+title: "The AI industry is buying what you know about your job"
+sources: sources.md
+credits: CREDITS.md
+variants:
+  - { id: en, spec: en.reel.yaml }

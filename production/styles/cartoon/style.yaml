@@ -1,0 +1,69 @@
+style: 1
+id: cartoon
+title: Illustrated cartoon explainer
+summary: >-
+  A narrated explainer told through generated comic-style illustrations with a recurring cast: a new
+  picture every few seconds, a slow camera move on each, burned-in captions, and crisp overlays for
+  headlines and sourced numbers. 16:9 for YouTube by default, from a one-minute short to a long-form
+  episode; 9:16 works when the shots are framed for it.
+status: pilot
+
+# Reel defaults; anything the reel sets itself wins (objects merge one level deep).
+defaults:
+  format: { preset: landscape, fps: 30 }
+  captions: { show: true, maxWords: 4 }
+  transition: { kind: cut, dur: 0 }
+  music: { bpm: 92, key: D, progression: [I, V, vi, IV], gain: 0.16 }
+  voice: { engine: kokoro, voice: am_michael, speed: 1, lang: a }
+
+theme: theme.css
+scenes: [illustration]
+
+pacing:
+  # the reference changed pictures every 4–8 s; one shot per spoken idea, on a {#cue}
+  shotSeconds: [4, 8]
+  wordsPerMinute: [125, 160]
+  length: [45, 1200]
+
+structure:
+  - part: hook
+    does: A contrast or a question in the first 10–15 seconds — two people, the same rule, a different result.
+  - part: promise
+    does: What the viewer will understand by the end, with an open loop ("the last one changes the most").
+  - part: stages
+    does: >-
+      Numbered stages or one worked example. Each has a concrete number from the facts, the arithmetic
+      or the decision chain behind it, the emotional turn, a common mistake, and a bridge to the next.
+  - part: callback
+    does: Answer the hook's question.
+  - part: caveat
+    does: What the numbers are not — illustrative, conditional, not guarantees or rules.
+  - part: close
+    does: The idea in one sentence, one action, then the call to action.
+
+images:
+  provider: mflux
+  tool: mflux-generate-z-image-turbo
+  model: mflux-community/z-image-turbo-mflux-q8
+  base: z-image-turbo
+  width: 1280
+  height: 720
+  steps: 9
+  licence: Z-Image-Turbo weights Apache-2.0 (Tongyi-MAI), 8-bit mflux conversion; mflux MIT
+  prompt: >-
+    Flat comic book illustration with clean black ink outlines and soft cel shading, warm muted palette
+    of cream, teal, mustard and terracotta, gentle daylight, uncluttered wide composition with space
+    around the subject. {subject}. No text, no letters, no numbers, no logos, no watermark.
+  # default characters; a reel adds or replaces them under images.cast
+  cast:
+    host: >-
+      a friendly woman in her thirties with short curly dark brown hair, round tortoiseshell glasses,
+      a mustard cardigan over a white shirt and dark trousers
+    bot: >-
+      a small round white robot with a rounded blue face screen showing two simple friendly eyes,
+      short arms and a single wheel
+
+references:
+  - content/research/references/cYlePq4WQsk.md
+examples:
+  - content/videos/ai-buys-work-knowledge/en.reel.yaml

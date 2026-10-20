@@ -12,6 +12,9 @@ studio-voice provenance is documented by that model's authors. RUAccent: Apache-
 Qwen3-TTS: Apache-2.0; mlx-audio: MIT. Silero CIS base models: MIT.
 Whisper / mlx-whisper: MIT. NumPy / SciPy: BSD; soundfile / pyloudnorm: BSD/MIT terms.
 imageio-ffmpeg: BSD wrapper; ffmpeg's own licence depends on the downloaded build and enabled codecs.
+Optional picture generation: mflux: MIT; Z-Image-Turbo weights (Tongyi-MAI): Apache-2.0, used
+through the mflux-community 8-bit conversion; generated pictures are not part of this repository.
+Optional transcription of page URLs: yt-dlp (Unlicense), installed by the user.
 
 Fonts are included with notices beside the actual files:
   examples/slidecraft-launch/assets/fonts/LICENSE-Liberation-*.txt
@@ -19,6 +22,7 @@ Fonts are included with notices beside the actual files:
   content/videos/*/assets/fonts/OFL-*.txt
   examples/editorial-collage/assets/fonts/OFL-*.txt
   examples/scene-gallery/assets/fonts/OFL-*.txt
+  production/styles/*/fonts/OFL-*.txt (Oswald, Golos Text, Unbounded, Caveat)
 
 Runtime dependencies and model weights are installed or downloaded separately. The end user
 must retain applicable notices when redistributing them. Storygro's licence does not replace

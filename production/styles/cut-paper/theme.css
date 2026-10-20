@@ -1,0 +1,38 @@
+/* "AI and jobs" — cut-paper collage. Fonts: Unbounded (display), Golos Text (text), Caveat (hand);
+   all SIL OFL 1.1 with Cyrillic, notices in fonts/. */
+@font-face { font-family: 'Unbounded'; src: url('fonts/Unbounded-wght.ttf'); font-weight: 200 900; }
+@font-face { font-family: 'Golos Text'; src: url('fonts/GolosText-wght.ttf'); font-weight: 400 900; }
+@font-face { font-family: 'Caveat'; src: url('fonts/Caveat-wght.ttf'); font-weight: 400 700; }
+
+:root {
+  --pp-paper: #efe6d4;
+  --pp-paper2: #e3d6bd;
+  --pp-ink: #1c2230;
+  --pp-muted: #6e6555;
+  --pp-red: #dd4b26;
+  --pp-yellow: #f3b23a;
+  --pp-teal: #23877b;
+  --pp-blue: #31509e;
+  --pp-card: #fbf6ec;
+  --pp-font: 'Golos Text', Arial, sans-serif;
+  --pp-display: 'Unbounded', 'Golos Text', Arial, sans-serif;
+  --pp-hand: 'Caveat', cursive;
+  --rc-font: 'Golos Text', Arial, sans-serif;
+  --rc-bg: #efe6d4;
+}
+
+#stage { font-family: var(--pp-font); color: var(--pp-ink); background: var(--pp-paper); }
+.rc-scene { overflow: hidden; }
+
+/* captions: a strip of paper, the spoken word inked, the rest pencil-grey */
+.rc-caption {
+  font: 700 50px/1.22 var(--pp-font);
+  color: rgba(28, 34, 48, 0.42);
+  background: #fbf6ec;
+  backdrop-filter: none;
+  border-radius: 6px;
+  padding: 14px 26px 16px;
+  box-shadow: 0 2px 0 rgba(40, 28, 10, 0.2), 0 10px 22px rgba(40, 28, 10, 0.16);
+  text-wrap: balance;
+}
+.rc-word.on { color: #1c2230; }

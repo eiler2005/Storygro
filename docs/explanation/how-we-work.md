@@ -46,6 +46,9 @@ Rules that keep this cheap and safe:
 | Small preview images for docs and reviews | `docs/media/`, `<reel>/preview/strip.jpg` | yes (≤ 300 KiB each) |
 | Large original render inputs (generated pictures, voice references) | local; restored by `npm run assets:fetch` from [a checksum manifest](../../content/media-assets.json) | no — checksum only |
 | Voice takes, frames, storyboards, QA, MP4, WAV | ignored `.reel/` beside each spec | no |
+| Generated pictures of illustrated styles | ignored `shots/` beside the reel; `images.json` (prompt, seed, model, checksum) | provenance yes, pictures no |
+| Styles: defaults, themes, fonts, templates | `production/styles/<id>/` | yes |
+| Transcripts and frames of other people's videos | ignored `private/` | no — the analysis in `content/research/references/` is |
 | Release packages | `.reel/releases/`, public copies on [GitHub Releases](https://github.com/eiler2005/Storygro/releases) | no |
 | Trend reports | ignored `content/.signals/` | no |
 | Owner's private notes | ignored `/private/` | no |
@@ -73,4 +76,5 @@ The [media policy](../reference/media-policy.md) is enforced on indexed blobs by
 - Technical documentation is in English; product planning and the handoff in [`docs/planning/`](../planning/README.md) are in Russian; content keeps its own language.
 - Pictures are small previews generated from local renders with `npm run docs:media`, plus hand-written SVG diagrams in `docs/media/diagrams/`. Never link a video file from the repository; link the release.
 - `npm run check:links` fails on any relative link or heading anchor that does not resolve.
+- Methods and tools are catalogued in one bank, [`production/toolkit.yaml`](../../production/toolkit.yaml), rendered as [the toolkit](../reference/toolkit.md). Planning a piece starts there; adding a way of working ends there.
 - Describe planned features as planned. Upload and analytics APIs, hosted services and automatic publishing do not exist.

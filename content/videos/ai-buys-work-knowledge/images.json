@@ -1,0 +1,173 @@
+{
+ "images": 1,
+ "files": {
+  "shots/hook-1.jpg": {
+   "prompt": "Flat comic book illustration with clean black ink outlines and soft cel shading, warm muted palette of cream, teal, mustard and terracotta, gentle daylight, uncluttered wide composition with space around the subject. Maria, a procurement manager in her forties with a dark brown bob haircut, rectangular red glasses, a navy blazer over a white striped shirt and an ID badge on a lanyard at her office desk surrounded by binders, folders and a laptop, looking up with a raised eyebrow. No text, no letters, no numbers, no logos, no watermark.",
+   "seed": 76315,
+   "provider": "mflux",
+   "model": "mflux-community/z-image-turbo-mflux-q8",
+   "width": 1280,
+   "height": 720,
+   "steps": 9,
+   "licence": "Z-Image-Turbo weights Apache-2.0 (Tongyi-MAI), 8-bit mflux conversion; mflux MIT",
+   "sha256": "9c5fb271e1b5c546c413a0cb45ade9fd0f1aa2b4341cd0852e2ef0fe0f89492d",
+   "createdAt": "2026-10-20T11:03:08.865Z"
+  },
+  "shots/hook-2.jpg": {
+   "prompt": "Flat comic book illustration with clean black ink outlines and soft cel shading, warm muted palette of cream, teal, mustard and terracotta, gentle daylight, uncluttered wide composition with space around the subject. a small round white robot with a rounded blue face screen showing two simple friendly eyes, short arms and a single wheel wearing a tiny necktie, holding out an open briefcase full of banknotes towards a tall shelf of office binders. No text, no letters, no numbers, no logos, no watermark.",
+   "seed": 31785,
+   "provider": "mflux",
+   "model": "mflux-community/z-image-turbo-mflux-q8",
+   "width": 1280,
+   "height": 720,
+   "steps": 9,
+   "licence": "Z-Image-Turbo weights Apache-2.0 (Tongyi-MAI), 8-bit mflux conversion; mflux MIT",
+   "sha256": "4482db6177e406dd3f6cc62c468bfe82f922d730751601a82f0728c05a34929a",
+   "createdAt": "2026-10-20T11:04:02.837Z"
+  },
+  "shots/news-1.jpg": {
+   "prompt": "Flat comic book illustration with clean black ink outlines and soft cel shading, warm muted palette of cream, teal, mustard and terracotta, gentle daylight, uncluttered wide composition with space around the subject. two small round white robots pushing a big wheelbarrow piled high with green paper banknotes across a sunny city plaza towards a glass office tower. No text, no letters, no numbers, no logos, no watermark.",
+   "seed": 43177,
+   "provider": "mflux",
+   "model": "mflux-community/z-image-turbo-mflux-q8",
+   "width": 1280,
+   "height": 720,
+   "steps": 9,
+   "licence": "Z-Image-Turbo weights Apache-2.0 (Tongyi-MAI), 8-bit mflux conversion; mflux MIT",
+   "sha256": "6ef83276d503cf11c1149667e094bab6d3e8194f48a21389c4361d146b128da2",
+   "createdAt": "2026-10-20T11:15:26.928Z"
+  },
+  "shots/news-2.jpg": {
+   "prompt": "Flat comic book illustration with clean black ink outlines and soft cel shading, warm muted palette of cream, teal, mustard and terracotta, gentle daylight, uncluttered wide composition with space around the subject. a small round white robot with a rounded blue face screen showing two simple friendly eyes, short arms and a single wheel carefully placing office binders, a sales chart printout and project folders into a large glowing crate in a tidy archive room. No text, no letters, no numbers, no logos, no watermark.",
+   "seed": 79384,
+   "provider": "mflux",
+   "model": "mflux-community/z-image-turbo-mflux-q8",
+   "width": 1280,
+   "height": 720,
+   "steps": 9,
+   "licence": "Z-Image-Turbo weights Apache-2.0 (Tongyi-MAI), 8-bit mflux conversion; mflux MIT",
+   "sha256": "340c981b6673e74ec9054acf9b568c1a382f64b1e57f5df7ddbe0a929e1e5f04",
+   "createdAt": "2026-10-20T11:05:44.953Z"
+  },
+  "shots/why-1.jpg": {
+   "prompt": "Flat comic book illustration with clean black ink outlines and soft cel shading, warm muted palette of cream, teal, mustard and terracotta, gentle daylight, uncluttered wide composition with space around the subject. Maria, a procurement manager in her forties with a dark brown bob haircut, rectangular red glasses, a navy blazer over a white striped shirt and an ID badge on a lanyard in a busy open-plan office calmly juggling a ringing phone, a wall calendar with red marks and three folders at once. No text, no letters, no numbers, no logos, no watermark.",
+   "seed": 33293,
+   "provider": "mflux",
+   "model": "mflux-community/z-image-turbo-mflux-q8",
+   "width": 1280,
+   "height": 720,
+   "steps": 9,
+   "licence": "Z-Image-Turbo weights Apache-2.0 (Tongyi-MAI), 8-bit mflux conversion; mflux MIT",
+   "sha256": "cd3e47f04df8bd88bec5112e5c1841f2f0c86901dd26d6404bbf52c7bc001c2a",
+   "createdAt": "2026-10-20T11:06:37.480Z"
+  },
+  "shots/example-1a.jpg": {
+   "prompt": "Flat comic book illustration with clean black ink outlines and soft cel shading, warm muted palette of cream, teal, mustard and terracotta, gentle daylight, uncluttered wide composition with space around the subject. a cheap thin cardboard shipping box with a dented corner on a bare warehouse shelf. No text, no letters, no numbers, no logos, no watermark.",
+   "seed": 94876,
+   "provider": "mflux",
+   "model": "mflux-community/z-image-turbo-mflux-q8",
+   "width": 1280,
+   "height": 720,
+   "steps": 9,
+   "licence": "Z-Image-Turbo weights Apache-2.0 (Tongyi-MAI), 8-bit mflux conversion; mflux MIT",
+   "sha256": "6b9cbc30744c7aecbf0625ee95ed6a5313c94bd0fce0d805d26e49b06166a456",
+   "createdAt": "2026-10-20T11:07:28.490Z"
+  },
+  "shots/example-1b.jpg": {
+   "prompt": "Flat comic book illustration with clean black ink outlines and soft cel shading, warm muted palette of cream, teal, mustard and terracotta, gentle daylight, uncluttered wide composition with space around the subject. a sturdy wooden shipping crate with neat metal corners on a bare warehouse shelf. No text, no letters, no numbers, no logos, no watermark.",
+   "seed": 34583,
+   "provider": "mflux",
+   "model": "mflux-community/z-image-turbo-mflux-q8",
+   "width": 1280,
+   "height": 720,
+   "steps": 9,
+   "licence": "Z-Image-Turbo weights Apache-2.0 (Tongyi-MAI), 8-bit mflux conversion; mflux MIT",
+   "sha256": "17e7afe8c1cfae3b4e10e1de37649bd36c20e07cd81477f8656991392ae62567",
+   "createdAt": "2026-10-20T11:08:18.911Z"
+  },
+  "shots/example-2.jpg": {
+   "prompt": "Flat comic book illustration with clean black ink outlines and soft cel shading, warm muted palette of cream, teal, mustard and terracotta, gentle daylight, uncluttered wide composition with space around the subject. a wall calendar made of plain blank squares, several squares crossed out with a red marker, next to a window showing a delivery truck stuck in deep mud with its wheels spinning. No text, no letters, no numbers, no logos, no watermark.",
+   "seed": 35232,
+   "provider": "mflux",
+   "model": "mflux-community/z-image-turbo-mflux-q8",
+   "width": 1280,
+   "height": 720,
+   "steps": 9,
+   "licence": "Z-Image-Turbo weights Apache-2.0 (Tongyi-MAI), 8-bit mflux conversion; mflux MIT",
+   "sha256": "d8ae3b84d95f6610f5341d1cbd1cb327a5c82722d03c6291a38813022bd55ae2",
+   "createdAt": "2026-10-20T11:16:20.328Z"
+  },
+  "shots/example-4.jpg": {
+   "prompt": "Flat comic book illustration with clean black ink outlines and soft cel shading, warm muted palette of cream, teal, mustard and terracotta, gentle daylight, uncluttered wide composition with space around the subject. a factory assembly line standing still, idle workers waiting, a red warning light glowing. No text, no letters, no numbers, no logos, no watermark.",
+   "seed": 3337,
+   "provider": "mflux",
+   "model": "mflux-community/z-image-turbo-mflux-q8",
+   "width": 1280,
+   "height": 720,
+   "steps": 9,
+   "licence": "Z-Image-Turbo weights Apache-2.0 (Tongyi-MAI), 8-bit mflux conversion; mflux MIT",
+   "sha256": "a2f40f53d6c4b2dbe6dc82744615f7f2ee148653ad61bb1f46cfbb7b11565788",
+   "createdAt": "2026-10-20T11:10:02.822Z"
+  },
+  "shots/example-5.jpg": {
+   "prompt": "Flat comic book illustration with clean black ink outlines and soft cel shading, warm muted palette of cream, teal, mustard and terracotta, gentle daylight, uncluttered wide composition with space around the subject. Maria, a procurement manager in her forties with a dark brown bob haircut, rectangular red glasses, a navy blazer over a white striped shirt and an ID badge on a lanyard standing on the right side of the frame holding up a printed spreadsheet with empty columns and shrugging with a knowing smile, plain empty wall on the left half. No text, no letters, no numbers, no logos, no watermark.",
+   "seed": 24801,
+   "provider": "mflux",
+   "model": "mflux-community/z-image-turbo-mflux-q8",
+   "width": 1280,
+   "height": 720,
+   "steps": 9,
+   "licence": "Z-Image-Turbo weights Apache-2.0 (Tongyi-MAI), 8-bit mflux conversion; mflux MIT",
+   "sha256": "ebe96f47635c1ceb62b72dd0dafe65256791bd721469b0ad82491320fb894420",
+   "createdAt": "2026-10-20T11:20:23.790Z"
+  },
+  "shots/value-1.jpg": {
+   "prompt": "Flat comic book illustration with clean black ink outlines and soft cel shading, warm muted palette of cream, teal, mustard and terracotta, gentle daylight, uncluttered wide composition with space around the subject. Maria, a procurement manager in her forties with a dark brown bob haircut, rectangular red glasses, a navy blazer over a white striped shirt and an ID badge on a lanyard drawing a decision flowchart of empty boxes and arrows on a whiteboard, nothing written inside the boxes, while a small round white robot with a rounded blue face screen showing two simple friendly eyes, short arms and a single wheel takes notes on a tablet. No text, no letters, no numbers, no logos, no watermark.",
+   "seed": 90413,
+   "provider": "mflux",
+   "model": "mflux-community/z-image-turbo-mflux-q8",
+   "width": 1280,
+   "height": 720,
+   "steps": 9,
+   "licence": "Z-Image-Turbo weights Apache-2.0 (Tongyi-MAI), 8-bit mflux conversion; mflux MIT",
+   "sha256": "d9b3e9403ba5f6d4ebb8156cec57af12563f6727243b410546a501f66f23abf8",
+   "createdAt": "2026-10-20T11:17:12.572Z"
+  },
+  "shots/value-2.jpg": {
+   "prompt": "Flat comic book illustration with clean black ink outlines and soft cel shading, warm muted palette of cream, teal, mustard and terracotta, gentle daylight, uncluttered wide composition with space around the subject. a small round white robot with a rounded blue face screen showing two simple friendly eyes, short arms and a single wheel standing on a stack of office binders, looking up at a tall stack of golden coins. No text, no letters, no numbers, no logos, no watermark.",
+   "seed": 83690,
+   "provider": "mflux",
+   "model": "mflux-community/z-image-turbo-mflux-q8",
+   "width": 1280,
+   "height": 720,
+   "steps": 9,
+   "licence": "Z-Image-Turbo weights Apache-2.0 (Tongyi-MAI), 8-bit mflux conversion; mflux MIT",
+   "sha256": "1a57125d72d36d01f9b1c8496c76db01a5d2f96bc94f948c9177e5a6c568510b",
+   "createdAt": "2026-10-20T11:12:40.281Z"
+  },
+  "shots/close-1.jpg": {
+   "prompt": "Flat comic book illustration with clean black ink outlines and soft cel shading, warm muted palette of cream, teal, mustard and terracotta, gentle daylight, uncluttered wide composition with space around the subject. Maria, a procurement manager in her forties with a dark brown bob haircut, rectangular red glasses, a navy blazer over a white striped shirt and an ID badge on a lanyard and a small round white robot with a rounded blue face screen showing two simple friendly eyes, short arms and a single wheel shaking hands in front of a busy factory assembly line with green lights. No text, no letters, no numbers, no logos, no watermark.",
+   "seed": 36655,
+   "provider": "mflux",
+   "model": "mflux-community/z-image-turbo-mflux-q8",
+   "width": 1280,
+   "height": 720,
+   "steps": 9,
+   "licence": "Z-Image-Turbo weights Apache-2.0 (Tongyi-MAI), 8-bit mflux conversion; mflux MIT",
+   "sha256": "cae7cf7200ca7b7291a76fcd5e4c45bd938b15c2e0867d55c794b661fd369051",
+   "createdAt": "2026-10-20T11:13:33.140Z"
+  },
+  "shots/close-2.jpg": {
+   "prompt": "Flat comic book illustration with clean black ink outlines and soft cel shading, warm muted palette of cream, teal, mustard and terracotta, gentle daylight, uncluttered wide composition with space around the subject. Maria, a procurement manager in her forties with a dark brown bob haircut, rectangular red glasses, a navy blazer over a white striped shirt and an ID badge on a lanyard at her desk looking thoughtfully at a notepad with a sketched light bulb, warm evening light. No text, no letters, no numbers, no logos, no watermark.",
+   "seed": 17851,
+   "provider": "mflux",
+   "model": "mflux-community/z-image-turbo-mflux-q8",
+   "width": 1280,
+   "height": 720,
+   "steps": 9,
+   "licence": "Z-Image-Turbo weights Apache-2.0 (Tongyi-MAI), 8-bit mflux conversion; mflux MIT",
+   "sha256": "db177b2a278c6eaa677afb4ebdd3363345d00056d5962a04fbe120b873fd4616",
+   "createdAt": "2026-10-20T11:14:25.127Z"
+  }
+ }
+}

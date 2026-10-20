@@ -651,6 +651,42 @@ Excerpt from the `todo` entry. `say`, `pad`, `energy` and `sfx` are left out.
         - { text: Компаниям — нанимать джунов, sub: это ваши будущие сеньоры, at: d }
 ```
 
+## illustration
+
+<img src="../media/scenes/illustration.jpg" width="320" alt="A frame of the illustration scene">
+
+The scene of the [`cartoon` style](../../production/styles/cartoon/README.md): full-frame illustrations that change on cues, each with a slow camera move, and overlays drawn by the page — a headline band, a number badge, labels and a source line — so text and numbers stay sharp and come from the data instead of being baked into generated pictures. Pictures with a `prompt` are made by `storygro images` ([cartoon tutorial](../tutorials/cartoon-explainer.md)).
+
+| Prop | Type | Required | Meaning |
+|---|---|---|---|
+| `shots` | array | Yes | At least one shot. The scene throws when it is empty or a shot has no `image`. |
+| `shots[].image` | string | Yes | Picture next to the reel, e.g. `shots/hook-1.jpg`. A missing file stops the storyboard and the render. |
+| `shots[].at` | cue or seconds | No (default: shots share the scene evenly) | When the shot starts. Shots must be in time order. |
+| `shots[].move` | `in`, `out`, `left`, `right`, `up`, `down`, `none` | No (default: alternates `in`, `out`) | Camera move across the shot's time. |
+| `shots[].focus` | `{ x, y }` 0..1 | No (default centre) | The point the camera moves towards. |
+| `shots[].zoom` | 0..0.3 | No (default 0.07) | How far the move travels. |
+| `shots[].split` | string | No | A second picture beside the first, with a divider — a contrast or a before/after. |
+| `shots[].prompt`, `splitPrompt` | string | No | What the picture shows, for `storygro images`; `@name` comes from the cast. The scene ignores them. |
+| `fade` | seconds | No (default 0) | Cross-fade between shots; 0 is a cut. |
+| `title` | `{ text, at?, until? }` | No | Headline band at the top, upper-case in the style's display font. |
+| `badge` | `{ value, label?, at?, until?, tone?, side? }` | No | A big number on a card, right (default) or left. Bind with `valueFrom` / `labelFrom`. |
+| `labels` | `[{ text, x, y, at?, until?, tone? }]` | No | Small tags pinned to the picture; `x`, `y` are fractions of the stage. |
+| `source` | string or `{ text }` | No | Small source line, bottom left; bind with `sourceFrom` or `{ textFrom: … }`. |
+
+**Cue names:** `shots[].at`, `title.at/until`, `badge.at/until`, `labels[].at/until`. Tones: `accent`, `teal`, `mustard`, `red`, `green`, `blue` or any CSS colour.
+
+```yaml
+  - id: news
+    scene: illustration
+    say: 'micro1 committed {#billion}[$1 billion](=one billion dollars) {#data}to buying operational data.'
+    props:
+      shots:
+        - { image: shots/news-1.jpg, prompt: 'two small robots rolling a giant golden coin across a plaza', move: left }
+        - { at: data, image: shots/news-2.jpg, prompt: '@bot placing office binders into a glowing crate', move: in }
+      badge: { valueFrom: facts.budget.value, labelFrom: facts.budget.label, at: billion, until: data }
+      source: { textFrom: facts.budget.sourceLine }
+```
+
 ## screencast
 
 <img src="../media/scenes/screencast.jpg" width="180" alt="A frame of the screencast scene">

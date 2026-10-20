@@ -45,6 +45,12 @@
       "sha256": "9d025bc1cd7d21751023eb81becb08c944ae741be744c1f077bf83ae13ecacf7"
     },
     {
+      "path": "content/videos/ai-buys-work-knowledge/assets/voice/narrator-en.wav",
+      "url": "https://github.com/eiler2005/Storygro/releases/download/media-inputs-2026-10-19/narrator-en.wav",
+      "bytes": 311084,
+      "sha256": "33cb6a60b9c1263e5b05a35a9d48c723f4e3cc8ae12f9a0658f316d2fa26ac5e"
+    },
+    {
       "path": "examples/ai-jobs/assets/voice/narrator-en.wav",
       "url": "https://github.com/eiler2005/Storygro/releases/download/media-inputs-2026-10-19/narrator-en.wav",
       "bytes": 311084,

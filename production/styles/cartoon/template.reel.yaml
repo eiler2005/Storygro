@@ -1,0 +1,45 @@
+# {title} — a cartoon explainer (style: cartoon). Every scene is one beat of the script; its shots
+# change on {#cue} marks, every 4–8 seconds. Numbers come from facts.json (valueFrom / textFrom).
+# Write the narration first (storygro voice), then the shot prompts, then: storygro images → board.
+reel: 1
+style: cartoon
+title: '{title}'
+lang: {lang}
+data: { facts: facts.json }
+images:
+  seed: 7
+  # the episode's own characters; @host and @bot come from the style unless you redefine them here
+  cast: {}
+post:
+  title: '{title}'
+  text: |
+    One paragraph on what the viewer learns.
+
+    Sources: … The narration is synthetic. Pictures are generated (see CREDITS.md).
+  tags: []
+scenes:
+  - id: hook
+    scene: illustration
+    say: 'A question or a contrast the viewer cares about. {#turn}The twist that makes them stay.'
+    pad: [0.2, 0.5]
+    props:
+      shots:
+        - { image: shots/hook-1.jpg, prompt: '@host looks puzzled at two identical doors', move: in }
+        - { at: turn, image: shots/hook-2.jpg, prompt: '@host opens one door onto a bright landscape', move: out }
+      title: { text: 'The question', at: turn }
+  - id: idea
+    scene: illustration
+    say: 'The mechanism in one sentence. {#number}A number that proves it.'
+    props:
+      shots:
+        - { image: shots/idea-1.jpg, prompt: '@host explains a simple diagram on a whiteboard to @bot', move: right }
+      badge: { valueFrom: facts.example.value, labelFrom: facts.example.label, at: number }
+      source: 'Source, year'
+  - id: close
+    scene: illustration
+    say: 'What to do, in one sentence. {#cta}What to watch next.'
+    pad: [0.2, 1.4]
+    props:
+      shots:
+        - { image: shots/close-1.jpg, prompt: '@host waves goodbye at a sunny window with @bot', move: in }
+      title: { text: 'Your next step', at: cta }

@@ -6,11 +6,15 @@
 
 | …goal | Start here |
 |---|---|
+| See every method and tool for making content, by stage | [Toolkit](reference/toolkit.md) — the bank of methods, tools, styles, scenes and providers |
 | Render my first storyboard and video | [Start here](start-here.md) |
 | See everything Storygro can do, with pictures | [What Storygro can do](features.md) |
 | See finished videos and copy an example | [Examples and finished videos](examples.md) |
 | Make an explainer from a topic, end to end | [Tutorial: an explainer from a topic](tutorials/explainer-from-a-topic.md) |
 | See one real run from trend scan to release | [The pipeline, with pictures](explanation/pipeline.md) |
+| Make a cartoon explainer with generated illustrations | [Tutorial: a cartoon explainer](tutorials/cartoon-explainer.md) |
+| Start a video in a ready-made look (cartoon, cut-paper, collage) | [Use a style](how-to/use-a-style.md) · [Styles reference](reference/styles.md) |
+| Study a reference video: transcript, pace, structure | [Transcribe and analyse a reference](how-to/transcribe-a-reference.md) |
 | Pick a topic worth a video | [Choose a topic](how-to/choose-a-topic.md) |
 | Write or edit a script | [Write a script](how-to/write-a-script.md) |
 | Ship Russian and English cuts | [Language variants](how-to/language-variants.md) |
@@ -25,8 +29,10 @@
 
 ## Reference
 
+- [Toolkit](reference/toolkit.md) — every method and tool for making content, by stage (generated from `production/toolkit.yaml`)
 - [CLI](reference/cli.md) — every command, option, environment variable and npm script
-- [Scene catalog](reference/scenes.md) — eighteen scenes with their props · [Scene contract](reference/scene-contract.md)
+- [Scene catalog](reference/scenes.md) — nineteen scenes with their props · [Scene contract](reference/scene-contract.md)
+- [Styles](reference/styles.md) — `style.yaml`, picture generation, cast and approval
 - [Formats, safe areas and captions](reference/formats.md) · [Voices](reference/voices.md)
 - [Publication ledger](reference/publication-ledger.md) · [Media policy](reference/media-policy.md)
 - [Repository layout](reference/repository-layout.md)

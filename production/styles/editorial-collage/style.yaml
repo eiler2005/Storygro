@@ -1,0 +1,38 @@
+style: 1
+id: editorial-collage
+title: Editorial collage
+summary: >-
+  Vertical explainers on cream graph paper: photo or illustration cut-outs with a white edge, torn
+  labels, large type, interface windows and drawn arrows. One reusable scene composes every beat from
+  layers; objects return across scenes to carry the argument.
+status: stable
+
+defaults:
+  format: { preset: vertical, fps: 30 }
+  safe: vertical
+  captions: { show: true, maxWords: 4 }
+  transition: { kind: cut, dur: 0 }
+  music: { bpm: 104, key: D, progression: [vi, IV, I, V], gain: 0.25 }
+
+theme: theme.css
+scenes: [collage]
+
+pacing:
+  wordsPerMinute: [130, 165]
+  length: [45, 100]
+
+structure:
+  - part: hook
+    does: A provocative headline and the two characters of the story.
+  - part: mechanism
+    does: Panels and labels that show the process, entering on the words that name them.
+  - part: evidence
+    does: Sourced numbers as torn labels or panel rows.
+  - part: close
+    does: The takeaway and the question to the viewer.
+
+references:
+  - content/research/references/gHFDPVjbOco.md
+examples:
+  - content/videos/micro1-work-data/ru.reel.yaml
+  - examples/editorial-collage/ru.reel.yaml

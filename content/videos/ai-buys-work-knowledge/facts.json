@@ -1,0 +1,31 @@
+{
+  "_about": "Every number on screen, with its source (see sources.md). Checked 2026-10-20 against micro1's own pages.",
+  "budget": {
+    "_source": "micro1, 'micro1 commits $1B to enterprise data acquisition', 9 Oct 2026: 'a commitment to spend $1 billion over the next 12 months … acquiring and licensing enterprise operational data'",
+    "value": "$1B",
+    "label": "over the next 12 months, to acquire and license company data",
+    "sourceLine": "micro1 announcement, 9 Oct 2026 · a commitment, not money spent"
+  },
+  "data": {
+    "_source": "micro1 Data Partnerships: 'SOPs, knowledge bases, internal documentation, CRM data, project histories, and QA processes'",
+    "sops": "playbooks",
+    "crm": "CRM records",
+    "projects": "project histories"
+  },
+  "quote": {
+    "_source": "micro1, 9 Oct 2026: 'Real business operations involve incomplete information, competing priorities and exceptions that require judgment.'",
+    "incomplete": "incomplete information",
+    "priorities": "competing priorities",
+    "exceptions": "exceptions"
+  },
+  "tiers": {
+    "_source": "micro1 Data Partnerships: '$100k+' for qualified enterprise data partnerships … '$1M+' for highly unique, proprietary operational data; 'Compensation is based on the quality, uniqueness, and value of the data provided'",
+    "value": "$100K+ → $1M+",
+    "label": "per data partnership, by quality and uniqueness",
+    "sourceLine": "micro1 Data Partnerships · tiers, not guaranteed payouts"
+  },
+  "example": {
+    "_source": "Storygro's own illustration, after the owner's brief; not a real company or person",
+    "label": "Illustrative example"
+  }
+}

@@ -8,3 +8,4 @@ Short records of decisions that shape the repository: the context, what was deci
 | [0002](0002-voice-providers.md) | Voice providers for Russian and English | accepted · 2026-10-19 |
 | [0003](0003-content-production-boundary.md) | Separate authored content from production tools | accepted · 2026-10-19 |
 | [0004](0004-docs-structure-and-media.md) | Diátaxis documentation with generated English previews | accepted · 2026-10-20 |
+| [0005](0005-styles-and-generated-pictures.md) | Styles as a unit of reuse; local generated pictures | accepted · 2026-10-20 |

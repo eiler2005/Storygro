@@ -2,7 +2,10 @@
 import { execFileSync } from 'node:child_process';
 import { copyFileSync, existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { homedir } from 'node:os';
-import { join } from 'node:path';
+import { basename, join } from 'node:path';
+import { generateImages, imageJobs, imageState, loadImageLedger } from './images.ts';
+import { listStyles, loadStyle, scaffold, stylesMarkdown } from './style.ts';
+import { clock, transcribe, transcriptStats } from './transcript.ts';
 import { approval, approve, keyMoment, specHash, writeBoard } from './board.ts';
 import { engineVersion, fileEntry } from './manifest.ts';
 import { recordCapture } from './capture.ts';
@@ -35,6 +38,13 @@ const HELP = `storygro — explainer videos as code
   storygro carousel <carousel.yaml>         one PNG per scene at its key moment → carousel/
   storygro series   <series.yaml> [--md f]  episodes of a series: length, approval, QA verdict, latest package
   storygro capture  <x.capture.yaml>        record a scripted browser session (frames + finger) for a screencast scene
+  storygro styles                           list the styles in production/styles/ (cartoon, cut-paper, …)
+  storygro new      <folder> --style <id> [--lang en] [--title "…"]
+                                             start a content project in a style: episode, script template, facts
+  storygro images   <reel.yaml> [--dry-run] [--force] [--only <scene>]
+                                             generate the pictures its shots ask for (local mflux), record them in images.json
+  storygro transcript <file.txt | media | url> [--out dir] [--lang en]
+                                             transcript of a reference video: .json, .md, .srt and pace statistics
   storygro publish  plan <release-dir> --variant ru --platform instagram --account @handle
                     | approve <id> | mark <id> <state> [--url …] [--note …] | checklist <id> | list
                                              manual publication ledger: records uploads, uploads nothing
@@ -57,10 +67,15 @@ const opt = (f: string) => {
   const i = argv.indexOf(f);
   return i >= 0 ? argv[i + 1] : undefined;
 };
-const VALUED = ['--from', '--to', '--out', '--port', '--backlog', '--md', '--variant', '--platform', '--account', '--note', '--url', '--external-id', '--window', '--source', '--at', '--ledger', '--metrics'];
+const VALUED = ['--from', '--to', '--out', '--port', '--backlog', '--md', '--variant', '--platform', '--account', '--note', '--url', '--external-id', '--window', '--source', '--at', '--ledger', '--metrics', '--style', '--lang', '--title', '--only'];
 const positional = argv.filter((a, i) => !a.startsWith('--') && !VALUED.includes(argv[i - 1] ?? ''));
 const [cmd, specPath, ...rest] = positional;
 if (flag('--allow-errors')) process.env.STORYGRO_ALLOW_ERRORS = '1';
+
+if (cmd === 'styles') {
+  console.log(stylesMarkdown(listStyles()));
+  process.exit(0);
+}
 
 if (!cmd || !specPath || cmd === 'help') {
   console.log(HELP);
@@ -120,6 +135,39 @@ if (cmd === 'capture') {
   const r = await recordCapture(specPath, { out: opt('--out'), log: (m) => process.stdout.write(`${m}\r`) });
   console.log(`\n✔ ${r.meta.frames} frames, ${r.meta.duration} s at ${r.meta.fps} fps, ${r.meta.pixels.width}×${r.meta.pixels.height} → ${r.out}`);
   if (r.meta.taps.length) console.log(`  taps at ${r.meta.taps.map((t) => `${t.t}s`).join(', ')}`);
+  process.exit(0);
+}
+
+if (cmd === 'new') {
+  const id = opt('--style');
+  if (!id) throw new Error('usage: storygro new <folder> --style <id> [--lang en] [--title "…"] — see storygro styles');
+  const style = loadStyle(id);
+  for (const f of scaffold(specPath, style, { lang: opt('--lang'), title: opt('--title') })) console.log(`✔ ${f}`);
+  console.log(`  next: write the script, then ${style.def.images ? `storygro images ${join(specPath, `${opt('--lang') ?? 'en'}.reel.yaml`)} and ` : ''}storygro board`);
+  process.exit(0);
+}
+
+if (cmd === 'transcript') {
+  const outDir = opt('--out') ?? join('.reel', 'transcripts', basename(specPath).replace(/\.[^.]+$/, '').replace(/[^a-zA-Z0-9-]+/g, '-'));
+  const r = await transcribe(specPath, outDir, { lang: opt('--lang') });
+  const st = transcriptStats(r.transcript.segments);
+  console.log(
+    `✔ ${r.transcript.method}: ${clock(st.duration)}, ${st.words} words, ${st.wordsPerMinute} words/min, ${st.sentences} sentences, ${st.questions.length} questions, ${st.numbers.length} numbers`,
+  );
+  for (const f of r.files) console.log(`✔ ${f}`);
+  process.exit(0);
+}
+
+if (cmd === 'images') {
+  const ls = loadSpec(specPath);
+  if (flag('--dry-run')) {
+    const ledger = loadImageLedger(ls);
+    for (const j of imageJobs(ls).filter((j) => !opt('--only') || j.scene === opt('--only')))
+      console.log(`  ${imageState(ls, j, ledger).padEnd(9)} ${j.file}  (seed ${j.seed})\n            ${j.prompt}`);
+    process.exit(0);
+  }
+  const r = await generateImages(ls, { force: flag('--force'), only: opt('--only') });
+  console.log(`✔ ${r.made.length} made, ${r.kept.length} up to date${r.handMade.length ? `, ${r.handMade.length} hand-made kept (${r.handMade.join(', ')})` : ''}`);
   process.exit(0);
 }
 

@@ -36,7 +36,9 @@ flowchart LR
 | Whisper / mlx-whisper | Align non-native timings and check the final spoken words | `production/py/voice.py`, `production/py/asr.py`, `production/src/qa.ts` | On this Mac | MIT; MLX needs Apple Silicon; skipped checks stay explicit |
 | NumPy, SciPy, soundfile, pyloudnorm | Synthesize music/SFX, mix and measure loudness | `production/py/score.py` | For score/video | BSD / MIT terms; no downloaded music samples |
 | imageio-ffmpeg / ffmpeg | H.264/AAC encoding, mux, rescale and audio processing | `production/src/tools.ts`, `production/src/render.ts`, Python audio | For MP4 | BSD wrapper; ffmpeg build has its own LGPL/GPL terms |
-| Golos Text, Unbounded, Caveat, Liberation | Typography in bundled projects | Per-episode font folders | Per theme | Retained notices; no proprietary system fonts redistributed |
+| Golos Text, Unbounded, Caveat, Oswald, Liberation | Typography in bundled projects and styles | Per-episode font folders, `production/styles/*/fonts/` | Per theme | SIL OFL 1.1 / Liberation licence; retained notices; no proprietary system fonts redistributed |
+| mflux + Z-Image-Turbo (8-bit) | Generated comic illustrations for the `cartoon` style | `production/src/images.ts`, `production/styles/cartoon/style.yaml`, `~/.storygro/image-venv` | Optional, Apple silicon | mflux MIT; [Z-Image-Turbo](https://huggingface.co/Tongyi-MAI/Z-Image-Turbo) Apache-2.0 via [mflux-community q8](https://huggingface.co/mflux-community/z-image-turbo-mflux-q8); ~11 GB download; separate venv so MLX/Pillow versions never move under the voices |
+| yt-dlp | Download audio of a page URL for `storygro transcript` | `production/src/transcript.ts` | Optional, user-installed | Unlicense; the platform's terms apply — pasting the page transcript avoids downloading |
 | Wikipedia pageviews / HN official API + Algolia search / Google Trends RSS | Public attention snapshots and per-idea watchlist without credentials | `production/src/ideas.ts`, `production/trends/sources.yaml` | Optional | Retain source URLs and dates; interest signals, not factual verification; the Trends RSS is a public feed, not an API, and can change |
 | GitHub / Actions | Source control, tests and downloadable release assets | `.github/workflows/check.yml` | Collaboration/distribution | No social-account publication implied |
 
@@ -45,8 +47,9 @@ Kokoro-RU downloads and imports its community G2P frontend from the model reposi
 ## What is implemented
 
 - Idea backlog with transparent scoring; interest snapshots (Google Trends, Wikipedia, HN) with visible errors and data dates, focus matching, a per-idea watchlist and a Markdown report.
-- Source-backed scripts, separate language variants, 18 built-in scenes (including editorial collage and `screencast` for real recordings), native vertical formats and captions.
+- Source-backed scripts, separate language variants, 19 built-in scenes (including editorial collage, `illustration` for the cartoon style and `screencast` for real recordings), native vertical formats and captions.
 - `storygro capture`: scripted phone-browser recording in virtual time with the finger path.
+- Styles (`cartoon`, `cut-paper`, `editorial-collage`) with `storygro new`; generated illustrations with recorded provenance (`storygro images`); transcripts and pace statistics of reference videos (`storygro transcript`).
 - Local voice, music/SFX, arbitrary seeking, storyboard and input approval.
 - MP4/web copy, covers, standalone carousel specs, SRT/VTT and post text.
 - Technical QA (including speech and brand rules) and packages with checksums/provider metadata; no network publication during render/package.

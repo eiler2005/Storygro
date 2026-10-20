@@ -4,6 +4,17 @@ Notable changes to the Storygro engine and repository. Content releases (videos)
 
 ## [Unreleased]
 
+### Toolkit
+- A bank of every method and tool for making content: [`production/toolkit.yaml`](production/toolkit.yaml) (44 entries — methods, tools, styles, scene families, providers — across nine stages) and the generated [toolkit page](docs/reference/toolkit.md) (`npm run docs:toolkit`). Tests fail when a CLI command, style or scene is missing from it, a path does not exist or the page is stale.
+
+### Styles, pictures and transcripts
+- **Styles** as a unit of reuse: `production/styles/<id>/` with defaults, theme, scenes, pacing, script structure and picture settings; reels opt in with `style:`. Three styles: `cartoon` (new), `cut-paper`, `editorial-collage` ([ADR 0005](docs/adr/0005-styles-and-generated-pictures.md)).
+- `storygro styles`, `storygro new <folder> --style <id>` (a project from the style's template).
+- The `illustration` scene: generated pictures that change on cues with a slow camera move, a split frame, and DOM overlays — headline band, number badge, labels, source line.
+- `storygro images`: local picture generation with mflux and Z-Image-Turbo (8-bit) in a separate `~/.storygro/image-venv` (`npm run setup:images`), a recurring cast via `@name`, stable seeds, and `images.json` provenance (prompt, seed, model, licence, SHA-256). Pictures stay out of Git.
+- `storygro transcript`: pasted page transcripts, media files and direct media URLs (page URLs with a user-installed yt-dlp) → JSON, Markdown, SRT and pace statistics.
+- Reference analysis of an 18-minute illustrated finance explainer, and the first cartoon short, [The AI industry is buying what you know about your job](content/videos/ai-buys-work-knowledge/README.md) (EN, ~1 min).
+
 ### Repository and documentation
 - Documentation restructured by Diátaxis: `docs/tutorials/`, `how-to/`, `reference/`, `explanation/`, an index that routes by goal, and new [start here](docs/start-here.md), [features](docs/features.md) and [examples](docs/examples.md) pages ([ADR 0004](docs/adr/0004-docs-structure-and-media.md)).
 - The long workflows page split into a workflow overview and nine how-to guides; new [CLI reference](docs/reference/cli.md), [repository layout](docs/reference/repository-layout.md) and [how we work](docs/explanation/how-we-work.md) (roles, model tiers, where files go, how a change reaches Git).

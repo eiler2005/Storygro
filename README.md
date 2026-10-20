@@ -52,9 +52,9 @@ The agent researches, writes the script and facts, narrates, builds a storyboard
 | **Check** | `QA.md`: codec, loudness, black frames, safe areas, facts, speech, brand rules | [quality gates](docs/explanation/quality.md) |
 | **Ship** | a release folder with checksums; a manual publication ledger and metric snapshots | [carousel and release](docs/how-to/carousel-and-release.md) |
 
-See [the pipeline](docs/explanation/pipeline.md) for one real run, from a trend scan on 19 October 2026 to a packaged video the same day.
+See [the pipeline](docs/explanation/pipeline.md) for one real run, from a trend scan on 19 October 2026 to a packaged video the same day. Every method and tool by stage, in one bank: [**the toolkit**](docs/reference/toolkit.md).
 
-## Eighteen scenes
+## Nineteen scenes
 
 <table>
   <tr>
@@ -73,12 +73,27 @@ See [the pipeline](docs/explanation/pipeline.md) for one real run, from a trend 
   </tr>
 </table>
 
-Ten vertical-first scenes above, plus eight landscape product scenes from the SlideCraft launch film: `statement`, `logo-reveal`, `chat`, `stack`, `grid`, `spotlight`, `pins`, `end-card`. Every frame is a pure function of time, so stills, storyboards and the video always agree. [All scenes with pictures](docs/features.md#eighteen-animated-scenes) · [props](docs/reference/scenes.md) · [add your own](docs/how-to/add-a-scene.md)
+Ten vertical-first scenes above, `illustration` for generated pictures, and eight landscape product scenes from the SlideCraft launch film: `statement`, `logo-reveal`, `chat`, `stack`, `grid`, `spotlight`, `pins`, `end-card`. Every frame is a pure function of time, so stills, storyboards and the video always agree. [All scenes with pictures](docs/features.md#nineteen-animated-scenes) · [props](docs/reference/scenes.md) · [add your own](docs/how-to/add-a-scene.md)
+
+## Styles
+
+A style is a reusable way of making videos — defaults, theme, scenes, pacing, script structure and, for illustrated styles, the picture model and a recurring cast. Start a project in one with `storygro new <folder> --style <id>`.
+
+<p align="center"><img src="docs/media/styles/cartoon.jpg" alt="Frames of the one-minute cartoon explainer: generated comic illustrations of a procurement manager and a small robot, with headline bands and sourced numbers drawn on top" width="100%"></p>
+
+| Style | For | Pictures |
+|---|---|---|
+| **cartoon** | narrated explainers told through comic illustrations with a recurring cast, 16:9 — from a one-minute short to a long-form episode | generated locally with mflux + Z-Image-Turbo; prompt, seed and checksum of each in `images.json` |
+| **cut-paper** | vertical explainers on paper: cards, figures, marker, stamps | drawn by code |
+| **editorial-collage** | vertical explainers on graph paper with cut-outs, torn labels and panels | cut-outs you supply |
+
+The cartoon style grew out of [a frame-by-frame analysis](content/research/references/cYlePq4WQsk.md) of an 18-minute illustrated finance explainer, made with `storygro transcript`. Storygro keeps what works (a recurring character, a new picture every few seconds, burned-in captions) and fixes what does not: headlines and numbers are drawn on cue from the facts file, not baked into generated pictures. [Use a style](docs/how-to/use-a-style.md) · [cartoon tutorial](docs/tutorials/cartoon-explainer.md)
 
 ## Finished videos
 
 | Video | What it shows | Length · QA | Watch |
 |---|---|---|---|
+| [**The AI industry is buying what you know about your job**](content/videos/ai-buys-work-knowledge/README.md) (EN) | The first `cartoon`-style short: micro1's $1B data programme, a buyer whose reasons are not in the price table | 62.3 s · 11/11 | local render |
 | [**Where to check an AI agent's work**](content/videos/ai-agent-checks/README.md) (RU) | The first topic picked from the trend watchlist: τ-bench numbers, where to put checks, who is liable | 51.6 s · 12/12 | [release](https://github.com/eiler2005/Storygro/releases/tag/ai-agent-checks-2026-10-19) |
 | [**SlideCraft demo**](content/videos/slidecraft-demo/README.md) (RU) | A product demo on a real screen recording: finger, taps, magnifier | 43.7 s · 12/12 | [release](https://github.com/eiler2005/Storygro/releases/tag/slidecraft-demo-2026-10-19) |
 | [**Why micro1 buys companies' work data**](content/videos/micro1-work-data/README.md) (RU) | An editorial collage explainer checked against micro1's primary sources | 94.2 s · 11/11 | [release](https://github.com/eiler2005/Storygro/releases/tag/micro1-work-data-qwen-2026-10-19) |
@@ -123,7 +138,7 @@ Outputs live in ignored `.reel/` folders; public copies go to GitHub Releases, n
 ## Repository
 
 ```text
-production/   the engine: CLI (src/), browser player (runtime/), 18 scenes, Python voices and audio
+production/   the engine: CLI (src/), browser player (runtime/), 19 scenes, styles/, Python voices and audio
 content/      what we make: videos/<id>/, ideas, research, brand, series
 examples/     reference and regression reels: ai-jobs, scene-gallery, editorial-collage, slidecraft-launch
 docs/         tutorials, how-to, reference, explanation, ADRs; planning in Russian

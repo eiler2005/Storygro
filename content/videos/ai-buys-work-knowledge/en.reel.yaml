@@ -1,0 +1,121 @@
+# The AI industry is buying what you know about your job — a one-minute cartoon explainer
+# (style: cartoon). Based on the owner's post; claims checked against micro1's own pages (sources.md).
+# The buyer is an illustrative character. Pictures: storygro images (prompts, seeds in images.json).
+reel: 1
+style: cartoon
+title: The AI industry is buying what you know about your job
+lang: en
+voice: { engine: qwen3, voice: assets/voice/narrator-en.wav, speed: 1.0 }
+data: { facts: facts.json }
+stills: { cover: hook@who, example: example@table }
+images:
+  seed: 11
+  cast:
+    maria: >-
+      Maria, a procurement manager in her forties with a dark brown bob haircut, rectangular red
+      glasses, a navy blazer over a white striped shirt and an ID badge on a lanyard
+post:
+  title: The AI industry is buying what you know about your job
+  text: |
+    On 9 October 2026 micro1 announced a commitment to spend $1 billion over 12 months acquiring and licensing companies' operational data — playbooks, CRM records, project histories — to build training environments for AI agents. Its partnership page lists tiers from $100K+ to $1M+, depending on the quality and uniqueness of the data.
+
+    Why: the hard part of work is judgment — incomplete information, competing priorities, exceptions. The buyer in the video is an illustration: the reasons behind her choice are in her head, not in the price table.
+
+    The opportunity: know the work, make your judgment testable, and turn it into automation that shows results.
+
+    Sources: micro1 announcement (9 Oct 2026) and Data Partnerships page. The narration is synthetic (Qwen3-TTS); pictures are generated with Z-Image-Turbo.
+  tags: [AI, future of work, procurement, automation, AI agents]
+scenes:
+  - id: hook
+    scene: illustration
+    say: 'Your everyday work just got a buyer. {#who}And it is an AI company.'
+    pad: [0.2, 0.5]
+    energy: 0.45
+    sfx: [{ at: who, kind: pop, gain: 0.5 }]
+    props:
+      shots:
+        - { image: shots/hook-1.jpg, prompt: '@maria at her office desk surrounded by binders, folders and a laptop, looking up with a raised eyebrow', move: in, focus: { x: 0.45, y: 0.4 } }
+        - { at: who, image: shots/hook-2.jpg, prompt: '@bot wearing a tiny necktie, holding out an open briefcase full of banknotes towards a tall shelf of office binders', move: out }
+      title: { text: Your work has a buyer, at: who }
+
+  - id: news
+    scene: illustration
+    say: 'On [October 9](=October ninth), micro1 committed {#billion}[$1 billion](=one billion dollars) over [12 months](=twelve months) {#data}to buying and licensing companies'' operational data: playbooks, CRM records, project histories.'
+    pad: [0.2, 0.5]
+    energy: 0.55
+    sfx: [{ at: billion, kind: hit, gain: 0.5 }]
+    props:
+      shots:
+        - { image: shots/news-1.jpg, prompt: 'two small round white robots pushing a big wheelbarrow piled high with green paper banknotes across a sunny city plaza towards a glass office tower', move: left }
+        - { at: data, image: shots/news-2.jpg, prompt: '@bot carefully placing office binders, a sales chart printout and project folders into a large glowing crate in a tidy archive room', move: in }
+      badge: { valueFrom: facts.budget.value, labelFrom: facts.budget.label, at: billion }
+      labels:
+        - { textFrom: facts.data.sops, x: 0.16, y: 0.66, at: data, tone: teal }
+        - { textFrom: facts.data.crm, x: 0.36, y: 0.58, at: data, tone: mustard }
+        - { textFrom: facts.data.projects, x: 0.58, y: 0.68, at: data, tone: blue }
+      source: { textFrom: facts.budget.sourceLine }
+
+  - id: why
+    scene: illustration
+    say: 'Why? In micro1''s words, {#gaps}real business operations involve incomplete information, competing priorities and exceptions {#judgment}that require judgment.'
+    pad: [0.2, 0.5]
+    energy: 0.5
+    props:
+      shots:
+        - { image: shots/why-1.jpg, prompt: '@maria in a busy open-plan office calmly juggling a ringing phone, a wall calendar with red marks and three folders at once', move: right }
+      labels:
+        - { textFrom: facts.quote.incomplete, x: 0.22, y: 0.26, at: gaps, until: judgment, tone: red }
+        - { textFrom: facts.quote.priorities, x: 0.5, y: 0.16, at: gaps, until: judgment, tone: mustard }
+        - { textFrom: facts.quote.exceptions, x: 0.78, y: 0.26, at: gaps, until: judgment, tone: teal }
+      title: { text: It takes judgment, at: judgment, align: left, width: 0.45 }
+
+  - id: example
+    scene: illustration
+    say: 'Take Maria, a buyer. {#pick}She picks the pricier supplier. {#late}The cheap one has missed deadlines before. {#swap}Swapping a part means new approvals, {#line}and a late delivery would stop the line. {#table}None of that is in the price table.'
+    pad: [0.2, 0.6]
+    energy: 0.55
+    sfx: [{ at: line, kind: thud, gain: 0.5 }]
+    props:
+      shots:
+        - image: shots/example-1a.jpg
+          prompt: 'a cheap thin cardboard shipping box with a dented corner on a bare warehouse shelf'
+          split: shots/example-1b.jpg
+          splitPrompt: 'a sturdy wooden shipping crate with neat metal corners on a bare warehouse shelf'
+          move: none
+        - { at: late, image: shots/example-2.jpg, prompt: 'a wall calendar made of plain blank squares, several squares crossed out with a red marker, next to a window showing a delivery truck stuck in deep mud with its wheels spinning', move: in }
+        - { at: line, image: shots/example-4.jpg, prompt: 'a factory assembly line standing still, idle workers waiting, a red warning light glowing', move: out }
+        - { at: table, image: shots/example-5.jpg, prompt: '@maria standing on the right side of the frame holding up a printed spreadsheet with empty columns and shrugging with a knowing smile, plain empty wall on the left half', move: in, focus: { x: 0.7, y: 0.4 } }
+      labels:
+        - { text: cheaper, x: 0.25, y: 0.2, at: pick, until: late, tone: red }
+        - { text: chosen, x: 0.75, y: 0.2, at: pick, until: late, tone: green }
+      title: { text: The why is not in the table, at: table, align: left, width: 0.45 }
+      source: { textFrom: facts.example.label }
+
+  - id: value
+    scene: illustration
+    say: 'That chain, what she knew, checked and rejected, {#train}is what AI training environments need. {#tiers}micro1 lists payouts from [$100,000](=a hundred thousand dollars) to over [$1 million](=a million) per partnership.'
+    pad: [0.2, 0.5]
+    energy: 0.55
+    sfx: [{ at: tiers, kind: hit, gain: 0.45 }]
+    props:
+      shots:
+        - { image: shots/value-1.jpg, prompt: '@maria drawing a decision flowchart of empty boxes and arrows on a whiteboard, nothing written inside the boxes, while @bot takes notes on a tablet', move: right }
+        - { at: tiers, image: shots/value-2.jpg, prompt: '@bot standing on a stack of office binders, looking up at a tall stack of golden coins', move: out }
+      badge: { valueFrom: facts.tiers.value, labelFrom: facts.tiers.label, at: tiers, side: left }
+      source: { textFrom: facts.tiers.sourceLine }
+
+  - id: close
+    scene: illustration
+    say: 'So the opportunity is yours: {#know}know the work, {#test}make your judgment testable, {#ship}and turn it into automation that shows results. {#cta}Which decision in your job lives only in your head?'
+    pad: [0.2, 1.6]
+    energy: 0.45
+    sfx: [{ at: cta, kind: chime, gain: 0.5 }]
+    props:
+      shots:
+        - { image: shots/close-1.jpg, prompt: '@maria and @bot shaking hands in front of a busy factory assembly line with green lights', move: in }
+        - { at: cta, image: shots/close-2.jpg, prompt: '@maria at her desk looking thoughtfully at a notepad with a sketched light bulb, warm evening light', move: in, focus: { x: 0.65, y: 0.4 } }
+      labels:
+        - { text: know the work, x: 0.2, y: 0.22, at: know, until: cta, tone: teal }
+        - { text: make it testable, x: 0.5, y: 0.14, at: test, until: cta, tone: mustard }
+        - { text: automate and measure, x: 0.8, y: 0.22, at: ship, until: cta, tone: blue }
+      title: { text: Which decision lives only in your head?, at: cta, align: left, width: 0.4 }

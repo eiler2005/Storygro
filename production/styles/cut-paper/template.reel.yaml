@@ -1,0 +1,52 @@
+# {title} — a cut-paper vertical explainer (style: cut-paper). One mechanism, two or three sourced
+# numbers, one action. Numbers come from facts.json (valueFrom / labelFrom / textFrom).
+reel: 1
+style: cut-paper
+title: '{title}'
+lang: {lang}
+data: { facts: facts.json }
+allowNumbers: ['1', '2', '3']   # step numbers, not facts
+post:
+  title: '{title}'
+  text: |
+    One paragraph on what the viewer learns.
+
+    Sources: … The narration is synthetic.
+  tags: []
+scenes:
+  - id: hook
+    scene: headline
+    say: 'The tension in one line. {#turn}The twist.'
+    pad: [0.15, 0.5]
+    props:
+      kicker: The topic
+      lines:
+        - { text: First line, at: -1 }
+        - { text: the twist, at: turn, tone: red, mark: twist }
+  - id: data
+    scene: stat
+    say: 'The number that proves it. {#second}The number that surprises.'
+    props:
+      title: What the data says
+      items:
+        - { valueFrom: facts.example.value, labelFrom: facts.example.label, tone: blue, at: 0.6 }
+      sourceFrom: facts.example._source
+  - id: steps
+    scene: steps
+    say: 'So: {#a}first step. {#b}Second step. {#c}Third step.'
+    props:
+      title: What to do
+      tone: blue
+      items:
+        - { text: First step, sub: why it matters, at: a }
+        - { text: Second step, sub: why it matters, at: b }
+        - { text: Third step, sub: why it matters, at: c }
+  - id: outro
+    scene: headline
+    say: 'The takeaway. {#cta}Send this to someone who needs it.'
+    pad: [0.2, 1.8]
+    props:
+      kicker: takeaway
+      lines:
+        - { text: The takeaway, at: -1 }
+      note: { text: 'send this to someone who needs it', at: cta }

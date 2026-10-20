@@ -13,6 +13,24 @@ A spec named `<variant>.reel.yaml` (for example `ru.reel.yaml`) works in `.reel/
 
 Guide: [choose a topic](../how-to/choose-a-topic.md).
 
+## Study a reference
+
+| Command | Does | Writes |
+|---|---|---|
+| `transcript <file.txt \| media \| url> [--out dir] [--lang en]` | a pasted page transcript ("0:00" lines + text), a local audio/video file or a direct media URL (Whisper); a page URL when yt-dlp is installed | `transcript.json` with statistics, `transcript.md`, `transcript.srt` (default `.reel/transcripts/<name>/`) |
+
+Guide: [transcribe and analyse a reference](../how-to/transcribe-a-reference.md).
+
+## Styles and pictures
+
+| Command | Does | Writes |
+|---|---|---|
+| `styles` | lists the styles in `production/styles/` | — |
+| `new <folder> --style <id> [--lang en] [--title "…"]` | starts a content project in a style; refuses a folder with files | `episode.yaml`, `<lang>.reel.yaml`, `facts.json`, `sources.md`, `CREDITS.md` |
+| `images <spec> [--dry-run] [--force] [--only <scene>]` | generates the pictures the shots ask for — missing ones and those whose prompt or seed changed; keeps hand-made files; `--dry-run` lists prompts and states | pictures at their paths, `images.json` (prompt, seed, model, licence, SHA-256); `prompts.md` with the `manual` provider |
+
+Guides: [use a style](../how-to/use-a-style.md), [cartoon tutorial](../tutorials/cartoon-explainer.md). Fields: [styles reference](styles.md).
+
 ## Write and record
 
 | Command | Does | Writes |
@@ -81,15 +99,19 @@ Guides: [carousel and release](../how-to/carousel-and-release.md), [brand and se
 | `CHROME_PATH` | detected | Chrome or Chromium for frames, stills, storyboards and capture |
 | `FFMPEG` | the venv's `imageio-ffmpeg` binary | ffmpeg for encoding and muxing |
 | `STORYGRO_APPROVER` | `$USER` | name recorded by `approve` |
+| `STORYGRO_IMAGE_BIN` | `$STORYGRO_HOME/image-venv/bin` | where the mflux commands are |
+| `STORYGRO_YTDLP` | `yt-dlp` on the PATH or in the venv | downloader for page URLs in `transcript` |
 
 ## npm scripts
 
 | Script | Does |
 |---|---|
 | `npm run setup` / `setup:ru` | creates `~/.storygro/venv` with uv: Kokoro, audio tools, ffmpeg and (Apple silicon) mlx-whisper; `:ru` adds RUAccent, Silero and (Apple silicon) Qwen3-TTS via mlx-audio |
+| `npm run setup:images` | Apple silicon: `~/.storygro/image-venv` with mflux for generated pictures; the model (about 11 GB) downloads on first use |
 | `npm run check` | media policy, doc links, TypeScript and tests — what CI runs |
 | `npm run check:media` | rejects indexed videos, audio, archives, files > 1 MiB and doc images > 300 KiB |
 | `npm run check:links` | every relative link and heading anchor in Markdown resolves |
 | `npm run hooks:install` | installs the pre-commit media guard |
 | `npm run assets:fetch` | restores off-Git render inputs from [content/media-assets.json](../../content/media-assets.json), verifying SHA-256 |
 | `npm run docs:media` | rebuilds the small previews in `docs/media/` from local renders |
+| `npm run docs:toolkit` | regenerates [the toolkit page](toolkit.md) from `production/toolkit.yaml` |

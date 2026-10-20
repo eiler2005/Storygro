@@ -1,0 +1,490 @@
+# The Storygro toolkit: every method and tool for making content, by production stage.
+# Agents read this file to pick an approach; people read docs/reference/toolkit.md, generated from it
+# by `npm run docs:toolkit`. tests/toolkit.test.ts keeps it complete: every CLI command, style and
+# scene must appear here, and every link must resolve.
+#
+# kind:   method (a way of working) · tool (a command or script) · style (a reusable look and method)
+#         · scenes (a family of scene modules) · provider (an external model or service behind a tool)
+# status: stable · pilot (works, reviewed on one or two pieces) · planned (not implemented)
+toolkit: 1
+
+stages:
+  choose: Pick a topic worth a piece
+  research: Find and check what is true
+  write: Turn it into a script as data
+  look: Decide how it looks
+  voice: Narration, sound and timing
+  make: Storyboard, approval and rendering
+  check: Technical QA and the human review
+  ship: Release, publication record and metrics
+  maintain: Keep the repository and its media healthy
+
+entries:
+  - id: editorial-ranking
+    kind: tool
+    stage: choose
+    title: Editorial ranking
+    what: Scores backlog ideas from six explicit 0–5 ratings with published weights; attention never enters the score.
+    when: Choosing the next piece from content/ideas/backlog.yaml.
+    commands: [ideas]
+    how: npm run storygro -- ideas content/ideas/backlog.yaml
+    status: stable
+    docs: docs/how-to/choose-a-topic.md
+    examples: [content/ideas/backlog.yaml]
+
+  - id: trend-scan
+    kind: tool
+    stage: choose
+    title: Trend scan and watchlist
+    what: Google Trends RSS, Wikipedia pageviews and Hacker News without API keys; focus matches and momentum per backlog idea.
+    when: Checking whether a topic is gaining attention; signals are context, never proof.
+    commands: [trends]
+    how: npm run storygro -- trends production/trends/sources.yaml --backlog content/ideas/backlog.yaml --md content/.signals/latest.md
+    status: stable
+    docs: docs/how-to/choose-a-topic.md
+    examples: [content/research/ai-agent-checks/README.md]
+
+  - id: primary-source-research
+    kind: method
+    stage: research
+    title: Primary-source research
+    what: Each claim traced to a primary source with date, method, a verbatim quote and caveats; popular misquotes listed to avoid.
+    when: Before any script; every number on screen needs it.
+    how: Follow the agent procedure; write sources.md beside the reel.
+    status: stable
+    docs: production/research/WORKFLOW.md
+    examples: [content/videos/ai-buys-work-knowledge/sources.md, examples/ai-jobs/sources.md]
+
+  - id: facts-file
+    kind: method
+    stage: research
+    title: Facts as data
+    what: Every on-screen number and quoted phrase lives in facts.json with its source; scenes bind it (valueFrom, textFrom) and the facts gate rejects numbers that are not there.
+    when: Always; never type a number into a scene.
+    how: "Bind in props: badge: { valueFrom: facts.budget.value }"
+    status: stable
+    docs: docs/how-to/write-a-script.md
+    examples: [content/videos/ai-buys-work-knowledge/facts.json]
+
+  - id: reference-analysis
+    kind: method
+    stage: research
+    title: Reference analysis
+    what: Study a video that works — length, words per minute, structure with timestamps, cut rate, visual language, weak points — and record what to take and what never to copy.
+    when: Before adopting a new format or building a style.
+    commands: [transcript]
+    how: Transcribe, sample frames, write content/research/references/<id>.md
+    status: pilot
+    docs: docs/how-to/transcribe-a-reference.md
+    examples: [content/research/references/cYlePq4WQsk.md, content/research/references/gHFDPVjbOco.md]
+
+  - id: transcript
+    kind: tool
+    stage: research
+    title: Transcript and pace statistics
+    what: A pasted page transcript, a media file or a direct media URL → timed segments, Markdown, SRT, words per minute per minute, questions and numbers with times.
+    when: Analysing a reference or checking your own narration.
+    commands: [transcript]
+    how: npm run storygro -- transcript private/references/<id>.txt --out private/references/<id>
+    status: pilot
+    docs: docs/how-to/transcribe-a-reference.md
+
+  - id: whisper
+    kind: provider
+    stage: research
+    title: Whisper (mlx-whisper)
+    what: Local speech recognition on Apple silicon; used by transcript, word alignment and the QA speech check.
+    when: Media without a transcript; every QA run.
+    status: stable
+    docs: docs/explanation/technology.md
+
+  - id: script-as-data
+    kind: method
+    stage: write
+    title: Script as data
+    what: A YAML reel — scenes, narration with `{#cue}` sync points, `[written](=spoken)` pronunciation, props bound to facts, post text.
+    when: Every video; the voice sets the timing, cues keep pictures on their words.
+    commands: [new]
+    how: npm run storygro -- new content/videos/<id> --style <style>, then edit <lang>.reel.yaml
+    status: stable
+    docs: docs/how-to/write-a-script.md
+    examples: [content/videos/ai-buys-work-knowledge/en.reel.yaml]
+
+  - id: story-structures
+    kind: method
+    stage: write
+    title: Story structures
+    what: "Each style carries its structure: cut-paper — hook, mechanism, evidence, action, close; cartoon — hook, promise, stages or one worked example, callback, caveat, close."
+    when: Outlining a script; pick the style first.
+    how: Read the structure in production/styles/<id>/style.yaml
+    status: stable
+    docs: docs/reference/styles.md
+
+  - id: worked-example
+    kind: method
+    stage: write
+    title: One worked example
+    what: Make an abstract claim concrete through one person and one decision (the buyer who picks the pricier supplier), labelled illustrative on screen.
+    when: The idea is about judgment or process rather than a statistic.
+    status: pilot
+    docs: production/styles/cartoon/README.md
+    examples: [content/videos/ai-buys-work-knowledge/README.md]
+
+  - id: language-variants
+    kind: method
+    stage: write
+    title: Language variants
+    what: Sibling ru.reel.yaml and en.reel.yaml share facts, theme and assets; each is written for its audience, not translated word for word.
+    when: One piece for Russian and English audiences.
+    status: stable
+    docs: docs/how-to/language-variants.md
+    examples: [examples/ai-jobs/README.md]
+
+  - id: brand-and-series
+    kind: tool
+    stage: write
+    title: Brand profile and series
+    what: Audience, voices, the disclosure every post must carry and avoided phrases (checked by QA); series list episodes of a rubric with their status.
+    when: Pieces for a channel or a recurring rubric.
+    commands: [series]
+    how: "brand: ../../brand.yaml in the reel; npm run storygro -- series content/series/<id>.yaml"
+    status: stable
+    docs: docs/how-to/brand-and-series.md
+    examples: [content/brand.yaml, content/series/business-explainers.yaml]
+
+  - id: style-cartoon
+    kind: style
+    stage: look
+    title: Cartoon explainer
+    what: Generated comic illustrations with a recurring cast, a new picture every 4–8 s with a slow camera move, burned-in captions, headlines and sourced numbers drawn on top. 16:9 by default.
+    when: Narrated explainers for YouTube, from a one-minute short to a long-form episode; stories about people and decisions.
+    commands: [styles, new, images]
+    how: npm run storygro -- new content/videos/<id> --style cartoon
+    status: pilot
+    style: cartoon
+    docs: docs/tutorials/cartoon-explainer.md
+    examples: [content/videos/ai-buys-work-knowledge/README.md]
+
+  - id: style-cut-paper
+    kind: style
+    stage: look
+    title: Cut-paper explainer
+    what: Vertical explainers on paper — hand-cut cards, paper figures, marker strokes, stamps — one mechanism per scene. No pictures to generate.
+    when: Reels and Shorts, 45–90 s, a mechanism with recurring objects and two or three numbers.
+    commands: [new]
+    how: npm run storygro -- new content/videos/<id> --style cut-paper
+    status: stable
+    style: cut-paper
+    docs: docs/how-to/use-a-style.md
+    examples: [examples/ai-jobs/README.md, content/videos/ai-agent-checks/README.md]
+
+  - id: style-editorial-collage
+    kind: style
+    stage: look
+    title: Editorial collage
+    what: Vertical explainers on graph paper with photo or illustration cut-outs, torn labels, panels and arrows; objects return across scenes.
+    when: News-driven explainers with characters and documents; you supply the cut-outs.
+    commands: [new]
+    how: npm run storygro -- new content/videos/<id> --style editorial-collage
+    status: stable
+    style: editorial-collage
+    docs: docs/how-to/use-a-style.md
+    examples: [content/videos/micro1-work-data/README.md]
+
+  - id: scenes-cut-paper
+    kind: scenes
+    stage: look
+    title: Cut-paper scenes
+    what: Vertical-first scenes on paper with figures, cards and marker.
+    when: The cut-paper style or any paper explainer.
+    scenes: [headline, crowd, task-stack, ladder, stat, chart, steps, outro]
+    status: stable
+    docs: docs/reference/scenes.md
+
+  - id: scenes-collage
+    kind: scenes
+    stage: look
+    title: Collage scene
+    what: One layered scene — text, labels, image cut-outs, panels, arrows — composed per beat.
+    when: The editorial-collage style.
+    scenes: [collage]
+    status: stable
+    docs: docs/reference/scenes.md#collage
+
+  - id: scenes-illustration
+    kind: scenes
+    stage: look
+    title: Illustration scene
+    what: Full-frame pictures that change on cues with a camera move, split frames, and DOM overlays (headline band, number badge, labels, source line).
+    when: The cartoon style or any piece built from pictures.
+    scenes: [illustration]
+    status: pilot
+    docs: docs/reference/scenes.md#illustration
+
+  - id: scenes-screencast
+    kind: scenes
+    stage: look
+    title: Screencast scene
+    what: A recorded website inside a phone with the finger, tap ripples, notes and a magnifier, a tap aligned to a narrated word.
+    when: Product demos on a real site.
+    scenes: [screencast]
+    status: stable
+    docs: docs/how-to/product-demo-from-a-website.md
+
+  - id: scenes-landscape-product
+    kind: scenes
+    stage: look
+    title: Landscape product scenes
+    what: 16:9 scenes from the SlideCraft launch film — statements, a logo reveal, a chat, stacks, grids, a spotlight, pins, an end card.
+    when: Product launches and landscape explainers.
+    scenes: [statement, logo-reveal, chat, stack, grid, spotlight, pins, end-card]
+    status: stable
+    docs: docs/reference/scenes.md
+    examples: [examples/slidecraft-launch/README.md]
+
+  - id: generated-illustrations
+    kind: tool
+    stage: look
+    title: Generated illustrations
+    what: Pictures for shots with a prompt, generated locally with a stable seed; images.json records prompt, seed, model, licence and checksum; the pictures stay out of Git.
+    when: Illustrated styles; regenerate a shot by editing its prompt or seed.
+    commands: [images]
+    how: npm run storygro -- images content/videos/<id>/en.reel.yaml [--dry-run] [--only <scene>]
+    status: pilot
+    docs: docs/tutorials/cartoon-explainer.md
+    examples: [content/videos/ai-buys-work-knowledge/images.json]
+
+  - id: z-image-turbo
+    kind: provider
+    stage: look
+    title: Z-Image-Turbo via mflux
+    what: Local image model (Apache-2.0, 8-bit mflux conversion) on Apple silicon, in a separate ~/.storygro/image-venv; about 52 s per 1280×720 picture on an M5 Pro.
+    when: Generated illustrations; elsewhere use the manual provider.
+    how: npm run setup:images
+    status: pilot
+    docs: docs/explanation/technology.md
+
+  - id: recurring-cast
+    kind: method
+    stage: look
+    title: Recurring cast
+    what: Describe each character once (images.cast) and use @name in every prompt; review the storyboard for drift and regenerate with another seed.
+    when: Any piece with generated characters.
+    status: pilot
+    docs: docs/reference/styles.md
+    examples: [content/videos/ai-buys-work-knowledge/en.reel.yaml]
+
+  - id: text-free-pictures
+    kind: method
+    stage: look
+    title: No text in pictures
+    what: Prompts forbid text; headlines, numbers and labels are overlays bound to facts, so they are sharp, translatable and traceable. Pictures with stray letters are regenerated.
+    when: Every generated picture.
+    status: pilot
+    docs: production/styles/cartoon/README.md
+
+  - id: screen-capture
+    kind: tool
+    stage: look
+    title: Screen capture
+    what: A scripted phone-browser session (goto, scroll, tap, type, key) recorded in virtual time with the finger path.
+    when: Showing a real product or website.
+    commands: [capture]
+    how: npm run storygro -- capture content/videos/<id>/captures/<name>.capture.yaml
+    status: stable
+    docs: docs/how-to/product-demo-from-a-website.md
+    examples: [content/videos/slidecraft-demo/README.md]
+
+  - id: new-scene
+    kind: method
+    stage: look
+    title: A new scene module
+    what: A deterministic mount() → draw(t) module when no existing scene and props can show the mechanism.
+    when: A new visual mechanism that several pieces will use.
+    status: stable
+    docs: docs/how-to/add-a-scene.md
+
+  - id: narration
+    kind: tool
+    stage: voice
+    title: Local narration and timing
+    what: Narrates each scene (cached), measures it and resolves cues to seconds; providers Kokoro (EN), Kokoro-RU, Qwen3-TTS (Apple silicon), Silero; Whisper aligns words when a provider has no timings.
+    when: As soon as the script exists — before designing pictures.
+    commands: [voice]
+    how: npm run storygro -- voice content/videos/<id>/en.reel.yaml
+    status: stable
+    docs: docs/reference/voices.md
+
+  - id: voice-design
+    kind: method
+    stage: voice
+    title: Narrator design
+    what: Design a synthetic narrator with Qwen3 VoiceDesign, then clone it per line so every scene has the same voice; choose by listening.
+    when: A new channel or language; never clone a real person without written consent.
+    how: ~/.storygro/venv/bin/python production/py/design_voice.py <out.wav> --lang en --seed 7 --instruct "…"
+    status: stable
+    docs: docs/how-to/design-a-voice.md
+
+  - id: pronunciation
+    kind: method
+    stage: voice
+    title: Pronunciation and say-as
+    what: "`[written](=spoken)` shows 61% while the voice says the words; `[word](/phonemes/)` fixes Kokoro; `{+1.5}` inserts a pause."
+    when: Numbers, abbreviations, names, Russian stress.
+    status: stable
+    docs: docs/how-to/write-a-script.md
+
+  - id: score
+    kind: tool
+    stage: voice
+    title: Music and sound effects
+    what: Music and effects synthesized from numbers (no samples), ducked under the voice, mixed to −14 LUFS.
+    when: Every render; set energy per scene and sfx on cues.
+    commands: [score]
+    how: npm run storygro -- score content/videos/<id>/en.reel.yaml
+    status: stable
+    docs: docs/explanation/architecture.md
+
+  - id: stills
+    kind: tool
+    stage: make
+    title: Stills and live preview
+    what: PNG frames at seconds, scenes or cues, with platform guides; a live preview with sound.
+    when: Designing and debugging scenes; checking every cue.
+    commands: [still, preview]
+    how: npm run storygro -- still content/videos/<id>/en.reel.yaml hook hook@turn --guides
+    status: stable
+    docs: docs/how-to/add-a-scene.md
+
+  - id: storyboard-approval
+    kind: method
+    stage: make
+    title: Storyboard and approval
+    what: Key frame, narration, on-screen text and warnings per scene; approval stores a hash of every input and any change resets it.
+    when: Before every render; the owner approves.
+    commands: [board, approve]
+    how: npm run storygro -- board <spec>, read board.pdf, then npm run storygro -- approve <spec>
+    status: stable
+    docs: docs/explanation/quality.md
+
+  - id: render
+    kind: tool
+    stage: make
+    title: Render
+    what: Headless Chrome draws every frame, ffmpeg encodes master and web MP4, subtitles and stills are written, QA runs.
+    when: After approval.
+    commands: [render, subs]
+    how: npm run storygro -- render content/videos/<id>/en.reel.yaml
+    status: stable
+    docs: docs/explanation/architecture.md
+
+  - id: formats
+    kind: method
+    stage: make
+    title: Formats, safe areas and captions
+    what: 9:16, 4:5, 1:1 and 16:9 presets; safe-area profiles for Reels and Shorts; burned-in captions phrase by phrase.
+    when: Choosing the platform shape; keep text clear of the platform UI.
+    status: stable
+    docs: docs/reference/formats.md
+
+  - id: carousel
+    kind: tool
+    stage: make
+    title: Carousel cards
+    what: One 1080×1350 card per scene at its key moment, from a carousel spec with its own copy.
+    when: An Instagram carousel alongside the video.
+    commands: [carousel]
+    how: npm run storygro -- carousel examples/ai-jobs/en.carousel.yaml
+    status: stable
+    docs: docs/how-to/carousel-and-release.md
+
+  - id: technical-qa
+    kind: tool
+    stage: check
+    title: Technical QA
+    what: Codec, size, audio, length, −14 LUFS, frame-0 hook, black frames, scene errors, facts gate, safe areas at every cue, Whisper hearing ≥ 85 % of each scene, brand rules. Skipped is never passed.
+    when: Every render (runs automatically); re-run after any fix.
+    commands: [qa]
+    how: npm run storygro -- qa content/videos/<id>/en.reel.yaml
+    status: stable
+    docs: docs/explanation/quality.md
+
+  - id: human-review
+    kind: method
+    stage: check
+    title: Human review
+    what: Watch and listen on a phone; check claims against sources, character drift, stray text, tone. A QA pass is not editorial approval.
+    when: Before any upload.
+    status: stable
+    docs: docs/explanation/quality.md#the-human-review-that-no-gate-replaces
+
+  - id: release-package
+    kind: tool
+    stage: ship
+    title: Release package
+    what: All variants with MP4, subtitles, cover, stills, storyboard PDF, QA report, post text and a manifest with SHA-256, engine commit and voice providers; refuses unapproved or failing inputs.
+    when: A piece is ready to hand over or publish.
+    commands: [package, deliver]
+    how: npm run storygro -- package content/videos/<id>/episode.yaml (deliver <spec> copies one variant to ~/Downloads)
+    status: stable
+    docs: docs/how-to/carousel-and-release.md
+
+  - id: publication-ledger
+    kind: tool
+    stage: ship
+    title: Publication ledger and metrics
+    what: Records where and when a person posted a release (plan, approve, checklist, mark) and metric snapshots with source and window; uploads nothing.
+    when: After a manual upload; to compare results later.
+    commands: [publish, metrics]
+    how: npm run storygro -- publish plan <release-dir> --variant en --platform youtube --account @handle
+    status: stable
+    docs: docs/how-to/publish-manually.md
+
+  - id: api-publishing
+    kind: provider
+    stage: ship
+    title: Platform upload and analytics APIs
+    what: Uploading to Instagram, YouTube or TikTok and reading their analytics automatically.
+    when: Needs the owner's accounts and a decision on the adapter (Postiz or direct APIs).
+    status: planned
+    docs: ROADMAP.md
+
+  - id: setup
+    kind: tool
+    stage: maintain
+    title: Local environments
+    what: The voice, ASR and audio venv (setup, setup:ru) and the separate picture venv (setup:images); off-Git render inputs restored by checksum (assets:fetch).
+    when: A new machine or a fresh checkout.
+    how: npm run setup:ru && npm run setup:images && npm run assets:fetch
+    status: stable
+    docs: docs/start-here.md
+
+  - id: repo-checks
+    kind: tool
+    stage: maintain
+    title: Repository checks
+    what: Media policy on indexed blobs, doc links and anchors, this toolkit, TypeScript, tests — the same in the pre-commit hook and CI.
+    when: Before every commit.
+    how: npm run check
+    status: stable
+    docs: docs/explanation/how-we-work.md
+
+  - id: doc-media
+    kind: tool
+    stage: maintain
+    title: Documentation previews and the toolkit page
+    what: Rebuilds the small English previews in docs/media/ from local renders, each under 300 KiB, and docs/reference/toolkit.md from this file.
+    when: After rendering something the docs show; after editing this file.
+    how: npm run docs:media; npm run docs:toolkit
+    status: stable
+    docs: docs/adr/0004-docs-structure-and-media.md
+
+  - id: help
+    kind: tool
+    stage: maintain
+    title: CLI help
+    what: Every command with its arguments and options.
+    commands: [help]
+    how: npm run storygro -- help
+    status: stable
+    docs: docs/reference/cli.md

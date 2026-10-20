@@ -14,6 +14,10 @@ npm run assets:fetch      # off-Git render inputs, SHA-256 checked
 
 Requirements: Node.js ≥ 22.12, Chrome or Chromium, [uv](https://docs.astral.sh/uv/). Qwen3 and the Whisper check need Apple silicon; elsewhere QA reports the speech check as skipped. See [start here](docs/start-here.md).
 
+## The toolkit
+
+Every method and tool lives in one bank, [`production/toolkit.yaml`](production/toolkit.yaml), shown to people as [docs/reference/toolkit.md](docs/reference/toolkit.md). Adding a command, a style, a scene or a new way of working means adding its entry (what it does, when to use it, how, status, docs, examples) and running `npm run docs:toolkit`. `npm test` fails when a command, style or scene is missing from the bank, a path in it does not exist, or the page is out of date.
+
 ## What is especially welcome
 
 - **Scenes**: a new visual mechanism that props on an existing scene cannot express. Open a [new scene issue](https://github.com/eiler2005/Storygro/issues/new?template=new_scene.yml) first, then follow [add a scene](docs/how-to/add-a-scene.md) and the [scene contract](docs/reference/scene-contract.md).

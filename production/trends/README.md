@@ -1,6 +1,6 @@
 # Trend and idea tools
 
-Configuration belongs here; editorial choices belong in [`content/ideas/`](../../content/ideas/README.md). Implementation: [`../src/ideas.ts`](../src/ideas.ts). Contract and caveats: [docs/ideas.md](../../docs/ideas.md).
+Configuration belongs here; editorial choices belong in [`content/ideas/`](../../content/ideas/README.md). Implementation: [`../src/ideas.ts`](../src/ideas.ts). Contract and caveats: [docs/ideas.md](../../docs/how-to/choose-a-topic.md).
 
 ```sh
 npm run storygro -- trends production/trends/sources.yaml --backlog content/ideas/backlog.yaml \

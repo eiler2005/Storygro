@@ -1,6 +1,6 @@
 # Topic selection and interest signals
 
-Storygro has two small editorial tools. `trends` collects public attention signals and watches the subjects of backlog ideas; `ideas` ranks the curated backlog. Neither generates a researched script or predicts audience growth. The shared workspace is [content/](../content/README.md); a worked example from scan to video is [content/research/ai-agent-checks](../content/research/ai-agent-checks/README.md), and the whole path with screenshots is [the pipeline](pipeline.md).
+Storygro has two small editorial tools. `trends` collects public attention signals and watches the subjects of backlog ideas; `ideas` ranks the curated backlog. Neither generates a researched script or predicts audience growth. The shared workspace is [content/](../../content/README.md); a worked example from scan to video is [content/research/ai-agent-checks](../../content/research/ai-agent-checks/README.md), and the whole path with screenshots is [the pipeline](../explanation/pipeline.md).
 
 ```sh
 npm run storygro -- trends production/trends/sources.yaml --backlog content/ideas/backlog.yaml \
@@ -59,7 +59,7 @@ Score = `sum(rating × weight / 5)`, from 0 to 100. Ties sort by id. Candidate, 
 2. Propose a few relevant questions, not a list of copied headlines. Record where the idea came from.
 3. Open primary sources; separate measured facts, forecasts and the author's advice.
 4. Add/update the backlog with explicit ratings and a rationale. Run ranking, then record the editorial selection.
-5. Create `content/videos/<id>/` with the episode, specs, fact data, sources and credits. Follow [workflows](workflows.md).
-6. After producing the package, set the item's `status: produced` and `episode:`. A person publishes; `storygro publish` and `storygro metrics` record where and how it went ([publishing](publishing.md)), and the editor adjusts ratings of similar ideas by hand.
+5. Create `content/videos/<id>/` with the episode, specs, fact data, sources and credits. Follow [workflows](../explanation/workflow.md).
+6. After producing the package, set the item's `status: produced` and `episode:`. A person publishes; `storygro publish` and `storygro metrics` record where and how it went ([publishing](../reference/publication-ledger.md)), and the editor adjusts ratings of similar ideas by hand.
 
 The future-of-work and micro1 topics came from the owner's requests; ai-agent-checks is the first topic picked from the watchlist. In each case the record says which, and no signal is presented as proof that a video will perform.

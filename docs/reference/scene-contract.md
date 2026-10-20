@@ -2,7 +2,7 @@
 
 > **Audience:** anyone (person or model) writing a scene module · **Status:** v0.2 (backwards compatible with v0.1)
 
-A scene is an ES module in `production/scenes/<name>.js` (reusable) or next to a reel (`examples/<reel>/scenes/<name>.js`, one-off). Reference implementations: [`production/scenes/statement.js`](../production/scenes/statement.js) (minimal) and [`production/scenes/headline.js`](../production/scenes/headline.js) (cut-paper, vertical-first).
+A scene is an ES module in `production/scenes/<name>.js` (reusable) or next to a reel (`examples/<reel>/scenes/<name>.js`, one-off). Reference implementations: [`production/scenes/statement.js`](../../production/scenes/statement.js) (minimal) and [`production/scenes/headline.js`](../../production/scenes/headline.js) (cut-paper, vertical-first).
 
 ```js
 export default {
@@ -42,7 +42,7 @@ export default {
 | `safe` | `{ profile, top, bottom, left, right, caption }` — platform UI margins on this stage, px |
 | `lang` | narration language (`en`, `ru`, …) |
 | `captions` | `true` when burned-in captions are on |
-| `kit` | helpers from [`production/runtime/kit.js`](../production/runtime/kit.js) |
+| `kit` | helpers from [`production/runtime/kit.js`](../../production/runtime/kit.js) |
 | `asset(path)` | URL of a file relative to the reel |
 
 ## `kit` (production/runtime/kit.js)

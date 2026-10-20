@@ -1,6 +1,6 @@
 # Storygro — гайд по рецептам
 
-Короткие рецепты в формате «задача → запрос агенту → команды → проверяемый результат» (по мотивам [Ryze tutorials](https://www.get-ryze.ai/roles/tutorials)). Статус каждого рецепта указан явно. Подробная техническая версия — [docs/workflows.md](../workflows.md) (на английском).
+Короткие рецепты в формате «задача → запрос агенту → команды → проверяемый результат» (по мотивам [Ryze tutorials](https://www.get-ryze.ai/roles/tutorials)). Статус каждого рецепта указан явно. Подробная техническая версия — [docs/workflows.md](../explanation/workflow.md) (на английском).
 
 ## 1. Посмотреть готовый пример — доступно
 
@@ -29,11 +29,11 @@ npm run storygro -- render  examples/ai-jobs/ru.reel.yaml   # MP4, SRT/VTT, об
 
 > Сделай explainer по теме «[тема]» для «[аудитория]» на русском и английском, 9:16, 60–90 секунд. После просмотра человек должен понять «[одна мысль]». Сначала собери актуальные источники с цитатами, каждое число — с источником. Покажи механизм через повторяющиеся объекты. Используй сцены «бумажной аппликации» и мужской голос. Остановись после storyboard, чтобы я его утвердил.
 
-Агент создаёт `content/videos/<id>/`: `sources.md` → `facts.json` → `ru.reel.yaml` и `en.reel.yaml` (отдельные сценарии, не перевод) → при необходимости `DIRECTION.md` → озвучка → кадры с `--guides` → storyboard. Правила сценария — [writing-a-reel](../writing-a-reel.md), сцены — [каталог](../scenes.md).
+Агент создаёт `content/videos/<id>/`: `sources.md` → `facts.json` → `ru.reel.yaml` и `en.reel.yaml` (отдельные сценарии, не перевод) → при необходимости `DIRECTION.md` → озвучка → кадры с `--guides` → storyboard. Правила сценария — [writing-a-reel](../how-to/write-a-script.md), сцены — [каталог](../reference/scenes.md).
 
 ## 4. Голос рассказчика — доступно
 
-Для нового русского ролика по предпочтению владельца: top-level `lang: ru`, `voice: { engine: kokoro, voice: dima, speed: 1.0 }`, установка `npm run setup:ru`. Это отдельная community-модель Kokoro-RU; подробнее — [voices](../voices.md#russian-kokoro).
+Для нового русского ролика по предпочтению владельца: top-level `lang: ru`, `voice: { engine: kokoro, voice: dima, speed: 1.0 }`, установка `npm run setup:ru`. Это отдельная community-модель Kokoro-RU; подробнее — [voices](../reference/voices.md#russian-kokoro).
 
 Один раз спроектировать синтетический голос и использовать его во всех сценах:
 
@@ -42,7 +42,7 @@ npm run storygro -- render  examples/ai-jobs/ru.reel.yaml   # MP4, SRT/VTT, об
   --instruct "Calm, warm adult male narrator, native Russian speaker, standard literary pronunciation, documentary tone"
 ```
 
-В спецификации: `voice: { engine: qwen3, voice: assets/voice/narrator-ru.wav }`. Произношение чисел и аббревиатур — через `[11%](=одиннадцать процентов)`, `[ВШЭ](=Высшей школы экономики)`. Подробно — [voices](../voices.md).
+В спецификации: `voice: { engine: qwen3, voice: assets/voice/narrator-ru.wav }`. Произношение чисел и аббревиатур — через `[11%](=одиннадцать процентов)`, `[ВШЭ](=Высшей школы экономики)`. Подробно — [voices](../reference/voices.md).
 
 ## 5. Карусель, тексты постов и пакет — доступно
 
@@ -68,4 +68,4 @@ npm run storygro -- trends production/trends/sources.yaml --out content/.signals
 npm run storygro -- ideas content/ideas/backlog.yaml --out content/.signals/ranked.json
 ```
 
-Агент проверяет дату и доступность источников, предлагает связанные с аудиторией вопросы, исследует первоисточники и обосновывает оценки в backlog. Популярность страницы сама по себе не подтверждает тезис и не обещает охват. [Правила отбора](../ideas.md), [пространство контента](../../content/README.md), [карта технологий и продуктов](../technology.md).
+Агент проверяет дату и доступность источников, предлагает связанные с аудиторией вопросы, исследует первоисточники и обосновывает оценки в backlog. Популярность страницы сама по себе не подтверждает тезис и не обещает охват. [Правила отбора](../how-to/choose-a-topic.md), [пространство контента](../../content/README.md), [карта технологий и продуктов](../explanation/technology.md).

@@ -18,6 +18,7 @@ Fonts are included with notices beside the actual files:
   examples/ai-jobs/assets/fonts/OFL-*.txt
   content/videos/*/assets/fonts/OFL-*.txt
   examples/editorial-collage/assets/fonts/OFL-*.txt
+  examples/scene-gallery/assets/fonts/OFL-*.txt
 
 Runtime dependencies and model weights are installed or downloaded separately. The end user
 must retain applicable notices when redistributing them. Storygro's licence does not replace

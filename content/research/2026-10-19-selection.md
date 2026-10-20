@@ -25,4 +25,4 @@
 - [Wikipedia pageviews API](https://doc.wikimedia.org/generated-data-platform/aqs/analytics-api/reference/page-views.html).
 - [Hacker News official API](https://github.com/HackerNews/API).
 - [Источники и границы делового выпуска](../videos/future-of-work/sources.md).
-- [Критерии и алгоритм отбора](../../docs/ideas.md).
+- [Критерии и алгоритм отбора](../../docs/how-to/choose-a-topic.md).

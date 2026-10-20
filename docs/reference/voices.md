@@ -58,7 +58,7 @@ This writes the WAV and its transcript (`.txt`). The voice is synthetic — not 
 
 ## How the voices in the example were chosen
 
-For [examples/ai-jobs](../examples/ai-jobs) the candidates were compared on the same sentences on an M5 Pro, by numbers that can be re-measured (none of this replaces listening):
+For [examples/ai-jobs](../../examples/ai-jobs) the candidates were compared on the same sentences on an M5 Pro, by numbers that can be re-measured (none of this replaces listening):
 
 | Candidate | Word error (Whisper large-v3-turbo) | UTMOS (predicted naturalness, English-trained) | Speed |
 |---|---|---|---|
@@ -71,7 +71,7 @@ For [examples/ai-jobs](../examples/ai-jobs) the candidates were compared on the 
 
 \* The Silero errors were "сорок процентов" written as "40%" — a normalisation difference, not mispronunciation. Whisper's language ID gave every Russian candidate P(ru) ≈ 1.0, so it could not separate accents.
 
-Historical decision for the first release: a designed male narrator cloned with `qwen3` for both variants. A later owner instruction selected Kokoro-RU Dima for the Russian examples; the English `ai-jobs` example keeps its Qwen3 reference narrator. After comparing the micro1 auditions, the owner selected **C: the original Russian Qwen3 reference** for that episode. Its provenance, transcript and off-Git restoration are recorded in [the episode voice notes](../content/videos/micro1-work-data/assets/voice/README.md). This is an episode choice, not a migration of the other existing specs. Silero remains a fallback.
+Historical decision for the first release: a designed male narrator cloned with `qwen3` for both variants. A later owner instruction selected Kokoro-RU Dima for the Russian examples; the English `ai-jobs` example keeps its Qwen3 reference narrator. After comparing the micro1 auditions, the owner selected **C: the original Russian Qwen3 reference** for that episode. Its provenance, transcript and off-Git restoration are recorded in [the episode voice notes](../../content/videos/micro1-work-data/assets/voice/README.md). This is an episode choice, not a migration of the other existing specs. Silero remains a fallback.
 
 ## Pronunciation notes (Russian)
 

@@ -43,7 +43,7 @@ scenes:
         - { valueFrom: facts.stanford.exposedChange, labelFrom: facts.stanford.exposedLabelEn, at: a }
 ```
 
-Several language variants share a folder by naming the files `<variant>.reel.yaml` (`ru.reel.yaml`, `en.reel.yaml`); each works in `.reel/<variant>/`. See [workflows](workflows.md#2-language-variants).
+Several language variants share a folder by naming the files `<variant>.reel.yaml` (`ru.reel.yaml`, `en.reel.yaml`); each works in `.reel/<variant>/`. See [language variants](language-variants.md).
 
 ## Budget
 
@@ -87,7 +87,7 @@ Prefer say-as hints over `caption:`: they keep word-accurate caption timing.
 
 ## Writing for each language
 
-Write each variant for its audience; do not translate word for word. Russian needs inflected numbers (`[2022](=двадцать второго)`), abbreviations spelled out, and short sentences — see the pronunciation notes in [voices](voices.md#pronunciation-notes-russian).
+Write each variant for its audience; do not translate word for word. Russian needs inflected numbers (`[2022](=двадцать второго)`), abbreviations spelled out, and short sentences — see the pronunciation notes in [voices](../reference/voices.md#pronunciation-notes-russian).
 
 ## Facts
 
@@ -101,4 +101,4 @@ Write `DIRECTION.md` next to the reel before scene code when several people or m
 
 1. `storygro board` — read every card: voice, on-screen text, sound, key frame, warnings.
 2. Fix anything; the facts gate lists numbers that are not in the data, the safe-area check lists text under the platform UI.
-3. `storygro approve`, then `storygro render`. QA runs at the end; fix and re-run every check ([quality](quality.md)).
+3. `storygro approve`, then `storygro render`. QA runs at the end; fix and re-run every check ([quality](../explanation/quality.md)).

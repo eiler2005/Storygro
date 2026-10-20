@@ -1,92 +1,167 @@
-# Storygro
+<h1 align="center">Storygro</h1>
 
-**Turn stories into growth.**
+<p align="center"><b>Turn stories into growth.</b><br>
+A toolkit for AI agents to turn ideas into reels, videos, carousels and social posts — researched, narrated, rendered and checked on your own machine.</p>
 
-A toolkit for AI agents to turn ideas into reels, videos, carousels, and social posts. Build your audience and grow your brand through content.
+<p align="center">
+  <a href="https://github.com/eiler2005/Storygro/actions/workflows/check.yml"><img alt="Check" src="https://img.shields.io/github/actions/workflow/status/eiler2005/Storygro/check.yml?branch=main&label=check&style=flat&labelColor=1d2230&color=d54c40"></a>
+  <a href="#license"><img alt="PolyForm Shield license" src="https://img.shields.io/badge/license-PolyForm_Shield_1.0.0-d54c40?style=flat&labelColor=1d2230"></a>
+  <img alt="Node 22.12+" src="https://img.shields.io/badge/node-%E2%89%A522.12-d54c40?style=flat&labelColor=1d2230">
+  <img alt="Works with Claude Code, Codex and any agent with a shell" src="https://img.shields.io/badge/agents-Claude_Code_·_Codex_·_any_shell_agent-d54c40?style=flat&labelColor=1d2230">
+</p>
 
-Storygro runs locally: research → script and facts → narration → storyboard → render → technical QA → a reviewable release with checksums. It is source-available under PolyForm Shield 1.0.0.
+<p align="center">
+  <a href="docs/start-here.md">Start here</a> · <a href="docs/features.md">Features</a> · <a href="docs/examples.md">Examples</a> · <a href="docs/explanation/pipeline.md">Pipeline</a> · <a href="docs/README.md">Docs</a> · <a href="ROADMAP.md">Roadmap</a> · <a href="CHANGELOG.md">Changelog</a>
+</p>
 
-## Content and production are separate
+<p align="center"><img src="docs/media/hero.jpg" alt="Five vertical frames Storygro rendered: a cut-paper headline, a stat card with sourced numbers, a career ladder, an editorial collage and a recorded website in a phone" width="100%"></p>
 
-| What you need | Where it lives |
-|---|---|
-| **Videos, scripts and selected assets** | [content/videos/](content/videos/README.md) — one folder per topic |
-| **Idea backlog** | [content/ideas/backlog.yaml](content/ideas/backlog.yaml) — thesis, sources, editorial ratings, status |
-| **Source checks and editorial research** | [content/research/](content/research/) — findings for specific content |
-| **Reusable research procedure** | [production/research/](production/research/WORKFLOW.md) — agent workflow |
-| **Trend collection and ranking tools** | [production/trends/](production/trends/README.md) — configuration and commands |
-| **Video production tools** | [production/video/](production/video/README.md), [production/](production/README.md) — CLI, player, scenes and Python audio |
-| **Engine examples and regression material** | [examples/](examples/) — historical launch, AI/jobs and an internal collage fixture |
+---
 
-Generated videos, audio caches, storyboards and QA live in ignored `.reel/` folders beside each video project. Public media packages are attached to GitHub Releases. No project content is stored inside the tool directories.
+## The easiest way: ask your agent
 
-**Public Git media policy:** no video/audio/GIF/archives/exports in Git; files ≤1 MiB, documentation preview images ≤300 KiB. Large original render inputs are restored with `npm run assets:fetch` from a [checksum manifest](content/media-assets.json). [Storage rules and checks](docs/media-policy.md).
+Open this repository in an agent that can run commands — Claude Code, Codex or any other with a shell — and fill in the brackets:
 
-## Latest videos
+```text
+Read AGENTS.md and docs/explanation/workflow.md. Make a 60–90 second vertical explainer
+about "[topic]" for "[audience]" in [English / Russian]. After watching, a viewer should
+understand "[one idea]". Research current primary sources first and keep every number with
+its source and a quote. Show the mechanism with recurring objects, not a list of facts.
+Stop after the storyboard so I can approve it.
+```
+
+The agent researches, writes the script and facts, narrates, builds a storyboard and waits. You approve; it renders, runs QA and packages a release. Every step leaves a file you can open. [The tutorial](docs/tutorials/explainer-from-a-topic.md) shows each one.
+
+## What Storygro is
+
+**Videos as code, with an editor's checks.** A video is a YAML script plus a facts file. The voice sets the timing; small JavaScript scenes draw every frame deterministically in headless Chrome; ffmpeg encodes. Gates sit where mistakes are expensive: a storyboard you approve before rendering, a facts gate that rejects any on-screen number not traceable to a source, and technical QA on the finished file — including Whisper listening to the narration.
+
+**Local and accountless.** No server, no account, no API keys for the core. Voices run on your machine (Kokoro, Kokoro-RU, Qwen3-TTS, Silero). Publishing is a person's act; Storygro keeps the ledger.
+
+**Made for agents and for the people who direct them.** [AGENTS.md](AGENTS.md) holds the rules; [how we work](docs/explanation/how-we-work.md) says who decides what, and which model fits which job.
+
+## How it works
+
+<p align="center"><img src="docs/media/diagrams/pipeline.svg" alt="Storygro pipeline: choose, write, make, check, ship — with the commands of each stage and the four points where a person decides" width="100%"></p>
+
+| Stage | You get | Read |
+|---|---|---|
+| **Choose** | trend signals without API keys, a watchlist per idea, an editorial ranking | [choose a topic](docs/how-to/choose-a-topic.md) |
+| **Write** | `sources.md` with a quote per number, `facts.json`, a script per language, an optional real-site recording | [write a script](docs/how-to/write-a-script.md) |
+| **Make** | narration and timings, a storyboard PDF to approve, master and web MP4, subtitles, stills | [workflow](docs/explanation/workflow.md) |
+| **Check** | `QA.md`: codec, loudness, black frames, safe areas, facts, speech, brand rules | [quality gates](docs/explanation/quality.md) |
+| **Ship** | a release folder with checksums; a manual publication ledger and metric snapshots | [carousel and release](docs/how-to/carousel-and-release.md) |
+
+See [the pipeline](docs/explanation/pipeline.md) for one real run, from a trend scan on 19 October 2026 to a packaged video the same day.
+
+## Eighteen scenes
+
+<table>
+  <tr>
+    <td align="center" width="20%"><a href="docs/reference/scenes.md#headline"><img src="docs/media/scenes/headline.jpg" alt="headline scene"></a><br><sub><b>headline</b></sub></td>
+    <td align="center" width="20%"><a href="docs/reference/scenes.md#crowd"><img src="docs/media/scenes/crowd.jpg" alt="crowd scene"></a><br><sub><b>crowd</b></sub></td>
+    <td align="center" width="20%"><a href="docs/reference/scenes.md#task-stack"><img src="docs/media/scenes/task-stack.jpg" alt="task-stack scene"></a><br><sub><b>task-stack</b></sub></td>
+    <td align="center" width="20%"><a href="docs/reference/scenes.md#ladder"><img src="docs/media/scenes/ladder.jpg" alt="ladder scene"></a><br><sub><b>ladder</b></sub></td>
+    <td align="center" width="20%"><a href="docs/reference/scenes.md#stat"><img src="docs/media/scenes/stat.jpg" alt="stat scene"></a><br><sub><b>stat</b></sub></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="docs/reference/scenes.md#chart"><img src="docs/media/scenes/chart.jpg" alt="chart scene"></a><br><sub><b>chart</b></sub></td>
+    <td align="center"><a href="docs/reference/scenes.md#steps"><img src="docs/media/scenes/steps.jpg" alt="steps scene"></a><br><sub><b>steps</b></sub></td>
+    <td align="center"><a href="docs/reference/scenes.md#outro"><img src="docs/media/scenes/outro.jpg" alt="outro scene"></a><br><sub><b>outro</b></sub></td>
+    <td align="center"><a href="docs/reference/scenes.md#collage"><img src="docs/media/scenes/collage.jpg" alt="collage scene"></a><br><sub><b>collage</b></sub></td>
+    <td align="center"><a href="docs/reference/scenes.md#screencast"><img src="docs/media/scenes/screencast.jpg" alt="screencast scene"></a><br><sub><b>screencast</b></sub></td>
+  </tr>
+</table>
+
+Ten vertical-first scenes above, plus eight landscape product scenes from the SlideCraft launch film: `statement`, `logo-reveal`, `chat`, `stack`, `grid`, `spotlight`, `pins`, `end-card`. Every frame is a pure function of time, so stills, storyboards and the video always agree. [All scenes with pictures](docs/features.md#eighteen-animated-scenes) · [props](docs/reference/scenes.md) · [add your own](docs/how-to/add-a-scene.md)
+
+## Finished videos
 
 | Video | What it shows | Length · QA | Watch |
 |---|---|---|---|
-| [**Где проверять работу ИИ-агента**](content/videos/ai-agent-checks/README.md) | First topic picked from the trend watchlist: τ-bench numbers, where to put checks, who is liable. [How it was chosen](content/research/ai-agent-checks/README.md) | 51.6 s · 12/12 | [release](https://github.com/eiler2005/Storygro/releases/tag/ai-agent-checks-2026-10-19) |
-| [**SlideCraft demo**](content/videos/slidecraft-demo/README.md) | A product demo on a real screen recording (`capture` → `screencast`): finger, taps, magnifier | 43.7 s · 12/12 | [release](https://github.com/eiler2005/Storygro/releases/tag/slidecraft-demo-2026-10-19) |
-| [**Why micro1 buys companies’ work data**](content/videos/micro1-work-data/README.md) | Editorial collage explainer from an owner-supplied post, checked against micro1's primary sources | 94.2 s · 11/11 | [release](https://github.com/eiler2005/Storygro/releases/tag/micro1-work-data-qwen-2026-10-19) |
+| [**Where to check an AI agent's work**](content/videos/ai-agent-checks/README.md) (RU) | The first topic picked from the trend watchlist: τ-bench numbers, where to put checks, who is liable | 51.6 s · 12/12 | [release](https://github.com/eiler2005/Storygro/releases/tag/ai-agent-checks-2026-10-19) |
+| [**SlideCraft demo**](content/videos/slidecraft-demo/README.md) (RU) | A product demo on a real screen recording: finger, taps, magnifier | 43.7 s · 12/12 | [release](https://github.com/eiler2005/Storygro/releases/tag/slidecraft-demo-2026-10-19) |
+| [**Why micro1 buys companies' work data**](content/videos/micro1-work-data/README.md) (RU) | An editorial collage explainer checked against micro1's primary sources | 94.2 s · 11/11 | [release](https://github.com/eiler2005/Storygro/releases/tag/micro1-work-data-qwen-2026-10-19) |
+| [**AI and jobs**](examples/ai-jobs/README.md) (RU + EN) | The reference bilingual explainer with carousels | 84–85 s | [release](https://github.com/eiler2005/Storygro/releases/tag/business-explainers-2026-10-19) |
 
-All three use the owner-selected Russian Qwen3 narrator (audition C). None is published to social accounts yet; each needs the owner's viewing and listening first.
-
-![From trend scan to video: the stages with real artefacts](docs/media/pipeline/04-frames.jpg)
-
-**How it works, with pictures:** [the pipeline](docs/pipeline.md) — trends → watchlist → research and facts → screen capture → voice → storyboard → render → QA → package → manual publication ledger.
-
-## What works
-
-- Scripts as YAML data, source-bound facts, cue-based timing, separate language variants.
-- Native 9:16 and other aspect ratios, platform safe areas, burned-in captions and SRT/VTT.
-- Eighteen deterministic animated scenes: editorial collage, cut-paper explainers, landscape product scenes and `screencast` for real screen recordings.
-- `storygro capture`: scripted phone-browser recording in virtual time (goto, scroll, tap, type, key) with the finger path.
-- Local narration: Kokoro EN, Kokoro-RU with RUAccent, Qwen3-TTS on Apple silicon, Silero CIS; word timing through engine data or Whisper alignment.
-- Topic selection: Google Trends RSS, Wikipedia and Hacker News signals without API keys, focus matching, a per-idea watchlist with momentum, and a curated backlog with explicit editorial scoring.
-- Brand profile (audience, voices, disclosure, avoided phrases) checked by QA; series with a status table.
-- Storyboard HTML/PDF, approval gate over a hash of every input, synthesized music/effects, master/web MP4, stills and carousels.
-- Technical QA: codec, dimensions, audio, loudness, black frames, runtime/asset errors, source traceability, safe areas, speech (Whisper) and brand rules.
-- Packages with checksums, engine commit, voice provenance and QA results; a manual publication ledger and metric snapshots.
-
-Uploading to Instagram/YouTube and reading platform analytics through APIs remain planned: `package` writes local files, `publish` only records what a person did. Research is an agent workflow, not an unattended fact-checking service.
+None is published to social accounts yet; each needs the owner's viewing and listening first. More, including the historical SlideCraft launch film: [examples](docs/examples.md).
 
 ## Quick start
 
-Run from the repository root. Requirements: Node.js ≥22.12, Chrome/Chromium, uv, macOS or Linux. Qwen3 and the current Whisper QA backend use MLX/Apple silicon; elsewhere the speech check is reported as skipped.
+Requirements: Node.js ≥ 22.12, Chrome or Chromium, [uv](https://docs.astral.sh/uv/), macOS or Linux. Qwen3 voices and the Whisper speech check need Apple silicon; elsewhere Kokoro and Silero work and QA reports the speech check as skipped.
 
 ```sh
-npm ci
-npm run hooks:install
-npm run check
-npm run assets:fetch
-npm run setup:ru
+git clone https://github.com/eiler2005/Storygro && cd Storygro
+npm ci && npm run hooks:install && npm run check
 
-npm run storygro -- ideas content/ideas/backlog.yaml
-npm run storygro -- trends production/trends/sources.yaml --backlog content/ideas/backlog.yaml --md content/.signals/latest.md
-npm run storygro -- series content/series/business-explainers.yaml
+# frames and a storyboard in seconds, no voice model needed
+npm run storygro -- board examples/ai-jobs/en.reel.yaml --no-voice
 
-npm run storygro -- board content/videos/micro1-work-data/ru.reel.yaml
-# Inspect the storyboard before approving its current inputs.
-npm run storygro -- approve content/videos/micro1-work-data/ru.reel.yaml
-npm run storygro -- render content/videos/micro1-work-data/ru.reel.yaml
-npm run storygro -- package content/videos/micro1-work-data/episode.yaml content/videos/micro1-work-data/.reel/releases/micro1-work-data-qwen-2026-10-19
+# voices, then a real render
+npm run setup:ru && npm run assets:fetch
+npm run storygro -- board   examples/ai-jobs/ru.reel.yaml
+npm run storygro -- approve examples/ai-jobs/ru.reel.yaml
+npm run storygro -- render  examples/ai-jobs/ru.reel.yaml
 ```
 
-The internal entry point is `production/src/cli.ts`. `npm run reel`, `reel: 1`, `/rc/`, `.reel/` and legacy `REELCRAFT_*` environment aliases remain supported. `STORYGRO_HOME`, `STORYGRO_PYTHON`, `CHROME_PATH` and `FFMPEG` override local tools.
+Step by step: [start here](docs/start-here.md). Every command: [CLI reference](docs/reference/cli.md).
 
-## Earlier videos
+## What you get
 
-- [Future of work](content/videos/future-of-work/README.md): Russian business explainer with Kokoro-RU, 68.63 s, 11/11 QA pass.
-- [AI and jobs](examples/ai-jobs/README.md): RU Kokoro / EN Qwen3, 84–85 s, carousels; [downloads](https://github.com/eiler2005/Storygro/releases/tag/business-explainers-2026-10-19).
-- [SlideCraft launch](docs/history/slidecraft-launch.md): the historical film this engine grew out of.
+| File | What it is |
+|---|---|
+| `<name>.mp4`, `<name>-web.mp4` | master (H.264, CRF 16) and a web copy ≤ 25 MB, −14 LUFS |
+| `<name>.srt`, `<name>.vtt` | subtitles from the word timings |
+| `board.pdf` | the storyboard: key frame, narration, on-screen text, sound, warnings per scene |
+| `stills/`, `carousel/` | cover and key frames; 1080×1350 carousel cards |
+| `QA.md`, `qa.json` | every check with pass, fail or skip — skipped is never reported as passed |
+| `post.md` | title, text with the synthetic-voice disclosure, tags |
+| `manifest.json` | SHA-256 of every file, engine commit, voice providers, QA verdicts |
 
-## Documentation
+Outputs live in ignored `.reel/` folders; public copies go to GitHub Releases, never into Git.
 
-[**Pipeline with pictures**](docs/pipeline.md) · [production tools](production/README.md) · [architecture](docs/architecture.md) · [workflows](docs/workflows.md) · [scene catalog](docs/scenes.md) · [scene contract](docs/scene-contract.md) · [voices](docs/voices.md) · [quality](docs/quality.md) · [ideas and trends](docs/ideas.md) · [publishing ledger](docs/publishing.md) · [technology and licences](docs/technology.md) · [handoff for another LLM](docs/planning/HANDOFF.md).
+## Repository
 
-Read [AGENTS.md](AGENTS.md) before editing. Keep content provenance and model/font notices; inspect rendered media after production changes. Technical QA does not replace watching and listening.
+```text
+production/   the engine: CLI (src/), browser player (runtime/), 18 scenes, Python voices and audio
+content/      what we make: videos/<id>/, ideas, research, brand, series
+examples/     reference and regression reels: ai-jobs, scene-gallery, editorial-collage, slidecraft-launch
+docs/         tutorials, how-to, reference, explanation, ADRs; planning in Russian
+tests/        node:test suites          agents/  director, scene-builder, qa roles
+```
 
-## Licence
+Full map and where to change what: [repository layout](docs/reference/repository-layout.md). Heavy media stays out of Git by rule and by check: [media policy](docs/reference/media-policy.md).
 
-[PolyForm Shield 1.0.0](LICENSE), following the SlideCraft licensing model. See [COMMERCIAL.md](COMMERCIAL.md) and [NOTICE](NOTICE). Third-party models and fonts retain separate terms.
+## Principles
+
+- **Every number has a source.** Numbers live in data files with a quote; scenes never type them.
+- **Voice first, picture second.** The storyboard is approved on real timings.
+- **Deterministic frames.** Any moment renders the same, in any order.
+- **A person decides.** The topic, the voice, the storyboard, the final watch and the upload.
+- **Skipped is not passed, and a pass is not approval.**
+- **Disclose synthetic voices.** Never clone a real person's voice without written consent.
+
+## Honest limits
+
+- Uploading to Instagram, YouTube or TikTok and reading their analytics through APIs are [planned](ROADMAP.md), not implemented; `publish` only records what a person did.
+- Research is an agent workflow, not an unattended fact-checking service.
+- Safe-area profiles are estimates; check a real upload on a phone.
+- QA finds technical defects; it does not judge whether the story works.
+
+## Privacy and network access
+
+Storygro runs on your machine with no account and no telemetry. It goes online only when you ask: `npm ci`; `setup` (Python packages via uv, model weights from Hugging Face); `assets:fetch` (render inputs from this repository's GitHub Releases, checksum-verified); `trends` (public Google Trends RSS, Wikipedia and Hacker News); `capture` (the URL in your capture spec, in local Chrome). The preview server binds to loopback. See [SECURITY.md](SECURITY.md).
+
+## Contributing
+
+Issues and pull requests are welcome — scenes, voice providers, QA checks and how-to guides especially. Start with [CONTRIBUTING.md](CONTRIBUTING.md); `npm run check` runs the media policy, the doc link check, TypeScript and the tests.
+
+## License
+
+Storygro is **source-available** (not OSI open source) under the [PolyForm Shield License 1.0.0](LICENSE), following the SlideCraft licensing model:
+
+- **Free for individuals and companies** to make content — for yourself, your employer or paying clients — and to adapt the software for permitted uses.
+- **Don't compete with it** — no competing hosted content-generation service or white-label product built from Storygro.
+- **Commercial licence** for competing or embedding uses: [denis.ermilov@gmail.com](mailto:denis.ermilov@gmail.com). Details: [COMMERCIAL.md](COMMERCIAL.md).
+
+Third-party models, voices and fonts keep their own terms ([NOTICE](NOTICE), [technology](docs/explanation/technology.md), [voices](docs/reference/voices.md)). `reel: 1`, `.reel/`, `npm run reel` and `REELCRAFT_*` remain supported from the engine's earlier name.

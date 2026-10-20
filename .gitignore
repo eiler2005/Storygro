@@ -57,6 +57,8 @@ dist/
 /content/videos/micro1-work-data/assets/robot.png
 /examples/editorial-collage/assets/developer.png
 /examples/editorial-collage/assets/robot.png
+/examples/scene-gallery/assets/developer.png
+/examples/scene-gallery/assets/robot.png
 
 # Full-resolution generated covers and QA comparisons; small documentation strips stay in Git.
 /docs/media/future-of-work-ru-cover.png

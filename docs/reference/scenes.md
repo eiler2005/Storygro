@@ -8,7 +8,9 @@ A **cue** is a named marker in the `say:` text, such as `{#claim}`. A cue prop a
 
 ## collage
 
-An editorial collage on cream graph paper: original photo/illustration cut-outs, torn labels, large type, UI windows and drawn arrows. This is a reusable scene; the video supplies all content, images, placement and cues. Current example: [micro1-work-data](../content/videos/micro1-work-data/README.md). Internal style fixture: [editorial-collage](../examples/editorial-collage/README.md).
+<img src="../media/scenes/collage.jpg" width="180" alt="A frame of the collage scene">
+
+An editorial collage on cream graph paper: original photo/illustration cut-outs, torn labels, large type, UI windows and drawn arrows. This is a reusable scene; the video supplies all content, images, placement and cues. Current example: [micro1-work-data](../../content/videos/micro1-work-data/README.md). Internal style fixture: [editorial-collage](../../examples/editorial-collage/README.md).
 
 | Prop | Type | Required | Meaning |
 |---|---|---|---|
@@ -30,6 +32,8 @@ An editorial collage on cream graph paper: original photo/illustration cut-outs,
 Images are registered during mount so missing assets stop capture. All movement and row reveals derive from scene time; no timers or CSS animations. Allow a brief entrance before selecting a still: a layer is transparent exactly at its `at` cue. The new scene's animation helpers have backward-seek regression tests; the example is also checked in headless Chrome with frame hashes.
 
 ## statement
+
+<img src="../media/scenes/statement.jpg" width="320" alt="A frame of the statement scene">
 
 Shows one big idea as large italic lines that appear one by one, with an optional small kicker above them.
 
@@ -57,6 +61,8 @@ Excerpt from the `turn` entry. `say`, `pad`, `energy`, `transition` and `sfx` ar
 
 ## logo-reveal
 
+<img src="../media/scenes/logo-reveal.jpg" width="320" alt="A frame of the logo-reveal scene">
+
 Shows a line of light that snaps into a stacked-cards mark, with the name wiping in beside it and an optional tagline underneath.
 
 | Prop | Type | Required | Meaning |
@@ -79,6 +85,8 @@ Excerpt from the `intro` entry. `say`, `pad`, `energy`, `transition` and `sfx` a
 ```
 
 ## chat
+
+<img src="../media/scenes/chat.jpg" width="320" alt="A frame of the chat scene">
 
 Shows an AI chat window. A prompt types itself in, is sent on a cue, and a reply starts to type out.
 
@@ -110,6 +118,8 @@ Excerpt from the `prompt` entry. `say`, `pad`, `energy`, `transition` and `sfx` 
 
 ## stack
 
+<img src="../media/scenes/stack.jpg" width="320" alt="A frame of the stack scene">
+
 Shows a heading above a numbered list card. Claims drop in one by one, then a stamp approves them all.
 
 | Prop | Type | Required | Meaning |
@@ -137,6 +147,8 @@ Excerpt from the `storyline` entry. `say`, `pad`, `energy` and `sfx` are left ou
 
 ## grid
 
+<img src="../media/scenes/grid.jpg" width="320" alt="A frame of the grid scene">
+
 Deals slide images from a pile into a four-column grid, scans each row, then ticks every card. A counter counts up at the top right.
 
 | Prop | Type | Required | Meaning |
@@ -162,6 +174,8 @@ Excerpt from the `build` entry. `say`, `caption`, `pad`, `energy` and `sfx` are 
 ```
 
 ## spotlight
+
+<img src="../media/scenes/spotlight.jpg" width="320" alt="A frame of the spotlight scene">
 
 Shows a slide with a magnifier zoomed on one row, a red ring around the wrong cell, a red pill that says why, a checklist on the right and a sticky note.
 
@@ -206,6 +220,8 @@ Excerpt from the `checks` entry. `say`, `pad`, `energy` and `sfx` are left out. 
 
 ## pins
 
+<img src="../media/scenes/pins.jpg" width="320" alt="A frame of the pins scene">
+
 Shows a real slide in a fake editor. Callout pins land on cues, one object is selected, and a column of ticks confirms what you get.
 
 | Prop | Type | Required | Meaning |
@@ -243,6 +259,8 @@ Excerpt from the `editable` entry. `say`, `pad`, `energy` and `sfx` are left out
 ```
 
 ## end-card
+
+<img src="../media/scenes/end-card.jpg" width="320" alt="A frame of the end-card scene">
 
 Shows a slow, tilted wall of slide images behind a mark and a name. A tagline fades in, then a command pill types itself, and a URL appears below.
 
@@ -313,6 +331,8 @@ On a 1080 × 1920 stage with the `vertical` profile the box runs from x 86 to 85
 
 ## headline
 
+<img src="../media/scenes/headline.jpg" width="180" alt="A frame of the headline scene">
+
 Shows a big claim on paper, line by line. The words of each line rise in one after another. A key word can get a yellow marker, a line can be struck through in red, and a rubber stamp and a handwritten note can follow.
 
 | Prop | Type | Required | Meaning |
@@ -351,6 +371,8 @@ Excerpt from the `hook` entry. `say`, `pad`, `energy` and `sfx` are left out. Th
 ```
 
 ## crowd
+
+<img src="../media/scenes/crowd.jpg" width="180" alt="A frame of the crowd scene">
 
 Shows a grid of paper figures that stands for a whole workforce. Groups of figures light up on cues, so a share reads as people, and a big number can land on a card above the grid.
 
@@ -392,6 +414,8 @@ Excerpt from the `risk` entry. `say`, `pad`, `energy` and `sfx` are left out. Th
 ```
 
 ## task-stack
+
+<img src="../media/scenes/task-stack.jpg" width="180" alt="A frame of the task-stack scene">
 
 Shows a stack of task cards that drop onto the paper. AI scissors then cut out the cards marked `ai`, the cut cards fall away to the right, and the rest close up. An optional line under the stack says what is left.
 
@@ -435,6 +459,8 @@ Excerpt from the `tasks` entry. `say`, `pad`, `energy` and `sfx` are left out.
 ```
 
 ## ladder
+
+<img src="../media/scenes/ladder.jpg" width="180" alt="A frame of the ladder scene">
 
 Shows a paper ladder with labelled rungs and figures standing on it. Scissors cut the bottom rungs away, the figures on them drop to the ground below a gap, and a later view can show time moving on, with the people at the top gone.
 
@@ -509,6 +535,8 @@ Excerpt from the `danger` entry, the same ladder shown again later, already cut,
 
 ## stat
 
+<img src="../media/scenes/stat.jpg" width="180" alt="A frame of the stat scene">
+
 Shows one to three big numbers, each on a torn paper card with a label. The cards drop in on cues, and a number counts up from zero when it contains a plain number. The values must come from the data, so bind them with `itemsFrom` or `valueFrom`.
 
 | Prop | Type | Required | Meaning |
@@ -542,6 +570,8 @@ Excerpt from the `data` entry. `say`, `pad`, `energy` and `sfx` are left out. Th
 
 ## chart
 
+<img src="../media/scenes/chart.jpg" width="180" alt="A frame of the chart scene">
+
 Shows data drawn on a paper sheet: horizontal bars that grow, or lines that draw themselves from left to right. Only real series belong here, so bind the values from the data with `barsFrom` or `seriesFrom`.
 
 | Prop | Type | Required | Meaning |
@@ -570,7 +600,7 @@ Shows data drawn on a paper sheet: horizontal bars that grow, or lines that draw
 
 **Cue names:** `at`, `bars[].at` and `note.at`. None has a default cue name.
 
-No bundled reel uses `chart`. The excerpts below are hypothetical and show only the bindings. The numbers must come from the data file, with their source. `facts.ranking.bars` would hold objects such as `{ label, value, display? }`, and `facts.trend.series` objects such as `{ label, values, end? }`.
+Only the [scene gallery](../../examples/scene-gallery/en.reel.yaml) uses `chart` (bars from `facts.anthropic.bars`). The excerpts below show the bindings. The numbers must come from the data file, with their source. `facts.ranking.bars` would hold objects such as `{ label, value, display? }`, and `facts.trend.series` objects such as `{ label, values, end? }`.
 
 ```yaml
   - id: ranking
@@ -591,6 +621,8 @@ No bundled reel uses `chart`. The excerpts below are hypothetical and show only 
 ```
 
 ## steps
+
+<img src="../media/scenes/steps.jpg" width="180" alt="A frame of the steps scene">
 
 Shows a short numbered list of actions on paper cards. Each card drops on its cue and gets a hand-drawn tick.
 
@@ -621,7 +653,9 @@ Excerpt from the `todo` entry. `say`, `pad`, `energy` and `sfx` are left out.
 
 ## screencast
 
-Shows a recorded browser session inside a phone on paper: the real screens frame by frame, a finger that travels and taps, a ripple on each tap, short notes beside the phone, an optional zoom and a magnifier card that enlarges the region the narration talks about. The recording comes from `storygro capture` ([workflow](workflows.md#8-a-product-demo-from-a-real-website)); `draw(t)` picks the frame for its time and returns the image-decode promise, which the player awaits before the screenshot.
+<img src="../media/scenes/screencast.jpg" width="180" alt="A frame of the screencast scene">
+
+Shows a recorded browser session inside a phone on paper: the real screens frame by frame, a finger that travels and taps, a ripple on each tap, short notes beside the phone, an optional zoom and a magnifier card that enlarges the region the narration talks about. The recording comes from `storygro capture` ([workflow](../how-to/product-demo-from-a-website.md)); `draw(t)` picks the frame for its time and returns the image-decode promise, which the player awaits before the screenshot.
 
 | Prop | Type | Required | Meaning |
 |---|---|---|---|
@@ -638,7 +672,7 @@ Shows a recorded browser session inside a phone on paper: the real screens frame
 
 **Cue names:** `align.at`, `notes[].at/until`, `zoom[].at/until`, `focus[].at/until`.
 
-Excerpt from the `prompt` entry of [slidecraft-demo](../content/videos/slidecraft-demo/ru.reel.yaml):
+Excerpt from the `prompt` entry of [slidecraft-demo](../../content/videos/slidecraft-demo/ru.reel.yaml):
 
 ```yaml
   - id: prompt
@@ -657,6 +691,8 @@ Excerpt from the `prompt` entry of [slidecraft-demo](../content/videos/slidecraf
 ```
 
 ## outro
+
+<img src="../media/scenes/outro.jpg" width="180" alt="A frame of the outro scene">
 
 Shows the closing card: a few big lines that land the idea, a handwritten call to action, a small sign-off, and a short paper ladder where a newcomer figure steps up onto the first rung.
 

@@ -34,7 +34,7 @@ The film's master (154 MB) is not in Git. The 23.6 MB web copy, poster, storyboa
 | Numbers come from the facts | pass | 11 scenes read |
 | Whisper hears the script | pass | every scene ≥ 85 % of its words |
 
-These were technical checks. They did not establish that claims were true or that the film persuaded anyone. The checks that existed then did not detect scene error panels, missing images or text under platform UI; Storygro now does (see [architecture](../architecture.md#quality-gates)).
+These were technical checks. They did not establish that claims were true or that the film persuaded anyone. The checks that existed then did not detect scene error panels, missing images or text under platform UI; Storygro now does (see [architecture](../explanation/architecture.md#quality-gates)).
 
 ## Distribution notes
 

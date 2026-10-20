@@ -1,0 +1,51 @@
+name: New scene
+description: Propose a new animated scene module that explains a visual mechanism.
+title: "[Scene]: "
+labels: [scene]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Scenes are ES modules that implement a deterministic `draw(t)` and support arbitrary seeking. Read [`docs/reference/scene-contract.md`](https://github.com/eiler2005/Storygro/blob/main/docs/reference/scene-contract.md) and the reference scenes before proposing one. Attach links to reference images, not uploaded video.
+  - type: textarea
+    id: mechanism
+    attributes:
+      label: What does it explain?
+      description: The visual mechanism the scene shows, stated as one sentence about what the viewer should understand.
+    validations:
+      required: true
+  - type: textarea
+    id: why-not-existing
+    attributes:
+      label: Why can't existing scenes and props do it?
+      description: Name the scenes in `production/scenes/` you considered and what they lack.
+    validations:
+      required: true
+  - type: textarea
+    id: props
+    attributes:
+      label: Props sketch
+      description: The inputs the scene needs (text, numbers with a data-file source, images, timing), described as a short YAML sketch.
+      render: yaml
+    validations:
+      required: true
+  - type: checkboxes
+    id: formats
+    attributes:
+      label: Formats
+      options:
+        - label: 9:16 (vertical, with platform safe areas)
+        - label: 16:9 (horizontal)
+  - type: input
+    id: reference
+    attributes:
+      label: Reference link
+      description: A public link to a similar visual, not an uploaded video or audio file.
+      placeholder: https://
+  - type: checkboxes
+    id: contract
+    attributes:
+      label: Contract
+      options:
+        - label: I will follow docs/reference/scene-contract.md, including deterministic draw(t) and arbitrary seeking
+          required: true

@@ -14,6 +14,8 @@ test('public Git rejects generated media by type and large blobs by size', () =>
   assert.match(mediaProblem('demo.gif', 1), /outside Git/);
   assert.match(mediaProblem('data.txt', 1048577), /1 MiB/);
   assert.match(mediaProblem('docs/media/preview.png', 307201), /300 KiB/);
+  assert.match(mediaProblem('docs/gallery/scene.jpg', 307201), /300 KiB/);
+  assert.equal(mediaProblem('docs/media/scenes/headline.jpg', 20000), null);
   assert.match(mediaProblem('episode/.reel/voice.json', 1), /output\/cache/);
   assert.equal(mediaProblem('production/scenes/collage.js', 5000), null);
   assert.equal(mediaProblem('content/videos/topic/assets/font.ttf', 778272), null);

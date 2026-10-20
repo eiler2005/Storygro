@@ -2,7 +2,7 @@
 
 Дата проверки: **18 октября 2026 года**. Решения владельца находятся в [README.md](README.md), порядок реализации — в [IMPLEMENTATION_PLAN.md](IMPLEMENTATION_PLAN.md).
 
-Этот файл сохраняет исходное исследование. Последующие решения 19 октября: PolyForm Shield по модели SlideCraft, Kokoro-RU Dima, `content/` и команды отбора идей/сигналов. Актуальная карта — [technology](../technology.md), текущий статус — [HANDOFF](HANDOFF.md).
+Этот файл сохраняет исходное исследование. Последующие решения 19 октября: PolyForm Shield по модели SlideCraft, Kokoro-RU Dima, `content/` и команды отбора идей/сигналов. Актуальная карта — [technology](../explanation/technology.md), текущий статус — [HANDOFF](HANDOFF.md).
 
 ## Метод и пределы выводов
 

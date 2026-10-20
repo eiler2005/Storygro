@@ -33,6 +33,18 @@
       "sha256": "9d025bc1cd7d21751023eb81becb08c944ae741be744c1f077bf83ae13ecacf7"
     },
     {
+      "path": "examples/scene-gallery/assets/developer.png",
+      "url": "https://github.com/eiler2005/Storygro/releases/download/media-inputs-2026-10-19/collage-developer.png",
+      "bytes": 2179184,
+      "sha256": "01c4a806df961805080e547ea2092a6e76d00918bd70a758789c0e7de7935271"
+    },
+    {
+      "path": "examples/scene-gallery/assets/robot.png",
+      "url": "https://github.com/eiler2005/Storygro/releases/download/media-inputs-2026-10-19/collage-robot.png",
+      "bytes": 1770452,
+      "sha256": "9d025bc1cd7d21751023eb81becb08c944ae741be744c1f077bf83ae13ecacf7"
+    },
+    {
       "path": "examples/ai-jobs/assets/voice/narrator-en.wav",
       "url": "https://github.com/eiler2005/Storygro/releases/download/media-inputs-2026-10-19/narrator-en.wav",
       "bytes": 311084,

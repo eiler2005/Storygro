@@ -2,7 +2,7 @@
 
 The owner selected audition **C** on 19 October 2026: the previous Russian Storygro Qwen3 narrator, at `speed: 0.96`. The Sveta and Masha auditions remain local experiments, not episode variants.
 
-`narrator-ru.wav` is the byte-identical synthetic reference originally designed for `examples/ai-jobs` with Qwen3-TTS VoiceDesign (seed 7), then reused by Qwen3-TTS Base through mlx-audio. It is an original described adult male narrator, not a clone of the reference video's speaker or a named person. The transcript is [narrator-ru.txt](narrator-ru.txt); the design recipe is in [the voice guide](../../../../../docs/voices.md).
+`narrator-ru.wav` is the byte-identical synthetic reference originally designed for `examples/ai-jobs` with Qwen3-TTS VoiceDesign (seed 7), then reused by Qwen3-TTS Base through mlx-audio. It is an original described adult male narrator, not a clone of the reference video's speaker or a named person. The transcript is [narrator-ru.txt](narrator-ru.txt); the design recipe is in [the voice guide](../../../../../docs/reference/voices.md).
 
 The WAV stays outside Git. Restore it with `npm run assets:fetch`; [content/media-assets.json](../../../../media-assets.json) records its release URL, size and SHA-256:
 

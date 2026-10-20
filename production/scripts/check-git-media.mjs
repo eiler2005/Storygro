@@ -26,7 +26,7 @@ export function mediaProblem(path, bytes) {
   if (FORBIDDEN.has(ext)) return 'video, audio, animation, archive, export or model weights belong outside Git';
   if (path.split('/').some(p => ['.reel', '.signals', 'node_modules', 'dist', 'out'].includes(p))) return 'generated output/cache directory';
   if (bytes > MAX_FILE_BYTES) return 'file exceeds 1 MiB';
-  if (IMAGE.has(ext) && (path.includes('/preview/') || path.startsWith('docs/media/') || path.startsWith('experiments/') && path.includes('/frames/')) && bytes > MAX_PREVIEW_BYTES) return 'documentation/review image exceeds 300 KiB';
+  if (IMAGE.has(ext) && (path.includes('/preview/') || path.startsWith('docs/') || path.startsWith('experiments/') && path.includes('/frames/')) && bytes > MAX_PREVIEW_BYTES) return 'documentation/review image exceeds 300 KiB';
   return null;
 }
 
@@ -59,7 +59,7 @@ if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1]
   const problems = checkIndex();
   for (const p of problems) console.error(`  ${p.path} (${p.bytes} bytes): ${p.reason}`);
   if (problems.length) {
-    console.error(`Media policy: ${problems.length} rejected file(s). Keep originals locally or in release/object storage; see docs/media-policy.md.`);
+    console.error(`Media policy: ${problems.length} rejected file(s). Keep originals locally or in release/object storage; see docs/reference/media-policy.md.`);
     process.exitCode = 1;
   } else console.log('Media policy: indexed files are clean.');
 }

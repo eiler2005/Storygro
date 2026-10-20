@@ -1,12 +1,12 @@
 # Architecture
 
-Repository layout update (2026-10-19): reusable engine code now lives under `production/`; authored videos are in `content/videos/`, ideas in `content/ideas/`, and topic research in `content/research/`. `/rc/` still mounts the engine. [ADR 0003](adr/0003-content-production-boundary.md) records the boundary and cache/approval consequences.
+Repository layout update (2026-10-19): reusable engine code now lives under `production/`; authored videos are in `content/videos/`, ideas in `content/ideas/`, and topic research in `content/research/`. `/rc/` still mounts the engine. [ADR 0003](../adr/0003-content-production-boundary.md) records the boundary and cache/approval consequences.
 
 > **Audience:** contributors and coding agents working on Storygro · **Status:** v0.2 (October 2026)
 
 Storygro turns a script written as data into checked, publishable media: narrated videos (landscape or 9:16), still cards and carousels, subtitles and a release folder with a manifest. Everything runs locally: a TypeScript CLI drives headless Chrome for pictures and a private Python environment for voices, speech recognition and audio. There is no server, account or database.
 
-This page explains how the pieces fit. For day-to-day use see [workflows](workflows.md); for the script format see [writing a reel](writing-a-reel.md).
+This page explains how the pieces fit. For day-to-day use see [workflows](workflow.md); for the script format see [writing a reel](../how-to/write-a-script.md).
 
 ## The pipeline at a glance
 
@@ -75,7 +75,7 @@ erDiagram
 
 - **Reel spec** (`reel: 1`, unchanged since the prototype): title, `lang`, `format`, `safe`, `voice`, `music`, `theme`, `overlay`, `captions`, `data`, `stills`, `cards`, `post`, `scenes[]`. Each scene has an `id`, a `scene` module, the narration `say`, optional `caption`, `pad`, `min`, `energy`, `sfx`, `transition` and `props`.
 - **Facts** are JSON files bound into props with `xxxFrom: facts.path` (also inside arrays of objects). Numbers shown on screen must exist in a data file; QA reads them back from the rendered DOM.
-- **Episode** (`episode: 1`) ties variants, carousels, sources and credits together for packaging. It names its `series`. A **series** (`series: 1`, `content/series/`) lists episodes of a rubric; the **brand profile** (`brand: 1`, `content/brand.yaml`) holds audience, voices, disclosure and avoided phrases and is checked by QA when a spec sets `brand:`. Publication records live in a separate ledger ([publishing](publishing.md)).
+- **Episode** (`episode: 1`) ties variants, carousels, sources and credits together for packaging. It names its `series`. A **series** (`series: 1`, `content/series/`) lists episodes of a rubric; the **brand profile** (`brand: 1`, `content/brand.yaml`) holds audience, voices, disclosure and avoided phrases and is checked by QA when a spec sets `brand:`. Publication records live in a separate ledger ([publishing](../reference/publication-ledger.md)).
 
 ## Timing model
 
@@ -113,7 +113,7 @@ sequenceDiagram
 
 The visual layer is plain DOM, SVG and CSS driven by JavaScript — no React, no build step.
 
-- `production/runtime/index.html` + `production/runtime/player.js` load `timeline.json`, mount every scene once, then expose `reel.seek(T)`. Each scene module returns `draw(t)`, a pure function of scene time ([scene contract](scene-contract.md)). Any frame can be drawn in any order, which is what makes stills, storyboards and frame-by-frame capture identical. A scene whose frame depends on an image file (`screencast`) may return a promise from `draw(t)`; `seek` awaits every returned promise before the screenshot, so a frame is never captured before its image is decoded.
+- `production/runtime/index.html` + `production/runtime/player.js` load `timeline.json`, mount every scene once, then expose `reel.seek(T)`. Each scene module returns `draw(t)`, a pure function of scene time ([scene contract](../reference/scene-contract.md)). Any frame can be drawn in any order, which is what makes stills, storyboards and frame-by-frame capture identical. A scene whose frame depends on an image file (`screencast`) may return a promise from `draw(t)`; `seek` awaits every returned promise before the screenshot, so a frame is never captured before its image is decoded.
 - Transitions (`fade`, `push`, `zoom`, `flash`, `cut`) are centred on scene boundaries; both scenes draw during the overlap.
 - Captions are drawn by the player from the timeline's words, phrase by phrase with the spoken word highlighted.
 - The player injects safe-area tokens (`--rc-safe-*`) from the format's platform profile before the theme loads, so a theme can still override them. `?guides=1` paints the platform UI zones for review.
@@ -123,14 +123,14 @@ The visual layer is plain DOM, SVG and CSS driven by JavaScript — no React, no
 
 ### Scene library
 
-Two families live in `production/scenes/` ([catalog](scenes.md)):
+Two families live in `production/scenes/` ([catalog](../reference/scenes.md)):
 
 - **Landscape product scenes** from the SlideCraft launch film: `statement`, `logo-reveal`, `chat`, `stack`, `grid`, `spotlight`, `pins`, `end-card`.
 - **Cut-paper explainer scenes**, vertical-first: `headline`, `crowd`, `task-stack`, `ladder`, `stat`, `chart`, `steps`, `outro`. They share `production/runtime/paper.js` — paper grain (SVG turbulence), hand-cut edges (seeded `clip-path`), figures, scissors, marker, stamp, self-drawing strokes, text fitting and the safe content box. Colours and fonts come from theme tokens (`--pp-*`).
 
 ## Voices
 
-`production/py/voice.py` owns the script syntax (cues, pauses, say-as, stress) and the output contract; providers only turn text into audio. See [voices](voices.md) for choosing and tuning them.
+`production/py/voice.py` owns the script syntax (cues, pauses, say-as, stress) and the output contract; providers only turn text into audio. See [voices](../reference/voices.md) for choosing and tuning them.
 
 | Engine | Languages | Word timings | Speed | Licence | Notes |
 |---|---|---|---|---|---|
@@ -170,11 +170,11 @@ Four gates stand between a script and a release. Each is explained in [quality](
 | Encoding | ffmpeg from [`imageio-ffmpeg`](https://github.com/imageio/imageio-ffmpeg) (static binary in the venv) | no system ffmpeg needed | LGPL/GPL build of ffmpeg, BSD wrapper |
 | Example fonts | Unbounded, Golos Text, Caveat; Liberation Sans/Serif | Cyrillic, open licences | OFL 1.1 |
 
-Storygro uses [PolyForm Shield 1.0.0](../LICENSE), with [commercial-use guidance](../COMMERCIAL.md). Third-party components keep their own terms. The [technology/product map](technology.md) includes Kokoro-RU, idea selection and external signal sources.
+Storygro uses [PolyForm Shield 1.0.0](../../LICENSE), with [commercial-use guidance](../../COMMERCIAL.md). Third-party components keep their own terms. The [technology/product map](technology.md) includes Kokoro-RU, idea selection and external signal sources.
 
 ## Design choices and their trade-offs
 
-- **DOM + CDP.** A scene is a small ES module; any frame is reproducible; there is no scene build step. Capture is sequential (about 15–20 frames per second on an M5 Pro at 1080×1920). An alternative renderer (HyperFrames) is evaluated in [ADR 0001](adr/0001-renderer.md). Software, browser and asset licences remain distinct.
+- **DOM + CDP.** A scene is a small ES module; any frame is reproducible; there is no scene build step. Capture is sequential (about 15–20 frames per second on an M5 Pro at 1080×1920). An alternative renderer (HyperFrames) is evaluated in [ADR 0001](../adr/0001-renderer.md). Software, browser and asset licences remain distinct.
 - **Python only where the models are.** Voices, ASR and DSP live in Python; everything else is TypeScript.
 - **Voice first, picture second.** The storyboard is approved on real timings; visuals never set the pace.
 - **Facts as data.** Scenes may not type numbers; the facts gate reads the DOM to enforce it.
@@ -184,6 +184,6 @@ Storygro uses [PolyForm Shield 1.0.0](../LICENSE), with [commercial-use guidance
 ## Known limits
 
 - ASR and the `qwen3` voice need Apple silicon (MLX); elsewhere QA reports the speech check as *skipped*, and `silero` or `kokoro` remain available.
-- Safe-area profiles are estimates from published ad guidance and third-party measurements ([formats](formats.md)); check a real upload on a phone.
+- Safe-area profiles are estimates from published ad guidance and third-party measurements ([formats](../reference/formats.md)); check a real upload on a phone.
 - QA finds technical defects. It does not judge whether a claim is true, whether the voice sounds natural or whether the story works — watch and listen before publishing.
 - Publishing and analytics are planned, not implemented; `deliver` and `package` write local folders only.

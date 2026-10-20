@@ -1,0 +1,92 @@
+name: Bug report
+description: A command fails, a render or timing is wrong, or the QA output does not match what you see.
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting. Do not attach videos, audio, model files or private client material. Reduce the problem to a small reel spec with placeholder content, and attach only small screenshots.
+  - type: checkboxes
+    id: no-private-material
+    attributes:
+      label: Attachments
+      options:
+        - label: I did not attach videos, audio or private material; small screenshots only
+          required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: What you expected, and what you got instead.
+    validations:
+      required: true
+  - type: textarea
+    id: command
+    attributes:
+      label: Command run
+      description: The exact command, for example `npm run storygro -- render content/videos/<id>/ru.reel.yaml`.
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected result
+      description: What you expected the command or the output to do.
+    validations:
+      required: true
+  - type: textarea
+    id: qa-output
+    attributes:
+      label: QA.md excerpt or error output
+      description: Paste the relevant part of `QA.md` or the terminal error. Trim long logs to the failing lines.
+      render: shell
+  - type: input
+    id: os
+    attributes:
+      label: Operating system
+      description: For example, macOS 15.4 or Ubuntu 24.04.
+    validations:
+      required: true
+  - type: dropdown
+    id: cpu
+    attributes:
+      label: CPU
+      options:
+        - Apple silicon (arm64)
+        - Intel or AMD x86_64
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: node
+    attributes:
+      label: Node version
+      description: Output of `node -v`. Storygro requires Node 22.12 or newer.
+      placeholder: v22.x.x
+    validations:
+      required: true
+  - type: input
+    id: chrome
+    attributes:
+      label: Chrome version
+      description: The local Chrome or Chromium version used for rendering and capture.
+    validations:
+      required: true
+  - type: dropdown
+    id: voice
+    attributes:
+      label: Voice engine
+      options:
+        - kokoro
+        - qwen3
+        - silero
+        - none
+    validations:
+      required: true
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots
+      description: Small screenshots only, with no client material or private footage.

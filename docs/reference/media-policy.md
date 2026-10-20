@@ -5,9 +5,9 @@ Owner decision, 2026-10-19: the public Git repository contains source and small 
 ## Enforced rules
 
 - No video, audio, animated GIF, archive, rendered PDF/PPTX, model weights or generated cache files in Git, regardless of size.
-- Every indexed file is at most **1 MiB**. A documentation/review preview image is at most **300 KiB**.
+- Every indexed file is at most **1 MiB**. Every image under `docs/` and every review preview (`preview/`, `experiments/*/frames/`) is at most **300 KiB**; rebuild documentation previews with `npm run docs:media`.
 - Keep scripts, YAML/JSON facts, source notes, text, licences, small source assets and small preview strips in Git. Preserve model/font notices.
-- Keep original render inputs locally in ignored paths. Reproducible external inputs have a URL, exact byte count and SHA-256 in [`content/media-assets.json`](../content/media-assets.json).
+- Keep original render inputs locally in ignored paths. Reproducible external inputs have a URL, exact byte count and SHA-256 in [`content/media-assets.json`](../../content/media-assets.json).
 - Do not bypass the policy with forced additions, LFS, renamed extensions or a special-case exception. Update the storage arrangement instead.
 
 ## Checks and restoration

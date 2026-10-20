@@ -22,9 +22,9 @@ A toolkit for AI agents to turn ideas into reels, videos, carousels, and social 
 
 Последний запрос владельца из сессии Claude `7ae50983-fcec-46cc-bf92-39ce3637425e`: карта технологий и продуктов, лицензия по модели SlideCraft, отбор идей/трендов, русский Kokoro, отдельное пространство `content/`, новый деловой ролик о будущем работы, коммит и push.
 
-- Карта технологий/продуктов: [technology](../technology.md), архитектура и workflow; отдельно перечислены работающие и только рассматриваемые компоненты.
+- Карта технологий/продуктов: [technology](../explanation/technology.md), архитектура и workflow; отдельно перечислены работающие и только рассматриваемые компоненты.
 - Лицензия: PolyForm Shield, сохранены сторонние notices. Предыдущее «лицензия не выбрана» больше не актуально.
-- `ideas` ранжирует редакционный бэклог; `trends` собирает открытые Wikipedia/HN сигналы с датами и ошибками. Веса и границы — в [ideas](../ideas.md).
+- `ideas` ранжирует редакционный бэклог; `trends` собирает открытые Wikipedia/HN сигналы с датами и ошибками. Веса и границы — в [ideas](../how-to/choose-a-topic.md).
 - Новые выпуски: [content/](../../content/README.md). `examples/` остаётся библиотекой примеров, а `.reel/`/`.signals/` — локальными выходами.
 - Русский Kokoro: community fine-tune `zaakirio/kokoro-ru`, голос Dima; OpenRAIL weights, Apache-2.0 code, RUAccent. Не путать с официальным английским Kokoro. EN `ai-jobs` сохраняет Qwen3.
 - Новый деловой выпуск: [future-of-work](../../content/videos/future-of-work/README.md). Фактический рендер и проверки — в его REVIEW.md.
@@ -40,14 +40,14 @@ A toolkit for AI agents to turn ideas into reels, videos, carousels, and social 
 
 | Возможность | Где | Проверка |
 |---|---|---|
-| Нативный 9:16, пресеты форматов, профили safe-zone платформ | `production/src/spec.ts`, `production/runtime/safe-zones.json`, [formats](../formats.md) | автоматическая проверка текста под интерфейсом на каждом cue |
+| Нативный 9:16, пресеты форматов, профили safe-zone платформ | `production/src/spec.ts`, `production/runtime/safe-zones.json`, [formats](../reference/formats.md) | автоматическая проверка текста под интерфейсом на каждом cue |
 | Языковые варианты в одной папке (`ru.reel.yaml`, `en.reel.yaml`) | `production/src/spec.ts`, `production/src/timeline.ts` | тесты; пример ai-jobs |
-| Голоса за общим интерфейсом: Kokoro (EN), Qwen3-TTS через mlx-audio (RU/EN, клон спроектированного голоса), Silero CIS (RU, ударения) | `production/py/voice.py`, `production/py/voices/`, [voices](../voices.md), [ADR 0002](../adr/0002-voice-providers.md) | Kokoro даёт тайминги, идентичные прототипу; RU/EN озвучка проверена распознаванием |
+| Голоса за общим интерфейсом: Kokoro (EN), Qwen3-TTS через mlx-audio (RU/EN, клон спроектированного голоса), Silero CIS (RU, ударения) | `production/py/voice.py`, `production/py/voices/`, [voices](../reference/voices.md), [ADR 0002](../adr/0002-voice-providers.md) | Kokoro даёт тайминги, идентичные прототипу; RU/EN озвучка проверена распознаванием |
 | Выравнивание слов Whisper по тексту сценария, say-as `[11%](=одиннадцать процентов)` | `production/py/voice.py` | субтитры в написании сценария |
-| 8 новых вертикальных сцен «бумажной аппликации» + библиотека `production/runtime/paper.js` | `production/scenes/`, [каталог](../scenes.md) | кадры просмотрены на всех cue |
+| 8 новых вертикальных сцен «бумажной аппликации» + библиотека `production/runtime/paper.js` | `production/scenes/`, [каталог](../reference/scenes.md) | кадры просмотрены на всех cue |
 | Явные ошибки: сцена, картинка, шрифт, тема останавливают рендер | `production/runtime/player.js`, `production/src/render.ts` | — |
 | Approval-хеш всех входов (сценарий, факты, код сцен, тема, шрифты, ассеты) | `production/src/board.ts` | тест; на практике дважды поймал устаревший рендер |
-| QA: pass/fail/skip, чёрные кадры, ошибки сцен, safe-zone, мультиязычный Whisper | `production/src/qa.ts`, `production/py/asr.py`, [quality](../quality.md) | оба ролика примера — 11/11 pass |
+| QA: pass/fail/skip, чёрные кадры, ошибки сцен, safe-zone, мультиязычный Whisper | `production/src/qa.ts`, `production/py/asr.py`, [quality](../explanation/quality.md) | оба ролика примера — 11/11 pass |
 | Субтитры SRT/VTT, карусели, `deliver` и `package` с manifest и SHA-256 | `production/src/subtitles.ts`, `production/src/package.ts`, `production/src/cli.ts` | релиз ai-jobs собран |
 | Пример «Что ИИ значит для рынка труда» RU + EN, карусели, тексты постов, источники | [examples/ai-jobs](../../examples/ai-jobs) | исследование 34 фактов; ключевые цифры сверены с первоисточниками (Stanford 2026, ВШЭ 2026, МОТ 2025, МВФ, Anthropic) |
 | История SlideCraft launch-фильма и GIF | [history](../history/slidecraft-launch.md) | GIF воспроизводится побайтно |
@@ -57,7 +57,7 @@ A toolkit for AI agents to turn ideas into reels, videos, carousels, and social 
 ## Что не сделано и почему
 
 - **Публикация и аналитика** (этапы 5–6) — нужны аккаунты владельца и выбор адаптера. Ничего не публикуется: `deliver`/`package` пишут локальные папки, `published: false`.
-- **Публикация через API** — нет. Есть ручной журнал `storygro publish` и снимки `storygro metrics` ([publishing](../publishing.md)): человек загружает, журнал фиксирует.
+- **Публикация через API** — нет. Есть ручной журнал `storygro publish` и снимки `storygro metrics` ([publishing](../reference/publication-ledger.md)): человек загружает, журнал фиксирует.
 - **Avatar / generated footage** (этап 4) — не подключались; запись экрана (`capture` + `screencast`) готова.
 - **Профиль бренда** `content/brand.yaml` — черновик агента; владельцу нужно проверить аудиторию, голоса и список нежелательных фраз.
 - **Короткая версия 20–40 с** — не делалась.
@@ -120,7 +120,7 @@ npm run storygro -- package examples/ai-jobs/episode.yaml
 
 ## Новое обязательное правило: медиа вне публичного Git
 
-По просьбе владельца видео, аудио, GIF, архивы, экспортные PDF/PPTX и веса моделей запрещены в Git. Любой файл — ≤1 МиБ; превью для документации/ревью — ≤300 КиБ. `.gitignore`, pre-commit и `npm run check`/CI проверяют это; не обходить через `git add -f`, LFS или переименование расширения. [Политика](../media-policy.md).
+По просьбе владельца видео, аудио, GIF, архивы, экспортные PDF/PPTX и веса моделей запрещены в Git. Любой файл — ≤1 МиБ; превью для документации/ревью — ≤300 КиБ. `.gitignore`, pre-commit и `npm run check`/CI проверяют это; не обходить через `git add -f`, LFS или переименование расширения. [Политика](../reference/media-policy.md).
 
 Из текущего Git убраны 12 файлов (18 372 137 байт); локальные копии и резервная копия в игнорируемом `private/git-media-cleanup-2026-10-19/` сохранены. Воспроизводимые исходные картинки и Qwen WAV загружаются командой `npm run assets:fetch` по `content/media-assets.json`, с проверкой размера/SHA-256; различающиеся локальные оригиналы не перезаписываются. Установить локальный hook: `npm run hooks:install`.
 
@@ -141,6 +141,6 @@ npm run storygro -- package examples/ai-jobs/episode.yaml
 - **Журнал публикаций**: `storygro publish …`, `storygro metrics …` — только ручной адаптер.
 - **QA речи**: числительные ↔ цифры, «процент» ↔ %, составные слова через дефис и раздельно. `stat` не анимирует счёт у значений-границ (<25%). QA.md пишет путь относительно спека, без локального пути пользователя.
 - **Утверждение агентом**: `STORYGRO_APPROVER` записывает, кто утвердил. Два новых ролика утверждены как `claude-agent (technical; owner review pending)` — это не редакционное одобрение.
-- **Документация**: [pipeline](../pipeline.md) с пятью реальными скриншотами (`docs/media/pipeline/`, каждый ≤300 КиБ), обновлены README, ideas, workflows, scenes (`screencast`), scene-contract (асинхронный draw), quality, architecture, technology.
+- **Документация**: [pipeline](../explanation/pipeline.md) с пятью реальными скриншотами (`docs/media/pipeline/`, каждый ≤300 КиБ), обновлены README, ideas, workflows, scenes (`screencast`), scene-contract (асинхронный draw), quality, architecture, technology.
 
 Не сделано: полная озвучка обоих роликов агентом не прослушана (только ASR и метрики); `future-of-work` и `micro1-work-data` не подключены к `brand:` — их спеки не менялись, чтобы не сбрасывать одобрение (проверка тестом показывает, что они проходят правила бренда).

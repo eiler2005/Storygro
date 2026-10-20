@@ -1,0 +1,12 @@
+{
+  "_about": "Every number in the gallery frames, with its source. Taken from the AI-and-jobs example, where the quote is recorded (examples/ai-jobs/sources.md [S2]).",
+  "anthropic": {
+    "_source": "Massenkoff, McCrory, 'Labor market impacts of AI', Anthropic, 5 Mar 2026: Computer & Math, 94% of tasks theoretically feasible for an LLM; 'Claude currently covers just 33% of all tasks in the Computer & Math category.'",
+    "bars": [
+      { "label": "could be done by an LLM", "value": 94, "display": "94%" },
+      { "label": "actually covered by Claude today", "value": 33, "display": "33%" }
+    ],
+    "source": "Anthropic, March 2026 · computer and math tasks"
+  },
+  "assets": { "developer": "assets/developer.png", "robot": "assets/robot.png" }
+}

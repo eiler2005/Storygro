@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 470" width="1280" height="470" role="img" aria-labelledby="t d">
+  <title id="t">Storygro pipeline</title>
+  <desc id="d">Five stages from a signal to a checked release: choose, write, make, check, ship. Each lists its commands and the files it leaves. Four amber gates mark where a person decides. Metrics go back into the idea backlog by hand.</desc>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#6b6760"/>
+    </marker>
+    <style>
+      text { font-family: -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #24262b; }
+      .h { font-size: 17px; font-weight: 700; fill: #fff; }
+      .n { font-size: 13px; font-weight: 700; fill: #ffffffb3; }
+      .b { font-size: 13px; }
+      .c { font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace; font-size: 12.5px; font-weight: 600; fill: #8a3a1b; }
+      .m { font-size: 13px; fill: #6b6760; }
+      .g { font-size: 13px; font-weight: 700; fill: #6a4a05; }
+      .gs { font-size: 12px; fill: #7d6531; }
+      .card { fill: #fffdf9; stroke: #e2dcd0; }
+      .gate { fill: #fff3d6; stroke: #d9a43b; }
+    </style>
+  </defs>
+  <rect width="1280" height="470" rx="16" fill="#f6f2ea"/>
+  <text x="25" y="40" style="font-size:21px;font-weight:700">From a signal to a checked release</text>
+  <text x="25" y="62" class="m">Every stage leaves a file you can open. Amber marks where a person decides.</text>
+
+  <!-- stage headers -->
+  <g>
+    <rect x="25" y="82" width="230" height="44" rx="10" fill="#2f5d8a"/>
+    <text x="39" y="109" class="n">1</text><text x="56" y="109" class="h">Choose</text>
+    <rect x="275" y="82" width="230" height="44" rx="10" fill="#3c7a5a"/>
+    <text x="289" y="109" class="n">2</text><text x="306" y="109" class="h">Write</text>
+    <rect x="525" y="82" width="230" height="44" rx="10" fill="#b5532c"/>
+    <text x="539" y="109" class="n">3</text><text x="556" y="109" class="h">Make</text>
+    <rect x="775" y="82" width="230" height="44" rx="10" fill="#6b4f9e"/>
+    <text x="789" y="109" class="n">4</text><text x="806" y="109" class="h">Check</text>
+    <rect x="1025" y="82" width="230" height="44" rx="10" fill="#3a3f4b"/>
+    <text x="1039" y="109" class="n">5</text><text x="1056" y="109" class="h">Ship</text>
+  </g>
+  <g stroke="#6b6760" stroke-width="2" marker-end="url(#a)">
+    <line x1="257" y1="104" x2="272" y2="104"/>
+    <line x1="507" y1="104" x2="522" y2="104"/>
+    <line x1="757" y1="104" x2="772" y2="104"/>
+    <line x1="1007" y1="104" x2="1022" y2="104"/>
+  </g>
+
+  <!-- cards -->
+  <rect x="25" y="136" width="230" height="196" rx="10" class="card"/>
+  <rect x="275" y="136" width="230" height="196" rx="10" class="card"/>
+  <rect x="525" y="136" width="230" height="196" rx="10" class="card"/>
+  <rect x="775" y="136" width="230" height="196" rx="10" class="card"/>
+  <rect x="1025" y="136" width="230" height="196" rx="10" class="card"/>
+
+  <text x="39" y="162" class="c">storygro trends</text>
+  <text x="39" y="186" class="b">Google Trends, Wikipedia,</text>
+  <text x="39" y="210" class="b">Hacker News — no API keys</text>
+  <text x="39" y="234" class="b">watchlist: momentum per idea</text>
+  <text x="39" y="258" class="c">storygro ideas</text>
+  <text x="39" y="282" class="b">six editorial ratings</text>
+  <text x="39" y="306" class="m">→ content/ideas/backlog.yaml</text>
+
+  <text x="289" y="162" class="b">research (agent workflow)</text>
+  <text x="289" y="186" class="b">sources.md — a quote per number</text>
+  <text x="289" y="210" class="b">facts.json — on-screen numbers</text>
+  <text x="289" y="234" class="b">ru.reel.yaml · en.reel.yaml</text>
+  <text x="289" y="258" class="m">scenes, narration, {#cue} marks</text>
+  <text x="289" y="282" class="c">storygro capture</text>
+  <text x="289" y="306" class="m">optional real-site recording</text>
+
+  <text x="539" y="162" class="c">storygro voice</text>
+  <text x="539" y="186" class="m">Qwen3 · Kokoro · Silero</text>
+  <text x="539" y="210" class="c">storygro board · approve</text>
+  <text x="539" y="234" class="m">storyboard PDF, input hash</text>
+  <text x="539" y="258" class="c">storygro render</text>
+  <text x="539" y="282" class="m">Chrome draw(t) frames → ffmpeg</text>
+  <text x="539" y="306" class="b">MP4 · SRT/VTT · stills</text>
+
+  <text x="789" y="162" class="c">storygro qa</text>
+  <text x="789" y="186" class="b">codec, size, −14 LUFS</text>
+  <text x="789" y="210" class="b">black frames, scene errors</text>
+  <text x="789" y="234" class="b">platform safe areas</text>
+  <text x="789" y="258" class="b">facts gate: numbers traceable</text>
+  <text x="789" y="282" class="b">Whisper hears ≥ 85 % of words</text>
+  <text x="789" y="306" class="b">brand rules, AI disclosure</text>
+
+  <text x="1039" y="162" class="c">storygro package</text>
+  <text x="1039" y="186" class="b">MP4, subtitles, cover, post</text>
+  <text x="1039" y="210" class="b">manifest.json + SHA-256</text>
+  <text x="1039" y="234" class="m">→ GitHub Release, not Git</text>
+  <text x="1039" y="258" class="c">storygro publish · metrics</text>
+  <text x="1039" y="282" class="b">manual ledger, snapshots</text>
+  <text x="1039" y="306" class="m">uploads nothing by itself</text>
+
+  <!-- human gates -->
+  <rect x="25" y="346" width="230" height="48" rx="10" class="gate"/>
+  <text x="39" y="366" class="g">● The editor picks the topic</text>
+  <text x="39" y="384" class="gs">signals are context, not proof</text>
+  <rect x="525" y="346" width="230" height="48" rx="10" class="gate"/>
+  <text x="539" y="366" class="g">● You approve the storyboard</text>
+  <text x="539" y="384" class="gs">any input change resets it</text>
+  <rect x="775" y="346" width="230" height="48" rx="10" class="gate"/>
+  <text x="789" y="366" class="g">● You watch and listen</text>
+  <text x="789" y="384" class="gs">a QA pass is not approval</text>
+  <rect x="1025" y="346" width="230" height="48" rx="10" class="gate"/>
+  <text x="1039" y="366" class="g">● A person uploads</text>
+  <text x="1039" y="384" class="gs">the ledger records what was done</text>
+
+  <!-- feedback -->
+  <path d="M1140 396 V426 H140 V398" fill="none" stroke="#6b6760" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#a)"/>
+  <rect x="470" y="416" width="340" height="22" fill="#f6f2ea"/>
+  <text x="640" y="432" class="m" text-anchor="middle">what performed goes back into the backlog by hand</text>
+</svg>

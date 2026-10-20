@@ -1,0 +1,42 @@
+name: Feature request
+description: A scene, voice, storyboard, QA or workflow step you need for a real reel or carousel.
+title: "[Feature]: "
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What you are trying to make, its audience, and the step where Storygro falls short.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposal
+      description: The behaviour you expect. Use placeholder content only; no client material or private footage.
+    validations:
+      required: true
+  - type: dropdown
+    id: stage
+    attributes:
+      label: Pipeline stage
+      description: Which part of the pipeline this affects.
+      options:
+        - choose
+        - write
+        - voice
+        - storyboard
+        - render
+        - QA
+        - package
+        - publication ledger
+        - docs
+        - other
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Workarounds you tried, or existing scenes, props or commands that almost fit.

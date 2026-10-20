@@ -15,7 +15,7 @@ The extracted engine narrated English only (Kokoro-82M) and assumed Kokoro word 
 
 ## Evidence
 
-Licences were checked in the model cards and LICENSE files on 2026-10-18 ([voices](../voices.md#licences-we-checked-and-rejected-for-published-content)): the best-known Russian voices (Silero `v4_ru`/`v5_*_ru`, XTTS-v2, F5-TTS fine-tunes, Fish-Speech, MMS) are non-commercial; macOS system voices are licensed for personal, non-commercial use. Commercially usable local options were Qwen3-TTS (Apache-2.0), Silero CIS base (MIT) and VoxCPM2 (Apache-2.0, not integrated yet).
+Licences were checked in the model cards and LICENSE files on 2026-10-18 ([voices](../reference/voices.md#licences-we-checked-and-rejected-for-published-content)): the best-known Russian voices (Silero `v4_ru`/`v5_*_ru`, XTTS-v2, F5-TTS fine-tunes, Fish-Speech, MMS) are non-commercial; macOS system voices are licensed for personal, non-commercial use. Commercially usable local options were Qwen3-TTS (Apache-2.0), Silero CIS base (MIT) and VoxCPM2 (Apache-2.0, not integrated yet).
 
 Measured on an Apple M5 Pro with the same sentences (word error rate by Whisper large-v3-turbo; UTMOS, an English-trained naturalness predictor):
 
@@ -41,4 +41,4 @@ In the rendered example, QA's speech check heard ≥ 89 % (RU) and ≥ 95 % (EN)
 
 The owner asked to use Kokoro for Russian. A separately verified community fine-tune, [zaakirio/kokoro-ru](https://huggingface.co/zaakirio/kokoro-ru), provides Dima/Sveta/Masha; the current RU examples select Dima. The same `kokoro` provider dispatches to the RU checkpoint with RUAccent stress and the model's G2P/espeak frontend. It returns audio for Whisper alignment; English native timings and legacy keys are retained.
 
-This supersedes the default for new Russian material, not the historical comparison above. The community model card declares OpenRAIL weights and Apache-2.0 code, rather than the English model's Apache-2.0 weights. No model weights are bundled. See [voices](../voices.md#russian-kokoro) and the episode review for current validation.
+This supersedes the default for new Russian material, not the historical comparison above. The community model card declares OpenRAIL weights and Apache-2.0 code, rather than the English model's Apache-2.0 weights. No model weights are bundled. See [voices](../reference/voices.md#russian-kokoro) and the episode review for current validation.

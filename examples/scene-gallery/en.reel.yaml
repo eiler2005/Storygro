@@ -1,0 +1,76 @@
+# English frames for the documentation gallery: scenes that no English video shows yet.
+# Not a video to publish. `voice: none` estimates timings; stills are taken by `npm run docs:media`.
+reel: 1
+title: Storygro scene gallery
+lang: en
+format: { preset: vertical, fps: 30 }
+voice: { engine: none }
+theme: theme.css
+data: { facts: facts.json }
+captions: { show: false }
+transition: { kind: cut, dur: 0 }
+stills: { chart: chart@6.5, collage: collage@2.4, screencast: screencast }
+scenes:
+  - id: chart
+    scene: chart
+    say: 'An AI model could do almost every computer and math task. {#today}Today it covers about a third of them.'
+    pad: [0.2, 0.8]
+    props:
+      title: Could do ≠ does
+      barsFrom: facts.anthropic.bars
+      sourceFrom: facts.anthropic.source
+      note: { text: exposure is not job loss, at: today }
+  - id: collage
+    scene: collage
+    say: 'The code was written by an AI agent. {#who}So who catches the bug?'
+    pad: [0.2, 0.8]
+    props:
+      layers:
+        - { kind: text, text: 'THE CODE IS READY.', x: 0, y: 0.04, w: 1, h: 0.17, size: 84, at: -1, enter: pop }
+        - { kind: label, text: 'WHO CHECKS IT?', x: 0.05, y: 0.24, w: 0.9, h: 0.13, size: 58, at: -1, rotate: -3, background: blue, enter: drop }
+        - { kind: image, srcFrom: facts.assets.developer, x: -0.03, y: 0.40, w: 0.84, h: 0.52, at: -1, enter: left }
+        - { kind: image, srcFrom: facts.assets.robot, x: 0.51, y: 0.43, w: 0.52, h: 0.50, at: -1, rotate: 4, enter: right }
+  - id: screencast
+    scene: screencast
+    say: 'Open the site and copy the ready prompt. {#copy}Paste it into your assistant {#paste}and name the topic.'
+    pad: [0.2, 0.6]
+    props:
+      capture: captures/site.capture.yaml
+      title: Step 1 — one prompt
+      align: { at: copy, rec: 4.4 }
+      to: 5.3
+      focus:
+        - { rec: [4.0], x: 0, y: 176, w: 430, h: 300 }
+      notes:
+        - { text: copy the prompt, at: copy }
+        - { text: 'Claude, ChatGPT or Codex', at: paste, tone: blue }
+  - id: screencast-gallery
+    scene: screencast
+    say: 'The assistant builds the storyline; you approve the titles and the cover. {#open}You get PowerPoint, PDF and HTML.'
+    pad: [0.2, 0.6]
+    props:
+      capture: captures/site.capture.yaml
+      title: Step 2 — a storyline to approve
+      from: 5.4
+      align: { at: open, rec: 8.6 }
+      to: 10.6
+      focus:
+        - { rec: [7.3, 8.6], x: 0, y: 40, w: 430, h: 330 }
+        - { rec: [8.7], x: 0, y: 343, w: 430, h: 246 }
+      notes:
+        - { text: titles and cover are yours, at: 0.4 }
+        - { text: PowerPoint · PDF · HTML, at: open, tone: blue }
+  - id: screencast-deck
+    scene: screencast
+    say: 'Every slide states a claim, not a topic. {#next}Numbers link to their sources, {#edit}and text and charts stay editable.'
+    pad: [0.2, 0.6]
+    props:
+      capture: captures/site.capture.yaml
+      title: Step 3 — the finished deck
+      from: 9.0
+      focus:
+        - { at: 0, x: 0, y: 343, w: 430, h: 246 }
+      notes:
+        - { text: the title is the conclusion, at: 0.4 }
+        - { text: sources on every slide, at: next }
+        - { text: 'PowerPoint, not a picture', at: edit, tone: blue }

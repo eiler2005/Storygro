@@ -13,7 +13,7 @@
 5. [HANDOFF.md](HANDOFF.md) — готовый стартовый промпт следующему агенту.
 6. [MIGRATION.md](MIGRATION.md) — фактический перенос и выполненные проверки.
 
-Техническая документация (на английском): [README](../../README.md), [архитектура](../architecture.md), [workflows](../workflows.md), [качество](../quality.md), [голоса](../voices.md), [форматы](../formats.md).
+Техническая документация (на английском): [README](../../README.md), [архитектура](../explanation/architecture.md), [workflows](../explanation/workflow.md), [качество](../explanation/quality.md), [голоса](../reference/voices.md), [форматы](../reference/formats.md).
 
 ## Название и позиционирование — решение владельца
 

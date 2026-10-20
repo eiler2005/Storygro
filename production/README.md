@@ -25,4 +25,6 @@ npm run storygro -- board content/videos/micro1-work-data/ru.reel.yaml
 
 The internal TypeScript entry point is now `production/src/cli.ts`. `src/tools.ts` distinguishes the production root used by the player from the repository root used for Git/package metadata. No episode data or final videos are stored in the tool directories. Publishing and growth analytics remain planned, not implemented.
 
-Large original render inputs live outside Git and are listed in `content/media-assets.json`; `scripts/fetch-assets.mjs` restores verified copies without replacing edited originals. `scripts/check-git-media.mjs` enforces [the public-Git media policy](../docs/media-policy.md) from `npm run check`, CI and the local pre-commit hook.
+Large original render inputs live outside Git and are listed in `content/media-assets.json`; `scripts/fetch-assets.mjs` restores verified copies without replacing edited originals. `scripts/check-git-media.mjs` enforces [the public-Git media policy](../docs/reference/media-policy.md) from `npm run check`, CI and the local pre-commit hook.
+
+Documentation tooling: `scripts/check-doc-links.mjs` (`npm run check:links`, part of `npm run check`) fails on broken relative links and anchors; `scripts/doc-media.ts` with `scripts/doc-panels.ts` (`npm run docs:media`) rebuilds the English previews in `docs/media/` from local renders. Every command: [CLI reference](../docs/reference/cli.md).

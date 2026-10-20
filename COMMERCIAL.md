@@ -21,6 +21,6 @@ Paid client video work does not by itself become a competing software service. E
 
 ## Third-party components and history
 
-Shield applies to the Storygro software offered with this licence. It does not relicense third-party components. See [NOTICE](NOTICE), [technology](docs/technology.md) and [voices](docs/voices.md). Model weights are downloaded separately, not bundled. Earlier snapshots that did not include a project licence are not described as MIT or retroactively granted an open-source licence.
+Shield applies to the Storygro software offered with this licence. It does not relicense third-party components. See [NOTICE](NOTICE), [technology](docs/explanation/technology.md) and [voices](docs/reference/voices.md). Model weights are downloaded separately, not bundled. Earlier snapshots that did not include a project licence are not described as MIT or retroactively granted an open-source licence.
 
 The project is described as **source-available**; Shield is not an OSI-approved open-source licence. The product name and branding are not a grant to impersonate the original project.

@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Commercial licensing
+    url: mailto:denis.ermilov@gmail.com
+    about: Commercial licence questions. See COMMERCIAL.md for the terms of PolyForm Shield 1.0.0.
+  - name: Documentation
+    url: https://github.com/eiler2005/Storygro/blob/main/docs/README.md
+    about: How-to guides and reference. Check here first, especially for writing a reel or adding a scene.

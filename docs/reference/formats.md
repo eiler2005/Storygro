@@ -16,7 +16,7 @@ A preset only sets the canvas. A good vertical video also needs scenes composed 
 
 ## Safe areas
 
-Platforms draw their interface over the video: the account name and caption at the bottom, the like/comment/share rail on the right, the header at the top. Text under that UI is unreadable. Storygro keeps per-platform margins in [`production/runtime/safe-zones.json`](../production/runtime/safe-zones.json) and uses them three ways:
+Platforms draw their interface over the video: the account name and caption at the bottom, the like/comment/share rail on the right, the header at the top. Text under that UI is unreadable. Storygro keeps per-platform margins in [`production/runtime/safe-zones.json`](../../production/runtime/safe-zones.json) and uses them three ways:
 
 1. the player exposes them to scenes and themes as `--rc-safe-top`, `--rc-safe-bottom`, `--rc-safe-left`, `--rc-safe-right`, `--rc-safe-x` and positions captions with `--rc-caption-bottom` (a theme may override them);
 2. `storygro still … --guides` and `preview --guides` paint the UI zones in red so you can see them;

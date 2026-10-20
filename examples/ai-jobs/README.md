@@ -4,6 +4,10 @@ A 9:16 explainer in Russian and English (84–85 s each), with a 7-card carousel
 
 **The idea in one line:** AI isn't causing mass layoffs; it takes the easiest-to-check tasks — the ones beginners learned on — so fewer beginners are hired, and in ten years there may be no one ready to be senior.
 
+![The eight scenes of the English cut, as the storyboard shows them](../../docs/media/storyboard-en.jpg)
+
+The Russian cut: [key frames](preview/strip-ru.jpg).
+
 | File | What |
 |---|---|
 | [ru.reel.yaml](ru.reel.yaml), [en.reel.yaml](en.reel.yaml) | the two videos: script, cues, scenes, props, post text |

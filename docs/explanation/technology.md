@@ -1,6 +1,6 @@
 # Technology and product map
 
-This is the inventory of what Storygro actually uses and where. [The pipeline](pipeline.md) shows one run with real artefacts; [architecture](architecture.md) explains the internals; [workflows](workflows.md) gives commands. Snapshot: 19 October 2026.
+This is the inventory of what Storygro actually uses and where. [The pipeline](pipeline.md) shows one run with real artefacts; [architecture](architecture.md) explains the internals; [workflows](workflow.md) gives commands. Snapshot: 19 October 2026.
 
 ## Production path
 
@@ -24,7 +24,7 @@ flowchart LR
 
 | Technology / product | Used for | Code / files | Required? | Terms / constraints |
 |---|---|---|---|---|
-| Storygro | CLI, schemas, scenes, orchestration, QA and packaging | `production/src/`, `production/runtime/`, `production/scenes/` | Core | [PolyForm Shield](../LICENSE), [commercial use](../COMMERCIAL.md) |
+| Storygro | CLI, schemas, scenes, orchestration, QA and packaging | `production/src/`, `production/runtime/`, `production/scenes/` | Core | [PolyForm Shield](../../LICENSE), [commercial use](../../COMMERCIAL.md) |
 | Node ≥22.12, TypeScript, tsx | Run and check CLI code | `package.json`, `tsconfig.json` | Yes | MIT / Apache-2.0; JS versions pinned in lockfile |
 | yaml, zod | Parse/validate specs, backlog and trend config | `production/src/spec.ts`, `production/src/ideas.ts`, `production/src/package.ts` | Yes | ISC / MIT |
 | Chrome / Chromium | Lay out DOM, SVG, fonts and CSS; screenshots/PDF over CDP; scripted phone-browser recording | `production/src/cdp.ts`, `production/src/render.ts`, `production/src/capture.ts` | For pictures | Installed browser's terms; no Puppeteer/Playwright dependency |
@@ -40,7 +40,7 @@ flowchart LR
 | Wikipedia pageviews / HN official API + Algolia search / Google Trends RSS | Public attention snapshots and per-idea watchlist without credentials | `production/src/ideas.ts`, `production/trends/sources.yaml` | Optional | Retain source URLs and dates; interest signals, not factual verification; the Trends RSS is a public feed, not an API, and can change |
 | GitHub / Actions | Source control, tests and downloadable release assets | `.github/workflows/check.yml` | Collaboration/distribution | No social-account publication implied |
 
-Kokoro-RU downloads and imports its community G2P frontend from the model repository. The runtime uses model/provider assets outside the Git tree; record the provider metadata with each line. See [voices](voices.md) for exact setup and pronunciation controls.
+Kokoro-RU downloads and imports its community G2P frontend from the model repository. The runtime uses model/provider assets outside the Git tree; record the provider metadata with each line. See [voices](../reference/voices.md) for exact setup and pronunciation controls.
 
 ## What is implemented
 
@@ -56,7 +56,7 @@ Kokoro-RU downloads and imports its community G2P frontend from the model reposi
 
 | Product | Status | Decision |
 |---|---|---|
-| HyperFrames | Bounded comparison completed | Keep current DOM renderer; [ADR 0001](adr/0001-renderer.md) and pilot findings explain why |
+| HyperFrames | Bounded comparison completed | Keep current DOM renderer; [ADR 0001](../adr/0001-renderer.md) and pilot findings explain why |
 | Remotion | Researched alternative | Not a runtime dependency; separate licensing applies if adopted |
 | Ryze | UX/guide reference | Inspiration for the agent-first workflow, no service dependency |
 | Postiz | Candidate publishing adapter | Not integrated; account capabilities and integration terms still need checking |

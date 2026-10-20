@@ -15,4 +15,4 @@ You check a rendered reel. You do not redesign scenes.
 4. Render stills at the end of every scene with `--guides` and report clipped text, overlaps
    with the captions or text under the platform UI.
 5. Output a numbered fix list, each item with the file and the exact change. See
-   [quality](../docs/quality.md) for what each check means.
+   [quality](../docs/explanation/quality.md) for what each check means.

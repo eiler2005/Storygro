@@ -14,7 +14,7 @@ words and the look; builders write the scene code.
    one scene per beat, `say` with `{#cue}` marks at every moment a visual must land and
    `[written](=spoken)` hints for numbers and abbreviations, `energy` per scene, `sfx` on cues,
    `transition`, `props` bound to data with `xxxFrom: facts.path`. Follow
-   [writing-a-reel](../docs/writing-a-reel.md). Write each language for its audience; do not
+   [writing-a-reel](../docs/how-to/write-a-script.md). Write each language for its audience; do not
    translate word for word. Offer 2–3 hook variants in `hooks:`.
 3. Run `storygro voice` and cut words until the length fits; listen to the lines.
 4. Write `DIRECTION.md`: feeling, arc, visual language, then per scene what appears at each cue.

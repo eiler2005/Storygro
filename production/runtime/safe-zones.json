@@ -1,5 +1,5 @@
 {
-  "_note": "Platform UI margins in px on the reference canvas (ref width × ref height); the player scales them to the reel's width. Platforms publish margins for ads only and change their UI; the organic numbers are conservative estimates from third-party measurements. Check a real upload on a phone. Sources and dates: docs/formats.md.",
+  "_note": "Platform UI margins in px on the reference canvas (ref width × ref height); the player scales them to the reel's width. Platforms publish margins for ads only and change their UI; the organic numbers are conservative estimates from third-party measurements. Check a real upload on a phone. Sources and dates: docs/reference/formats.md.",
   "landscape": { "ref": [1920, 1080], "top": 150, "bottom": 190, "left": 140, "right": 140, "caption": 54 },
   "square": { "ref": [1080, 1080], "top": 90, "bottom": 150, "left": 80, "right": 80, "caption": 40 },
   "portrait": { "ref": [1080, 1350], "top": 110, "bottom": 170, "left": 80, "right": 80, "caption": 44 },

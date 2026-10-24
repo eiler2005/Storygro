@@ -106,3 +106,85 @@ words:
   - word: Штатах
     say: Шт+атах
     source: 'ru.wiktionary, «Штаты»: «…— Шта́тами Пр. — Шта́тах Шта́ - ты Существ…» (storygro stress --lookup, 2026-10-24)'
+  - word: Бразилии
+    say: Браз+илии
+    source: 'ru.wikipedia, «Бразилия»: «…Брази́лия или Федерати́вная Респу́блика Брази́лии (порт. República Federativa do Brasil М…» (storygro stress --lookup, 2026-10-24)'
+  - word: Ямаль
+    say: Ям+аль
+    source: 'ru.wikipedia, «Ламин Ямаль»: «…Лами́н Яма́ль Насрауи Эбана (кат. и исп. Lamine Yamal…» (storygro stress --lookup, 2026-10-24)'
+  - word: Европы
+    say: Евр+опы
+    source: 'ru.wikipedia, «Лига Европы УЕФА»: «…Ли́га Евро́пы УЕФА (англ. UEFA Europa League) — ежего…» (storygro stress --lookup, 2026-10-24)'
+  - word: Олисе
+    say: Ол+исе
+    source: 'ru.wikipedia, «Олисе, Майкл»: «…Майкл Акпови́ Оли́се (англ. и фр. Michael Akpovie Olise, анг…» (storygro stress --lookup, 2026-10-24)'
+  - word: Дембеле
+    say: Дембел+е
+    source: 'ru.wikipedia, «Дембеле, Усман»: «…Масу́р Усма́н Дембеле́ (фр. Masour Ousmane Dembélé, французско…» (storygro stress --lookup, 2026-10-24)'
+  - word: Мартинес
+    say: Март+инес
+    source: 'ru.wikipedia, «Мартинес, Лаутаро»: «…Лаута́ро Хавье́р Марти́нес (исп. Lautaro Javier Martínez; род. 22…» (storygro stress --lookup, 2026-10-24)'
+  - word: Торо
+    say: Т+оро
+    source: 'ru.wikipedia, «Дель Торо, Гильермо»: «…Гилье́рмо дель То́ро Го́мес (исп. Guillermo del Toro Gómez;…» (storygro stress --lookup, 2026-10-24)'
+  - word: Альварес
+    say: +Альварес
+    source: 'ru.wikipedia, «Альварес, Хулиан»: «…Хулиа́н А́льварес (исп. Julián Álvarez, испанское произно…» (storygro stress --lookup, 2026-10-24)'
+  - word: Паук
+    say: Па+ук
+    source: 'ru.wikipedia, «Человек-паук»: «…Челове́к-пау́к (англ. Spider-Man), настоящее имя Пи́те…» (storygro stress --lookup, 2026-10-24)'
+  - word: Лукаку
+    say: Лук+аку
+    source: 'ru.wikipedia, «Лукаку, Ромелу»: «…Роме́лу Мена́ма Лука́ку Болинго́ли (нид. Romelu Menama Lukaku B…» (storygro stress --lookup, 2026-10-24)'
+  - word: Рому
+    say: Р+ому
+    # the lookup matched «ром» (rum) — the same stress by coincidence; the club is «Ро́ма»
+    source: 'ru.wikipedia, «Рома (футбольный клуб)»: «…«Ро́ма» (полное название — Спортивная ассоциация…» — accusative «Ро́му»; checked by hand 2026-10-24'
+  - word: Брюйне
+    say: Брю+йне
+    source: 'ru.wikipedia, «Де Брёйне, Кевин»: «…Ке́вин Де Брёйне (нид. Kevin De Bruyne…» — the stressed ё of Брёйне; Брюйне is the common spelling; added by hand 2026-10-24'
+  - word: Сент-Клэр
+    say: Сент-Кл+эр
+    source: 'Dayne St. Clair, English [seɪnt ˈklɛər]: stress on Clair; added by hand 2026-10-24 (no ru.wikipedia article)'
+  - word: Наполи
+    say: Н+аполи
+    source: 'ru.wikipedia, «Наполи»: «…«На́поли» (итал. Società Sportiva Calcio Napoli,…» (storygro stress --lookup, 2026-10-24)'
+  - word: Фенербахче
+    say: Фенерб+ахче
+    source: 'ru.wikipedia, «Фенербахче (футбольный клуб)»: «…«Фенерба́хче́» (тур. Fenerbahçe Spor Kulübü) — турецк…» (storygro stress --lookup, 2026-10-24)'
+  - word: Бельгии
+    say: Б+ельгии
+    source: 'ru.wikipedia, «Бельгия»: «…Короле́вство Бе́льгия, или Короле́вство Бе́льгии (нид. Koninkrijk België, фр. Royaume de…» (storygro stress --lookup, 2026-10-24)'
+  - word: Модрич
+    say: М+одрич
+    source: 'ru.wikipedia, «Модрич, Лука»: «…Лу́ка Мо́дрич (хорв. Luka Modrić, хорватское произнош…» (storygro stress --lookup, 2026-10-24)'
+  - word: Лигу
+    say: Л+игу
+    source: 'ru.wiktionary, «лига»: «…Д. ли́ге ли́гам В. ли́гу ли́ги Тв. ли́гой ли́гою…» (storygro stress --lookup, 2026-10-24)'
+  - word: Гюлер
+    say: Гюл+ер
+    source: 'ru.wikipedia, «Гюлер, Арда»: «…Арда́ Гюле́р (тур. Arda Güler, турецкое произношение…» (storygro stress --lookup, 2026-10-24)'
+  - word: Евро
+    say: +Евро
+    source: 'ru.wikipedia, «Евро»: «…Е́вро — денежная единица 21 из 27 государств-…» (storygro stress --lookup, 2026-10-24)'
+  - word: Канады
+    say: Кан+ады
+    source: 'ru.wikipedia, «Население Канады»: «…Населе́ние Кана́ды — народы, народности (население) прожив…» (storygro stress --lookup, 2026-10-24)'
+  - word: Нойер
+    say: Н+ойер
+    source: 'ru.wikipedia, «Нойер, Мануэль»: «…Ма́нуэль Пе́тер Но́йер (нем. Manuel Peter Neuer, немецкое прои…» (storygro stress --lookup, 2026-10-24)'
+  - word: Доннарумма
+    say: Доннар+умма
+    source: 'ru.wikipedia, «Доннарумма, Джанлуиджи»: «…Джанлуи́джи Доннару́мма (итал. Gianluigi Donnarumma; род. 25 фе…» (storygro stress --lookup, 2026-10-24)'
+  - word: Куртуа
+    say: Курту+а
+    source: 'ru.wikipedia, «Куртуа, Тибо»: «…Тибо́ Николя́ Марк Куртуа́ (фр. Thibaut Nicolas Marc Courtois; род…» (storygro stress --lookup, 2026-10-24)'
+  - word: Барселоны
+    say: Барсел+оны
+    source: 'ru.wiktionary, «Барселона»: «…мн. ч. Им. Барсело́на Барсело́ны Р. Барсело́ны Барсело́н…» (storygro stress --lookup, 2026-10-24)'
+  - word: Баварию
+    say: Бав+арию
+    source: 'ru.wiktionary, «Бавария»: «…Бава́рии Бава́риям В. Бава́рию Бава́рии Тв. Бава́рией Ба…» (storygro stress --lookup, 2026-10-24)'
+  - word: Хорватии
+    say: Хорв+атии
+    source: 'ru.wikipedia, «Война в Хорватии»: «…Война за независимость Хорва́тии (март 1991 — ноябрь 1995) — военный кон…» (storygro stress --lookup, 2026-10-24)'

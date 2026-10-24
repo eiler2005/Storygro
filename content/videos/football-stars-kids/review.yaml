@@ -1,0 +1,21 @@
+# Review record of this episode, kept in Git — see docs/how-to/review-and-approve.md.
+# Edit questions and notes by hand. `storygro approve` writes the approvals; do not edit them.
+review: 1
+questions:
+  - id: lukaku
+    ask: В таблице у Лукаку «сейчас Наполи», но с 12.08.2026 он в «Фенербахче» — в ролике так. Оставить?
+    for: owner
+  - id: length
+    ask: Около 2 минут, по одному факту на игрока. Детям нравится такой темп, или лучше два коротких ролика по 7 игроков?
+    for: owner
+  - id: names
+    ask: Ударения имён взяты из русской Википедии (Ме́сси, Лу́ка Мо́дрич, Ма́нуэль Но́йер, Брю́йне …). Послушайте, всё ли звучит так, как привыкли дети.
+    for: owner
+notes: Сделано по просьбе владельца 24.10.2026 по его таблице 14 футболистов. Формат (альбом с прогрессом, карточка, главы) взят как принцип из разобранного рилса (private/references/ig-football-kids, не публикуется).
+approvals:
+  ru:
+    storyboard:
+      hash: b86134cfd519
+      at: 2026-10-24T19:23:20.464Z
+      by: agent
+      role: agent

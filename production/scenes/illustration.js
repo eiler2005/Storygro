@@ -15,7 +15,8 @@
 //   fade:    seconds of cross-fade between shots (default 0 = a cut, as in most cartoon explainers)
 //   title:   { text, at?, until?, align?, width? }    headline band at the top; align left|right keeps it to one side
 //            (width: share of the safe box, default 0.5) so a face stays clear
-//   badge:   { value, label?, at?, until?, tone?, side?: left|right }   a big number on a card
+//   badge:   { value, label?, at?, until?, tone?, side?: left|right, y?: 0..1 }   a big number on a card; y = its top
+//            within the text box (default 0.22), lower it to keep a face clear
 //   labels:  [{ text, x, y, at?, until?, tone? }]       small tags pinned to the picture (x, y in 0..1)
 //   source:  string or { text }                        small source line, bottom left (sourceFrom / textFrom bind it)
 export default {
@@ -68,6 +69,7 @@ export default {
     root.append(overlay);
 
     let band = null;
+    let bandText = null;
     if (title?.text) {
       // centred across the top, or kept to one side (wrapping onto two lines) to leave a face clear
       const side = title.align === 'left' || title.align === 'right' ? title.align : null;
@@ -79,15 +81,15 @@ export default {
             display: 'flex', justifyContent: side === 'left' ? 'flex-start' : side === 'right' ? 'flex-end' : 'center',
           },
         },
-        h('div', {
+        (bandText = h('div', {
           style: {
             font: `${Math.round(H * 0.075)}px/1.05 var(--ct-display, Impact, sans-serif)`, fontWeight: 'var(--ct-display-weight, 600)', textTransform: 'uppercase',
             letterSpacing: '.01em', color: 'var(--ct-ink, #1f1a14)', background: 'var(--ct-band, #f8f1e2)',
             padding: `${Math.round(H * 0.012)}px ${Math.round(H * 0.03)}px ${Math.round(H * 0.008)}px`,
             borderRadius: `${Math.round(H * 0.008)}px`, boxShadow: '0 6px 0 rgba(31, 26, 20, .18)', textAlign: side ?? 'center',
-            maxWidth: side ? `${Math.round((box.right - box.left) * (title.width ?? 0.5))}px` : '100%', textWrap: 'balance',
+            maxWidth: side ? `${Math.round((box.right - box.left) * (title.width ?? 0.5))}px` : '100%', minWidth: '0', textWrap: 'balance',
           },
-        }, title.text),
+        }, title.text)),
       );
       overlay.append(band);
     }
@@ -101,7 +103,7 @@ export default {
         {
           style: {
             position: 'absolute', [right ? 'right' : 'left']: `${right ? W - box.right : box.left}px`,
-            top: `${Math.round(box.top + (box.bottom - box.top) * 0.22)}px`, maxWidth: `${Math.round(W * 0.34)}px`,
+            top: `${Math.round(box.top + (box.bottom - box.top) * clamp(badge.y ?? 0.22))}px`, maxWidth: `${Math.round(W * 0.34)}px`,
             background: 'var(--ct-card, #fffaf0)', borderRadius: `${Math.round(H * 0.018)}px`,
             padding: `${Math.round(H * 0.02)}px ${Math.round(H * 0.03)}px`, boxShadow: '0 10px 0 rgba(31, 26, 20, .16), 0 18px 40px rgba(31, 26, 20, .18)',
             border: `${Math.max(3, Math.round(H * 0.004))}px solid var(--ct-ink, #1f1a14)`, transformOrigin: right ? '100% 50%' : '0 50%',
@@ -149,6 +151,14 @@ export default {
     let fitted = false;
 
     return (t) => {
+      if (!fitted && bandText) {
+        // a long word cannot wrap: shrink the headline until it fits the band (a one-word name on a tall stage)
+        let size = parseFloat(getComputedStyle(bandText).fontSize);
+        for (let i = 0; i < 40 && bandText.scrollWidth > bandText.clientWidth + 1; i++) {
+          size *= 0.94;
+          bandText.style.fontSize = `${size}px`;
+        }
+      }
       if (!fitted && value) {
         // the number shrinks until it fits inside its card (a year on a tall stage was wider than the card)
         // offsetWidth of a max-content box is the text's own width, whatever the card's pop-in scale

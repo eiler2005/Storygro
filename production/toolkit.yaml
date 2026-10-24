@@ -329,6 +329,17 @@ entries:
     status: pilot
     docs: docs/explanation/technology.md
 
+  - id: gpt-image-codex
+    kind: provider
+    stage: look
+    title: GPT Image through the Codex CLI
+    what: Pictures from the Codex CLI's image tool (images.provider codex, images.model gpt-6-astra), in batches of five, three sessions at a time, scaled and centre-cropped to the reel's size; recorded in images.json as not reproducible by seed.
+    when: When a piece needs drawing-like, detailed pictures or recognisable caricatures of public people; compared with Z-Image on 24 Oct 2026 it won on both. Needs a signed-in Codex and the network.
+    how: 'images: { provider: codex, model: gpt-6-astra } in the reel, then npm run storygro -- images <spec>'
+    status: pilot
+    docs: docs/reference/styles.md#in-the-reel
+    examples: [content/videos/football-stars-kids/README.md]
+
   - id: recurring-cast
     kind: method
     stage: look
@@ -601,10 +612,10 @@ entries:
   - id: doc-media
     kind: tool
     stage: maintain
-    title: Documentation previews and the toolkit page
-    what: Rebuilds the small English previews in docs/media/ from local renders, each under 300 KiB, and docs/reference/toolkit.md from this file.
-    when: After rendering something the docs show; after editing this file.
-    how: npm run docs:media; npm run docs:toolkit
+    title: Documentation previews, the toolkit page and the registry
+    what: Rebuilds the small English previews in docs/media/ from local renders, each under 300 KiB, docs/reference/toolkit.md from this file, and docs/reference/registry.md — every reel with its scene sequence, every style's story structure, every scene with the reels that use it, the runtime helpers, theme tokens and visual checks.
+    when: After rendering something the docs show; after editing this file; after adding a reel, a scene or a style (npm test fails while the registry is stale).
+    how: npm run docs:media; npm run docs:toolkit; npm run docs:registry
     status: stable
     docs: docs/adr/0004-docs-structure-and-media.md
 

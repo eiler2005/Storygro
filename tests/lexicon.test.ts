@@ -4,7 +4,7 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { test } from 'node:test';
 import { boxMisses, type SceneShot } from '../production/src/board.ts';
-import { appendEntries, entriesFor, formSay, lexiconJob, loadLexicon, stressFrom, uncheckedNames } from '../production/src/lexicon.ts';
+import { appendEntries, entriesFor, formSay, lexiconJob, loadLexicon, nameAround, stressFrom, uncheckedNames } from '../production/src/lexicon.ts';
 
 test('the dictionary loads: every entry has a stress mark and a source, and every listed form resolves', () => {
   const lex = loadLexicon();
@@ -58,4 +58,12 @@ test('text that sticks out of its own card is a visual miss; the safe area is a 
   const shot = (over: number): SceneShot => ({ id: 'origin', at: 1, png: '', text: '1956', boxes: [{ t: '1956', x: 0, y: 0, w: 10, h: 10, over }] });
   assert.deepEqual(boxMisses([shot(3)]), []);
   assert.deepEqual(boxMisses([shot(54), shot(54)]).map((m) => [m.scene, m.text, m.over]), [['origin', '1956', 54]]);
+});
+
+test('a name is looked up with the capitalised words around it: whose name decides the stress', () => {
+  const text = 'и Лука Модрич, и Мануэль Нойер, а потом Дейн Сент-Клэр. Кевин.';
+  assert.equal(nameAround(text, 'Лука'), 'Лука Модрич');
+  assert.equal(nameAround(text, 'Нойер'), 'Мануэль Нойер');
+  assert.equal(nameAround(text, 'Сент-Клэр'), 'Дейн Сент-Клэр');
+  assert.equal(nameAround(text, 'Кевин'), 'Кевин');
 });

@@ -1,0 +1,218 @@
+/** Writes docs/reference/registry.md: every reel, story structure and visual component. npm run docs:registry */
+import { existsSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { basename, join, relative, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { parse } from 'yaml';
+import { loadSpec, type LoadedSpec } from '../src/spec.ts';
+import { listStyles } from '../src/style.ts';
+import { loadToolkit } from '../src/toolkit.ts';
+
+const ROOT = resolve(import.meta.dirname, '..', '..');
+export const REGISTRY_DOC = join(ROOT, 'docs', 'reference', 'registry.md');
+const DOC_DIR = join(ROOT, 'docs', 'reference');
+
+const cell = (s: string) => s.replace(/\|/g, '\\|').replace(/\s+/g, ' ').trim();
+const rel = (p: string) => relative(DOC_DIR, p).split('\\').join('/');
+const sub = (d: string) => (existsSync(d) ? readdirSync(d, { withFileTypes: true }).filter((e) => e.isDirectory()).map((e) => e.name).sort() : []);
+
+interface Reel {
+  group: string;
+  folder: string;
+  file: string;
+  l: LoadedSpec;
+  scenes: string[];
+  approval: string;
+}
+
+const sceneName = (s: string) => basename(s).replace(/\.js$/, '');
+
+function reelFiles(): { group: string; folder: string; path: string }[] {
+  const out: { group: string; folder: string; path: string }[] = [];
+  for (const group of ['content/videos', 'examples'])
+    for (const folder of sub(join(ROOT, group))) {
+      const dir = join(ROOT, group, folder);
+      for (const f of readdirSync(dir).sort())
+        if (f === 'reel.yaml' || f.endsWith('.reel.yaml')) out.push({ group, folder, path: join(dir, f) });
+    }
+  return out;
+}
+
+function approvalRole(dir: string, variant: string): string {
+  const p = join(dir, 'review.yaml');
+  if (!existsSync(p)) return '—';
+  const r = parse(readFileSync(p, 'utf8')) as { approvals?: Record<string, { storyboard?: { role?: string } }> } | null;
+  return r?.approvals?.[variant || '']?.storyboard?.role ?? '—';
+}
+
+function collapse(names: string[]): string {
+  const parts: string[] = [];
+  for (let i = 0; i < names.length; ) {
+    let j = i;
+    while (j < names.length && names[j] === names[i]) j++;
+    parts.push(j - i > 1 ? `${names[i]} ×${j - i}` : names[i]!);
+    i = j;
+  }
+  return parts.join(' → ');
+}
+
+function loadReels(): Reel[] {
+  return reelFiles().map(({ group, folder, path }) => {
+    const l = loadSpec(path);
+    return {
+      group,
+      folder,
+      file: basename(path),
+      l,
+      scenes: l.spec.scenes.map((s) => sceneName(s.scene)),
+      approval: approvalRole(l.dir, l.variant),
+    };
+  });
+}
+
+function leadingComment(file: string): string {
+  const first = readFileSync(file, 'utf8').split('\n').find((l) => l.startsWith('//'));
+  return first ? first.replace(/^\/\/\s?/, '').trim() : '';
+}
+
+function helpers(file: string): { name: string; note: string }[] {
+  const lines = readFileSync(file, 'utf8').split('\n');
+  const out: { name: string; note: string }[] = [];
+  lines.forEach((line, i) => {
+    const m = line.match(/^export (?:async )?(?:function\*?|const|let|class) ([A-Za-z_$][\w$]*)/) ?? (line.startsWith('export default') ? [line, 'default'] : null);
+    if (!m) return;
+    let note = '';
+    const prev = (lines[i - 1] ?? '').trim();
+    if (prev.startsWith('//')) note = prev.replace(/^\/\/\s?/, '');
+    else if (prev.endsWith('*/')) {
+      let k = i - 1;
+      while (k >= 0 && !lines[k]!.includes('/**')) k--;
+      note = lines.slice(Math.max(k, 0), i).join(' ').replace(/\/\*\*|\*\/|^\s*\*/gm, ' ').replace(/\s*\*\s+/g, ' ').trim();
+    }
+    out.push({ name: m[1]!, note });
+  });
+  return out;
+}
+
+function qaChecks(): string[] {
+  const src = readFileSync(join(ROOT, 'production/src/qa.ts'), 'utf8');
+  const names = new Set<string>();
+  for (const m of src.matchAll(/name: '([^']+)'/g)) names.add(m[1]!);
+  for (const m of src.matchAll(/name: `([^`]+)`/g)) names.add(m[1]!.replace(/\$\{[^}]*\}/g, '…').replace(/\s*\(…\)/, ' (profile)'));
+  return [...names].sort((a, b) => a.localeCompare(b));
+}
+
+function cssVars(file: string): string[] {
+  if (!existsSync(file)) return [];
+  const css = readFileSync(file, 'utf8');
+  return [...new Set([...css.matchAll(/(--[a-z0-9-]+)\s*:/gi)].map((m) => m[1]!))].sort();
+}
+
+export function registryMarkdown(): string {
+  const reels = loadReels();
+  const styles = listStyles().sort((a, b) => a.def.id.localeCompare(b.def.id));
+  const toolkit = loadToolkit();
+  const family = new Map<string, string>();
+  for (const e of toolkit.entries) if (e.kind === 'scenes') for (const s of e.scenes) family.set(s, e.title);
+  const sceneFiles = readdirSync(join(ROOT, 'production/scenes')).filter((f) => f.endsWith('.js')).map((f) => f.slice(0, -3)).sort();
+  const used = new Map<string, Set<string>>();
+  for (const r of reels) for (const s of r.scenes) (used.get(s) ?? used.set(s, new Set()).get(s)!).add(r.folder);
+
+  const o: string[] = [];
+  o.push('# Registry of scenarios and visual components');
+  o.push('');
+  o.push('<!-- Generated by `npm run docs:registry`. Do not edit; change the sources. -->');
+  o.push('');
+  o.push('> **Audience:** anyone choosing what to reuse · generated from the reel specs, styles, scene and runtime sources');
+  o.push('');
+  o.push(
+    `One page for what exists: every reel script and its scene sequence, the story structure of each style, and every visual component with the reels that use it. It lists ${reels.length} reels, ${styles.length} styles, ${sceneFiles.length} scenes and the runtime helpers. For methods and tools see the [toolkit](toolkit.md); for scene props see the [scene catalog](scenes.md); for episode status see \`content/TRACKER.md\`.`,
+  );
+  o.push('');
+  o.push('## Contents');
+  o.push('');
+  o.push('- [Scenarios](#scenarios)');
+  o.push('- [Story structures](#story-structures)');
+  o.push('- [Visual components](#visual-components): [scenes](#scenes) · [runtime helpers](#runtime-helpers) · [styles and themes](#styles-and-themes) · [visual quality checks](#visual-quality-checks)');
+  o.push('');
+  o.push('## Scenarios');
+  o.push('');
+  o.push('Storyboard approval is the role recorded in the folder\'s `review.yaml` (`owner`, `agent` or `—` for none). A scene module outside `production/scenes` shows by its file name.');
+  for (const group of ['content/videos', 'examples']) {
+    o.push('');
+    o.push(`### ${group}`);
+    o.push('');
+    o.push('| Reel | Title | Lang | Style | Format | Voice | Scenes | Sequence | Storyboard |');
+    o.push('|---|---|---|---|---|---|---|---|---|');
+    for (const r of reels.filter((x) => x.group === group)) {
+      const s = r.l.spec;
+      const f = s.format;
+      const fmt = `${f.width}×${f.height}@${f.fps}${f.blur > 1 ? ` (blur ${f.blur})` : ''}`;
+      o.push(
+        `| [${cell(`${r.folder}/${r.file}`)}](${rel(r.l.path)}) | ${cell(s.title ?? '—')} | ${cell(String(s.lang ?? '—'))} | ${r.l.style?.def.id ?? '—'} | ${fmt} | ${s.voice.engine} | ${r.scenes.length} | ${cell(collapse(r.scenes))} | ${r.approval} |`,
+      );
+    }
+  }
+  o.push('');
+  o.push('## Story structures');
+  for (const { def } of styles) {
+    o.push('');
+    o.push(`### ${def.title} (\`${def.id}\`)`);
+    o.push('');
+    const pace: string[] = [];
+    if (def.pacing.shotSeconds) pace.push(`${def.pacing.shotSeconds.join('–')} s per shot`);
+    if (def.pacing.wordsPerMinute) pace.push(`${def.pacing.wordsPerMinute.join('–')} words/min`);
+    if (def.pacing.length) pace.push(`${def.pacing.length.join('–')} s long`);
+    o.push(`Status: ${def.status}. Pacing: ${pace.join(', ') || '—'}.`);
+    o.push('');
+    if (!def.structure.length) o.push('No structure defined.');
+    def.structure.forEach((p, i) => o.push(`${i + 1}. **${p.part}** — ${p.does.replace(/\s+/g, ' ').trim()}`));
+  }
+  o.push('');
+  o.push('## Visual components');
+  o.push('');
+  o.push('### Scenes');
+  o.push('');
+  o.push('| Scene | Family | What it does | Props | Used by |');
+  o.push('|---|---|---|---|---|');
+  for (const n of sceneFiles) {
+    const u = [...(used.get(n) ?? [])].sort();
+    o.push(
+      `| \`${n}\` | ${cell(family.get(n) ?? '—')} | ${cell(leadingComment(join(ROOT, 'production/scenes', `${n}.js`)))} | [props](scenes.md#${n}) | ${u.length ? `${u.length}: ${u.join(', ')}` : 'unused'} |`,
+    );
+  }
+  o.push('');
+  o.push('### Runtime helpers');
+  for (const f of ['kit.js', 'paper.js', 'type.js']) {
+    const hs = helpers(join(ROOT, 'production/runtime', f));
+    o.push('');
+    o.push(`#### \`production/runtime/${f}\``);
+    o.push('');
+    o.push('| Export | Note |');
+    o.push('|---|---|');
+    for (const h of hs) o.push(`| \`${h.name}\` | ${cell(h.note) || '—'} |`);
+  }
+  o.push('');
+  o.push('### Styles and themes');
+  o.push('');
+  o.push('| Style | Default format | Theme custom properties |');
+  o.push('|---|---|---|');
+  for (const { def, dir } of styles) {
+    const f = (def.defaults.format ?? {}) as { preset?: string; width?: number; height?: number; fps?: number };
+    const fmt = f.preset ? `${f.preset}${f.fps ? `@${f.fps}` : ''}` : f.width ? `${f.width}×${f.height}${f.fps ? `@${f.fps}` : ''}` : '—';
+    const vars = def.theme ? cssVars(join(dir, def.theme)) : [];
+    o.push(`| \`${def.id}\` | ${fmt} | ${vars.length ? vars.map((v) => `\`${v}\``).join(' ') : '—'} |`);
+  }
+  o.push('');
+  o.push('### Visual quality checks');
+  o.push('');
+  o.push('Checks run by `storygro qa` (see `production/src/qa.ts`); the visual ones guard frames, text and safe areas, the rest guard the file and the audio.');
+  o.push('');
+  for (const c of qaChecks()) o.push(`- ${c}`);
+  o.push('');
+  return o.join('\n');
+}
+
+if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+  writeFileSync(REGISTRY_DOC, registryMarkdown());
+  console.log(`✔ ${relative(ROOT, REGISTRY_DOC)}`);
+}

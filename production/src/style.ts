@@ -16,8 +16,11 @@ export const STYLES_DIR = join(REEL_ROOT, 'styles');
 const Range = z.tuple([z.number(), z.number()]);
 
 export const StyleImages = z.object({
-  /** `mflux` generates locally on Apple silicon; `manual` lists the prompts for a person or another tool */
-  provider: z.enum(['mflux', 'manual']).default('manual'),
+  /**
+   * `mflux` generates locally on Apple silicon; `codex` asks the Codex CLI's image tool (GPT Image,
+   * needs a signed-in Codex, online, not seed-reproducible); `manual` lists the prompts for a person
+   */
+  provider: z.enum(['mflux', 'codex', 'manual']).default('manual'),
   /** the mflux command for the model family */
   tool: z.string().regex(/^mflux-generate[a-z0-9.-]*$/).default('mflux-generate-z-image-turbo'),
   /** provider model, e.g. a Hugging Face repo */

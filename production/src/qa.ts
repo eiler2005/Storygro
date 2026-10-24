@@ -83,6 +83,20 @@ export function similarity(script: string, heard: string): { score: number; miss
       }
     }
   }
+  // names, which Russian ASR spells as it hears them: two script words heard as one with a letter or two
+  // changed («Де Брюйне» ↔ «Дебрюини»), then a long word off by up to a quarter of its letters («Модрич» ↔ «Мадрич»)
+  const near = (x: string, y: string) => editDistance(x, y) <= Math.max(1, Math.floor(Math.min(x.length, y.length) / 4));
+  const spare = (w: string) => [...b.entries()].find(([k, n]) => n > 0 && !/\d/.test(k) && k !== PERCENT_TOKEN && near(w, k))?.[0];
+  for (let i = 0; i + 1 < a.length; i++) {
+    if (matched[i] || matched[i + 1] || NUMBER_WORD.test(a[i]!) || NUMBER_WORD.test(a[i + 1]!)) continue;
+    const h = spare(a[i]! + a[i + 1]!);
+    if (h && take(h)) matched[i] = matched[i + 1] = true;
+  }
+  for (const [i, w] of a.entries()) {
+    if (matched[i] || w.length < 5 || NUMBER_WORD.test(w)) continue;
+    const h = spare(w);
+    if (h) matched[i] = take(h);
+  }
   // «процент» heard as the % sign
   for (const [i, w] of a.entries()) if (!matched[i] && PERCENT_WORD.test(w)) matched[i] = take(PERCENT_TOKEN);
   // a run of number words heard as one token with digits
@@ -99,6 +113,21 @@ export function similarity(script: string, heard: string): { score: number; miss
   }
   const missing = a.filter((_, i) => !matched[i]);
   return { score: a.length ? (a.length - missing.length) / a.length : 1, missing };
+}
+
+/** Levenshtein distance of two words. */
+export function editDistance(x: string, y: string): number {
+  const d = Array.from({ length: y.length + 1 }, (_, j) => j);
+  for (let i = 1; i <= x.length; i++) {
+    let prev = d[0]!;
+    d[0] = i;
+    for (let j = 1; j <= y.length; j++) {
+      const cur = d[j]!;
+      d[j] = Math.min(d[j]! + 1, d[j - 1]! + 1, prev + (x[i - 1] === y[j - 1] ? 0 : 1));
+      prev = cur;
+    }
+  }
+  return d[y.length]!;
 }
 
 const ok = (b: boolean): Status => (b ? 'pass' : 'fail');

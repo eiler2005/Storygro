@@ -154,7 +154,9 @@ export const ReelSpec = z.object({
       /** the episode's own art direction instead of the style's picture prompt; must contain {subject} */
       prompt: z.string().includes('{subject}', { message: 'images.prompt must contain {subject}' }).optional(),
       /** overrides the style's provider, e.g. `manual` on a machine without Apple silicon */
-      provider: z.enum(['mflux', 'manual']).optional(),
+      provider: z.enum(['mflux', 'codex', 'manual']).optional(),
+      /** the provider's model, e.g. the Codex model that runs the image tool (codex) */
+      model: z.string().optional(),
       /** overrides the style's picture size, e.g. 720×1280 for a vertical reel (multiples of 16) */
       width: z.number().int().min(256).max(2048).multipleOf(16).optional(),
       height: z.number().int().min(256).max(2048).multipleOf(16).optional(),

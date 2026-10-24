@@ -669,7 +669,7 @@ The scene of the [`cartoon` style](../../production/styles/cartoon/README.md): f
 | `shots[].prompt`, `splitPrompt` | string | No | What the picture shows, for `storygro images`; `@name` comes from the cast. The scene ignores them. |
 | `fade` | seconds | No (default 0) | Cross-fade between shots; 0 is a cut. |
 | `title` | `{ text, at?, until? }` | No | Headline band at the top, upper-case in the style's display font. |
-| `badge` | `{ value, label?, at?, until?, tone?, side? }` | No | A big number on a card, right (default) or left. Bind with `valueFrom` / `labelFrom`. |
+| `badge` | `{ value, label?, at?, until?, tone?, side?, y? }` | No | A big number on a card, right (default) or left; `y` (0..1, default 0.22) is its top within the text area — lower it to keep a face clear. The number shrinks to fit its card. Bind with `valueFrom` / `labelFrom`. |
 | `labels` | `[{ text, x, y, at?, until?, tone? }]` | No | Small tags pinned to the picture; `x`, `y` are fractions of the stage. |
 | `source` | string or `{ text }` | No | Small source line, bottom left; bind with `sourceFrom` or `{ textFrom: … }`. |
 

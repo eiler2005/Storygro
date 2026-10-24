@@ -163,6 +163,9 @@ export default {
           if (l.mode === 'slam') {
             const s = spring(t, w.t, { from: 2.3, to: 1, stiffness: 420, damping: 26 });
             set(w.span, { opacity: clamp((t - w.t) / 0.06), transform: `scale(${s})` });
+            // while it lands it may cross the safe edge on purpose (scene contract, rule 5)
+            if (s > 1.03) w.span.setAttribute('data-rc-safe-ignore', '');
+            else w.span.removeAttribute('data-rc-safe-ignore');
           } else if (l.mode === 'swap') {
             const k2 = spring(t, w.t, { stiffness: 220, damping: 20 });
             set(w.span, { opacity: clamp((t - w.t) / 0.1), transform: `translateY(${(1 - k2) * 0.5}em)`, fontWeight: String(Math.round(200 + (l.weight - 200) * clamp(k2))) });

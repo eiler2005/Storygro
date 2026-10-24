@@ -2,7 +2,7 @@
 
 <!-- Generated from production/toolkit.yaml by `npm run docs:toolkit`. Edit the YAML, not this page. -->
 
-Every way Storygro makes content, in one bank: **19 methods**, **23 tools**, **4 styles**, **6 scene families** and **4 providers**, by production stage. Agents read [`production/toolkit.yaml`](../../production/toolkit.yaml) to pick an approach; this page is generated from it, and `npm test` fails when a command, style or scene is missing from the bank or a link is broken.
+Every way Storygro makes content, in one bank: **19 methods**, **23 tools**, **4 styles**, **6 scene families** and **5 providers**, by production stage. Agents read [`production/toolkit.yaml`](../../production/toolkit.yaml) to pick an approach; this page is generated from it, and `npm test` fails when a command, style or scene is missing from the bank or a link is broken.
 
 **Status:** *stable* — used across pieces · *pilot* — works, reviewed on one or two pieces · *planned* — not implemented.
 
@@ -11,12 +11,12 @@ Every way Storygro makes content, in one bank: **19 methods**, **23 tools**, **4
 | **choose** — Pick a topic worth a piece | [Editorial ranking](#editorial-ranking) · [Trend scan and watchlist](#trend-scan-and-watchlist) · [Research scan with picks](#research-scan-with-picks) · [X digest through Grok](#x-digest-through-grok) · [Angles from a scan](#angles-from-a-scan) |
 | **research** — Find and check what is true | [Primary-source research](#primary-source-research) · [Facts as data](#facts-as-data) · [Reference analysis](#reference-analysis) · [Transcript and pace statistics](#transcript-and-pace-statistics) · [Whisper (mlx-whisper)](#whisper-mlx-whisper) |
 | **write** — Turn it into a script as data | [Script as data](#script-as-data) · [Story structures](#story-structures) · [One worked example](#one-worked-example) · [Language variants](#language-variants) · [Brand profile and series](#brand-profile-and-series) |
-| **look** — Decide how it looks | [Cartoon explainer](#cartoon-explainer) · [Cut-paper explainer](#cut-paper-explainer) · [Editorial collage](#editorial-collage) · [Cut-paper scenes](#cut-paper-scenes) · [Kinetic typography](#kinetic-typography) · [Kinetic and diagram scenes](#kinetic-and-diagram-scenes) · [Springs, beat grid and motion blur](#springs-beat-grid-and-motion-blur) · [Collage scene](#collage-scene) · [Illustration scene](#illustration-scene) · [Screencast scene](#screencast-scene) · [Landscape product scenes](#landscape-product-scenes) · [Generated illustrations](#generated-illustrations) · [Z-Image-Turbo via mflux](#z-image-turbo-via-mflux) · [Recurring cast](#recurring-cast) · [No text in pictures](#no-text-in-pictures) · [Screen capture](#screen-capture) · [A new scene module](#a-new-scene-module) |
+| **look** — Decide how it looks | [Cartoon explainer](#cartoon-explainer) · [Cut-paper explainer](#cut-paper-explainer) · [Editorial collage](#editorial-collage) · [Cut-paper scenes](#cut-paper-scenes) · [Kinetic typography](#kinetic-typography) · [Kinetic and diagram scenes](#kinetic-and-diagram-scenes) · [Springs, beat grid and motion blur](#springs-beat-grid-and-motion-blur) · [Collage scene](#collage-scene) · [Illustration scene](#illustration-scene) · [Screencast scene](#screencast-scene) · [Landscape product scenes](#landscape-product-scenes) · [Generated illustrations](#generated-illustrations) · [Z-Image-Turbo via mflux](#z-image-turbo-via-mflux) · [GPT Image through the Codex CLI](#gpt-image-through-the-codex-cli) · [Recurring cast](#recurring-cast) · [No text in pictures](#no-text-in-pictures) · [Screen capture](#screen-capture) · [A new scene module](#a-new-scene-module) |
 | **voice** — Narration, sound and timing | [Local narration and timing](#local-narration-and-timing) · [Narrator design](#narrator-design) · [Pronunciation and say-as](#pronunciation-and-say-as) · [Russian stress and homographs](#russian-stress-and-homographs) · [Pronunciation dictionary and stress lookup](#pronunciation-dictionary-and-stress-lookup) · [Voice bench](#voice-bench) · [Chatterbox Multilingual](#chatterbox-multilingual) · [Music and sound effects](#music-and-sound-effects) |
 | **make** — Storyboard, approval and rendering | [Stills and live preview](#stills-and-live-preview) · [Storyboard and approval](#storyboard-and-approval) · [Plan document and stepped approvals](#plan-document-and-stepped-approvals) · [Render](#render) · [Formats, safe areas and captions](#formats-safe-areas-and-captions) · [Carousel cards](#carousel-cards) |
 | **check** — Technical QA and the human review | [Technical QA](#technical-qa) · [Human review](#human-review) |
 | **ship** — Release, publication record and metrics | [Episode tracker](#episode-tracker) · [Release package](#release-package) · [Publication ledger and metrics](#publication-ledger-and-metrics) · [Platform upload and analytics APIs](#platform-upload-and-analytics-apis) |
-| **maintain** — Keep the repository and its media healthy | [Local environments](#local-environments) · [Repository checks](#repository-checks) · [Documentation previews and the toolkit page](#documentation-previews-and-the-toolkit-page) · [CLI help](#cli-help) |
+| **maintain** — Keep the repository and its media healthy | [Local environments](#local-environments) · [Repository checks](#repository-checks) · [Documentation previews, the toolkit page and the registry](#documentation-previews-the-toolkit-page-and-the-registry) · [CLI help](#cli-help) |
 
 A new piece usually takes one entry per stage: a topic (choose), sources and facts (research), a script in a style (write, look), narration (voice), storyboard and render (make), QA and your own review (check), a package (ship).
 
@@ -358,6 +358,18 @@ Local image model (Apache-2.0, 8-bit mflux conversion) on Apple silicon, in a se
 
 **See:** [docs](../../docs/explanation/technology.md)
 
+### GPT Image through the Codex CLI
+
+*provider · pilot*
+
+Pictures from the Codex CLI's image tool (images.provider codex, images.model gpt-6-astra), in batches of five, three sessions at a time, scaled and centre-cropped to the reel's size; recorded in images.json as not reproducible by seed.
+
+**Use when:** When a piece needs drawing-like, detailed pictures or recognisable caricatures of public people; compared with Z-Image on 24 Oct 2026 it won on both. Needs a signed-in Codex and the network.
+
+**How:** `images: { provider: codex, model: gpt-6-astra } in the reel, then npm run storygro -- images <spec>`
+
+**See:** [docs](../../docs/reference/styles.md#in-the-reel) · [football-stars-kids/README.md](../../content/videos/football-stars-kids/README.md)
+
 ### Recurring cast
 
 *method · pilot*
@@ -664,15 +676,15 @@ Media policy on indexed blobs, doc links and anchors, this toolkit, TypeScript, 
 
 **See:** [docs](../../docs/explanation/how-we-work.md)
 
-### Documentation previews and the toolkit page
+### Documentation previews, the toolkit page and the registry
 
 *tool · stable*
 
-Rebuilds the small English previews in docs/media/ from local renders, each under 300 KiB, and docs/reference/toolkit.md from this file.
+Rebuilds the small English previews in docs/media/ from local renders, each under 300 KiB, docs/reference/toolkit.md from this file, and docs/reference/registry.md — every reel with its scene sequence, every style's story structure, every scene with the reels that use it, the runtime helpers, theme tokens and visual checks.
 
-**Use when:** After rendering something the docs show; after editing this file.
+**Use when:** After rendering something the docs show; after editing this file; after adding a reel, a scene or a style (npm test fails while the registry is stale).
 
-**How:** `npm run docs:media; npm run docs:toolkit`
+**How:** `npm run docs:media; npm run docs:toolkit; npm run docs:registry`
 
 **See:** [docs](../../docs/adr/0004-docs-structure-and-media.md)
 

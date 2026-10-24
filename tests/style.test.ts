@@ -138,3 +138,16 @@ test('a transcript file with no timestamps is refused by the parser result', () 
     rmSync(dir, { recursive: true, force: true });
   }
 });
+
+test('an episode can switch its pictures to the codex provider with its own model and licence', (t) => {
+  const dir = mkdtempSync(join(tmpdir(), 'storygro-style-'));
+  t.after(() => rmSync(dir, { recursive: true, force: true }));
+  const path = join(dir, 'reel.yaml');
+  writeFileSync(path, `reel: 1\nstyle: cartoon\ntitle: x\nimages: { provider: codex, model: gpt-6-astra, width: 1088, height: 1920 }\nscenes: [{ id: a, scene: illustration, props: { shots: [{ image: shots/a.jpg, prompt: 'a ball' }] } }]\n`);
+  const images = styleImages(loadSpec(path));
+  assert.equal(images.provider, 'codex');
+  assert.equal(images.model, 'gpt-6-astra');
+  assert.equal(images.base, undefined);
+  assert.match(images.licence ?? '', /Codex image tool|OpenAI/);
+  assert.equal(images.width, 1088);
+});

@@ -119,6 +119,20 @@ export function stressFrom(word: string, token: string): string | null {
   return `${word.slice(0, idx)}+${word.slice(idx)}`;
 }
 
+/** The run of capitalised words around a word (a full name: «Лука Модрич»), for looking the word up in context. */
+export function nameAround(text: string, word: string): string {
+  const words = [...text.matchAll(WORD)];
+  const i = words.findIndex((m) => m[0] === word);
+  if (i < 0) return word;
+  const cap = (m: RegExpMatchArray) => m[0][0] === m[0][0]!.toUpperCase();
+  const adjacent = (a: RegExpMatchArray, b: RegExpMatchArray) => /^[\s-]*$/.test(text.slice((a.index ?? 0) + a[0].length, b.index));
+  let a = i;
+  let b = i;
+  while (a > 0 && cap(words[a - 1]!) && adjacent(words[a - 1]!, words[a]!)) a--;
+  while (b < words.length - 1 && cap(words[b + 1]!) && adjacent(words[b]!, words[b + 1]!)) b++;
+  return words.slice(a, b + 1).map((m) => m[0]).join(' ');
+}
+
 export interface Found {
   word: string;
   /** the script's form with `+`, e.g. Пар+иже */
@@ -153,13 +167,15 @@ const plain = (html: string) => html.replace(/<[^>]+>/g, ' ').replace(/&#\d+;|&[
  * (names, places), then ru.wiktionary — the word's own page and the pages its search finds, whose
  * declension tables carry the stress of every case form. Network; returns null when no source shows it.
  */
-export async function lookupStress(word: string): Promise<Found | null> {
+export async function lookupStress(word: string, context = word): Promise<Found | null> {
   const wp = 'https://ru.wikipedia.org/w/api.php?format=json&formatversion=2';
   const wt = 'https://ru.wiktionary.org/w/api.php?format=json&formatversion=2';
-  try {
-    const s = await json<{ query: { search: { title: string }[] } }>(`${wp}&action=query&list=search&srlimit=5&srsearch=${encodeURIComponent(word)}`);
-    const titles = s.query.search.map((x) => x.title);
-    if (titles.length) {
+  // a name's stress depends on whose name it is (Лу́ка Модрич, архиепископ Лука́): the full name first
+  for (const q of context !== word ? [context, word] : [word]) {
+    try {
+      const s = await json<{ query: { search: { title: string }[] } }>(`${wp}&action=query&list=search&srlimit=5&srsearch=${encodeURIComponent(q)}`);
+      const titles = s.query.search.map((x) => x.title);
+      if (!titles.length) continue;
       const e = await json<{ query: { pages: { title: string; extract?: string }[] } }>(
         `${wp}&action=query&prop=extracts&exintro=1&explaintext=1&redirects=1&titles=${encodeURIComponent(titles.join('|'))}`,
       );
@@ -168,9 +184,9 @@ export async function lookupStress(word: string): Promise<Found | null> {
         const f = findIn(word, byTitle.get(t) ?? '', `ru.wikipedia, «${t}»`);
         if (f) return f;
       }
+    } catch {
+      /* the next query, then the dictionary */
     }
-  } catch {
-    /* try the dictionary */
   }
   const pages = [word, word.toLowerCase()];
   try {

@@ -20,7 +20,7 @@ import { qa } from './qa.ts';
 import { cards, frames, mux, stills } from './render.ts';
 import { serve } from './serve.ts';
 import { loadSpec } from './spec.ts';
-import { appendEntries, entriesFor, type Found, LEXICON_PATH, loadLexicon, lookupStress, spokenWithMarks, uncheckedNames, WORD as LEX_WORD } from './lexicon.ts';
+import { appendEntries, entriesFor, type Found, LEXICON_PATH, loadLexicon, lookupStress, nameAround, spokenWithMarks, uncheckedNames, WORD as LEX_WORD } from './lexicon.ts';
 import { buildTimeline, resolveAt, type Timeline, workDir, workUrl, writeTimeline } from './timeline.ts';
 import { python, REEL_ROOT, run } from './tools.ts';
 
@@ -312,13 +312,13 @@ switch (cmd) {
       break;
     }
     const lex = loadLexicon();
-    const all = new Set<string>();
+    const all = new Map<string, string>();
     for (const s of l.spec.scenes) {
       const text = spokenWithMarks(s);
       const dict = entriesFor(text, lex).map((e) => e.say);
       const marked = [...text.matchAll(LEX_WORD)].map((m) => m[0]).filter((w) => /[+\u0301]/.test(w));
       const unchecked = uncheckedNames(text, lex);
-      for (const w of unchecked) all.add(w);
+      for (const w of unchecked) if (!all.has(w)) all.set(w, nameAround(text, w));
       console.log(`  ${s.id.padEnd(12)} dictionary: ${dict.join(', ') || '—'} · author: ${marked.join(', ') || '—'}${unchecked.length ? ` · ! unchecked: ${unchecked.join(', ')}` : ''}`);
     }
     if (!all.size) {
@@ -330,8 +330,8 @@ switch (cmd) {
       break;
     }
     const found: Found[] = [];
-    for (const w of all) {
-      const f = await lookupStress(w);
+    for (const [w, context] of all) {
+      const f = await lookupStress(w, context);
       if (f) {
         found.push(f);
         console.log(`  ✔ ${w} → ${f.say.replace(/\+(.)/, '$1\u0301')}   ${f.source}`);

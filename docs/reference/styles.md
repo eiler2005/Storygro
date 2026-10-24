@@ -38,7 +38,8 @@ A style lives in `production/styles/<id>/` and is used by a reel with `style: <i
 | `style: cartoon` | use the style |
 | `images.cast` | the episode's own characters; merged over the style's cast |
 | `images.seed` | base seed; each shot's seed is derived from it and the shot's position, so it is stable |
-| `images.provider` | overrides the style's provider — `manual` on a machine without Apple silicon |
+| `images.provider` | overrides the style's provider — `manual` on a machine without Apple silicon, `codex` for GPT Image through the Codex CLI's image tool (signed-in Codex, online; pictures go out in batches, three sessions at a time, and are scaled and centre-cropped to the reel's size; not reproducible by seed, the ledger says so) |
+| `images.model` | the provider's model, e.g. `gpt-6-astra` for `codex` |
 | `images.width`, `images.height` | overrides the picture size, e.g. 720×1280 for a vertical cut |
 | `images.prompt` | the episode's own art direction instead of the style's picture prompt; must contain `{subject}` (example: [ballon-dor-kids](../../content/videos/ballon-dor-kids/ru.reel.yaml)) |
 | `props.shots[].seed` | a fixed seed for one shot, to try another take |

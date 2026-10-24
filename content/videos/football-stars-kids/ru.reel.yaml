@@ -1,0 +1,320 @@
+# «Звёзды футбола: собираем альбом» — мультик для детей 6–10 лет, около двух минут: 14 футболистов из
+# списка владельца, по одному весёлому проверенному факту о каждом. Подача — альбом наклеек: точки слева
+# показывают, сколько звёзд уже собрано (overlay.js), три главы — атака, середина поля, вратари.
+# Футболисты на картинках — обобщённые мультяшные фигуры в цветах команд, не портреты; имена, клубы и
+# числа — подписями из facts.json (источники в sources.md). Ведущие — Златик и Маша из «Золотого мяча».
+reel: 1
+style: cartoon
+title: 'Звёзды футбола: собираем альбом'
+lang: ru
+format: { preset: vertical, fps: 30 }
+voice: { engine: qwen3, voice: assets/voice/narrator-ru.wav, speed: 1.12 }
+music: { bpm: 124, key: G, progression: [I, V, vi, IV], gain: 0.16, drop: ch-attack }
+loudness: -14
+brand: ../../brand.yaml
+overlay: overlay.js
+data: { facts: facts.json }
+stills: { cover: intro@go, yamal: p-yamal@baby, keepers: p-courtois@tall, close: outro@tell }
+images:
+  # GPT Image through the Codex CLI: recognisable, drawing-like pictures (compared with Z-Image on
+  # 24.10.2026: content/videos/football-stars-kids/README.md#pictures); not reproducible by seed
+  provider: codex
+  model: gpt-6-astra
+  seed: 41
+  width: 1088
+  height: 1920
+  prompt: >-
+    Hand-drawn children's book illustration, confident ink outlines with coloured pencil and watercolour
+    texture, warm rich palette, a detailed lively background full of small things to discover, expressive
+    friendly caricature, tall vertical composition with the upper quarter of the frame kept calm. {subject}.
+    No text, no letters, no numbers, no logos, no club crests, no sponsor logos, no flags, no watermark.
+  cast:
+    ball: >-
+      Zlatik, a small round shiny golden football with a big happy cartoon face, large sparkly eyes,
+      rosy cheeks, tiny arms in white gloves and short legs in red sneakers
+    kid: >-
+      Masha, a cheerful eight-year-old girl with two ginger pigtails and freckles, wearing a plain green
+      t-shirt without any print, blue shorts and white football boots
+post:
+  title: 'Звёзды футбола: собираем альбом! Мультик для детей'
+  text: |
+    Собираем альбом из 14 звёзд футбола: Роналдиньо, Ламин Ямаль, Майкл Олисе, Усман Дембеле, Лаутаро Мартинес, Хулиан Альварес, Ромелу Лукаку, Лука Модрич, Кевин Де Брюйне, Арда Гюлер, Дейн Сент-Клэр, Мануэль Нойер, Джанлуиджи Доннарумма и Тибо Куртуа. О каждом — один весёлый факт.
+
+    Футболисты нарисованы как дружеские шаржи, Златик и Маша — наши персонажи; ролик не связан с клубами и игроками. Клубы и факты проверены по открытым источникам 24 октября 2026 года (список в описании выпуска). Голос синтезирован (Qwen3-TTS), картинки сгенерированы (Z-Image-Turbo).
+  tags: [футбол, детям, мультик, Ямаль, Месси, Модрич]
+scenes:
+  - id: intro
+    scene: illustration
+    say: 'Привет! Сегодня соберём альбом {#album}из четырнадцати звёзд футбола — и о каждой узнаем весёлый факт. {#go}Поехали!'
+    pad: [0.1, 0.3]
+    energy: 0.5
+    sfx: [{ at: go, kind: whoosh, gain: 0.4, snap: half }]
+    props:
+      shots:
+        - { image: shots/intro-1.jpg, prompt: '@kid and @ball sitting on a cosy rug in a sunny children''s room full of football posters without text, toys and a shelf of balls, opening a big sticker album with empty colourful card slots, a pile of blank sticker packs beside them', move: in, focus: { x: 0.5, y: 0.6 } }
+      title: { text: Альбом звёзд, at: album }
+
+  - id: ch-attack
+    scene: kinetic
+    say: 'Сначала {#k}атака!'
+    pad: [0.1, 0.3]
+    energy: 0.8
+    transition: { kind: cut, dur: 0 }
+    sfx: [{ at: k, kind: hit, gain: 0.45, snap: beat }]
+    props:
+      background: '#1f6f4a'
+      align: center
+      lines:
+        - { text: 'Сначала', weight: light }
+        - { text: 'атака!', tone: accent2, mode: slam, size: 1.4 }
+
+  - id: p-ronaldinho
+    scene: illustration
+    say: 'Роналдиньо из Бразилии {#goals}в тринадцать лет забил все двадцать три гола в одном матче!'
+    pad: [0.1, 0.35]
+    energy: 0.8
+    sfx: [{ at: goals, kind: chime, gain: 0.45, snap: half }]
+    props:
+      shots:
+        - { image: shots/ronaldinho-1.jpg, prompt: 'a friendly recognisable caricature of the Brazilian footballer Ronaldinho with his long curly black hair held back by a headband and his famous huge toothy smile, in a plain yellow shirt with green trim and blue shorts, juggling a ball on a sunny beach pitch in Rio with palm trees, kites and children watching', move: in, focus: { x: 0.5, y: 0.6 } }
+        - { at: goals, image: shots/ronaldinho-2.jpg, prompt: 'a thirteen-year-old boy who is clearly a young Ronaldinho, curly black hair and a huge toothy smile, in a plain yellow shirt, standing proudly in front of a small goal whose net overflows with dozens of footballs, cheering neighbourhood kids around him', move: out, focus: { x: 0.5, y: 0.6 } }
+      title: { textFrom: facts.ronaldinho.surname, at: -1, until: goals }
+      badge: { valueFrom: facts.ronaldinho.goals.value, labelFrom: facts.ronaldinho.goals.label, at: goals, y: 0.04, side: left }
+      labels:
+        - { textFrom: facts.ronaldinho.clubs, x: 0.4, y: 0.6, at: 0.3, tone: mustard }
+        - { textFrom: facts.ronaldinho.country, x: 0.4, y: 0.655, at: 0.5, tone: blue }
+
+  - id: p-yamal
+    scene: illustration
+    say: 'Ламин Ямаль из «Барселоны» — {#euro}самый юный автор гола на чемпионатах Европы. {#baby}А малышом его купал сам Месси!'
+    pad: [0.1, 0.35]
+    energy: 0.8
+    sfx: [{ at: baby, kind: pop, gain: 0.45 }]
+    props:
+      shots:
+        - { image: shots/yamal-1.jpg, prompt: 'a friendly recognisable caricature of the young Spanish winger Lamine Yamal, a slim teenager with short dark curly hair, in a plain blue and dark red vertically striped shirt, celebrating a goal with arms wide open in a packed night stadium', move: in, focus: { x: 0.5, y: 0.6 } }
+        - { at: baby, image: shots/yamal-2.jpg, prompt: 'a laughing baby wrapped in a fluffy yellow towel next to a small white tub with soap bubbles, a yellow rubber duck and a tiny football, two big friendly hands in blue and dark red striped sleeves tucking the towel, a photographer with a camera in the background, a sunny dressing room', move: out, focus: { x: 0.5, y: 0.6 } }
+      title: { textFrom: facts.yamal.surname, at: -1, until: euro }
+      badge: { valueFrom: facts.yamal.age.value, labelFrom: facts.yamal.age.label, at: euro, until: baby, y: 0.04, side: left }
+      labels:
+        - { textFrom: facts.yamal.clubs, x: 0.4, y: 0.6, at: 0.3, tone: mustard }
+        - { textFrom: facts.yamal.country, x: 0.4, y: 0.655, at: 0.5, tone: blue }
+
+  - id: p-olise
+    scene: illustration
+    say: 'Майкл Олисе играет за «Баварию». {#run}А в детстве он два года подряд был чемпионом своего района по бегу!'
+    pad: [0.1, 0.35]
+    energy: 0.8
+    props:
+      shots:
+        - { image: shots/olise-1.jpg, prompt: 'a friendly recognisable caricature of the French winger Michael Olise, slim, short dark hair, calm focused face, in a plain red shirt and red shorts, dribbling past a defender in a big stadium', move: right, focus: { x: 0.5, y: 0.6 } }
+        - { at: run, image: shots/olise-2.jpg, prompt: 'a young boy who is clearly a child Michael Olise, short dark hair, winning a cross-country race across a green London park with autumn trees, other children running behind him', move: left, focus: { x: 0.5, y: 0.6 } }
+      title: { textFrom: facts.olise.surname, at: -1, until: run }
+      badge: { valueFrom: facts.olise.run.value, labelFrom: facts.olise.run.label, at: run, y: 0.04, side: left }
+      labels:
+        - { textFrom: facts.olise.clubs, x: 0.4, y: 0.6, at: 0.3, tone: mustard }
+        - { textFrom: facts.olise.country, x: 0.4, y: 0.655, at: 0.5, tone: blue }
+
+  - id: p-dembele
+    scene: illustration
+    say: 'Усман Дембеле {#ball}получил «Золотой мяч» [2025](=две тысячи двадцать пятого) года {#feet}и бьёт одинаково хорошо обеими ногами!'
+    pad: [0.1, 0.35]
+    energy: 0.85
+    sfx: [{ at: ball, kind: chime, gain: 0.45, snap: half }]
+    props:
+      shots:
+        - { image: shots/dembele-1.jpg, prompt: 'a friendly recognisable caricature of the French forward Ousmane Dembélé with his big joyful smile, in a plain dark navy blue shirt with one red vertical stripe, holding a shiny golden football trophy on a stage, golden confetti falling', move: in, focus: { x: 0.5, y: 0.55 } }
+        - { at: feet, image: shots/dembele-2.jpg, prompt: 'Ousmane Dembélé as a friendly caricature in a plain dark navy blue shirt, shooting with his left foot while a second ball waits by his right foot, playful motion lines, a stadium behind', move: out, focus: { x: 0.5, y: 0.6 } }
+      title: { textFrom: facts.dembele.surname, at: -1, until: ball }
+      badge: { valueFrom: facts.dembele.ballon.value, labelFrom: facts.dembele.ballon.label, at: ball, y: 0.4 }
+      labels:
+        - { textFrom: facts.dembele.clubs, x: 0.4, y: 0.6, at: 0.3, tone: mustard }
+        - { textFrom: facts.dembele.country, x: 0.4, y: 0.655, at: 0.5, tone: blue }
+
+  - id: p-lautaro
+    scene: illustration
+    say: 'Лаутаро Мартинес — {#bull}«Эль Торо», то есть «Бык»! {#def}А в детстве он играл защитником.'
+    pad: [0.1, 0.35]
+    energy: 0.85
+    sfx: [{ at: bull, kind: thud, gain: 0.45, snap: beat }]
+    props:
+      shots:
+        - { image: shots/lautaro-1.jpg, prompt: 'a friendly recognisable caricature of the Argentine striker Lautaro Martínez, strong, dark hair and a beard, with a captain armband, in a plain blue and black vertically striped shirt, running with the ball in a stadium', move: in, focus: { x: 0.5, y: 0.6 } }
+        - { at: bull, image: shots/lautaro-2.jpg, prompt: 'Lautaro Martínez as a friendly caricature charging forward, with a cheerful cartoon bull galloping beside him with a ball, on a green pitch', move: out, focus: { x: 0.5, y: 0.6 } }
+      title: { textFrom: facts.lautaro.surname, at: -1, until: bull }
+      labels:
+        - { textFrom: facts.lautaro.clubs, x: 0.4, y: 0.6, at: 0.3, tone: mustard }
+        - { textFrom: facts.lautaro.country, x: 0.4, y: 0.655, at: 0.5, tone: blue }
+
+  - id: p-alvarez
+    scene: illustration
+    say: 'Хулиан Альварес — {#spider}«Паук»: после гола он будто стреляет паутиной! {#champ}А ещё он чемпион мира.'
+    pad: [0.1, 0.35]
+    energy: 0.85
+    sfx: [{ at: spider, kind: whoosh, gain: 0.4 }]
+    props:
+      shots:
+        - { image: shots/alvarez-1.jpg, prompt: 'a friendly recognisable caricature of the Argentine forward Julián Álvarez, a young face with short dark hair, in a plain red and white vertically striped shirt, celebrating a goal by pretending to shoot spider webs from his wrists, playful white web swirls in the air, fans cheering', move: in, focus: { x: 0.5, y: 0.55 } }
+      title: { textFrom: facts.alvarez.surname, at: -1, until: spider }
+      labels:
+        - { textFrom: facts.alvarez.clubs, x: 0.4, y: 0.6, at: 0.3, tone: mustard }
+        - { textFrom: facts.alvarez.country, x: 0.4, y: 0.655, at: 0.5, tone: blue }
+
+  - id: p-lukaku
+    scene: illustration
+    say: 'Ромелу Лукаку играл за «Рому» и «Наполи», а теперь — за «Фенербахче». {#top}Он лучший бомбардир в истории сборной Бельгии!'
+    pad: [0.1, 0.35]
+    energy: 0.85
+    sfx: [{ at: top, kind: hit, gain: 0.45, snap: beat }]
+    props:
+      shots:
+        - { image: shots/lukaku-1.jpg, prompt: 'a friendly recognisable caricature of the Belgian striker Romelu Lukaku, very tall and powerful, with a shaved head and a beard, in a plain yellow and navy blue shirt, striking the ball with great power, the net bulging', move: in, focus: { x: 0.5, y: 0.6 } }
+        - { at: top, image: shots/lukaku-2.jpg, prompt: 'Romelu Lukaku as a friendly caricature in a plain red shirt standing on top of a tall pile of footballs, cheering fans in red around him', move: up, focus: { x: 0.5, y: 0.55 } }
+      title: { textFrom: facts.lukaku.surname, at: -1, until: top }
+      labels:
+        - { textFrom: facts.lukaku.clubs, x: 0.4, y: 0.6, at: 0.3, tone: mustard }
+        - { textFrom: facts.lukaku.country, x: 0.4, y: 0.655, at: 0.5, tone: blue }
+
+  - id: ch-mid
+    scene: kinetic
+    say: 'Теперь {#k}середина поля!'
+    pad: [0.1, 0.3]
+    energy: 0.7
+    sfx: [{ at: k, kind: hit, gain: 0.45, snap: beat }]
+    props:
+      background: '#2f5d8a'
+      align: center
+      lines:
+        - { text: 'Теперь', weight: light }
+        - { text: 'середина поля!', tone: accent2, mode: slam, size: 1.1 }
+
+  - id: p-modric
+    scene: illustration
+    say: 'Лука Модрич из Хорватии получил «Золотой мяч» {#six}и выигрывал Лигу чемпионов шесть раз!'
+    pad: [0.1, 0.35]
+    energy: 0.75
+    sfx: [{ at: six, kind: chime, gain: 0.45, snap: half }]
+    props:
+      shots:
+        - { image: shots/modric-1.jpg, prompt: 'a friendly recognisable caricature of the Croatian midfielder Luka Modrić, slim, with shoulder-length light brown hair and a thin hairband, in a plain red and black vertically striped shirt, proudly standing next to a long shelf with six shiny silver trophy cups and one golden football', move: in, focus: { x: 0.5, y: 0.55 } }
+      title: { textFrom: facts.modric.surname, at: -1, until: six }
+      badge: { valueFrom: facts.modric.cl.value, labelFrom: facts.modric.cl.label, at: six, y: 0.4 }
+      labels:
+        - { textFrom: facts.modric.clubs, x: 0.4, y: 0.6, at: 0.3, tone: mustard }
+        - { textFrom: facts.modric.country, x: 0.4, y: 0.655, at: 0.5, tone: blue }
+
+  - id: p-debruyne
+    scene: illustration
+    say: 'Кевин Де Брюйне {#assists}за один сезон отдал двадцать голевых передач и повторил рекорд!'
+    pad: [0.1, 0.35]
+    energy: 0.75
+    sfx: [{ at: assists, kind: pop, gain: 0.45, snap: half }]
+    props:
+      shots:
+        - { image: shots/debruyne-1.jpg, prompt: 'a friendly recognisable caricature of the Belgian midfielder Kevin De Bruyne with ginger hair, in a plain sky blue shirt, making a long perfect pass, a dotted curved line showing the ball flying to a happy teammate', move: right, focus: { x: 0.5, y: 0.6 } }
+      title: { textFrom: facts.debruyne.surname, at: -1, until: assists }
+      badge: { valueFrom: facts.debruyne.assists.value, labelFrom: facts.debruyne.assists.label, at: assists, y: 0.04 }
+      labels:
+        - { textFrom: facts.debruyne.clubs, x: 0.4, y: 0.6, at: 0.3, tone: mustard }
+        - { textFrom: facts.debruyne.country, x: 0.4, y: 0.655, at: 0.5, tone: blue }
+
+  - id: p-guler
+    scene: illustration
+    say: 'Арда Гюлер {#euro}забил в первом же своём матче на Евро — в девятнадцать лет, как когда-то Криштиану Роналду!'
+    pad: [0.1, 0.35]
+    energy: 0.75
+    sfx: [{ at: euro, kind: chime, gain: 0.45, snap: half }]
+    props:
+      shots:
+        - { image: shots/guler-1.jpg, prompt: 'a friendly recognisable caricature of the young Turkish midfielder Arda Güler with longish dark wavy hair, in a plain red shirt, curling a left-foot shot into the top corner of the goal, fans cheering in red', move: in, focus: { x: 0.5, y: 0.6 } }
+      title: { textFrom: facts.guler.surname, at: -1, until: euro }
+      badge: { valueFrom: facts.guler.age.value, labelFrom: facts.guler.age.label, at: euro, y: 0.04 }
+      labels:
+        - { textFrom: facts.guler.clubs, x: 0.4, y: 0.6, at: 0.3, tone: mustard }
+        - { textFrom: facts.guler.country, x: 0.4, y: 0.655, at: 0.5, tone: blue }
+
+  - id: ch-keepers
+    scene: kinetic
+    say: 'И наконец {#k}вратари!'
+    pad: [0.1, 0.3]
+    energy: 0.7
+    sfx: [{ at: k, kind: hit, gain: 0.45, snap: beat }]
+    props:
+      background: '#c8432b'
+      align: center
+      lines:
+        - { text: 'И наконец', weight: light }
+        - { text: 'вратари!', tone: accent2, mode: slam, size: 1.3 }
+
+  - id: p-stclair
+    scene: illustration
+    say: 'Дейн Сент-Клэр из Канады {#balloon}в детстве подолгу чеканил воздушный шарик!'
+    pad: [0.1, 0.35]
+    energy: 0.7
+    sfx: [{ at: balloon, kind: pop, gain: 0.45 }]
+    props:
+      shots:
+        - { image: shots/stclair-1.jpg, prompt: 'a friendly recognisable caricature of the Canadian goalkeeper Dayne St. Clair in a plain bright pink goalkeeper kit with big gloves, diving to catch the ball in a sunny stadium', move: in, focus: { x: 0.5, y: 0.6 } }
+        - { at: balloon, image: shots/stclair-2.jpg, prompt: 'a little boy who is clearly a child Dayne St. Clair, laughing in a cosy living room as he juggles a red balloon with his knees and feet', move: out, focus: { x: 0.5, y: 0.6 } }
+      title: { textFrom: facts.stclair.surname, at: -1, until: balloon }
+      labels:
+        - { textFrom: facts.stclair.clubs, x: 0.4, y: 0.6, at: 0.3, tone: mustard }
+        - { textFrom: facts.stclair.country, x: 0.4, y: 0.655, at: 0.5, tone: blue }
+
+  - id: p-neuer
+    scene: illustration
+    say: 'Мануэль Нойер — {#cup}чемпион мира [2014](=две тысячи четырнадцатого) года. {#sweeper}Он часто выбегает из ворот, как защитник!'
+    pad: [0.1, 0.35]
+    energy: 0.75
+    sfx: [{ at: cup, kind: chime, gain: 0.45, snap: half }]
+    props:
+      shots:
+        - { image: shots/neuer-1.jpg, prompt: 'a friendly recognisable caricature of the German goalkeeper Manuel Neuer, tall, with short blond hair, in a plain green goalkeeper kit, lifting a big shiny golden cup, golden confetti falling', move: in, focus: { x: 0.5, y: 0.55 } }
+        - { at: sweeper, image: shots/neuer-2.jpg, prompt: 'Manuel Neuer as a friendly caricature in a plain green goalkeeper kit running far out of his goal into the middle of the pitch with the ball at his feet, an empty goal far behind him', move: out, focus: { x: 0.5, y: 0.6 } }
+      title: { textFrom: facts.neuer.surname, at: -1, until: cup }
+      badge: { valueFrom: facts.neuer.cup.value, labelFrom: facts.neuer.cup.label, at: cup, until: sweeper, y: 0.04 }
+      labels:
+        - { textFrom: facts.neuer.clubs, x: 0.4, y: 0.6, at: 0.3, tone: mustard }
+        - { textFrom: facts.neuer.country, x: 0.4, y: 0.655, at: 0.5, tone: blue }
+
+  - id: p-donnarumma
+    scene: illustration
+    say: 'Джанлуиджи Доннарумма {#euro}— первый вратарь, ставший лучшим игроком чемпионата Европы!'
+    pad: [0.1, 0.35]
+    energy: 0.75
+    sfx: [{ at: euro, kind: chime, gain: 0.45, snap: half }]
+    props:
+      shots:
+        - { image: shots/donnarumma-1.jpg, prompt: 'a friendly recognisable caricature of the Italian goalkeeper Gianluigi Donnarumma, very tall, with short dark hair and a beard, in a plain grey goalkeeper kit with huge gloves, making a flying save, a small golden star sparkling above him', move: in, focus: { x: 0.5, y: 0.55 } }
+      title: { textFrom: facts.donnarumma.surname, at: -1, until: euro }
+      badge: { valueFrom: facts.donnarumma.euro.value, labelFrom: facts.donnarumma.euro.label, at: euro, y: 0.04, side: left }
+      labels:
+        - { textFrom: facts.donnarumma.clubs, x: 0.4, y: 0.6, at: 0.3, tone: mustard }
+        - { textFrom: facts.donnarumma.country, x: 0.4, y: 0.655, at: 0.5, tone: blue }
+
+  - id: p-courtois
+    scene: illustration
+    say: 'Тибо Куртуа {#tall}ростом два метра и один сантиметр! {#volley}А его мама и папа играли в волейбол.'
+    pad: [0.1, 0.35]
+    energy: 0.75
+    sfx: [{ at: tall, kind: pop, gain: 0.45 }]
+    props:
+      shots:
+        - { image: shots/courtois-1.jpg, prompt: 'a friendly recognisable caricature of the very tall Belgian goalkeeper Thibaut Courtois, the whole figure from head to boots fully inside the frame, in a plain purple goalkeeper kit and big gloves, standing in a stadium tunnel and bending down to high-five a small amazed boy mascot', move: up, focus: { x: 0.5, y: 0.5 } }
+        - { at: volley, image: shots/courtois-2.jpg, prompt: 'a happy family of a mother, a father and a tall boy who is clearly a young Thibaut Courtois, playing volleyball on a sunny beach', move: out, focus: { x: 0.5, y: 0.6 } }
+      title: { textFrom: facts.courtois.surname, at: -1, until: tall }
+      badge: { valueFrom: facts.courtois.height.value, labelFrom: facts.courtois.height.label, at: tall, until: volley, y: 0.4 }
+      labels:
+        - { textFrom: facts.courtois.clubs, x: 0.4, y: 0.6, at: 0.3, tone: mustard }
+        - { textFrom: facts.courtois.country, x: 0.4, y: 0.655, at: 0.5, tone: blue }
+
+  - id: outro
+    scene: illustration
+    say: 'Альбом собран! {#fav}А кто понравился тебе больше всех? {#tell}Расскажи маме или папе!'
+    pad: [0.1, 1.4]
+    energy: 0.5
+    sfx: [{ at: fav, kind: chime, gain: 0.4, snap: half }, { at: tell, kind: swell, gain: 0.35 }]
+    props:
+      shots:
+        - { image: shots/outro-1.jpg, prompt: '@kid and @ball proudly holding up a finished sticker album whose pages are full of small colourful drawn football player cards, sparkles around them, in a cosy children''s room', move: in, focus: { x: 0.5, y: 0.6 } }
+      title: { text: Альбом собран!, at: -1, until: tell }

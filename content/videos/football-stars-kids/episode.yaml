@@ -1,0 +1,7 @@
+episode: 1
+id: football-stars-kids
+title: "Звёзды футбола: собираем альбом"
+sources: sources.md
+credits: CREDITS.md
+variants:
+  - { id: ru, spec: ru.reel.yaml }

@@ -33,3 +33,12 @@ test('number words heard as digits, «процент» as %, compounds as two wo
   // a number word with no number heard stays missing
   assert.deepEqual(similarity('восемь раз', 'раз').missing, ['восемь']);
 });
+
+test('names that ASR spells as it hears them still count; other words do not get that slack', () => {
+  assert.equal(similarity('Кевин Де Брюйне за один сезон', 'Кевин Дебрюини за один сезон').score, 1);
+  assert.equal(similarity('Лука Модрич получил мяч', 'Лука Мадрич получил мяч').score, 1);
+  const short = similarity('кот и дом', 'кит и дым');
+  assert.deepEqual(short.missing, ['кот', 'дом']);
+  assert.equal(similarity('Криштиану Роналду', 'Кристиану Роналду').score, 1);
+  assert.deepEqual(similarity('Платини Кройф', 'Роналду Месси').missing, ['платини', 'кройф']);
+});

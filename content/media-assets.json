@@ -91,6 +91,12 @@
       "url": "https://github.com/eiler2005/Storygro/releases/download/media-inputs-2026-10-19/narrator-ru.wav",
       "bytes": 457004,
       "sha256": "23a831504c2c7f2cf0c6f3fc1b07818b67b94221c98931bbb465d38836e6fe98"
+    },
+    {
+      "path": "content/videos/football-stars-kids/assets/voice/narrator-ru.wav",
+      "url": "https://github.com/eiler2005/Storygro/releases/download/media-inputs-2026-10-19/narrator-ru.wav",
+      "bytes": 457004,
+      "sha256": "23a831504c2c7f2cf0c6f3fc1b07818b67b94221c98931bbb465d38836e6fe98"
     }
   ]
 }

@@ -1,3 +1,4 @@
+import { spawn } from 'node:child_process';
 import { createHash } from 'node:crypto';
 import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
@@ -50,6 +51,9 @@ export function styleImages(l: LoadedSpec): StyleImages {
     ...images,
     prompt: own?.prompt ?? images.prompt,
     provider: own?.provider ?? images.provider,
+    model: own?.model ?? (own?.provider && own.provider !== images.provider ? undefined : images.model),
+    base: own?.provider && own.provider !== images.provider ? undefined : images.base,
+    licence: own?.provider === 'codex' && images.provider !== 'codex' ? CODEX_LICENCE : images.licence,
     width: own?.width ?? images.width,
     height: own?.height ?? images.height,
   };
@@ -113,6 +117,74 @@ export function promptsMarkdown(l: LoadedSpec, jobs: ImageJob[]): string {
   ].join('\n');
 }
 
+export const CODEX_LICENCE = 'GPT Image through the Codex CLI image tool; under the OpenAI terms the output belongs to the account holder';
+
+/**
+ * Pictures from the Codex CLI's image tool (GPT Image): the jobs go out in batches, a few Codex
+ * sessions at a time, each told to save every picture under a numbered name; each picture is then
+ * scaled to cover the reel's size and centre-cropped. Not reproducible by seed — the ledger says so.
+ */
+async function codexPictures(l: LoadedSpec, images: StyleImages, todo: ImageJob[], ledger: ImageLedger, log: (m: string) => void): Promise<string[]> {
+  const made: string[] = [];
+  const missing: string[] = [];
+  const batch = 5;
+  const parallel = 3;
+  const groups: ImageJob[][] = [];
+  for (let i = 0; i < todo.length; i += batch) groups.push(todo.slice(i, i + batch));
+  const bin = process.env.STORYGRO_CODEX ?? 'codex';
+  const one = async (group: ImageJob[], g: number) => {
+    const dir = join(tmpdir(), `storygro-codex-${process.pid}-${g}`);
+    mkdirSync(dir, { recursive: true });
+    try {
+      const task = [
+        `Use your image generation tool to create ${group.length} separate images, each in portrait orientation (tall, 1024x1536 or the closest tall size), one after another with exactly these prompts. Save each image into the current working directory under the given file name (copy it from wherever the tool stores it). Reply with the list of saved files. Do nothing else.`,
+        '',
+        ...group.flatMap((j, i) => [`${i}.png — prompt: ${j.prompt}`, '']),
+      ].join('\n');
+      log(`● codex batch ${g + 1}/${groups.length}: ${group.map((j) => j.file).join(', ')}`);
+      const t0 = Date.now();
+      await new Promise<void>((resolve, reject) => {
+        const p = spawn(bin, ['exec', '--skip-git-repo-check', ...(images.model ? ['-m', images.model] : []), '-c', 'model_reasoning_effort=low', '--sandbox', 'workspace-write', '-C', dir, '-'], { stdio: ['pipe', 'ignore', 'pipe'] });
+        let err = '';
+        p.stderr.on('data', (d) => (err = (err + d).slice(-4000)));
+        p.on('error', reject);
+        p.on('close', (code) => (code === 0 ? resolve() : reject(new Error(`codex exited ${code}: ${err.slice(-800)}`))));
+        p.stdin.end(task);
+      });
+      for (const [i, j] of group.entries()) {
+        const png = join(dir, `${i}.png`);
+        // the image tool may decline a prompt: keep the others, report this one, a rerun retries only it
+        if (!existsSync(png)) {
+          missing.push(j.file);
+          log(`! codex did not save ${j.file} (batch ${g + 1}) — the tool may have declined the prompt`);
+          continue;
+        }
+        const out = join(l.dir, j.file);
+        mkdirSync(dirname(out), { recursive: true });
+        await run(ffmpeg(), ['-y', '-loglevel', 'error', '-i', png, '-vf', `scale=${images.width}:${images.height}:force_original_aspect_ratio=increase,crop=${images.width}:${images.height}`, '-q:v', '2', out]);
+        ledger.files[j.file] = {
+          prompt: j.prompt, seed: j.seed, provider: 'codex', model: images.model ? `${images.model} (Codex image tool)` : 'Codex image tool',
+          width: images.width, height: images.height, steps: 0, licence: images.licence ?? CODEX_LICENCE,
+          sha256: sha256(out), createdAt: new Date().toISOString(),
+        };
+        made.push(j.file);
+      }
+      writeFileSync(ledgerPath(l), `${JSON.stringify(ledger, null, 1)}\n`);
+      log(`✔ codex batch ${g + 1}/${groups.length} in ${((Date.now() - t0) / 1000).toFixed(0)} s`);
+    } finally {
+      rmSync(dir, { recursive: true, force: true });
+    }
+  };
+  const failed: string[] = [];
+  for (let i = 0; i < groups.length; i += parallel) {
+    const runs = await Promise.allSettled(groups.slice(i, i + parallel).map((grp, k) => one(grp, i + k)));
+    for (const r of runs) if (r.status === 'rejected') failed.push(String(r.reason?.message ?? r.reason));
+  }
+  if (missing.length || failed.length)
+    throw new Error(`${made.length} picture(s) made; not made: ${[...missing, ...failed].join('; ')} — change the prompt if the tool declined it, then run storygro images again`);
+  return made;
+}
+
 /** Generate the pictures that are missing (or whose prompt changed, or all with `force`). */
 export async function generateImages(
   l: LoadedSpec,
@@ -137,6 +209,10 @@ export async function generateImages(
       writeFileSync(join(l.dir, 'prompts.md'), `${promptsMarkdown(l, todo)}\n`);
       throw new Error(`${todo.length} picture(s) to make by hand — prompts in ${join(l.dir, 'prompts.md')}`);
     }
+    return { made, kept, handMade };
+  }
+  if (images.provider === 'codex') {
+    made.push(...(await codexPictures(l, images, todo, ledger, log)));
     return { made, kept, handMade };
   }
   const tmp = join(tmpdir(), `storygro-images-${process.pid}`);

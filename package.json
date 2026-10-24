@@ -24,6 +24,7 @@
     "check:links": "node production/scripts/check-doc-links.mjs",
     "docs:media": "tsx production/scripts/doc-media.ts",
     "docs:toolkit": "tsx production/scripts/toolkit-doc.ts",
+    "docs:registry": "tsx production/scripts/registry-doc.ts",
     "check": "npm run check:media && npm run check:links && npm run typecheck && npm test"
   },
   "dependencies": {

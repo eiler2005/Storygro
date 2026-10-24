@@ -1,0 +1,155 @@
+{
+ "_about": "Every name, club, country and number on screen, with its source (see sources.md). Checked 2026-10-24.",
+ "ronaldinho": {
+  "_source": "https://en.wikipedia.org/wiki/Ronaldinho: 'His first brush with the media came at the age of 13, when he scored all 23 goals in a 23–0 victory against a local team.' Clubs PSG 2001–03, Barcelona 2003–08, Milan 2008–11.",
+  "name": "Роналдиньо",
+  "clubs": "ПСЖ · Барселона · Милан",
+  "country": "Бразилия",
+  "sourceLine": "Wikipedia: Ronaldinho",
+  "goals": {
+   "value": "23",
+   "label": "гола в одном матче — в 13 лет"
+  },
+  "surname": "Роналдиньо"
+ },
+ "yamal": {
+  "_source": "https://en.wikipedia.org/wiki/Lamine_Yamal: 'becoming the youngest goalscorer in Euro tournament history four days before his 17th birthday'; born 13 July 2007; in a 2007 UNICEF photo shoot with Barcelona 'he was bathed by a 20-year-old Lionel Messi'. Age 16 = four days before 17 (our arithmetic).",
+  "name": "Ламин Ямаль",
+  "clubs": "Барселона",
+  "country": "Испания",
+  "sourceLine": "Wikipedia: Lamine Yamal",
+  "age": {
+   "value": "16",
+   "label": "лет — гол на Евро"
+  },
+  "surname": "Ямаль"
+ },
+ "olise": {
+  "_source": "https://en.wikipedia.org/wiki/Michael_Olise: 'He was a cross-country running champion for the London borough of Hillingdon for two consecutive years'; Crystal Palace 2021–24, Bayern Munich from July 2024.",
+  "name": "Майкл Олисе",
+  "clubs": "Пэлас → Бавария",
+  "country": "Франция",
+  "sourceLine": "Wikipedia: Michael Olise",
+  "run": {
+   "value": "2",
+   "label": "года подряд — чемпион по бегу"
+  },
+  "surname": "Олисе"
+ },
+ "dembele": {
+  "_source": "https://en.wikipedia.org/wiki/Ousmane_Dembélé: 'That same month, he won the 2025 Ballon d'Or.'; 'He is well known for his ability to use either foot.'; Barcelona 2017–23, PSG from 12 August 2023.",
+  "name": "Усман Дембеле",
+  "clubs": "Барселона → ПСЖ",
+  "country": "Франция",
+  "sourceLine": "Wikipedia: Ousmane Dembélé",
+  "ballon": {
+   "value": "2025",
+   "label": "«Золотой мяч»"
+  },
+  "surname": "Дембеле"
+ },
+ "lautaro": {
+  "_source": "https://en.wikipedia.org/wiki/Lautaro_Martínez: 'he has been nicknamed El Toro (\"The Bull\", in Spanish)'; 'Martínez initially played as a defender in his youth'; captain of Inter Milan.",
+  "name": "Лаутаро Мартинес",
+  "clubs": "Интер",
+  "country": "Аргентина",
+  "sourceLine": "Wikipedia: Lautaro Martínez",
+  "surname": "Мартинес"
+ },
+ "alvarez": {
+  "_source": "https://en.wikipedia.org/wiki/Julián_Álvarez: nickname La Araña for his 'web-shooter goal celebration'; won the 2022 FIFA World Cup with Argentina; Manchester City 2022–24, Atlético Madrid from 2024.",
+  "name": "Хулиан Альварес",
+  "clubs": "Ман Сити → Атлетико",
+  "country": "Аргентина",
+  "sourceLine": "Wikipedia: Julián Álvarez",
+  "surname": "Альварес"
+ },
+ "lukaku": {
+  "_source": "https://en.wikipedia.org/wiki/Romelu_Lukaku: 'On 12 August 2026, Lukaku joined Süper Lig side Fenerbahçe on a one-year deal.'; 'Belgium's all-time top goalscorer'; Roma (loan 2023–24), Napoli 2024–26. ESPN: 'Fenerbahce sign Romelu Lukaku from Napoli'.",
+  "name": "Ромелу Лукаку",
+  "clubs": "Наполи → Фенербахче",
+  "country": "Бельгия",
+  "sourceLine": "Wikipedia: Romelu Lukaku; ESPN",
+  "surname": "Лукаку"
+ },
+ "modric": {
+  "_source": "https://en.wikipedia.org/wiki/Luka_Modrić: 2018 Ballon d'Or; 'including six UEFA Champions League titles'; 'He joined AC Milan in 2025 on a free transfer.' Real Madrid 2012–25.",
+  "name": "Лука Модрич",
+  "clubs": "Реал Мадрид → Милан",
+  "country": "Хорватия",
+  "sourceLine": "Wikipedia: Luka Modrić",
+  "cl": {
+   "value": "6",
+   "label": "раз — Лига чемпионов"
+  },
+  "surname": "Модрич"
+ },
+ "debruyne": {
+  "_source": "https://en.wikipedia.org/wiki/Kevin_De_Bruyne: 'registered his 20th league assist, which equalled Thierry Henry's record for the most assists in a season' (2019–20); 'In June 2025, he joined Napoli on a free transfer.'",
+  "name": "Кевин Де Брюйне",
+  "clubs": "Ман Сити → Наполи",
+  "country": "Бельгия",
+  "sourceLine": "Wikipedia: Kevin De Bruyne",
+  "assists": {
+   "value": "20",
+   "label": "голевых передач за сезон"
+  },
+  "surname": "Де Брюйне"
+ },
+ "guler": {
+  "_source": "https://en.wikipedia.org/wiki/Arda_Güler: 'becoming the first teenager to score on his European Championship debut since Cristiano Ronaldo in 2004', 'aged 19 years and 114 days'; Fenerbahçe, Real Madrid from 2023.",
+  "name": "Арда Гюлер",
+  "clubs": "Фенербахче → Реал",
+  "country": "Турция",
+  "sourceLine": "Wikipedia: Arda Güler",
+  "age": {
+   "value": "19",
+   "label": "лет, гол на Евро"
+  },
+  "surname": "Гюлер"
+ },
+ "stclair": {
+  "_source": "https://en.wikipedia.org/wiki/Dayne_St._Clair: 'he would juggle a balloon for long periods when he could not play with a ball indoors'; 'On January 4, 2026, St. Clair signed with Inter Miami through the 2026 season.'",
+  "name": "Дейн Сент-Клэр",
+  "clubs": "Интер Майами",
+  "country": "Канада",
+  "sourceLine": "Wikipedia: Dayne St. Clair",
+  "surname": "Сент-Клэр"
+ },
+ "neuer": {
+  "_source": "https://en.wikipedia.org/wiki/Manuel_Neuer: 'Four years later, Neuer won the 2014 tournament with Germany.'; 'Neuer has been described as a \"sweeper-keeper\" because of his playing style.'",
+  "name": "Мануэль Нойер",
+  "clubs": "Бавария",
+  "country": "Германия",
+  "sourceLine": "Wikipedia: Manuel Neuer",
+  "cup": {
+   "value": "2014",
+   "label": "чемпион мира"
+  },
+  "surname": "Нойер"
+ },
+ "donnarumma": {
+  "_source": "https://en.wikipedia.org/wiki/Gianluigi_Donnarumma: UEFA Euro 2020 Player of the Tournament, 'the first time a goalkeeper had won the award'; 'On 2 September 2025, Premier League club Manchester City announced the signing of Donnarumma'.",
+  "name": "Джанлуиджи Доннарумма",
+  "clubs": "ПСЖ → Ман Сити",
+  "country": "Италия",
+  "sourceLine": "Wikipedia: Gianluigi Donnarumma",
+  "euro": {
+   "value": "2020",
+   "label": "Евро: лучший игрок турнира"
+  },
+  "surname": "Доннарумма"
+ },
+ "courtois": {
+  "_source": "https://en.wikipedia.org/wiki/Thibaut_Courtois: height '2.01 m (6 ft 7 in)'; 'His parents were volleyball players, and he played the sport in his childhood'; Atlético Madrid (loan) 2011–14, Real Madrid from 2018.",
+  "name": "Тибо Куртуа",
+  "clubs": "Атлетико → Реал",
+  "country": "Бельгия",
+  "sourceLine": "Wikipedia: Thibaut Courtois",
+  "height": {
+   "value": "2,01 м",
+   "label": "рост"
+  },
+  "surname": "Куртуа"
+ }
+}

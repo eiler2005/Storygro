@@ -76,3 +76,11 @@ print(json.dumps([stress.prepare("Это «Золотой мяч».", "upper", "
   assert.deepEqual(r[0][1], [{ word: 'Золотой', stressed: 'Золот+ой', by: 'lexicon' }]);
   assert.deepEqual(r[1], { right: 'a', wrong: 'b' });
 });
+
+test('an engine without dictionary marks (Qwen3) hears the line as written, except entries marked always', () => {
+  const r = run(`stress.use_lexicon({"альбом": {"say": "альб+ом"}, "месси": {"say": "М+есси", "mark": "always"}})
+print(json.dumps([stress.prepare("Альбом и Месси.", "upper", "auto", lexicon_marks=False), stress.prepare("Альбом и Месси.", "plus", "auto")]))`);
+  assert.equal(r[0][0], 'Альбом и мЕсси.');
+  assert.deepEqual(r[0][1].map((d: { word: string }) => d.word), ['Месси']);
+  assert.equal(r[1][0], 'Альб+ом и М+есси.');
+});

@@ -128,9 +128,10 @@ def lexicon():
     return _LEX
 
 
-def apply_lexicon(text):
+def apply_lexicon(text, engine_marks=True):
     """Dictionary stress (and spelling) for every unmarked word that has an entry. Returns the text and
-    the decisions; the author's own marks win."""
+    the decisions; the author's own marks win. An engine that reads more cleanly without dictionary marks
+    (engine_marks False: Qwen3, the owner's choice of 24 Oct 2026) gets only entries marked `always`."""
     lex = lexicon()
     if not lex:
         return text, []
@@ -140,8 +141,11 @@ def apply_lexicon(text):
         if "+" in w or ACUTE in w or key(w) not in lex:
             continue
         say, entry = lex[key(w)]
-        if entry.get("mark") is False:  # stress known and checked, but the engine reads it better unmarked
+        mark = entry.get("mark", True)
+        if mark is False:  # stress known and checked, but the engine reads it better unmarked
             decisions.append({"word": w, "stressed": say, "by": "lexicon"})
+            continue
+        if not engine_marks and mark != "always":
             continue
         if w[0].isupper():
             say = say[0].upper() + say[1:]
@@ -242,7 +246,7 @@ def render(text, style):
     return text.replace("+", "")
 
 
-def prepare(text, style, mode="auto", scope="homographs"):
+def prepare(text, style, mode="auto", scope="homographs", lexicon_marks=True):
     """The line as the engine should get it, and the stress decisions.
 
     style None: the engine places stress itself (Kokoro-RU) and gets the text unchanged.
@@ -252,7 +256,7 @@ def prepare(text, style, mode="auto", scope="homographs"):
         return text, []
     if mode == "off":
         return render(text, "none"), []
-    text, from_lexicon = apply_lexicon(to_plus(text))
+    text, from_lexicon = apply_lexicon(to_plus(text), lexicon_marks)
     dict_words = {d["stressed"] for d in from_lexicon}
     if mode == "marks":
         marked = to_plus(text)

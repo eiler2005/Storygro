@@ -1,7 +1,7 @@
 import { createHash } from 'node:crypto';
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join, relative, resolve, sep } from 'node:path';
-import { entriesFor, lexiconJob, loadLexicon, spokenWithMarks } from './lexicon.ts';
+import { lexiconJob, lexiconKey, loadLexicon, spokenWithMarks } from './lexicon.ts';
 import { captionText, cueNames, type LoadedSpec, type SceneSpec } from './spec.ts';
 import { python, REEL_ROOT, run } from './tools.ts';
 
@@ -117,7 +117,7 @@ export async function narrate(l: LoadedSpec): Promise<Map<string, { meta: VoiceM
     // Russian lines of engines that get stress from py/stress.py also key on its version and mode
     // and on the dictionary entries the line uses, so a new or changed entry re-voices only its lines
     const stressed = lex
-      ? [`${STRESS_VERSION}:${v.stress}`, ...entriesFor(spokenWithMarks(s), lex).map((e) => JSON.stringify([e.say, e.forms ?? null, e.check ?? null]))]
+      ? [`${STRESS_VERSION}:${v.stress}`, ...lexiconKey(spokenWithMarks(s), v.engine, lex)]
       : [];
     const settings =
       v.engine === 'kokoro' && !v.model && l.spec.lang === 'en' ? [s.say, v.voice, v.speed, v.lang] : [s.say, v.engine, v.model, v.voice, v.speed, l.spec.lang, ...stressed];

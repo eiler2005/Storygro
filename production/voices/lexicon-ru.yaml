@@ -12,8 +12,9 @@
 #   check   optional: espeak-IPA patterns (regex) for the right and the wrong reading, from the voice
 #           bench. Narration tries another take (up to three) when a checked word comes out wrong,
 #           and QA listens for it again in the final voice track.
-#   mark    false: keep the stress here and check it, but give the engine the word unmarked — for words
-#           the engine reads right on its own and worse with a mark (Qwen3: «ЗолотОй»)
+#   mark    true (default): engines that read dictionary marks well get it (Silero, Chatterbox, Yandex);
+#           Qwen3 does not — the owner found it cleaner unmarked (24.10.2026). false: no engine gets it,
+#           the stress is only recorded and checked. always: Qwen3 too, where a bench showed it helps
 #
 # Find words that need an entry: `storygro stress <spec>`; look them up online and add them with
 # `storygro stress <spec> --lookup --write` (ru.wikipedia, ru.wiktionary), then read the diff.
@@ -25,6 +26,8 @@ words:
     # bench 24.10.2026, Qwen3 speed 1.12: unmarked 0/3 takes right (`m i s i`, `m i i`), marked 2/3
     # (`m e s i`); the recogniser often drops the сс, so the pattern looks only at the vowel after м
     check: { right: 'm [eɛ]', wrong: 'm [iɪ]' }
+    # the one word where the bench showed the mark helps Qwen3 (0/3 → 2/3), so it reaches Qwen3 too
+    mark: always
   - word: Лионель
     say: Лион+ель
     forms: [Лионеля, Лионелю, Лионелем, Лионеле]

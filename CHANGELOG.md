@@ -10,6 +10,7 @@ Notable changes to the Storygro engine and repository. Content releases (videos)
 - Picture provider `codex`: GPT Image through the Codex CLI's image tool (`images.provider: codex`, `images.model`), batched and parallel, cropped to the reel's size, recorded as not seed-reproducible. Chosen over Z-Image for recognisable, drawing-like pictures after a side-by-side test.
 - Scenes: `illustration` takes `badge.y` (keep a face clear) and shrinks a one-word headline that cannot wrap to fit its band; `kinetic` marks a slamming word `data-rc-safe-ignore` while it is still larger than its final size.
 - QA speech check: names that Russian ASR spells as it hears them count (joined words, small spelling differences on long words); number words keep their own rules.
+- Qwen3 no longer gets dictionary marks except entries marked `mark: always` (the owner found unmarked Qwen3 cleaner; plain words suffered when every name was marked); its lines key as before, so earlier cached voice returns. The children's list cartoon is written down as a method ([how-to](docs/how-to/kids-list-cartoon.md)) with the series `kids-football`.
 - Children's cartoon «Звёзды футбола: собираем альбом» (`content/videos/football-stars-kids`): 14 players, an album overlay with a progress rail, `kinetic` chapter cards inside a cartoon reel; reference notes on the reel it took its format from.
 
 ### Russian stress dictionary and visual checks

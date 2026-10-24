@@ -21,6 +21,7 @@
 | Ship Russian and English cuts | [Language variants](how-to/language-variants.md) |
 | Give the narrator a voice | [Design a voice](how-to/design-a-voice.md) · [Voices](reference/voices.md) |
 | Demo a product on its real website | [Product demo from a website](how-to/product-demo-from-a-website.md) |
+| Make a children's cartoon about a list of real people, with recognisable pictures | [Children's list cartoon](how-to/kids-list-cartoon.md) |
 | Add a new visual mechanism | [Add a scene](how-to/add-a-scene.md) · [Scene contract](reference/scene-contract.md) |
 | Make cards and a release folder | [Carousel and release](how-to/carousel-and-release.md) |
 | Keep a rubric consistent | [Brand and series](how-to/brand-and-series.md) |

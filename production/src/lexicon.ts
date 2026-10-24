@@ -19,8 +19,11 @@ const Entry = z.object({
   forms: z.union([z.array(z.string()), z.record(z.string(), z.string())]).optional(),
   source: z.string().min(1, 'every entry names where its stress was checked'),
   check: z.object({ right: z.string(), wrong: z.string() }).optional(),
-  /** false: the stress is recorded and checked, but the engine gets the word unmarked */
-  mark: z.boolean().default(true),
+  /**
+   * true: engines that take dictionary marks get it; false: none does (recorded and checked only);
+   * always: every engine, Qwen3 too — only where a bench showed the mark helps that engine
+   */
+  mark: z.union([z.boolean(), z.literal('always')]).default(true),
 });
 export type LexiconEntry = z.infer<typeof Entry>;
 const LexiconFile = z.object({ lexicon: z.literal(1), words: z.array(Entry).default([]) });
@@ -63,7 +66,7 @@ export function loadLexicon(path = LEXICON_PATH): Lexicon {
 }
 
 /** The dictionary as py/voice.py takes it: {form: {say, check}}. */
-export function lexiconJob(lex: Lexicon): Record<string, { say: string; check: LexiconEntry['check'] | null; mark: boolean }> {
+export function lexiconJob(lex: Lexicon): Record<string, { say: string; check: LexiconEntry['check'] | null; mark: LexiconEntry['mark'] }> {
   return Object.fromEntries([...lex.say].map(([k, s]) => [k, { say: s, check: lex.forms.get(k)!.check ?? null, mark: lex.forms.get(k)!.mark }]));
 }
 
@@ -74,6 +77,16 @@ export function spokenWithMarks(s: Pick<SceneSpec, 'say'>): string {
     .replace(/\{\+[\d.]+\}/g, '')
     .replace(/\[([^\]]+)\]\(\/[^)]*\/\)/g, '$1')
     .replace(/\[[^\]]+\]\(=([^)]*)\)/g, '$1');
+}
+
+/** Engines that read dictionary marks well; the rest (Qwen3) get only entries marked `always`. */
+export const LEXICON_MARK_ENGINES = new Set(['silero', 'chatterbox', 'yandex']);
+
+/** What a line's voice cache key takes from the dictionary: the entries that can change what the engine hears. */
+export function lexiconKey(text: string, engine: string, lex: Lexicon = loadLexicon()): string[] {
+  return entriesFor(text, lex)
+    .filter((e) => LEXICON_MARK_ENGINES.has(engine) || e.mark === 'always')
+    .map((e) => JSON.stringify([e.say, e.forms ?? null, e.check ?? null, e.mark]));
 }
 
 /** Dictionary entries a line uses, in order of appearance (keys the voice cache: an entry that changes re-voices its lines only). */

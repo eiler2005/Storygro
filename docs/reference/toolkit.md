@@ -2,7 +2,7 @@
 
 <!-- Generated from production/toolkit.yaml by `npm run docs:toolkit`. Edit the YAML, not this page. -->
 
-Every way Storygro makes content, in one bank: **19 methods**, **23 tools**, **4 styles**, **6 scene families** and **5 providers**, by production stage. Agents read [`production/toolkit.yaml`](../../production/toolkit.yaml) to pick an approach; this page is generated from it, and `npm test` fails when a command, style or scene is missing from the bank or a link is broken.
+Every way Storygro makes content, in one bank: **21 methods**, **23 tools**, **4 styles**, **6 scene families** and **5 providers**, by production stage. Agents read [`production/toolkit.yaml`](../../production/toolkit.yaml) to pick an approach; this page is generated from it, and `npm test` fails when a command, style or scene is missing from the bank or a link is broken.
 
 **Status:** *stable* — used across pieces · *pilot* — works, reviewed on one or two pieces · *planned* — not implemented.
 
@@ -10,8 +10,8 @@ Every way Storygro makes content, in one bank: **19 methods**, **23 tools**, **4
 |---|---|
 | **choose** — Pick a topic worth a piece | [Editorial ranking](#editorial-ranking) · [Trend scan and watchlist](#trend-scan-and-watchlist) · [Research scan with picks](#research-scan-with-picks) · [X digest through Grok](#x-digest-through-grok) · [Angles from a scan](#angles-from-a-scan) |
 | **research** — Find and check what is true | [Primary-source research](#primary-source-research) · [Facts as data](#facts-as-data) · [Reference analysis](#reference-analysis) · [Transcript and pace statistics](#transcript-and-pace-statistics) · [Whisper (mlx-whisper)](#whisper-mlx-whisper) |
-| **write** — Turn it into a script as data | [Script as data](#script-as-data) · [Story structures](#story-structures) · [One worked example](#one-worked-example) · [Language variants](#language-variants) · [Brand profile and series](#brand-profile-and-series) |
-| **look** — Decide how it looks | [Cartoon explainer](#cartoon-explainer) · [Cut-paper explainer](#cut-paper-explainer) · [Editorial collage](#editorial-collage) · [Cut-paper scenes](#cut-paper-scenes) · [Kinetic typography](#kinetic-typography) · [Kinetic and diagram scenes](#kinetic-and-diagram-scenes) · [Springs, beat grid and motion blur](#springs-beat-grid-and-motion-blur) · [Collage scene](#collage-scene) · [Illustration scene](#illustration-scene) · [Screencast scene](#screencast-scene) · [Landscape product scenes](#landscape-product-scenes) · [Generated illustrations](#generated-illustrations) · [Z-Image-Turbo via mflux](#z-image-turbo-via-mflux) · [GPT Image through the Codex CLI](#gpt-image-through-the-codex-cli) · [Recurring cast](#recurring-cast) · [No text in pictures](#no-text-in-pictures) · [Screen capture](#screen-capture) · [A new scene module](#a-new-scene-module) |
+| **write** — Turn it into a script as data | [Script as data](#script-as-data) · [Story structures](#story-structures) · [One worked example](#one-worked-example) · [Language variants](#language-variants) · [Brand profile and series](#brand-profile-and-series) · [Children's list cartoon](#childrens-list-cartoon) |
+| **look** — Decide how it looks | [Cartoon explainer](#cartoon-explainer) · [Cut-paper explainer](#cut-paper-explainer) · [Editorial collage](#editorial-collage) · [Cut-paper scenes](#cut-paper-scenes) · [Kinetic typography](#kinetic-typography) · [Kinetic and diagram scenes](#kinetic-and-diagram-scenes) · [Springs, beat grid and motion blur](#springs-beat-grid-and-motion-blur) · [Collage scene](#collage-scene) · [Illustration scene](#illustration-scene) · [Screencast scene](#screencast-scene) · [Landscape product scenes](#landscape-product-scenes) · [Generated illustrations](#generated-illustrations) · [Z-Image-Turbo via mflux](#z-image-turbo-via-mflux) · [Recognisable caricatures, overlays off faces](#recognisable-caricatures-overlays-off-faces) · [GPT Image through the Codex CLI](#gpt-image-through-the-codex-cli) · [Recurring cast](#recurring-cast) · [No text in pictures](#no-text-in-pictures) · [Screen capture](#screen-capture) · [A new scene module](#a-new-scene-module) |
 | **voice** — Narration, sound and timing | [Local narration and timing](#local-narration-and-timing) · [Narrator design](#narrator-design) · [Pronunciation and say-as](#pronunciation-and-say-as) · [Russian stress and homographs](#russian-stress-and-homographs) · [Pronunciation dictionary and stress lookup](#pronunciation-dictionary-and-stress-lookup) · [Voice bench](#voice-bench) · [Chatterbox Multilingual](#chatterbox-multilingual) · [Music and sound effects](#music-and-sound-effects) |
 | **make** — Storyboard, approval and rendering | [Stills and live preview](#stills-and-live-preview) · [Storyboard and approval](#storyboard-and-approval) · [Plan document and stepped approvals](#plan-document-and-stepped-approvals) · [Render](#render) · [Formats, safe areas and captions](#formats-safe-areas-and-captions) · [Carousel cards](#carousel-cards) |
 | **check** — Technical QA and the human review | [Technical QA](#technical-qa) · [Human review](#human-review) |
@@ -200,6 +200,18 @@ Audience, voices, the disclosure every post must carry and avoided phrases (chec
 
 **See:** [docs](../../docs/how-to/brand-and-series.md) · [content/brand.yaml](../../content/brand.yaml) · [series/business-explainers.yaml](../../content/series/business-explainers.yaml)
 
+### Children's list cartoon
+
+*method · pilot*
+
+Hosts promise a collection, chapter cards group the list, one card per person with one checked cheerful fact, a progress rail of dots, a closing question for a parent; about two minutes.
+
+**Use when:** A children's video about several real people (footballers, scientists); the owner's kids-football series.
+
+**How:** `Follow docs/how-to/kids-list-cartoon.md; start from content/videos/football-stars-kids`
+
+**See:** [docs](../../docs/how-to/kids-list-cartoon.md) · [football-stars-kids/README.md](../../content/videos/football-stars-kids/README.md) · [series/kids-football.yaml](../../content/series/kids-football.yaml)
+
 ## 4 · Look — Decide how it looks
 
 ### Cartoon explainer
@@ -357,6 +369,18 @@ Local image model (Apache-2.0, 8-bit mflux conversion) on Apple silicon, in a se
 **How:** `npm run setup:images`
 
 **See:** [docs](../../docs/explanation/technology.md)
+
+### Recognisable caricatures, overlays off faces
+
+*method · pilot*
+
+Name the person and one or two visible traits in each prompt, plain kits without crests, a childhood fact drawn as the person as a child; then place each headline, badge and label per shot so no face is covered, and check every frame.
+
+**Use when:** Pictures of real public people that children should recognise; with the codex provider.
+
+**How:** `prompt: a friendly recognisable caricature of <name>, <traits>, <action>; badge: { y: 0.04, side: left }; title: surname only`
+
+**See:** [docs](../../docs/how-to/kids-list-cartoon.md#pictures-that-children-recognise) · [football-stars-kids/ru.reel.yaml](../../content/videos/football-stars-kids/ru.reel.yaml)
 
 ### GPT Image through the Codex CLI
 

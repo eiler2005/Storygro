@@ -1,0 +1,12 @@
+series: 1
+id: kids-football
+title: Футбол для детей
+audience: Дети 6–10 лет и их родители, русскоязычные
+format: >-
+  Вертикальный мультик 1,5–2 мин: ведущие Златик и Маша, узнаваемые шаржи футболистов в рисованном стиле
+  (GPT Image через Codex), по одному проверенному весёлому факту, главы и прогресс «альбома»;
+  рецепт — docs/how-to/kids-list-cartoon.md
+cadence: по запросу владельца
+episodes:
+  - ../videos/ballon-dor-kids/episode.yaml
+  - ../videos/football-stars-kids/episode.yaml

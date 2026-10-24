@@ -4,7 +4,7 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { test } from 'node:test';
 import { boxMisses, type SceneShot } from '../production/src/board.ts';
-import { appendEntries, entriesFor, formSay, lexiconJob, loadLexicon, nameAround, stressFrom, uncheckedNames } from '../production/src/lexicon.ts';
+import { appendEntries, entriesFor, formSay, lexiconJob, lexiconKey, loadLexicon, nameAround, stressFrom, uncheckedNames } from '../production/src/lexicon.ts';
 
 test('the dictionary loads: every entry has a stress mark and a source, and every listed form resolves', () => {
   const lex = loadLexicon();
@@ -66,4 +66,12 @@ test('a name is looked up with the capitalised words around it: whose name decid
   assert.equal(nameAround(text, 'Нойер'), 'Мануэль Нойер');
   assert.equal(nameAround(text, 'Сент-Клэр'), 'Дейн Сент-Клэр');
   assert.equal(nameAround(text, 'Кевин'), 'Кевин');
+});
+
+test('the voice cache key takes from the dictionary only what changes what the engine hears', () => {
+  const lex = loadLexicon();
+  const line = 'А Платини, Кройф и Месси.';
+  assert.equal(lexiconKey(line, 'silero', lex).length, 3);
+  assert.equal(lexiconKey(line, 'qwen3', lex).length, 1, 'Qwen3 keys on Месси (mark: always) only');
+  assert.deepEqual(lexiconKey('А Платини и Кройф.', 'qwen3', lex), [], 'so its earlier cached lines come back');
 });

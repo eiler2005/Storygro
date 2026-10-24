@@ -24,6 +24,9 @@ class Provider:
     native_words = False
     reads_markup = False
     stress = "upper"  # bench 21 Oct 2026: right stress in 9 of 12 homograph takes with an uppercase vowel, 0 of 12 without
+    # 24 Oct 2026, the owner after two cartoons: dictionary marks on every name made Qwen3 misread even plain
+    # words («когда-то», «альбом»); unmarked it read more cleanly. Only entries marked `always` reach it
+    lexicon_marks = False
 
     def __init__(self, job):
         import mlx.core as mx

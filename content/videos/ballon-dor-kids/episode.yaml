@@ -1,6 +1,7 @@
 episode: 1
 id: ballon-dor-kids
 title: "Золотой мяч: кто самый лучший?"
+series: kids-football
 sources: sources.md
 credits: CREDITS.md
 variants:

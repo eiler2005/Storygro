@@ -329,6 +329,28 @@ entries:
     status: pilot
     docs: docs/explanation/technology.md
 
+  - id: kids-list-cartoon
+    kind: method
+    stage: write
+    title: Children's list cartoon
+    what: Hosts promise a collection, chapter cards group the list, one card per person with one checked cheerful fact, a progress rail of dots, a closing question for a parent; about two minutes.
+    when: A children's video about several real people (footballers, scientists); the owner's kids-football series.
+    how: Follow docs/how-to/kids-list-cartoon.md; start from content/videos/football-stars-kids
+    status: pilot
+    docs: docs/how-to/kids-list-cartoon.md
+    examples: [content/videos/football-stars-kids/README.md, content/series/kids-football.yaml]
+
+  - id: recognisable-caricatures
+    kind: method
+    stage: look
+    title: Recognisable caricatures, overlays off faces
+    what: Name the person and one or two visible traits in each prompt, plain kits without crests, a childhood fact drawn as the person as a child; then place each headline, badge and label per shot so no face is covered, and check every frame.
+    when: Pictures of real public people that children should recognise; with the codex provider.
+    how: 'prompt: a friendly recognisable caricature of <name>, <traits>, <action>; badge: { y: 0.04, side: left }; title: surname only'
+    status: pilot
+    docs: docs/how-to/kids-list-cartoon.md#pictures-that-children-recognise
+    examples: [content/videos/football-stars-kids/ru.reel.yaml]
+
   - id: gpt-image-codex
     kind: provider
     stage: look

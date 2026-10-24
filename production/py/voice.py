@@ -175,7 +175,7 @@ def synth_segment(provider, text, language, speed=1.0, stress="auto"):
         return np.zeros(0, dtype=np.float32), {"duration": 0.0, "words": [], "cues": {n: 0.0 for n, _ in cues}, "aligned": 1.0, "stress": []}
     source = marked if getattr(provider, "reads_markup", False) else plain
     style = getattr(provider, "stress", None) if language == "ru" else None
-    spoken, decisions = stress_marks.prepare(source, style, stress, getattr(provider, "stress_scope", "homographs"))
+    spoken, decisions = stress_marks.prepare(source, style, stress, getattr(provider, "stress_scope", "homographs"), getattr(provider, "lexicon_marks", True))
     audio, words = provider.synth(spoken)
     audio = np.asarray(audio, dtype=np.float32)
     if abs(speed - 1) > 0.01 and not getattr(provider, "native_speed", False):

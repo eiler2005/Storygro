@@ -1,0 +1,13 @@
+{
+  "_about": "Every number and quoted phrase on screen, with its source (see sources.md). Checked 2026-10-24.",
+  "catalog": {
+    "_source": "yihui-dev/awesome-opus5-5-videos README, update 2026-10-12, read 2026-10-24: '703 prompts in prompts/ and data/videos.json, 418 of them with a live remake on Skillry'",
+    "prompts": { "value": "703", "label": "промпта: ролик написан кодом" },
+    "remakes": { "value": "418", "label": "повторены заново" },
+    "sourceLine": "awesome-opus5-5-videos, 12.10.2026"
+  },
+  "storygro": {
+    "_source": "Storygro scene contract, rule 1: 'Pure function of time. draw(t) sets every animated style from t alone.'",
+    "rule": "draw(t)"
+  }
+}

@@ -36,6 +36,8 @@ const Sfx = z.object({
   gain: z.number().default(1),
   /** seconds; for `type` and `riser` */
   dur: z.number().optional(),
+  /** move the sound to the nearest beat, half beat or bar of the music */
+  snap: z.enum(['beat', 'half', 'bar']).optional(),
 });
 
 const Transition = z.object({
@@ -74,11 +76,13 @@ export const ReelSpec = z.object({
       width: z.number().int().optional(),
       height: z.number().int().optional(),
       fps: z.number().int().default(30),
+      /** motion blur: frames captured per output frame across half a frame (180° shutter); 1 = off */
+      blur: z.number().int().min(1).max(16).default(1),
     })
-    .default({ fps: 30 })
-    .transform(({ preset, width, height, fps }) => {
+    .default({ fps: 30, blur: 1 })
+    .transform(({ preset, width, height, fps, blur }) => {
       const [w, h] = FORMAT_PRESETS[preset ?? 'landscape'];
-      return { width: width ?? w, height: height ?? h, fps };
+      return { width: width ?? w, height: height ?? h, fps, blur };
     }),
   /** platform UI margins to keep text out of: a profile from runtime/safe-zones.json */
   safe: z.string().optional(),
@@ -147,6 +151,8 @@ export const ReelSpec = z.object({
     .object({
       cast: z.record(z.string(), z.string()).default({}),
       seed: z.number().int().default(7),
+      /** the episode's own art direction instead of the style's picture prompt; must contain {subject} */
+      prompt: z.string().includes('{subject}', { message: 'images.prompt must contain {subject}' }).optional(),
       /** overrides the style's provider, e.g. `manual` on a machine without Apple silicon */
       provider: z.enum(['mflux', 'manual']).optional(),
       /** overrides the style's picture size, e.g. 720×1280 for a vertical reel (multiples of 16) */

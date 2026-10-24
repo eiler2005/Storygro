@@ -26,6 +26,10 @@ const GALLERY_SPEC = 'examples/scene-gallery/en.reel.yaml';
 const GALLERY = 'examples/scene-gallery/.reel/en/stills';
 /** Moments of the gallery reel; the still command names each file after its moment. */
 const GALLERY_AT = ['chart@6.5', 'collage@2.4', 'screencast', 'screencast-gallery', 'screencast-deck'];
+/** The kinetic-type scenes, in their own dark style. */
+const KINETIC_SPEC = 'examples/scene-gallery/kinetic.reel.yaml';
+const KINETIC = 'examples/scene-gallery/.reel/kinetic/stills';
+const KINETIC_AT = ['kinetic@4.4', 'timeline@4.6', 'process@4.4', 'scale@4.8'];
 
 /** The first cartoon-style short: its stills feed the illustration thumbnail and the style strip. */
 const CARTOON_SPEC = 'content/videos/ai-buys-work-knowledge/en.reel.yaml';
@@ -46,6 +50,10 @@ const SCENES: [scene: string, still: string][] = [
   ['outro', `${BOARD}/outro.png`],
   ['collage', `${GALLERY}/collage_2.4.png`],
   ['screencast', `${GALLERY}/screencast.png`],
+  ['kinetic', `${KINETIC}/kinetic_4.4.png`],
+  ['timeline', `${KINETIC}/timeline_4.6.png`],
+  ['process', `${KINETIC}/process_4.4.png`],
+  ['scale', `${KINETIC}/scale_4.8.png`],
   ['statement', 'examples/slidecraft-launch/.reel/board/turn.png'],
   ['logo-reveal', 'examples/slidecraft-launch/.reel/board/intro.png'],
   ['chat', 'examples/slidecraft-launch/.reel/board/prompt.png'],
@@ -81,6 +89,8 @@ if (have(GALLERY_SPEC.replace('en.reel.yaml', 'assets/robot.png')))
     stdio: 'inherit',
   });
 else console.warn('skip: gallery stills need `npm run assets:fetch` for the collage images');
+
+execFileSync(process.execPath, ['--import', 'tsx', 'production/src/cli.ts', 'still', KINETIC_SPEC, ...KINETIC_AT], { cwd: ROOT, stdio: 'inherit' });
 
 if (have('content/videos/ai-buys-work-knowledge/shots/hook-1.jpg'))
   execFileSync(process.execPath, ['--import', 'tsx', 'production/src/cli.ts', 'still', CARTOON_SPEC, ...CARTOON_AT], { cwd: ROOT, stdio: 'inherit' });

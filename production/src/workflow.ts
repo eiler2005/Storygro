@@ -9,6 +9,7 @@ import { basename, join, relative, resolve } from 'node:path';
 import { parse } from 'yaml';
 import { approval, captureScenes, factsGate, type SceneShot, specHash } from './board.ts';
 import { imageJobs, imageState, loadImageLedger } from './images.ts';
+import { loadLexicon, spokenWithMarks, uncheckedNames } from './lexicon.ts';
 import { loadEpisode, qaState } from './package.ts';
 import { DEFAULT_LEDGER_PATH, type Ledger, loadLedger } from './publish.ts';
 import { fileHash, loadReview, type Review, scriptHash, type Step, STEPS, stepRecord, writeApproval } from './review.ts';
@@ -170,7 +171,9 @@ const RU = {
   factsTitle: 'Факты и источники', post: 'Текст поста', next: 'Что дальше', missingNumbers: 'Числа не из фактов', none: 'нет',
   howTo: 'Одобрить: `storygro approve <spec> --step script|storyboard|release` (агент — с `--agent`).',
   sec: 'с', scenesWord: 'сцен',
-  stressLabel: 'Ударения', auto: 'авто, проверьте', byAuthor: 'автор',
+  stressLabel: 'Ударения', auto: 'авто, проверьте', byAuthor: 'автор', byLexicon: 'словарь',
+  heard: 'На слух', right: 'верно', wrong: 'НЕВЕРНО', unclear: 'неясно', take: 'дубль',
+  unchecked: 'Ударение не проверено', uncheckedHow: 'найти и добавить в словарь: `storygro stress <spec> --lookup --write`',
 } as const;
 const EN = {
   stage: { script: 'script', storyboard: 'storyboard', release: 'watch the cut', ready: 'ready', published: 'published' },
@@ -186,7 +189,9 @@ const EN = {
   factsTitle: 'Facts and sources', post: 'Post text', next: 'Next', missingNumbers: 'Numbers not from the facts', none: 'none',
   howTo: 'Approve: `storygro approve <spec> --step script|storyboard|release` (agents add `--agent`).',
   sec: 's', scenesWord: 'scenes',
-  stressLabel: 'Stress', auto: 'auto, check it', byAuthor: 'author',
+  stressLabel: 'Stress', auto: 'auto, check it', byAuthor: 'author', byLexicon: 'dictionary',
+  heard: 'Heard', right: 'right', wrong: 'WRONG', unclear: 'unclear', take: 'take',
+  unchecked: 'Stress not checked', uncheckedHow: 'look up and add to the dictionary: `storygro stress <spec> --lookup --write`',
 };
 const words = (lang: string) => (lang.startsWith('ru') ? RU : EN);
 
@@ -251,6 +256,7 @@ export async function writePlan(l: LoadedSpec, tl: Timeline, captured?: SceneSho
   const w = words(l.spec.lang);
   const shots = captured ?? (await captureScenes(l, tl));
   const misses = factsGate(l, shots);
+  const lex = loadLexicon();
   const previewDir = join(l.dir, 'preview', 'plan', l.variant || 'default');
   mkdirSync(previewDir, { recursive: true });
   const planName = l.variant ? `PLAN.${l.variant}.md` : 'PLAN.md';
@@ -308,9 +314,16 @@ export async function writePlan(l: LoadedSpec, tl: Timeline, captured?: SceneSho
       }
       lines.push('');
     }
-    const stress = (s as { voice?: { stress?: { word: string; stressed: string; by: string }[] } }).voice?.stress ?? [];
+    const stress = s.voice?.stress ?? [];
+    const by = (d: { by: string }) => (d.by === 'auto' ? w.auto : d.by === 'lexicon' ? w.byLexicon : w.byAuthor);
     if (stress.length)
-      lines.push(`**${w.stressLabel}:** ${stress.map((d) => `${d.word} → ${d.stressed.replace(/\+([аеёиоуыэюяАЕЁИОУЫЭЮЯ])/g, '$1\u0301')} (${d.by === 'auto' ? w.auto : w.byAuthor})`).join(' · ')}`, '');
+      lines.push(`**${w.stressLabel}:** ${stress.map((d) => `${d.word} → ${d.stressed.replace(/\+([аеёиоуыэюяАЕЁИОУЫЭЮЯ])/g, '$1\u0301')} (${by(d)})`).join(' · ')}`, '');
+    const checked = s.voice?.checked ?? [];
+    if (checked.length)
+      lines.push(`**${w.heard}:** ${checked.map((c) => `${c.word} — ${c.ok ? w.right : c.ok === false ? w.wrong : w.unclear} (${w.take} ${c.take + 1})`).join(' · ')}`, '');
+    const sceneSpec = l.spec.scenes.find((x) => x.id === s.id);
+    const unchecked = l.spec.lang.startsWith('ru') && sceneSpec ? uncheckedNames(spokenWithMarks(sceneSpec), lex) : [];
+    if (unchecked.length) lines.push(`> ⚠️ ${w.unchecked}: ${unchecked.join(', ')} — ${w.uncheckedHow}`, '');
     if (s.sfx.length) lines.push(`**${w.sound}:** ${s.sfx.map((x) => `${x.kind} @${(x.t - s.start).toFixed(1)}`).join(', ')}`, '');
     if (refs.length) lines.push(`**${w.facts}:** ${refs.map((r) => `\`${r.ref}\` = «${cell(r.value)}»`).join(' · ')}`, '');
     const miss = misses.filter((m) => m.scene === s.id);

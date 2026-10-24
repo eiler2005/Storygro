@@ -4,6 +4,21 @@ Notable changes to the Storygro engine and repository. Content releases (videos)
 
 ## [Unreleased]
 
+### Russian stress dictionary and visual checks
+- A shared pronunciation dictionary, `production/voices/lexicon-ru.yaml`: names and hard words with their stress, case forms and a source each, applied to every Russian line before RUAccent's homographs (the author's marks still win). The voice cache keys a line on the entries it uses, so a new entry re-voices only its lines; the resolved dictionary reaches `py/voice.py` through the job, so Python needs no YAML.
+- `storygro stress <spec> [--lookup] [--write]`: dictionary words, author marks and capitalised words nobody checked, per scene; `--lookup` finds the stress of exactly that word form in ru.wikipedia and ru.wiktionary (declension tables), `--write` appends entries with the quote. The plan flags unchecked words per scene.
+- Phoneme checks (`py/phonemes.py`, wav2vec2-xlsr-53-espeak-cv-ft): a dictionary word with a `check` that comes out wrong is spoken again with another seed, up to three takes; QA check «Dictionary words keep their stress» listens again in the final voice track. The voice bench uses the same module.
+- QA and the storyboard check «Text fits its box»: no text may stick out of the card, band or label it sits in. It caught years wider than their badge in vertical cartoons; the `illustration` badge now shrinks its number to fit.
+
+### Motion, kinetic type and four new scenes
+- Motion kit in `production/runtime/kit.js`: closed-form `spring` and `springs` (one spring per change of target, summed), the music's beat grid as `beatGrid`, and `ctx.beats` in every scene (`at`, `next`, `snap`, `index`, `pulse`) — the same grid `score.py` plays. Sound effects take `snap: beat | half | bar`.
+- Motion blur: `format.blur: N` captures N frames per output frame across a 180° shutter and averages them with ffmpeg `tmix`; `render --blur N` overrides it, `--draft` ignores it, the manifest records it.
+- Style `kinetic-type` (pilot): vertical shorts made of words on a dark field, captions off, blur 4; theme tokens `--kt-*`.
+- Scenes `kinetic` (each word lands when it is spoken, an accent bar travels between lines and pulses on the beat, `swap` turns a word from thin to heavy), `timeline`, `process` (isometric stations with a travelling token) and `scale` (areas proportional to values, the camera pulls back). Shared tokens and word matching in `production/runtime/type.js`.
+- `images.prompt` in a reel replaces the style's picture prompt for one episode (must keep `{subject}`).
+- Reference notes on [awesome-opus5-5-videos](content/research/references/awesome-opus5-5-videos.md): what the catalogue of 703 code-rendered video prompts confirms about the renderer and which motion principles we take; motion principles in the [scene contract](docs/reference/scene-contract.md#motion).
+- New episodes: the kinetic-type pilot [«Как агент собирает ролик из кода»](content/videos/agent-motion-studio/README.md) and the children's cartoon [«Золотой мяч: кто самый лучший?»](content/videos/ballon-dor-kids/README.md).
+
 ### Voices: Russian stress, more engines, a bench
 - Russian stress layer (`production/py/stress.py`): hand marks `зам+ок` / `замо́к`, and by default RUAccent resolves the homographs in `production/py/homographs-ru.txt` from the sentence (plus ё in все/всё-type pairs); each engine gets the marks in the form it reads, or none. `voice.stress: auto | marks | off`. The voice log, the line JSON and the plan list every decision. `+` is no longer read aloud by Qwen3 as «плюс».
 - New engines: `chatterbox` (Chatterbox Multilingual, MIT, clones the narrator; `npm run setup:chatterbox`) and `yandex` (SpeechKit API v1; request unit-tested, not yet run against the live service).

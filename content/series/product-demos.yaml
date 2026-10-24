@@ -5,3 +5,4 @@ audience: Пользователи и покупатели продуктов а
 format: Вертикальный ролик 30–60 с с записью реального экрана (storygro capture → screencast)
 episodes:
   - ../videos/slidecraft-demo/episode.yaml
+  - ../videos/agent-motion-studio/episode.yaml

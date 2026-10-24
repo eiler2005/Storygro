@@ -1,0 +1,47 @@
+/* kinetic-type — words on a dark field. Fonts: Unbounded (display, variable 200–900) and Golos Text
+   (text); both SIL OFL 1.1 with Cyrillic, notices in fonts/. The --kt-* tokens are read by the scenes
+   kinetic, timeline, process and scale; --pp-* keep stat and outro readable on the same field. */
+@font-face { font-family: 'Unbounded'; src: url('fonts/Unbounded-wght.ttf'); font-weight: 200 900; }
+@font-face { font-family: 'Golos Text'; src: url('fonts/GolosText-wght.ttf'); font-weight: 400 900; }
+
+:root {
+  --kt-bg: #11141c;
+  --kt-panel: #1c2232;
+  --kt-line: rgba(160, 170, 200, 0.16);
+  --kt-ink: #f3ecdf;
+  --kt-muted: #8d92a3;
+  --kt-accent: #ff5b37;
+  --kt-accent2: #ffc53d;
+  --kt-cool: #3cc4b3;
+  --kt-display: 'Unbounded', 'Golos Text', Arial, sans-serif;
+  --kt-font: 'Golos Text', Arial, sans-serif;
+
+  --pp-paper: #11141c;
+  --pp-paper2: #1c2232;
+  --pp-card: #1c2232;
+  --pp-ink: #f3ecdf;
+  --pp-muted: #8d92a3;
+  --pp-red: #ff5b37;
+  --pp-yellow: #ffc53d;
+  --pp-teal: #3cc4b3;
+  --pp-blue: #7b9cff;
+  --pp-font: 'Golos Text', Arial, sans-serif;
+  --pp-display: 'Unbounded', 'Golos Text', Arial, sans-serif;
+  --pp-hand: 'Golos Text', Arial, sans-serif;
+  --rc-font: 'Golos Text', Arial, sans-serif;
+  --rc-bg: #11141c;
+}
+
+#stage { font-family: var(--kt-font); color: var(--kt-ink); background: var(--kt-bg); }
+.rc-scene { overflow: hidden; }
+
+/* captions are off by default (the words are the picture); when a reel turns them on */
+.rc-caption {
+  font: 700 46px/1.22 var(--kt-font);
+  color: rgba(243, 236, 223, 0.45);
+  background: rgba(17, 20, 28, 0.82);
+  border-radius: 10px;
+  padding: 12px 24px 14px;
+  text-wrap: balance;
+}
+.rc-word.on { color: #f3ecdf; }

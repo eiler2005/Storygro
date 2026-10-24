@@ -54,7 +54,7 @@ The agent researches, writes the script and facts, narrates, builds a storyboard
 
 See [the pipeline](docs/explanation/pipeline.md) for one real run, from a trend scan on 19 October 2026 to a packaged video the same day. Every method and tool by stage, in one bank: [**the toolkit**](docs/reference/toolkit.md).
 
-## Nineteen scenes
+## Twenty-three scenes
 
 <table>
   <tr>
@@ -73,7 +73,7 @@ See [the pipeline](docs/explanation/pipeline.md) for one real run, from a trend 
   </tr>
 </table>
 
-Ten vertical-first scenes above, `illustration` for generated pictures, and eight landscape product scenes from the SlideCraft launch film: `statement`, `logo-reveal`, `chat`, `stack`, `grid`, `spotlight`, `pins`, `end-card`. Every frame is a pure function of time, so stills, storyboards and the video always agree. [All scenes with pictures](docs/features.md#nineteen-animated-scenes) · [props](docs/reference/scenes.md) · [add your own](docs/how-to/add-a-scene.md)
+Ten vertical-first scenes above, `illustration` for generated pictures, four typographic scenes on springs and the beat (`kinetic`, `timeline`, `process`, `scale`), and eight landscape product scenes from the SlideCraft launch film: `statement`, `logo-reveal`, `chat`, `stack`, `grid`, `spotlight`, `pins`, `end-card`. Every frame is a pure function of time, so stills, storyboards and the video always agree. [All scenes with pictures](docs/features.md#twenty-three-animated-scenes) · [props](docs/reference/scenes.md) · [add your own](docs/how-to/add-a-scene.md)
 
 ## Styles
 
@@ -86,6 +86,7 @@ A style is a reusable way of making videos — defaults, theme, scenes, pacing, 
 | **cartoon** | narrated explainers told through comic illustrations with a recurring cast, 16:9 — from a one-minute short to a long-form episode | generated locally with mflux + Z-Image-Turbo; prompt, seed and checksum of each in `images.json` |
 | **cut-paper** | vertical explainers on paper: cards, figures, marker, stamps | drawn by code |
 | **editorial-collage** | vertical explainers on graph paper with cut-outs, torn labels and panels | cut-outs you supply |
+| **kinetic-type** | vertical shorts made of words that land as they are spoken, with a timeline, a process and a comparison of sizes in the same type; motion blur | drawn by code |
 
 The cartoon style grew out of [a frame-by-frame analysis](content/research/references/cYlePq4WQsk.md) of an 18-minute illustrated finance explainer, made with `storygro transcript`. Storygro keeps what works (a recurring character, a new picture every few seconds, burned-in captions) and fixes what does not: headlines and numbers are drawn on cue from the facts file, not baked into generated pictures. [Use a style](docs/how-to/use-a-style.md) · [cartoon tutorial](docs/tutorials/cartoon-explainer.md)
 
@@ -138,7 +139,7 @@ Outputs live in ignored `.reel/` folders; public copies go to GitHub Releases, n
 ## Repository
 
 ```text
-production/   the engine: CLI (src/), browser player (runtime/), 19 scenes, styles/, Python voices and audio
+production/   the engine: CLI (src/), browser player (runtime/), 23 scenes, styles/, Python voices and audio
 content/      what we make: videos/<id>/, ideas, research, brand, series
 examples/     reference and regression reels: ai-jobs, scene-gallery, editorial-collage, slidecraft-launch
 docs/         tutorials, how-to, reference, explanation, ADRs; planning in Russian
@@ -165,7 +166,7 @@ Full map and where to change what: [repository layout](docs/reference/repository
 
 ## Privacy and network access
 
-Storygro runs on your machine with no account and no telemetry. It goes online only when you ask: `npm ci`; `setup` (Python packages via uv, model weights from Hugging Face); `assets:fetch` (render inputs from this repository's GitHub Releases, checksum-verified); `trends` (public Google Trends RSS, Wikipedia and Hacker News); `capture` (the URL in your capture spec, in local Chrome). The preview server binds to loopback. See [SECURITY.md](SECURITY.md).
+Storygro runs on your machine with no account and no telemetry. It goes online only when you ask: `npm ci`; `setup` (Python packages via uv, model weights from Hugging Face); `assets:fetch` (render inputs from this repository's GitHub Releases, checksum-verified); `trends` (public Google Trends RSS, Wikipedia and Hacker News); `capture` (the URL in your capture spec, in local Chrome); `stress --lookup` (ru.wikipedia and ru.wiktionary, for the stress of names). The preview server binds to loopback. See [SECURITY.md](SECURITY.md).
 
 ## Contributing
 

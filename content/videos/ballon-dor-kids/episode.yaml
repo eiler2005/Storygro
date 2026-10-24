@@ -1,0 +1,7 @@
+episode: 1
+id: ballon-dor-kids
+title: "Золотой мяч: кто самый лучший?"
+sources: sources.md
+credits: CREDITS.md
+variants:
+  - { id: ru, spec: ru.reel.yaml }

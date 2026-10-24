@@ -93,6 +93,7 @@ export default {
     }
 
     let card = null;
+    let value = null;
     if (badge && badge.value !== undefined) {
       const right = (badge.side ?? 'right') === 'right';
       card = h(
@@ -106,7 +107,7 @@ export default {
             border: `${Math.max(3, Math.round(H * 0.004))}px solid var(--ct-ink, #1f1a14)`, transformOrigin: right ? '100% 50%' : '0 50%',
           },
         },
-        h('div', { style: { font: `${Math.round(H * (String(badge.value).length > 6 ? 0.085 : 0.13))}px/1 var(--ct-display, Impact, sans-serif)`, whiteSpace: 'nowrap', fontWeight: 'var(--ct-display-weight, 600)', color: tone(badge.tone) } }, String(badge.value)),
+        (value = h('div', { style: { font: `${Math.round(H * (String(badge.value).length > 6 ? 0.085 : 0.13))}px/1 var(--ct-display, Impact, sans-serif)`, whiteSpace: 'nowrap', width: 'max-content', fontWeight: 'var(--ct-display-weight, 600)', color: tone(badge.tone) } }, String(badge.value))),
         badge.label
           ? h('div', { style: { font: `700 ${Math.round(H * 0.027)}px/1.25 var(--ct-font, sans-serif)`, color: 'var(--ct-ink, #1f1a14)', marginTop: `${Math.round(H * 0.008)}px` } }, badge.label)
           : '',
@@ -145,8 +146,22 @@ export default {
     if (src) overlay.append(src);
 
     const shown = (t, a, u, d = 0.35) => (u === undefined ? p(t, a, d, ease.outBack) : p(t, a, d, ease.outBack) * (1 - p(t, u, 0.25)));
+    let fitted = false;
 
     return (t) => {
+      if (!fitted && value) {
+        // the number shrinks until it fits inside its card (a year on a tall stage was wider than the card)
+        // offsetWidth of a max-content box is the text's own width, whatever the card's pop-in scale
+        const cs = getComputedStyle(card);
+        const edges = cs.boxSizing === 'border-box' ? ['paddingLeft', 'paddingRight', 'borderLeftWidth', 'borderRightWidth'].reduce((a, k) => a + parseFloat(cs[k]), 0) : 0;
+        const inner = parseFloat(cs.maxWidth) - edges;
+        let size = parseFloat(getComputedStyle(value).fontSize);
+        for (let i = 0; i < 40 && value.offsetWidth > inner + 1; i++) {
+          size *= 0.94;
+          value.style.fontSize = `${size}px`;
+        }
+      }
+      fitted = true;
       layers.forEach((l, i) => {
         const s0 = starts[i];
         const s1 = ends[i];

@@ -39,6 +39,8 @@ A style lives in `production/styles/<id>/` and is used by a reel with `style: <i
 | `images.cast` | the episode's own characters; merged over the style's cast |
 | `images.seed` | base seed; each shot's seed is derived from it and the shot's position, so it is stable |
 | `images.provider` | overrides the style's provider — `manual` on a machine without Apple silicon |
+| `images.width`, `images.height` | overrides the picture size, e.g. 720×1280 for a vertical cut |
+| `images.prompt` | the episode's own art direction instead of the style's picture prompt; must contain `{subject}` (example: [ballon-dor-kids](../../content/videos/ballon-dor-kids/ru.reel.yaml)) |
 | `props.shots[].seed` | a fixed seed for one shot, to try another take |
 | `props.shots[].prompt`, `splitPrompt` | what the picture shows; `@name` expands from the cast |
 

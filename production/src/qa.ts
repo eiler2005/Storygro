@@ -2,7 +2,8 @@ import { spawnSync } from 'node:child_process';
 import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import { join, relative, resolve } from 'node:path';
 import { brandFindings, loadBrand } from './brand.ts';
-import { captureScenes, factsGate, safeAreaMisses, type SceneShot } from './board.ts';
+import { boxMisses, captureScenes, factsGate, safeAreaMisses, type SceneShot } from './board.ts';
+import { key as lexKey, loadLexicon, WORD as LEX_WORD } from './lexicon.ts';
 import { captionText, type LoadedSpec, spokenText } from './spec.ts';
 import { type Timeline, workDir } from './timeline.ts';
 import { ffmpeg, python, REEL_ROOT } from './tools.ts';
@@ -178,6 +179,12 @@ export async function qa(l: LoadedSpec, tl: Timeline, video: string) {
       status: ok(safe.length === 0),
       detail: safe.length ? safe.slice(0, 6).map((m) => `${m.scene}: "${m.text}" (${m.edge})`).join('; ') : 'every cue checked',
     });
+    const spill = boxMisses(shots);
+    checks.push({
+      name: 'Text fits its box',
+      status: ok(spill.length === 0),
+      detail: spill.length ? spill.slice(0, 6).map((m) => `${m.scene}: "${m.text}" (${m.over}px out)`).join('; ') : 'every card, band and label at every cue',
+    });
   }
 
   // pronunciation: Whisper listens to the final mix (voice over music), scene by scene
@@ -209,6 +216,40 @@ export async function qa(l: LoadedSpec, tl: Timeline, video: string) {
         status: ok(bad.length === 0),
         detail: bad.length ? bad.join('; ') : `every scene ≥ 85% of its words (lowest ${(worst * 100) | 0}%)`,
       });
+    }
+  }
+
+  // stress: dictionary words that carry a phoneme check, heard again in the final voice track
+  if (voiced && (tl.lang ?? '').startsWith('ru')) {
+    const lex = loadLexicon();
+    const items = tl.scenes.flatMap((s) =>
+      s.words.flatMap((w) => {
+        const word = w.w.match(LEX_WORD)?.[0];
+        const check = word ? lex.forms.get(lexKey(word))?.check : undefined;
+        return check && word ? [{ scene: s.id, word, start: s.start + w.start, end: s.start + w.end, check }] : [];
+      }),
+    );
+    const voiceWav = join(workDir(l), 'voice.wav');
+    if (items.length && !existsSync(voiceWav)) checks.push({ name: 'Dictionary words keep their stress', status: 'skip', detail: 'no voice.wav' });
+    else if (items.length) {
+      const inFile = join(workDir(l), 'stress-check-in.json');
+      const outFile = join(workDir(l), 'stress-check.json');
+      writeFileSync(inFile, JSON.stringify(items));
+      const r = spawnSync(python(), [join(REEL_ROOT, 'py', 'stress_check.py'), voiceWav, inFile, outFile], { encoding: 'utf8' });
+      if (r.status === 3) checks.push({ name: 'Dictionary words keep their stress', status: 'skip', detail: r.stderr.trim().split('\n').at(-1) ?? 'phoneme model unavailable' });
+      else if (r.status !== 0) checks.push({ name: 'Dictionary words keep their stress', status: 'fail', detail: `check failed: ${r.stderr.slice(-300)}` });
+      else {
+        const res = JSON.parse(readFileSync(outFile, 'utf8')) as { scene: string; word: string; ok: boolean | null; phones: string }[];
+        const wrong = res.filter((x) => x.ok === false);
+        const unclear = res.filter((x) => x.ok === null).length;
+        checks.push({
+          name: 'Dictionary words keep their stress',
+          status: ok(wrong.length === 0),
+          detail: wrong.length
+            ? wrong.map((x) => `${x.scene}: ${x.word} [${x.phones}]`).join('; ')
+            : `${res.length - unclear} of ${res.length} heard right${unclear ? `, ${unclear} unclear (listen)` : ''}`,
+        });
+      }
     }
   }
 

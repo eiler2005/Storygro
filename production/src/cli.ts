@@ -20,6 +20,7 @@ import { qa } from './qa.ts';
 import { cards, frames, mux, stills } from './render.ts';
 import { serve } from './serve.ts';
 import { loadSpec } from './spec.ts';
+import { appendEntries, entriesFor, type Found, LEXICON_PATH, loadLexicon, lookupStress, spokenWithMarks, uncheckedNames, WORD as LEX_WORD } from './lexicon.ts';
 import { buildTimeline, resolveAt, type Timeline, workDir, workUrl, writeTimeline } from './timeline.ts';
 import { python, REEL_ROOT, run } from './tools.ts';
 
@@ -34,6 +35,8 @@ const HELP = `storygro — explainer videos as code
   storygro still    <reel.yaml> <at>...     PNG stills; <at> = seconds | scene | scene@cue | scene@seconds
   storygro board    <reel.yaml>             storyboard before recording → board.html + board.pdf
   storygro plan     <reel.yaml>             review document: PLAN.<variant>.md with frames, pictures, text, facts, approvals
+  storygro stress   <reel.yaml> [--lookup] [--write]   Russian stress per scene: dictionary words, author marks, unchecked
+                                            names; --lookup finds them in ru.wikipedia/ru.wiktionary, --write adds them
   storygro approve  <reel.yaml> [--step script|storyboard|release] [--agent | --by name]
                                              record an approval in review.yaml (any change resets it)
   storygro tracker  <videos-dir> [--md f]   every episode: stage, whose move, approvals, QA, questions
@@ -64,6 +67,7 @@ const HELP = `storygro — explainer videos as code
 
   options: --no-voice (estimated timings, no TTS)  --draft (half size, 15 fps, no gate)
            --from <s> --to <s> (render a range)     --force (skip the approval / QA gate)
+           --blur <n> (motion blur: n captures per frame; overrides format.blur)
            --guides (stills with the platform safe area)  --allow-errors (render broken scenes)
            --partial (deliver what exists)          --allow-incomplete (package with recorded problems)`;
 
@@ -73,7 +77,7 @@ const opt = (f: string) => {
   const i = argv.indexOf(f);
   return i >= 0 ? argv[i + 1] : undefined;
 };
-const VALUED = ['--from', '--to', '--out', '--port', '--backlog', '--md', '--variant', '--platform', '--account', '--note', '--url', '--external-id', '--window', '--source', '--at', '--ledger', '--metrics', '--style', '--lang', '--title', '--only', '--inbox', '--step', '--by'];
+const VALUED = ['--blur', '--from', '--to', '--out', '--port', '--backlog', '--md', '--variant', '--platform', '--account', '--note', '--url', '--external-id', '--window', '--source', '--at', '--ledger', '--metrics', '--style', '--lang', '--title', '--only', '--inbox', '--step', '--by'];
 const positional = argv.filter((a, i) => !a.startsWith('--') && !VALUED.includes(argv[i - 1] ?? ''));
 const [cmd, specPath, ...rest] = positional;
 if (flag('--allow-errors')) process.env.STORYGRO_ALLOW_ERRORS = '1';
@@ -301,6 +305,44 @@ switch (cmd) {
     console.log(`✔ ${step} ${agent ? 'technically approved (agent)' : `approved by ${by}`} · ${hash} → ${relative(process.cwd(), join(l.dir, 'review.yaml'))}`);
     break;
   }
+  case 'stress': {
+    // the narrator's stress, scene by scene: dictionary words, the author's marks, names nobody checked
+    if (!l.spec.lang.startsWith('ru')) {
+      console.log('stress: the dictionary and the checks are for Russian reels');
+      break;
+    }
+    const lex = loadLexicon();
+    const all = new Set<string>();
+    for (const s of l.spec.scenes) {
+      const text = spokenWithMarks(s);
+      const dict = entriesFor(text, lex).map((e) => e.say);
+      const marked = [...text.matchAll(LEX_WORD)].map((m) => m[0]).filter((w) => /[+\u0301]/.test(w));
+      const unchecked = uncheckedNames(text, lex);
+      for (const w of unchecked) all.add(w);
+      console.log(`  ${s.id.padEnd(12)} dictionary: ${dict.join(', ') || '—'} · author: ${marked.join(', ') || '—'}${unchecked.length ? ` · ! unchecked: ${unchecked.join(', ')}` : ''}`);
+    }
+    if (!all.size) {
+      console.log('✔ every capitalised word has a checked stress');
+      break;
+    }
+    if (!flag('--lookup')) {
+      console.log(`! ${all.size} word(s) without a checked stress — look them up: storygro stress ${specPath} --lookup [--write]`);
+      break;
+    }
+    const found: Found[] = [];
+    for (const w of all) {
+      const f = await lookupStress(w);
+      if (f) {
+        found.push(f);
+        console.log(`  ✔ ${w} → ${f.say.replace(/\+(.)/, '$1\u0301')}   ${f.source}`);
+      } else console.log(`  ? ${w}: not found — mark it by hand (+) in the script or add it to ${relative(process.cwd(), LEXICON_PATH)}`);
+    }
+    if (flag('--write') && found.length) {
+      appendEntries(found);
+      console.log(`✔ ${found.length} entr${found.length === 1 ? 'y' : 'ies'} → ${relative(process.cwd(), LEXICON_PATH)}; read the diff, then storygro voice ${specPath}`);
+    }
+    break;
+  }
   case 'plan': {
     // the review document: storyboard frames + pictures + text per scene, approvals, questions, facts
     const tl = await timeline();
@@ -324,11 +366,15 @@ switch (cmd) {
     if (!draft && !flag('--force') && !approval(l).approved)
       throw new Error('the storyboard is not approved — run `storygro board`, read it, then `storygro approve`');
     const tl = await score(await timeline());
+    if (opt('--blur')) {
+      tl.blur = Math.max(1, Math.round(Number(opt('--blur'))));
+      writeTimeline(l, tl);
+    }
     const name = `${l.name}${draft ? '-draft' : ''}`;
     const silent = join(out, `${name}-video.mp4`);
     console.log(`● frames (${summary(tl)})`);
     const from = opt('--from') ? Number(opt('--from')) : undefined;
-    await frames(l, tl, { out: silent, scale: draft ? 0.5 : 1, fps: draft ? 15 : tl.fps, from, to: opt('--to') ? Number(opt('--to')) : undefined });
+    await frames(l, tl, { out: silent, scale: draft ? 0.5 : 1, fps: draft ? 15 : tl.fps, blur: draft ? 1 : tl.blur, from, to: opt('--to') ? Number(opt('--to')) : undefined });
     const r = await mux(l, silent, join(out, `${name}.mp4`), { webMaxMB: 25, from });
     rmSync(silent, { force: true });
     console.log(`✔ master ${r.master}\n✔ web    ${r.web} (${r.sizeMB} MB)`);

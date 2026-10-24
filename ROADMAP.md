@@ -13,6 +13,7 @@ Storygro's goal: an assistant for an AI agent that turns a topic and its sources
 | 4. Other ways to produce | Screen-recorded product demos: `capture` + `screencast` | [slidecraft-demo](content/videos/slidecraft-demo/README.md) |
 | 5. Publication (manual) | A ledger with states, deduplication and a required URL for `published` | [publish manually](docs/how-to/publish-manually.md) |
 | Styles and generated pictures | Reusable styles (`cartoon`, `cut-paper`, `editorial-collage`), `new`, local illustrations with provenance, reference transcripts | [use a style](docs/how-to/use-a-style.md), [ADR 0005](docs/adr/0005-styles-and-generated-pictures.md) |
+| Motion and kinetic type | Springs, the beat grid, motion blur; the `kinetic-type` style with `kinetic`, `timeline`, `process`, `scale` | [scene contract: motion](docs/reference/scene-contract.md#motion), [agent-motion-studio](content/videos/agent-motion-studio/README.md) |
 | 6. Analytics (manual) | Metric snapshots with source and window; missing values never become zero | [publication ledger](docs/reference/publication-ledger.md#metrics) |
 
 ## Next

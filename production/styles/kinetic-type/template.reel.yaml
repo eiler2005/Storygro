@@ -1,0 +1,51 @@
+# {title} — a kinetic-typography short (style: kinetic-type). Words land as the narrator says them;
+# numbers come from facts.json (valueFrom / labelFrom / textFrom); step numbers are allowed below.
+reel: 1
+style: kinetic-type
+title: '{title}'
+lang: {lang}
+data: { facts: facts.json }
+allowNumbers: ['1', '2', '3', '4', '5']   # step numbers of the process scene, not facts
+post:
+  title: '{title}'
+  text: |
+    One paragraph on what the viewer learns.
+
+    Sources: … The narration is synthetic.
+  tags: []
+scenes:
+  - id: hook
+    scene: kinetic
+    say: 'The claim in a few words. {#turn}The twist.'
+    pad: [0.1, 0.4]
+    props:
+      kicker: The topic
+      lines:
+        - { text: 'The claim in a few words.', at: -1 }
+        - { text: 'The twist.', tone: accent, weight: heavy }
+  - id: how
+    scene: process
+    say: 'First {#a}this, then {#b}that, and {#c}the result.'
+    props:
+      title: How it works
+      token: idea
+      steps:
+        - { label: First, at: a }
+        - { label: Then, at: b }
+        - { label: Result, at: c }
+  - id: evidence
+    scene: scale
+    say: 'The number that shows {#big}how big it is.'
+    props:
+      title: How big
+      items:
+        - { valueFrom: facts.example.value, labelFrom: facts.example.label, at: big }
+      sourceFrom: facts.example._source
+  - id: takeaway
+    scene: kinetic
+    say: 'So the point is {#swap}this.'
+    pad: [0.1, 1.2]
+    props:
+      lines:
+        - { text: 'So the point is', weight: light }
+        - { text: 'this.', from: 'that?', mode: swap, swapAt: swap, weight: heavy, tone: accent }

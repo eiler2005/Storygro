@@ -47,6 +47,7 @@ Guides: [write a script](../how-to/write-a-script.md), [design a voice](../how-t
 |---|---|---|
 | `still <spec> <at>… [--guides]` | PNG frames; `<at>` is seconds, `scene`, `scene@cue` or `scene@seconds` | `stills/` |
 | `board <spec>` | storyboard from the live player with facts and safe-area warnings | `board.html`, `board.pdf`, `board/` |
+| `stress <spec> [--lookup] [--write]` | Russian stress per scene: dictionary words, the author's marks, capitalised words nobody checked; `--lookup` finds them in ru.wikipedia and ru.wiktionary (network), `--write` appends them with their source to `production/voices/lexicon-ru.yaml` | console; the dictionary with `--write` |
 | `plan <spec> [--no-voice]` | the review document: storyboard frames + pictures per scene, narration, on-screen text, facts with sources, approvals, open questions | `PLAN.<variant>.md`, `preview/plan/<variant>/*.jpg` (committed) |
 | `approve <spec> [--step script\|storyboard\|release] [--agent \| --by name]` | records an approval with a hash of what it covers (default step: storyboard); any change resets it. Outside a terminal it needs `--agent` (technical) or `--by` | `review.yaml` |
 | `preview <spec> [--guides]` | live preview with sound in the browser | — |

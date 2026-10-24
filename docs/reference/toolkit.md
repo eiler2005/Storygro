@@ -2,7 +2,7 @@
 
 <!-- Generated from production/toolkit.yaml by `npm run docs:toolkit`. Edit the YAML, not this page. -->
 
-Every way Storygro makes content, in one bank: **18 methods**, **22 tools**, **3 styles**, **5 scene families** and **4 providers**, by production stage. Agents read [`production/toolkit.yaml`](../../production/toolkit.yaml) to pick an approach; this page is generated from it, and `npm test` fails when a command, style or scene is missing from the bank or a link is broken.
+Every way Storygro makes content, in one bank: **19 methods**, **23 tools**, **4 styles**, **6 scene families** and **4 providers**, by production stage. Agents read [`production/toolkit.yaml`](../../production/toolkit.yaml) to pick an approach; this page is generated from it, and `npm test` fails when a command, style or scene is missing from the bank or a link is broken.
 
 **Status:** *stable* — used across pieces · *pilot* — works, reviewed on one or two pieces · *planned* — not implemented.
 
@@ -11,8 +11,8 @@ Every way Storygro makes content, in one bank: **18 methods**, **22 tools**, **3
 | **choose** — Pick a topic worth a piece | [Editorial ranking](#editorial-ranking) · [Trend scan and watchlist](#trend-scan-and-watchlist) · [Research scan with picks](#research-scan-with-picks) · [X digest through Grok](#x-digest-through-grok) · [Angles from a scan](#angles-from-a-scan) |
 | **research** — Find and check what is true | [Primary-source research](#primary-source-research) · [Facts as data](#facts-as-data) · [Reference analysis](#reference-analysis) · [Transcript and pace statistics](#transcript-and-pace-statistics) · [Whisper (mlx-whisper)](#whisper-mlx-whisper) |
 | **write** — Turn it into a script as data | [Script as data](#script-as-data) · [Story structures](#story-structures) · [One worked example](#one-worked-example) · [Language variants](#language-variants) · [Brand profile and series](#brand-profile-and-series) |
-| **look** — Decide how it looks | [Cartoon explainer](#cartoon-explainer) · [Cut-paper explainer](#cut-paper-explainer) · [Editorial collage](#editorial-collage) · [Cut-paper scenes](#cut-paper-scenes) · [Collage scene](#collage-scene) · [Illustration scene](#illustration-scene) · [Screencast scene](#screencast-scene) · [Landscape product scenes](#landscape-product-scenes) · [Generated illustrations](#generated-illustrations) · [Z-Image-Turbo via mflux](#z-image-turbo-via-mflux) · [Recurring cast](#recurring-cast) · [No text in pictures](#no-text-in-pictures) · [Screen capture](#screen-capture) · [A new scene module](#a-new-scene-module) |
-| **voice** — Narration, sound and timing | [Local narration and timing](#local-narration-and-timing) · [Narrator design](#narrator-design) · [Pronunciation and say-as](#pronunciation-and-say-as) · [Russian stress and homographs](#russian-stress-and-homographs) · [Voice bench](#voice-bench) · [Chatterbox Multilingual](#chatterbox-multilingual) · [Music and sound effects](#music-and-sound-effects) |
+| **look** — Decide how it looks | [Cartoon explainer](#cartoon-explainer) · [Cut-paper explainer](#cut-paper-explainer) · [Editorial collage](#editorial-collage) · [Cut-paper scenes](#cut-paper-scenes) · [Kinetic typography](#kinetic-typography) · [Kinetic and diagram scenes](#kinetic-and-diagram-scenes) · [Springs, beat grid and motion blur](#springs-beat-grid-and-motion-blur) · [Collage scene](#collage-scene) · [Illustration scene](#illustration-scene) · [Screencast scene](#screencast-scene) · [Landscape product scenes](#landscape-product-scenes) · [Generated illustrations](#generated-illustrations) · [Z-Image-Turbo via mflux](#z-image-turbo-via-mflux) · [Recurring cast](#recurring-cast) · [No text in pictures](#no-text-in-pictures) · [Screen capture](#screen-capture) · [A new scene module](#a-new-scene-module) |
+| **voice** — Narration, sound and timing | [Local narration and timing](#local-narration-and-timing) · [Narrator design](#narrator-design) · [Pronunciation and say-as](#pronunciation-and-say-as) · [Russian stress and homographs](#russian-stress-and-homographs) · [Pronunciation dictionary and stress lookup](#pronunciation-dictionary-and-stress-lookup) · [Voice bench](#voice-bench) · [Chatterbox Multilingual](#chatterbox-multilingual) · [Music and sound effects](#music-and-sound-effects) |
 | **make** — Storyboard, approval and rendering | [Stills and live preview](#stills-and-live-preview) · [Storyboard and approval](#storyboard-and-approval) · [Plan document and stepped approvals](#plan-document-and-stepped-approvals) · [Render](#render) · [Formats, safe areas and captions](#formats-safe-areas-and-captions) · [Carousel cards](#carousel-cards) |
 | **check** — Technical QA and the human review | [Technical QA](#technical-qa) · [Human review](#human-review) |
 | **ship** — Release, publication record and metrics | [Episode tracker](#episode-tracker) · [Release package](#release-package) · [Publication ledger and metrics](#publication-ledger-and-metrics) · [Platform upload and analytics APIs](#platform-upload-and-analytics-apis) |
@@ -118,7 +118,7 @@ Study a video that works — length, words per minute, structure with timestamps
 
 **How:** `Transcribe, sample frames, write content/research/references/<id>.md`
 
-**See:** [docs](../../docs/how-to/transcribe-a-reference.md) · [references/cYlePq4WQsk.md](../../content/research/references/cYlePq4WQsk.md) · [references/gHFDPVjbOco.md](../../content/research/references/gHFDPVjbOco.md)
+**See:** [docs](../../docs/how-to/transcribe-a-reference.md) · [references/cYlePq4WQsk.md](../../content/research/references/cYlePq4WQsk.md) · [references/gHFDPVjbOco.md](../../content/research/references/gHFDPVjbOco.md) · [references/awesome-opus5-5-videos.md](../../content/research/references/awesome-opus5-5-videos.md)
 
 ### Transcript and pace statistics
 
@@ -249,6 +249,42 @@ Vertical-first scenes on paper with figures, cards and marker.
 **Use when:** The cut-paper style or any paper explainer.
 
 **See:** [docs](../../docs/reference/scenes.md)
+
+### Kinetic typography
+
+*style · pilot* · commands: `new` · style `kinetic-type`
+
+Vertical shorts made of words — each word lands on a spring when it is spoken, one accent bar travels between lines with the beat — plus a timeline, a process and a comparison of sizes drawn in the same type. No pictures to generate.
+
+**Use when:** Reels, Shorts and Telegram, 15–45 s — a thesis, a quote, a mechanism in a few steps.
+
+**How:** `npm run storygro -- new content/videos/<id> --style kinetic-type`
+
+**See:** [docs](../../production/styles/kinetic-type/README.md)
+
+### Kinetic and diagram scenes
+
+*scenes · pilot*
+
+Words that land as they are spoken (kinetic), an axis that lights up node by node (timeline), an isometric flow with a travelling token (process) and areas proportional to values with a camera that pulls back (scale).
+
+**Scenes:** `kinetic`, `timeline`, `process`, `scale`
+
+**Use when:** The kinetic-type style, or a typographic beat inside another reel; theme tokens fall back to cut-paper.
+
+**See:** [docs](../../docs/reference/scenes.md#kinetic)
+
+### Springs, beat grid and motion blur
+
+*method · pilot*
+
+Closed-form springs (spring, springs) instead of linear moves, the music's beat grid in every scene (ctx.beats) and on sound effects (snap), and motion blur from sub-frames (format.blur).
+
+**Use when:** Any new scene or reel that should move like a motion designer's work; principles from the reference notes.
+
+**How:** `kit.spring(t, t0, { from, to }); sfx: { at: cue, kind: pop, snap: beat }; format: { blur: 4 }`
+
+**See:** [docs](../../docs/reference/scene-contract.md#motion) · [references/awesome-opus5-5-videos.md](../../content/research/references/awesome-opus5-5-videos.md)
 
 ### Collage scene
 
@@ -409,6 +445,18 @@ Mark stress with `+` (зам+ок) or an acute (замо́к); by default RUAcce
 **Use when:** Every Russian script; check the plan's stress line and mark what RUAccent cannot know from context.
 
 **See:** [docs](../../docs/reference/voices.md)
+
+### Pronunciation dictionary and stress lookup
+
+*tool · pilot* · commands: `stress`
+
+Names and hard words with their stress for every Russian reel (production/voices/lexicon-ru.yaml), applied before synthesis; the plan flags capitalised words nobody checked; a lookup in ru.wikipedia and ru.wiktionary adds them with a quote; checked words are heard by a phoneme model, re-voiced when wrong and checked again in QA.
+
+**Use when:** Before voicing any Russian script with names, places or brands; after the plan shows «Ударение не проверено».
+
+**How:** `npm run storygro -- stress content/videos/<id>/ru.reel.yaml --lookup --write, read the diff, then storygro voice`
+
+**See:** [docs](../../docs/reference/voices.md#pronunciation-notes-russian) · [voices/lexicon-ru.yaml](../../production/voices/lexicon-ru.yaml) · [ballon-dor-kids/PLAN.ru.md](../../content/videos/ballon-dor-kids/PLAN.ru.md)
 
 ### Voice bench
 

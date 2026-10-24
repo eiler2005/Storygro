@@ -14,6 +14,14 @@ format: { width: 1080, height: 1920 }      # explicit size still works
 
 A preset only sets the canvas. A good vertical video also needs scenes composed for 9:16 — the cut-paper scenes are; the landscape product scenes (`chat`, `grid`, `spotlight`, `pins`, `end-card`, …) are not.
 
+## Motion blur
+
+```yaml
+format: { preset: vertical, fps: 30, blur: 4 }
+```
+
+`blur: N` captures N frames per output frame across half a frame interval (a 180° shutter) and averages them with ffmpeg's `tmix`, so fast springs and pushes smear the way a camera would. `1` (the default) is off. Rendering takes N times longer; `--draft` ignores it, and `storygro render <spec> --blur N` overrides it for one render. The manifest records the setting. Scenes need no change: every capture is still `draw(t)` at its own moment.
+
 ## Safe areas
 
 Platforms draw their interface over the video: the account name and caption at the bottom, the like/comment/share rail on the right, the header at the top. Text under that UI is unreadable. Storygro keeps per-platform margins in [`production/runtime/safe-zones.json`](../../production/runtime/safe-zones.json) and uses them three ways:

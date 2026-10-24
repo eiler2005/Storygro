@@ -726,6 +726,93 @@ Excerpt from the `prompt` entry of [slidecraft-demo](../../content/videos/slidec
         - { text: 'Claude, ChatGPT или Codex', at: paste, tone: blue }
 ```
 
+## Kinetic and diagram scenes
+
+Four scenes of the [`kinetic-type` style](../../production/styles/kinetic-type/README.md), drawn in type on a dark field. Colours and fonts come from the `--kt-*` theme tokens and fall back to the cut-paper tokens, so they also work inside a paper reel. All motion uses springs from the kit and is a pure function of time ([motion](scene-contract.md#motion)).
+
+## kinetic
+
+<img src="../media/scenes/kinetic.jpg" width="180" alt="A frame of the kinetic scene">
+
+Kinetic typography: each word lands on a spring at the moment the narrator says it (matched in order against the spoken words), new lines push the block up, older lines step back, and one accent bar travels to the latest marked line, pulsing on the beat. With the style's captions off, the words on screen are the captions.
+
+| Prop | Type | Required | Meaning |
+|---|---|---|---|
+| `lines` | array | Yes | At least one line. The scene throws when it is empty or a line has no `text`. |
+| `lines[].text` | string | Yes | The words on screen, written as they are said; bind with `textFrom`. |
+| `lines[].at` | cue or seconds | No (default: when the line's first word is spoken) | When the line appears; `-1` for frame 0. |
+| `lines[].weight` | `light`, `regular`, `heavy` | No (default `regular`; `heavy` for `slam`) | Weight of the display font (variable axis). |
+| `lines[].tone` | `ink`, `accent`, `accent2`, `cool`, `muted` or a CSS colour | No (default `ink`) | Colour. `accent` also moves the bar here. |
+| `lines[].mode` | `enter`, `slam`, `swap` | No (default `enter`) | `enter`: words rise in; `slam`: words drop from large; `swap`: `from` shows first, then turns into `text`, thin to heavy. |
+| `lines[].from` | string | For `swap` | The word shown before the swap. |
+| `lines[].swapAt` | cue or seconds | No (default: when `text` is spoken) | When the swap happens. |
+| `lines[].size` | 0.5–2 | No (default 1) | Size relative to the default (112 px on a 1080-wide vertical stage). |
+| `lines[].mark` | boolean | No (default: true for `tone: accent`) | Move the accent bar under this line. |
+| `kicker` | string | No | Small accent label above the block, visible from frame 0. |
+| `align` | `left`, `center` | No (default `left`) | Alignment of the block. |
+| `source` | string | No | Source line at the bottom, after the last word. |
+| `background` | CSS colour | No | Field colour instead of the theme's. |
+
+```yaml
+  - id: hook
+    scene: kinetic
+    say: 'Видео — это код. {#frame}Каждый кадр.'
+    props:
+      kicker: Storygro
+      lines:
+        - { text: 'Видео — это код.', at: -1 }
+        - { text: 'Каждый кадр.', tone: accent, mode: slam }
+```
+
+## timeline
+
+<img src="../media/scenes/timeline.jpg" width="180" alt="A frame of the timeline scene">
+
+An axis with nodes that light up one by one. The camera glides along the axis on a spring so the newest node sits in the middle, and the axis draws itself up to it. Vertical stages get a vertical axis, landscape stages a horizontal one.
+
+| Prop | Type | Required | Meaning |
+|---|---|---|---|
+| `nodes` | array | Yes | At least one node; each needs a `label`. |
+| `nodes[].label` | string | Yes | A year or a short name, large; bind with `labelFrom` (a year on screen must be in the data or `allowNumbers`). |
+| `nodes[].text` | string | No | A line under the label. |
+| `nodes[].at` | cue or seconds | No (default: when the label or text is spoken) | When the node lights up. |
+| `nodes[].tone` | tone or CSS colour | No (default `accent`) | Colour of the node. |
+| `title` | string | No | Heading above the axis. |
+| `source` | string | No | Source line at the bottom. |
+
+## process
+
+<img src="../media/scenes/process.jpg" width="180" alt="A frame of the process scene">
+
+A flow in isometric 2.5D: numbered stations on a zigzag (vertical) or a wave (landscape), and one glowing token that travels from station to station on cues, lighting each as it arrives while the path draws itself behind it. Step numbers are on screen: list them in the reel's `allowNumbers`.
+
+| Prop | Type | Required | Meaning |
+|---|---|---|---|
+| `steps` | array | Yes | At least two steps; each needs a `label`. |
+| `steps[].label` | string | Yes | The station's name. |
+| `steps[].sub` | string | No | A smaller line under the name. |
+| `steps[].at` | cue or seconds | No (default: when the label is spoken) | When the token arrives. |
+| `title` | string | No | Heading above the flow. |
+| `token` | string | No | A short word riding on the token. |
+| `source` | string | No | Source line at the bottom. |
+
+## scale
+
+<img src="../media/scenes/scale.jpg" width="180" alt="A frame of the scale scene">
+
+A comparison of sizes: circles (or squares) whose areas are proportional to the values, side by side on one baseline. Each appears on its cue and the camera pulls back until everything shown fits, so the jump from small to large is felt. The scene shows each value as written in the data and derives no new numbers; a value too small to read at the final zoom leaves its number to the label.
+
+| Prop | Type | Required | Meaning |
+|---|---|---|---|
+| `items` | array | Yes | At least one item with a positive value. |
+| `items[].value` | string | Yes | Bind with `valueFrom`: `8`, `1 000`, `3,5`, `$2B`, `12 млн` … |
+| `items[].label` | string | No | Under the shape; bind with `labelFrom`. |
+| `items[].tone` | tone or CSS colour | No (default alternating, the last in `accent`) | Colour of the shape. |
+| `items[].at` | cue or seconds | No (default: when the value or label is spoken) | When the item appears. |
+| `shape` | `circle`, `square` | No (default `circle`) | Shape of each item. |
+| `title` | string | No | Heading above. |
+| `source` | string | No | Source line at the bottom; bind with `sourceFrom`. |
+
 ## outro
 
 <img src="../media/scenes/outro.jpg" width="180" alt="A frame of the outro scene">

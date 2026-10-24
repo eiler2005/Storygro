@@ -1,0 +1,45 @@
+{
+  "_about": "Every number and name on screen, with its source (see sources.md). Checked 2026-10-24.",
+  "origin": {
+    "_source": "Wikipedia, Ballon d'Or: 'presented by French magazine France Football since 1956'; 'Stanley Matthews of England was the inaugural winner of the award.' 1956 Ballon d'Or: 'Stanley Matthews received the award on 18 December 1956'",
+    "year": { "value": "1956", "label": "первый «Золотой мяч»" },
+    "first": "Стэнли Мэтьюз, Англия",
+    "sourceLine": "Wikipedia: Ballon d'Or; France Football"
+  },
+  "matthews": {
+    "_source": "Wikipedia, Stanley Matthews: born 1 February 1915; award on 18 December 1956 → 41 years (our arithmetic)",
+    "age": { "value": "41", "label": "год было Мэтьюзу" },
+    "note": "Мэтьюзу — 41 год"
+  },
+  "vote": {
+    "_source": "ESPN, 24 Oct 2026: votes by 'selected international journalists', one per country from 'the top 100 nations in the FIFA men's world ranking'",
+    "countries": { "value": "100", "label": "стран — по журналисту" },
+    "sourceLine": "ESPN, 24.10.2026"
+  },
+  "yashin": {
+    "_source": "Wikipedia, Ballon d'Or: 'Lev Yashin is the only goalkeeper to have won the award.' Wikipedia, Lev Yashin: won 1963; nicknamed 'the Black Spider'; 'distinctive all-black outfit'",
+    "name": "Лев Яшин, СССР",
+    "year": { "value": "1963", "label": "единственный вратарь" },
+    "nickname": "«Чёрный паук»",
+    "sourceLine": "Wikipedia: Lev Yashin"
+  },
+  "records": {
+    "_source": "Sports Illustrated, modified 22 Sep 2025: Messi '8 (2009, 2010, 2011, 2012, 2015, 2019, 2021, 2023)'; Ronaldo '5 (2008, 2013, 2014, 2016, 2017)'; Platini, Cruyff, van Basten '3' each. Wikipedia: 'Lionel Messi holds the record for most Ballon d'Or wins with eight.'",
+    "messi": { "value": "8", "label": "Лионель Месси" },
+    "ronaldo": { "value": "5", "label": "Криштиану Роналду" },
+    "three": { "value": "3", "label": "Платини · Кройф · ван Бастен" },
+    "sourceLine": "Sports Illustrated, 22.09.2025"
+  },
+  "women": {
+    "_source": "Wikipedia, Ballon d'Or Féminin: 'first awarded in 2018, with Ada Hegerberg of Norway'; Aitana Bonmatí won 2023, 2024, 2025: 'the first player to win it three times, and three times in a row'",
+    "since": { "value": "2018", "label": "женский «Золотой мяч»" },
+    "aitana": { "value": "3", "label": "подряд — Айтана Бонмати" },
+    "note": "Бонмати — 3 раза подряд",
+    "sourceLine": "Wikipedia: Ballon d'Or Féminin"
+  },
+  "next": {
+    "_source": "ESPN, 24 Oct 2026: ceremony 'Monday, Oct. 26', London Palladium, 'held outside Paris for the first time'. Wikipedia, 2026 Ballon d'Or: '26 October 2026 at the London Palladium'",
+    "when": "26.10.2026 · Лондон",
+    "sourceLine": "ESPN, 24.10.2026"
+  }
+}

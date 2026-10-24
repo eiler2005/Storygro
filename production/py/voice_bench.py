@@ -32,9 +32,9 @@ import yaml
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import voice  # noqa: E402
+from phonemes import Phonemes, load16  # noqa: E402
 
 HOME = os.environ.get("STORYGRO_HOME") or os.path.expanduser("~/.storygro")
-PHONE_MODEL = "facebook/wav2vec2-xlsr-53-espeak-cv-ft"
 
 
 def words(text):
@@ -49,37 +49,6 @@ def wer(ref, hyp):
         for j, y in enumerate(b, 1):
             prev, d[j] = d[j], min(d[j] + 1, d[j - 1] + 1, prev + (x != y))
     return d[len(b)] / max(len(a), 1)
-
-
-class Phonemes:
-    def __init__(self):
-        import torch
-        from huggingface_hub import hf_hub_download
-        from transformers import AutoModelForCTC, Wav2Vec2FeatureExtractor
-
-        self.torch = torch
-        self.fe = Wav2Vec2FeatureExtractor.from_pretrained(PHONE_MODEL)
-        self.model = AutoModelForCTC.from_pretrained(PHONE_MODEL).eval()
-        self.vocab = {v: k for k, v in json.load(open(hf_hub_download(PHONE_MODEL, "vocab.json"))).items()}
-
-    def __call__(self, x16):
-        with self.torch.no_grad():
-            ids = self.model(self.fe(x16, sampling_rate=16000, return_tensors="pt").input_values).logits.argmax(-1)[0].tolist()
-        out, prev = [], None
-        for i in ids:
-            if i != prev and self.vocab.get(i) not in ("<pad>", "<s>", "</s>", None, "|"):
-                out.append(self.vocab[i])
-            prev = i
-        return " ".join(out)
-
-
-def load16(path):
-    from scipy.signal import resample_poly
-
-    a, sr = sf.read(path, dtype="float32")
-    if a.ndim > 1:
-        a = a.mean(1)
-    return resample_poly(a, 16000, sr).astype(np.float32)
 
 
 def lines_for(c, sentences, takes=1):

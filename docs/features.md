@@ -54,7 +54,7 @@ Durations come from the voice: rewrite a line and the whole video re-times; cues
 
 → [Write a script](how-to/write-a-script.md) · [Language variants](how-to/language-variants.md)
 
-## Nineteen animated scenes
+## Twenty-three animated scenes
 
 Each scene is a small JavaScript module whose frame is a pure function of time, so any moment renders identically in stills, storyboards and the final video.
 
@@ -80,6 +80,17 @@ Each scene is a small JavaScript module whose frame is a pure function of time, 
 **Illustrated**, for the `cartoon` style — generated pictures that change on cues with a slow camera move, and overlays drawn by the page:
 
 <p><img src="media/scenes/illustration.jpg" width="420" alt="illustration scene: a generated comic picture of a procurement manager with a headline band drawn on top"><br><sub><b>illustration</b> · shots, camera moves, headline band, number badge, labels, source line</sub></p>
+
+**Kinetic type**, for the `kinetic-type` style — words that land as they are spoken, and diagrams in the same type, all on springs and the music's beat:
+
+<table>
+  <tr>
+    <td align="center" valign="top"><img src="media/scenes/kinetic.jpg" width="150" alt="kinetic scene: Video is code. Every frame is a function of time, with an accent bar"><br><sub><b>kinetic</b><br>words on the voice</sub></td>
+    <td align="center" valign="top"><img src="media/scenes/timeline.jpg" width="150" alt="timeline scene: Script, Voice, Frames on a vertical axis"><br><sub><b>timeline</b><br>an axis, node by node</sub></td>
+    <td align="center" valign="top"><img src="media/scenes/process.jpg" width="150" alt="process scene: four isometric stations with a travelling token"><br><sub><b>process</b><br>isometric flow</sub></td>
+    <td align="center" valign="top"><img src="media/scenes/scale.jpg" width="150" alt="scale scene: circles of 33% and 94% with the Anthropic source line"><br><sub><b>scale</b><br>sizes compared</sub></td>
+  </tr>
+</table>
 
 **Landscape product scenes**, from the SlideCraft launch film:
 

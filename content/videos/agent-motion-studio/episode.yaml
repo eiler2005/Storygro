@@ -1,0 +1,8 @@
+episode: 1
+id: agent-motion-studio
+title: "Как агент собирает ролик из кода"
+series: product-demos
+sources: sources.md
+credits: CREDITS.md
+variants:
+  - { id: ru, spec: ru.reel.yaml }

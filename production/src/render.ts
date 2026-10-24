@@ -84,13 +84,17 @@ export async function stills(
 export async function frames(
   l: LoadedSpec,
   tl: Timeline,
-  opts: { scale?: number; fps?: number; out: string; from?: number; to?: number },
+  opts: { scale?: number; fps?: number; blur?: number; out: string; from?: number; to?: number },
 ): Promise<string> {
   const scale = opts.scale ?? 1;
   const fps = opts.fps ?? tl.fps;
   const from = opts.from ?? 0;
   const to = Math.min(opts.to ?? tl.duration, tl.duration);
   const n = Math.ceil((to - from) * fps);
+  // motion blur: `blur` captures per frame spread over half a frame (180° shutter), averaged by tmix;
+  // select keeps the last capture of each group, whose window is exactly that frame's captures
+  const blur = Math.max(1, Math.round(opts.blur ?? tl.blur ?? 1));
+  const average = blur > 1 ? [`tmix=frames=${blur}`, `select='eq(mod(n\\,${blur})\\,${blur - 1})'`, 'setpts=PTS-STARTPTS'] : [];
   const p = await openPlayer(l, tl, scale);
   try {
     await assertNoErrors(p.tab, 'render');
@@ -107,7 +111,7 @@ export async function frames(
       '-f',
       'image2pipe',
       '-framerate',
-      String(fps),
+      String(fps * blur),
       '-c:v',
       'mjpeg',
       '-i',
@@ -123,7 +127,9 @@ export async function frames(
       // screenshots are full-range BT.601 JPEG; deliver limited-range BT.709 yuv420p, tagged,
       // or some players shift the colours (yuvj420p)
       '-vf',
-      'scale=in_range=pc:in_color_matrix=bt601:out_range=tv:out_color_matrix=bt709,format=yuv420p',
+      [...average, 'scale=in_range=pc:in_color_matrix=bt601:out_range=tv:out_color_matrix=bt709,format=yuv420p'].join(','),
+      '-r',
+      String(fps),
       '-color_range',
       'tv',
       '-colorspace',
@@ -145,9 +151,12 @@ export async function frames(
   const t0 = Date.now();
   try {
     for (let i = 0; i < n; i++) {
-      await p.tab.eval(`reel.seek(${from + i / fps})`);
-      const jpg = await p.tab.shot('jpeg', 95);
-      if (!enc.stdin.write(jpg)) await new Promise((r) => enc.stdin.once('drain', r));
+      for (let j = 0; j < blur; j++) {
+        const T = Math.min(from + (i + (0.5 * j) / blur) / fps, tl.duration - 1e-3);
+        await p.tab.eval(`reel.seek(${T})`);
+        const jpg = await p.tab.shot('jpeg', 95);
+        if (!enc.stdin.write(jpg)) await new Promise((r) => enc.stdin.once('drain', r));
+      }
       if (i % fps === 0 || i === n - 1) {
         const el = (Date.now() - t0) / 1000;
         process.stdout.write(`\r  frames ${i + 1}/${n}  ${(((i + 1) / el) | 0) || 0} fps  eta ${Math.round(((n - i - 1) * el) / (i + 1))}s   `);

@@ -35,6 +35,8 @@ export default {
 | `id` | scene id |
 | `props` | the scene's props, data bindings resolved |
 | `duration` | scene length in seconds |
+| `start` | reel seconds where the scene starts |
+| `beats` | the music's beat grid in scene seconds — see [Motion](#motion) |
 | `voiceAt` | seconds into the scene where the voice starts |
 | `cues` | `{ name: seconds }` — every `{#cue}` plus `start`, `voice`, `end` |
 | `words` | `[{ w, start, end }]` — spoken words in scene seconds, in caption spelling |
@@ -47,7 +49,33 @@ export default {
 
 ## `kit` (production/runtime/kit.js)
 
-`clamp`, `lerp`, `ease.{linear,out,in,inOut,outBack,outElastic,outQuint}`, `p(t, t0, dur, ease)` progress 0..1, `win(t, t0, t1, fade)` in-hold-out window, `h(tag, attrs, ...children)` DOM/SVG builder, `set(el, styles)`, `fadeUp`, `pop`, `type(t, t0, text, cps)` typewriter, `count(t, t0, dur, from, to, fmt)`, `rand(seed)`, `cue(ctx, name, fallback)`, `drift(t, amount)` camera drift transform, `icon.{tick,cross,bang}(size, color)` SVG strings.
+`clamp`, `lerp`, `ease.{linear,out,in,inOut,outBack,outElastic,outQuint}`, `p(t, t0, dur, ease)` progress 0..1, `win(t, t0, t1, fade)` in-hold-out window, `h(tag, attrs, ...children)` DOM/SVG builder, `set(el, styles)`, `fadeUp`, `pop`, `type(t, t0, text, cps)` typewriter, `count(t, t0, dur, from, to, fmt)`, `rand(seed)`, `cue(ctx, name, fallback)`, `drift(t, amount)` camera drift transform, `icon.{tick,cross,bang}(size, color)` SVG strings, and the motion helpers below.
+
+## Motion
+
+Helpers in `kit.js`, all pure functions of time:
+
+| Helper | Use |
+|---|---|
+| `spring(t, t0, { from, to, stiffness, damping, mass })` | a damped spring released at `t0`, in closed form; the defaults settle in about 0.5 s with a 3 % overshoot. `damping` ≥ 2·√(stiffness·mass) never overshoots |
+| `springs(t, from, [{ at, to }], opts)` | a value that changes target several times: one spring per change, summed, so it never jumps |
+| `ctx.beats.at(n)` | scene time of the reel's beat `n` |
+| `ctx.beats.next(t, step)`, `ctx.beats.snap(t, step)` | the next or the nearest grid point; `step` in beats (1 a beat, 0.5 a half beat, 4 a bar) |
+| `ctx.beats.index(t, step)` | which beat is playing |
+| `ctx.beats.pulse(t, decay, step)` | 1 on every grid point, decaying towards 0 — accents that breathe with the music |
+
+The grid is the one `score.py` plays: `music.bpm`, with bars counted so that `music.drop` lands on a downbeat. A sound effect follows it with `snap: beat | half | bar` ([writing a reel](../how-to/write-a-script.md#the-spec)). Scene boundaries stay where the voice puts them.
+
+Principles that keep code-drawn motion from looking mechanical (from the [reference notes](../../content/research/references/awesome-opus5-5-videos.md)):
+
+- springs or eased curves, never linear movement for things that arrive or leave;
+- one object carries the story from shot to shot — an accent shape or word moves into the next composition instead of everything cutting at once;
+- a main movement leads and smaller ones overlap under it; nothing starts and stops all at once;
+- every action leaves a visible result (a tap makes a new state, a step lights a station);
+- things land slowly enough to read and leave fast;
+- vary the scale — close, wide, full-frame type — instead of repeating one layout.
+
+Motion blur is a format setting, not scene code: `format.blur` ([formats](formats.md#motion-blur)).
 
 ## Paper kit (production/runtime/paper.js)
 

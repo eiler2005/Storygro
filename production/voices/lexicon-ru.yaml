@@ -1,0 +1,108 @@
+# How the Russian narrator says names and hard words, for every reel in every episode.
+#
+# py/stress.py applies an entry to every Russian line before synthesis (after the author's own marks,
+# which always win; before RUAccent's homographs). Engines get the stress in the form they read
+# (Qwen3: an uppercase vowel). Adding an entry re-voices only the lines that contain it.
+#
+#   word    the written form in the script (any case)
+#   say     the same word with `+` before the stressed vowel; letters may be respelled
+#   forms   other case forms: a list (the stress stays on the same letter as in `say`) or a map
+#           form → say for forms whose letters change
+#   source  where the stress was checked (a dictionary or an encyclopaedia, quoted) — required
+#   check   optional: espeak-IPA patterns (regex) for the right and the wrong reading, from the voice
+#           bench. Narration tries another take (up to three) when a checked word comes out wrong,
+#           and QA listens for it again in the final voice track.
+#   mark    false: keep the stress here and check it, but give the engine the word unmarked — for words
+#           the engine reads right on its own and worse with a mark (Qwen3: «ЗолотОй»)
+#
+# Find words that need an entry: `storygro stress <spec>`; look them up online and add them with
+# `storygro stress <spec> --lookup --write` (ru.wikipedia, ru.wiktionary), then read the diff.
+lexicon: 1
+words:
+  - word: Месси
+    say: М+есси
+    source: 'ru.wikipedia, «Месси, Лионель»: «Лионе́ль Андре́с Ме́сси Куччитти́ни»'
+    # bench 24.10.2026, Qwen3 speed 1.12: unmarked 0/3 takes right (`m i s i`, `m i i`), marked 2/3
+    # (`m e s i`); the recogniser often drops the сс, so the pattern looks only at the vowel after м
+    check: { right: 'm [eɛ]', wrong: 'm [iɪ]' }
+  - word: Лионель
+    say: Лион+ель
+    forms: [Лионеля, Лионелю, Лионелем, Лионеле]
+    # bench 24.10.2026: marked 4/4 takes right (`e a ɲ e l` — the о reduces); the cartoon kept a wrong
+    # take (`i o ɲ`, «Лио́неля»), so the word is checked and re-voiced when it comes out wrong
+    check: { right: '[ie] [aɐəʌ]ː? ?[nɲ]', wrong: '[ie] [oʊu]ː? ?[nɲ]' }
+    source: 'ru.wikipedia, «Месси, Лионель»: «Лионе́ль Андре́с Ме́сси»'
+  - word: Платини
+    say: Платин+и
+    source: 'ru.wikipedia, «Платини, Мишель»: «Мише́ль Франсуа́ Платини́»'
+  - word: Кройф
+    say: Кр+ойф
+    forms: [Кройфа, Кройфу, Кройфом, Кройфе]
+    source: 'ru.wikipedia, «Кройф, Йохан»: «Хе́ндрик Йо́ханнес (Йо́хан) Кройф», нидерл. [ˈkrœyf] — один слог'
+  - word: Бонмати
+    say: Бонмат+и
+    source: 'ru.wikipedia, «Бонмати, Айтана»: «Айта́на Бонмати́ Ко́нка»'
+  - word: Айтана
+    say: Айт+ана
+    forms: [Айтаны, Айтане, Айтану, Айтаной]
+    source: 'ru.wikipedia, «Бонмати, Айтана»: «Айта́на Бонмати́ Ко́нка»'
+  - word: Золотой
+    say: Золот+ой
+    # bench 24.10.2026: unmarked 4/4 takes right (`z u l`, `z a l`), marked «ЗолотОй» only 2/4; the
+    # cartoon said «Зо́лотой» four times out of four. So: no mark, a check, another take when wrong
+    mark: false
+    check: { right: '[zs] [aɐəʌʊɨɪuei]ː? l', wrong: '[zs] oː? l' }
+    source: 'ru.wikipedia, «Золотой»: «…Золото́й — нечто, изготовленное из золота. Также…» (storygro stress --lookup, 2026-10-24)'
+  - word: Стэнли
+    say: Ст+энли
+    source: 'ru.wikipedia, «Кубрик, Стэнли»: «…Стэ́нли Ку́брик (англ. Stanley Kubrick [ˈkuːbrɪ…» (storygro stress --lookup, 2026-10-24)'
+  - word: Мэтьюз
+    say: М+этьюз
+    source: 'ru.wikipedia, «Мэтьюз»: «…Ма́тьюз, Мэ́тьюз (Мэ́тьюс, Ма́тьюс) (англ. Mathews) — ан…» (storygro stress --lookup, 2026-10-24)'
+  - word: Яшин
+    say: +Яшин
+    source: 'ru.wikipedia, «Яшин, Лев Иванович»: «…Лев Ива́нович Я́шин (22 октября 1929, Москва — 20 марта 199…» (storygro stress --lookup, 2026-10-24)'
+  - word: Золотых
+    say: Золот+ых
+    check: { right: '[zs] [aɐəʌʊɨɪuei]ː? l', wrong: '[zs] oː? l' }
+    source: 'ru.wiktionary, «золотой»: «…Р. золото́го золото́го золото́й золоты́х Д. золото́му золото́му золот…» (storygro stress --lookup, 2026-10-24)'
+  - word: Криштиану
+    say: Кришти+ану
+    source: 'ru.wikipedia, «Криштиану Роналду»: «…Криштиа́ну Рона́лду душ Са́нтуш Аве́йру (порт. Cri…» (storygro stress --lookup, 2026-10-24)'
+  - word: Роналду
+    say: Рон+алду
+    source: 'ru.wikipedia, «Криштиану Роналду»: «…Криштиа́ну Рона́лду душ Са́нтуш Аве́йру (порт. Cristiano Ro…» (storygro stress --lookup, 2026-10-24)'
+  - word: Бастен
+    say: Б+астен
+    source: 'ru.wikipedia, «Ван Бастен, Марко»: «…Ма́рсел ван Ба́стен (нид. Marcel van Basten; род. 31 октябр…» (storygro stress --lookup, 2026-10-24)'
+  - word: Париже
+    say: Пар+иже
+    source: 'ru.wikipedia, «Она была в Париже»: «…«Она́ была́ в Пари́же» (по первой строке известна как «Наверн…» (storygro stress --lookup, 2026-10-24)'
+  - word: Лондоне
+    say: Л+ондоне
+    source: 'ru.wiktionary, «Лондон»: «…Ло́ндоном Ло́ндонами Пр. Ло́ндоне Ло́ндонах Ло́н - д…» (storygro stress --lookup, 2026-10-24)'
+  - word: Клода
+    say: Кл+ода
+    source: 'ru.wiktionary, «Клод»: «…Им. Кло́д Кло́ды Р. Кло́да Кло́дов Д. Кло́ду Кло́…» (storygro stress --lookup, 2026-10-24)'
+  - word: Реплит
+    say: Р+еплит
+    # the lookup matched the verb «реплить» (ре́плит) — the same stress by coincidence, not a source for the brand
+    source: 'Replit (brand), English [ˈrɛplɪt]: stress on the first syllable; checked by hand 2026-10-24'
+  - word: Слайдкрафт
+    say: Сл+айдкрафт
+    source: 'SlideCraft (the owner''s product), English [ˈslaɪdkræft]: stress on the first syllable; added by hand 2026-10-24'
+  - word: Канаде
+    say: Кан+аде
+    source: 'ru.wiktionary, «Канада»: «…Р. Кана́ды Кана́д Д. Кана́де Кана́дам В. Кана́ду Ка…» (storygro stress --lookup, 2026-10-24)'
+  - word: Международной
+    say: Междунар+одной
+    source: 'ru.wikipedia, «Разрядка международной напряжённости»: «…Разря́дка междунаро́дной напряжённости (в средствах массовой инф…» (storygro stress --lookup, 2026-10-24)'
+  - word: Высшей
+    say: В+ысшей
+    source: 'ru.wikipedia, «Кубок Высшей лиги»: «…Ку́бок Вы́сшей ли́ги (латыш. Virslīgas kauss) — футбол…» (storygro stress --lookup, 2026-10-24)'
+  - word: России
+    say: Росс+ии
+    source: 'ru.wiktionary, «Россия»: «…мн. ч. Им. Росси́я Росси́и Р. Росси́и Росси́й…» (storygro stress --lookup, 2026-10-24)'
+  - word: Штатах
+    say: Шт+атах
+    source: 'ru.wiktionary, «Штаты»: «…— Шта́тами Пр. — Шта́тах Шта́ - ты Существ…» (storygro stress --lookup, 2026-10-24)'

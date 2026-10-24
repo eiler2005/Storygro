@@ -1,0 +1,50 @@
+# English frames of the kinetic-type scenes for the documentation gallery. Not a video to publish.
+# `voice: none` estimates timings; stills are taken by `npm run docs:media`.
+reel: 1
+style: kinetic-type
+title: Storygro kinetic gallery
+lang: en
+voice: { engine: none }
+data: { facts: facts.json }
+allowNumbers: ['1', '2', '3', '4']
+format: { preset: vertical, fps: 30, blur: 1 }
+stills: { kinetic: kinetic@4.4, timeline: timeline@4.6, process: process@4.4, scale: scale@4.8 }
+scenes:
+  - id: kinetic
+    scene: kinetic
+    say: 'Video is code. {#frame}Every frame is a function of time.'
+    props:
+      kicker: Storygro
+      lines:
+        - { text: 'Video is code.', at: -1 }
+        - { text: 'Every frame is', weight: light }
+        - { text: 'a function of time.', tone: accent, weight: heavy }
+  - id: timeline
+    scene: timeline
+    say: 'First the {#script}script, then the {#voice}voice, then the {#frames}frames.'
+    props:
+      title: How a reel is made
+      nodes:
+        - { label: Script, text: facts and narration as data, at: script }
+        - { label: Voice, text: sets the timing, at: voice }
+        - { label: Frames, text: drawn in headless Chrome, at: frames }
+  - id: process
+    scene: process
+    say: 'Script, {#voice}voice, {#frames}frames, {#qa}checks.'
+    props:
+      title: The pipeline
+      token: frame
+      steps:
+        - { label: Script, sub: YAML and facts, at: 0.2 }
+        - { label: Voice, sub: sets the timing, at: voice }
+        - { label: Frames, sub: draw(t), at: frames }
+        - { label: Checks, sub: QA before release, at: qa }
+  - id: scale
+    scene: scale
+    say: 'What a model could do, {#did}and what it covered.'
+    props:
+      title: Computer and math tasks
+      items:
+        - { valueFrom: facts.anthropic.bars.1.display, labelFrom: facts.anthropic.bars.1.label, at: 0.3 }
+        - { valueFrom: facts.anthropic.bars.0.display, labelFrom: facts.anthropic.bars.0.label, at: did }
+      sourceFrom: facts.anthropic.source

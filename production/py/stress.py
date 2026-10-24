@@ -5,6 +5,8 @@ Measured on 20–21 Oct 2026 (docs/reference/voices.md): Qwen3-TTS and Chatterbo
 one form only, so the script marks stress one way and this module renders it per engine:
 
   author marks   `+` before the stressed vowel (`зам+ок`) or a combining acute after it (`замо́к`)
+  lexicon        names and hard words from production/voices/lexicon-ru.yaml, in every reel (Ме́сси,
+                 Пари́ж …), with their case forms; checked against a dictionary when they are added
   auto (default) RUAccent (Apache-2.0) chooses, from the sentence, the stress of the homographs
                  listed in homographs-ru.txt (замок, стоит, органе …) and ё in pairs like все/всё;
                  other words stay unmarked: marking every word made Qwen3 sound worse ("моджели"),
@@ -81,6 +83,81 @@ def _token_type_ids(accent):
         session, tokenizer = getattr(model, "session", None), getattr(model, "tokenizer", None)
         if session is not None and tokenizer is not None and "token_type_ids" in {i.name for i in session.get_inputs()}:
             model.tokenizer = _WithTokenTypes(tokenizer)
+
+
+def _form_say(say, form):
+    """The `+` of `say` moved onto a case form that shares the letters before the stress."""
+    i = say.index("+")
+    stem = say[:i]
+    if key(form[:i]) != key(stem):
+        raise ValueError(f"lexicon: form {form!r} does not share the start of {say!r}; give it as form: say")
+    return form[:i] + "+" + form[i:]
+
+
+_LEX = None
+
+
+def use_lexicon(forms):
+    """The dictionary as the narration job gives it (resolved by production/src/lexicon.ts):
+    {form (lower case, ё as е): {"say": "Пар+иже", "check": {...} | None}}."""
+    global _LEX
+    _LEX = {k: (to_plus(v["say"]), {"check": v.get("check"), "mark": v.get("mark", True)}) for k, v in (forms or {}).items()}
+
+
+def lexicon():
+    """Dictionary entries by written form: {form: (say, entry)}. Set by the narration job; the voice bench
+    reads production/voices/lexicon-ru.yaml itself (it needs PyYAML, which the bench environment has)."""
+    global _LEX
+    if _LEX is None:
+        import os
+
+        path = os.path.join(os.path.dirname(__file__), "..", "voices", "lexicon-ru.yaml")
+        _LEX = {}
+        try:
+            import yaml
+        except ImportError:
+            return _LEX
+        if os.path.exists(path):
+            for e in (yaml.safe_load(open(path, encoding="utf8")) or {}).get("words", []):
+                say = to_plus(e["say"])
+                _LEX[key(e["word"])] = (say, e)
+                forms = e.get("forms") or []
+                pairs = forms.items() if isinstance(forms, dict) else ((f, None) for f in forms)
+                for form, fsay in pairs:
+                    _LEX[key(form)] = (to_plus(fsay) if fsay else _form_say(say, form), e)
+    return _LEX
+
+
+def apply_lexicon(text):
+    """Dictionary stress (and spelling) for every unmarked word that has an entry. Returns the text and
+    the decisions; the author's own marks win."""
+    lex = lexicon()
+    if not lex:
+        return text, []
+    decisions, parts, last = [], [], 0
+    for m in WORD.finditer(text):
+        w = m.group(0)
+        if "+" in w or ACUTE in w or key(w) not in lex:
+            continue
+        say, entry = lex[key(w)]
+        if entry.get("mark") is False:  # stress known and checked, but the engine reads it better unmarked
+            decisions.append({"word": w, "stressed": say, "by": "lexicon"})
+            continue
+        if w[0].isupper():
+            say = say[0].upper() + say[1:]
+        elif say[0].isupper() and not w[0].isupper():
+            say = say[0].lower() + say[1:]
+        parts += [text[last : m.start()], say]
+        last = m.end()
+        decisions.append({"word": w, "stressed": say, "by": "lexicon"})
+    parts.append(text[last:])
+    return "".join(parts), decisions
+
+
+def checks_for(word):
+    """The phoneme check of a dictionary word (by any of its forms), or None."""
+    hit = lexicon().get(key(word))
+    return hit[1].get("check") if hit else None
 
 
 def to_plus(text):
@@ -175,11 +252,13 @@ def prepare(text, style, mode="auto", scope="homographs"):
         return text, []
     if mode == "off":
         return render(text, "none"), []
+    text, from_lexicon = apply_lexicon(to_plus(text))
+    dict_words = {d["stressed"] for d in from_lexicon}
     if mode == "marks":
         marked = to_plus(text)
-        return render(marked, style), [{"word": bare(w), "stressed": w, "by": "author"} for w in WORD.findall(marked) if "+" in w]
+        return render(marked, style), from_lexicon + [{"word": bare(w), "stressed": w, "by": "author"} for w in WORD.findall(marked) if "+" in w and w not in dict_words]
     marked, decisions = homographs(text, everything=scope == "all")
-    return render(marked, style), decisions
+    return render(marked, style), from_lexicon + [d for d in decisions if not (d["by"] == "author" and d["stressed"] in dict_words)]
 
 
 def clean(word):

@@ -221,14 +221,60 @@ def synth_line(provider, text, language, speed=1.0, stress="auto"):
     }
 
 
+TAKES = 3  # takes of a line whose checked dictionary word comes out wrong (sampling engines)
+
+
+def check_words(audio, sr, meta):
+    """Phoneme checks of the dictionary words in a line that carry one: [{word, ok, phones}]."""
+    import phonemes
+
+    todo = []
+    for w in meta["words"]:
+        m = stress_marks.WORD.search(w["w"])
+        check = stress_marks.checks_for(m.group(0)) if m else None
+        if check:
+            todo.append((m.group(0), w, check))
+    if not todo or phonemes.model() is None:
+        return []
+    a16 = phonemes.to16(audio, sr)
+    out = []
+    for word, w, check in todo:
+        ok, phones = phonemes.word_check(a16, w["start"], w["end"], check)
+        out.append({"word": word, "ok": ok, "phones": phones})
+    return out
+
+
+def checked_line(provider, text, language, speed, stress):
+    """synth_line, and another take (another seed) while a checked dictionary word comes out wrong."""
+    best = None
+    for take in range(TAKES if hasattr(provider, "take") else 1):
+        if hasattr(provider, "take"):
+            provider.take = take
+        audio, meta = synth_line(provider, text, language, speed, stress)
+        checks = check_words(audio, provider.sample_rate, meta) if language == "ru" else []
+        wrong = sum(1 for c in checks if c["ok"] is False)
+        if checks:
+            meta["checked"] = [{**c, "take": take} for c in checks]
+        if best is None or wrong < best[0]:
+            best = (wrong, audio, meta)
+        if not wrong:
+            break
+        print(f"  stress check: {', '.join(c['word'] for c in checks if c['ok'] is False)} wrong in take {take + 1}; another take", flush=True)
+    if hasattr(provider, "take"):
+        provider.take = 0
+    return best[1], best[2]
+
+
 def main():
     job = json.load(open(sys.argv[1]))
     engine = job.get("engine", "kokoro")
     provider = importlib.import_module(f"voices.{engine}").Provider(job)
     language = job.get("language", "en")
+    if "lexicon" in job:
+        stress_marks.use_lexicon(job["lexicon"])
     info = provider.info()
     for line in job["lines"]:
-        audio, meta = synth_line(provider, line["say"], language, job.get("speed", 1.0), job.get("stress", "auto"))
+        audio, meta = checked_line(provider, line["say"], language, job.get("speed", 1.0), job.get("stress", "auto"))
         aligned = meta.pop("aligned")
         if not meta["stress"]:
             meta.pop("stress")
@@ -239,6 +285,9 @@ def main():
         print(f"voice {line['id']}: {meta['duration']:.2f}s, {len(meta['words'])} words{warn}", flush=True)
         for d in meta.get("stress", []):
             print(f"  stress: {d['word']} → {d['stressed']} ({d['by']})", flush=True)
+        for c in meta.get("checked", []):
+            verdict = "right" if c["ok"] else "WRONG" if c["ok"] is False else "unclear"
+            print(f"  stress check: {c['word']} {verdict} (take {c['take'] + 1}: {c['phones']})", flush=True)
 
 
 if __name__ == "__main__":

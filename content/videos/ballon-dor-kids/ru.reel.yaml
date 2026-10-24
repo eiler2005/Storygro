@@ -1,0 +1,163 @@
+# «Золотой мяч: кто самый лучший?» — короткий мультик для детей (6–10 лет): что такое «Золотой мяч»,
+# откуда он взялся, кто его выбирает и у кого больше всех. Ведёт сам мяч — Златик, рядом юная
+# футболистка Маша. Футболисты на картинках — обобщённые мультяшные фигуры в цветах команд, не портреты:
+# имена и числа — только подписями из facts.json (источники в sources.md).
+reel: 1
+style: cartoon
+title: 'Золотой мяч: кто самый лучший?'
+lang: ru
+format: { preset: vertical, fps: 30 }
+voice: { engine: qwen3, voice: assets/voice/narrator-ru.wav, speed: 1.12 }
+music: { bpm: 120, key: C, progression: [I, V, vi, IV], gain: 0.17, drop: hook#gold }
+loudness: -14
+brand: ../../brand.yaml
+data: { facts: facts.json }
+stills: { cover: hook@best, yashin: yashin@only, records: records@messi, close: close@you }
+images:
+  seed: 31
+  width: 720
+  height: 1280
+  prompt: >-
+    Cute bright children's cartoon illustration in a modern picture-book style, soft rounded shapes,
+    clean thick outlines, cheerful saturated colours, soft warm lighting, tall vertical composition with
+    the upper quarter of the frame kept calm and simple. {subject}. No text, no letters, no numbers, no
+    logos, no flags, no watermark.
+  cast:
+    ball: >-
+      Zlatik, a small round shiny golden football with a big happy cartoon face, large sparkly eyes,
+      rosy cheeks, tiny arms in white gloves and short legs in red sneakers
+    kid: >-
+      Masha, a cheerful eight-year-old girl with two ginger pigtails and freckles, wearing a plain green
+      t-shirt without any print, blue shorts and white football boots
+post:
+  title: 'Золотой мяч: кто самый лучший? Мультик для детей'
+  text: |
+    Что такое «Золотой мяч», кто его придумал и у кого их больше всех? Короткий мультик для юных болельщиков: первый победитель Стэнли Мэтьюз, единственный вратарь-лауреат Лев Яшин, рекорд Лионеля Месси и женский «Золотой мяч» Айтаны Бонмати.
+
+    Златик, Маша и футболисты на картинках — нарисованные персонажи, а не портреты. Имена, годы и числа — из открытых источников, проверены 24 октября 2026 года (список в описании выпуска). Голос синтезирован (Qwen3-TTS), картинки сгенерированы (Z-Image-Turbo).
+  tags: [футбол, золотоймяч, детям, мультик, Месси, Яшин]
+scenes:
+  - id: hook
+    scene: illustration
+    say: 'Привет! Знаешь, какой мяч в футболе самый главный? {#gold}Тот, которым не играют! {#best}Это «Золотой мяч». Его вручают лучшему футболисту года.'
+    pad: [0.1, 0.35]
+    energy: 0.5
+    sfx: [{ at: gold, kind: chime, gain: 0.5, snap: half }, { at: best, kind: pop, gain: 0.4 }]
+    props:
+      shots:
+        - { image: shots/hook-1.jpg, prompt: '@ball waving hello in the middle of a sunny green football pitch, @kid smiling and waving behind him, a stadium with cheerful fans far in the background', move: in, focus: { x: 0.5, y: 0.6 } }
+        - { at: gold, image: shots/hook-2.jpg, prompt: '@ball standing proudly on a small red velvet pedestal under a bright spotlight, glittering sparkles all around him, happy cartoon fans cheering in the stands', move: out, focus: { x: 0.5, y: 0.6 } }
+      title: { text: Золотой мяч, at: gold }
+
+  - id: origin
+    scene: illustration
+    say: 'Его придумал французский журнал France Football {#year}в [1956](=тысяча девятьсот пятьдесят шестом) году. {#first}Первым победителем стал англичанин Стэнли Мэтьюз. {#age}Ему был уже сорок один год!'
+    pad: [0.1, 0.35]
+    energy: 0.5
+    sfx: [{ at: year, kind: pop, gain: 0.4 }, { at: age, kind: ding, gain: 0.35, snap: half }]
+    props:
+      shots:
+        - { image: shots/origin-1.jpg, prompt: 'a cosy old-fashioned 1950s magazine office with round typewriters, desk lamps and stacks of plain blank magazines, @ball peeking curiously out of an open desk drawer', move: in, focus: { x: 0.5, y: 0.65 } }
+        - { at: first, image: shots/origin-2.jpg, prompt: 'a cheerful slim footballer with neat grey hair and a kind smile in a plain tangerine orange shirt and white shorts, old brown leather boots, dribbling a brown leather ball on a 1950s football pitch on a sunny day', move: right, focus: { x: 0.5, y: 0.6 } }
+      badge: { valueFrom: facts.origin.year.value, labelFrom: facts.origin.year.label, at: year, until: first, side: left }
+      title: { textFrom: facts.origin.first, at: first }
+      labels:
+        - { textFrom: facts.matthews.note, x: 0.4, y: 0.47, at: age, tone: mustard }
+      source: { textFrom: facts.origin.sourceLine }
+
+  - id: vote
+    scene: illustration
+    say: 'А кто выбирает победителя? {#who}Спортивные журналисты, {#hundred}по одному из ста стран. Каждый называет своих лучших, почти как когда выбирают капитана во дворе!'
+    pad: [0.1, 0.35]
+    energy: 0.55
+    sfx: [{ at: hundred, kind: hit, gain: 0.4, snap: beat }]
+    props:
+      shots:
+        - { image: shots/vote-1.jpg, prompt: 'a long table of friendly cartoon sports journalists of many different looks with laptops and microphones, each happily raising a plain blank card, @ball sitting in the middle of the table', move: out, focus: { x: 0.5, y: 0.6 } }
+        - { at: hundred, image: shots/vote-2.jpg, prompt: 'a big round globe surrounded by many tiny cartoon journalists holding plain blank envelopes, a flying swirl of envelopes heading to @ball', move: in, focus: { x: 0.5, y: 0.55 } }
+      title: { text: Кто выбирает?, at: who, until: hundred }
+      badge: { valueFrom: facts.vote.countries.value, labelFrom: facts.vote.countries.label, at: hundred }
+      source: { textFrom: facts.vote.sourceLine }
+
+  - id: yashin
+    scene: illustration
+    say: 'А вот наш герой, советский вратарь Лев Яшин. {#year}В [1963](=тысяча девятьсот шестьдесят третьем) году «Золотой мяч» достался ему. {#only}Он до сих пор единственный вратарь-победитель! {#spider}За тёмную форму его прозвали «Чёрный паук».'
+    pad: [0.1, 0.35]
+    energy: 0.6
+    sfx: [{ at: year, kind: pop, gain: 0.4 }, { at: spider, kind: whoosh, gain: 0.4 }]
+    props:
+      shots:
+        - { image: shots/yashin-1.jpg, prompt: 'a tall friendly cartoon goalkeeper in a plain all-black long-sleeved jersey, black flat cap and big gloves, standing confidently in front of a goal on a snowy 1960s pitch, gentle snowflakes', move: in, focus: { x: 0.5, y: 0.6 } }
+        - { at: spider, image: shots/yashin-2.jpg, prompt: 'the same tall cartoon goalkeeper in a plain all-black jersey and black flat cap flying sideways in a spectacular dive to catch the ball, long arms and legs stretched like a playful spider, a goal behind him', move: out, focus: { x: 0.5, y: 0.55 } }
+      title: { textFrom: facts.yashin.name, at: -1, until: year }
+      badge: { valueFrom: facts.yashin.year.value, labelFrom: facts.yashin.year.label, at: year, until: spider, side: left }
+      labels:
+        - { textFrom: facts.yashin.nickname, x: 0.4, y: 0.22, at: spider, tone: red }
+      source: { textFrom: facts.yashin.sourceLine }
+
+  - id: records
+    scene: illustration
+    say: 'Теперь рекорды! {#messi}У аргентинца Лионеля Месси восемь «Золотых мячей», больше всех в истории!'
+    pad: [0.1, 0.3]
+    energy: 0.8
+    sfx: [{ at: messi, kind: chime, gain: 0.5, snap: half }]
+    props:
+      shots:
+        - { image: shots/records-1.jpg, prompt: '@ball holding a shiny golden trophy cup and jumping with excitement on a stadium pitch under bright floodlights, confetti in the air', move: in }
+        - { at: messi, image: shots/records-2.jpg, prompt: 'a small nimble cartoon footballer in a plain sky blue and white vertically striped shirt, seen from behind, dribbling the ball past three surprised defenders, stadium lights at night', move: left, focus: { x: 0.5, y: 0.6 } }
+      title: { text: Рекорды, at: -1, until: messi }
+      badge: { valueFrom: facts.records.messi.value, labelFrom: facts.records.messi.label, at: messi }
+      source: { textFrom: facts.records.sourceLine }
+
+  - id: ronaldo
+    scene: illustration
+    say: 'А португалец Криштиану Роналду выиграл пять «Золотых мячей»!'
+    pad: [0.1, 0.3]
+    energy: 0.8
+    transition: { kind: cut, dur: 0 }
+    sfx: [{ at: voice, kind: pop, gain: 0.45, snap: half }]
+    props:
+      shots:
+        - { image: shots/records-3.jpg, seed: 74806, prompt: 'a tall athletic cartoon footballer in a plain red shirt and green shorts, seen from behind, leaping very high to kick the ball, colourful fireworks in the night sky over the stadium', move: up, focus: { x: 0.5, y: 0.55 } }
+      badge: { valueFrom: facts.records.ronaldo.value, labelFrom: facts.records.ronaldo.label, at: 0.15 }
+      source: { textFrom: facts.records.sourceLine }
+
+  - id: three
+    scene: illustration
+    say: 'А Платини, Кройф и ван Бастен выигрывали по три.'
+    pad: [0.1, 0.35]
+    energy: 0.75
+    sfx: [{ at: voice, kind: pop, gain: 0.45, snap: half }]
+    props:
+      shots:
+        - { image: shots/records-4.jpg, seed: 69693, prompt: 'three smiling cartoon footballers in plain white, blue and orange retro 1980s shirts with funny retro hairstyles, standing side by side, each holding up a small shiny golden football', move: in, focus: { x: 0.5, y: 0.6 } }
+      badge: { valueFrom: facts.records.three.value, labelFrom: facts.records.three.label, at: 0.15 }
+      source: { textFrom: facts.records.sourceLine }
+
+  - id: women
+    scene: illustration
+    say: 'Девочки тоже играют в футбол! {#since}С [2018](=две тысячи восемнадцатого) года есть и женский «Золотой мяч». {#aitana}Испанка Айтана Бонмати выиграла его три раза подряд. Так не удавалось никому!'
+    pad: [0.1, 0.35]
+    energy: 0.7
+    sfx: [{ at: since, kind: pop, gain: 0.4 }, { at: aitana, kind: chime, gain: 0.5, snap: half }]
+    props:
+      shots:
+        - { image: shots/women-1.jpg, prompt: '@kid happily juggling a football on her knee in a sunny park, @ball cheering next to her', move: in, focus: { x: 0.5, y: 0.6 } }
+        - { at: aitana, image: shots/women-2.jpg, prompt: 'a cheerful cartoon woman footballer with a dark ponytail in a plain red shirt and blue shorts, seen from behind, celebrating with arms raised, three small shiny golden footballs floating in the air above her', move: out, focus: { x: 0.5, y: 0.55 } }
+      badge: { valueFrom: facts.women.since.value, labelFrom: facts.women.since.label, at: since, until: aitana, side: left }
+      labels:
+        - { textFrom: facts.women.note, x: 0.4, y: 0.22, at: aitana, tone: red }
+      source: { textFrom: facts.women.sourceLine }
+
+  - id: close
+    scene: illustration
+    say: 'А [26 октября](=двадцать шестого октября) «Золотой мяч» впервые вручат не в Париже, а в Лондоне. {#you}Кто знает, может, однажды его получишь и ты? {#love}Главное — любить игру и тренироваться!'
+    pad: [0.1, 1.4]
+    energy: 0.6
+    sfx: [{ at: you, kind: chime, gain: 0.45, snap: half }, { at: love, kind: swell, gain: 0.35 }]
+    props:
+      shots:
+        - { image: shots/close-1.jpg, prompt: 'a grand old theatre in London at night with warm golden lights and a red carpet, @ball arriving happily on the top deck of a little red double-decker bus', move: in, focus: { x: 0.5, y: 0.6 } }
+        - { at: you, image: shots/close-2.jpg, prompt: '@kid kicking a ball in a backyard at golden sunset with @ball cheering beside her, dreamy sparkles in the air', move: out, focus: { x: 0.5, y: 0.6 } }
+      title: { textFrom: facts.next.when, at: -1, until: you }
+      source: { textFrom: facts.next.sourceLine }

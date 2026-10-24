@@ -27,6 +27,74 @@ export function win(t, t0, t1, fade = 0.3, fn = ease.inOut) {
   return Math.min(p(t, t0, fade, fn), 1 - p(t, t1 - fade, fade, fn));
 }
 
+/**
+ * Damped spring from `from` to `to`, released at t0 with no initial velocity. Closed form, so any
+ * frame renders in any order. The defaults settle in about half a second with a 3 % overshoot.
+ */
+export function spring(t, t0, { from = 0, to = 1, stiffness = 180, damping = 20, mass = 1 } = {}) {
+  const tau = t - t0;
+  if (tau <= 0) return from;
+  const d0 = from - to;
+  const w0 = Math.sqrt(stiffness / mass);
+  const zeta = damping / (2 * Math.sqrt(stiffness * mass));
+  let d;
+  if (zeta < 1) {
+    const wd = w0 * Math.sqrt(1 - zeta * zeta);
+    d = Math.exp(-zeta * w0 * tau) * (d0 * Math.cos(wd * tau) + ((zeta * w0 * d0) / wd) * Math.sin(wd * tau));
+  } else if (zeta === 1) {
+    d = (d0 + w0 * d0 * tau) * Math.exp(-w0 * tau);
+  } else {
+    const s = Math.sqrt(zeta * zeta - 1);
+    const r1 = -w0 * (zeta - s);
+    const r2 = -w0 * (zeta + s);
+    d = (d0 * r2 * Math.exp(r1 * tau) - d0 * r1 * Math.exp(r2 * tau)) / (r2 - r1);
+  }
+  return to + d;
+}
+
+/** A value that changes target several times: one spring per change, summed, so it never jumps. */
+export function springs(t, from, changes, opts = {}) {
+  let v = from;
+  let prev = from;
+  for (const c of changes) {
+    v += spring(t, c.at, { ...opts, from: 0, to: c.to - prev });
+    prev = c.to;
+  }
+  return v;
+}
+
+/** The music's beat grid as score.py lays it out: bars from `origin`, the drop on a downbeat. */
+export function beatGrid({ bpm = 96, dropAt = null } = {}) {
+  const beat = 60 / bpm;
+  const bar = beat * 4;
+  return { bpm, beat, bar, origin: dropAt === null || dropAt === undefined ? 0 : (dropAt % bar) - bar };
+}
+
+/**
+ * Beat helpers in scene seconds for a scene starting at `start` (reel seconds). `step` is in beats:
+ * 1 a beat, 0.5 a half beat, 4 a bar.
+ */
+export function beats(grid, start = 0) {
+  const g = (t) => t + start - grid.origin;
+  const len = (step) => grid.beat * step;
+  return {
+    grid,
+    /** scene time of reel beat n */
+    at: (n) => grid.origin + n * grid.beat - start,
+    /** reel beat index at scene time t */
+    index: (t, step = 1) => Math.floor(g(t) / len(step) + 1e-9),
+    /** first grid point at or after t */
+    next: (t, step = 1) => Math.ceil(g(t) / len(step) - 1e-9) * len(step) + grid.origin - start,
+    /** nearest grid point */
+    snap: (t, step = 1) => Math.round(g(t) / len(step)) * len(step) + grid.origin - start,
+    /** 1 on each grid point, decaying towards 0 until the next one */
+    pulse: (t, decay = 0.18, step = 1) => {
+      const since = g(t) - Math.floor(g(t) / len(step) + 1e-9) * len(step);
+      return Math.exp(-since / decay);
+    },
+  };
+}
+
 /** DOM builder: h('div', {class: 'x', style: {left: '4px'}}, 'text', child). */
 export function h(tag, attrs = {}, ...children) {
   const svg = ['svg', 'path', 'circle', 'rect', 'line', 'g', 'polyline', 'text', 'defs', 'linearGradient', 'stop'].includes(tag);

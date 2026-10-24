@@ -1,6 +1,7 @@
 import { createHash } from 'node:crypto';
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join, relative, resolve, sep } from 'node:path';
+import { entriesFor, lexiconJob, loadLexicon, spokenWithMarks } from './lexicon.ts';
 import { captionText, cueNames, type LoadedSpec, type SceneSpec } from './spec.ts';
 import { python, REEL_ROOT, run } from './tools.ts';
 
@@ -16,7 +17,9 @@ export interface VoiceMeta {
   /** who spoke the line: engine, model, voice and how word times were found */
   provider?: Record<string, unknown>;
   /** Russian stress given to the engine: by the author (зам+ок) or chosen by RUAccent for a listed homograph */
-  stress?: { word: string; stressed: string; by: 'author' | 'auto' }[];
+  stress?: { word: string; stressed: string; by: 'author' | 'auto' | 'lexicon' }[];
+  /** phoneme checks of dictionary words: right (true), wrong (false) or unclear (null), and the take kept */
+  checked?: { word: string; ok: boolean | null; phones: string; take: number }[];
 }
 export interface TimedScene {
   id: string;
@@ -31,7 +34,8 @@ export interface TimedScene {
   /** scene seconds, caption spelling */
   words: Word[];
   energy: number;
-  sfx: { t: number; kind: string; gain: number; dur?: number }[];
+  /** `snap` only while the timeline is built; the written timeline has snapped times */
+  sfx: { t: number; kind: string; gain: number; dur?: number; snap?: keyof typeof SNAP_BEATS }[];
   transition: { kind: string; dur: number } | null;
   props: Record<string, unknown>;
   wav: string | null;
@@ -51,6 +55,8 @@ export interface Timeline {
   width: number;
   height: number;
   fps: number;
+  /** frames captured per output frame for motion blur; 1 = off */
+  blur: number;
   duration: number;
   base: string;
   /** URL of the work folder (timeline, mix) under /spec/ */
@@ -101,6 +107,7 @@ export async function narrate(l: LoadedSpec): Promise<Map<string, { meta: VoiceM
   const v = l.spec.voice;
   const out = new Map<string, { meta: VoiceMeta; wav: string | null }>();
   const todo: { id: string; say: string; wav: string; json: string }[] = [];
+  const lex = l.spec.lang === 'ru' && STRESSED_ENGINES.has(v.engine) ? loadLexicon() : null;
   for (const s of l.spec.scenes) {
     if (!s.say.trim() || v.engine === 'none') {
       out.set(s.id, { meta: estimate(s), wav: null });
@@ -108,7 +115,10 @@ export async function narrate(l: LoadedSpec): Promise<Map<string, { meta: VoiceM
     }
     // English Kokoro keys stay as they were, so existing caches remain valid
     // Russian lines of engines that get stress from py/stress.py also key on its version and mode
-    const stressed = l.spec.lang === 'ru' && STRESSED_ENGINES.has(v.engine) ? [`${STRESS_VERSION}:${v.stress}`] : [];
+    // and on the dictionary entries the line uses, so a new or changed entry re-voices only its lines
+    const stressed = lex
+      ? [`${STRESS_VERSION}:${v.stress}`, ...entriesFor(spokenWithMarks(s), lex).map((e) => JSON.stringify([e.say, e.forms ?? null, e.check ?? null]))]
+      : [];
     const settings =
       v.engine === 'kokoro' && !v.model && l.spec.lang === 'en' ? [s.say, v.voice, v.speed, v.lang] : [s.say, v.engine, v.model, v.voice, v.speed, l.spec.lang, ...stressed];
     const key = hash(JSON.stringify(settings));
@@ -121,7 +131,7 @@ export async function narrate(l: LoadedSpec): Promise<Map<string, { meta: VoiceM
     const job = join(dir, 'job.json');
     writeFileSync(
       job,
-      JSON.stringify({ engine: v.engine, model: v.model, voice: v.voice, speed: v.speed, lang: v.lang, stress: v.stress, language: l.spec.lang, dir: l.dir, lines: todo }),
+      JSON.stringify({ engine: v.engine, model: v.model, voice: v.voice, speed: v.speed, lang: v.lang, stress: v.stress, language: l.spec.lang, dir: l.dir, lines: todo, ...(lex ? { lexicon: lexiconJob(lex) } : {}) }),
     );
     await run(python(), [join(REEL_ROOT, 'py', 'voice.py'), job]);
   }
@@ -243,7 +253,7 @@ export async function buildTimeline(l: LoadedSpec, opts: { voice?: boolean } = {
       cues,
       words: captionWords(s, meta).map((w) => ({ ...w, start: w.start + voiceAt, end: w.end + voiceAt })),
       energy,
-      sfx: s.sfx.map((x) => ({ t: t + at(x.at), kind: x.kind, gain: x.gain, dur: x.dur })),
+      sfx: s.sfx.map((x) => ({ t: t + at(x.at), kind: x.kind, gain: x.gain, dur: x.dur, snap: x.snap })),
       transition: i === 0 ? null : (s.transition ?? spec.transition),
       props: bind(s.props, data),
       wav,
@@ -257,6 +267,9 @@ export async function buildTimeline(l: LoadedSpec, opts: { voice?: boolean } = {
     if (!sc) throw new Error(`music.drop: no scene ${sid}`);
     dropAt = sc.start + (c ? (sc.cues[c] ?? 0) : 0);
   }
+  const grid = beatGrid({ bpm: spec.music.bpm, dropAt });
+  for (const sc of scenes)
+    sc.sfx = sc.sfx.map(({ snap, ...x }) => (snap ? { ...x, t: Math.max(0, snapToGrid(grid, x.t, SNAP_BEATS[snap])) } : x));
   return {
     title: spec.title,
     lang: spec.lang,
@@ -282,6 +295,21 @@ export function writeTimeline(l: LoadedSpec, tl: Timeline): string {
   const p = join(workDir(l), 'timeline.json');
   writeFileSync(p, JSON.stringify(tl, null, 1));
   return p;
+}
+
+/** The music's beat grid as score.py lays it out (runtime/kit.js has the same for scenes): the drop lands on a downbeat. */
+export function beatGrid(music: { bpm: number; dropAt: number | null }): { beat: number; bar: number; origin: number } {
+  const beat = 60 / music.bpm;
+  const bar = beat * 4;
+  return { beat, bar, origin: music.dropAt === null ? 0 : (music.dropAt % bar) - bar };
+}
+
+export const SNAP_BEATS = { beat: 1, half: 0.5, bar: 4 } as const;
+
+/** Nearest grid point to reel second t; `step` in beats. */
+export function snapToGrid(g: { beat: number; origin: number }, t: number, step: number): number {
+  const len = g.beat * step;
+  return g.origin + Math.round((t - g.origin) / len) * len;
 }
 
 /** seconds | `scene` (just after its voice) | `scene@cue` | `scene@seconds` → reel seconds */

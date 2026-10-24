@@ -1,0 +1,18 @@
+# Review record of this episode, kept in Git — see docs/how-to/review-and-approve.md.
+# Edit questions and notes by hand. `storygro approve` writes the approvals; do not edit them.
+review: 1
+questions:
+  - id: style
+    ask: Первый ролик в новом стиле kinetic-type (слова по голосу, тёмное поле, motion blur). Подача подходит для Reels/Shorts и Telegram, или нужен светлый вариант темы?
+    for: owner
+  - id: claim
+    ask: «Ролик не монтируют, а программируют» — не слишком ли категорично? Альтернатива — «можно не монтировать, а запрограммировать».
+    for: owner
+notes: Пилот стиля kinetic-type и сцен kinetic, process, scale; тема выбрана владельцем 24.10.2026 (бэклог agent-motion-studio). Демо собственного инструмента — серия product-demos, не независимый обзор.
+approvals:
+  ru:
+    storyboard:
+      hash: 2c10aa150e42
+      at: 2026-10-24T14:50:39.568Z
+      by: agent
+      role: agent

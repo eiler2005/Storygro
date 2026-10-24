@@ -1,0 +1,21 @@
+# Review record of this episode, kept in Git — see docs/how-to/review-and-approve.md.
+# Edit questions and notes by hand. `storygro approve` writes the approvals; do not edit them.
+review: 1
+questions:
+  - id: date
+    ask: Финал говорит «26 октября вручат впервые в Лондоне». После 26.10.2026 фраза устареет — публиковать до церемонии или переозвучить финал (например, назвать нового лауреата)?
+    for: owner
+  - id: pace
+    ask: Голос по правилу для новых русских выпусков — Qwen3, скорость 1.12. Для детей 6–10 лет не замедлить ли до 1.0 (ролик станет ≈95 с, придётся что-то сократить)?
+    for: owner
+  - id: look
+    ask: Златик и Маша — свои персонажи; футболисты — обобщённые фигурки в цветах команд, без портретного сходства. Так подходит, или нужны другие персонажи?
+    for: owner
+notes: Сделано по просьбе владельца 24.10.2026 — детский мультик до 1,5 минуты. Факты проверены 24.10.2026 (sources.md); официальный ballondor.com недоступен для проверки (403).
+approvals:
+  ru:
+    storyboard:
+      hash: c4a1c7f78b0a
+      at: 2026-10-24T15:32:35.944Z
+      by: agent
+      role: agent

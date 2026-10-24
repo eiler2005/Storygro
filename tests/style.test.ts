@@ -15,7 +15,7 @@ const cartoonEpisode = join(root, 'content/videos/ai-buys-work-knowledge/en.reel
 
 test('every style in production/styles loads, with a theme and a template', () => {
   const styles = listStyles();
-  assert.deepEqual(styles.map((s) => s.def.id), ['cartoon', 'cut-paper', 'editorial-collage']);
+  assert.deepEqual(styles.map((s) => s.def.id), ['cartoon', 'cut-paper', 'editorial-collage', 'kinetic-type']);
   for (const s of styles) assert.ok(readFileSync(join(s.dir, 'template.reel.yaml'), 'utf8').includes(`style: ${s.def.id}`));
 });
 
@@ -77,6 +77,31 @@ test('new <folder> --style scaffolds a project that loads', (t) => {
   assert.equal(l.spec.title, 'My first cartoon');
   assert.equal(imageJobs(l).length, 4);
   assert.throws(() => scaffold(project, loadStyle('cartoon')), /not empty/);
+});
+
+test('a kinetic-type project scaffolds and builds: dark tokens, captions off, motion blur on', async (t) => {
+  const dir = mkdtempSync(join(tmpdir(), 'storygro-style-'));
+  t.after(() => rmSync(dir, { recursive: true, force: true }));
+  const project = join(dir, 'words');
+  scaffold(project, loadStyle('kinetic-type'), { title: 'Words', lang: 'en' });
+  const l = loadSpec(join(project, 'en.reel.yaml'));
+  const tl = await buildTimeline({ ...l, spec: { ...l.spec, voice: { ...l.spec.voice, engine: 'none' } } }, { voice: false });
+  assert.equal(tl.blur, 4);
+  assert.equal(tl.captions.show, false);
+  assert.deepEqual(tl.scenes.map((s) => s.module), ['/rc/scenes/kinetic.js', '/rc/scenes/process.js', '/rc/scenes/scale.js', '/rc/scenes/kinetic.js']);
+  assert.match(tl.theme ?? '', /styles\/kinetic-type\/theme\.css$/);
+});
+
+test('an episode can replace the picture prompt of its style, which must keep {subject}', (t) => {
+  const dir = mkdtempSync(join(tmpdir(), 'storygro-style-'));
+  t.after(() => rmSync(dir, { recursive: true, force: true }));
+  const path = join(dir, 'reel.yaml');
+  const shot = { id: 'a', scene: 'illustration', props: { shots: [{ image: 'shots/a.jpg', prompt: '@kid waves' }] } };
+  writeFileSync(path, `reel: 1\nstyle: cartoon\ntitle: x\nimages: { prompt: 'Picture book. {subject}. No text.', cast: { kid: a girl } }\nscenes: [${JSON.stringify(shot)}]\n`);
+  const l = loadSpec(path);
+  assert.equal(imageJobs(l)[0]!.prompt, 'Picture book. a girl waves. No text.');
+  writeFileSync(path, readFileSync(path, 'utf8').replace('{subject}', 'nothing'));
+  assert.throws(() => loadSpec(path), /must contain \{subject\}/);
 });
 
 test('the manual provider writes every missing prompt to prompts.md instead of generating', async (t) => {

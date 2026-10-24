@@ -43,6 +43,7 @@ if (tl.theme) {
   document.head.append(link);
 }
 
+const grid = kit.beatGrid(tl.music ?? {});
 const layers = [];
 for (const s of tl.scenes) {
   const root = kit.h('div', { class: `rc-scene rc-scene--${s.id}`, 'data-id': s.id });
@@ -51,6 +52,8 @@ for (const s of tl.scenes) {
     id: s.id,
     props: s.props,
     duration: s.duration,
+    start: s.start,
+    beats: kit.beats(grid, s.start),
     voiceAt: s.voiceAt,
     cues: s.cues,
     words: s.words,

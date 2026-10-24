@@ -59,3 +59,20 @@ test('without RUAccent (as in CI) auto stress falls back to the hand marks inste
 test('a plus before a consonant (a typo) is dropped, never read aloud', () => {
   assert.deepEqual(run(`print(json.dumps([stress.render("ключ под зам+ком", s) for s in ["upper", "plus"]]))`), ['ключ под замком', 'ключ под замком']);
 });
+
+test('dictionary words take their stress in every line; the author\'s marks win; capitals are kept', () => {
+  const r = run(`stress.use_lexicon({"месси": {"say": "М+есси"}, "лионеля": {"say": "Лион+еля"}})
+print(json.dumps([stress.prepare("У Лионеля Месси и у месси.", "upper", "auto"), stress.prepare("Это М+есси.", "plus", "marks"), stress.prepare("Месси.", None)]))`);
+  assert.equal(r[0][0], 'У ЛионЕля мЕсси и у мЕсси.');
+  assert.deepEqual(r[0][1].map((d: { by: string }) => d.by), ['lexicon', 'lexicon', 'lexicon']);
+  assert.deepEqual(r[1], ['Это М+есси.', [{ word: 'Месси', stressed: 'М+есси', by: 'author' }]]);
+  assert.deepEqual(r[2], ['Месси.', []]);
+});
+
+test('a dictionary word with mark: false is recorded and checked but reaches the engine unmarked', () => {
+  const r = run(`stress.use_lexicon({"золотой": {"say": "Золот+ой", "mark": False, "check": {"right": "a", "wrong": "b"}}})
+print(json.dumps([stress.prepare("Это «Золотой мяч».", "upper", "auto"), stress.checks_for("Золотой")]))`);
+  assert.equal(r[0][0], 'Это «Золотой мяч».');
+  assert.deepEqual(r[0][1], [{ word: 'Золотой', stressed: 'Золот+ой', by: 'lexicon' }]);
+  assert.deepEqual(r[1], { right: 'a', wrong: 'b' });
+});

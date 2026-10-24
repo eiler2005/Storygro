@@ -136,7 +136,7 @@ export function packageEpisode(path: string, out: string | undefined, opts: { al
       lang: l.spec.lang,
       spec: l.path.slice(dir.length + 1),
       title: l.spec.title,
-      format: `${tl.width}×${tl.height}@${tl.fps}`,
+      format: `${tl.width}×${tl.height}@${tl.fps}${(tl.blur ?? 1) > 1 ? ` blur ${tl.blur}` : ''}`,
       duration: +tl.duration.toFixed(2),
       inputsHash: specHash(l),
       approved: approval(l),

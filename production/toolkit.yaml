@@ -108,7 +108,7 @@ entries:
     how: Transcribe, sample frames, write content/research/references/<id>.md
     status: pilot
     docs: docs/how-to/transcribe-a-reference.md
-    examples: [content/research/references/cYlePq4WQsk.md, content/research/references/gHFDPVjbOco.md]
+    examples: [content/research/references/cYlePq4WQsk.md, content/research/references/gHFDPVjbOco.md, content/research/references/awesome-opus5-5-videos.md]
 
   - id: transcript
     kind: tool
@@ -232,6 +232,39 @@ entries:
     scenes: [headline, crowd, task-stack, ladder, stat, chart, steps, outro]
     status: stable
     docs: docs/reference/scenes.md
+
+  - id: style-kinetic-type
+    kind: style
+    stage: look
+    title: Kinetic typography
+    what: Vertical shorts made of words — each word lands on a spring when it is spoken, one accent bar travels between lines with the beat — plus a timeline, a process and a comparison of sizes drawn in the same type. No pictures to generate.
+    when: Reels, Shorts and Telegram, 15–45 s — a thesis, a quote, a mechanism in a few steps.
+    commands: [new]
+    how: npm run storygro -- new content/videos/<id> --style kinetic-type
+    status: pilot
+    style: kinetic-type
+    docs: production/styles/kinetic-type/README.md
+
+  - id: scenes-kinetic
+    kind: scenes
+    stage: look
+    title: Kinetic and diagram scenes
+    what: Words that land as they are spoken (kinetic), an axis that lights up node by node (timeline), an isometric flow with a travelling token (process) and areas proportional to values with a camera that pulls back (scale).
+    when: The kinetic-type style, or a typographic beat inside another reel; theme tokens fall back to cut-paper.
+    scenes: [kinetic, timeline, process, scale]
+    status: pilot
+    docs: docs/reference/scenes.md#kinetic
+
+  - id: motion-kit
+    kind: method
+    stage: look
+    title: Springs, beat grid and motion blur
+    what: Closed-form springs (spring, springs) instead of linear moves, the music's beat grid in every scene (ctx.beats) and on sound effects (snap), and motion blur from sub-frames (format.blur).
+    when: Any new scene or reel that should move like a motion designer's work; principles from the reference notes.
+    how: 'kit.spring(t, t0, { from, to }); sfx: { at: cue, kind: pop, snap: beat }; format: { blur: 4 }'
+    status: pilot
+    docs: docs/reference/scene-contract.md#motion
+    examples: [content/research/references/awesome-opus5-5-videos.md]
 
   - id: scenes-collage
     kind: scenes
@@ -374,6 +407,18 @@ entries:
     when: Every Russian script; check the plan's stress line and mark what RUAccent cannot know from context.
     status: pilot
     docs: docs/reference/voices.md
+
+  - id: pronunciation-dictionary
+    kind: tool
+    stage: voice
+    title: Pronunciation dictionary and stress lookup
+    what: Names and hard words with their stress for every Russian reel (production/voices/lexicon-ru.yaml), applied before synthesis; the plan flags capitalised words nobody checked; a lookup in ru.wikipedia and ru.wiktionary adds them with a quote; checked words are heard by a phoneme model, re-voiced when wrong and checked again in QA.
+    when: Before voicing any Russian script with names, places or brands; after the plan shows «Ударение не проверено».
+    commands: [stress]
+    how: npm run storygro -- stress content/videos/<id>/ru.reel.yaml --lookup --write, read the diff, then storygro voice
+    status: pilot
+    docs: docs/reference/voices.md#pronunciation-notes-russian
+    examples: [production/voices/lexicon-ru.yaml, content/videos/ballon-dor-kids/PLAN.ru.md]
 
   - id: voice-bench
     kind: tool

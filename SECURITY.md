@@ -24,6 +24,7 @@ Network access happens only in these explicit cases:
 | `npm run setup` / `npm run setup:ru` | `uv` installs Python packages; voice model weights are downloaded from Hugging Face into the local cache on first use |
 | `storygro trends` | Public, keyless sources: the Google Trends daily RSS feed, Wikipedia pageviews and top-pages endpoints, and the Hacker News official API and Algolia search |
 | `storygro capture` | Opens the URL from a capture spec in a local headless Chrome |
+| `storygro stress --lookup` | ru.wikipedia and ru.wiktionary APIs (search, article introductions, dictionary pages) for the words the command lists; nothing about the reel is sent beyond those words |
 | `npm run assets:fetch` | Downloads the render inputs listed in `content/media-assets.json`; each file's size and SHA-256 are verified before it is written |
 | Preview server | Binds to loopback (`127.0.0.1`) only |
 | `publish` | Not implemented for any social platform. It only writes a local publication ledger that a person fills in |

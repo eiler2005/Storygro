@@ -188,9 +188,10 @@ items:
   - id: agent-motion-studio
     title: Как агент собирает ролик из кода
     thesis: Видео можно описать как данные и код, и тогда агент делает его так же, как программу — с проверкой каждого кадра.
-    status: candidate
+    status: selected
     sources:
       - https://x.com/RoundtableSpace/status/2108456177029845346
       - https://github.com/eiler2005/Storygro
+      - https://github.com/yihui-dev/awesome-opus5-5-videos
     ratings: { evidence: 4, audience: 3, utility: 3, visual: 5, timeliness: 4, ease: 5 }
-    rationale: 'Скан 2026-10-20: X-дайджест #2 и #6 (2 680 и 874 закладки) + новые видео-репозитории на GitHub. Демо собственного инструмента — серия product-demos, не независимый обзор. Оценки редакционные.'
+    rationale: 'Скан 2026-10-20: X-дайджест #2 и #6 (2 680 и 874 закладки) + новые видео-репозитории на GitHub. 2026-10-24: каталог awesome-opus5-5-videos (703 промпта, ≈10 тыс. звёзд) — тот же сигнал, разбор в content/research/references/awesome-opus5-5-videos.md; владелец выбрал тему пилотом стиля kinetic-type. Демо собственного инструмента — серия product-demos, не независимый обзор. Оценки редакционные.'

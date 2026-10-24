@@ -19,6 +19,8 @@ export interface TextBox {
   y: number;
   w: number;
   h: number;
+  /** px the text sticks out of the box it sits in (a card, a band, a label); 0 inside or without one */
+  over?: number;
 }
 export interface SceneShot {
   id: string;
@@ -55,8 +57,21 @@ const VISIBLE_TEXT = (id: string) => `(() => {
     const r = range.getBoundingClientRect();
     const onStage = r.width > 0 && r.right > stage.left && r.left < stage.right && r.bottom > stage.top && r.top < stage.bottom;
     if (!ok || op < 0.15 || !onStage) continue;
+    // the box the text sits in: the nearest ancestor inside the scene that paints a background or a border
+    let over = 0;
+    for (let e = el; e && e !== root; e = e.parentElement) {
+      const cs = getComputedStyle(e);
+      const paints = (cs.backgroundColor !== 'rgba(0, 0, 0, 0)' && cs.backgroundColor !== 'transparent') || cs.backgroundImage !== 'none' || parseFloat(cs.borderTopWidth) > 0;
+      if (!paints) continue;
+      const c = e.getBoundingClientRect();
+      // sideways strictly; up and down the text box is the font's full ascent and descent, taller than a
+      // tight line-height although the letters sit inside, so allow 0.3 of the font size there
+      const slack = parseFloat(getComputedStyle(el).fontSize) * 0.3;
+      over = Math.max(0, c.left - r.left, r.right - c.right, c.top - r.top - slack, r.bottom - c.bottom - slack);
+      break;
+    }
     if (!el.closest('[data-rc-safe-ignore]'))
-      boxes.push({ t: txt.slice(0, 60), x: r.left - stage.left, y: r.top - stage.top, w: r.width, h: r.height });
+      boxes.push({ t: txt.slice(0, 60), x: r.left - stage.left, y: r.top - stage.top, w: r.width, h: r.height, over: Math.round(over) });
     if (!seen.has(txt)) { seen.add(txt); out.push(txt); }
   }
   return { text: out.join('\\n'), boxes };
@@ -122,6 +137,15 @@ export function safeAreaMisses(shots: SceneShot[], safe: SafeArea, width: number
         : '';
       if (edge && !misses.some((m) => m.scene === s.id && m.text === b.t)) misses.push({ scene: s.id, text: b.t, edge });
     }
+  return misses;
+}
+
+/** Text that sticks out of its own card, band or label by more than `tolerance` px (a number wider than its badge). */
+export function boxMisses(shots: SceneShot[], tolerance = 4) {
+  const misses: { scene: string; text: string; edge: string; over: number }[] = [];
+  for (const s of shots)
+    for (const b of s.boxes)
+      if ((b.over ?? 0) > tolerance && !misses.some((m) => m.scene === s.id && m.text === b.t)) misses.push({ scene: s.id, text: b.t, edge: `out of its box by ${b.over}px`, over: b.over! });
   return misses;
 }
 
@@ -290,7 +314,7 @@ export function boardHtml(
   <div><b>${words}</b>spoken words</div>
   <div><b>${(words / Math.max(1, speech)).toFixed(2)}</b>words / s of speech</div>
   <div><b style="color:${misses.length ? 'var(--bad)' : 'var(--ok)'}">${misses.length ? `${misses.length} issue(s)` : 'clean'}</b>facts gate</div>
-  <div><b style="color:${safeMisses.length ? 'var(--bad)' : 'var(--ok)'}">${safeMisses.length ? `${safeMisses.length} issue(s)` : 'clean'}</b>safe area (${esc(tl.safe?.profile ?? '-')})</div>
+  <div><b style="color:${safeMisses.length ? 'var(--bad)' : 'var(--ok)'}">${safeMisses.length ? `${safeMisses.length} issue(s)` : 'clean'}</b>safe area (${esc(tl.safe?.profile ?? '-')}) · text in its box</div>
 </div>
 <div class="gate"><b>${gate.approved ? `APPROVED · ${esc(gate.at ?? '')}` : 'AWAITING APPROVAL'}</b><br>
 ${gate.approved ? 'The full render may run; any change to the script or the facts resets this gate.' : 'Read the cards, then run <code>storygro approve</code>. The full render refuses an unapproved script.'}
@@ -306,7 +330,8 @@ ${tl.scenes.map(card).join('\n')}
 export async function writeBoard(l: LoadedSpec, tl: Timeline) {
   const shots = await captureScenes(l, tl, { samples: true });
   const misses = factsGate(l, shots);
-  const safeMisses = safeAreaMisses(shots, tl.safe, tl.width, tl.height);
+  // the board lists text that leaves the safe area and text that leaves its own box together
+  const safeMisses = [...safeAreaMisses(shots, tl.safe, tl.width, tl.height), ...boxMisses(shots)];
   const html = boardHtml(l, tl, shots, misses, safeMisses);
   const dir = workDir(l);
   const htmlPath = join(dir, 'board.html');

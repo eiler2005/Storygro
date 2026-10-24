@@ -38,6 +38,7 @@ scenes:
     transition: { kind: fade, dur: 0.5 }   # into this scene
     sfx:
       - { at: a, kind: hit, gain: 0.5 }    # at: cue name, start/end, or seconds
+      - { at: b, kind: pop, snap: beat }   # snap: beat | half | bar — moved to the nearest beat of the music
     props:
       items:
         - { valueFrom: facts.stanford.exposedChange, labelFrom: facts.stanford.exposedLabelEn, at: a }

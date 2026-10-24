@@ -1,0 +1,85 @@
+# «Как агент собирает ролик из кода» — пилот стиля kinetic-type (серия product-demos): видео как
+# данные и код, кадр как функция времени, и почему такой ролик можно проверять, как программу.
+# Демо собственного инструмента, не независимый обзор. Числа — из facts.json (источники в sources.md).
+reel: 1
+style: kinetic-type
+title: Как агент собирает ролик из кода
+lang: ru
+voice: { engine: qwen3, voice: assets/voice/narrator-ru.wav, speed: 1.12 }
+music: { bpm: 112, key: A, progression: [vi, IV, I, V], gain: 0.2, drop: how#voice }
+brand: ../../brand.yaml
+data: { facts: facts.json }
+allowNumbers: ['1', '2', '3', '4']   # step numbers of the process scene, not facts
+stills: { cover: hook@frame, how: how@qa, evidence: evidence@remake, takeaway: takeaway@code }
+post:
+  title: Как агент собирает ролик из кода
+  text: |
+    Ролик можно не монтировать, а написать: сценарий и факты — данные, голос задаёт ритм, браузер рисует каждый кадр как функцию времени, проверка ловит ошибки до выпуска. Так агент делает видео так же, как программу.
+
+    В открытом каталоге awesome-opus5-5-videos уже 703 промпта к роликам, которые Claude Opus 5.5 написал кодом; 418 из них повторены заново (данные каталога на 12.10.2026). Этот ролик собран в Storygro — это демо нашего инструмента, а не независимый обзор.
+
+    Голос синтезирован (Qwen3-TTS), картинки нарисованы кодом.
+  tags: [ИИ, видео, агенты, Storygro, моушн-дизайн]
+scenes:
+  - id: hook
+    scene: kinetic
+    say: 'Видео — это код. {#frame}Каждый кадр — функция времени.'
+    pad: [0.1, 0.45]
+    energy: 0.45
+    props:
+      kicker: Storygro
+      lines:
+        - { text: 'Видео — это код.', at: -1 }
+        - { text: 'Каждый кадр —', weight: light }
+        - { text: 'функция времени.', tone: accent, weight: heavy }
+
+  - id: how
+    scene: process
+    say: 'Агент пишет {#script}сценарий, {#voice}голос задаёт ритм, {#frames}браузер рисует каждый кадр, {#qa}а проверка ловит ошибки до выпуска.'
+    pad: [0.1, 0.5]
+    energy: 0.65
+    sfx: [{ at: frames, kind: pop, gain: 0.4, snap: half }, { at: qa, kind: ding, gain: 0.35, snap: half }]
+    props:
+      title: Как собирается ролик
+      token: кадр
+      steps:
+        - { label: Сценарий, sub: текст и факты, at: script }
+        - { label: Голос, sub: задаёт ритм, at: voice }
+        - { label: Кадры, sub: рисует браузер, at: frames }
+        - { label: Проверка, sub: до выпуска, at: qa }
+
+  - id: evidence
+    scene: scale
+    say: 'В открытом каталоге уже {#all}[703](=семьсот три) промпта к таким роликам. {#remake}[418](=четыреста восемнадцать) из них повторили заново.'
+    pad: [0.1, 0.5]
+    energy: 0.7
+    sfx: [{ at: all, kind: hit, gain: 0.4, snap: beat }]
+    props:
+      title: Ролики, написанные кодом
+      items:
+        - { valueFrom: facts.catalog.prompts.value, labelFrom: facts.catalog.prompts.label, at: all, tone: accent }
+        - { valueFrom: facts.catalog.remakes.value, labelFrom: facts.catalog.remakes.label, at: remake, tone: accent2 }
+      sourceFrom: facts.catalog.sourceLine
+
+  - id: takeaway
+    scene: kinetic
+    say: 'Значит, ролик не {#edit}монтируют, а {#code}программируют. И проверяют, как программу.'
+    pad: [0.1, 0.4]
+    energy: 0.6
+    sfx: [{ at: code, kind: whoosh, gain: 0.35, snap: half }]
+    props:
+      lines:
+        - { text: 'Ролик не', weight: light, size: 0.8 }
+        - { text: 'программируют', from: 'монтируют', mode: swap, swapAt: code, weight: regular, tone: accent }
+        - { text: 'и проверяют, как программу.', weight: light, size: 0.7 }
+
+  - id: close
+    scene: kinetic
+    say: 'Так собран и этот ролик. {#repo}Storygro на GitHub.'
+    pad: [0.1, 1.4]
+    energy: 0.4
+    props:
+      align: center
+      lines:
+        - { text: 'Так собран и этот ролик.', weight: light }
+        - { text: 'Storygro', tone: accent, weight: heavy, mode: slam, size: 1.3 }

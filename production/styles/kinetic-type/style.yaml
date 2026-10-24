@@ -1,0 +1,41 @@
+style: 1
+id: kinetic-type
+title: Kinetic typography
+summary: >-
+  Vertical shorts made of words: each word lands on a spring the moment the narrator says it, one
+  accent bar carries the eye from line to line and breathes with the beat, and diagrams (a timeline, a
+  process, a comparison of sizes) are drawn in the same type. No pictures to generate. Made for Reels,
+  Shorts and Telegram, 15–45 seconds: a thesis, a quote, a mechanism in a few steps.
+status: pilot
+
+defaults:
+  format: { preset: vertical, fps: 30, blur: 4 }
+  safe: vertical
+  captions: { show: false, maxWords: 4 }
+  transition: { kind: cut, dur: 0 }
+  music: { bpm: 112, key: A, progression: [vi, IV, I, V], gain: 0.2 }
+
+theme: theme.css
+scenes: [kinetic, timeline, process, scale, stat, outro]
+
+pacing:
+  wordsPerMinute: [140, 175]
+  length: [15, 45]
+
+structure:
+  - part: hook
+    does: One line on screen at frame 0 (kicker plus the first words); the claim the video defends.
+  - part: mechanism
+    does: How it works in three to five steps — a process or a timeline, one object travelling through it.
+  - part: evidence
+    does: One or two sourced numbers, as a comparison of sizes or a stat.
+  - part: takeaway
+    does: The thesis again in different words, the key word swapped from thin to heavy.
+  - part: close
+    does: Who it is for and where to read more.
+
+examples:
+  - content/videos/agent-motion-studio/ru.reel.yaml
+
+references:
+  - content/research/references/awesome-opus5-5-videos.md

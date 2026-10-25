@@ -3,7 +3,7 @@ import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import { join, relative, resolve } from 'node:path';
 import { brandFindings, loadBrand } from './brand.ts';
 import { boxMisses, captureScenes, factsGate, safeAreaMisses, type SceneShot } from './board.ts';
-import { key as lexKey, loadLexicon, WORD as LEX_WORD } from './lexicon.ts';
+import { entryOf, loadLexicon, WORD as LEX_WORD } from './lexicon.ts';
 import { captionText, type LoadedSpec, spokenText } from './spec.ts';
 import { type Timeline, workDir } from './timeline.ts';
 import { ffmpeg, python, REEL_ROOT } from './tools.ts';
@@ -254,7 +254,7 @@ export async function qa(l: LoadedSpec, tl: Timeline, video: string) {
     const items = tl.scenes.flatMap((s) =>
       s.words.flatMap((w) => {
         const word = w.w.match(LEX_WORD)?.[0];
-        const check = word ? lex.forms.get(lexKey(word))?.check : undefined;
+        const check = word ? entryOf(word, lex)?.check : undefined;
         return check && word ? [{ scene: s.id, word, start: s.start + w.start, end: s.start + w.end, check }] : [];
       }),
     );

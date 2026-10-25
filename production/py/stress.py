@@ -159,8 +159,10 @@ def apply_lexicon(text, engine_marks=True):
 
 
 def checks_for(word):
-    """The phoneme check of a dictionary word (by any of its forms), or None."""
-    hit = lexicon().get(key(word))
+    """The phoneme check of a dictionary word (by any of its forms), or None; a hyphenated compound
+    («Мама-лиса») takes the check of a part that has one."""
+    lex = lexicon()
+    hit = lex.get(key(word)) or next((lex[key(p)] for p in word.split("-") if key(p) in lex), None)
     return hit[1].get("check") if hit else None
 
 

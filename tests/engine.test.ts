@@ -7,7 +7,7 @@ import { stringify } from 'yaml';
 import { approval, approve } from '../production/src/board.ts';
 import { serve } from '../production/src/serve.ts';
 import { captionText, loadSpec, spokenText } from '../production/src/spec.ts';
-import { subtitleCues, toSrt, toVtt } from '../production/src/subtitles.ts';
+import { phrases, subtitleCues, toSrt, toVtt } from '../production/src/subtitles.ts';
 import { buildTimeline, resolveAt, workDir } from '../production/src/timeline.ts';
 
 const root = resolve(import.meta.dirname, '..');
@@ -167,6 +167,11 @@ test('subtitles follow the caption phrases and timings', async t => {
   assert.ok(cues.every((c, i) => c.end > c.start && (i === 0 || c.start >= cues[i - 1]!.start)));
   assert.match(toSrt(cues), /^1\n00:00:00,\d{3} --> 00:00:0\d,\d{3}\nOne two three\n/);
   assert.match(toVtt(cues), /^WEBVTT\n\n00:00:00\.\d{3} --> /);
+});
+
+test('a caption phrase also ends at sentence punctuation before a closing quote', () => {
+  const words = ['«Это', 'подсказка!»', 'А', 'тебе', 'какая'].map((w, i) => ({ w, start: i, end: i + 0.5 }));
+  assert.deepEqual(phrases(words, 5).map(p => p.map(w => w.w).join(' ')), ['«Это подсказка!»', 'А тебе какая']);
 });
 
 test('approval covers scene code, theme and assets, not only the script', t => {

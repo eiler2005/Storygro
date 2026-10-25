@@ -97,7 +97,7 @@ export function safeArea(l: LoadedSpec): SafeArea {
 }
 
 /** Engines whose Russian stress comes from py/stress.py; bump the version when its output changes. */
-const STRESSED_ENGINES = new Set(['qwen3', 'silero', 'chatterbox', 'yandex']);
+const STRESSED_ENGINES = new Set(['qwen3', 'silero', 'chatterbox', 'yandex', 'omnivoice']);
 const STRESS_VERSION = 'stress-1';
 
 /** Narrate every scene, reusing cached lines whose text, provider and settings did not change. */

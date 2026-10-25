@@ -97,13 +97,13 @@ if (tl.captions?.show) stage.append(caption);
 const flash = kit.h('div', { class: 'rc-flash' });
 stage.append(flash);
 
-// caption phrases per scene: up to maxWords, broken after sentence punctuation
+// caption phrases per scene: up to maxWords, broken after sentence punctuation (also before a closing quote)
 const phrases = tl.scenes.map((s) => {
   const out = [];
   let cur = [];
   for (const w of s.words) {
     cur.push(w);
-    const end = /[.!?…:;—]$/.test(w.w) || (/,$/.test(w.w) && cur.length >= 4);
+    const end = /[.!?…:;—][»"”)]*$/.test(w.w) || (/,[»"”)]*$/.test(w.w) && cur.length >= 4);
     if (end || cur.length >= (tl.captions?.maxWords ?? 7)) {
       out.push(cur);
       cur = [];

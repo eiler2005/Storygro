@@ -522,7 +522,7 @@ Resemble AI's MIT-licensed multilingual voice (Russian among 23 languages) that 
 
 *provider · pilot*
 
-Isolated local OmniVoice through PyTorch; owner-selected synthetic B reference at speed 0.90 for new Russian scaffolds. Qwen3 is second choice and OmniVoice A third. Pitch-preserving tempo and Whisper alignment use the common voice pipeline. Model weights are CC-BY-NC.
+Isolated local OmniVoice through PyTorch; owner-selected synthetic B reference at speed 0.90 for new Russian scaffolds. Qwen3 is second choice and OmniVoice A third. Pitch-preserving tempo and Whisper alignment use the common voice pipeline; with the episode's stress set to marks, hand marks reach it as an uppercase vowel, and checked dictionary words get another take while wrong. Model weights are CC-BY-NC.
 
 **Use when:** New Russian episodes within the model terms; existing episodes retain their explicit settings.
 

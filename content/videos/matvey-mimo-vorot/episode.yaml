@@ -1,0 +1,7 @@
+episode: 1
+id: matvey-mimo-vorot
+title: "Мимо ворот"
+sources: sources.md
+credits: CREDITS.md
+variants:
+  - { id: ru, spec: ru.reel.yaml }

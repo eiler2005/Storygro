@@ -1,0 +1,31 @@
+@import url('/rc/styles/cartoon/theme.css');
+
+:root {
+  --ct-ink: #2a2118;
+  --ct-band: #fff4dc;
+  --ct-card: #fff8e8;
+  --ct-accent: #e8742c;
+  --ct-teal: #1d7f78;
+  --ct-mustard: #f2c45a;
+}
+
+/* captions in a soft dark box: readable over busy, detailed pictures */
+.rc-caption {
+  font-size: 54px;
+  line-height: 1.22;
+  max-width: 860px;
+  color: #fff;
+  background: rgba(36, 24, 14, .82);
+  border: 1px solid rgba(255, 236, 200, .35);
+  border-radius: 24px;
+  padding: 16px 26px;
+  -webkit-text-stroke: 0;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, .45);
+}
+.rc-word.on { color: #ffd36b; }
+
+/* the plan card already shows its words in large type: no caption underneath */
+#stage:has(.rc-scene--plan:not([style*="display: none"])) .rc-caption { opacity: 0 !important; }
+
+/* the plan card: bright words on the green field */
+:root { --kt-ink: #fff8e6; --kt-accent: #ff8a3d; --kt-accent2: #ffd25a; }

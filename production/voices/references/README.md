@@ -8,4 +8,4 @@ WAV files are ignored and must not be committed. Restore the exact local origina
 
 The previous reference is also preserved locally as `ru-qwen3-narrator.wav`, with its transcript and checksum alongside it and a backup in `~/.storygro/voices/`. Both the second-ranked Qwen3 profile and third-ranked OmniVoice A use this same reference. Their synthesis engines and speeds differ.
 
-Install the isolated engine with `npm run setup:omnivoice`. OmniVoice code is Apache-2.0; [its weights are CC-BY-NC](https://huggingface.co/k2-fsa/OmniVoice#license). The repository preference does not change those terms. Pronunciation still needs listening; Russian accent markup is disabled until separately validated.
+Install the isolated engine with `npm run setup:omnivoice`. OmniVoice code is Apache-2.0; [its weights are CC-BY-NC](https://huggingface.co/k2-fsa/OmniVoice#license). The repository preference does not change those terms. Pronunciation still needs listening. The profile keeps `stress: off`; a word that comes out wrong is marked by hand under `stress: marks` (an uppercase vowel reaches the engine — see docs/reference/voices.md).

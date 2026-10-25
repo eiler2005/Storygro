@@ -1,0 +1,261 @@
+# «Мимо ворот» — эпизод 1 мультсериала о семье Матвея, для детей 5–8 лет, около двух минут, 9:16 для
+# Instagram. Сюжет и герои — из сценария владельца: сцена 1 почти дословно, остальные сцены написаны по его
+# краткому пересказу (промах на тренировке → слёзы → разговор с семьёй → опыт во дворе → гол).
+# Герои — оригинальные зверята: енот Матвей (6), белочка София (8), лиса Марина, леопард Денис.
+# Картинки — GPT Image через Codex CLI; подписи и имена — слоями из facts.json, в картинках текста нет.
+reel: 1
+style: cartoon
+title: 'Мимо ворот'
+lang: ru
+format: { preset: vertical, fps: 30 }
+safe: phone
+voice:
+  engine: omnivoice
+  model: k2-fsa/OmniVoice
+  voice: assets/voice/narrator-ru.wav
+  speed: 0.9
+  # marks: only the author's `+` reach OmniVoice (as an uppercase vowel); unmarked lines read as with off
+  stress: marks
+music: { bpm: 100, key: C, progression: [I, V, vi, IV], gain: 0.12, drop: goal#goal }
+loudness: -14
+theme: theme.css
+captions: { show: true, maxWords: 5 }
+transition: { kind: fade, dur: 0.3 }
+data: { facts: facts.json }
+stills: { cover: penalty@1.2, dream: dream@dream, home: home@sofia, test: test-calm@low, final: goal@toss }
+images:
+  # GPT Image through the Codex CLI: drawing-like, detailed pictures (see docs/how-to/kids-list-cartoon.md)
+  provider: codex
+  model: gpt-6-astra
+  seed: 61
+  width: 1088
+  height: 1920
+  prompt: >-
+    Hand-drawn children's picture-book illustration, confident ink outlines with coloured pencil and
+    watercolour texture, warm rich palette, soft cinematic light, a highly detailed lively background full of
+    small things to discover, cute expressive anthropomorphic animal characters with clear readable emotions
+    and consistent designs, tall vertical composition with the main action in the middle and lower part of the
+    frame and the top fifth calm and uncluttered. {subject}. No text, no letters, no numbers, no logos, no
+    crests, no flags, no watermark.
+  cast:
+    matvey: >-
+      Matvey (a small six-year-old raccoon boy with soft grey fur, a black eye mask, a white muzzle, big shiny
+      dark eyes, round ears and a fluffy grey tail with black rings, wearing a plain bright orange football
+      shirt and orange shorts with no print or numbers, white socks and small black football boots)
+    sofia: >-
+      Sofia (an eight-year-old red squirrel girl, taller than Matvey, with rusty-orange fur, a cream belly,
+      tufted ears, a huge fluffy curled tail, kind amber eyes and a small yellow hair clip, wearing a plain
+      mint-green hoodie and denim overalls)
+    marina: >-
+      Marina (a slim silver fox mother with silvery-grey fur, a white chest, a white tip on her bushy tail
+      and sharp attentive green eyes, wearing a plain teal cardigan over a cream blouse)
+    denis: >-
+      Denis (a tall calm leopard father with golden fur and black rosettes, thoughtful amber eyes and round
+      wire glasses, wearing a plain navy sweater and dark trousers)
+    coach: >-
+      the coach (a big kind brown bear in a plain grey tracksuit and a grey cap, a silver whistle on a cord
+      around his neck)
+    team: >-
+      Matvey's teammates (small animal kids: a hare, a hedgehog, a beaver and a badger, in the same plain
+      orange football kits)
+    rivals: >-
+      the other team (small wolf cubs and lynx cubs in plain blue football kits)
+    keeper: >-
+      the other team's goalkeeper (a chubby young brown bear cub in a plain lime-green goalkeeper shirt and
+      big white gloves)
+post:
+  title: 'Мимо ворот — мультик о том, как ошибка помогает научиться'
+  text: |
+    Енот Матвей промахивается с решающего пенальти и плачет: «Больше не пойду на этот футбол!» Сестра-белочка София, мама-лиса Марина и папа-леопард Денис помогают ему понять, что пошло не так, а дома во дворе Матвей ставит опыт — и на следующей тренировке забивает. Ошибка — это не конец, а подсказка.
+
+    Эпизод 1 мультсериала о семье Матвея для детей 5–8 лет. Картинки нарисованы GPT Image, голос рассказчика синтетический (OmniVoice). Вопрос для разговора с ребёнком: какая ошибка помогла тебе научиться?
+  tags: [мультик, детям, футбол, сказка, ошибки, семья]
+scenes:
+  # Сцена 1 владельца: пенальти
+  - id: penalty
+    scene: illustration
+    say: 'Матвей стоит у мяча. Счёт равный, до конца матча — секунды. Все ждут его удара. {#coach}Тренер кивает: «Матвей, спокойно. Ты готов».'
+    pad: [0.3, 0.3]
+    energy: 0.5
+    transition: { kind: cut, dur: 0 }
+    sfx: [{ at: start, kind: swell, gain: 0.25 }]
+    props:
+      shots:
+        - { image: shots/penalty-1.jpg, prompt: 'a low view from behind @matvey standing at the penalty spot of a small green training pitch, a white football at his feet, looking ahead at the goal where @keeper crouches ready; @team and @rivals wait in a row at the edge of the penalty box, holding their breath; a small wooden stand with animal parents, autumn trees with orange leaves, a park and little houses behind, warm late-afternoon sun', move: in, zoom: 0.08, focus: { x: 0.5, y: 0.62 } }
+        - { at: coach, image: shots/penalty-2.jpg, prompt: '@coach on the touchline of a small training pitch, gently raising one paw in a calm reassuring gesture and nodding with a warm smile; in the foreground @matvey seen from the side beside a white football, nervous, his tail tense; a bench with water bottles and a mesh bag of balls, cones and autumn leaves on the grass, warm late-afternoon light', move: out, zoom: 0.07, focus: { x: 0.5, y: 0.6 } }
+      title: { textFrom: facts.episode.title, at: 0.1, until: coach }
+      labels:
+        - { textFrom: facts.episode.label, x: 0.5, y: 0.2, at: 0.3, until: coach, tone: teal }
+
+  - id: dream
+    scene: illustration
+    say: 'Матвей смотрит на ворота. {#dream}В голове уже картинка: он забивает, команда ликует, товарищи подбрасывают его вверх!'
+    pad: [0.1, 0.3]
+    energy: 0.6
+    sfx: [{ at: dream, kind: chime, gain: 0.3 }]
+    props:
+      shots:
+        - { image: shots/dream-1.jpg, prompt: 'close-up of @matvey looking up at the goal with wide hopeful shining eyes and a tiny dreamy smile, the white football in front of him, the goal net and @keeper softly blurred behind him, warm golden light, small leaves floating in the air', move: in, zoom: 0.06, focus: { x: 0.5, y: 0.55 } }
+        - { at: dream, image: shots/dream-2.jpg, prompt: 'a dreamy daydream vignette with soft cloud-shaped edges and golden sparkles: @team joyfully tossing @matvey high up into the air above a football pitch, Matvey laughing with arms spread wide, the ball shining in the net, confetti of autumn leaves, everything glowing in pastel gold and pink like a happy dream', move: out, zoom: 0.08, focus: { x: 0.5, y: 0.5 } }
+
+  - id: kick
+    scene: illustration
+    say: 'Он разбегается изо всех сил и бьёт. {#over}Мяч летит выше перекладины.'
+    pad: [0.1, 0.7]
+    energy: 0.75
+    transition: { kind: cut, dur: 0 }
+    sfx: [{ at: 0.8, kind: whoosh, gain: 0.35 }, { at: over, kind: whoosh, gain: 0.3 }]
+    props:
+      shots:
+        - { image: shots/kick-1.jpg, prompt: '@matvey running at the white football as fast as he can, a long blur of speed lines and kicked-up grass behind him, his body leaning far back, his tail flying, his mouth tight with effort, about to kick; @keeper ready in the goal ahead; dynamic low side angle on the training pitch, autumn trees', move: right, zoom: 0.08, focus: { x: 0.5, y: 0.6 } }
+        - { at: over, image: shots/kick-2.jpg, prompt: 'the white football flying high over the crossbar of a small goal into the autumn sky, a dotted motion trail curving upward, @keeper looking up with his mouth open, a few startled sparrows scattering from a tree behind the goal; seen from behind @matvey who has fallen back onto the grass, watching the ball fly away', move: up, zoom: 0.08, focus: { x: 0.5, y: 0.35 } }
+
+  - id: whistle
+    scene: illustration
+    say: 'Свист+ок. Матч окончен. Соперники радуются, а Матвей стоит неподвижно. {#tears}Его уши опускаются, глаза наполняются слезами. {#cry}«Я всё испортил… Из-за меня мы проиграли!»'
+    pad: [0.2, 0.6]
+    energy: 0.25
+    props:
+      shots:
+        - { image: shots/whistle-1.jpg, prompt: 'end of the match: @rivals jumping and hugging with joy in the background, @coach blowing his whistle on the touchline, and in the middle of the pitch @matvey standing completely still and small, shoulders down, looking at the ground, a lonely white football beside him; long late-afternoon shadows, falling autumn leaves', move: in, zoom: 0.08, focus: { x: 0.5, y: 0.62 } }
+        - { at: tears, image: shots/whistle-2.jpg, prompt: 'close-up portrait of @matvey with his round ears drooping down, big eyes filling with shiny tears, his lower lip trembling, a teammate hedgehog in an orange kit softly blurred behind him; muted golden evening light, gentle and touching, not scary', move: in, zoom: 0.06, focus: { x: 0.5, y: 0.5 } }
+        - { at: cry, image: shots/whistle-2.jpg, move: in, zoom: 0.12, focus: { x: 0.5, y: 0.42 } }
+
+  - id: home
+    scene: illustration
+    say: 'Дома Матвей плачет: «Больше не пойду на этот футбол!» {#sofia}Сестра-белочка София тихо садится рядом. Она всегда чувствует, когда кому-то грустно, и обнимает брата.'
+    pad: [0.2, 0.35]
+    energy: 0.2
+    props:
+      shots:
+        - { image: shots/home-1.jpg, prompt: 'a cosy children''s bedroom in the evening: @matvey lying face down on his bed hugging a pillow and crying, his black football boots kicked into the corner, a football under the desk, toy cars, crayon drawings on the wall without any writing, a warm table lamp, rain on the window, a sleepy cat on the shelf', move: in, zoom: 0.07, focus: { x: 0.5, y: 0.62 } }
+        - { at: sofia, image: shots/home-2.jpg, prompt: '@sofia sitting on the edge of the bed and gently hugging her little brother @matvey, wrapping her huge fluffy tail around him like a blanket, her face soft and caring, Matvey sniffling but leaning into the hug; a mug of hot cocoa with marshmallows on the bedside table, a warm lamp glow, the cosy bedroom with toys and crayon drawings without writing', move: out, zoom: 0.07, focus: { x: 0.5, y: 0.58 } }
+      labels:
+        - { textFrom: facts.sofia.name, x: 0.5, y: 0.7, at: sofia, tone: accent }
+        - { textFrom: facts.sofia.trait, x: 0.5, y: 0.755, at: sofia, tone: teal }
+
+  - id: why
+    scene: illustration
+    say: 'А ты как думаешь: {#why}почему мяч улетел выше ворот? {+1.2}'
+    pad: [0.2, 0.3]
+    energy: 0.3
+    sfx: [{ at: why, kind: pop, gain: 0.35 }]
+    props:
+      shots:
+        - { image: shots/why.jpg, prompt: 'a playful frozen replay of the kick drawn like a page from a sketchbook: @matvey frozen mid-kick leaning far backwards, the white football rising along a dotted arc that goes over the crossbar, a big magnifying glass hovering over his leaning body, a few question-mark-shaped curls of wind made of leaves, warm paper texture', move: in, zoom: 0.07, focus: { x: 0.5, y: 0.55 } }
+      title: { textFrom: facts.story.why, at: why }
+
+  - id: mom
+    scene: illustration
+    say: 'Мама-лис+а Марина всё замечает. {#detail}«Ты очень сильно разогнался и откинулся назад. Поэтому мяч и полетел вверх».'
+    pad: [0.2, 0.35]
+    energy: 0.3
+    props:
+      shots:
+        - { image: shots/mom-1.jpg, prompt: 'a warm family kitchen in the evening: @marina kneeling to eye level with @matvey, holding his paws and looking at him attentively and kindly; @sofia watching from the table behind; jars, a basket of apples, a pot of soup steaming on the stove, potted herbs on the windowsill, a ticking clock without numbers', move: in, zoom: 0.07, focus: { x: 0.5, y: 0.6 } }
+        - { at: detail, image: shots/mom-2.jpg, prompt: '@marina sitting at the kitchen table and showing @matvey a quick pencil sketch on a sheet of paper: a little raccoon figure leaning back while kicking and a ball flying up along a dotted arrow; with her other paw she leans back to demonstrate; Matvey looks at the sketch with sudden interest, tears drying; cosy kitchen details, apples, a cup of tea, warm lamp light', move: out, zoom: 0.07, focus: { x: 0.5, y: 0.6 } }
+      labels:
+        - { textFrom: facts.marina.name, x: 0.5, y: 0.7, at: 0.3, tone: accent }
+        - { textFrom: facts.marina.trait, x: 0.5, y: 0.755, at: 0.5, tone: teal }
+
+  - id: dad
+    scene: illustration
+    say: 'Папа-леопард Денис видит большую картину. {#exp}«Тренировки — это наш опыт. Даже неудачный опыт помогает сделать правильные выводы».'
+    pad: [0.2, 0.35]
+    energy: 0.35
+    props:
+      shots:
+        - { image: shots/dad-1.jpg, prompt: '@denis sitting beside @matvey on a big sofa by a tall window, both looking out at the evening town: rooftops, glowing windows, a winding river, and far away the small lit-up football pitch; Denis points calmly towards the horizon, Matvey listens; a chess board with a game in progress on the low table, books and a globe on the shelf', move: in, zoom: 0.07, focus: { x: 0.5, y: 0.62 } }
+        - { at: exp, image: shots/dad-2.jpg, prompt: '@denis kneeling beside @matvey in front of a wall of framed family pictures that tell a story of learning: in one picture little Matvey falls off a small bicycle, in the next he rides it happily; in another he spills paint, in the next he proudly shows a colourful painting; Matvey begins to smile with understanding; warm hallway light, a coat rack, a little rug', move: out, zoom: 0.07, focus: { x: 0.5, y: 0.55 } }
+      labels:
+        - { textFrom: facts.denis.name, x: 0.5, y: 0.7, at: 0.3, tone: accent }
+        - { textFrom: facts.denis.trait, x: 0.5, y: 0.755, at: 0.5, tone: teal }
+
+  - id: idea
+    scene: illustration
+    say: 'Матвей вытирает слёзы. Он ведь экспериментатор, ему всё нужно попробовать самому. {#try}Значит — проверим!'
+    pad: [0.2, 0.3]
+    energy: 0.5
+    sfx: [{ at: try, kind: ding, gain: 0.35 }]
+    props:
+      shots:
+        - { image: shots/idea-1.jpg, prompt: '@matvey wiping the last tear with the back of his paw, his eyes starting to light up with a brave new idea, a glowing little light bulb drawn as a doodle above his head, his football clutched under one arm; behind him the cosy living room with a lamp and a window', move: in, zoom: 0.06, focus: { x: 0.5, y: 0.5 } }
+        - { at: try, image: shots/idea-2.jpg, prompt: '@matvey running happily out of the back door into the garden with the white football and a stack of orange cones, @sofia following with a pair of big goalkeeper gloves, morning sunshine, a wooden porch, a swing on an apple tree, a vegetable bed with pumpkins and sunflowers', move: right, zoom: 0.08, focus: { x: 0.5, y: 0.6 } }
+      labels:
+        - { textFrom: facts.matvey.name, x: 0.5, y: 0.7, at: 0.3, until: try, tone: accent }
+        - { textFrom: facts.matvey.trait, x: 0.5, y: 0.755, at: 0.5, until: try, tone: teal }
+
+  - id: test-fast
+    scene: illustration
+    say: 'Во дворе Матвей ставит опыт. София — в воротах. Сначала как на матче: разбег изо всех сил, корпус назад… {#up}Мяч снова улетает в небо!'
+    pad: [0.2, 0.35]
+    energy: 0.6
+    sfx: [{ at: up, kind: whoosh, gain: 0.35 }]
+    props:
+      shots:
+        - { image: shots/test-fast-1.jpg, prompt: 'a sunny backyard: a small goal made from two buckets and a garden net, @sofia crouching in it wearing big goalkeeper gloves, and @matvey sprinting at the white football with speed lines, leaning far back; an apple tree, a wooden fence, a cat on the fence, washing hanging on a line, sunflowers and pumpkins', move: in, zoom: 0.08, focus: { x: 0.5, y: 0.6 } }
+        - { at: up, image: shots/test-fast-2.jpg, prompt: 'the white football flying high over the little backyard goal straight into the branches of an apple tree, three red apples falling, @sofia laughing and looking up, @matvey sitting on the grass with a surprised but curious face, scratching his head; the cat on the fence ducking, sunny garden details', move: up, zoom: 0.08, focus: { x: 0.5, y: 0.4 } }
+
+  - id: test-calm
+    scene: illustration
+    say: 'А теперь спокойно: короткий разбег, корпус над мячом, глаза — на мяч. {#low}Удар! Мяч летит низко и точно в угол!'
+    pad: [0.2, 0.35]
+    energy: 0.7
+    sfx: [{ at: low, kind: hit, gain: 0.35 }]
+    props:
+      shots:
+        - { image: shots/test-calm-1.jpg, prompt: '@matvey taking a short calm step towards the white football, his body leaning forward over the ball, his eyes fixed on the ball, focused and relaxed, tongue sticking out a little in concentration; @sofia in the bucket goal behind, the sunny backyard with the apple tree and sunflowers', move: in, zoom: 0.07, focus: { x: 0.5, y: 0.6 } }
+        - { at: low, image: shots/test-calm-2.jpg, prompt: 'the white football rolling fast and low into the corner of the little backyard goal past @sofia who dives the wrong way and laughs, @matvey jumping with joy with both arms up; @marina and @denis watching from the wooden porch, Marina noticing with a knowing smile, Denis giving a thumbs up; sunny garden, apple tree, sunflowers', move: out, zoom: 0.08, focus: { x: 0.5, y: 0.6 } }
+
+  - id: plan
+    scene: kinetic
+    say: 'Получилось! Вот и план: {#a}не спешить, {#b}смотреть на мяч, {#c}бить спокойно.'
+    pad: [0.2, 0.4]
+    energy: 0.75
+    transition: { kind: push, dur: 0.35 }
+    sfx: [{ at: a, kind: pop, gain: 0.3, snap: half }, { at: b, kind: pop, gain: 0.3, snap: half }, { at: c, kind: pop, gain: 0.35, snap: half }]
+    props:
+      background: '#1f6a4c'
+      align: center
+      kicker: План Матвея
+      lines:
+        - { text: 'Получилось!', tone: accent2, mode: slam, size: 1.2 }
+        - { text: 'не спешить,' }
+        - { text: 'смотреть на мяч,' }
+        - { text: 'бить спокойно.', tone: accent, mark: true }
+
+  - id: again
+    scene: illustration
+    say: 'Следующая тренировка. И снова решающий удар. {#breath}Матвей делает вдох. Не спешит. Смотрит на мяч…'
+    pad: [0.2, 0.5]
+    energy: 0.45
+    transition: { kind: fade, dur: 0.35 }
+    props:
+      shots:
+        - { image: shots/again-1.jpg, prompt: 'the same small green training pitch on a bright day: @matvey standing at the penalty spot again with the white football, @keeper ready in the goal, @team watching hopefully, @coach smiling on the touchline; in the little wooden stand @marina, @denis and @sofia sit together, Sofia holding up a hand-painted banner with a drawing of a raccoon and a ball and no writing; autumn trees, birds', move: in, zoom: 0.08, focus: { x: 0.5, y: 0.6 } }
+        - { at: breath, image: shots/again-2.jpg, prompt: 'close-up of @matvey with his eyes calmly closed, taking a slow deep breath, a small peaceful smile, soft swirls of air drawn around him, the white football in front of his boot, the goal softly blurred behind, gentle golden light', move: in, zoom: 0.06, focus: { x: 0.5, y: 0.5 } }
+
+  - id: goal
+    scene: illustration
+    say: '{#goal}Гол! Мяч влетает точно в угол! {#toss}Команда ликует, а товарищи подбрасывают Матвея вверх — совсем как он мечтал!'
+    pad: [0.1, 0.5]
+    energy: 0.95
+    transition: { kind: cut, dur: 0 }
+    sfx: [{ at: goal, kind: chime, gain: 0.55 }, { at: toss, kind: swell, gain: 0.3 }]
+    props:
+      shots:
+        - { image: shots/goal-1.jpg, prompt: 'the white football bulging the net low in the corner of the goal, @keeper diving the other way, @matvey just after a calm, balanced kick with his body over the ball, the net rippling, leaves swirling, bright sunshine, dynamic angle from the side of the goal', move: in, zoom: 0.09, focus: { x: 0.5, y: 0.55 } }
+        - { at: toss, image: shots/goal-2.jpg, prompt: '@team joyfully tossing @matvey high up into the air on the football pitch, Matvey laughing with arms spread wide; in the stand behind them @marina, @denis and @sofia jump and cheer; @coach claps; confetti of golden autumn leaves, bright happy colours — the same joyful moment Matvey once dreamed about, now real', move: out, zoom: 0.08, focus: { x: 0.5, y: 0.5 } }
+      title: { textFrom: facts.story.goal, at: goal, until: toss }
+
+  - id: close
+    scene: illustration
+    say: 'Вечером Матвей говорит: «Ошибка — это не конец. Это подсказка!» {+0.3}{#you}А тебе какая ошибка помогла научиться? {+0.4}Расскажи маме или папе!'
+    pad: [0.2, 1.4]
+    energy: 0.55
+    sfx: [{ at: you, kind: chime, gain: 0.3 }]
+    props:
+      shots:
+        - { image: shots/close.jpg, prompt: 'a cosy family evening in the living room: @matvey standing on the sofa holding his white football proudly and smiling, @sofia hugging him from the side, @marina and @denis sitting close and smiling at him; a warm fireplace, a blanket, mugs of cocoa, a chess board, the window showing a starry sky and a crescent moon, toys and crayon drawings without writing', move: in, zoom: 0.07, focus: { x: 0.5, y: 0.58 } }
+      labels:
+        - { textFrom: facts.story.lesson, x: 0.5, y: 0.6, at: 0.3, tone: accent }

@@ -4,7 +4,7 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { test } from 'node:test';
 import { boxMisses, type SceneShot } from '../production/src/board.ts';
-import { appendEntries, entriesFor, formSay, lexiconJob, lexiconKey, loadLexicon, nameAround, stressFrom, uncheckedNames } from '../production/src/lexicon.ts';
+import { appendEntries, entriesFor, entryOf, formSay, lexiconJob, lexiconKey, loadLexicon, nameAround, stressFrom, uncheckedNames } from '../production/src/lexicon.ts';
 
 test('the dictionary loads: every entry has a stress mark and a source, and every listed form resolves', () => {
   const lex = loadLexicon();
@@ -27,6 +27,14 @@ test('a line uses the entries of its words; the author\'s own marks win', () => 
   const lex = loadLexicon();
   assert.deepEqual(entriesFor('А Платини, Кройф и ван Бастен выигрывали по три.', lex).map((e) => e.word).sort(), ['Бастен', 'Кройф', 'Платини'].sort());
   assert.deepEqual(entriesFor('Это Пл+атини.', lex), []);
+});
+
+test('a hyphenated compound takes the entry of a part that has one: «Мама-лиса» is checked as «лиса»', () => {
+  const lex = loadLexicon();
+  assert.equal(entryOf('Мама-лиса', lex)?.word, 'лиса');
+  assert.ok(entryOf('Мама-лиса', lex)?.check);
+  assert.equal(entryOf('Сестра-белочка', lex), undefined);
+  assert.deepEqual(entriesFor('Мама-лиса Марина всё замечает.', lex).map((e) => e.word), ['лиса', 'Марина']);
 });
 
 test('names without a checked stress are reported; sentence starts, ё, marks and dictionary words are not', () => {

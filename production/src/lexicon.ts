@@ -89,11 +89,16 @@ export function lexiconKey(text: string, engine: string, lex: Lexicon = loadLexi
     .map((e) => JSON.stringify([e.say, e.forms ?? null, e.check ?? null, e.mark]));
 }
 
+/** The entry of a written word; a hyphenated compound («Мама-лиса») takes the entry of a part that has one. */
+export function entryOf(word: string, lex: Lexicon = loadLexicon()): LexiconEntry | undefined {
+  return lex.forms.get(key(word)) ?? (word.includes('-') ? word.split('-').map((p) => lex.forms.get(key(p))).find(Boolean) : undefined);
+}
+
 /** Dictionary entries a line uses, in order of appearance (keys the voice cache: an entry that changes re-voices its lines only). */
 export function entriesFor(text: string, lex: Lexicon = loadLexicon()): LexiconEntry[] {
   const out: LexiconEntry[] = [];
   for (const m of text.matchAll(WORD)) {
-    const e = lex.forms.get(key(m[0]));
+    const e = entryOf(m[0], lex);
     if (e && !/[+́]/.test(m[0]) && !out.includes(e)) out.push(e);
   }
   return out;
@@ -109,7 +114,7 @@ export function uncheckedNames(text: string, lex: Lexicon = loadLexicon()): stri
   for (const m of text.matchAll(WORD)) {
     const w = m[0];
     // ё is always stressed: a word with ё needs no check
-    if (w[0] !== w[0]!.toUpperCase() || /[+́ёЁ]/.test(w) || lex.forms.has(key(w))) continue;
+    if (w[0] !== w[0]!.toUpperCase() || /[+́ёЁ]/.test(w) || entryOf(w, lex)) continue;
     if ([...w].filter((c) => VOWELS.includes(c)).length < 2) continue;
     const before = text.slice(0, m.index).replace(/[\s«"„“(—-]+$/u, '');
     if (!before || /[.!?…:]$/.test(before)) continue;

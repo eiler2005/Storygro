@@ -251,3 +251,31 @@ words:
   - word: Саша
     say: С+аша
     source: 'ru.wikipedia, «Саша Грей»: «…Са́ша Грей (англ. Sasha Grey, настоящее имя —…» (storygro stress --lookup, 2026-10-25)'
+  - word: Матвей
+    say: Матв+ей
+    source: 'ru.wikipedia, «Матвей»: «…Матве́й (от др.-евр. מתתיהו matityāhū, matityāh…» (storygro stress --lookup, 2026-10-25)'
+  - word: София
+    say: Соф+ия
+    source: 'ru.wikipedia, «София»: «…Софи́я (болг. Со́фия [ˈsɔfijə], от греч. σοφία…» (storygro stress --lookup, 2026-10-25)'
+  - word: Марина
+    say: Мар+ина
+    source: 'ru.wikipedia, «Голуб, Марина Григорьевна»: «…Мари́на Григо́рьевна Го́луб (8 декабря 1957, Мо…» (storygro stress --lookup, 2026-10-25)'
+  - word: Денис
+    say: Ден+ис
+    source: 'ru.wikipedia, «Денис»: «…Дени́с — мужское личное имя, распространённое…» (storygro stress --lookup, 2026-10-25)'
+  - word: Матвея
+    say: Матв+ея
+    source: 'ru.wiktionary, «Матвей»: «…м. Матве́й Матве́и Р. Матве́я Матве́ев Д. Матве́ю Ма…» (storygro stress --lookup, 2026-10-25)'
+  - word: свисток
+    say: свист+ок
+    # bench 25.10.2026, OmniVoice B: unmarked 0/4 takes right (`s v iː s t ʌ k`, «сви́сток»), marked 4/4;
+    # the check reads the last vowel: stressed о stays `o`, unstressed reduces
+    check: { right: 't [oɔ]ː? k', wrong: 't [ʌɐəaɨ]ː? k' }
+    source: 'ru.wikipedia, «Свисток»: «…Свисто́к — устройство (изделие), преобразующее к…» (storygro stress --lookup, 2026-10-25)'
+  - word: лиса
+    say: лис+а
+    # bench 25.10.2026, OmniVoice B: unmarked 3/4 (the cartoon kept «ли́са», `l i s ɐ`), marked 4/4 in a short
+    # line and 3/4 in the full one (take 1: `l i s e`), an acute «лиса́» 0/4; the check reads the vowel after с,
+    # also inside «Мама-лиса»: anything but a clear `a` is another take
+    check: { right: 's aː?', wrong: 's (?!a)\S' }
+    source: 'ru.wiktionary, «лиса»: «ли-са́ — Существительное, одушевлённое, женский род» (checked 2026-10-25; the online lookup found the singer «Ли́са» instead)'

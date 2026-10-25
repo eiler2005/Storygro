@@ -13,7 +13,7 @@ Storygro makes several kinds of video from the same engine: a script and a facts
 | [Product demo](#product-demo) | showing a real product working | 30–60 s | any · screencast + headline | a recorded website | [slidecraft-demo](../../content/videos/slidecraft-demo/README.md) |
 | [Kinetic short](#kinetic-short) | a thesis, a quote, a mechanism in steps; Reels, Shorts, Telegram | 15–45 s | `kinetic-type` · kinetic, timeline, process, scale | drawn by code | [agent-motion-studio](../../content/videos/agent-motion-studio/README.md) |
 | [Cartoon explainer](#cartoon-explainer) | a story about people and decisions, with a recurring cast | 1–15 min | `cartoon` · illustration | local model (mflux + Z-Image-Turbo) | [ai-buys-work-knowledge](../../content/videos/ai-buys-work-knowledge/README.md), [agents-open-door](../../content/videos/agents-open-door/README.md) |
-| [High-quality cartoon](#high-quality-cartoon) | when the picture matters: recognisable real people, drawing-like detail | 1–2.5 min | `cartoon` + `images.provider: codex` · illustration, kinetic chapter cards | GPT Image through the Codex CLI | [football-stars-kids](../../content/videos/football-stars-kids/README.md) |
+| [High-quality cartoon](#high-quality-cartoon) | when the picture matters: recognisable real people, drawing-like detail | 1–2.5 min | `cartoon` + `images.provider: codex` · illustration, kinetic chapter cards | GPT Image through the Codex CLI | [football-stars-kids](../../content/videos/football-stars-kids/README.md), [matvey-mimo-vorot](../../content/videos/matvey-mimo-vorot/README.md) |
 | [Children's list cartoon](#childrens-list-cartoon) | several real people for children, one cheerful fact each | ~2 min | the high-quality cartoon + an album overlay | GPT Image | [football-stars-kids](../../content/videos/football-stars-kids/README.md), [ballon-dor-kids](../../content/videos/ballon-dor-kids/README.md) |
 
 ## Choosing
@@ -69,6 +69,8 @@ What it costs and what to watch:
 - name the person and one or two visible traits in every prompt; plain kits, no crests or logos; say in the post that the pictures are friendly caricatures;
 - detailed pictures need the overlays placed per shot — headline as one surname, number badge away from the face (`badge.y`, `side`), labels low — and every face checked before rendering;
 - the master file is large (a two-minute cartoon was 172 MB); send the web copy (≤ 25 MB).
+
+A fairy-tale story with an original recurring cast works the same way: [«Мимо ворот»](../../content/videos/matvey-mimo-vorot/README.md) (episode 1 of the owner's series about a family of animals) describes each character once in `images.cast` and names them as `@matvey`, `@sofia` in the shot prompts — once per prompt, later by plain name — so 26 pictures keep the same faces and clothes. Name labels sit low (`y: 0.7`) above the captions, where the pictures rarely put a face.
 
 ## Children's list cartoon
 

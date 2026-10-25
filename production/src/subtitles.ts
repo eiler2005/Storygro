@@ -12,7 +12,7 @@ export function phrases(words: Word[], maxWords: number): Word[][] {
   let cur: Word[] = [];
   for (const w of words) {
     cur.push(w);
-    const end = /[.!?…:;—]$/.test(w.w) || (/,$/.test(w.w) && cur.length >= 4);
+    const end = /[.!?…:;—][»"”)]*$/.test(w.w) || (/,[»"”)]*$/.test(w.w) && cur.length >= 4);
     if (end || cur.length >= maxWords) {
       out.push(cur);
       cur = [];

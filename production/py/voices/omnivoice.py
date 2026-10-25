@@ -12,7 +12,14 @@ import soundfile as sf
 class Provider:
     native_words = False
     reads_markup = False
-    stress = None  # Russian accent markup has not been validated for this engine.
+    # bench 25 Oct 2026 (OmniVoice B, 4 takes each): an uppercase stressed vowel came out right 8 of 8
+    # («СвистОк», «Мама-лисА»); unmarked «свисток» 0 of 4; an acute «лиса́» 0 of 4. Marks reach the
+    # engine only under `stress: marks` or `auto`; the owner's profile keeps `off`.
+    stress = 'upper'
+    # like Qwen3: dictionary marks only for entries marked `always`, so unmarked lines keep their takes
+    lexicon_marks = False
+    # another seed per take: voice.py re-voices a line while a checked dictionary word comes out wrong
+    take = 0
 
     def __init__(self, job):
         home = os.environ.get('STORYGRO_HOME') or os.environ.get('REELCRAFT_HOME') or os.path.expanduser('~/.storygro')
@@ -64,7 +71,8 @@ class Provider:
 
     def synth(self, text):
         out = os.path.join(self.tmp.name, 'line.wav')
-        seed = int(hashlib.sha1(text.encode()).hexdigest()[:8], 16)
+        # take 0 keeps the seed every earlier line was voiced with, so cached lines stay valid
+        seed = (int(hashlib.sha1(text.encode()).hexdigest()[:8], 16) + self.take * 7919) % 2**32
         self.proc.stdin.write(json.dumps({'text': text, 'seed': seed, 'out': out}) + '\n')
         self.proc.stdin.flush()
         self._read()

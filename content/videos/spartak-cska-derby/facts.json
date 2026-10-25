@@ -1,0 +1,62 @@
+{
+  "_about": "Checked 2026-10-25. Fictional friends and match. No current score, roster or prediction. Images are generated visualizations, not actual archive or match footage.",
+  "intro": {
+    "title": "СПАРТАК × ЦСКА",
+    "label": "Друзья • соперники",
+    "_source": "Original educational screenplay; fictional demonstration and editorial wording."
+  },
+  "derby": {
+    "title": "ЧТО ТАКОЕ ДЕРБИ?",
+    "label": "Один город — разные команды",
+    "_source": "https://pfc-cska.com/ru/novosti/vse-novosti/32617-bileti-na-derbi-v-otkritoy-prodazhe/ — “Билеты на дерби в открытой продаже!”"
+  },
+  "kits": {
+    "title": "УЗНАЙ ПО ЦВЕТАМ",
+    "label": "Красно-белые / красно-синие",
+    "_source": "https://pfc-cska.com/ru/novosti/vse-novosti/9312-pfk-cska-109-let/ — “1960 — 1994 — ЦСКА (Центральный Спортивный Клуб Армии)”"
+  },
+  "spartak": {
+    "title": "СПАРТАК: ИСТОРИЯ",
+    "label": "1922 • начало истории",
+    "_source": "https://spartak.com/ru/club/history — “Основан в 1922 году.”",
+    "year": "1922"
+  },
+  "cska": {
+    "title": "ЦСКА: НЕОЖИДАННОЕ НАЧАЛО",
+    "label": "1911 • общество лыжников",
+    "_source": "https://pfc-cska.com/ru/club/o-klube/ — “ведущий свою историю от команды ОЛЛС (Общество любителей лыжного спорта), основанной в 1911 году.”",
+    "year": "1911"
+  },
+  "cup": {
+    "title": "ЕВРОПЕЙСКИЙ ТРОФЕЙ",
+    "label": "2005 • Кубок УЕФА",
+    "_source": "https://pfc-cska.com/ru/novosti/vse-novosti/4695-kubok-nash-6/ — “в Лиссабоне, красно-синие переиграли местный «Спортинг» со счетом 3:1.”",
+    "score": "3:1",
+    "year": "2005"
+  },
+  "rivalry": {
+    "title": "ИСТОРИЯ НЕ ЗАБИВАЕТ ГОЛЫ",
+    "label": "На поле всё начинается заново",
+    "_source": "Original educational screenplay; fictional demonstration and editorial wording."
+  },
+  "choice": {
+    "title": "НАЙДИ СВОБОДНОГО",
+    "label": "Куда отправить мяч?",
+    "_source": "Original educational screenplay; fictional demonstration and editorial wording."
+  },
+  "answer": {
+    "title": "СМОТРИ НЕ ТОЛЬКО НА МЯЧ",
+    "label": "Пас и движение",
+    "_source": "Original educational screenplay; fictional demonstration and editorial wording."
+  },
+  "close": {
+    "title": "СОПЕРНИКИ НА ПОЛЕ",
+    "label": "Уважение — вне счёта",
+    "_source": "Original educational screenplay; fictional demonstration and editorial wording."
+  },
+  "visual": {
+    "reconstruction": "ИИ-реконструкция",
+    "fiction": "Учебный эпизод",
+    "_source": "Production disclosure: all pictures generated using GPT Image; no actual match footage."
+  }
+}

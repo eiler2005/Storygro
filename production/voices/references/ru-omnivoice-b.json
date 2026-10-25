@@ -1,0 +1,10 @@
+{
+  "model": "k2-fsa/OmniVoice",
+  "synthetic": true,
+  "design": "male, young adult, moderate pitch",
+  "origin": "inter-miami-magic-pass B_new_voice intro",
+  "sha256": "28881ea9cd8050a244837853a834c462df41e7889883f0ad2c699f686719f934",
+  "selection": "Owner selected B on 2026-10-25; use playback speed 0.90, preserve the original reference sample.",
+  "modelLicence": "CC-BY-NC",
+  "seconds": 9.24
+}

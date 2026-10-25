@@ -199,7 +199,7 @@ const cell = (s: string) => s.replace(/\|/g, '/').replace(/\s+/g, ' ').trim();
 const day = (iso?: string) => (iso ? iso.slice(0, 10) : '');
 
 /** Strings a viewer reads in the scene's overlays (bound props), without pictures, prompts and layout keys. */
-const LAYOUT = new Set(['image', 'split', 'prompt', 'splitPrompt', 'move', 'focus', 'zoom', 'at', 'until', 'tone', 'side', 'align', 'width', 'x', 'y', 'keyAt', 'fade', 'mark', 'seed', 'kind', 'scene', 'id']);
+const LAYOUT = new Set(['image', 'split', 'prompt', 'splitPrompt', 'move', 'focus', 'zoom', 'at', 'until', 'tone', 'side', 'align', 'width', 'height', 'size', 'x', 'y', 'keyAt', 'fade', 'mark', 'seed', 'kind', 'scene', 'id']);
 export function screenText(props: unknown, key = ''): string[] {
   if (typeof props === 'string') return LAYOUT.has(key) || key.endsWith('From') || /^[\w./-]+\.(png|jpe?g|svg|webp|mp4|json)$/i.test(props) ? [] : [props];
   if (typeof props === 'number') return LAYOUT.has(key) ? [] : [String(props)];

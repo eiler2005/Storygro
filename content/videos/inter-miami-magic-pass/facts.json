@@ -1,0 +1,70 @@
+{
+  "_about": "Checked 2026-10-25. Six selected notable current players, not an objective ranking. Football quest, Masha and all dialogue are original fiction. Real players appear only in official photographs.",
+  "story": {
+    "_source": "Original screenplay; count is our selection from the MLS roster: https://www.mlssoccer.com/clubs/inter-miami-cf/roster/",
+    "count": "6",
+    "title": "ФИНАЛЬНЫЙ ПАС",
+    "club": "ИНТЕР МАЙАМИ",
+    "fiction": "Футбольная фантазия",
+    "challenge": "ПРОЙДИ ПОЛЕ",
+    "choice": "УДАР ИЛИ ПАС?",
+    "team": "СИЛА — В КОМАНДЕ",
+    "solo": "СОЛО НЕ ПРОЙТИ",
+    "combination": "УВИДЕТЬ ПАРТНЁРА",
+    "goal": "ГОООЛ!"
+  },
+  "messi": {
+    "_source": "https://www.intermiamicf.com/news/leo-messi-nominated-for-2026-ballon-d-or — “a record eight times”",
+    "name": "Лионель Месси",
+    "surname": "МЕССИ",
+    "country": "Аргентина",
+    "value": "8",
+    "label": "«Золотых мячей»",
+    "skill": "КОНТРОЛЬ МЯЧА"
+  },
+  "suarez": {
+    "_source": "https://en.atleticodemadrid.com/noticias/the-numbers-from-luis-suarezs-career-presented-by-versus — “Suárez has won the European Golden Shoe twice in his career: in 2014 (shared with Ronaldo) and 2016.”",
+    "name": "Луис Суарес",
+    "surname": "СУАРЕС",
+    "country": "Уругвай",
+    "value": "2",
+    "label": "«Золотые бутсы»",
+    "skill": "ТОЧНОСТЬ"
+  },
+  "depaul": {
+    "_source": "https://www.mlssoccer.com/news/busquets-de-paul-messi-inter-miami-s-world-cup-champions-make-mls-history — “De Paul and Messi captured the 2022 World Cup with Argentina”",
+    "name": "Родриго Де Пауль",
+    "surname": "ДЕ ПАУЛЬ",
+    "country": "Аргентина",
+    "value": "2022",
+    "label": "чемпион мира",
+    "skill": "ПАС И РЫВОК"
+  },
+  "casemiro": {
+    "_source": "https://www.intermiamicf.com/news/inter-miami-cf-signs-five-time-uefa-champions-league-winning-midfielder-casemiro — “During his time with Los Blancos, he won five UEFA Champions League titles”",
+    "name": "Каземиро",
+    "surname": "КАЗЕМИРО",
+    "country": "Бразилия",
+    "value": "5",
+    "label": "побед в Лиге чемпионов",
+    "skill": "ПЕРЕХВАТ"
+  },
+  "berterame": {
+    "_source": "https://es.intermiamicf.com/noticias/inter-miami-cf-ficha-al-delantero-internacional-mexicano-german-berterame-como-jugador-designado — “Nacido en Argentina y naturalizado mexicano”",
+    "name": "Херман Бертераме",
+    "surname": "БЕРТЕРАМЕ",
+    "country": "Мексика",
+    "value": "Аргентина → Мексика",
+    "label": "родился → играет за сборную",
+    "skill": "ОТКРЫВАНИЕ"
+  },
+  "stclair": {
+    "_source": "https://www.mlssoccer.com/news/minnesota-united-fc-goalkeeper-dayne-st-clair-named-2025-mls-goalkeeper-of-the-year — “has been named the 2025 MLS Goalkeeper of the Year”",
+    "name": "Дейн Сент-Клэр",
+    "surname": "СЕНТ-КЛЭР",
+    "country": "Канада",
+    "value": "2025",
+    "label": "вратарь года MLS",
+    "skill": "РЕАКЦИЯ"
+  }
+}

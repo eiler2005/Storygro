@@ -13,16 +13,18 @@
 //            split   a second image shown beside the first, with a divider (a before/after or a contrast)
 //            prompt  ignored here; `storygro images` uses it to generate `image`
 //   fade:    seconds of cross-fade between shots (default 0 = a cut, as in most cartoon explainers)
-//   title:   { text, at?, until?, align?, width? }    headline band at the top; align left|right keeps it to one side
+//   title:   { text, at?, until?, align?, width?, size? }    headline band at the top; align left|right keeps it to one side
 //            (width: share of the safe box, default 0.5) so a face stays clear
 //   badge:   { value, label?, at?, until?, tone?, side?: left|right, y?: 0..1 }   a big number on a card; y = its top
 //            within the text box (default 0.22), lower it to keep a face clear
 //   labels:  [{ text, x, y, at?, until?, tone? }]       small tags pinned to the picture (x, y in 0..1)
 //   source:  string or { text }                        small source line, bottom left (sourceFrom / textFrom bind it)
+//   portrait: { image, name, country?, value?, label?, at?, until?, y?, width?, height? }
+//             an authentic photograph in a separate animated fact card; texts support the usual From bindings
 export default {
   mount(root, ctx) {
     const { h, set, p, ease, clamp, cue } = ctx.kit;
-    const { shots = [], fade = 0, title, badge, labels = [], source } = ctx.props;
+    const { shots = [], fade = 0, title, badge, labels = [], source, portrait } = ctx.props;
     if (!Array.isArray(shots) || shots.length === 0) throw new Error('illustration: props.shots needs at least one { image }');
     shots.forEach((s, i) => {
       if (!s || typeof s.image !== 'string') throw new Error(`illustration: shots[${i}].image is required`);
@@ -68,6 +70,41 @@ export default {
     const overlay = h('div', { style: { position: 'absolute', inset: '0', pointerEvents: 'none' } });
     root.append(overlay);
 
+    let portraitCard = null;
+    if (portrait) {
+      if (typeof portrait.image !== 'string' || typeof portrait.name !== 'string')
+        throw new Error('illustration: portrait needs image and name');
+      const available = box.right - box.left;
+      const width = available * clamp(portrait.width ?? 1, 0.3, 1);
+      const height = Math.min(H * clamp(portrait.height ?? 0.255, 0.16, 0.5), H * 0.55);
+      const top = Math.max(box.top, H * clamp(portrait.y ?? 0.13, 0, 0.8));
+      portraitCard = h('div', { class: 'rc-portrait-card', style: {
+        position: 'absolute', left: `${box.left}px`, top: `${top}px`, width: `${width}px`, height: `${height}px`,
+        display: 'flex', gap: `${W * 0.025}px`, boxSizing: 'border-box', overflow: 'hidden',
+        padding: `${H * 0.012}px`, borderRadius: `${H * 0.018}px`,
+        background: 'linear-gradient(135deg, #fff7ed, #ffe5ef)', border: `${Math.max(2, W * 0.003)}px solid #fff5da`,
+        boxShadow: '0 15px 45px rgba(4, 23, 35, .35)', color: '#143343', transformOrigin: '50% 0%',
+      } });
+      portraitCard.append(h('img', { src: ctx.asset(portrait.image), alt: portrait.name, style: {
+        width: '40%', height: '100%', objectFit: 'cover', objectPosition: 'center 20%',
+        minWidth: '0', flexShrink: '0', borderRadius: `${H * 0.012}px`,
+        background: 'linear-gradient(145deg, #f5bcd1, #efdbca)',
+      } }));
+      const info = h('div', { style: {
+        flex: '1', minWidth: '0', display: 'flex', flexDirection: 'column', justifyContent: 'center',
+        gap: `${H * 0.009}px`, fontFamily: 'var(--ct-font, sans-serif)',
+      } });
+      info.append(h('div', { style: { fontSize: `${Math.min(H * 0.029, width * 0.061)}px`, fontWeight: '800', lineHeight: '1.08', overflowWrap: 'anywhere' } }, portrait.name));
+      if (portrait.country) info.append(h('div', { style: { fontSize: `${H * 0.017}px`, fontWeight: '600', color: '#516570' } }, portrait.country));
+      if (portrait.value !== undefined) info.append(h('div', { style: {
+        fontSize: `${H * (String(portrait.value).length > 8 ? 0.025 : 0.051)}px`, lineHeight: '1.05',
+        fontWeight: '850', color: '#b42d61', overflowWrap: 'anywhere',
+      } }, String(portrait.value)));
+      if (portrait.label) info.append(h('div', { style: { fontSize: `${H * 0.019}px`, lineHeight: '1.18', fontWeight: '650' } }, portrait.label));
+      portraitCard.append(info);
+      overlay.append(portraitCard);
+    }
+
     let band = null;
     let bandText = null;
     if (title?.text) {
@@ -83,7 +120,7 @@ export default {
         },
         (bandText = h('div', {
           style: {
-            font: `${Math.round(H * 0.075)}px/1.05 var(--ct-display, Impact, sans-serif)`, fontWeight: 'var(--ct-display-weight, 600)', textTransform: 'uppercase',
+            font: `${Math.round(H * clamp(title.size ?? 0.075, 0.025, 0.12))}px/1.05 var(--ct-display, Impact, sans-serif)`, fontWeight: 'var(--ct-display-weight, 600)', textTransform: 'uppercase',
             letterSpacing: '.01em', color: 'var(--ct-ink, #1f1a14)', background: 'var(--ct-band, #f8f1e2)',
             padding: `${Math.round(H * 0.012)}px ${Math.round(H * 0.03)}px ${Math.round(H * 0.008)}px`,
             borderRadius: `${Math.round(H * 0.008)}px`, boxShadow: '0 6px 0 rgba(31, 26, 20, .18)', textAlign: side ?? 'center',
@@ -196,6 +233,10 @@ export default {
       if (band) {
         const q = shown(t, at(title.at, 0.2), title.until === undefined ? undefined : at(title.until, ctx.duration));
         set(band, { opacity: clamp(q * 1.4), transform: `translateY(${(1 - q) * -40}px)` });
+      }
+      if (portraitCard) {
+        const q = shown(t, at(portrait.at, 0.1), portrait.until === undefined ? undefined : at(portrait.until, ctx.duration));
+        set(portraitCard, { opacity: clamp(q), visibility: q > 0.001 ? 'visible' : 'hidden', transform: `translateY(${(1 - q) * -65}px) scale(${0.94 + 0.06 * q})` });
       }
       if (card) {
         const q = shown(t, at(badge.at, 0.4), badge.until === undefined ? undefined : at(badge.until, ctx.duration));

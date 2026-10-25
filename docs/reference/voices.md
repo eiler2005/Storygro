@@ -13,6 +13,7 @@ Narration drives the timeline, so the voice is chosen before the pictures are po
 | `qwen3` | Russian, English, German, French, Spanish, Italian, Portuguese, Japanese, Korean, Chinese | `npm run setup:ru` (Apple silicon) | Whisper alignment | tempo change after synthesis (`speed`, pitch kept) | Qwen3-TTS Apache-2.0, mlx-audio MIT |
 | `silero` | Russian | `npm run setup:ru` | Whisper alignment | native (SSML rate) | MIT — **only** the CIS base models; Silero's `v4_ru` / `v5_*_ru` speakers are CC BY-NC-SA and are not offered |
 | `chatterbox` | Russian, English and 21 more | `npm run setup:chatterbox` (own environment) | Whisper alignment | tempo change after synthesis | MIT (Resemble AI); outputs carry an imperceptible PerTh watermark |
+| `omnivoice` | Multilingual; Russian validated locally | `npm run setup:omnivoice` (own PyTorch environment) | Whisper alignment | tempo change after synthesis, pitch kept | Code Apache-2.0; [model weights CC-BY-NC](https://huggingface.co/k2-fsa/OmniVoice#license) |
 | `yandex` | Russian | none (cloud); `YANDEX_API_KEY` | Whisper alignment | native (`speed`) | Yandex Cloud terms, paid per request — **not yet run against the live API** |
 | `none` | — | — | estimated (~2.6 words/s) | — | — |
 
@@ -29,6 +30,16 @@ voice: { engine: qwen3, voice: assets/voice/narrator-ru.wav, stress: auto } # st
 `lang:` at the top of the spec (e.g. `ru`) is the language of the narration and captions; it selects the ASR model and the text normalisation. `voice.lang` selects the US/UK English frontend. Russian Kokoro uses a separate community checkpoint, not the official English frontend with `voice.lang: ru`.
 
 ## How a line is made
+
+### Current Russian preference (25 October 2026)
+
+After listening to the complete Inter Miami auditions, the owner selected **OmniVoice B**, slowed by 10% (`speed: 0.90`, `stress: off`). Second choice is the previous **Qwen3 narrator** (`1.12`, `auto`); third is **OmniVoice A** with that previous narrator reference (`1.0`, `off`). The [profile ranking](../../production/voices/preferences-ru.yaml) drives only new Russian scaffolds; existing specs keep their explicit settings, including micro1's Qwen3 at 0.96.
+
+`storygro new <folder> --style <id> --lang ru` copies the exact selected synthetic reference into `assets/voice/` when it is available locally, and writes the provider and speed. The [reference provenance](../../production/voices/references/README.md) explains off-Git storage and restoration. Missing reference audio fails clearly at synthesis; it is never silently redesigned. Model weights have separate noncommercial terms. Russian accent markup is not validated for OmniVoice and is disabled; the dictionary remains useful for editorial review.
+
+The new provider runs in an isolated worker, leaving Whisper and the common pitch-preserving tempo step in the main environment. OmniVoice cache keys include the reference WAV and transcript contents. [Audition findings](../../content/videos/inter-miami-magic-pass/VOICE-OMNIVOICE.md) include the limits of automatic stress checks; this owner preference does not certify every future pronunciation.
+
+### Shared pipeline
 
 1. `production/py/voice.py` splits the line at `{+s}` pauses and parses `{#cue}` markers and `[written](=spoken)` hints, producing the plain text the narrator says and the positions of cues and hints in it.
 2. The provider synthesises the text. Kokoro reads its `[word](/phonemes/)` markup directly; other engines get plain text.
@@ -105,7 +116,7 @@ What it means:
 - **Brand names for Qwen3: write them in Latin letters.** «OpenAI» and «Gemini» in Latin were heard right; the transliterations «Оупен Эй-Ай» and «Джемини» came out as "OPEN-A. I" and "Jiminy". Replit was the exception (the Cyrillic «Реплит» was heard right). Test a new brand on one line before an episode.
 - **Pace.** At `speed: 1` the narrator says about 2 words a second; the owner found 0.96 slow. `speed: 1.12` gives 2.2 words a second at almost the same UTMOS.
 
-**Decision for new Russian episodes:** Qwen3 with the owner's narrator at `speed: 1.12`, `stress: auto` (the default), brands in Latin unless a test says otherwise; read the plan's stress line and mark what RUAccent cannot know (`зам+ок` in a phrase without context). When a script is full of homographs or terms whose stress must be exact, use Kokoro-RU or a Chatterbox clone of the narrator. Re-run the bench before switching engines, and listen — the bench page (`index.html` in `--out`) plays every line.
+**Historical decision, 21 October 2026:** Qwen3 with the owner's narrator at `speed: 1.12`, `stress: auto`, brands in Latin unless a test says otherwise. The owner superseded this default on 25 October after the OmniVoice audition (current preference above); the older measurements remain valid as historical comparisons. Continue checking homographs and listening to candidate voices rather than treating automatic scores as editorial approval.
 
 ## Pronunciation notes (Russian)
 

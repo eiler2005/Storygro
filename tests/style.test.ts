@@ -79,6 +79,24 @@ test('new <folder> --style scaffolds a project that loads', (t) => {
   assert.throws(() => scaffold(project, loadStyle('cartoon')), /not empty/);
 });
 
+test('new Russian projects receive the selected voice; existing episodes keep their own voice', (t) => {
+  const dir = mkdtempSync(join(tmpdir(), 'storygro-russian-'));
+  t.after(() => rmSync(dir, { recursive: true, force: true }));
+  for (const style of listStyles()) {
+    const project = join(dir, style.def.id);
+    scaffold(project, style, { lang: 'ru' });
+    const voice = loadSpec(join(project, 'ru.reel.yaml')).spec.voice;
+    assert.equal(voice.engine, 'omnivoice');
+    assert.equal(voice.speed, 0.9);
+    assert.equal(voice.stress, 'off');
+    assert.equal(voice.voice, 'assets/voice/narrator-ru.wav');
+    assert.match(readFileSync(join(project, 'assets/voice/narrator-ru.txt'), 'utf8'), /В Майами/);
+  }
+  const old = loadSpec(join(root, 'content/videos/micro1-work-data/ru.reel.yaml')).spec.voice;
+  assert.equal(old.engine, 'qwen3');
+  assert.equal(old.speed, 0.96);
+});
+
 test('a kinetic-type project scaffolds and builds: dark tokens, captions off, motion blur on', async (t) => {
   const dir = mkdtempSync(join(tmpdir(), 'storygro-style-'));
   t.after(() => rmSync(dir, { recursive: true, force: true }));

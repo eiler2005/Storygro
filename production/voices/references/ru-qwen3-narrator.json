@@ -1,0 +1,6 @@
+{
+  "sha256": "23a831504c2c7f2cf0c6f3fc1b07818b67b94221c98931bbb465d38836e6fe98",
+  "synthetic": true,
+  "origin": "Existing Storygro Qwen3 VoiceDesign narrator, seed 7; micro1 audition C. Same reference used for OmniVoice audition A.",
+  "modelLicence": "Apache-2.0 (Qwen3-TTS); OmniVoice synthesis separately uses CC-BY-NC weights."
+}

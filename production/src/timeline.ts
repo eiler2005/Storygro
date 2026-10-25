@@ -121,6 +121,11 @@ export async function narrate(l: LoadedSpec): Promise<Map<string, { meta: VoiceM
       : [];
     const settings =
       v.engine === 'kokoro' && !v.model && l.spec.lang === 'en' ? [s.say, v.voice, v.speed, v.lang] : [s.say, v.engine, v.model, v.voice, v.speed, l.spec.lang, ...stressed];
+    if (v.engine === 'omnivoice') {
+      // References are content, not merely file names: replacing a voice must invalidate its audio cache.
+      for (const path of [resolve(l.dir, v.voice), resolve(l.dir, v.voice.replace(/\.wav$/, '.txt'))])
+        settings.push(existsSync(path) ? hash(readFileSync(path).toString('base64')) : 'missing-reference');
+    }
     const key = hash(JSON.stringify(settings));
     const wav = join(dir, `${s.id}-${key}.wav`);
     const json = join(dir, `${s.id}-${key}.json`);

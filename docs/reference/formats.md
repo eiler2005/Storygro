@@ -40,12 +40,15 @@ The profile follows from the aspect ratio (`vertical`, `portrait`, `square`, `la
 | `reels-ads` | 270 | 670 | 65 | 65 | 690 | Meta ads guidance |
 | `shorts-ads` | 288 | 672 | 48 | 192 | 690 | YouTube vertical ads guidance |
 | `portrait` (1080×1350) | 110 | 170 | 80 | 80 | 44 | feed posts, carousels |
+| `phone` (1080×1920) | 130 | 150 | 70 | 70 | 175 | local full-screen phone playback; editorial margins, not a platform UI specification |
 | `square` | 90 | 150 | 80 | 80 | 40 | feed posts |
 | `landscape` (1920×1080) | 150 | 190 | 140 | 140 | 54 | the historical launch film |
 
 **Where the numbers come from (checked 18 Oct 2026).** Platforms publish safe zones for ads only, and they disagree with each other and with third-party tools. The ad profiles follow the most cited figures: Meta — 14 % top, 35 % bottom, 6 % sides on 1080×1920 ([Hopper HQ summary of Meta guidance](https://www.hopperhq.com/blog/instagram-reel-size/)); YouTube vertical ads — 288 / 672 / 48 / 192 px ([Socialync](https://www.socialync.io/tools/safe-zones/youtube-shorts), [Revid](https://www.revid.ai/youtube-shorts-safe-zone)). The organic profiles are conservative estimates from measurements of current apps ([Adkit, March 2026](https://adkit.so/tools/safe-zones/youtube), [Adkit Meta](https://adkit.so/tools/safe-zones/meta)). Treat them as defaults: upload a private test and look at it on a phone; adjust the JSON if the apps change.
 
 ### In a scene
+
+The `phone` profile is an editorial default for local viewing with player controls hidden. It is not a guarantee for a particular handset or social app; use the relevant social profile for an upload.
 
 Cut-paper scenes lay out inside `box(ctx)` from `production/runtime/paper.js`: the safe area, an extra inset (2.4 % of the short side) so camera drift and tilted cut-outs stay inside, and — when captions are on — a reserve above the caption strip. Backgrounds and decorative scraps may run full-bleed. An element that legitimately crosses an edge while moving (a card flying away) sets `data-rc-safe-ignore` for that time.
 

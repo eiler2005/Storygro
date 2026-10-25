@@ -1,0 +1,23 @@
+@import url('/rc/styles/cartoon/theme.css');
+
+:root {
+  --ct-ink: #133244;
+  --ct-band: #fff3d9;
+  --ct-card: #fff5df;
+  --ct-accent: #ce4b80;
+  --ct-teal: #137f84;
+  --ct-mustard: #f5ce71;
+}
+
+.rc-caption {
+  font-size: 53px;
+  line-height: 1.22;
+  max-width: 840px;
+  background: rgba(8, 30, 41, .88);
+  border: 1px solid rgba(255, 241, 204, .35);
+  border-radius: 22px;
+  padding: 16px 25px;
+  -webkit-text-stroke: 0;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, .5);
+}
+.rc-word.on { color: #ffe19a; }

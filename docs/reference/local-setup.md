@@ -41,6 +41,10 @@ The whole cache was 38 GB. The rest belongs to other tools on this machine and i
 
 ## Local renders (rebuildable, slow)
 
+### Optional OmniVoice audition (25 October 2026)
+
+`~/.storygro/omnivoice-venv` (1.2 GB) is an isolated Python environment for OmniVoice (`npm run setup:omnivoice`). `~/.cache/huggingface/hub/models--k2-fsa--OmniVoice` occupies 3.4 GB including partial downloads retained after an interrupted Xet transfer. The completed model downloaded through HTTP with `HF_HUB_DISABLE_XET=1`. No existing voice environment was upgraded. Audition audio stays in the episode's ignored `.reel/omni-audition/` and `~/Downloads/inter-miami-voice-audition/`. The owner selected B at speed 0.90 as the new Russian scaffold default; Qwen3 is second choice, A third. Preserve the exact original reference in `production/voices/references/ru-omnivoice-b.wav` and its backup `~/.storygro/voices/ru-omnivoice-b.wav`; a new generation is not an equivalent restoration. See [the audition record](../../content/videos/inter-miami-magic-pass/VOICE-OMNIVOICE.md).
+
 | Path | Size | What |
 |---|---|---|
 | `content/videos/*/.reel/` | 117–424 MB each, ≈ 1.3 GB in all | voice takes, timeline, frames, storyboard, master and web MP4, subtitles, stills, QA, releases |

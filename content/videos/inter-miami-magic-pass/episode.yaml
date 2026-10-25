@@ -1,0 +1,7 @@
+episode: 1
+id: inter-miami-magic-pass
+title: "Интер Майами: финальный пас"
+sources: sources.md
+credits: CREDITS.md
+variants:
+  - { id: ru, spec: ru.reel.yaml }

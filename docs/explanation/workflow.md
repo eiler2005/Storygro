@@ -47,6 +47,8 @@ The recipe every format shares, as it was run for the October 2026 episodes. [Vi
 
 **Length budget.** The Russian Qwen3 narrator at `speed: 1.12` came out at about two words a second over the whole video, pauses and the music intro included (240 words in 117.5 s, 186 in 89.1 s). Write about 120 words a minute and let `voice` measure the real length — a draft estimate is not narration timing.
 
+Since 25 October 2026, new Russian scaffolds use the owner's selected OmniVoice B at `speed: 0.90`; Qwen3 ranks second and OmniVoice A third. Existing episodes keep their settings. The first complete B episode, [Spartak–CSKA](../../content/videos/spartak-cska-derby/REVIEW.md), has 264 timeline words in 126.09 seconds including pauses. Measure actual narration and shorten the script when needed; preserve the selected tempo. See [voices](../reference/voices.md) for setup, reference restoration and separate CC-BY-NC model terms.
+
 **Time on one machine** (an M5 Pro, October 2026):
 
 | Stage | Time |

@@ -668,12 +668,13 @@ The scene of the [`cartoon` style](../../production/styles/cartoon/README.md): f
 | `shots[].split` | string | No | A second picture beside the first, with a divider — a contrast or a before/after. |
 | `shots[].prompt`, `splitPrompt` | string | No | What the picture shows, for `storygro images`; `@name` comes from the cast. The scene ignores them. |
 | `fade` | seconds | No (default 0) | Cross-fade between shots; 0 is a cut. |
-| `title` | `{ text, at?, until? }` | No | Headline band at the top, upper-case in the style's display font. |
+| `title` | `{ text, at?, until?, size? }` | No | Headline band at the top, upper-case in the style's display font. `size` is a fraction of stage height (default 0.075, clamped to 0.025–0.12). |
 | `badge` | `{ value, label?, at?, until?, tone?, side?, y? }` | No | A big number on a card, right (default) or left; `y` (0..1, default 0.22) is its top within the text area — lower it to keep a face clear. The number shrinks to fit its card. Bind with `valueFrom` / `labelFrom`. |
 | `labels` | `[{ text, x, y, at?, until?, tone? }]` | No | Small tags pinned to the picture; `x`, `y` are fractions of the stage. |
 | `source` | string or `{ text }` | No | Small source line, bottom left; bind with `sourceFrom` or `{ textFrom: … }`. |
+| `portrait` | `{ image, name, country?, value?, label?, at?, until?, y?, width?, height? }` | No | A separate animated photograph card. `image` and `name` are required. Text supports `From` bindings; `y`, `width`, `height` are fractions of stage height, safe width and stage height. Defaults: 0.13, 1, 0.255. Keep photograph rights and provenance with the episode. |
 
-**Cue names:** `shots[].at`, `title.at/until`, `badge.at/until`, `labels[].at/until`. Tones: `accent`, `teal`, `mustard`, `red`, `green`, `blue` or any CSS colour.
+**Cue names:** `shots[].at`, `title.at/until`, `badge.at/until`, `labels[].at/until`, `portrait.at/until`. Tones: `accent`, `teal`, `mustard`, `red`, `green`, `blue` or any CSS colour.
 
 ```yaml
   - id: news

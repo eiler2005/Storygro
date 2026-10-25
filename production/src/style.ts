@@ -1,6 +1,6 @@
-import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { copyFileSync, existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { basename, join, resolve } from 'node:path';
-import { parse } from 'yaml';
+import { parse, parseDocument } from 'yaml';
 import { z } from 'zod';
 import { REEL_ROOT } from './tools.ts';
 
@@ -139,9 +139,22 @@ export function scaffold(dir: string, style: LoadedStyle, opts: { lang?: string;
   const template = join(style.dir, 'template.reel.yaml');
   if (!existsSync(template)) throw new Error(`style ${style.def.id} has no template.reel.yaml`);
   const title = opts.title ?? id.replace(/-/g, ' ');
+  let script = readFileSync(template, 'utf8').replaceAll('{title}', title).replaceAll('{lang}', lang);
+  const voiceRoot = join(REEL_ROOT, 'voices');
+  const russian = lang.split('-')[0] === 'ru';
+  const selected = russian ? z.object({ profiles: z.array(z.object({
+    rank: z.number(), engine: z.string(), model: z.string().optional(), reference: z.string(),
+    speed: z.number().min(0.5).max(2), stress: z.enum(['auto', 'marks', 'off']),
+  })).min(1) }).parse(parse(readFileSync(join(voiceRoot, 'preferences-ru.yaml'), 'utf8'))).profiles.sort((a, b) => a.rank - b.rank)[0]! : null;
+  if (selected) {
+    const doc = parseDocument(script);
+    doc.set('voice', { engine: selected.engine, ...(selected.model ? { model: selected.model } : {}),
+      voice: 'assets/voice/narrator-ru.wav', speed: selected.speed, stress: selected.stress });
+    script = doc.toString();
+  }
   mkdirSync(dir, { recursive: true });
   const files: [string, string][] = [
-    [`${lang}.reel.yaml`, readFileSync(template, 'utf8').replaceAll('{title}', title).replaceAll('{lang}', lang)],
+    [`${lang}.reel.yaml`, script],
     ['episode.yaml', `episode: 1\nid: ${id}\ntitle: ${JSON.stringify(title)}\nsources: sources.md\ncredits: CREDITS.md\nvariants:\n  - { id: ${lang}, spec: ${lang}.reel.yaml }\n`],
     [
       'facts.json',
@@ -157,6 +170,13 @@ export function scaffold(dir: string, style: LoadedStyle, opts: { lang?: string;
     ['sources.md', `# Sources\n\n| # | On screen | Source and quote | Caveats |\n|---|---|---|---|\n`],
     ['CREDITS.md', `# Credits\n\n- Style: \`${style.def.id}\` (${style.def.title}).\n${style.def.images ? `- Pictures: generated with ${style.def.images.model ?? style.def.images.provider}${style.def.images.licence ? ` (${style.def.images.licence})` : ''}; prompts, seeds and checksums in images.json.\n` : ''}- Narration: synthetic; name the engine and voice here.\n`],
   ];
+  if (selected) {
+    const ref = resolve(voiceRoot, selected.reference);
+    mkdirSync(join(dir, 'assets/voice'), { recursive: true });
+    files.push(['assets/voice/narrator-ru.txt', readFileSync(ref.replace(/\.wav$/, '.txt'), 'utf8')]);
+    files.push(['assets/voice/README.md', `# Russian narrator\n\nSynthetic owner-selected narrator: ${selected.engine}, speed ${selected.speed}. Source reference relative to production/voices: ${selected.reference} (ignored local media). See production/voices/references/README.md for provenance, separate model terms and restore instructions.\n${existsSync(ref) ? '\nThe exact reference WAV was copied locally.\n' : '\nReference WAV is absent in this checkout. Restore the selected original before synthesis; do not silently generate a replacement.\n'}`]);
+    if (existsSync(ref)) copyFileSync(ref, join(dir, 'assets/voice/narrator-ru.wav'));
+  }
   for (const [name, text] of files) writeFileSync(join(dir, name), text);
   return files.map(([name]) => join(dir, name));
 }

@@ -1,0 +1,294 @@
+{
+  "images": 1,
+  "files": {
+    "shots/portrait-messi.png": {
+      "provider": "official-photograph",
+      "model": null,
+      "seed": null,
+      "source": "https://www.intermiamicf.com/players/lionel-messi/",
+      "downloadUrl": "https://images.mlssoccer.com/image/private/f_png/mls-mia/g9tieb27bu41atzhhskt.png",
+      "licence": "Third-party Inter Miami CF / MLS photograph; copyright retained by its rights holder; no open licence asserted. Local family review cut.",
+      "sha256": "efc36d190037fec0cc61e978e75534d1d0f8a5c8b36027fac95ea7535619b9b8",
+      "createdAt": "2026-10-25T06:28:29.344Z"
+    },
+    "shots/portrait-suarez.png": {
+      "provider": "official-photograph",
+      "model": null,
+      "seed": null,
+      "source": "https://www.intermiamicf.com/players/luis-suarez/",
+      "downloadUrl": "https://images.mlssoccer.com/image/private/f_png/mls-mia/okueyjgknlqwrmfcajo0.png",
+      "licence": "Third-party Inter Miami CF / MLS photograph; copyright retained by its rights holder; no open licence asserted. Local family review cut.",
+      "sha256": "340ea683130784dc3f2d57aa901d94b6918c3e9e659d72fd91eeaa8932caffb5",
+      "createdAt": "2026-10-25T06:28:30.335Z"
+    },
+    "shots/portrait-depaul.png": {
+      "provider": "official-photograph",
+      "model": null,
+      "seed": null,
+      "source": "https://www.intermiamicf.com/players/rodrigo-de-paul/",
+      "downloadUrl": "https://images.mlssoccer.com/image/private/f_png/mls-mia/komxu9ijeij7zu6mplxh.png",
+      "licence": "Third-party Inter Miami CF / MLS photograph; copyright retained by its rights holder; no open licence asserted. Local family review cut.",
+      "sha256": "75bb8afb75fcdc477edb07182eb3ad8d42ed1c1884f2ebe4e32c3d29ab04a0e1",
+      "createdAt": "2026-10-25T06:28:31.352Z"
+    },
+    "shots/portrait-casemiro.png": {
+      "provider": "official-photograph",
+      "model": null,
+      "seed": null,
+      "source": "https://www.intermiamicf.com/players/casemiro/",
+      "downloadUrl": "https://images.mlssoccer.com/image/private/f_png/mls-mia/r2s00oymijc2btt4wdvq.png",
+      "licence": "Third-party Inter Miami CF / MLS photograph; copyright retained by its rights holder; no open licence asserted. Local family review cut.",
+      "sha256": "0f7edbfd8f5b048682268dfeca2d70eafa35b4ff24866325cee93bd12c4a38b1",
+      "createdAt": "2026-10-25T06:28:31.909Z"
+    },
+    "shots/portrait-berterame.png": {
+      "provider": "official-photograph",
+      "model": null,
+      "seed": null,
+      "source": "https://www.intermiamicf.com/players/german-berterame/",
+      "downloadUrl": "https://images.mlssoccer.com/image/private/f_png/mls-mia/w54b9lv2jj44c41o432i.png",
+      "licence": "Third-party Inter Miami CF / MLS photograph; copyright retained by its rights holder; no open licence asserted. Local family review cut.",
+      "sha256": "1dec8f3fcf7bba7a11283981325e8f6156221ef8fe9767de9252495eeb93b932",
+      "createdAt": "2026-10-25T06:28:33.097Z"
+    },
+    "shots/portrait-stclair.png": {
+      "provider": "official-photograph",
+      "model": null,
+      "seed": null,
+      "source": "https://www.intermiamicf.com/players/dayne-st-clair/",
+      "downloadUrl": "https://images.mlssoccer.com/image/private/f_png/mls-mia/jp0tps6pocvlt17n83so.png",
+      "licence": "Third-party Inter Miami CF / MLS photograph; copyright retained by its rights holder; no open licence asserted. Local family review cut.",
+      "sha256": "596a9458618fd5c1fd1b9ca31fc0ace1e5293e8d48796d560996312b9038138e",
+      "createdAt": "2026-10-25T06:28:34.120Z"
+    },
+    "shots/intro.png": {
+      "prompt": "Original detailed hand-drawn football adventure comic for ages 10–12, portrait smartphone composition. Masha faces the distant goal on an evening Miami neighborhood pitch. A football quest begins, luminous passing lanes on the grass.. No text, letters, numerals, logos or real people.",
+      "seed": 73,
+      "provider": "manual",
+      "generator": "built-in image_gen",
+      "model": "GPT Image; exact model revision not exposed by the built-in tool",
+      "generationPrompt": "Use case: illustration-story. Asset: animation keyframe for an original football adventure comic for ages 10-12, vertical smartphone 9:16 portrait. Sophisticated hand-drawn graphic novel art, beautiful fine ink lines, detailed watercolor and gouache, colored-pencil crosshatching, rich textured environments, cinematic lighting, dynamic athletic anatomy, not preschool art, not 3D. Miami palette of coral pink, deep teal, midnight navy, warm gold. Original protagonist Masha: a 12-year-old girl with copper-red hair in a single high ponytail, freckles, teal unbranded soccer jersey, navy shorts, white socks, white soccer boots with orange soles. Every person is an original fictional character, no celebrities or likenesses. Important action centrally between 30% and 73% height, upper 25% relatively calm sky for later overlays, lower 15% simple turf. No words, text, letters, numerals, logos, club crests, flags, watermarks, panel borders. Scene: Night is falling over an imaginary neighborhood football pitch in Miami, palms, Art Deco pink-and-mint houses, a distant bay and glowing stadium lights. Masha stands on the halfway line at center-lower frame facing an imposing goal far away, a white football at her feet. Her body language says 'challenge accepted', not fear. Two original young teammates in pale pink shirts wait farther ahead. Low dramatic wide-angle view, electric turquoise outlines of passing lanes shimmer in the grass like an adventure map, tiny glowing flecks, realistic stitched ball, net, wet grass and textured paint. Pink sunset clouds leave the top quarter open. Masha has a determined playful smile.",
+      "editPrompt": null,
+      "referenceImages": [],
+      "width": 941,
+      "height": 1672,
+      "steps": 0,
+      "seedReproducible": false,
+      "licence": "Generated with GPT Image under the account OpenAI terms; output rights are subject to those terms. Original fictional characters.",
+      "sha256": "a649b8f96eec89e9d762617a6c80e39cd0c7f7e72e1ad9c6dab08010bdb54c16",
+      "createdAt": "2026-10-25T06:41:28.979Z"
+    },
+    "shots/fail.png": {
+      "prompt": "Original detailed hand-drawn football adventure comic for ages 10–12, portrait smartphone composition. Masha attempts to dribble alone through three original teenage defenders in plain coral shirts, gets blocked without collision, the white football rolls away. She looks surprised then thoughtful. Clearly drawn overlapping tactical lanes, cinematic low perspective, no distress. Detailed tropical Miami pitch; faces and action in lower half, top third calm blue-pink sky.. No text, letters, numerals, logos or real people.",
+      "seed": 74,
+      "provider": "manual",
+      "generator": "built-in image_gen",
+      "model": "GPT Image; exact model revision not exposed by the built-in tool",
+      "generationPrompt": "Use case: illustration-story. Asset: animation keyframe for an original football adventure comic for ages 10-12, vertical smartphone 9:16 portrait. Sophisticated hand-drawn graphic novel art, beautiful fine ink lines, detailed watercolor and gouache, colored-pencil crosshatching, rich textured environments, cinematic lighting, dynamic athletic anatomy, not preschool art, not 3D. Miami palette of coral pink, deep teal, midnight navy, warm gold. Original protagonist Masha: a 12-year-old girl with copper-red hair in a single high ponytail, freckles, teal unbranded soccer jersey, navy shorts, white socks, white soccer boots with orange soles. Every person is an original fictional character, no celebrities or likenesses. Important action centrally between 30% and 73% height, upper 25% relatively calm sky for later overlays, lower 15% simple turf. No words, text, letters, numerals, logos, club crests, flags, watermarks, panel borders. Scene: Masha attempts to dribble alone through three original teenage defenders in plain coral shirts, gets blocked without collision, the white football rolls away. She looks surprised then thoughtful. Clearly drawn overlapping tactical lanes, cinematic low perspective, no distress. Detailed tropical Miami pitch; faces and action in lower half, top third calm blue-pink sky. All shirts entirely blank with no crest or embroidered symbol.",
+      "editPrompt": null,
+      "referenceImages": [
+        "shots/intro.png"
+      ],
+      "width": 941,
+      "height": 1672,
+      "steps": 0,
+      "seedReproducible": false,
+      "licence": "Generated with GPT Image under the account OpenAI terms; output rights are subject to those terms. Original fictional characters.",
+      "sha256": "5dfa36b5495211ddb961fb3fa67a5c9b3eed12dd5fceaacd988924d048471dc6",
+      "createdAt": "2026-10-25T06:41:28.981Z"
+    },
+    "shots/dribble.png": {
+      "prompt": "Original detailed hand-drawn football adventure comic for ages 10–12, portrait smartphone composition. Masha dribbles a white ball closely through a zig-zag of orange cones; dynamic low view, teal jersey, copper ponytail, precise footwork. Glowing turquoise path, evening Miami field. Upper third calm.. No text, letters, numerals, logos or real people.",
+      "seed": 75,
+      "provider": "manual",
+      "generator": "built-in image_gen",
+      "model": "GPT Image; exact model revision not exposed by the built-in tool",
+      "generationPrompt": "Use case: illustration-story. Asset: animation keyframe for an original football adventure comic for ages 10-12, vertical smartphone 9:16 portrait. Sophisticated hand-drawn graphic novel art, beautiful fine ink lines, detailed watercolor and gouache, colored-pencil crosshatching, rich textured environments, cinematic lighting, dynamic athletic anatomy, not preschool art, not 3D. Miami palette of coral pink, deep teal, midnight navy, warm gold. Original protagonist Masha: a 12-year-old girl with copper-red hair in a single high ponytail, freckles, teal unbranded soccer jersey, navy shorts, white socks, white soccer boots with orange soles. Every person is an original fictional character, no celebrities or likenesses. Important action centrally between 30% and 73% height, upper 25% relatively calm sky for later overlays, lower 15% simple turf. No words, text, letters, numerals, logos, club crests, flags, watermarks, panel borders. Scene: Masha dribbling a white football very close to her boots through a zig-zag of orange cones on the Miami neighborhood pitch. Dynamic low camera, her ponytail flying, clear concentrated face. Sweeping turquoise light trails mark the ball's path. Intricate foreground grass, chain-link fence, tropical vegetation and art deco rooftops in the middle distance. She is placed center-lower; leave broad calm navy sky in upper third for a later portrait card. No real people. No giant trophies.",
+      "editPrompt": null,
+      "referenceImages": [
+        "shots/intro.png"
+      ],
+      "width": 941,
+      "height": 1671,
+      "steps": 0,
+      "seedReproducible": false,
+      "licence": "Generated with GPT Image under the account OpenAI terms; output rights are subject to those terms. Original fictional characters.",
+      "sha256": "7a5037ab6e1893c6a46fc9b8968325a13ce508030a9bf4ddf5d58f836971586b",
+      "createdAt": "2026-10-25T06:41:28.982Z"
+    },
+    "shots/finish.png": {
+      "prompt": "Original detailed hand-drawn football adventure comic for ages 10–12, portrait smartphone composition. Masha aims a controlled inside-foot shot into the far corner of the goal. A golden arc leads from white ball to the net. Side view, rich evening Miami detail, upper third calm.. No text, letters, numerals, logos or real people.",
+      "seed": 76,
+      "provider": "manual",
+      "generator": "built-in image_gen",
+      "model": "GPT Image; exact model revision not exposed by the built-in tool",
+      "generationPrompt": "Use case: illustration-story. Asset: animation keyframe for an original football adventure comic for ages 10-12, vertical smartphone 9:16 portrait. Sophisticated hand-drawn graphic novel art, beautiful fine ink lines, detailed watercolor and gouache, colored-pencil crosshatching, rich textured environments, cinematic lighting, dynamic athletic anatomy, not preschool art, not 3D. Miami palette of coral pink, deep teal, midnight navy, warm gold. Original protagonist Masha: a 12-year-old girl with copper-red hair in a single high ponytail, freckles, teal unbranded soccer jersey, navy shorts, white socks, white soccer boots with orange soles. Every person is an original fictional character, no celebrities or likenesses. Important action centrally between 30% and 73% height, upper 25% relatively calm sky for later overlays, lower 15% simple turf. No words, text, letters, numerals, logos, club crests, flags, watermarks, panel borders. Scene: Masha studies a goal and aims a controlled inside-foot shot into its far lower corner on the same Miami neighborhood pitch. Side view with her at lower left and net at mid-right; precise white ball and glowing gold trajectory, attentive expression. Beside the pitch an elegant wooden bench and a pair of ordinary worn soccer boots. Sunset palms, bougainvillea, individual stitching and grass blades. Leave upper third calm midnight teal for later overlays.",
+      "editPrompt": null,
+      "referenceImages": [
+        "shots/intro.png"
+      ],
+      "width": 941,
+      "height": 1672,
+      "steps": 0,
+      "seedReproducible": false,
+      "licence": "Generated with GPT Image under the account OpenAI terms; output rights are subject to those terms. Original fictional characters.",
+      "sha256": "a6771e46c1d44b2616c90ed34ce1ec9c038c6f84bf8d624b703cb43a04d7497e",
+      "createdAt": "2026-10-25T06:41:28.983Z"
+    },
+    "shots/pass.png": {
+      "prompt": "Original detailed hand-drawn football adventure comic for ages 10–12, portrait smartphone composition. Masha makes a one-two pass with an original curly-haired boy teammate in pale pink. A luminous triangle connects them and the white football. Evening Miami field; action in lower half, upper third calm.. No text, letters, numerals, logos or real people.",
+      "seed": 77,
+      "provider": "manual",
+      "generator": "built-in image_gen",
+      "model": "GPT Image; exact model revision not exposed by the built-in tool",
+      "generationPrompt": "Use case: illustration-story. Asset: animation keyframe for an original football adventure comic for ages 10-12, vertical smartphone 9:16 portrait. Sophisticated hand-drawn graphic novel art, beautiful fine ink lines, detailed watercolor and gouache, colored-pencil crosshatching, rich textured environments, cinematic lighting, dynamic athletic anatomy, not preschool art, not 3D. Miami palette of coral pink, deep teal, midnight navy, warm gold. Original protagonist Masha: a 12-year-old girl with copper-red hair in a single high ponytail, freckles, teal unbranded soccer jersey, navy shorts, white socks, white soccer boots with orange soles. Every person is an original fictional character, no celebrities or likenesses. Important action centrally between 30% and 73% height, upper 25% relatively calm sky for later overlays, lower 15% simple turf. No words, text, letters, numerals, logos, club crests, flags, watermarks, panel borders. Scene: Masha makes a one-two pass with an original twelve-year-old boy teammate, dark curly hair, tan skin, plain coral-pink shirt, dark shorts, white socks. They form a clear triangle with the white ball at the lower center, distinct luminous turquoise passing lanes drawn on the turf. Both characters lower half, broad calm pink-and-navy sunset sky above for overlays. Detailed Miami park, distant waterfront, tiny bicycles by fence, flowering shrubs. Friendly strategic concentration.",
+      "editPrompt": null,
+      "referenceImages": [
+        "shots/intro.png"
+      ],
+      "width": 941,
+      "height": 1672,
+      "steps": 0,
+      "seedReproducible": false,
+      "licence": "Generated with GPT Image under the account OpenAI terms; output rights are subject to those terms. Original fictional characters.",
+      "sha256": "21aeddfd44388f3c1e70bbb4934c3044e8a501a19546cdcbf19d3026c75321ca",
+      "createdAt": "2026-10-25T06:41:28.984Z"
+    },
+    "shots/shield.png": {
+      "prompt": "Original detailed hand-drawn football adventure comic for ages 10–12, portrait smartphone composition. Masha steps calmly across a passing lane and intercepts a white football before it reaches an original teenage opponent in a coral jersey. Clean sporting interception, no contact or tackling. The luminous turquoise passing line breaks against a subtle shield-shaped glow. Athletic stance, determined face, layered stadium grass, little water droplets and palm silhouettes. Action lower half, top third calm.. No text, letters, numerals, logos or real people.",
+      "seed": 78,
+      "provider": "manual",
+      "generator": "built-in image_gen",
+      "model": "GPT Image; exact model revision not exposed by the built-in tool",
+      "generationPrompt": "Use case: illustration-story. Asset: animation keyframe for an original football adventure comic for ages 10-12, vertical smartphone 9:16 portrait. Sophisticated hand-drawn graphic novel art, beautiful fine ink lines, detailed watercolor and gouache, colored-pencil crosshatching, rich textured environments, cinematic lighting, dynamic athletic anatomy, not preschool art, not 3D. Miami palette of coral pink, deep teal, midnight navy, warm gold. Original protagonist Masha: a 12-year-old girl with copper-red hair in a single high ponytail, freckles, teal unbranded soccer jersey, navy shorts, white socks, white soccer boots with orange soles. Every person is an original fictional character, no celebrities or likenesses. Important action centrally between 30% and 73% height, upper 25% relatively calm sky for later overlays, lower 15% simple turf. No words, text, letters, numerals, logos, club crests, flags, watermarks, panel borders. Scene: Masha steps calmly across a passing lane and intercepts a white football before it reaches an original teenage opponent in a coral jersey. Clean sporting interception, no contact or tackling. The luminous turquoise passing line breaks against a subtle shield-shaped glow. Athletic stance, determined face, layered stadium grass, little water droplets and palm silhouettes. Action lower half, top third calm.",
+      "editPrompt": null,
+      "referenceImages": [
+        "shots/intro.png"
+      ],
+      "width": 941,
+      "height": 1672,
+      "steps": 0,
+      "seedReproducible": false,
+      "licence": "Generated with GPT Image under the account OpenAI terms; output rights are subject to those terms. Original fictional characters.",
+      "sha256": "af5ddb481a9f769afafda86bcbb5eabb9ad65e23c28814c175f68b35142016f3",
+      "createdAt": "2026-10-25T06:41:28.986Z"
+    },
+    "shots/run.png": {
+      "prompt": "Original detailed hand-drawn football adventure comic for ages 10–12, portrait smartphone composition. Masha sprints diagonally into open space away from two original teenage defenders in coral jerseys. A teammate with dark curly hair holds the white ball at far left, looking toward her run. Sweeping gold path on turf shows the empty space. Miami neighborhood lights, distant sea, detailed chain fence and lush foliage. Dynamic elevated camera, characters lower half; calm top third.. No text, letters, numerals, logos or real people.",
+      "seed": 79,
+      "provider": "manual",
+      "generator": "built-in image_gen",
+      "model": "GPT Image; exact model revision not exposed by the built-in tool",
+      "generationPrompt": "Use case: illustration-story. Asset: animation keyframe for an original football adventure comic for ages 10-12, vertical smartphone 9:16 portrait. Sophisticated hand-drawn graphic novel art, beautiful fine ink lines, detailed watercolor and gouache, colored-pencil crosshatching, rich textured environments, cinematic lighting, dynamic athletic anatomy, not preschool art, not 3D. Miami palette of coral pink, deep teal, midnight navy, warm gold. Original protagonist Masha: a 12-year-old girl with copper-red hair in a single high ponytail, freckles, teal unbranded soccer jersey, navy shorts, white socks, white soccer boots with orange soles. Every person is an original fictional character, no celebrities or likenesses. Important action centrally between 30% and 73% height, upper 25% relatively calm sky for later overlays, lower 15% simple turf. No words, text, letters, numerals, logos, club crests, flags, watermarks, panel borders. Scene: Masha sprints diagonally into open space away from two original teenage defenders in navy jerseys. A teammate with dark curly hair, tan skin, coral-pink jersey holds the white ball at far left, looking toward her run. Sweeping gold path on turf shows the empty space. Miami neighborhood lights, distant sea, detailed chain fence and lush foliage. Dynamic elevated camera, characters lower half; calm top third.",
+      "editPrompt": null,
+      "referenceImages": [
+        "shots/intro.png"
+      ],
+      "width": 941,
+      "height": 1672,
+      "steps": 0,
+      "seedReproducible": false,
+      "licence": "Generated with GPT Image under the account OpenAI terms; output rights are subject to those terms. Original fictional characters.",
+      "sha256": "2c2ab1bb49b3bb6cca8cca4a8ba4e8b93cc3b102eb48c43671b14f095ee6c9bb",
+      "createdAt": "2026-10-25T06:41:28.987Z"
+    },
+    "shots/save.png": {
+      "prompt": "Original detailed hand-drawn football adventure comic for ages 10–12, portrait smartphone composition. An original teenage boy goalkeeper with medium brown skin, short dark curls, plain midnight-navy goalkeeper kit and bright mint gloves makes a spectacular horizontal dive toward a white football near the goal. Masha in teal watches farther away. Clear safe sporty motion, no celebrities. Detailed woven net, raindrops, floodlights and Miami palms, turquoise and gold lighting. Characters in lower half; calm dark sky above.. No text, letters, numerals, logos or real people.",
+      "seed": 80,
+      "provider": "manual",
+      "generator": "built-in image_gen",
+      "model": "GPT Image; exact model revision not exposed by the built-in tool",
+      "generationPrompt": "Use case: illustration-story. Asset: animation keyframe for an original football adventure comic for ages 10-12, vertical smartphone 9:16 portrait. Sophisticated hand-drawn graphic novel art, beautiful fine ink lines, detailed watercolor and gouache, colored-pencil crosshatching, rich textured environments, cinematic lighting, dynamic athletic anatomy, not preschool art, not 3D. Miami palette of coral pink, deep teal, midnight navy, warm gold. Original protagonist Masha: a 12-year-old girl with copper-red hair in a single high ponytail, freckles, teal unbranded soccer jersey, navy shorts, white socks, white soccer boots with orange soles. Every person is an original fictional character, no celebrities or likenesses. Important action centrally between 30% and 73% height, upper 25% relatively calm sky for later overlays, lower 15% simple turf. No words, text, letters, numerals, logos, club crests, flags, watermarks, panel borders. Scene: An original teenage boy goalkeeper with medium brown skin, short dark curls, plain midnight-navy goalkeeper kit and bright mint gloves makes a spectacular horizontal dive toward a white football near the goal. Masha in teal watches farther away. Clear safe sporty motion, no celebrities. Detailed woven net, raindrops, floodlights and Miami palms, turquoise and gold lighting. Characters in lower half; calm dark sky above.",
+      "editPrompt": null,
+      "referenceImages": [
+        "shots/intro.png"
+      ],
+      "width": 941,
+      "height": 1672,
+      "steps": 0,
+      "seedReproducible": false,
+      "licence": "Generated with GPT Image under the account OpenAI terms; output rights are subject to those terms. Original fictional characters.",
+      "sha256": "86d9cec98303337c0c081b9216cd7647a7f8acf0ab093545cd867779a3441472",
+      "createdAt": "2026-10-25T06:41:28.989Z"
+    },
+    "shots/choice.png": {
+      "prompt": "Original detailed hand-drawn football adventure comic for ages 10–12, portrait smartphone composition. Close medium portrait of Masha holding a white football at hip height, thinking with a small determined smile, teal jersey, copper high ponytail and freckles. Behind her, imagined translucent luminous passing lanes branch toward a distant goal and a free teammate. Art deco Miami evening park, sparkling bokeh, upper quarter calm. No words or symbols resembling letters.. No text, letters, numerals, logos or real people.",
+      "seed": 81,
+      "provider": "manual",
+      "generator": "built-in image_gen",
+      "model": "GPT Image; exact model revision not exposed by the built-in tool",
+      "generationPrompt": "Use case: illustration-story. Asset: animation keyframe for an original football adventure comic for ages 10-12, vertical smartphone 9:16 portrait. Sophisticated hand-drawn graphic novel art, beautiful fine ink lines, detailed watercolor and gouache, colored-pencil crosshatching, rich textured environments, cinematic lighting, dynamic athletic anatomy, not preschool art, not 3D. Miami palette of coral pink, deep teal, midnight navy, warm gold. Original protagonist Masha: a 12-year-old girl with copper-red hair in a single high ponytail, freckles, teal unbranded soccer jersey, navy shorts, white socks, white soccer boots with orange soles. Every person is an original fictional character, no celebrities or likenesses. Important action centrally between 30% and 73% height, upper 25% relatively calm sky for later overlays, lower 15% simple turf. No words, text, letters, numerals, logos, club crests, flags, watermarks, panel borders. Scene: Close medium portrait of Masha holding a white football at hip height, thinking with a small determined smile, teal jersey, copper high ponytail and freckles. Behind her, imagined translucent luminous passing lanes branch toward a distant goal and a free teammate. Art deco Miami evening park, sparkling bokeh, upper quarter calm. No words or symbols resembling letters. All shirts entirely blank with no crest or embroidered symbol.",
+      "editPrompt": null,
+      "referenceImages": [
+        "shots/intro.png"
+      ],
+      "width": 941,
+      "height": 1672,
+      "steps": 0,
+      "seedReproducible": false,
+      "licence": "Generated with GPT Image under the account OpenAI terms; output rights are subject to those terms. Original fictional characters.",
+      "sha256": "ecc2fc60b24c1ede2e0da3b841d66df5c90b7eabe3b3b7b8f3bd0700962f306a",
+      "createdAt": "2026-10-25T06:41:28.991Z"
+    },
+    "shots/combo-v2.png": {
+      "prompt": "Original detailed hand-drawn football adventure comic for ages 10–12, portrait smartphone composition. An elevated dramatic view of the same Miami football field: Masha in teal passes the white ball diagonally to a free dark-curly-haired teammate in a coral shirt on the right, while defenders in navy turn too late. A single elegant turquoise curved light trail traces this decisive pass. Realistic field perspective, net at the upper middle, lush warm-lit neighborhood. Action in middle and lower portions.. No text, letters, numerals, logos or real people.",
+      "seed": 82,
+      "provider": "manual",
+      "generator": "built-in image_gen",
+      "model": "GPT Image; exact model revision not exposed by the built-in tool",
+      "generationPrompt": "Use case: illustration-story. Asset: animation keyframe for an original football adventure comic for ages 10-12, vertical smartphone 9:16 portrait. Sophisticated hand-drawn graphic novel art, beautiful fine ink lines, detailed watercolor and gouache, colored-pencil crosshatching, rich textured environments, cinematic lighting, dynamic athletic anatomy, not preschool art, not 3D. Miami palette of coral pink, deep teal, midnight navy, warm gold. Original protagonist Masha: a 12-year-old girl with copper-red hair in a single high ponytail, freckles, teal unbranded soccer jersey, navy shorts, white socks, white soccer boots with orange soles. Every person is an original fictional character, no celebrities or likenesses. Important action centrally between 30% and 73% height, upper 25% relatively calm sky for later overlays, lower 15% simple turf. No words, text, letters, numerals, logos, club crests, flags, watermarks, panel borders. Scene: An elevated dramatic view of the same Miami football field: Masha in teal passes the white ball diagonally to a free dark-curly-haired teammate in a coral shirt on the right, while defenders in navy turn too late. A single elegant turquoise curved light trail traces this decisive pass. Realistic field perspective, net at the upper middle, lush warm-lit neighborhood. Action in middle and lower portions. All shirts entirely blank with no crest or embroidered symbol.",
+      "editPrompt": "Edit target: the first image, the elevated view of the fictional girl Masha making a pass on a Miami pitch. Supporting character reference: second image, the two children making a pass. Make only these precise corrections to the first image: show exactly ONE physical white football, at the midpoint of the glowing turquoise passing trajectory. Remove the duplicate ball at Masha's boot and the duplicate ball by the receiver, preserving grass and the light trail seamlessly. Change the receiving pink-shirt character at the right into the SAME original short-curly-dark-haired tan-skinned BOY in the second reference image; keep receiver's placement and athletic stance. All football jerseys completely blank without any emblem, letter, crest or number. Preserve all other composition, lighting, detailed hand-drawn art, Masha's design, palm trees, buildings, goal, defenders, vertical dimensions and sky unchanged. No real people.",
+      "referenceImages": [
+        "shots/intro.png",
+        "shots/pass.png"
+      ],
+      "width": 941,
+      "height": 1672,
+      "steps": 0,
+      "seedReproducible": false,
+      "licence": "Generated with GPT Image under the account OpenAI terms; output rights are subject to those terms. Original fictional characters.",
+      "sha256": "12b0e4f9c27725946edb738bc25859af68efce13f636d00d02a247f0495771e6",
+      "createdAt": "2026-10-25T06:41:28.993Z"
+    },
+    "shots/goal.png": {
+      "prompt": "Original detailed hand-drawn football adventure comic for ages 10–12, portrait smartphone composition. The original curly-haired boy teammate in coral pink scores into the corner of the goal; white football clearly inside the net, original navy goalkeeper landing on the other side. Masha in teal celebrates the assist in foreground with arms lifted. No real people. Surging gold and turquoise light, detailed net tension and turf, Miami palms and a sky of pink clouds.. No text, letters, numerals, logos or real people.",
+      "seed": 83,
+      "provider": "manual",
+      "generator": "built-in image_gen",
+      "model": "GPT Image; exact model revision not exposed by the built-in tool",
+      "generationPrompt": "Use case: illustration-story. Asset: animation keyframe for an original football adventure comic for ages 10-12, vertical smartphone 9:16 portrait. Sophisticated hand-drawn graphic novel art, beautiful fine ink lines, detailed watercolor and gouache, colored-pencil crosshatching, rich textured environments, cinematic lighting, dynamic athletic anatomy, not preschool art, not 3D. Miami palette of coral pink, deep teal, midnight navy, warm gold. Original protagonist Masha: a 12-year-old girl with copper-red hair in a single high ponytail, freckles, teal unbranded soccer jersey, navy shorts, white socks, white soccer boots with orange soles. Every person is an original fictional character, no celebrities or likenesses. Important action centrally between 30% and 73% height, upper 25% relatively calm sky for later overlays, lower 15% simple turf. No words, text, letters, numerals, logos, club crests, flags, watermarks, panel borders. Scene: The original curly-haired boy teammate in coral pink scores into the lower corner of the goal; white football clearly inside the net, original navy goalkeeper landing on the opposite side. Masha in teal celebrates the assist in foreground with arms lifted, her face in delighted three-quarter view. All original teenage fictional people. Surging gold and turquoise light, detailed net tension and turf, Miami palms and a sky of pink clouds. Distinct readable single decisive goal moment. All shirts completely blank, no badges or crestlike symbols. Upper 25% calm for later titles.",
+      "editPrompt": null,
+      "referenceImages": [
+        "shots/intro.png",
+        "shots/pass.png"
+      ],
+      "width": 941,
+      "height": 1672,
+      "steps": 0,
+      "seedReproducible": false,
+      "licence": "Generated with GPT Image under the account OpenAI terms; output rights are subject to those terms. Original fictional characters.",
+      "sha256": "14c0d02bfd2e10f2ef880a48b5fe0ef28ff97353aba1195b877093eb41c9f038",
+      "createdAt": "2026-10-25T06:41:28.995Z"
+    },
+    "shots/close.png": {
+      "prompt": "Original detailed hand-drawn football adventure comic for ages 10–12, portrait smartphone composition. Masha and her original diverse teenage football friends celebrate together in a loose huddle on a warmly illuminated Miami neighborhood pitch, smiling and offering high fives. Masha faces camera at lower center, her copper ponytail and teal kit consistent. A white football on turf; softly glowing net, distant bay, palm fronds, bougainvillea, confetti-like fireflies. Calm rich navy upper third for end title, emotional satisfying ending.. No text, letters, numerals, logos or real people.",
+      "seed": 84,
+      "provider": "manual",
+      "generator": "built-in image_gen",
+      "model": "GPT Image; exact model revision not exposed by the built-in tool",
+      "generationPrompt": "Use case: illustration-story. Asset: animation keyframe for an original football adventure comic for ages 10-12, vertical smartphone 9:16 portrait. Sophisticated hand-drawn graphic novel art, beautiful fine ink lines, detailed watercolor and gouache, colored-pencil crosshatching, rich textured environments, cinematic lighting, dynamic athletic anatomy, not preschool art, not 3D. Miami palette of coral pink, deep teal, midnight navy, warm gold. Original protagonist Masha: a 12-year-old girl with copper-red hair in a single high ponytail, freckles, teal unbranded soccer jersey, navy shorts, white socks, white soccer boots with orange soles. Every person is an original fictional character, no celebrities or likenesses. Important action centrally between 30% and 73% height, upper 25% relatively calm sky for later overlays, lower 15% simple turf. No words, text, letters, numerals, logos, club crests, flags, watermarks, panel borders. Scene: Masha and her original diverse teenage football friends, including the curly-haired tan-skinned boy in coral pink, celebrate together in a loose huddle on a warmly illuminated Miami neighborhood pitch, smiling and offering high fives. Masha faces camera at lower center, her copper ponytail, freckles and teal kit consistent. A white football on turf; softly glowing net, distant bay, palm fronds, bougainvillea, confetti-like fireflies. Calm rich navy upper third for end title, emotional satisfying ending. All shirts completely blank with no badges or crestlike symbols.",
+      "editPrompt": null,
+      "referenceImages": [
+        "shots/intro.png",
+        "shots/pass.png"
+      ],
+      "width": 941,
+      "height": 1672,
+      "steps": 0,
+      "seedReproducible": false,
+      "licence": "Generated with GPT Image under the account OpenAI terms; output rights are subject to those terms. Original fictional characters.",
+      "sha256": "54245451ca68d517bf7ec7b4a817778df9422234acd1abcf27345209e84d4bd3",
+      "createdAt": "2026-10-25T06:41:28.996Z"
+    }
+  }
+}

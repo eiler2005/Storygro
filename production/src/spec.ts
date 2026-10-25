@@ -13,7 +13,7 @@ export const FORMAT_PRESETS = {
 type FormatPreset = keyof typeof FORMAT_PRESETS;
 
 /** Narration providers; each has a module in py/voices/. `none` estimates timings without audio. */
-export const VOICE_ENGINES = ['kokoro', 'silero', 'qwen3', 'chatterbox', 'yandex', 'none'] as const;
+export const VOICE_ENGINES = ['kokoro', 'silero', 'qwen3', 'chatterbox', 'omnivoice', 'yandex', 'none'] as const;
 
 export const SFX_KINDS = [
   'whoosh',

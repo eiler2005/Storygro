@@ -1,0 +1,23 @@
+review: 1
+questions:
+  - id: watch
+    ask: Подходят ли реалистичный стиль, темп OmniVoice B 0,90 и произношение ЦСКА / дерби / УЕФА?
+    for: owner
+notes: Owner requested a two-minute realistic GPT Image explainer for children; established audience 10–12 and
+  vertical iPhone format retained. Rendered 126.093 seconds, 1080x1920 at 30 fps, with nine original GPT Image
+  stills and ten animated scenes. OmniVoice B at speed 0.90. All generated images and storyboard frames
+  visually inspected. Full MP4 technical QA is in .reel/ru/QA.md. No subjective audio listening or owner
+  editorial/release approval recorded. This is a local family review copy, not publication. Historical
+  uniforms, stadium and trophy are illustrative, not exact archival records.
+approvals:
+  ru:
+    script:
+      hash: 72ddaf7b8d6a
+      at: 2026-10-25T08:40:17.357Z
+      by: agent
+      role: agent
+    storyboard:
+      hash: 6d0f37f7dafc
+      at: 2026-10-25T08:40:17.772Z
+      by: agent
+      role: agent

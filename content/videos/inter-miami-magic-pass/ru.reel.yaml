@@ -1,0 +1,576 @@
+reel: 1
+style: cartoon
+title: "Интер Майами: финальный пас"
+lang: ru
+format:
+  preset: vertical
+  fps: 30
+safe: phone
+voice:
+  engine: qwen3
+  voice: assets/voice/narrator-ru.wav
+  speed: 1.12
+  stress: auto
+music:
+  bpm: 112
+  key: G
+  progression:
+    - I
+    - V
+    - vi
+    - IV
+  gain: 0.13
+  drop: combo#pass
+loudness: -14
+theme: theme.css
+captions:
+  show: true
+  maxWords: 5
+data:
+  facts: facts.json
+stills:
+  cover: intro@0.8
+  messi: messi@2
+  suarez: suarez@2
+  depaul: depaul@2
+  casemiro: casemiro@2
+  berterame: berterame@2
+  stclair: stclair@2
+  final: goal@1
+images:
+  provider: manual
+  model: GPT Image (built-in Codex image_gen)
+  seed: 73
+  width: 1088
+  height: 1920
+  prompt: Original detailed hand-drawn football adventure comic for ages 10–12, portrait smartphone composition.
+    {subject}. No text, letters, numerals, logos or real people.
+post:
+  title: "Интер Майами: финальный пас — футбольный комикс"
+  text: >-
+    Шесть звёзд «Интер Майами» и одна командная задача: помочь Маше создать гол. Месси, Суарес, Де Пауль,
+    Каземиро, Бертераме и Сент-Клэр. Приключение вымышленное; биографические факты проверены 25 октября 2026
+    года.
+
+
+    Рисованный мир создан GPT Image; настоящие портреты — с официальных страниц Inter Miami CF / MLS, права
+    сохраняются у их владельцев. Голос синтетический: Qwen3-TTS, не голос футболистов. Ролик не связан с
+    клубом и не одобрен игроками. Источники: sources.md. Версия для семейного просмотра.
+  tags:
+    - футбол
+    - ИнтерМайами
+    - Месси
+    - детям
+    - команда
+scenes:
+  - id: intro
+    scene: illustration
+    say: В Майами начинается необычный матч. {#go}Маше нужно пройти всё поле и создать гол. Помогут шесть звёзд
+      «Интер Майами» — и их настоящие футбольные истории.
+    pad:
+      - 0.12
+      - 0.3
+    energy: 0.65
+    transition:
+      kind: cut
+      dur: 0
+    sfx:
+      - at: start
+        kind: whoosh
+        gain: 0.22
+    props:
+      shots:
+        - image: shots/intro.png
+          prompt: Masha faces the distant goal on an evening Miami neighborhood pitch. A football quest begins, luminous
+            passing lanes on the grass.
+          seed: 73
+          move: in
+          zoom: 0.07
+          focus:
+            x: 0.5
+            y: 0.59
+      title:
+        textFrom: facts.story.title
+        at: 0.05
+        until: go
+        size: 0.052
+      labels:
+        - textFrom: facts.story.club
+          x: 0.46
+          y: 0.23
+          at: 0.1
+          until: go
+          tone: "#c64572"
+        - textFrom: facts.story.fiction
+          x: 0.46
+          y: 0.28
+          at: 0.1
+          until: go
+          tone: "#163544"
+  - id: fail
+    scene: illustration
+    say: Маша бросается вперёд одна. {#oops}Тупик! Защитники закрыли дорогу. Значит, сначала соберём командные
+      подсказки.
+    pad:
+      - 0.12
+      - 0.3
+    energy: 0.65
+    transition:
+      kind: fade
+      dur: 0.28
+    sfx:
+      - at: start
+        kind: whoosh
+        gain: 0.22
+    props:
+      shots:
+        - image: shots/fail.png
+          prompt: Masha attempts to dribble alone through three original teenage defenders in plain coral shirts, gets
+            blocked without collision, the white football rolls away. She looks surprised then thoughtful.
+            Clearly drawn overlapping tactical lanes, cinematic low perspective, no distress. Detailed
+            tropical Miami pitch; faces and action in lower half, top third calm blue-pink sky.
+          seed: 74
+          move: out
+          zoom: 0.07
+          focus:
+            x: 0.5
+            y: 0.59
+      title:
+        textFrom: facts.story.solo
+        at: 0.05
+        until: 1.8
+        size: 0.052
+      labels: []
+  - id: messi
+    scene: illustration
+    say: "Лионель Месси выиграл восемь «Золотых мячей» — больше всех. {#play}Наша первая подсказка: держи мяч
+      рядом. Маша проходит змейку, словно мяч привязан к бутсе!"
+    pad:
+      - 0.12
+      - 0.3
+    energy: 0.65
+    transition:
+      kind: fade
+      dur: 0.28
+    sfx:
+      - at: play
+        kind: whoosh
+        gain: 0.22
+    props:
+      shots:
+        - image: shots/dribble.png
+          prompt: Masha dribbles a white ball closely through a zig-zag of orange cones; dynamic low view, teal jersey,
+            copper ponytail, precise footwork. Glowing turquoise path, evening Miami field. Upper third calm.
+          seed: 75
+          move: in
+          zoom: 0.07
+          focus:
+            x: 0.5
+            y: 0.59
+        - image: shots/dribble.png
+          at: play
+          move: in
+          zoom: 0.14
+          focus:
+            x: 0.5
+            y: 0.63
+      portrait:
+        image: shots/portrait-messi.png
+        at: 0.05
+        until: play
+        nameFrom: facts.messi.name
+        countryFrom: facts.messi.country
+        valueFrom: facts.messi.value
+        labelFrom: facts.messi.label
+      labels:
+        - textFrom: facts.messi.skill
+          x: 0.47
+          y: 0.19
+          at: play
+          tone: "#0f766e"
+      keyAt: 2
+  - id: suarez
+    scene: illustration
+    say: "Луис Суарес дважды получал европейскую «Золотую бутсу». Это награда, а не обувь для матча! {#play}Маша
+      запоминает: важна точность, а не просто сильный удар."
+    pad:
+      - 0.12
+      - 0.3
+    energy: 0.65
+    transition:
+      kind: fade
+      dur: 0.28
+    sfx:
+      - at: play
+        kind: whoosh
+        gain: 0.22
+    props:
+      shots:
+        - image: shots/finish.png
+          prompt: Masha aims a controlled inside-foot shot into the far corner of the goal. A golden arc leads from
+            white ball to the net. Side view, rich evening Miami detail, upper third calm.
+          seed: 76
+          move: out
+          zoom: 0.07
+          focus:
+            x: 0.5
+            y: 0.59
+        - image: shots/finish.png
+          at: play
+          move: in
+          zoom: 0.14
+          focus:
+            x: 0.5
+            y: 0.63
+      portrait:
+        image: shots/portrait-suarez.png
+        at: 0.05
+        until: play
+        nameFrom: facts.suarez.name
+        countryFrom: facts.suarez.country
+        valueFrom: facts.suarez.value
+        labelFrom: facts.suarez.label
+      labels:
+        - textFrom: facts.suarez.skill
+          x: 0.47
+          y: 0.19
+          at: play
+          tone: "#0f766e"
+      keyAt: 2
+  - id: depaul
+    scene: illustration
+    say: "Родриго Де Пауль вместе с Месси стал чемпионом мира в две тысячи двадцать втором году. {#play}Подсказка:
+      отдал пас — сразу откройся снова."
+    pad:
+      - 0.12
+      - 0.3
+    energy: 0.65
+    transition:
+      kind: fade
+      dur: 0.28
+    sfx:
+      - at: play
+        kind: whoosh
+        gain: 0.22
+    props:
+      shots:
+        - image: shots/pass.png
+          prompt: Masha makes a one-two pass with an original curly-haired boy teammate in pale pink. A luminous
+            triangle connects them and the white football. Evening Miami field; action in lower half, upper
+            third calm.
+          seed: 77
+          move: in
+          zoom: 0.07
+          focus:
+            x: 0.5
+            y: 0.59
+        - image: shots/pass.png
+          at: play
+          move: in
+          zoom: 0.14
+          focus:
+            x: 0.5
+            y: 0.63
+      portrait:
+        image: shots/portrait-depaul.png
+        at: 0.05
+        until: play
+        nameFrom: facts.depaul.name
+        countryFrom: facts.depaul.country
+        valueFrom: facts.depaul.value
+        labelFrom: facts.depaul.label
+      labels:
+        - textFrom: facts.depaul.skill
+          x: 0.47
+          y: 0.19
+          at: play
+          tone: "#0f766e"
+      keyAt: 2
+  - id: casemiro
+    scene: illustration
+    say: "Каземиро пять раз выигрывал Лигу чемпионов с мадридским «Реалом». {#play}Наш урок: замечай чужой пас
+      заранее. Маша перекрывает дорожку — мяч снова у команды!"
+    pad:
+      - 0.12
+      - 0.3
+    energy: 0.65
+    transition:
+      kind: fade
+      dur: 0.28
+    sfx:
+      - at: play
+        kind: whoosh
+        gain: 0.22
+    props:
+      shots:
+        - image: shots/shield.png
+          prompt: Masha steps calmly across a passing lane and intercepts a white football before it reaches an original
+            teenage opponent in a coral jersey. Clean sporting interception, no contact or tackling. The
+            luminous turquoise passing line breaks against a subtle shield-shaped glow. Athletic stance,
+            determined face, layered stadium grass, little water droplets and palm silhouettes. Action lower
+            half, top third calm.
+          seed: 78
+          move: out
+          zoom: 0.07
+          focus:
+            x: 0.5
+            y: 0.59
+        - image: shots/shield.png
+          at: play
+          move: in
+          zoom: 0.14
+          focus:
+            x: 0.5
+            y: 0.63
+      portrait:
+        image: shots/portrait-casemiro.png
+        at: 0.05
+        until: play
+        nameFrom: facts.casemiro.name
+        countryFrom: facts.casemiro.country
+        valueFrom: facts.casemiro.value
+        labelFrom: facts.casemiro.label
+      labels:
+        - textFrom: facts.casemiro.skill
+          x: 0.47
+          y: 0.19
+          at: play
+          tone: "#0f766e"
+      keyAt: 2
+  - id: berterame
+    scene: illustration
+    say: Херман Бертераме родился в Аргентине, а играет за сборную Мексики. {#play}Нападающему нужна свободная
+      зона. Маша убегает туда, где защитник её не ждёт.
+    pad:
+      - 0.12
+      - 0.3
+    energy: 0.65
+    transition:
+      kind: fade
+      dur: 0.28
+    sfx:
+      - at: play
+        kind: whoosh
+        gain: 0.22
+    props:
+      shots:
+        - image: shots/run.png
+          prompt: Masha sprints diagonally into open space away from two original teenage defenders in coral jerseys. A
+            teammate with dark curly hair holds the white ball at far left, looking toward her run. Sweeping
+            gold path on turf shows the empty space. Miami neighborhood lights, distant sea, detailed chain
+            fence and lush foliage. Dynamic elevated camera, characters lower half; calm top third.
+          seed: 79
+          move: in
+          zoom: 0.07
+          focus:
+            x: 0.5
+            y: 0.59
+        - image: shots/run.png
+          at: play
+          move: in
+          zoom: 0.14
+          focus:
+            x: 0.5
+            y: 0.63
+      portrait:
+        image: shots/portrait-berterame.png
+        at: 0.05
+        until: play
+        nameFrom: facts.berterame.name
+        countryFrom: facts.berterame.country
+        valueFrom: facts.berterame.value
+        labelFrom: facts.berterame.label
+      labels:
+        - textFrom: facts.berterame.skill
+          x: 0.47
+          y: 0.19
+          at: play
+          tone: "#0f766e"
+      keyAt: 2
+  - id: stclair
+    scene: illustration
+    say: "Дейн Сент-Клэр стал вратарём года MLS в две тысячи двадцать пятом году, ещё в «Миннесоте».
+      {#play}Вратарь тоже герой: спасение может стать началом атаки!"
+    pad:
+      - 0.12
+      - 0.3
+    energy: 0.65
+    transition:
+      kind: fade
+      dur: 0.28
+    sfx:
+      - at: play
+        kind: whoosh
+        gain: 0.22
+    props:
+      shots:
+        - image: shots/save.png
+          prompt: An original teenage boy goalkeeper with medium brown skin, short dark curls, plain midnight-navy
+            goalkeeper kit and bright mint gloves makes a spectacular horizontal dive toward a white football
+            near the goal. Masha in teal watches farther away. Clear safe sporty motion, no celebrities.
+            Detailed woven net, raindrops, floodlights and Miami palms, turquoise and gold lighting.
+            Characters in lower half; calm dark sky above.
+          seed: 80
+          move: out
+          zoom: 0.07
+          focus:
+            x: 0.5
+            y: 0.59
+        - image: shots/save.png
+          at: play
+          move: in
+          zoom: 0.14
+          focus:
+            x: 0.5
+            y: 0.63
+      portrait:
+        image: shots/portrait-stclair.png
+        at: 0.05
+        until: play
+        nameFrom: facts.stclair.name
+        countryFrom: facts.stclair.country
+        valueFrom: facts.stclair.value
+        labelFrom: facts.stclair.label
+      labels:
+        - textFrom: facts.stclair.skill
+          x: 0.47
+          y: 0.19
+          at: play
+          tone: "#0f766e"
+      keyAt: 2
+  - id: choice
+    scene: illustration
+    say: Последняя атака. Маша видит ворота, но путь закрыт. {#choose}Ударить самой или отдать пас? Как поступишь
+      ты? {+1.0}
+    pad:
+      - 0.12
+      - 0.3
+    energy: 0.35
+    transition:
+      kind: fade
+      dur: 0.28
+    sfx:
+      - at: start
+        kind: whoosh
+        gain: 0.22
+    props:
+      shots:
+        - image: shots/choice.png
+          prompt: Close medium portrait of Masha holding a white football at hip height, thinking with a small
+            determined smile, teal jersey, copper high ponytail and freckles. Behind her, imagined translucent
+            luminous passing lanes branch toward a distant goal and a free teammate. Art deco Miami evening
+            park, sparkling bokeh, upper quarter calm. No words or symbols resembling letters.
+          seed: 81
+          move: in
+          zoom: 0.07
+          focus:
+            x: 0.5
+            y: 0.59
+      title:
+        textFrom: facts.story.choice
+        at: 0.05
+        until: choose
+        size: 0.052
+      labels: []
+  - id: combo
+    scene: illustration
+    say: Маша поднимает голову. Справа свободен партнёр! {#pass}Пас, рывок, точный удар…
+    pad:
+      - 0.12
+      - 0.3
+    energy: 0.65
+    transition:
+      kind: fade
+      dur: 0.28
+    sfx:
+      - at: start
+        kind: whoosh
+        gain: 0.22
+    props:
+      shots:
+        - image: shots/combo-v2.png
+          prompt: "An elevated dramatic view of the same Miami football field: Masha in teal passes the white ball
+            diagonally to a free dark-curly-haired teammate in a coral shirt on the right, while defenders in
+            navy turn too late. A single elegant turquoise curved light trail traces this decisive pass.
+            Realistic field perspective, net at the upper middle, lush warm-lit neighborhood. Action in middle
+            and lower portions."
+          seed: 82
+          move: out
+          zoom: 0.07
+          focus:
+            x: 0.5
+            y: 0.59
+      title:
+        textFrom: facts.story.combination
+        at: 0.05
+        until: 1.8
+        size: 0.052
+      labels: []
+  - id: goal
+    scene: illustration
+    say: "{#goal}Гол! Его забил товарищ, а создала вся команда. Вот он, секрет финального паса."
+    pad:
+      - 0.12
+      - 0.3
+    energy: 0.9
+    transition:
+      kind: fade
+      dur: 0.28
+    sfx:
+      - at: goal
+        kind: chime
+        gain: 0.6
+    props:
+      shots:
+        - image: shots/goal.png
+          prompt: The original curly-haired boy teammate in coral pink scores into the corner of the goal; white
+            football clearly inside the net, original navy goalkeeper landing on the other side. Masha in teal
+            celebrates the assist in foreground with arms lifted. No real people. Surging gold and turquoise
+            light, detailed net tension and turf, Miami palms and a sky of pink clouds.
+          seed: 83
+          move: in
+          zoom: 0.07
+          focus:
+            x: 0.5
+            y: 0.59
+      title:
+        textFrom: facts.story.goal
+        at: 0.05
+        until: 1.8
+        size: 0.052
+      labels: []
+  - id: close
+    scene: illustration
+    say: "Теперь твой ход: {#you}какую подсказку проверишь на следующей тренировке? Контроль мяча, точность или
+      умение замечать партнёра?"
+    pad:
+      - 0.12
+      - 1.2
+    energy: 0.65
+    transition:
+      kind: fade
+      dur: 0.28
+    sfx:
+      - at: start
+        kind: whoosh
+        gain: 0.22
+    props:
+      shots:
+        - image: shots/close.png
+          prompt: Masha and her original diverse teenage football friends celebrate together in a loose huddle on a
+            warmly illuminated Miami neighborhood pitch, smiling and offering high fives. Masha faces camera
+            at lower center, her copper ponytail and teal kit consistent. A white football on turf; softly
+            glowing net, distant bay, palm fronds, bougainvillea, confetti-like fireflies. Calm rich navy
+            upper third for end title, emotional satisfying ending.
+          seed: 84
+          move: out
+          zoom: 0.07
+          focus:
+            x: 0.5
+            y: 0.59
+      title:
+        textFrom: facts.story.team
+        at: 0.05
+        until: 1.8
+        size: 0.052
+      labels: []

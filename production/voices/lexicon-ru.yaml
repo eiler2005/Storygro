@@ -191,3 +191,63 @@ words:
   - word: Хорватии
     say: Хорв+атии
     source: 'ru.wikipedia, «Война в Хорватии»: «…Война за независимость Хорва́тии (март 1991 — ноябрь 1995) — военный кон…» (storygro stress --lookup, 2026-10-24)'
+  - word: Майами
+    say: Май+ами
+    source: 'ru.wikipedia, «Майами»: «…Майа́ми (англ. Miami) — город в США, расположен…» (storygro stress --lookup, 2026-10-25)'
+  - word: Интер
+    say: +Интер
+    source: 'ru.wikipedia, «Интер Майами»: «…«И́нтер Майа́ми» (англ. Inter Miami CF) — амери…» (storygro stress --lookup, 2026-10-25)'
+  - word: Суарес
+    say: Су+арес
+    source: 'ru.wikipedia, «Суарес, Луис Альберто»: «…Луи́с Альбе́рто Суа́рес Ди́ас (исп. Luis Alberto Suárez Díaz, и…» (storygro stress --lookup, 2026-10-25)'
+  - word: Золотую
+    say: Золот+ую
+    source: 'ru.wiktionary, «золотой»: «…В. одуш. золото́го золото́е золоту́ю золоты́х неод. золото́й зо…» (storygro stress --lookup, 2026-10-25)'
+  - word: Пауль
+    say: П+ауль
+    source: 'ru.wikipedia, «Де Пауль, Родриго»: «…Родри́го Хавье́р де Па́уль (также встречается вариант де Поль; исп…» (storygro stress --lookup, 2026-10-25)'
+  - word: Реалом
+    say: Ре+алом
+    source: 'Real Madrid, Spanish Real [reˈal]; instrumental Реалом preserves the stress. Automatic lookup found the currency реал; reviewed and corrected for the club, 2026-10-25.'
+  - word: Аргентине
+    say: Аргент+ине
+    source: 'ru.wiktionary, «Аргентина»: «…Аргенти́ны Аргенти́н Д. Аргенти́не Аргенти́нам В. Аргенти́ну…» (storygro stress --lookup, 2026-10-25)'
+  - word: Мексики
+    say: М+ексики
+    source: 'ru.wiktionary, «Мексика»: «…мн. ч. Им. Ме́ксика Ме́ксики Р. Ме́ксики Ме́ксик…» (storygro stress --lookup, 2026-10-25)'
+  - word: Миннесоте
+    say: Миннес+оте
+    source: 'ru.wiktionary, «Миннесота»: «…Миннесо́ты Миннесо́т Д. Миннесо́те Миннесо́там В. Миннесо́ту…» (storygro stress --lookup, 2026-10-25)'
+  - word: Бертераме
+    say: Бертер+аме
+    source: 'Inter Miami official profile: Germán Berterame, https://es.intermiamicf.com/players/german-berterame/; inferred penultimate stress from the unaccented Spanish spelling ending in a vowel. Checked 2026-10-25; not an auditory bench.'
+  - word: Херман
+    say: Херм+ан
+    source: 'Inter Miami official profile: Germán Berterame, https://es.intermiamicf.com/players/german-berterame/; written acute in Germán marks the stressed syllable.'
+  - word: Каземиро
+    say: Казем+иро
+    source: 'ru.wikipedia, «Каземиро»: Portuguese pronunciation [ka.zeˈmi.ɾu], checked 2026-10-25.'
+  - word: Родриго
+    say: Родр+иго
+    source: 'ru.wikipedia, «Де Пауль, Родриго»: «Родри́го Хавье́р де Па́уль», checked 2026-10-25.'
+  - word: Спартак
+    say: Спарт+ак
+    source: 'ru.wikipedia, «Спартак»: «…Спарта́к (лат. Spartacus, греч. Σπάρτακος; погиб…» (storygro stress --lookup, 2026-10-25)'
+  - word: Аня
+    say: +Аня
+    source: 'ru.wikipedia, «Покров, Аня»: «…А́ня Покро́в (настоящее имя — А́нна Алекса́н…» (storygro stress --lookup, 2026-10-25)'
+  - word: Москвы
+    say: Москв+ы
+    source: 'ru.wiktionary, «Москва»: «…мн. ч. Им. Москва́ Москвы́ Р. Москвы́ Москв…» (storygro stress --lookup, 2026-10-25)'
+  - word: Спартака
+    say: Спарт+ака
+    source: 'ru.wikipedia, «Восстание Спартака»: «…Восста́ние Спарта́ка́ (лат. Bellum Spartacium или лат. Tertiu…» (storygro stress --lookup, 2026-10-25)'
+  - word: Кубок
+    say: К+убок
+    source: 'ru.wikipedia, «Кубок»: «…Ку́бок (др.-греч. κύβος) — большой сосуд для п…» (storygro stress --lookup, 2026-10-25)'
+  - word: Спортинг
+    say: Сп+ортинг
+    source: 'ru.wikipedia, «Спортинг»: «…Спо́ртинг (Sporting): Спортинг — вид спортивно-о…» (storygro stress --lookup, 2026-10-25)'
+  - word: Саша
+    say: С+аша
+    source: 'ru.wikipedia, «Саша Грей»: «…Са́ша Грей (англ. Sasha Grey, настоящее имя —…» (storygro stress --lookup, 2026-10-25)'

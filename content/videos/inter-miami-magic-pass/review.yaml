@@ -1,0 +1,18 @@
+review: 1
+questions:
+  - id: watch
+    ask: "После просмотра: подходят ли темп, произношение имён и уровень сложности для ребёнка 10–12 лет?"
+    for: owner
+notes: Owner requested approximately two minutes, ages 10–12, iPhone. Owner explicitly selected illustrated world plus real player photographs after image generation declined real-person likenesses. Rendered 114.48 seconds at 1080x1920, 30 fps. All twelve rendered scenes visually inspected; all six real photo cards checked. Automated QA passed all thirteen checks, including final-mix ASR and four dictionary phoneme checks. No subjective audio listening or owner script/storyboard/release approval recorded. Local viewing copies delivered to Downloads/inter-miami-magic-pass-ru.
+approvals:
+  ru:
+    script:
+      hash: fbd2f66cd094
+      at: 2026-10-25T06:42:31.051Z
+      by: agent
+      role: agent
+    storyboard:
+      hash: 30995525c79a
+      at: 2026-10-25T06:42:31.505Z
+      by: agent
+      role: agent

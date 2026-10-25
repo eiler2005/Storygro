@@ -3,6 +3,7 @@
   "landscape": { "ref": [1920, 1080], "top": 150, "bottom": 190, "left": 140, "right": 140, "caption": 54 },
   "square": { "ref": [1080, 1080], "top": 90, "bottom": 150, "left": 80, "right": 80, "caption": 40 },
   "portrait": { "ref": [1080, 1350], "top": 110, "bottom": 170, "left": 80, "right": 80, "caption": 44 },
+  "phone": { "ref": [1080, 1920], "top": 130, "bottom": 150, "left": 70, "right": 70, "caption": 175 },
   "reels": { "ref": [1080, 1920], "top": 220, "bottom": 460, "left": 60, "right": 150, "caption": 490 },
   "shorts": { "ref": [1080, 1920], "top": 250, "bottom": 400, "left": 50, "right": 200, "caption": 430 },
   "vertical": { "ref": [1080, 1920], "top": 250, "bottom": 460, "left": 60, "right": 200, "caption": 490 },

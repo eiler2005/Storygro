@@ -1,0 +1,25 @@
+preferences: 1
+language: ru
+selectedAt: '2026-10-25'
+source: Owner listening comparison of the Inter Miami A/B/Qwen3 audition in this session.
+profiles:
+  - id: omnivoice-b
+    rank: 1
+    engine: omnivoice
+    model: k2-fsa/OmniVoice
+    reference: references/ru-omnivoice-b.wav
+    speed: 0.90
+    stress: 'off'
+  - id: qwen3-narrator
+    rank: 2
+    engine: qwen3
+    reference: references/ru-qwen3-narrator.wav
+    speed: 1.12
+    stress: auto
+  - id: omnivoice-a
+    rank: 3
+    engine: omnivoice
+    model: k2-fsa/OmniVoice
+    reference: references/ru-qwen3-narrator.wav
+    speed: 1.0
+    stress: 'off'

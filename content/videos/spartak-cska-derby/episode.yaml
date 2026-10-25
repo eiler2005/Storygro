@@ -1,0 +1,8 @@
+episode: 1
+id: spartak-cska-derby
+title: "Спартак и ЦСКА: секрет дерби"
+sources: sources.md
+credits: CREDITS.md
+variants:
+  - id: ru
+    spec: ru.reel.yaml

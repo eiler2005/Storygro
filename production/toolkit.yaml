@@ -280,7 +280,7 @@ entries:
     kind: scenes
     stage: look
     title: Illustration scene
-    what: Full-frame pictures that change on cues with a camera move, split frames, and DOM overlays (headline band, number badge, labels, source line).
+    what: Full-frame pictures that change on cues with a camera move, split frames, and DOM overlays (headline band, number badge, labels, source line, and an optional photograph fact card).
     when: The cartoon style or any piece built from pictures.
     scenes: [illustration]
     status: pilot
@@ -470,6 +470,16 @@ entries:
     what: Resemble AI's MIT-licensed multilingual voice (Russian among 23 languages) that clones a narrator from a reference clip; separate ~/.storygro/chatterbox-venv; about four seconds of compute per second of speech on an M5 Pro.
     when: A second Russian voice to compare with Qwen3; see the bench results before choosing.
     how: npm run setup:chatterbox
+    status: pilot
+    docs: docs/reference/voices.md
+
+  - id: omnivoice
+    kind: provider
+    stage: voice
+    title: OmniVoice Russian narrator
+    what: Isolated local OmniVoice through PyTorch; owner-selected synthetic B reference at speed 0.90 for new Russian scaffolds. Qwen3 is second choice and OmniVoice A third. Pitch-preserving tempo and Whisper alignment use the common voice pipeline. Model weights are CC-BY-NC.
+    when: New Russian episodes within the model terms; existing episodes retain their explicit settings.
+    how: npm run setup:omnivoice
     status: pilot
     docs: docs/reference/voices.md
 

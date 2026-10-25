@@ -13,6 +13,7 @@
     "setup:ru": "sh production/scripts/setup.sh ru",
     "setup:images": "sh production/scripts/setup-images.sh",
     "setup:chatterbox": "sh production/scripts/setup-chatterbox.sh",
+    "setup:omnivoice": "sh production/scripts/setup-omnivoice.sh",
     "storygro": "tsx production/src/cli.ts",
     "reel": "tsx production/src/cli.ts",
     "typecheck": "tsc --noEmit",

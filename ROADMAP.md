@@ -14,6 +14,9 @@ Storygro's goal: an assistant for an AI agent that turns a topic and its sources
 | 5. Publication (manual) | A ledger with states, deduplication and a required URL for `published` | [publish manually](docs/how-to/publish-manually.md) |
 | Styles and generated pictures | Reusable styles (`cartoon`, `cut-paper`, `editorial-collage`), `new`, local illustrations with provenance, reference transcripts | [use a style](docs/how-to/use-a-style.md), [ADR 0005](docs/adr/0005-styles-and-generated-pictures.md) |
 | Motion and kinetic type | Springs, the beat grid, motion blur; the `kinetic-type` style with `kinetic`, `timeline`, `process`, `scale` | [scene contract: motion](docs/reference/scene-contract.md#motion), [agent-motion-studio](content/videos/agent-motion-studio/README.md) |
+| Russian pronunciation | A shared dictionary with sources, an online stress lookup, phoneme checks with retakes and a QA check | [voices](docs/reference/voices.md#pronunciation-notes-russian) |
+| Recognisable pictures and children's videos | GPT Image through the Codex CLI; the children's list cartoon; the series kids-football | [how-to](docs/how-to/kids-list-cartoon.md), [football-stars-kids](content/videos/football-stars-kids/README.md) |
+| Registry | Every reel, story structure, scene and visual check on one generated page | [registry](docs/reference/registry.md) |
 | 6. Analytics (manual) | Metric snapshots with source and window; missing values never become zero | [publication ledger](docs/reference/publication-ledger.md#metrics) |
 
 ## Next

@@ -11,7 +11,7 @@ A toolkit for AI agents to turn ideas into reels, videos, carousels and social p
 </p>
 
 <p align="center">
-  <a href="docs/start-here.md">Start here</a> · <a href="docs/features.md">Features</a> · <a href="docs/examples.md">Examples</a> · <a href="docs/explanation/pipeline.md">Pipeline</a> · <a href="docs/README.md">Docs</a> · <a href="ROADMAP.md">Roadmap</a> · <a href="CHANGELOG.md">Changelog</a>
+  <a href="docs/start-here.md">Start here</a> · <a href="docs/features.md">Features</a> · <a href="docs/examples.md">Examples</a> · <a href="docs/explanation/video-formats.md">Formats</a> · <a href="docs/explanation/pipeline.md">Pipeline</a> · <a href="docs/README.md">Docs</a> · <a href="ROADMAP.md">Roadmap</a> · <a href="CHANGELOG.md">Changelog</a>
 </p>
 
 <p align="center"><img src="docs/media/hero.jpg" alt="Five vertical frames Storygro rendered: a cut-paper headline, a stat card with sourced numbers, a career ladder, an editorial collage and a recorded website in a phone" width="100%"></p>
@@ -36,7 +36,7 @@ The agent researches, writes the script and facts, narrates, builds a storyboard
 
 **Videos as code, with an editor's checks.** A video is a YAML script plus a facts file. The voice sets the timing; small JavaScript scenes draw every frame deterministically in headless Chrome; ffmpeg encodes. Gates sit where mistakes are expensive: a storyboard you approve before rendering, a facts gate that rejects any on-screen number not traceable to a source, and technical QA on the finished file — including Whisper listening to the narration.
 
-**Local and accountless.** No server, no account, no API keys for the core. Voices run on your machine (Kokoro, Kokoro-RU, Qwen3-TTS, Silero). Publishing is a person's act; Storygro keeps the ledger.
+**Local and accountless.** No server, no account, no API keys for the core. Voices run on your machine (Kokoro, Kokoro-RU, Qwen3-TTS, Silero), with a shared Russian pronunciation dictionary whose names are looked up in ru.wikipedia and checked by ear. The one optional online step is GPT Image through a signed-in Codex CLI, for pictures of recognisable people. Publishing is a person's act; Storygro keeps the ledger.
 
 **Made for agents and for the people who direct them.** [AGENTS.md](AGENTS.md) holds the rules; [how we work](docs/explanation/how-we-work.md) says who decides what, and which model fits which job.
 
@@ -83,17 +83,20 @@ A style is a reusable way of making videos — defaults, theme, scenes, pacing, 
 
 | Style | For | Pictures |
 |---|---|---|
-| **cartoon** | narrated explainers told through comic illustrations with a recurring cast, 16:9 — from a one-minute short to a long-form episode | generated locally with mflux + Z-Image-Turbo; prompt, seed and checksum of each in `images.json` |
+| **cartoon** | narrated explainers told through comic illustrations with a recurring cast, 16:9 or 9:16 — from a one-minute short to a long-form episode, children's list cartoons included | generated locally with mflux + Z-Image-Turbo, or with GPT Image through the Codex CLI for recognisable, drawing-like pictures; prompt, model and checksum of each in `images.json` |
 | **cut-paper** | vertical explainers on paper: cards, figures, marker, stamps | drawn by code |
 | **editorial-collage** | vertical explainers on graph paper with cut-outs, torn labels and panels | cut-outs you supply |
 | **kinetic-type** | vertical shorts made of words that land as they are spoken, with a timeline, a process and a comparison of sizes in the same type; motion blur | drawn by code |
 
-The cartoon style grew out of [a frame-by-frame analysis](content/research/references/cYlePq4WQsk.md) of an 18-minute illustrated finance explainer, made with `storygro transcript`. Storygro keeps what works (a recurring character, a new picture every few seconds, burned-in captions) and fixes what does not: headlines and numbers are drawn on cue from the facts file, not baked into generated pictures. [Use a style](docs/how-to/use-a-style.md) · [cartoon tutorial](docs/tutorials/cartoon-explainer.md)
+The cartoon style grew out of [a frame-by-frame analysis](content/research/references/cYlePq4WQsk.md) of an 18-minute illustrated finance explainer, made with `storygro transcript`. Storygro keeps what works (a recurring character, a new picture every few seconds, burned-in captions) and fixes what does not: headlines and numbers are drawn on cue from the facts file, not baked into generated pictures. [Use a style](docs/how-to/use-a-style.md) · [cartoon tutorial](docs/tutorials/cartoon-explainer.md) · [which format for which job](docs/explanation/video-formats.md)
 
 ## Finished videos
 
 | Video | What it shows | Length · QA | Watch |
 |---|---|---|---|
+| [**Football stars: filling the album**](content/videos/football-stars-kids/README.md) (RU, for children) | 14 footballers, one checked cheerful fact each, recognisable drawing-like caricatures made with GPT Image, chapter cards and an album progress rail | 117.5 s · 14/14 | local render |
+| [**The Ballon d'Or: who is the best?**](content/videos/ballon-dor-kids/README.md) (RU, for children) | The award's story for 6–10-year-olds: the first winner, Yashin, Messi's record, the women's award | 89.1 s · 14/14 | local render |
+| [**How an agent builds a video from code**](content/videos/agent-motion-studio/README.md) (RU) | The `kinetic-type` pilot: words land as they are spoken, a process with a travelling token, sizes compared; motion blur | 31.3 s · 12/12 | local render |
 | [**The AI industry is buying what you know about your job**](content/videos/ai-buys-work-knowledge/README.md) (EN) | The first `cartoon`-style short: micro1's $1B data programme, a buyer whose reasons are not in the price table | 62.3 s · 11/11 | local render |
 | [**Where to check an AI agent's work**](content/videos/ai-agent-checks/README.md) (RU) | The first topic picked from the trend watchlist: τ-bench numbers, where to put checks, who is liable | 51.6 s · 12/12 | [release](https://github.com/eiler2005/Storygro/releases/tag/ai-agent-checks-2026-10-19) |
 | [**SlideCraft demo**](content/videos/slidecraft-demo/README.md) (RU) | A product demo on a real screen recording: finger, taps, magnifier | 43.7 s · 12/12 | [release](https://github.com/eiler2005/Storygro/releases/tag/slidecraft-demo-2026-10-19) |
@@ -163,10 +166,12 @@ Full map and where to change what: [repository layout](docs/reference/repository
 - Research is an agent workflow, not an unattended fact-checking service.
 - Safe-area profiles are estimates; check a real upload on a phone.
 - QA finds technical defects; it does not judge whether the story works.
+- The stress check hears only dictionary words with a measured pattern; stress on a final syllable is not audible to it. Listen to every Russian episode.
+- GPT Image pictures need a signed-in Codex CLI and the network, are not reproducible by seed, and the tool may decline a prompt; local pictures stay the default.
 
 ## Privacy and network access
 
-Storygro runs on your machine with no account and no telemetry. It goes online only when you ask: `npm ci`; `setup` (Python packages via uv, model weights from Hugging Face); `assets:fetch` (render inputs from this repository's GitHub Releases, checksum-verified); `trends` (public Google Trends RSS, Wikipedia and Hacker News); `capture` (the URL in your capture spec, in local Chrome); `stress --lookup` (ru.wikipedia and ru.wiktionary, for the stress of names). The preview server binds to loopback. See [SECURITY.md](SECURITY.md).
+Storygro runs on your machine with no account and no telemetry. It goes online only when you ask: `npm ci`; `setup` (Python packages via uv, model weights from Hugging Face); `assets:fetch` (render inputs from this repository's GitHub Releases, checksum-verified); `trends` (public Google Trends RSS, Wikipedia and Hacker News); `capture` (the URL in your capture spec, in local Chrome); `stress --lookup` (ru.wikipedia and ru.wiktionary, for the stress of names); `images` with `provider: codex` (the shot prompts go to OpenAI through your Codex CLI). The preview server binds to loopback. See [SECURITY.md](SECURITY.md).
 
 ## Contributing
 

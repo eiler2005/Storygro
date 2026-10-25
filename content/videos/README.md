@@ -4,6 +4,9 @@
 
 | Проект | Назначение |
 |---|---|
+| [football-stars-kids](football-stars-kids/README.md) | Детский мультик «Звёзды футбола: собираем альбом»: 14 футболистов, узнаваемые шаржи (GPT Image), главы и альбом; серия [kids-football](../series/kids-football.yaml); 117,5 с |
+| [ballon-dor-kids](ballon-dor-kids/README.md) | Детский мультик «Золотой мяч: кто самый лучший?»; 89 с |
+| [agent-motion-studio](agent-motion-studio/README.md) | Пилот стиля kinetic-type «Как агент собирает ролик из кода»; 31 с |
 | [agents-open-door](agents-open-door/README.md) | Мультфильм-погоня «Не бунт, а открытая дверь» о безопасности ИИ-агентов; первый выпуск серии [«Открытая дверь»](../series/open-door.md) и первый по контент-процессу (план, вопросы, одобрения); 82 с |
 | [ai-agent-checks](ai-agent-checks/README.md) | Где проверять работу ИИ-агента. Первая тема, выбранная по [сканированию трендов](../research/ai-agent-checks/README.md); 51,6 с |
 | [slidecraft-demo](slidecraft-demo/README.md) | Демо продукта на настоящей записи экрана (`capture` → `screencast`); 43,7 с |

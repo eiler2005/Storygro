@@ -8,9 +8,10 @@ npm run storygro -- styles
 
 | Style | For | Pictures |
 |---|---|---|
-| `cartoon` | narrated explainers told through generated comic illustrations with a recurring cast; 16:9 by default | generated locally with mflux and Z-Image-Turbo |
+| `cartoon` | narrated explainers told through generated comic illustrations with a recurring cast; 16:9 by default, 9:16 with `images.width/height` | generated locally with mflux and Z-Image-Turbo, or with GPT Image through the Codex CLI (`images.provider: codex`) for recognisable, drawing-like pictures |
 | `cut-paper` | vertical explainers on paper: cards, figures, marker, stamps | drawn by code |
 | `editorial-collage` | vertical explainers on graph paper with cut-outs, torn labels and panels | cut-outs you supply |
+| `kinetic-type` | vertical shorts made of words that land as they are spoken, with a timeline, a process and a comparison of sizes; motion blur | drawn by code |
 
 ## Start a project in a style
 

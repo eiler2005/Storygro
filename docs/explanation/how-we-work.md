@@ -26,7 +26,8 @@ Match the model to the job:
 | Job | Model tier | Examples |
 |---|---|---|
 | Judgement and anything hard to undo | strongest available (for example Claude Opus) | story and script, `DIRECTION.md`, new scene mechanisms, engine and runtime changes, reviewing rendered frames, verifying numbers in primary sources |
-| Bounded, checkable side work | faster, cheaper (for example Claude Sonnet or Haiku) | collecting candidate sources, a docs catalogue, repository boilerplate, mechanical copy edits, link fixes |
+| Bounded, checkable side work | faster, cheaper (for example Claude Sonnet or Haiku) | collecting candidate sources and facts (Sonnet), re-reading every quote against its page (Haiku), a docs catalogue or generator, repository boilerplate, mechanical copy edits, link fixes |
+| Pictures | an image model: GPT Image through the Codex CLI when likeness and detail matter, local Z-Image-Turbo otherwise | `storygro images`; the main agent looks at every picture before layout |
 | Mechanical gates | no model | `npm run check`, `storygro qa`, `package` refusals |
 
 Rules that keep this cheap and safe:

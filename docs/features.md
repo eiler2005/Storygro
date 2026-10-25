@@ -111,6 +111,22 @@ Each scene is a small JavaScript module whose frame is a pure function of time, 
 
 → [Scene catalog with every prop](reference/scenes.md) · [Add a scene](how-to/add-a-scene.md) · [Scene contract](reference/scene-contract.md)
 
+## Motion that reads as designed
+
+Scenes move on closed-form springs instead of linear tweens, can follow the music's beat grid (`ctx.beats`) and snap sound effects to it, and a reel can turn on motion blur from sub-frames (`format.blur`). Every frame is still a pure function of time.
+
+→ [Scene contract: motion](reference/scene-contract.md#motion) · [formats: motion blur](reference/formats.md#motion-blur)
+
+## Pictures of people children recognise
+
+A reel can switch its pictures to GPT Image through the Codex CLI (`images.provider: codex`): recognisable, drawing-like caricatures with rich backgrounds, in batches, cropped to the frame and recorded in `images.json`. Overlays are placed per shot so no face is covered.
+
+→ [Children's list cartoon](how-to/kids-list-cartoon.md) · [styles reference](reference/styles.md#in-the-reel)
+
+## Find what exists
+
+The [registry](reference/registry.md) lists every reel with its scene sequence, every style's story structure and every scene with the reels that use it; the [toolkit](reference/toolkit.md) lists every method and tool by stage. Both are generated and tested.
+
 ## Demo a product on its real website
 
 `storygro capture` drives a phone-sized Chrome through a scripted session — go to, scroll, tap, type — in virtual time, and records every frame with the finger path. The `screencast` scene puts it in a phone, lines a recorded tap up with a narrated word and adds a magnifier where the voice points.
@@ -126,6 +142,8 @@ Each scene is a small JavaScript module whose frame is a pure function of time, 
 | Qwen3-TTS (mlx-audio) | Russian, English and more; one designed reference voice per language | Apple silicon |
 | Kokoro-82M / Kokoro-RU + RUAccent | English; Russian | everywhere |
 | Silero CIS | Russian, with explicit stress | everywhere |
+
+Russian names and hard words live in one pronunciation dictionary (`production/voices/lexicon-ru.yaml`): the plan flags names nobody checked, `storygro stress --lookup` finds the stress of the exact word form in ru.wikipedia (searching the full name first — Лу́ка Модрич) and ru.wiktionary, and a phoneme model listens to checked words, speaks a line again when one comes out wrong and checks the final track in QA. Qwen3 gets dictionary marks only where a bench proved they help; it reads more cleanly without them.
 
 Word timings come from the engine or from Whisper alignment. Music and sound effects are synthesised from numbers — no samples, nothing to license — and the mix is normalised to −14 LUFS with ducking under the voice. Each line records its provider, model and licence.
 
@@ -145,7 +163,7 @@ Native 9:16, 4:5, 1:1 and 16:9 presets; safe-area profiles for Reels and Shorts 
 
 ## Technical QA on the finished file
 
-Codec, dimensions, audio, length, −14 LUFS loudness, black frames, a non-empty first frame, scene and asset errors, text clear of the platform UI at every cue, every on-screen number traceable to a data file, Whisper hearing at least 85 % of each scene's words, and brand rules. Skipped is never reported as passed.
+Codec, dimensions, audio, length, −14 LUFS loudness, black frames, a non-empty first frame, scene and asset errors, text clear of the platform UI at every cue, no text sticking out of its card, band or label, every on-screen number traceable to a data file, Whisper hearing at least 85 % of each scene's words (names ASR spells its own way still count), checked dictionary words keeping their stress, and brand rules. Skipped is never reported as passed.
 
 ![QA report of a short and the status of its series](media/pipeline/05-qa.jpg)
 

@@ -6,6 +6,7 @@
 
 | …goal | Start here |
 |---|---|
+| Decide what kind of video to make: business explainer, cartoon, high-quality cartoon, kinetic short… | [Video formats](explanation/video-formats.md) · [From an idea to a video on the phone](explanation/workflow.md#from-an-idea-to-a-video-on-the-phone) |
 | See every method and tool for making content, by stage | [Toolkit](reference/toolkit.md) — the bank of methods, tools, styles, scenes and providers |
 | Render my first storyboard and video | [Start here](start-here.md) |
 | See everything Storygro can do, with pictures | [What Storygro can do](features.md) |
@@ -42,7 +43,7 @@
 
 ## Explanation
 
-[Workflow](explanation/workflow.md) · [Content workflow: plan, approvals, tracker](explanation/content-workflow.md) · [How we find ideas](explanation/research-approach.md) · [The pipeline, with pictures](explanation/pipeline.md) · [Architecture](explanation/architecture.md) · [Quality gates](explanation/quality.md) · [Technology and product map](explanation/technology.md) · [How we work](explanation/how-we-work.md) · [Decision records](adr/README.md)
+[Video formats](explanation/video-formats.md) · [Workflow](explanation/workflow.md) · [Content workflow: plan, approvals, tracker](explanation/content-workflow.md) · [How we find ideas](explanation/research-approach.md) · [The pipeline, with pictures](explanation/pipeline.md) · [Architecture](explanation/architecture.md) · [Quality gates](explanation/quality.md) · [Technology and product map](explanation/technology.md) · [How we work](explanation/how-we-work.md) · [Decision records](adr/README.md)
 
 ## Background
 

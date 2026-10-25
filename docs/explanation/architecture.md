@@ -141,6 +141,8 @@ Two families live in `production/scenes/` ([catalog](../reference/scenes.md)):
 
 Each line's JSON records the provider, model, voice, licence, how timings were found and what share of words aligned exactly.
 
+Russian stress comes in layers before synthesis (`production/py/stress.py`): the author's marks; the shared pronunciation dictionary (`production/voices/lexicon-ru.yaml`, resolved by `production/src/lexicon.ts` and passed in the job — engines that read marks well get them, Qwen3 only entries marked `always`); RUAccent for listed homographs. A dictionary word with a phoneme `check` is heard after synthesis (`production/py/phonemes.py`) and the line is spoken again with another seed, up to three takes, when it comes out wrong. A line's cache key includes only the dictionary entries that change what its engine hears.
+
 ## Audio
 
 `production/py/score.py` builds everything from numbers — no samples, so the result is free to use: pads, bells, plucked arpeggio and sub bass that follow each scene's `energy`; kick, hats and claps only above 0.55; synthesized sound effects per kind (`whoosh`, `pop`, `tick`, `hit`, `riser`, `scratch`, `type`, `ding`, `chime`, `thud`, `swell`); a music grid anchored so `music.drop` lands on a downbeat; ducking under the voice (up to 78 %); integrated loudness −14 LUFS with a −1.2 dBFS limiter.

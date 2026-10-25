@@ -27,7 +27,7 @@ Guide: [transcribe and analyse a reference](../how-to/transcribe-a-reference.md)
 |---|---|---|
 | `styles` | lists the styles in `production/styles/` | — |
 | `new <folder> --style <id> [--lang en] [--title "…"]` | starts a content project in a style; refuses a folder with files | `episode.yaml`, `<lang>.reel.yaml`, `facts.json`, `sources.md`, `CREDITS.md` |
-| `images <spec> [--dry-run] [--force] [--only <scene>]` | generates the pictures the shots ask for — missing ones and those whose prompt or seed changed; keeps hand-made files; `--dry-run` lists prompts and states | pictures at their paths, `images.json` (prompt, seed, model, licence, SHA-256); `prompts.md` with the `manual` provider |
+| `images <spec> [--dry-run] [--force] [--only <scene>]` | generates the pictures the shots ask for — missing ones and those whose prompt or seed changed; keeps hand-made files; `--dry-run` lists prompts and states. Provider from the style or `images.provider`: `mflux` (local), `codex` (GPT Image through the Codex CLI, batched, online), `manual` | pictures at their paths, `images.json` (prompt, seed, model, licence, SHA-256); `prompts.md` with the `manual` provider |
 
 Guides: [use a style](../how-to/use-a-style.md), [cartoon tutorial](../tutorials/cartoon-explainer.md). Fields: [styles reference](styles.md).
 
@@ -84,6 +84,7 @@ Guides: [carousel and release](../how-to/carousel-and-release.md), [brand and se
 | `--no-voice` | estimated timings (about 2.6 words/s), no TTS |
 | `--draft` | half size, 15 fps, no approval gate |
 | `--from <s> --to <s>` | render a time range |
+| `--blur <n>` | motion blur: n captures per frame (overrides `format.blur`; `--draft` ignores it) |
 | `--force` | skip the approval / QA gate; recorded in the output |
 | `--guides` | stills and preview with the platform safe area painted |
 | `--allow-errors` | render scenes that report errors (for debugging only) |

@@ -37,6 +37,9 @@ const CARTOON = 'content/videos/ai-buys-work-knowledge/.reel/en/stills';
 const CARTOON_AT = ['hook@4.2', 'news@7', 'why@6', 'example@3.5', 'example@12', 'value@9', 'close@10'];
 const CARTOON_STRIP = ['hook_4.2', 'news_7', 'why_6', 'example_3.5', 'value_9', 'close_10'].map((f) => `${CARTOON}/${f}.png`);
 
+/** Pictures from GPT Image (through the Codex CLI) of the children's football cartoon — raw shots, no overlays, no text. */
+const GPT_SHOTS = ['ronaldinho-1', 'modric-1', 'neuer-1', 'yamal-2', 'lautaro-2', 'intro-1'].map((f) => `content/videos/football-stars-kids/shots/${f}.jpg`);
+
 /** One English key frame per scene module; landscape scenes come from the SlideCraft launch film. */
 const SCENES: [scene: string, still: string][] = [
   ['illustration', `${CARTOON}/example_12.png`],
@@ -177,6 +180,18 @@ try {
       `<style>body{background:#14161b} main{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;padding:20px}
         img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:10px}</style><main>${cells}</main>`,
       80,
+    );
+  }
+
+  if (!missing(GPT_SHOTS)) {
+    const cells = GPT_SHOTS.map((f) => `<img src="${src(f)}">`).join('');
+    await shoot(
+      'formats/gpt-image.jpg',
+      1600,
+      0,
+      `<style>body{background:#14161b} main{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;padding:18px}
+        img{display:block;width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:10px}</style><main>${cells}</main>`,
+      78,
     );
   }
 

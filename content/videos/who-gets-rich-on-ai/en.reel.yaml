@@ -136,6 +136,8 @@ scenes:
       labels:
         - { textFrom: facts.greenspan.quote.en, x: 0.5, y: 0.3, at: flaw, tone: red }
         - { textFrom: facts.greenspan.quoteLabel.en, x: 0.5, y: 0.38, at: flaw, tone: ink }
+      # the book's authors are credited here: a label was too wide for the frame and sat on the badge
+      source: { textFrom: facts.book.authors.en }
 
   - id: capex
     scene: illustration

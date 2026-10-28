@@ -126,9 +126,12 @@ scenes:
 
   - id: book
     scene: illustration
-    say: 'Об этом книга «Капитализм в Америке». {#authors}Её авторы — Алан Гринспен и Адриан
-      Вулдридж. Гринспен девятнадцать лет возглавлял центральный банк США.
-      {#flaw}В [2008](=две тысячи восьмом) он признал: в его модели мира нашёлся изъян.'
+    # The given names are shown, not spoken: OmniVoice cannot be told the stress of «А́лан» — the
+    # uppercase convention has nowhere to put the mark on a capitalised initial vowel, and a phoneme
+    # check caught it saying «Ала́н». On screen the spelling is exact. See production/voices/lexicon-ru.yaml.
+    say: 'Об этом книга «Капитализм в Америке». {#authors}Её авторы — Гринспен и историк Вулдридж.
+      Гринспен девятнадцать лет возглавлял центральный банк США. {#flaw}В [2008](=две тысячи восьмом)
+      он признал: в его модели мира нашёлся изъян.'
     pad: [0.2, 0.5]
     energy: 0.4
     sfx: [{ at: flaw, kind: thud, gain: 0.4 }]
@@ -143,6 +146,9 @@ scenes:
       labels:
         - { textFrom: facts.greenspan.quote.ru, x: 0.5, y: 0.3, at: flaw, tone: red }
         - { textFrom: facts.greenspan.quoteLabel.ru, x: 0.5, y: 0.38, at: flaw, tone: ink }
+      # the given names are credited here, not spoken: a label was too wide for the frame and sat on
+      # the badge, while the source line is made for an attribution and wraps
+      source: { textFrom: facts.book.authors.ru }
 
   - id: capex
     scene: illustration

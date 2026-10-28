@@ -281,9 +281,13 @@ words:
     source: 'ru.wiktionary, «лиса»: «ли-са́ — Существительное, одушевлённое, женский род» (checked 2026-10-25; the online lookup found the singer «Ли́са» instead)'
   - word: Джея
     say: Дж+ея
+    # measured 28.10.2026 in the rendered who-gets-rich-on-ai track: `ʒ eɪ` — the е is full, so «Дже́я»
+    check: { right: '[ʒʐ] ?d?[ʒʐ]? [eɛ]', wrong: '[ʒʐ] ?d?[ʒʐ]? [ɪiɨə]' }
     source: 'ru.wiktionary, «Джей»: «…Дже́й Дже́й Дже́и Р. Дже́я Дже́й Дже́ев Д. Дже́ю…» (storygro stress --lookup, 2026-10-27)'
   - word: Кука
     say: К+ука
+    # measured 28.10.2026: `k uː k oː` — the у is long and full, so «Ку́ка», not «Кука́»
+    check: { right: 'k uː? k', wrong: 'k [ʊəɐ] k aː' }
     source: 'ru.wikipedia, «Острова Кука»: «…Острова́ Ку́ка (кук. Kūki ‘Airani, англ. Cook Islands,…» (storygro stress --lookup, 2026-10-27)'
   - word: Капитализм
     say: Капитал+изм
@@ -291,29 +295,47 @@ words:
   - word: Америке
     say: Ам+ерике
     source: 'ru.wiktionary, «Америка»: «…. Аме́рики Аме́рик Д. Аме́рике Аме́рикам В. Аме́рику…» (storygro stress --lookup, 2026-10-27)'
+  # The uppercase convention cannot mark either of these: it encodes stress by capitalising the
+  # stressed vowel, and here that vowel is already the word's capitalised first letter — «+Алан»
+  # renders as plain «Алан», so OmniVoice and Qwen3 get no signal at all. Measured 28.10.2026 in the
+  # rendered who-gets-rich-on-ai track: `a l a n` — the final а was not reduced, i.e. it said «Ала́н».
+  # So the stress is carried by the check instead: a bad take is re-voiced with another seed.
   - word: Алан
     say: +Алан
+    check: { right: 'a l [əɐɨɪ] n', wrong: 'a l aː? n' }
     source: 'ru.wikipedia, «Гринспен, Алан»: «А́лан Гри́нспен» (checked by hand 2026-10-27)'
   - word: Алана
     say: +Алана
     # the automatic lookup matched the common noun «ала́н» (the ancient people) and gave «Ала́на» —
     # wrong for the English given name Alan; corrected by hand against the article about Greenspan
+    check: { right: 'a l [əɐɨɪ] n', wrong: 'a l aː? n' }
     source: 'ru.wikipedia, «Гринспен, Алан»: «А́лан Гри́нспен» (checked by hand 2026-10-27; storygro stress --lookup had proposed «Ала́на» from «алан»)'
   - word: Гринспен
     say: Гр+инспен
+    # measured 28.10.2026: `ɡ r i n s p i n` twice — the final е is reduced to [i], so «Гри́нспен».
+    # «Гринспе́н» would keep it full ([e]), which is what the wrong pattern looks for.
+    check: { right: 's p [iɪɨə] n', wrong: 's p [eɛ] n' }
     source: 'ru.wikipedia, «Гринспен, Алан»: «А́лан Гри́нспен» (checked 2026-10-27; the online lookup found nothing)'
   - word: Гринспена
     say: Гр+инспена
+    check: { right: 's p [iɪɨə] n', wrong: 's p [eɛ] n' }
     source: 'ru.wikipedia, «Гринспен, Алан»: «А́лан Гри́нспен» (checked 2026-10-27; the online lookup found nothing)'
   - word: Адриан
     say: Адри+ан
+    # measured 28.10.2026: `a d r i a n` — the final а is full, so «Адриа́н»
+    check: { right: 'r i aː? n', wrong: 'r i [əɐɪ] n' }
     source: 'ru.wiktionary, «Адриан»: «Ад-ри-а́н», Им. Адриа́н (checked by hand 2026-10-27)'
   - word: Адриана
     say: Адри+ана
+    check: { right: 'r i aː? n', wrong: 'r i [əɐɪ] n' }
     source: 'ru.wiktionary, «Адриан»: «Ад-ри-а́н», Им. Адриа́н · Р. Адриа́на (checked by hand 2026-10-27; the lookup had cited the feminine «Адриа́на Лима», same stress position)'
   - word: Вулдридж
     say: В+улдридж
-    # see the note on «Вулдриджа» below: publisher's spelling, stress from the English WOOL-ridge
+    # see the note on «Вулдриджа» below: publisher's spelling, stress from the English WOOL-ridge.
+    # Deliberately NO phoneme check. Tried on 28.10.2026 and withdrawn: the recogniser reads the same
+    # audio as `v u l` or `v o l` depending only on where the slice starts, and the и came out [i] in
+    # one take and [ɪ] in another, so a check here decides by noise and would re-voice good takes.
+    # This name still needs a human ear; it is flagged in the episode's review.yaml.
     source: 'Spelling: alpinabook.ru, «Капитализм в Америке. История» — автор «Адриан Вулдридж». Stress from the English pronunciation of Wooldridge (WOOL-ridge); no Russian dictionary source (2026-10-27)'
   - word: Вулдриджа
     say: В+улдриджа
@@ -322,6 +344,8 @@ words:
     source: 'Spelling: alpinabook.ru, «Капитализм в Америке. История» — авторы «Алан Гринспен», «Адриан Вулдридж». Stress from the English pronunciation of Wooldridge (WOOL-ridge); no Russian dictionary source (2026-10-27)'
   - word: Нью-Йорке
     say: Нью-Й+орке
+    # measured 28.10.2026: `n uː j o r k ɪ` — the о is full and the final е reduced, so «Нью-Йо́рке»
+    check: { right: 'j oː? r k', wrong: 'j [ɐəa] r k' }
     source: 'ru.wiktionary, «Нью-Йорк»: «Нью-Йо́рк» (checked 2026-10-27; the online lookup found nothing for the prepositional form)'
   - word: Конгрессу
     say: Конгр+ессу

@@ -1,0 +1,55 @@
+{
+ "_about": "Reference pictures of the series hosts Matvey and Sofia (ignored PNGs beside this file). Episodes attach them through images.refs so the hosts look the same in every shot. Owner approved the faces on 2026-10-28 («да, герои устраивают»). Not seed-reproducible: keep the exact files (SHA-256 below) in local or release storage.",
+ "images": 1,
+ "files": {
+  "first-sheet.png": {
+   "prompt": "Character reference sheet for a premium stylized 3D family animated series (the polish of a modern feature-animation studio film, not photorealistic, not babyish). Two original anthropomorphic animal children stand side by side, full body from head to boots, front three-quarter view, relaxed friendly pose, both clearly visible and not overlapping, on a plain soft cream studio background with a gentle floor shadow, even soft studio light. On the left MATVEY: a six-year-old raccoon boy, small and energetic, soft grey-brown fur, a clearly recognisable dark mask around big lively curious dark-brown eyes, a white muzzle, round ears with white edges, a fluffy tail with dark rings, wearing a modern plain royal-blue football kit (short-sleeved shirt with a white collar trim, blue shorts), white-and-blue striped football socks and blue-and-white football boots, one foot resting on a classic black-and-white football. On the right SOFIA: an eight-year-old red squirrel girl, clearly taller and older than Matvey, chestnut-orange fur, a cream muzzle and chest, tufted ears, a large fluffy curled tail, expressive warm amber eyes, a small ponytail tied with a plum hair band, wearing a stylish modern plum-purple athletic tracksuit (zip jacket with thin white side stripes, matching trousers) and white-and-lilac trainers; graceful confident posture of a girl who does acrobatics and synchronised swimming; no frills, no dress. Expressive faces, beautifully detailed soft fur. No text, no letters, no numbers, no logos, no crests, no watermark.",
+   "provider": "codex",
+   "model": "gpt-6-astra (Codex image tool)",
+   "width": 1024,
+   "height": 1536,
+   "licence": "GPT Image through the Codex CLI image tool; under the OpenAI terms the output belongs to the account holder",
+   "sha256": "187182dd4b86f0d839302a9129daa9129cf9322a2cf8af1902f18a1c8801925e",
+   "createdAt": "2026-10-28"
+  },
+  "matvey-face.png": {
+   "prompt": "Character face reference, premium stylized 3D family animation (modern feature-animation studio quality, not photorealistic). Head-and-shoulders portrait of MATVEY, the raccoon boy on the LEFT of the attached reference picture: keep him exactly the same — the same face shape, soft grey-brown fur, the dark mask around big lively dark-brown eyes, white muzzle and eyebrows, round ears with white edges, the same royal-blue football shirt with the white V-collar trim. He is six years old, small, cheerful and curious, with a big friendly open smile showing a tiny bit of teeth, looking slightly to the side of the camera, front three-quarter view, centred in the frame with space around the ears. Plain soft cream studio background, soft even light, beautifully detailed fur. No text, no letters, no logos.",
+   "provider": "codex",
+   "model": "gpt-6-astra (Codex image tool)",
+   "width": 1024,
+   "height": 1536,
+   "licence": "GPT Image through the Codex CLI image tool; under the OpenAI terms the output belongs to the account holder",
+   "refs": {
+    "first-sheet.png": "187182dd4b86f0d839302a9129daa9129cf9322a2cf8af1902f18a1c8801925e"
+   },
+   "sha256": "70d429f91006b8d818eb13f653e5cc6ad1c5726feade2bc94c8aa4e44dd496c2",
+   "createdAt": "2026-10-28"
+  },
+  "sofia-face.png": {
+   "prompt": "Character face reference, premium stylized 3D family animation (modern feature-animation studio quality, not photorealistic). Head-and-shoulders portrait of SOFIA, a red squirrel girl who is clearly a young child of eight years old (a primary-school kid, not a teenager): a round childlike face with soft full cheeks, big warm amber eyes with simple natural lashes and no makeup look, a small cream muzzle with a tiny nose, a few freckle-like spots of lighter fur, tufted squirrel ears, chestnut-orange fur, a short high ponytail of fluffy orange fur tied with a plum-purple hair band, the top of a large fluffy curled tail visible behind her shoulder. She wears a plum-purple (purple with a hint of red, like a ripe plum) zip-up sports jacket with thin white stripes on the sleeves and a white collar. Kind, attentive, clever expression with a gentle confident smile, front three-quarter view, centred in the frame. Plain soft cream studio background, soft even light, beautifully detailed fur. No text, no letters, no logos.",
+   "provider": "codex",
+   "model": "gpt-6-astra (Codex image tool)",
+   "width": 1024,
+   "height": 1536,
+   "licence": "GPT Image through the Codex CLI image tool; under the OpenAI terms the output belongs to the account holder",
+   "refs": {
+    "first-sheet.png": "187182dd4b86f0d839302a9129daa9129cf9322a2cf8af1902f18a1c8801925e"
+   },
+   "sha256": "8e8f0e504835d506d25edb8123c78392be69f0457631dfa5fe3a8259adafd914",
+   "createdAt": "2026-10-28"
+  },
+  "hosts-full.png": {
+   "prompt": "Character reference sheet, premium stylized 3D family animation (modern feature-animation studio quality, not photorealistic). Two original anthropomorphic animal children stand side by side, full body from the tips of their ears to their shoes, front three-quarter view, filling most of the tall frame, on a plain soft cream studio background with a gentle floor shadow. On the left MATVEY, exactly as the raccoon boy in the attached reference picture (same face, fur, eye mask, ringed tail, royal-blue football kit with white trim, blue-and-white striped socks, blue-and-white boots), one foot on a classic black-and-white football, hands on hips, grinning. On the right SOFIA, a red squirrel girl who is a young child of eight years old — only about one head taller than Matvey, childlike body proportions (a large head, short limbs, no adult figure), a round face with soft cheeks, big warm amber eyes with simple natural lashes, chestnut-orange fur, cream muzzle and tummy, tufted ears, a short high ponytail with a plum hair band, a big fluffy curled tail; wearing a loose comfortable plum-purple zip tracksuit (jacket and trousers) with thin white stripes and white-and-lilac trainers, standing lightly on her toes like a little gymnast, waving. Both characters clearly separated, not overlapping. No text, no letters, no numbers, no logos, no crests, no watermark.",
+   "provider": "codex",
+   "model": "gpt-6-astra (Codex image tool)",
+   "width": 1024,
+   "height": 1536,
+   "licence": "GPT Image through the Codex CLI image tool; under the OpenAI terms the output belongs to the account holder",
+   "refs": {
+    "first-sheet.png": "187182dd4b86f0d839302a9129daa9129cf9322a2cf8af1902f18a1c8801925e"
+   },
+   "sha256": "49c92b4bca5df88e90d529034e158fb7a48a79de4c7f98d49ccf764944d2be35",
+   "createdAt": "2026-10-28"
+  }
+ }
+}

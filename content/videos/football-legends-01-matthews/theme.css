@@ -1,0 +1,45 @@
+@import url('/rc/styles/cartoon/theme.css');
+
+/* «Легенды футбола»: the series palette from the owner's brief — deep navy, warm gold, pitch green,
+   cream, an orange accent and plum for Sofia's colour */
+:root {
+  --ct-ink: #13294b;
+  --ct-band: #fbf3e0;
+  --ct-card: #fff8e8;
+  --ct-accent: #e8741c;
+  --ct-teal: #2f8f46;
+  --ct-mustard: #e2ad3b;
+  --ct-navy: #13294b;
+  --ct-gold: #d9a12b;
+  --ct-plum: #7a2e6e;
+}
+
+/* captions in a navy box with a golden current word: readable over detailed pictures */
+.rc-caption {
+  font-size: 54px;
+  line-height: 1.22;
+  max-width: 860px;
+  color: #fff8e8;
+  background: rgba(19, 41, 75, .86);
+  border: 2px solid rgba(226, 173, 59, .55);
+  border-radius: 24px;
+  padding: 16px 26px;
+  -webkit-text-stroke: 0;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, .45);
+}
+.rc-word.on { color: #ffcf5a; }
+
+/* the player card as a collectible: cream paper, a gold frame on a navy edge, the year in orange */
+.rc-portrait-card {
+  background: linear-gradient(160deg, #fff8e6, #f1dfb6) !important;
+  border: 6px solid #e2ad3b !important;
+  box-shadow: 0 0 0 4px #13294b, 0 18px 45px rgba(5, 15, 35, .45) !important;
+  color: #13294b !important;
+}
+.rc-portrait-card > img { background: #efe2c4 !important; box-shadow: 0 0 0 3px #13294b; }
+.rc-portrait-card > div > div:nth-child(2) { color: #7a5a24 !important; text-transform: uppercase; letter-spacing: .08em; }
+.rc-portrait-card > div > div:nth-child(3) { color: #e8741c !important; font-family: var(--ct-display, sans-serif); }
+
+/* the list card already shows its words in large type: no caption underneath */
+#stage:has(.rc-scene--skills:not([style*="display: none"])) .rc-caption { opacity: 0 !important; }
+:root { --kt-ink: #fff8e8; --kt-accent: #ffcf5a; --kt-accent2: #e8741c; }

@@ -62,6 +62,11 @@ words:
   - word: Мэтьюз
     say: М+этьюз
     source: 'ru.wikipedia, «Мэтьюз»: «…Ма́тьюз, Мэ́тьюз (Мэ́тьюс, Ма́тьюс) (англ. Mathews) — ан…» (storygro stress --lookup, 2026-10-24)'
+    # OmniVoice B 0.90, 28.10.2026 (football-legends-01): unmarked 0 of 4 bench takes right (`m i`, `m u` —
+    # Мэтью́з); the author's М+этьюз in the full sentence 2 of 4 right, 1 unclear; Мэттьюз and Мэ-тьюз did
+    # not help. Episodes write М+этьюз and let this check retake a wrong take
+    check: { right: 'm [eɛæa]', wrong: 'm [iɪʉʌəuy]' }
+    forms: [Мэтьюза, Мэтьюзу, Мэтьюзом]
   - word: Яшин
     say: +Яшин
     source: 'ru.wikipedia, «Яшин, Лев Иванович»: «…Лев Ива́нович Я́шин (22 октября 1929, Москва — 20 марта 199…» (storygro stress --lookup, 2026-10-24)'
@@ -356,3 +361,19 @@ words:
   - word: Федеральной
     say: Федер+альной
     source: 'ru.wikipedia, «Пограничная служба Федеральной службы безопасности Российской Федерации»: «…Пограни́чная слу́жба Федера́льной слу́жбы безопа́сности Росси́йской Федер…» (storygro stress --lookup, 2026-10-27)'
+  - word: Европе
+    say: Евр+опе
+    source: 'ru.wiktionary, «Европа»: «…Р. Евро́пы Евро́п Д. Евро́пе Евро́пам В. Евро́пу Ев…» (storygro stress --lookup, 2026-10-28)'
+  - word: Золотого
+    say: Золот+ого
+    source: 'ru.wiktionary, «золотой»: «…олото́е золота́я золоты́е Р. золото́го золото́го золото́й золоты́х Д…» (storygro stress --lookup, 2026-10-28)'
+  - word: Блэкпул
+    say: Бл+экпул
+    forms: [Блэкпулу, Блэкпула]
+    source: 'ru.wikipedia, «Блэкпул»: «…Блэ́кпул (англ. Blackpool [ˈblækpuːl]) — город и…» (storygro stress --lookup, 2026-10-28)'
+  - word: Англии
+    say: +Англии
+    source: 'ru.wiktionary, «Англия»: «…мн. ч. Им. А́нглия А́нглии Р. А́нглии А́нглий…» (storygro stress --lookup, 2026-10-28)'
+  - word: Кубка
+    say: К+убка
+    source: 'ru.wiktionary, «кубок»: Р. ед. ч. «ку́бка» (checked by hand, 2026-10-28)'

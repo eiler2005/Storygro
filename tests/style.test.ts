@@ -1,10 +1,11 @@
 import assert from 'node:assert/strict';
-import { mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+import { createHash } from 'node:crypto';
+import { mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join, resolve } from 'node:path';
 import { test } from 'node:test';
 import { specInputs } from '../production/src/board.ts';
-import { generateImages, imageJobs, styleImages } from '../production/src/images.ts';
+import { generateImages, imageJobs, imageState, styleImages } from '../production/src/images.ts';
 import { loadSpec } from '../production/src/spec.ts';
 import { applyStyle, expandCast, listStyles, loadStyle, scaffold, shotPrompt } from '../production/src/style.ts';
 import { buildTimeline } from '../production/src/timeline.ts';
@@ -168,4 +169,38 @@ test('an episode can switch its pictures to the codex provider with its own mode
   assert.equal(images.base, undefined);
   assert.match(images.licence ?? '', /Codex image tool|OpenAI/);
   assert.equal(images.width, 1088);
+});
+
+test('cast reference pictures go with the shots that name them and mark a picture changed when they change', async (t) => {
+  const dir = mkdtempSync(join(tmpdir(), 'storygro-style-'));
+  t.after(() => rmSync(dir, { recursive: true, force: true }));
+  writeFileSync(join(dir, 'host.png'), 'one');
+  const path = join(dir, 'reel.yaml');
+  writeFileSync(
+    path,
+    `reel: 1\nstyle: cartoon\ntitle: x\nimages: { provider: codex, cast: { host: 'a raccoon', guest: 'a fox' }, refs: { host: host.png } }\n` +
+      `scenes: [{ id: a, scene: illustration, props: { shots: [{ image: shots/a.jpg, prompt: '@host and @guest' }, { image: shots/b.jpg, prompt: '@guest alone' }] } }]\n`,
+  );
+  const l = loadSpec(path);
+  const [a, b] = imageJobs(l);
+  assert.deepEqual(a.refs, [{ file: 'host.png', who: ['host'] }]);
+  assert.deepEqual(b.refs, []);
+
+  // a stand-in for the Codex CLI: records its arguments and the task, saves nothing
+  const fake = join(dir, 'codex.sh');
+  writeFileSync(fake, `#!/bin/sh\necho "$@" >> "${dir}/args.txt"\ncat >> "${dir}/task.txt"\n`, { mode: 0o755 });
+  process.env.STORYGRO_CODEX = fake;
+  t.after(() => delete process.env.STORYGRO_CODEX);
+  await assert.rejects(generateImages(l, { log: () => {} }), /not made: .*shots\/a\.jpg/);
+  const calls = readFileSync(join(dir, 'args.txt'), 'utf8').trim().split('\n');
+  assert.equal(calls.length, 2, 'shots with and without references go in separate batches');
+  assert.equal(calls.filter((c) => c.includes(`-i ${join(dir, 'host.png')}`)).length, 1);
+  assert.match(readFileSync(join(dir, 'task.txt'), 'utf8'), /character reference from our own series: it shows host/);
+
+  mkdirSync(join(dir, 'shots'));
+  writeFileSync(join(dir, 'shots/a.jpg'), 'picture');
+  const ledger = { images: 1 as const, files: { 'shots/a.jpg': { prompt: a.prompt, seed: a.seed, provider: 'codex', width: 1, height: 1, steps: 0, refs: { 'host.png': createHash('sha256').update('one').digest('hex') }, sha256: '', createdAt: '' } } };
+  assert.equal(imageState(l, a, ledger), 'ok');
+  writeFileSync(join(dir, 'host.png'), 'two');
+  assert.equal(imageState(l, a, ledger), 'changed');
 });

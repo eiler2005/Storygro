@@ -150,6 +150,11 @@ export const ReelSpec = z.object({
   images: z
     .object({
       cast: z.record(z.string(), z.string()).default({}),
+      /**
+       * reference pictures of cast members, paths relative to the reel: a shot that names @name hands
+       * them to the image tool so faces and clothes stay the same from shot to shot (codex only)
+       */
+      refs: z.record(z.string(), z.union([z.string(), z.array(z.string()).min(1)])).default({}),
       seed: z.number().int().default(7),
       /** the episode's own art direction instead of the style's picture prompt; must contain {subject} */
       prompt: z.string().includes('{subject}', { message: 'images.prompt must contain {subject}' }).optional(),

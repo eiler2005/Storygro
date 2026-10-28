@@ -372,6 +372,17 @@ entries:
     docs: docs/reference/styles.md
     examples: [content/videos/ai-buys-work-knowledge/en.reel.yaml]
 
+  - id: cast-reference-pictures
+    kind: method
+    stage: look
+    title: Reference pictures of recurring hosts
+    what: Generate the hosts' faces and a full-height sheet once, have the owner approve them, keep them beside the series with a provenance ledger, and attach them to every shot that names the hosts (images.refs); the codex provider passes them to GPT Image, so the hosts look the same in every shot and every episode.
+    when: A series with recurring characters drawn by GPT Image; text descriptions alone let the generator redraw them each time.
+    how: 'images: { provider: codex, refs: { matvey: [../../series/<id>/cast/matvey-face.png, ../../series/<id>/cast/hosts-full.png] } }'
+    status: pilot
+    docs: docs/reference/styles.md#in-the-reel
+    examples: [content/series/football-legends.md, content/videos/football-legends-01-matthews/ru.reel.yaml]
+
   - id: text-free-pictures
     kind: method
     stage: look

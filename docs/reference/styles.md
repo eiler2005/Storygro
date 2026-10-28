@@ -37,6 +37,7 @@ A style lives in `production/styles/<id>/` and is used by a reel with `style: <i
 |---|---|
 | `style: cartoon` | use the style |
 | `images.cast` | the episode's own characters; merged over the style's cast |
+| `images.refs` | reference pictures of cast members, `name: path` or `name: [path, …]`, relative to the reel. `codex` attaches them to every shot that names `@name` (shots with the same references share a batch), so faces and clothes stay the same from shot to shot; `images.json` records each reference's SHA-256, and a changed reference marks the picture changed. Other providers ignore them with a warning. Example: the hosts of [football-legends](../../content/series/football-legends.md) |
 | `images.seed` | base seed; each shot's seed is derived from it and the shot's position, so it is stable |
 | `images.provider` | overrides the style's provider — `manual` on a machine without Apple silicon, `codex` for GPT Image through the Codex CLI's image tool (signed-in Codex, online; pictures go out in batches, three sessions at a time, and are scaled and centre-cropped to the reel's size; not reproducible by seed, the ledger says so) |
 | `images.model` | the provider's model, e.g. `gpt-6-astra` for `codex` |
@@ -44,6 +45,7 @@ A style lives in `production/styles/<id>/` and is used by a reel with `style: <i
 | `images.prompt` | the episode's own art direction instead of the style's picture prompt; must contain `{subject}` (example: [ballon-dor-kids](../../content/videos/ballon-dor-kids/ru.reel.yaml)) |
 | `props.shots[].seed` | a fixed seed for one shot, to try another take |
 | `props.shots[].prompt`, `splitPrompt` | what the picture shows; `@name` expands from the cast |
+| `props.portrait.prompt` | the picture of an `illustration` portrait card, made like a shot |
 
 `storygro images` records every generated picture in `images.json` next to the reel: prompt, seed, provider, model, size, steps, licence, SHA-256 and time. The pictures themselves stay outside Git (`shots/` is ignored); a release carries the exact files.
 

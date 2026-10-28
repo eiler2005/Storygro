@@ -68,6 +68,8 @@ latest_silero_models.yml
 # (prompt, seed, model, checksum); a release carries the exact files.
 /content/videos/*/shots/
 /examples/*/shots/
+# Reference pictures of a series' recurring hosts (images.refs); provenance in cast/cast.json
+/content/series/*/cast/*.png
 
 # Full-resolution generated covers and QA comparisons; small documentation strips stay in Git.
 /docs/media/future-of-work-ru-cover.png

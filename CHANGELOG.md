@@ -4,6 +4,12 @@ Notable changes to the Storygro engine and repository. Content releases (videos)
 
 ## [Unreleased]
 
+### Reference pictures of recurring hosts and the «Легенды футбола» series
+- `images.refs` in a reel: reference pictures per cast member. The `codex` provider attaches them (`codex exec -i`) to every shot that names `@name`, in batches of their own, and tells GPT Image to keep those characters exactly; `images.json` records each reference's SHA-256 and a changed reference marks the picture changed. Other providers warn and ignore them.
+- `storygro images` also makes the picture of an `illustration` portrait card (`props.portrait.prompt`).
+- Series «Маленькие большие дела · Легенды футбола» (`content/series/football-legends.*`): a bible from the owner's brief — two hosts with owner-approved reference faces (`content/series/football-legends/cast/`, PNGs ignored, provenance in `cast.json`), a 3D look and palette, the Reels structure, the owner's editorial rules and the catalogue of the first fifteen Ballon d'Or winners; notes on visual analogues. Episode 1, «Стэнли Мэтьюз» (`content/videos/football-legends-01-matthews`): the owner's script word for word.
+- Pronunciation: Мэтьюз gets a phoneme check; the OmniVoice bench of 28 Oct 2026 found the Latin spelling `[Мэтьюз](=Matthews)` right in 8 of 8 takes where every Cyrillic spelling failed; dictionary entries for Европе, Золотого, Блэкпул (with forms), Англии and Кубка.
+
 ### Video formats and the shared recipe
 - [Video formats](docs/explanation/video-formats.md): seven formats made so far — business explainer, news collage, product demo, kinetic short, cartoon explainer, high-quality cartoon with GPT Image, children's list cartoon — with what each is for, its style and scenes, where its pictures come from, a picture and an example; how to choose; what GPT Image costs and what to watch.
 - [Workflow](docs/explanation/workflow.md#from-an-idea-to-a-video-on-the-phone): the twelve steps from a brief to the owner's phone and Git, who does each (owner, main agent, helper model, voice and image models) and when to move on; a length budget measured on the Russian episodes and stage times on one machine.

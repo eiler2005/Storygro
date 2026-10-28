@@ -672,7 +672,7 @@ The scene of the [`cartoon` style](../../production/styles/cartoon/README.md): f
 | `badge` | `{ value, label?, at?, until?, tone?, side?, y? }` | No | A big number on a card, right (default) or left; `y` (0..1, default 0.22) is its top within the text area — lower it to keep a face clear. The number shrinks to fit its card. Bind with `valueFrom` / `labelFrom`. |
 | `labels` | `[{ text, x, y, at?, until?, tone? }]` | No | Small tags pinned to the picture; `x`, `y` are fractions of the stage. |
 | `source` | string or `{ text }` | No | Small source line, bottom left; bind with `sourceFrom` or `{ textFrom: … }`. |
-| `portrait` | `{ image, name, country?, value?, label?, at?, until?, y?, width?, height? }` | No | A separate animated photograph card. `image` and `name` are required. Text supports `From` bindings; `y`, `width`, `height` are fractions of stage height, safe width and stage height. Defaults: 0.13, 1, 0.255. Keep photograph rights and provenance with the episode. |
+| `portrait` | `{ image, name, country?, value?, label?, at?, until?, y?, width?, height? }` | No | A separate animated photograph card. `image` and `name` are required. Text supports `From` bindings; `y`, `width`, `height` are fractions of stage height, safe width and stage height. Defaults: 0.13, 1, 0.255. Keep photograph rights and provenance with the episode. With `portrait.prompt`, `storygro images` generates the picture like a shot. |
 
 **Cue names:** `shots[].at`, `title.at/until`, `badge.at/until`, `labels[].at/until`, `portrait.at/until`. Tones: `accent`, `teal`, `mustard`, `red`, `green`, `blue` or any CSS colour.
 

@@ -1,0 +1,45 @@
+{
+ "_about": "Every text and number on screen. Sources and quotes in sources.md; arithmetic marked there as ours.",
+ "series": {
+  "_source": "Owner's brief «рекомендации» (2026-10-28): «Маленькие большие дела · Легенды футбола · Истории обладателей «Золотого мяча»»",
+  "title": "Легенды футбола",
+  "project": "Маленькие большие дела"
+ },
+ "matthews": {
+  "_source": "UEFA.com, «The Wizard of Dribble, Sir Stanley Matthews» (2015): inaugural European Footballer of the Year in 1956; Blackpool between his two Stoke spells. Position: the owner's script «Крайний нападающий»",
+  "name": "Стэнли Мэтьюз",
+  "country": "Англия",
+  "year": "1956",
+  "label": "«Блэкпул» · крайний нападающий"
+ },
+ "age": {
+  "_source": "Our arithmetic: born 1 February 1915 (Wikipedia, «Stanley Matthews»), award presented December 1956 → 41 full years; topendsports «1956 Ballon d'Or» and SI list him as 41",
+  "value": "41",
+  "label": "год"
+ },
+ "final": {
+  "_source": "Wikipedia, «1953 FA Cup final»: 2 May 1953, Blackpool won 4–3; UEFA.com: «With Blackpool trailing Bolton Wanderers FC 3-1 … recovered to win 4-3»",
+  "title": "Финал Кубка Англии",
+  "year": "1953",
+  "teams": "«Блэкпул» — «Болтон»",
+  "before": "1:3",
+  "after": "4:3"
+ },
+ "career": {
+  "_source": "UEFA.com: «He made his last competitive appearance five days after his 50th birthday»; oldest winner: SI «Oldest Ballon d'Or winners of all time»",
+  "end": "50",
+  "endLabel": "лет",
+  "record": "самый возрастной обладатель"
+ },
+ "lesson": {
+  "_source": "The owner's script, episode 1: «Важны техника, опыт и любовь к тому, чем занимаешься»",
+  "kicker": "Что важно",
+  "a": "техника,",
+  "b": "опыт",
+  "c": "и любовь к делу"
+ },
+ "question": {
+  "_source": "The owner's script, episode 1: «Вопрос зрителю: «А что ты умеешь делать лучше, чем год назад?»»",
+  "text": "А что ты умеешь делать лучше, чем год назад?"
+ }
+}

@@ -1,0 +1,250 @@
+# «Стэнли Мэтьюз» — выпуск 1 рубрики «Легенды футбола» проекта «Маленькие большие дела»: ведущие енот
+# Матвей (6) и белочка София (8) знакомятся с обладателями «Золотого мяча». Для детей 6–10 лет и родителей,
+# 9:16 для Instagram Reels. Текст рассказчика — сценарий владельца дословно (факты проверены, sources.md);
+# числа записаны для синтезатора словами, на экране — цифрами из facts.json. Ведущие появляются в
+# картинках, слов им не добавлено. Структура и стиль — из рекомендаций владельца (библия серии:
+# content/series/football-legends.md): хук, микрозаставка, карточка игрока, история, факт и вопрос.
+# Картинки — GPT Image через Codex CLI; лица ведущих — по эталонам серии (images.refs).
+reel: 1
+style: cartoon
+title: 'Стэнли Мэтьюз'
+lang: ru
+format: { preset: vertical, fps: 30 }
+safe: phone
+voice:
+  engine: omnivoice
+  model: k2-fsa/OmniVoice
+  voice: assets/voice/narrator-ru.wav
+  speed: 0.9
+  # marks: only the author's `+` reach OmniVoice (as an uppercase vowel); unmarked words read as with off
+  stress: marks
+music: { bpm: 104, key: D, progression: [I, V, vi, IV], gain: 0.12, drop: comeback#win }
+loudness: -14
+theme: theme.css
+captions: { show: true, maxWords: 5 }
+transition: { kind: fade, dur: 0.3 }
+data: { facts: facts.json }
+stills: { cover: card@1.6, final: comeback@win, hosts: question@1.5 }
+images:
+  # GPT Image through the Codex CLI; the 3D look and palette from the owner's brief
+  provider: codex
+  model: gpt-6-astra
+  seed: 56
+  width: 1088
+  height: 1920
+  prompt: >-
+    Premium stylized 3D family animation film still with the polish of a modern feature-animation studio,
+    not photorealistic and not babyish: expressive faces, beautifully detailed soft fur and fabric,
+    cinematic warm light, a rich detailed background, a palette of deep navy blue, warm gold, lush pitch
+    green and cream white with restrained orange and plum accents. Tall vertical composition: the main
+    action and every face in the middle of the frame, the top sixth calm and uncluttered, the bottom
+    quarter simple grass, floor or crowd without faces. {subject}. No text, no letters, no numbers, no
+    logos, no crests, no flags, no watermark, no extra limbs, no duplicate characters.
+  cast:
+    matvey: >-
+      Matvey (a small six-year-old anthropomorphic raccoon boy with soft grey-brown fur, a dark eye mask, a
+      white muzzle, big lively dark-brown eyes, round ears with white edges and a fluffy tail with dark
+      rings, wearing a plain royal-blue football kit with white collar trim, blue-and-white striped socks
+      and blue-and-white boots)
+    sofia: >-
+      Sofia (his sister, an eight-year-old anthropomorphic red squirrel girl, a little taller than Matvey,
+      with a round childlike face, chestnut-orange fur, a cream muzzle, tufted ears, big warm amber eyes, a
+      short high ponytail with a plum hair band and a large fluffy curled tail, wearing a plain plum-purple
+      zip tracksuit with thin white stripes and white-and-lilac trainers)
+    matthews: >-
+      Stanley Matthews (the English footballer of the 1950s as a respectful, recognisable stylized 3D
+      caricature: a slim wiry man of about forty with a long narrow face, high cheekbones, a long straight
+      nose, dark hair slicked back with a side parting and a calm, modest smile, wearing a plain
+      tangerine-orange 1950s football shirt with a white collar, long baggy white shorts, white socks and
+      old brown leather boots)
+    matthews-old: >-
+      Stanley Matthews at fifty (the same slim wiry man with a long narrow face and a long straight nose,
+      now with thinning grey hair combed back and a lined, kind face, still fit, wearing a plain red-and-white
+      vertically striped 1960s football shirt, white shorts and old leather boots)
+    blackpool: >-
+      his Blackpool teammates (1950s footballers in plain tangerine-orange shirts with white collars and
+      long white shorts)
+    bolton: >-
+      the Bolton players (1950s footballers in plain white shirts and long navy shorts)
+  # reference pictures of the hosts, approved by the owner on 2026-10-28 (content/series/football-legends/cast/)
+  refs:
+    matvey: [../../series/football-legends/cast/matvey-face.png, ../../series/football-legends/cast/hosts-full.png]
+    sofia: [../../series/football-legends/cast/sofia-face.png, ../../series/football-legends/cast/hosts-full.png]
+post:
+  title: 'Легенды футбола · Стэнли Мэтьюз — первый «Золотой мяч»'
+  text: |
+    Может ли футболист стать лучшим в Европе в 41 год? Енот Матвей и белочка София знакомятся со Стэнли Мэтьюзом — первым обладателем «Золотого мяча» (1956). Что такое дриблинг, как «Блэкпул» отыгрался с 1:3 до 4:3 в финале Кубка Англии 1953 года и почему Мэтьюз играл до 50 лет.
+
+    Вопрос для разговора с ребёнком: что ты умеешь делать лучше, чем год назад?
+
+    Выпуск 1 рубрики «Легенды футбола» проекта «Маленькие большие дела». Источники: UEFA.com, хроника финала 1953 года. Картинки нарисованы GPT Image — это дружеские шаржи, а не фотографии; ролик не связан с футболистом, клубами и организаторами награды. Голос рассказчика синтетический (OmniVoice).
+  tags: [футбол, детям, легендыфутбола, золотоймяч, мэтьюз, историяфутбола]
+scenes:
+  # 0–2 с: хук
+  - id: hook
+    scene: illustration
+    say: 'Может ли футболист стать лучшим в Европе {#age}в [41](=сорок один) год?'
+    pad: [0.15, 0.25]
+    energy: 0.55
+    transition: { kind: cut, dur: 0 }
+    sfx: [{ at: start, kind: swell, gain: 0.25 }, { at: age, kind: pop, gain: 0.35 }]
+    props:
+      shots:
+        - { image: shots/hook.jpg, prompt: '@matvey on a green football pitch at golden hour holding up an old sepia football trading card with a portrait of @matthews, staring at it with huge astonished eyes and his mouth wide open, his ears up; @sofia leans in over his shoulder, curious, one eyebrow raised; a modern stadium softly blurred behind them, floodlights starting to glow', move: in, zoom: 0.08, focus: { x: 0.45, y: 0.55 } }
+      # left: Sofia's face fills the top right
+      badge: { valueFrom: facts.age.value, labelFrom: facts.age.label, at: age, side: left, y: 0.03 }
+
+  # 2–4 с: микрозаставка рубрики
+  - id: intro
+    scene: illustration
+    say: 'Оказывается, может!'
+    pad: [0.1, 0.6]
+    energy: 0.7
+    transition: { kind: cut, dur: 0 }
+    sfx: [{ at: start, kind: hit, gain: 0.3 }, { at: 0.5, kind: chime, gain: 0.4 }]
+    props:
+      shots:
+        - { image: shots/intro.jpg, prompt: 'the series title moment: @matvey stops a rolling classic black-and-white football with his boot and grins with excitement; @sofia turns and gestures enthusiastically toward a luminous golden football-shaped trophy on a dark plinth between them; a soft golden light sweeps across the trophy, a few golden sparkles in the air; a beautiful stadium at golden hour with floodlights, faint white tactical chalk arrows and circles on the grass', move: in, zoom: 0.06, focus: { x: 0.5, y: 0.58 } }
+      title: { textFrom: facts.series.title, at: 0.15, size: 0.055 }
+      labels:
+        - { textFrom: facts.series.project, x: 0.5, y: 0.255, at: 0.3, tone: plum }
+
+  # 4–12 с: карточка игрока
+  - id: card
+    scene: illustration
+    say: 'Знакомьтесь: Стэнли [Мэтьюз](=Matthews) — первый в истории обладатель «Золотого мяча». {#club}В [1956](=тысяча девятьсот пятьдесят шестом) году он играл за английский клуб «Бл+экпул» и сборную Англии.'
+    pad: [0.2, 0.35]
+    energy: 0.5
+    props:
+      shots:
+        # the card sits low, over the hosts' legs: Matthews' head is at the top of this picture
+        - { image: shots/card-1.jpg, seed: 84032, prompt: 'a wide shot of a 1950s English football ground at sunset: the upper forty percent of the frame is open golden evening sky above a low old stadium roof, with nothing else in it; below it, in the middle distance in the centre of the frame, @matthews stands on the pitch holding an old leather ball under his arm, his head exactly at the vertical middle of the frame, packed old terraces with men in flat caps behind him; in the foreground at the bottom @matvey and @sofia look up at him with admiration, Sofia presenting him with an open hand; gentle vintage film grain on the historical part', move: in, zoom: 0.06, focus: { x: 0.5, y: 0.62 } }
+        - { at: club, image: shots/card-2.jpg, seed: 61641, prompt: 'a 1950s football match in England: @matthews runs down the right wing with the old leather ball at his feet, @blackpool teammates running in support, a defender from @bolton chasing; packed old terraces full of cheering men in flat caps and scarves, smoke and mist in the air, warm sepia-tinted vintage colour grading with subtle film grain; the upper third of the frame is hazy grey sky', move: right, zoom: 0.08, focus: { x: 0.5, y: 0.62 } }
+      portrait:
+        image: shots/portrait.jpg
+        until: club
+        prompt: 'a tight head-and-shoulders close-up portrait of @matthews that fills the whole frame: his face large in the upper middle of the frame, the collar of his tangerine shirt at the bottom edge, looking slightly to the side with a calm modest smile, a plain warm cream background, soft studio light, the look of a 1950s collectible football card; no body below the chest'
+        at: 0.25
+        y: 0.585
+        height: 0.2
+        nameFrom: facts.matthews.name
+        countryFrom: facts.matthews.country
+        valueFrom: facts.matthews.year
+        labelFrom: facts.matthews.label
+
+  - id: weapon
+    scene: illustration
+    say: '[Мэтьюз](=Matthews) не всегда был самым быстрым или сильным футболистом на поле, {#weapon}зато у него было особенное оружие — {#dribble}дриблинг.'
+    pad: [0.2, 0.35]
+    energy: 0.5
+    sfx: [{ at: dribble, kind: ding, gain: 0.35 }]
+    props:
+      shots:
+        - { image: shots/weapon-1.jpg, prompt: '@matthews, slim and wiry, stands calmly with the old leather ball at his feet between two much bigger, broad-shouldered @bolton defenders who tower over him on a muddy 1950s pitch; he looks small next to them but relaxed and smiling; packed terraces behind, warm sepia-tinted vintage grading with subtle film grain', move: in, zoom: 0.07, focus: { x: 0.5, y: 0.6 } }
+        - { at: weapon, image: shots/weapon-2.jpg, prompt: 'an extreme close-up at grass level, with no person''s face or head anywhere in the frame: only an old brown leather football and one muddy old leather football boot with a white sock gently touching it on wet grass, a warm magical golden glow and a few sparkles around the ball as if it were a secret weapon, blurred legs of defenders in the background, the upper part of the frame a soft golden blur of the stadium, vintage film grain', move: in, zoom: 0.1, focus: { x: 0.5, y: 0.62 } }
+      title: { text: 'Дриблинг', at: dribble }
+
+  - id: what
+    scene: illustration
+    say: 'Что такое дриблинг? {#def}Это умение вести мяч, обыгрывать соперников и не отдавать им мяч.'
+    pad: [0.2, 0.35]
+    energy: 0.55
+    sfx: [{ at: start, kind: pop, gain: 0.3 }]
+    props:
+      shots:
+        - { image: shots/what-1.jpg, prompt: '@sofia on a modern green training pitch stands beside a dark green chalkboard on an easel covered with simple white chalk tactical drawings of arrows, circles and crosses (no writing at all), holding a piece of chalk and raising one finger with a curious, clever look; @matvey hugs a classic black-and-white football and listens with wide eyes; golden-hour light, a stadium behind', move: in, zoom: 0.07, focus: { x: 0.5, y: 0.58 } }
+        - { at: def, image: shots/what-2.jpg, prompt: '@matvey dribbles a classic black-and-white football in a zigzag around a row of orange training cones, keeping the ball close to his boot, while @sofia stretches out one foot trying to steal it and misses, both laughing; a dotted white chalk line on the grass shows his zigzag path; golden-hour light on a modern pitch', move: right, zoom: 0.08, focus: { x: 0.5, y: 0.6 } }
+
+  - id: feint
+    scene: illustration
+    say: '[Мэтьюз](=Matthews) мог сделать обманное движение, {#shoulder}качнуть плечом — {#gone}и защитник уже бежал совсем не туда!'
+    pad: [0.2, 0.8]
+    energy: 0.7
+    sfx: [{ at: shoulder, kind: whoosh, gain: 0.35 }, { at: gone, kind: pop, gain: 0.35 }]
+    props:
+      shots:
+        - { image: shots/feint-1.jpg, prompt: 'a one-on-one duel on a 1950s pitch near the right touchline: @matthews faces a crouching defender from @bolton, the old leather ball at his feet, the two of them eye to eye, tension in the air, crowd in flat caps leaning over the low wall behind; warm sepia-tinted vintage grading with subtle film grain', move: in, zoom: 0.08, focus: { x: 0.5, y: 0.58 } }
+        - { at: shoulder, image: shots/feint-2.jpg, prompt: '@matthews dips his left shoulder sharply as if to go left, his body leaning, while the defender from @bolton throws himself the wrong way with arms flailing; curved motion lines show the fake; the ball stays at Matthews'' right foot; 1950s pitch, crowd behind, warm sepia-tinted vintage grading with subtle film grain', move: left, zoom: 0.08, focus: { x: 0.5, y: 0.58 } }
+        - { at: gone, image: shots/feint-3.jpg, prompt: 'the defender from @bolton sits on the muddy grass looking confused, his head turned the wrong way, while @matthews glides away along the right touchline with the ball, light and quick; the crowd in flat caps cheers and laughs; warm sepia-tinted vintage grading with subtle film grain', move: right, zoom: 0.08, focus: { x: 0.5, y: 0.6 } }
+
+  - id: final
+    scene: illustration
+    say: 'В [1953](=тысяча девятьсот пятьдесят третьем) году он помог «Бл+экпулу» выиграть знаменитый финал Кубка Англии.'
+    pad: [0.2, 0.35]
+    energy: 0.6
+    sfx: [{ at: start, kind: swell, gain: 0.3 }]
+    props:
+      shots:
+        - { image: shots/final.jpg, prompt: 'a grand old national stadium with two white domed towers on a sunny day in May 1953, a hundred thousand spectators in flat caps and hats, the two teams walking out side by side: @blackpool and @bolton, with @matthews among the Blackpool players; in the front row of the old stands @matvey and @sofia sit small among the 1950s crowd in their own modern clothes, wide-eyed like time travellers; warm vintage colour grading with subtle film grain', move: in, zoom: 0.07, focus: { x: 0.5, y: 0.6 } }
+      # low labels instead of a headline: Matthews walks out near the top of the picture
+      labels:
+        - { textFrom: facts.final.title, x: 0.5, y: 0.745, at: 0.3, tone: navy }
+        - { textFrom: facts.final.year, x: 0.5, y: 0.8, at: 0.6, tone: accent }
+
+  - id: comeback
+    scene: illustration
+    say: 'Команда проигрывала [1:3](=один — три), {#back}но совершила невероятный камбэк {#win}и победила [4:3](=четыре — три)!'
+    pad: [0.2, 1.2]
+    energy: 0.9
+    transition: { kind: cut, dur: 0 }
+    sfx: [{ at: back, kind: riser, gain: 0.3 }, { at: win, kind: chime, gain: 0.55 }, { at: win, kind: swell, gain: 0.3 }]
+    props:
+      shots:
+        - { image: shots/comeback-1.jpg, prompt: 'the @blackpool players stand with their heads down and hands on hips, disappointed, while @bolton players celebrate in the background; @matthews looks up, calm and determined; an old wooden stadium scoreboard with blank panels behind them; 1953 cup final atmosphere, warm sepia-tinted vintage grading with subtle film grain', move: in, zoom: 0.07, focus: { x: 0.5, y: 0.6 } }
+        - { at: back, image: shots/comeback-2.jpg, prompt: '@matthews races down the right wing and crosses the old leather ball into the penalty area with a sweeping kick, @blackpool teammates sprinting in, the whole crowd rising to its feet; dynamic low angle, motion lines, warm vintage colour grading with subtle film grain', move: right, zoom: 0.09, focus: { x: 0.5, y: 0.58 } }
+        - { at: win, image: shots/comeback-3.jpg, prompt: 'pure joy: @blackpool players hug @matthews and jump with their arms in the air, spectators throw their flat caps up into the sky, confetti and golden light; in the front row of the old stands @matvey and @sofia jump and cheer with their arms up; warm vintage colour grading turning brighter and more colourful', move: out, zoom: 0.08, focus: { x: 0.5, y: 0.55 } }
+      badge: { valueFrom: facts.final.before, labelFrom: facts.final.teams, at: 0.2, until: back, side: right, y: 0.02, tone: navy }
+      labels:
+        - { textFrom: facts.final.after, x: 0.8, y: 0.17, at: win, tone: accent }
+
+  - id: fifty
+    scene: illustration
+    say: 'А самое удивительное — после получения «Золотого мяча» [Мэтьюз](=Matthews) продолжал играть ещё много лет. {#fifty}Он завершил карьеру только в [50](=пятьдесят) лет {#record}и до сих пор остаётся самым [возрастным](=вазрастным) победителем этой награды.'
+    pad: [0.2, 0.4]
+    energy: 0.6
+    sfx: [{ at: fifty, kind: ding, gain: 0.35 }, { at: record, kind: chime, gain: 0.35 }]
+    props:
+      shots:
+        - { image: shots/fifty-1.jpg, prompt: '@matthews-old still dribbles the ball past a much younger, surprised defender in a plain white shirt in a 1960s match, light on his feet, a full stadium behind; warm vintage 1960s colour grading with subtle film grain', move: right, zoom: 0.08, focus: { x: 0.5, y: 0.58 } }
+        - { at: fifty, image: shots/fifty-2.jpg, prompt: '@matthews-old waves goodbye to a cheering crowd at the end of his last match, smiling warmly, his teammates applauding around him, the evening sun low and golden over the old stadium; warm vintage 1960s colour grading', move: in, zoom: 0.07, focus: { x: 0.5, y: 0.55 } }
+        - { at: record, image: shots/fifty-3.jpg, prompt: '@matvey and @sofia on a modern pitch at golden hour beside a luminous golden football-shaped trophy on a dark plinth; Matvey holds up an old sepia football card of @matthews and counts on his fingers in amazement; Sofia smiles knowingly with her paws behind her back', move: out, zoom: 0.07, focus: { x: 0.5, y: 0.58 } }
+      badge: { valueFrom: facts.career.end, labelFrom: facts.career.endLabel, at: fifty, until: record, side: left, y: 0.02 }
+      labels:
+        - { textFrom: facts.career.record, x: 0.5, y: 0.76, at: record, tone: accent }
+
+  - id: lesson
+    scene: illustration
+    say: 'Вот что интересно: [Мэтьюз](=Matthews) доказывал, что возраст — не единственное, что определяет мастерство.'
+    pad: [0.2, 0.3]
+    energy: 0.45
+    props:
+      shots:
+        - { image: shots/lesson.jpg, prompt: 'a warm meeting across time on a green pitch at golden hour: @matthews-old kneels on one knee and shows @matvey how to dip a shoulder over the ball, both concentrating, Matvey copying the move with his tongue out; @sofia stands beside them watching with a delighted smile; the glow of the setting sun, a stadium softly blurred behind', move: in, zoom: 0.07, focus: { x: 0.5, y: 0.58 } }
+
+  - id: skills
+    scene: kinetic
+    say: 'Важны {#a}техника, {#b}опыт {#c}и любовь к тому, чем занимаешься.'
+    pad: [0.15, 0.45]
+    energy: 0.7
+    transition: { kind: push, dur: 0.35 }
+    sfx: [{ at: a, kind: pop, gain: 0.3, snap: half }, { at: b, kind: pop, gain: 0.3, snap: half }, { at: c, kind: pop, gain: 0.35, snap: half }]
+    props:
+      background: '#13294b'
+      align: center
+      kickerFrom: facts.lesson.kicker
+      lines:
+        - { textFrom: facts.lesson.a, at: a, size: 1.25 }
+        - { textFrom: facts.lesson.b, at: b, size: 1.25 }
+        - { textFrom: facts.lesson.c, at: c, tone: accent, mark: true, size: 1.1 }
+
+  - id: question
+    scene: illustration
+    say: '{#q}А что ты умеешь делать лучше, чем год назад?'
+    pad: [0.25, 1.8]
+    energy: 0.55
+    transition: { kind: fade, dur: 0.35 }
+    sfx: [{ at: q, kind: chime, gain: 0.3 }]
+    props:
+      shots:
+        - { image: shots/question.jpg, prompt: '@matvey and @sofia close to the camera on a pitch at sunset, smiling straight at the viewer: Matvey proudly keeps the ball up on his knee, Sofia balances gracefully on one foot in a gymnast pose with her arms out; the luminous golden football-shaped trophy glows on its plinth behind them, warm golden-hour stadium lights', move: in, zoom: 0.06, focus: { x: 0.5, y: 0.55 } }
+      title: { textFrom: facts.question.text, at: q, size: 0.05 }

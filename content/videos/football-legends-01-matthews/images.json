@@ -1,0 +1,307 @@
+{
+ "images": 1,
+ "files": {
+  "shots/card-2.jpg": {
+   "prompt": "Premium stylized 3D family animation film still with the polish of a modern feature-animation studio, not photorealistic and not babyish: expressive faces, beautifully detailed soft fur and fabric, cinematic warm light, a rich detailed background, a palette of deep navy blue, warm gold, lush pitch green and cream white with restrained orange and plum accents. Tall vertical composition: the main action and every face in the middle of the frame, the top sixth calm and uncluttered, the bottom quarter simple grass, floor or crowd without faces. a 1950s football match in England: Stanley Matthews (the English footballer of the 1950s as a respectful, recognisable stylized 3D caricature: a slim wiry man of about forty with a long narrow face, high cheekbones, a long straight nose, dark hair slicked back with a side parting and a calm, modest smile, wearing a plain tangerine-orange 1950s football shirt with a white collar, long baggy white shorts, white socks and old brown leather boots) runs down the right wing with the old leather ball at his feet, his Blackpool teammates (1950s footballers in plain tangerine-orange shirts with white collars and long white shorts) teammates running in support, a defender from the Bolton players (1950s footballers in plain white shirts and long navy shorts) chasing; packed old terraces full of cheering men in flat caps and scarves, smoke and mist in the air, warm sepia-tinted vintage colour grading with subtle film grain; the upper third of the frame is hazy grey sky. No text, no letters, no numbers, no logos, no crests, no flags, no watermark, no extra limbs, no duplicate characters.",
+   "seed": 61641,
+   "provider": "codex",
+   "model": "gpt-6-astra (Codex image tool)",
+   "width": 1088,
+   "height": 1920,
+   "steps": 0,
+   "licence": "GPT Image through the Codex CLI image tool; under the OpenAI terms the output belongs to the account holder",
+   "sha256": "29f44b8b6b783a234b1f9fddc91eda69337f1c8ae01bcd2cd2fd562fa48869f2",
+   "createdAt": "2026-10-28T18:07:45.548Z"
+  },
+  "shots/portrait.jpg": {
+   "prompt": "Premium stylized 3D family animation film still with the polish of a modern feature-animation studio, not photorealistic and not babyish: expressive faces, beautifully detailed soft fur and fabric, cinematic warm light, a rich detailed background, a palette of deep navy blue, warm gold, lush pitch green and cream white with restrained orange and plum accents. Tall vertical composition: the main action and every face in the middle of the frame, the top sixth calm and uncluttered, the bottom quarter simple grass, floor or crowd without faces. a tight head-and-shoulders close-up portrait of Stanley Matthews (the English footballer of the 1950s as a respectful, recognisable stylized 3D caricature: a slim wiry man of about forty with a long narrow face, high cheekbones, a long straight nose, dark hair slicked back with a side parting and a calm, modest smile, wearing a plain tangerine-orange 1950s football shirt with a white collar, long baggy white shorts, white socks and old brown leather boots) that fills the whole frame: his face large in the upper middle of the frame, the collar of his tangerine shirt at the bottom edge, looking slightly to the side with a calm modest smile, a plain warm cream background, soft studio light, the look of a 1950s collectible football card; no body below the chest. No text, no letters, no numbers, no logos, no crests, no flags, no watermark, no extra limbs, no duplicate characters.",
+   "seed": 79485,
+   "provider": "codex",
+   "model": "gpt-6-astra (Codex image tool)",
+   "width": 1088,
+   "height": 1920,
+   "steps": 0,
+   "licence": "GPT Image through the Codex CLI image tool; under the OpenAI terms the output belongs to the account holder",
+   "sha256": "66228d010a7ddea3db7469e68a5c2db2b7f7ebfa55306a55190da16524065b36",
+   "createdAt": "2026-10-28T18:17:15.890Z"
+  },
+  "shots/weapon-1.jpg": {
+   "prompt": "Premium stylized 3D family animation film still with the polish of a modern feature-animation studio, not photorealistic and not babyish: expressive faces, beautifully detailed soft fur and fabric, cinematic warm light, a rich detailed background, a palette of deep navy blue, warm gold, lush pitch green and cream white with restrained orange and plum accents. Tall vertical composition: the main action and every face in the middle of the frame, the top sixth calm and uncluttered, the bottom quarter simple grass, floor or crowd without faces. Stanley Matthews (the English footballer of the 1950s as a respectful, recognisable stylized 3D caricature: a slim wiry man of about forty with a long narrow face, high cheekbones, a long straight nose, dark hair slicked back with a side parting and a calm, modest smile, wearing a plain tangerine-orange 1950s football shirt with a white collar, long baggy white shorts, white socks and old brown leather boots), slim and wiry, stands calmly with the old leather ball at his feet between two much bigger, broad-shouldered the Bolton players (1950s footballers in plain white shirts and long navy shorts) defenders who tower over him on a muddy 1950s pitch; he looks small next to them but relaxed and smiling; packed terraces behind, warm sepia-tinted vintage grading with subtle film grain. No text, no letters, no numbers, no logos, no crests, no flags, no watermark, no extra limbs, no duplicate characters.",
+   "seed": 39927,
+   "provider": "codex",
+   "model": "gpt-6-astra (Codex image tool)",
+   "width": 1088,
+   "height": 1920,
+   "steps": 0,
+   "licence": "GPT Image through the Codex CLI image tool; under the OpenAI terms the output belongs to the account holder",
+   "sha256": "a54555017fc33c4542285f26e8a34f00656f35db16c3f126a5e2024574339e4c",
+   "createdAt": "2026-10-28T18:07:45.658Z"
+  },
+  "shots/weapon-2.jpg": {
+   "prompt": "Premium stylized 3D family animation film still with the polish of a modern feature-animation studio, not photorealistic and not babyish: expressive faces, beautifully detailed soft fur and fabric, cinematic warm light, a rich detailed background, a palette of deep navy blue, warm gold, lush pitch green and cream white with restrained orange and plum accents. Tall vertical composition: the main action and every face in the middle of the frame, the top sixth calm and uncluttered, the bottom quarter simple grass, floor or crowd without faces. an extreme close-up at grass level, with no person's face or head anywhere in the frame: only an old brown leather football and one muddy old leather football boot with a white sock gently touching it on wet grass, a warm magical golden glow and a few sparkles around the ball as if it were a secret weapon, blurred legs of defenders in the background, the upper part of the frame a soft golden blur of the stadium, vintage film grain. No text, no letters, no numbers, no logos, no crests, no flags, no watermark, no extra limbs, no duplicate characters.",
+   "seed": 79475,
+   "provider": "codex",
+   "model": "gpt-6-astra (Codex image tool)",
+   "width": 1088,
+   "height": 1920,
+   "steps": 0,
+   "licence": "GPT Image through the Codex CLI image tool; under the OpenAI terms the output belongs to the account holder",
+   "sha256": "9ba7e9d67d19ceecc82aba2a8e1f359c2e0d828874f694794f0504d152cff0ea",
+   "createdAt": "2026-10-28T18:21:37.212Z"
+  },
+  "shots/feint-1.jpg": {
+   "prompt": "Premium stylized 3D family animation film still with the polish of a modern feature-animation studio, not photorealistic and not babyish: expressive faces, beautifully detailed soft fur and fabric, cinematic warm light, a rich detailed background, a palette of deep navy blue, warm gold, lush pitch green and cream white with restrained orange and plum accents. Tall vertical composition: the main action and every face in the middle of the frame, the top sixth calm and uncluttered, the bottom quarter simple grass, floor or crowd without faces. a one-on-one duel on a 1950s pitch near the right touchline: Stanley Matthews (the English footballer of the 1950s as a respectful, recognisable stylized 3D caricature: a slim wiry man of about forty with a long narrow face, high cheekbones, a long straight nose, dark hair slicked back with a side parting and a calm, modest smile, wearing a plain tangerine-orange 1950s football shirt with a white collar, long baggy white shorts, white socks and old brown leather boots) faces a crouching defender from the Bolton players (1950s footballers in plain white shirts and long navy shorts), the old leather ball at his feet, the two of them eye to eye, tension in the air, crowd in flat caps leaning over the low wall behind; warm sepia-tinted vintage grading with subtle film grain. No text, no letters, no numbers, no logos, no crests, no flags, no watermark, no extra limbs, no duplicate characters.",
+   "seed": 28468,
+   "provider": "codex",
+   "model": "gpt-6-astra (Codex image tool)",
+   "width": 1088,
+   "height": 1920,
+   "steps": 0,
+   "licence": "GPT Image through the Codex CLI image tool; under the OpenAI terms the output belongs to the account holder",
+   "sha256": "b8d34badc449d84321cb8357edb9d037ec18674e386c52d1df87be90a6edc004",
+   "createdAt": "2026-10-28T18:07:45.775Z"
+  },
+  "shots/comeback-3.jpg": {
+   "prompt": "Premium stylized 3D family animation film still with the polish of a modern feature-animation studio, not photorealistic and not babyish: expressive faces, beautifully detailed soft fur and fabric, cinematic warm light, a rich detailed background, a palette of deep navy blue, warm gold, lush pitch green and cream white with restrained orange and plum accents. Tall vertical composition: the main action and every face in the middle of the frame, the top sixth calm and uncluttered, the bottom quarter simple grass, floor or crowd without faces. pure joy: his Blackpool teammates (1950s footballers in plain tangerine-orange shirts with white collars and long white shorts) players hug Stanley Matthews (the English footballer of the 1950s as a respectful, recognisable stylized 3D caricature: a slim wiry man of about forty with a long narrow face, high cheekbones, a long straight nose, dark hair slicked back with a side parting and a calm, modest smile, wearing a plain tangerine-orange 1950s football shirt with a white collar, long baggy white shorts, white socks and old brown leather boots) and jump with their arms in the air, spectators throw their flat caps up into the sky, confetti and golden light; in the front row of the old stands Matvey (a small six-year-old anthropomorphic raccoon boy with soft grey-brown fur, a dark eye mask, a white muzzle, big lively dark-brown eyes, round ears with white edges and a fluffy tail with dark rings, wearing a plain royal-blue football kit with white collar trim, blue-and-white striped socks and blue-and-white boots) and Sofia (his sister, an eight-year-old anthropomorphic red squirrel girl, a little taller than Matvey, with a round childlike face, chestnut-orange fur, a cream muzzle, tufted ears, big warm amber eyes, a short high ponytail with a plum hair band and a large fluffy curled tail, wearing a plain plum-purple zip tracksuit with thin white stripes and white-and-lilac trainers) jump and cheer with their arms up; warm vintage colour grading turning brighter and more colourful. No text, no letters, no numbers, no logos, no crests, no flags, no watermark, no extra limbs, no duplicate characters.",
+   "seed": 40867,
+   "provider": "codex",
+   "model": "gpt-6-astra (Codex image tool)",
+   "width": 1088,
+   "height": 1920,
+   "steps": 0,
+   "licence": "GPT Image through the Codex CLI image tool; under the OpenAI terms the output belongs to the account holder",
+   "refs": {
+    "../../series/football-legends/cast/matvey-face.png": "70d429f91006b8d818eb13f653e5cc6ad1c5726feade2bc94c8aa4e44dd496c2",
+    "../../series/football-legends/cast/hosts-full.png": "49c92b4bca5df88e90d529034e158fb7a48a79de4c7f98d49ccf764944d2be35",
+    "../../series/football-legends/cast/sofia-face.png": "8e8f0e504835d506d25edb8123c78392be69f0457631dfa5fe3a8259adafd914"
+   },
+   "sha256": "98a78a5fa95150023e467bcba0365ec80405fef7f9eea10060a52a91e4bdb364",
+   "createdAt": "2026-10-28T18:08:27.841Z"
+  },
+  "shots/fifty-3.jpg": {
+   "prompt": "Premium stylized 3D family animation film still with the polish of a modern feature-animation studio, not photorealistic and not babyish: expressive faces, beautifully detailed soft fur and fabric, cinematic warm light, a rich detailed background, a palette of deep navy blue, warm gold, lush pitch green and cream white with restrained orange and plum accents. Tall vertical composition: the main action and every face in the middle of the frame, the top sixth calm and uncluttered, the bottom quarter simple grass, floor or crowd without faces. Matvey (a small six-year-old anthropomorphic raccoon boy with soft grey-brown fur, a dark eye mask, a white muzzle, big lively dark-brown eyes, round ears with white edges and a fluffy tail with dark rings, wearing a plain royal-blue football kit with white collar trim, blue-and-white striped socks and blue-and-white boots) and Sofia (his sister, an eight-year-old anthropomorphic red squirrel girl, a little taller than Matvey, with a round childlike face, chestnut-orange fur, a cream muzzle, tufted ears, big warm amber eyes, a short high ponytail with a plum hair band and a large fluffy curled tail, wearing a plain plum-purple zip tracksuit with thin white stripes and white-and-lilac trainers) on a modern pitch at golden hour beside a luminous golden football-shaped trophy on a dark plinth; Matvey holds up an old sepia football card of Stanley Matthews (the English footballer of the 1950s as a respectful, recognisable stylized 3D caricature: a slim wiry man of about forty with a long narrow face, high cheekbones, a long straight nose, dark hair slicked back with a side parting and a calm, modest smile, wearing a plain tangerine-orange 1950s football shirt with a white collar, long baggy white shorts, white socks and old brown leather boots) and counts on his fingers in amazement; Sofia smiles knowingly with her paws behind her back. No text, no letters, no numbers, no logos, no crests, no flags, no watermark, no extra limbs, no duplicate characters.",
+   "seed": 39584,
+   "provider": "codex",
+   "model": "gpt-6-astra (Codex image tool)",
+   "width": 1088,
+   "height": 1920,
+   "steps": 0,
+   "licence": "GPT Image through the Codex CLI image tool; under the OpenAI terms the output belongs to the account holder",
+   "refs": {
+    "../../series/football-legends/cast/matvey-face.png": "70d429f91006b8d818eb13f653e5cc6ad1c5726feade2bc94c8aa4e44dd496c2",
+    "../../series/football-legends/cast/hosts-full.png": "49c92b4bca5df88e90d529034e158fb7a48a79de4c7f98d49ccf764944d2be35",
+    "../../series/football-legends/cast/sofia-face.png": "8e8f0e504835d506d25edb8123c78392be69f0457631dfa5fe3a8259adafd914"
+   },
+   "sha256": "690848ad442bc81a7beac016f4e88ba03635dcee1212351e0f5019bea67126d2",
+   "createdAt": "2026-10-28T18:08:27.911Z"
+  },
+  "shots/lesson.jpg": {
+   "prompt": "Premium stylized 3D family animation film still with the polish of a modern feature-animation studio, not photorealistic and not babyish: expressive faces, beautifully detailed soft fur and fabric, cinematic warm light, a rich detailed background, a palette of deep navy blue, warm gold, lush pitch green and cream white with restrained orange and plum accents. Tall vertical composition: the main action and every face in the middle of the frame, the top sixth calm and uncluttered, the bottom quarter simple grass, floor or crowd without faces. a warm meeting across time on a green pitch at golden hour: Stanley Matthews at fifty (the same slim wiry man with a long narrow face and a long straight nose, now with thinning grey hair combed back and a lined, kind face, still fit, wearing a plain red-and-white vertically striped 1960s football shirt, white shorts and old leather boots) kneels on one knee and shows Matvey (a small six-year-old anthropomorphic raccoon boy with soft grey-brown fur, a dark eye mask, a white muzzle, big lively dark-brown eyes, round ears with white edges and a fluffy tail with dark rings, wearing a plain royal-blue football kit with white collar trim, blue-and-white striped socks and blue-and-white boots) how to dip a shoulder over the ball, both concentrating, Matvey copying the move with his tongue out; Sofia (his sister, an eight-year-old anthropomorphic red squirrel girl, a little taller than Matvey, with a round childlike face, chestnut-orange fur, a cream muzzle, tufted ears, big warm amber eyes, a short high ponytail with a plum hair band and a large fluffy curled tail, wearing a plain plum-purple zip tracksuit with thin white stripes and white-and-lilac trainers) stands beside them watching with a delighted smile; the glow of the setting sun, a stadium softly blurred behind. No text, no letters, no numbers, no logos, no crests, no flags, no watermark, no extra limbs, no duplicate characters.",
+   "seed": 41228,
+   "provider": "codex",
+   "model": "gpt-6-astra (Codex image tool)",
+   "width": 1088,
+   "height": 1920,
+   "steps": 0,
+   "licence": "GPT Image through the Codex CLI image tool; under the OpenAI terms the output belongs to the account holder",
+   "refs": {
+    "../../series/football-legends/cast/matvey-face.png": "70d429f91006b8d818eb13f653e5cc6ad1c5726feade2bc94c8aa4e44dd496c2",
+    "../../series/football-legends/cast/hosts-full.png": "49c92b4bca5df88e90d529034e158fb7a48a79de4c7f98d49ccf764944d2be35",
+    "../../series/football-legends/cast/sofia-face.png": "8e8f0e504835d506d25edb8123c78392be69f0457631dfa5fe3a8259adafd914"
+   },
+   "sha256": "ad7724df06b67b6aa30428f63a24fb44ab6c72740e21a5b2b08e655669bf7c55",
+   "createdAt": "2026-10-28T18:08:27.978Z"
+  },
+  "shots/question.jpg": {
+   "prompt": "Premium stylized 3D family animation film still with the polish of a modern feature-animation studio, not photorealistic and not babyish: expressive faces, beautifully detailed soft fur and fabric, cinematic warm light, a rich detailed background, a palette of deep navy blue, warm gold, lush pitch green and cream white with restrained orange and plum accents. Tall vertical composition: the main action and every face in the middle of the frame, the top sixth calm and uncluttered, the bottom quarter simple grass, floor or crowd without faces. Matvey (a small six-year-old anthropomorphic raccoon boy with soft grey-brown fur, a dark eye mask, a white muzzle, big lively dark-brown eyes, round ears with white edges and a fluffy tail with dark rings, wearing a plain royal-blue football kit with white collar trim, blue-and-white striped socks and blue-and-white boots) and Sofia (his sister, an eight-year-old anthropomorphic red squirrel girl, a little taller than Matvey, with a round childlike face, chestnut-orange fur, a cream muzzle, tufted ears, big warm amber eyes, a short high ponytail with a plum hair band and a large fluffy curled tail, wearing a plain plum-purple zip tracksuit with thin white stripes and white-and-lilac trainers) close to the camera on a pitch at sunset, smiling straight at the viewer: Matvey proudly keeps the ball up on his knee, Sofia balances gracefully on one foot in a gymnast pose with her arms out; the luminous golden football-shaped trophy glows on its plinth behind them, warm golden-hour stadium lights. No text, no letters, no numbers, no logos, no crests, no flags, no watermark, no extra limbs, no duplicate characters.",
+   "seed": 43244,
+   "provider": "codex",
+   "model": "gpt-6-astra (Codex image tool)",
+   "width": 1088,
+   "height": 1920,
+   "steps": 0,
+   "licence": "GPT Image through the Codex CLI image tool; under the OpenAI terms the output belongs to the account holder",
+   "refs": {
+    "../../series/football-legends/cast/matvey-face.png": "70d429f91006b8d818eb13f653e5cc6ad1c5726feade2bc94c8aa4e44dd496c2",
+    "../../series/football-legends/cast/hosts-full.png": "49c92b4bca5df88e90d529034e158fb7a48a79de4c7f98d49ccf764944d2be35",
+    "../../series/football-legends/cast/sofia-face.png": "8e8f0e504835d506d25edb8123c78392be69f0457631dfa5fe3a8259adafd914"
+   },
+   "sha256": "4251e05ea973b1af1e3581f89d5479696ef0ff4140107a550a9096fbf33ce037",
+   "createdAt": "2026-10-28T18:08:28.049Z"
+  },
+  "shots/hook.jpg": {
+   "prompt": "Premium stylized 3D family animation film still with the polish of a modern feature-animation studio, not photorealistic and not babyish: expressive faces, beautifully detailed soft fur and fabric, cinematic warm light, a rich detailed background, a palette of deep navy blue, warm gold, lush pitch green and cream white with restrained orange and plum accents. Tall vertical composition: the main action and every face in the middle of the frame, the top sixth calm and uncluttered, the bottom quarter simple grass, floor or crowd without faces. Matvey (a small six-year-old anthropomorphic raccoon boy with soft grey-brown fur, a dark eye mask, a white muzzle, big lively dark-brown eyes, round ears with white edges and a fluffy tail with dark rings, wearing a plain royal-blue football kit with white collar trim, blue-and-white striped socks and blue-and-white boots) on a green football pitch at golden hour holding up an old sepia football trading card with a portrait of Stanley Matthews (the English footballer of the 1950s as a respectful, recognisable stylized 3D caricature: a slim wiry man of about forty with a long narrow face, high cheekbones, a long straight nose, dark hair slicked back with a side parting and a calm, modest smile, wearing a plain tangerine-orange 1950s football shirt with a white collar, long baggy white shorts, white socks and old brown leather boots), staring at it with huge astonished eyes and his mouth wide open, his ears up; Sofia (his sister, an eight-year-old anthropomorphic red squirrel girl, a little taller than Matvey, with a round childlike face, chestnut-orange fur, a cream muzzle, tufted ears, big warm amber eyes, a short high ponytail with a plum hair band and a large fluffy curled tail, wearing a plain plum-purple zip tracksuit with thin white stripes and white-and-lilac trainers) leans in over his shoulder, curious, one eyebrow raised; a modern stadium softly blurred behind them, floodlights starting to glow. No text, no letters, no numbers, no logos, no crests, no flags, no watermark, no extra limbs, no duplicate characters.",
+   "seed": 76360,
+   "provider": "codex",
+   "model": "gpt-6-astra (Codex image tool)",
+   "width": 1088,
+   "height": 1920,
+   "steps": 0,
+   "licence": "GPT Image through the Codex CLI image tool; under the OpenAI terms the output belongs to the account holder",
+   "refs": {
+    "../../series/football-legends/cast/matvey-face.png": "70d429f91006b8d818eb13f653e5cc6ad1c5726feade2bc94c8aa4e44dd496c2",
+    "../../series/football-legends/cast/hosts-full.png": "49c92b4bca5df88e90d529034e158fb7a48a79de4c7f98d49ccf764944d2be35",
+    "../../series/football-legends/cast/sofia-face.png": "8e8f0e504835d506d25edb8123c78392be69f0457631dfa5fe3a8259adafd914"
+   },
+   "sha256": "e9679ad65592efc276f2488594a05759407b336879537bf94dbf5b9860fc0433",
+   "createdAt": "2026-10-28T18:10:22.389Z"
+  },
+  "shots/intro.jpg": {
+   "prompt": "Premium stylized 3D family animation film still with the polish of a modern feature-animation studio, not photorealistic and not babyish: expressive faces, beautifully detailed soft fur and fabric, cinematic warm light, a rich detailed background, a palette of deep navy blue, warm gold, lush pitch green and cream white with restrained orange and plum accents. Tall vertical composition: the main action and every face in the middle of the frame, the top sixth calm and uncluttered, the bottom quarter simple grass, floor or crowd without faces. the series title moment: Matvey (a small six-year-old anthropomorphic raccoon boy with soft grey-brown fur, a dark eye mask, a white muzzle, big lively dark-brown eyes, round ears with white edges and a fluffy tail with dark rings, wearing a plain royal-blue football kit with white collar trim, blue-and-white striped socks and blue-and-white boots) stops a rolling classic black-and-white football with his boot and grins with excitement; Sofia (his sister, an eight-year-old anthropomorphic red squirrel girl, a little taller than Matvey, with a round childlike face, chestnut-orange fur, a cream muzzle, tufted ears, big warm amber eyes, a short high ponytail with a plum hair band and a large fluffy curled tail, wearing a plain plum-purple zip tracksuit with thin white stripes and white-and-lilac trainers) turns and gestures enthusiastically toward a luminous golden football-shaped trophy on a dark plinth between them; a soft golden light sweeps across the trophy, a few golden sparkles in the air; a beautiful stadium at golden hour with floodlights, faint white tactical chalk arrows and circles on the grass. No text, no letters, no numbers, no logos, no crests, no flags, no watermark, no extra limbs, no duplicate characters.",
+   "seed": 58198,
+   "provider": "codex",
+   "model": "gpt-6-astra (Codex image tool)",
+   "width": 1088,
+   "height": 1920,
+   "steps": 0,
+   "licence": "GPT Image through the Codex CLI image tool; under the OpenAI terms the output belongs to the account holder",
+   "refs": {
+    "../../series/football-legends/cast/matvey-face.png": "70d429f91006b8d818eb13f653e5cc6ad1c5726feade2bc94c8aa4e44dd496c2",
+    "../../series/football-legends/cast/hosts-full.png": "49c92b4bca5df88e90d529034e158fb7a48a79de4c7f98d49ccf764944d2be35",
+    "../../series/football-legends/cast/sofia-face.png": "8e8f0e504835d506d25edb8123c78392be69f0457631dfa5fe3a8259adafd914"
+   },
+   "sha256": "4c541222ac915963be6d99eb0851704ccf66b6076b2bc2628d004861a1654dcc",
+   "createdAt": "2026-10-28T18:10:22.460Z"
+  },
+  "shots/card-1.jpg": {
+   "prompt": "Premium stylized 3D family animation film still with the polish of a modern feature-animation studio, not photorealistic and not babyish: expressive faces, beautifully detailed soft fur and fabric, cinematic warm light, a rich detailed background, a palette of deep navy blue, warm gold, lush pitch green and cream white with restrained orange and plum accents. Tall vertical composition: the main action and every face in the middle of the frame, the top sixth calm and uncluttered, the bottom quarter simple grass, floor or crowd without faces. a wide shot of a 1950s English football ground at sunset: the upper forty percent of the frame is open golden evening sky above a low old stadium roof, with nothing else in it; below it, in the middle distance in the centre of the frame, Stanley Matthews (the English footballer of the 1950s as a respectful, recognisable stylized 3D caricature: a slim wiry man of about forty with a long narrow face, high cheekbones, a long straight nose, dark hair slicked back with a side parting and a calm, modest smile, wearing a plain tangerine-orange 1950s football shirt with a white collar, long baggy white shorts, white socks and old brown leather boots) stands on the pitch holding an old leather ball under his arm, his head exactly at the vertical middle of the frame, packed old terraces with men in flat caps behind him; in the foreground at the bottom Matvey (a small six-year-old anthropomorphic raccoon boy with soft grey-brown fur, a dark eye mask, a white muzzle, big lively dark-brown eyes, round ears with white edges and a fluffy tail with dark rings, wearing a plain royal-blue football kit with white collar trim, blue-and-white striped socks and blue-and-white boots) and Sofia (his sister, an eight-year-old anthropomorphic red squirrel girl, a little taller than Matvey, with a round childlike face, chestnut-orange fur, a cream muzzle, tufted ears, big warm amber eyes, a short high ponytail with a plum hair band and a large fluffy curled tail, wearing a plain plum-purple zip tracksuit with thin white stripes and white-and-lilac trainers) look up at him with admiration, Sofia presenting him with an open hand; gentle vintage film grain on the historical part. No text, no letters, no numbers, no logos, no crests, no flags, no watermark, no extra limbs, no duplicate characters.",
+   "seed": 84032,
+   "provider": "codex",
+   "model": "gpt-6-astra (Codex image tool)",
+   "width": 1088,
+   "height": 1920,
+   "steps": 0,
+   "licence": "GPT Image through the Codex CLI image tool; under the OpenAI terms the output belongs to the account holder",
+   "refs": {
+    "../../series/football-legends/cast/matvey-face.png": "70d429f91006b8d818eb13f653e5cc6ad1c5726feade2bc94c8aa4e44dd496c2",
+    "../../series/football-legends/cast/hosts-full.png": "49c92b4bca5df88e90d529034e158fb7a48a79de4c7f98d49ccf764944d2be35",
+    "../../series/football-legends/cast/sofia-face.png": "8e8f0e504835d506d25edb8123c78392be69f0457631dfa5fe3a8259adafd914"
+   },
+   "sha256": "e40d11a05eadf74def0e9d8c3a2e9a6b2204a013d54b40162eb08748e602828c",
+   "createdAt": "2026-10-28T18:22:16.190Z"
+  },
+  "shots/what-2.jpg": {
+   "prompt": "Premium stylized 3D family animation film still with the polish of a modern feature-animation studio, not photorealistic and not babyish: expressive faces, beautifully detailed soft fur and fabric, cinematic warm light, a rich detailed background, a palette of deep navy blue, warm gold, lush pitch green and cream white with restrained orange and plum accents. Tall vertical composition: the main action and every face in the middle of the frame, the top sixth calm and uncluttered, the bottom quarter simple grass, floor or crowd without faces. Matvey (a small six-year-old anthropomorphic raccoon boy with soft grey-brown fur, a dark eye mask, a white muzzle, big lively dark-brown eyes, round ears with white edges and a fluffy tail with dark rings, wearing a plain royal-blue football kit with white collar trim, blue-and-white striped socks and blue-and-white boots) dribbles a classic black-and-white football in a zigzag around a row of orange training cones, keeping the ball close to his boot, while Sofia (his sister, an eight-year-old anthropomorphic red squirrel girl, a little taller than Matvey, with a round childlike face, chestnut-orange fur, a cream muzzle, tufted ears, big warm amber eyes, a short high ponytail with a plum hair band and a large fluffy curled tail, wearing a plain plum-purple zip tracksuit with thin white stripes and white-and-lilac trainers) stretches out one foot trying to steal it and misses, both laughing; a dotted white chalk line on the grass shows his zigzag path; golden-hour light on a modern pitch. No text, no letters, no numbers, no logos, no crests, no flags, no watermark, no extra limbs, no duplicate characters.",
+   "seed": 96901,
+   "provider": "codex",
+   "model": "gpt-6-astra (Codex image tool)",
+   "width": 1088,
+   "height": 1920,
+   "steps": 0,
+   "licence": "GPT Image through the Codex CLI image tool; under the OpenAI terms the output belongs to the account holder",
+   "refs": {
+    "../../series/football-legends/cast/matvey-face.png": "70d429f91006b8d818eb13f653e5cc6ad1c5726feade2bc94c8aa4e44dd496c2",
+    "../../series/football-legends/cast/hosts-full.png": "49c92b4bca5df88e90d529034e158fb7a48a79de4c7f98d49ccf764944d2be35",
+    "../../series/football-legends/cast/sofia-face.png": "8e8f0e504835d506d25edb8123c78392be69f0457631dfa5fe3a8259adafd914"
+   },
+   "sha256": "75150294f712558b87a22a202f3034cd786f5cebd159701b418f239e7799e1e0",
+   "createdAt": "2026-10-28T18:10:22.600Z"
+  },
+  "shots/final.jpg": {
+   "prompt": "Premium stylized 3D family animation film still with the polish of a modern feature-animation studio, not photorealistic and not babyish: expressive faces, beautifully detailed soft fur and fabric, cinematic warm light, a rich detailed background, a palette of deep navy blue, warm gold, lush pitch green and cream white with restrained orange and plum accents. Tall vertical composition: the main action and every face in the middle of the frame, the top sixth calm and uncluttered, the bottom quarter simple grass, floor or crowd without faces. a grand old national stadium with two white domed towers on a sunny day in May 1953, a hundred thousand spectators in flat caps and hats, the two teams walking out side by side: his Blackpool teammates (1950s footballers in plain tangerine-orange shirts with white collars and long white shorts) and the Bolton players (1950s footballers in plain white shirts and long navy shorts), with Stanley Matthews (the English footballer of the 1950s as a respectful, recognisable stylized 3D caricature: a slim wiry man of about forty with a long narrow face, high cheekbones, a long straight nose, dark hair slicked back with a side parting and a calm, modest smile, wearing a plain tangerine-orange 1950s football shirt with a white collar, long baggy white shorts, white socks and old brown leather boots) among the Blackpool players; in the front row of the old stands Matvey (a small six-year-old anthropomorphic raccoon boy with soft grey-brown fur, a dark eye mask, a white muzzle, big lively dark-brown eyes, round ears with white edges and a fluffy tail with dark rings, wearing a plain royal-blue football kit with white collar trim, blue-and-white striped socks and blue-and-white boots) and Sofia (his sister, an eight-year-old anthropomorphic red squirrel girl, a little taller than Matvey, with a round childlike face, chestnut-orange fur, a cream muzzle, tufted ears, big warm amber eyes, a short high ponytail with a plum hair band and a large fluffy curled tail, wearing a plain plum-purple zip tracksuit with thin white stripes and white-and-lilac trainers) sit small among the 1950s crowd in their own modern clothes, wide-eyed like time travellers; warm vintage colour grading with subtle film grain. No text, no letters, no numbers, no logos, no crests, no flags, no watermark, no extra limbs, no duplicate characters.",
+   "seed": 84604,
+   "provider": "codex",
+   "model": "gpt-6-astra (Codex image tool)",
+   "width": 1088,
+   "height": 1920,
+   "steps": 0,
+   "licence": "GPT Image through the Codex CLI image tool; under the OpenAI terms the output belongs to the account holder",
+   "refs": {
+    "../../series/football-legends/cast/matvey-face.png": "70d429f91006b8d818eb13f653e5cc6ad1c5726feade2bc94c8aa4e44dd496c2",
+    "../../series/football-legends/cast/hosts-full.png": "49c92b4bca5df88e90d529034e158fb7a48a79de4c7f98d49ccf764944d2be35",
+    "../../series/football-legends/cast/sofia-face.png": "8e8f0e504835d506d25edb8123c78392be69f0457631dfa5fe3a8259adafd914"
+   },
+   "sha256": "c712f82fb49bf59eb2d0fcf48f5a62b495a276f21cb91a8054ebdfe004b7f10a",
+   "createdAt": "2026-10-28T18:10:22.669Z"
+  },
+  "shots/fifty-2.jpg": {
+   "prompt": "Premium stylized 3D family animation film still with the polish of a modern feature-animation studio, not photorealistic and not babyish: expressive faces, beautifully detailed soft fur and fabric, cinematic warm light, a rich detailed background, a palette of deep navy blue, warm gold, lush pitch green and cream white with restrained orange and plum accents. Tall vertical composition: the main action and every face in the middle of the frame, the top sixth calm and uncluttered, the bottom quarter simple grass, floor or crowd without faces. Stanley Matthews at fifty (the same slim wiry man with a long narrow face and a long straight nose, now with thinning grey hair combed back and a lined, kind face, still fit, wearing a plain red-and-white vertically striped 1960s football shirt, white shorts and old leather boots) waves goodbye to a cheering crowd at the end of his last match, smiling warmly, his teammates applauding around him, the evening sun low and golden over the old stadium; warm vintage 1960s colour grading. No text, no letters, no numbers, no logos, no crests, no flags, no watermark, no extra limbs, no duplicate characters.",
+   "seed": 75703,
+   "provider": "codex",
+   "model": "gpt-6-astra (Codex image tool)",
+   "width": 1088,
+   "height": 1920,
+   "steps": 0,
+   "licence": "GPT Image through the Codex CLI image tool; under the OpenAI terms the output belongs to the account holder",
+   "sha256": "799d0c653a3be9648db86cde3535f637a638b575c98e3fb38b82eab8e2515448",
+   "createdAt": "2026-10-28T18:11:25.614Z"
+  },
+  "shots/what-1.jpg": {
+   "prompt": "Premium stylized 3D family animation film still with the polish of a modern feature-animation studio, not photorealistic and not babyish: expressive faces, beautifully detailed soft fur and fabric, cinematic warm light, a rich detailed background, a palette of deep navy blue, warm gold, lush pitch green and cream white with restrained orange and plum accents. Tall vertical composition: the main action and every face in the middle of the frame, the top sixth calm and uncluttered, the bottom quarter simple grass, floor or crowd without faces. Sofia (his sister, an eight-year-old anthropomorphic red squirrel girl, a little taller than Matvey, with a round childlike face, chestnut-orange fur, a cream muzzle, tufted ears, big warm amber eyes, a short high ponytail with a plum hair band and a large fluffy curled tail, wearing a plain plum-purple zip tracksuit with thin white stripes and white-and-lilac trainers) on a modern green training pitch stands beside a dark green chalkboard on an easel covered with simple white chalk tactical drawings of arrows, circles and crosses (no writing at all), holding a piece of chalk and raising one finger with a curious, clever look; Matvey (a small six-year-old anthropomorphic raccoon boy with soft grey-brown fur, a dark eye mask, a white muzzle, big lively dark-brown eyes, round ears with white edges and a fluffy tail with dark rings, wearing a plain royal-blue football kit with white collar trim, blue-and-white striped socks and blue-and-white boots) hugs a classic black-and-white football and listens with wide eyes; golden-hour light, a stadium behind. No text, no letters, no numbers, no logos, no crests, no flags, no watermark, no extra limbs, no duplicate characters.",
+   "seed": 80600,
+   "provider": "codex",
+   "model": "gpt-6-astra (Codex image tool)",
+   "width": 1088,
+   "height": 1920,
+   "steps": 0,
+   "licence": "GPT Image through the Codex CLI image tool; under the OpenAI terms the output belongs to the account holder",
+   "refs": {
+    "../../series/football-legends/cast/sofia-face.png": "8e8f0e504835d506d25edb8123c78392be69f0457631dfa5fe3a8259adafd914",
+    "../../series/football-legends/cast/hosts-full.png": "49c92b4bca5df88e90d529034e158fb7a48a79de4c7f98d49ccf764944d2be35",
+    "../../series/football-legends/cast/matvey-face.png": "70d429f91006b8d818eb13f653e5cc6ad1c5726feade2bc94c8aa4e44dd496c2"
+   },
+   "sha256": "d6cd320abe4960772a72108696979cdcb31f56762799cfd0d5dc76dd631b1e77",
+   "createdAt": "2026-10-28T18:11:37.073Z"
+  },
+  "shots/feint-2.jpg": {
+   "prompt": "Premium stylized 3D family animation film still with the polish of a modern feature-animation studio, not photorealistic and not babyish: expressive faces, beautifully detailed soft fur and fabric, cinematic warm light, a rich detailed background, a palette of deep navy blue, warm gold, lush pitch green and cream white with restrained orange and plum accents. Tall vertical composition: the main action and every face in the middle of the frame, the top sixth calm and uncluttered, the bottom quarter simple grass, floor or crowd without faces. Stanley Matthews (the English footballer of the 1950s as a respectful, recognisable stylized 3D caricature: a slim wiry man of about forty with a long narrow face, high cheekbones, a long straight nose, dark hair slicked back with a side parting and a calm, modest smile, wearing a plain tangerine-orange 1950s football shirt with a white collar, long baggy white shorts, white socks and old brown leather boots) dips his left shoulder sharply as if to go left, his body leaning, while the defender from the Bolton players (1950s footballers in plain white shirts and long navy shorts) throws himself the wrong way with arms flailing; curved motion lines show the fake; the ball stays at Matthews' right foot; 1950s pitch, crowd behind, warm sepia-tinted vintage grading with subtle film grain. No text, no letters, no numbers, no logos, no crests, no flags, no watermark, no extra limbs, no duplicate characters.",
+   "seed": 55718,
+   "provider": "codex",
+   "model": "gpt-6-astra (Codex image tool)",
+   "width": 1088,
+   "height": 1920,
+   "steps": 0,
+   "licence": "GPT Image through the Codex CLI image tool; under the OpenAI terms the output belongs to the account holder",
+   "sha256": "4ea366324b9c174ec6f4231edd5a92422948194841e6047e7363f10fb3a78e69",
+   "createdAt": "2026-10-28T18:15:18.828Z"
+  },
+  "shots/feint-3.jpg": {
+   "prompt": "Premium stylized 3D family animation film still with the polish of a modern feature-animation studio, not photorealistic and not babyish: expressive faces, beautifully detailed soft fur and fabric, cinematic warm light, a rich detailed background, a palette of deep navy blue, warm gold, lush pitch green and cream white with restrained orange and plum accents. Tall vertical composition: the main action and every face in the middle of the frame, the top sixth calm and uncluttered, the bottom quarter simple grass, floor or crowd without faces. the defender from the Bolton players (1950s footballers in plain white shirts and long navy shorts) sits on the muddy grass looking confused, his head turned the wrong way, while Stanley Matthews (the English footballer of the 1950s as a respectful, recognisable stylized 3D caricature: a slim wiry man of about forty with a long narrow face, high cheekbones, a long straight nose, dark hair slicked back with a side parting and a calm, modest smile, wearing a plain tangerine-orange 1950s football shirt with a white collar, long baggy white shorts, white socks and old brown leather boots) glides away along the right touchline with the ball, light and quick; the crowd in flat caps cheers and laughs; warm sepia-tinted vintage grading with subtle film grain. No text, no letters, no numbers, no logos, no crests, no flags, no watermark, no extra limbs, no duplicate characters.",
+   "seed": 28912,
+   "provider": "codex",
+   "model": "gpt-6-astra (Codex image tool)",
+   "width": 1088,
+   "height": 1920,
+   "steps": 0,
+   "licence": "GPT Image through the Codex CLI image tool; under the OpenAI terms the output belongs to the account holder",
+   "sha256": "a4964f8c45b29264c61cf8a53f746b13aba5911afc67efe45f6828d3b882ad83",
+   "createdAt": "2026-10-28T18:15:18.893Z"
+  },
+  "shots/comeback-1.jpg": {
+   "prompt": "Premium stylized 3D family animation film still with the polish of a modern feature-animation studio, not photorealistic and not babyish: expressive faces, beautifully detailed soft fur and fabric, cinematic warm light, a rich detailed background, a palette of deep navy blue, warm gold, lush pitch green and cream white with restrained orange and plum accents. Tall vertical composition: the main action and every face in the middle of the frame, the top sixth calm and uncluttered, the bottom quarter simple grass, floor or crowd without faces. the his Blackpool teammates (1950s footballers in plain tangerine-orange shirts with white collars and long white shorts) players stand with their heads down and hands on hips, disappointed, while the Bolton players (1950s footballers in plain white shirts and long navy shorts) players celebrate in the background; Stanley Matthews (the English footballer of the 1950s as a respectful, recognisable stylized 3D caricature: a slim wiry man of about forty with a long narrow face, high cheekbones, a long straight nose, dark hair slicked back with a side parting and a calm, modest smile, wearing a plain tangerine-orange 1950s football shirt with a white collar, long baggy white shorts, white socks and old brown leather boots) looks up, calm and determined; an old wooden stadium scoreboard with blank panels behind them; 1953 cup final atmosphere, warm sepia-tinted vintage grading with subtle film grain. No text, no letters, no numbers, no logos, no crests, no flags, no watermark, no extra limbs, no duplicate characters.",
+   "seed": 89372,
+   "provider": "codex",
+   "model": "gpt-6-astra (Codex image tool)",
+   "width": 1088,
+   "height": 1920,
+   "steps": 0,
+   "licence": "GPT Image through the Codex CLI image tool; under the OpenAI terms the output belongs to the account holder",
+   "sha256": "6cb42187551f938c29161643dbb3abc11cc8ba0a9270f82f62f2fc0448335668",
+   "createdAt": "2026-10-28T18:15:18.960Z"
+  },
+  "shots/comeback-2.jpg": {
+   "prompt": "Premium stylized 3D family animation film still with the polish of a modern feature-animation studio, not photorealistic and not babyish: expressive faces, beautifully detailed soft fur and fabric, cinematic warm light, a rich detailed background, a palette of deep navy blue, warm gold, lush pitch green and cream white with restrained orange and plum accents. Tall vertical composition: the main action and every face in the middle of the frame, the top sixth calm and uncluttered, the bottom quarter simple grass, floor or crowd without faces. Stanley Matthews (the English footballer of the 1950s as a respectful, recognisable stylized 3D caricature: a slim wiry man of about forty with a long narrow face, high cheekbones, a long straight nose, dark hair slicked back with a side parting and a calm, modest smile, wearing a plain tangerine-orange 1950s football shirt with a white collar, long baggy white shorts, white socks and old brown leather boots) races down the right wing and crosses the old leather ball into the penalty area with a sweeping kick, his Blackpool teammates (1950s footballers in plain tangerine-orange shirts with white collars and long white shorts) teammates sprinting in, the whole crowd rising to its feet; dynamic low angle, motion lines, warm vintage colour grading with subtle film grain. No text, no letters, no numbers, no logos, no crests, no flags, no watermark, no extra limbs, no duplicate characters.",
+   "seed": 38288,
+   "provider": "codex",
+   "model": "gpt-6-astra (Codex image tool)",
+   "width": 1088,
+   "height": 1920,
+   "steps": 0,
+   "licence": "GPT Image through the Codex CLI image tool; under the OpenAI terms the output belongs to the account holder",
+   "sha256": "b16624c3e01fedba85393e585cd01eca86731b38f5354995198c92e3c64621f5",
+   "createdAt": "2026-10-28T18:15:19.017Z"
+  },
+  "shots/fifty-1.jpg": {
+   "prompt": "Premium stylized 3D family animation film still with the polish of a modern feature-animation studio, not photorealistic and not babyish: expressive faces, beautifully detailed soft fur and fabric, cinematic warm light, a rich detailed background, a palette of deep navy blue, warm gold, lush pitch green and cream white with restrained orange and plum accents. Tall vertical composition: the main action and every face in the middle of the frame, the top sixth calm and uncluttered, the bottom quarter simple grass, floor or crowd without faces. Stanley Matthews at fifty (the same slim wiry man with a long narrow face and a long straight nose, now with thinning grey hair combed back and a lined, kind face, still fit, wearing a plain red-and-white vertically striped 1960s football shirt, white shorts and old leather boots) still dribbles the ball past a much younger, surprised defender in a plain white shirt in a 1960s match, light on his feet, a full stadium behind; warm vintage 1960s colour grading with subtle film grain. No text, no letters, no numbers, no logos, no crests, no flags, no watermark, no extra limbs, no duplicate characters.",
+   "seed": 91639,
+   "provider": "codex",
+   "model": "gpt-6-astra (Codex image tool)",
+   "width": 1088,
+   "height": 1920,
+   "steps": 0,
+   "licence": "GPT Image through the Codex CLI image tool; under the OpenAI terms the output belongs to the account holder",
+   "sha256": "f97d489be45a1bee1e5846f595a7dde4f04b5ae158bfea41239ebcd691246094",
+   "createdAt": "2026-10-28T18:15:19.076Z"
+  }
+ }
+}

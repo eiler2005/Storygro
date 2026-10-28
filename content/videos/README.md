@@ -4,6 +4,7 @@
 
 | Проект | Назначение |
 |---|---|
+| [who-gets-rich-on-ai](who-gets-rich-on-ai/README.md) | «Кто разбогатеет на ИИ»: железнодорожная паника 1873 года как урок для ИИ-стройки; взрослый explainer по посту владельца, две версии (ru 135,2 с · en 134,2 с) на общих кадрах GPT Image |
 | [football-stars-kids](football-stars-kids/README.md) | Детский мультик «Звёзды футбола: собираем альбом»: 14 футболистов, узнаваемые шаржи (GPT Image), главы и альбом; серия [kids-football](../series/kids-football.yaml); 117,5 с |
 | [ballon-dor-kids](ballon-dor-kids/README.md) | Детский мультик «Золотой мяч: кто самый лучший?»; 89 с |
 | [agent-motion-studio](agent-motion-studio/README.md) | Пилот стиля kinetic-type «Как агент собирает ролик из кода»; 31 с |

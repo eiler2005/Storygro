@@ -1,0 +1,8 @@
+episode: 1
+id: who-gets-rich-on-ai
+title: "Кто разбогатеет на ИИ"
+sources: sources.md
+credits: CREDITS.md
+variants:
+  - { id: ru, spec: ru.reel.yaml }
+  - { id: en, spec: en.reel.yaml }

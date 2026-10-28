@@ -1,0 +1,40 @@
+@import url('/rc/styles/cartoon/theme.css');
+
+/* A grown-up documentary palette: deeper ink, cooler accents than the children's episodes,
+   so the overlays stay authoritative over detailed, dramatic illustrations. */
+:root {
+  --ct-ink: #1b1710;
+  --ct-paper: #efe6d4;
+  --ct-band: #fbf3e0;
+  --ct-card: #fffaef;
+  --ct-accent: #c4552c;
+  --ct-teal: #1d6f6a;
+  --ct-mustard: #cf9a1c;
+  --ct-red: #b23724;
+  --ct-blue: #28527d;
+}
+
+/* Captions in a soft dark box: these pictures are busy and often dark, so plain outlined
+   text was not reliably readable. 9:16, five words a line. */
+.rc-caption {
+  font-size: 52px;
+  line-height: 1.22;
+  max-width: 880px;
+  color: #fff;
+  background: rgba(22, 16, 10, .82);
+  border: 1px solid rgba(255, 238, 205, .32);
+  border-radius: 22px;
+  padding: 16px 26px;
+  -webkit-text-stroke: 0;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, .5);
+}
+.rc-word.on { color: var(--ct-mustard, #cf9a1c); }
+
+/* The source line sits above the captions and must stay legible over night scenes. */
+.rc-source,
+.ct-source {
+  color: #fff3dd;
+  background: rgba(22, 16, 10, .66);
+  border-radius: 10px;
+  padding: 6px 14px;
+}

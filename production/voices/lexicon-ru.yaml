@@ -279,3 +279,56 @@ words:
     # also inside «Мама-лиса»: anything but a clear `a` is another take
     check: { right: 's aː?', wrong: 's (?!a)\S' }
     source: 'ru.wiktionary, «лиса»: «ли-са́ — Существительное, одушевлённое, женский род» (checked 2026-10-25; the online lookup found the singer «Ли́са» instead)'
+  - word: Джея
+    say: Дж+ея
+    source: 'ru.wiktionary, «Джей»: «…Дже́й Дже́й Дже́и Р. Дже́я Дже́й Дже́ев Д. Дже́ю…» (storygro stress --lookup, 2026-10-27)'
+  - word: Кука
+    say: К+ука
+    source: 'ru.wikipedia, «Острова Кука»: «…Острова́ Ку́ка (кук. Kūki ‘Airani, англ. Cook Islands,…» (storygro stress --lookup, 2026-10-27)'
+  - word: Капитализм
+    say: Капитал+изм
+    source: 'ru.wikipedia, «Капитализм»: «…Капитали́зм — социальная и экономическая система пр…» (storygro stress --lookup, 2026-10-27)'
+  - word: Америке
+    say: Ам+ерике
+    source: 'ru.wiktionary, «Америка»: «…. Аме́рики Аме́рик Д. Аме́рике Аме́рикам В. Аме́рику…» (storygro stress --lookup, 2026-10-27)'
+  - word: Алан
+    say: +Алан
+    source: 'ru.wikipedia, «Гринспен, Алан»: «А́лан Гри́нспен» (checked by hand 2026-10-27)'
+  - word: Алана
+    say: +Алана
+    # the automatic lookup matched the common noun «ала́н» (the ancient people) and gave «Ала́на» —
+    # wrong for the English given name Alan; corrected by hand against the article about Greenspan
+    source: 'ru.wikipedia, «Гринспен, Алан»: «А́лан Гри́нспен» (checked by hand 2026-10-27; storygro stress --lookup had proposed «Ала́на» from «алан»)'
+  - word: Гринспен
+    say: Гр+инспен
+    source: 'ru.wikipedia, «Гринспен, Алан»: «А́лан Гри́нспен» (checked 2026-10-27; the online lookup found nothing)'
+  - word: Гринспена
+    say: Гр+инспена
+    source: 'ru.wikipedia, «Гринспен, Алан»: «А́лан Гри́нспен» (checked 2026-10-27; the online lookup found nothing)'
+  - word: Адриан
+    say: Адри+ан
+    source: 'ru.wiktionary, «Адриан»: «Ад-ри-а́н», Им. Адриа́н (checked by hand 2026-10-27)'
+  - word: Адриана
+    say: Адри+ана
+    source: 'ru.wiktionary, «Адриан»: «Ад-ри-а́н», Им. Адриа́н · Р. Адриа́на (checked by hand 2026-10-27; the lookup had cited the feminine «Адриа́на Лима», same stress position)'
+  - word: Вулдридж
+    say: В+улдридж
+    # see the note on «Вулдриджа» below: publisher's spelling, stress from the English WOOL-ridge
+    source: 'Spelling: alpinabook.ru, «Капитализм в Америке. История» — автор «Адриан Вулдридж». Stress from the English pronunciation of Wooldridge (WOOL-ridge); no Russian dictionary source (2026-10-27)'
+  - word: Вулдриджа
+    say: В+улдриджа
+    # no Russian dictionary entry; the spelling «Адриан Вулдридж» is the publisher's, and the stress
+    # follows the English WOOL-ridge. Listen to this one before release.
+    source: 'Spelling: alpinabook.ru, «Капитализм в Америке. История» — авторы «Алан Гринспен», «Адриан Вулдридж». Stress from the English pronunciation of Wooldridge (WOOL-ridge); no Russian dictionary source (2026-10-27)'
+  - word: Нью-Йорке
+    say: Нью-Й+орке
+    source: 'ru.wiktionary, «Нью-Йорк»: «Нью-Йо́рк» (checked 2026-10-27; the online lookup found nothing for the prepositional form)'
+  - word: Конгрессу
+    say: Конгр+ессу
+    source: 'ru.wiktionary, «конгресс»: «…конгре́сса конгре́ссов Д. конгре́ссу конгре́ссам В. конгре́сс…» (storygro stress --lookup, 2026-10-27)'
+  - word: Федеральную
+    say: Федер+альную
+    source: 'ru.wiktionary, «федеральный»: «…одуш. федера́льного федера́льное федера́льную федера́льных неод. федера́ль…» (storygro stress --lookup, 2026-10-27)'
+  - word: Федеральной
+    say: Федер+альной
+    source: 'ru.wikipedia, «Пограничная служба Федеральной службы безопасности Российской Федерации»: «…Пограни́чная слу́жба Федера́льной слу́жбы безопа́сности Росси́йской Федер…» (storygro stress --lookup, 2026-10-27)'

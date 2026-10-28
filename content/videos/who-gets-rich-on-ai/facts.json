@@ -1,0 +1,60 @@
+{
+ "_about": "Every number and quoted phrase the episode asserts, in both variants. Each node carries `_source` with the quote and the reference; the `ru` / `en` leaves under it are the wording, not separate claims. `panic`, `greenspan`, `capex`, `equities`, `specialist` and `split` are drawn on the frame from here; `book` and `shift` back claims the narrator speaks but that no overlay repeats, and are kept so every assertion has a source in one place. Full references and caveats: sources.md.",
+
+ "panic": {
+  "_source": "PBS American Experience, «The Panic of 1873»: «89 of the country's 364 railroads crashed into bankruptcy»; Jay Cooke & Company closed its doors on 18 September 1873. Secondary source; no scholarly citation given for the count.",
+  "year": "1873",
+  "value": { "ru": "89 из 364", "en": "89 of 364" },
+  "label": { "ru": "железных дорог США обанкротились", "en": "US railroads went bankrupt" },
+  "sourceLine": { "ru": "PBS American Experience, «Паника 1873 года»", "en": "PBS American Experience, The Panic of 1873" }
+ },
+
+ "book": {
+  "_source": "Alan Greenspan, Adrian Wooldridge, «Capitalism in America: A History», Penguin Press, 16 October 2018, ISBN 978-0-7352-2244-1. Russian edition: «Капитализм в Америке. История», Альпина Паблишер.",
+  "title": { "ru": "«Капитализм в Америке»", "en": "Capitalism in America" },
+  "authors": { "ru": "Алан Гринспен и Адриан Вулдридж, 2018", "en": "Alan Greenspan & Adrian Wooldridge, 2018" }
+ },
+
+ "greenspan": {
+  "_source": "Greenspan chaired the Federal Reserve from 11 August 1987 to 31 January 2006 — 18 years and 5 months. Testimony to the House Committee on Oversight and Government Reform, 23 October 2008 (NPR transcript): «I found a flaw. I don't know how significant or permanent it is. But I have been very distressed by that fact.»",
+  "value": { "ru": "1987–2006", "en": "1987–2006" },
+  "label": { "ru": "во главе ФРС США", "en": "chairman of the Federal Reserve" },
+  "quote": { "ru": "«Я обнаружил изъян»", "en": "\"I found a flaw\"" },
+  "quoteLabel": { "ru": "Гринспен, Конгресс, 2008", "en": "Greenspan to Congress, 2008" }
+ },
+
+ "capex": {
+  "_source": "Yahoo Finance, Myles Udland, 30 April 2026, «'Magnificent 7' earnings rush reveals AI spending surge, with hyperscaler capex set to reach $725 billion in 2026»: «As of Wednesday night's reports, that number is closer to $725 billion» — the big four hyperscalers (Microsoft, Amazon, Alphabet, Meta), against a pre-earnings high-end estimate of about $670 billion. A plan, not spend already booked; later 2026 tallies put the total near $730 billion. The owner's post attributed the figure to Bloomberg; that attribution could not be confirmed (sources.md).",
+  "value": { "ru": "$725 млрд", "en": "$725bn" },
+  "label": { "ru": "план капитальных расходов четырёх компаний на 2026 год", "en": "the big four's planned 2026 capital spending" },
+  "sourceLine": { "ru": "Yahoo Finance, 30.04.2026, по отчётам за I квартал — план, а не факт", "en": "Yahoo Finance, 30 Apr 2026, from Q1 earnings — planned, not booked" }
+ },
+
+ "equities": {
+  "_source": "Board of Governors of the Federal Reserve System, Distributional Financial Accounts, series WFRBST01122 «Share of Corporate Equities and Mutual Fund Shares Held by the Top 1% (99th to 100th Wealth Percentiles)»: 50.9 percent of aggregate, Q2 2026, not seasonally adjusted; page updated 18 September 2026. The Fed notes that hedge fund and private debt fund shares are still counted inside this category in the DFA.",
+  "value": { "ru": "50,9%", "en": "50.9%" },
+  "label": { "ru": "корпоративных акций и паёв — у верхнего 1% домохозяйств США", "en": "of US household corporate equities is held by the top 1%" },
+  "sourceLine": { "ru": "ФРС США, распределительные счета, II кв. 2026", "en": "Federal Reserve, Distributional Financial Accounts, Q2 2026" }
+ },
+
+ "specialist": {
+  "_source": "Illustrative example, not a measurement: our own restatement of the owner's post («специалиста, который раньше тратил неделю на подготовку исследования, а теперь делает его за день»). No study is claimed.",
+  "before": { "ru": "неделя", "en": "a week" },
+  "after": { "ru": "день", "en": "a day" },
+  "label": { "ru": "Пример, не замер", "en": "Illustrative example" }
+ },
+
+ "split": {
+  "_source": "Our own wording of the owner's post: «Выгоду получит заказчик, который платит меньше. Что-то достанется работодателю. Часть денег уйдёт поставщику модели. А специалисту вовсе не гарантировано повышение дохода.» A reasoning step, not a measured split.",
+  "client": { "ru": "заказчик", "en": "the client" },
+  "employer": { "ru": "работодатель", "en": "the employer" },
+  "vendor": { "ru": "поставщик модели", "en": "the model vendor" },
+  "worker": { "ru": "специалист — ?", "en": "the worker — ?" }
+ },
+
+ "shift": {
+  "_source": "Our own wording of the owner's post: «Человек перестаёт зарабатывать исключительно на собственных рабочих часах и получает возможность владеть продуктом, который приносит доход многократно.» An argument about a possibility, not a forecast.",
+  "from": { "ru": "часы", "en": "hours" },
+  "to": { "ru": "актив", "en": "an asset" }
+ }
+}

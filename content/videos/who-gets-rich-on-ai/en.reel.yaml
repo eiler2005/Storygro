@@ -1,0 +1,264 @@
+# "Who gets rich on AI" — a grown-up explainer (style: cartoon), 9:16, about two minutes.
+# English variant of ru.reel.yaml: the same scene ids, the same {#cue} names, the same shot files and
+# prompts, so `storygro images` draws every picture once and both variants share them. Only the spoken
+# words and the on-screen wording differ. Numbers come from facts.json (the `en` leaves).
+reel: 1
+style: cartoon
+title: 'Who gets rich on AI'
+lang: en
+format: { preset: vertical, fps: 30 }
+safe: phone
+# brand default English narrator; 1.18 keeps the episode inside two minutes (docs/reference/voices.md
+# gives 1.08 as the English baseline speed). Russian cannot be sped up the same way: 0.90 is the
+# owner's listening decision of 25 October 2026.
+voice: { engine: kokoro, voice: am_michael, speed: 1.18, lang: a }
+music: { bpm: 88, key: A, progression: [vi, IV, I, V], gain: 0.12, drop: shift#now }
+loudness: -14
+theme: theme.css
+captions: { show: true, maxWords: 5 }
+# QA then checks the brand's avoided phrases and that the post discloses the synthetic voice
+brand: ../../brand.yaml
+data: { facts: facts.json }
+stills:
+  cover: panic@rails
+  turn: paradox@but
+  money: capex@money
+  owners: owners@own
+  close: shift@asset
+images:
+  # GPT Image through the Codex CLI; identical to the Russian variant so the pictures are shared
+  provider: codex
+  model: gpt-6-astra
+  seed: 73
+  width: 1088
+  height: 1920
+  prompt: >-
+    Hand-drawn editorial illustration for a grown-up documentary, confident ink outlines with coloured
+    pencil and watercolour texture, warm restrained palette of cream, teal, mustard, rust and deep ink
+    blue, dramatic cinematic light, a highly detailed believable background full of small things to
+    discover, expressive human characters with clear readable faces and consistent designs, tall
+    vertical composition with the main action in the middle and lower part of the frame and the top
+    fifth calm and uncluttered. {subject}. No text, no letters, no numbers, no charts with labels, no
+    logos, no brand marks, no watermark.
+  cast:
+    tycoon: >-
+      a railway investor of the 1870s (a stout middle-aged man with thick grey side-whiskers, a tall
+      black silk top hat, a burgundy frock coat over a cream waistcoat and a gold watch chain)
+    banker: >-
+      an elderly American economist (a thin man in his eighties with thinning grey hair, very large
+      thick round glasses, a dark grey suit and a quiet, careful expression)
+    anna: >-
+      Anna (a professional woman in her thirties with dark brown hair in a low bun, small round
+      glasses, a grey blazer over a white shirt, calm attentive eyes)
+    viktor: >-
+      Viktor (a friendly accountant in his forties with short sandy hair, a neat beard, rolled-up blue
+      shirtsleeves and reading glasses pushed up on his forehead)
+post:
+  title: 'Who gets rich on AI: an uncomfortable lesson from the history of capitalism'
+  text: |
+    In 1873 Jay Cooke's bank failed on railway bonds and 89 of America's 364 railroads went into bankruptcy (PBS, American Experience). Yet the railroads turned out to be one of the best things that ever happened to the US economy. The technology made society richer — and the people who put money into it mostly did not get rich.
+
+    That thread runs through Capitalism in America by Alan Greenspan and Adrian Wooldridge. Greenspan chaired the Federal Reserve from 1987 to 2006, and in 2008 he told Congress: "I found a flaw."
+
+    Today Microsoft, Amazon, Alphabet and Meta have planned around $725bn of capital spending for 2026 (Yahoo Finance, 30 April 2026, from Q1 earnings — a plan, not money already booked). Access to the result costs tens of dollars a month. Building the technology keeps getting more expensive; using it keeps getting cheaper.
+
+    But productivity is not income. If everyone can produce the week-long research in a day, the price of that research falls. And ownership is already concentrated: the top 1% of US households holds 50.9% of household corporate equities and mutual fund shares (Federal Reserve, Distributional Financial Accounts, Q2 2026).
+
+    What genuinely changes: knowledge no longer has to be sold as time. An accountant can build a service; an engineer can turn a method into a product. Not hours — an asset. Not every project will work: AI lowers the cost of building, it does not create demand.
+
+    Sources and caveats are in sources.md. The narration is synthetic (Kokoro) and the pictures are generated with GPT Image; see CREDITS.md.
+  tags: [AI, economics, capitalism, history, future of work, entrepreneurship]
+
+scenes:
+  - id: panic
+    scene: illustration
+    say: 'Autumn, [1873](=eighteen seventy three). {#bank}Jay Cooke''s bank collapses, and the New
+      York exchange shuts for ten days. {#rails}Almost one in four American railroads goes bankrupt.'
+    pad: [0.2, 0.45]
+    energy: 0.5
+    sfx: [{ at: bank, kind: thud, gain: 0.5 }, { at: rails, kind: hit, gain: 0.45 }]
+    props:
+      fade: 0.25
+      shots:
+        - { image: shots/panic-1.jpg, prompt: 'a dense crowd of men in top hats and long frock coats pressing against the closed stone doors of a city bank on a wet autumn morning in 1873, newspapers trampled underfoot, horse-drawn cabs behind them', move: in, focus: { x: 0.5, y: 0.55 } }
+        - { at: bank, image: shots/panic-2.jpg, prompt: 'the heavy iron-bound doors of a nineteenth-century bank being chained shut from inside by a frightened clerk, seen through rain-streaked glass, the crowd blurred outside', move: out }
+        - { at: rails, image: shots/panic-3.jpg, prompt: 'a vast railway yard of cold rusting steam locomotives standing abandoned under a low grey sky, weeds growing high between the rails, a lone watchman walking away', move: in }
+      badge: { valueFrom: facts.panic.value.en, labelFrom: facts.panic.label.en, at: rails, side: right, y: 0.1 }
+      source: { textFrom: facts.panic.sourceLine.en }
+
+  - id: paradox
+    scene: illustration
+    say: 'Here is the paradox. {#good}Those railroads became the best thing that ever happened to
+      the American economy. {#but}The technology made society richer. The people who funded it,
+      mostly not.'
+    pad: [0.2, 0.5]
+    energy: 0.45
+    props:
+      fade: 0.25
+      shots:
+        - { image: shots/paradox-1.jpg, prompt: 'a steam locomotive crossing a tall wooden trestle bridge over a wide canyon at golden hour in the American West, smoke trailing, tiny settlers waving from a wagon below', move: left }
+        - at: but
+          image: shots/paradox-2a.jpg
+          prompt: '@tycoon alone in a dim emptied office, slumped in a chair, loose engraved share certificates scattered over the floor around his feet, an unlit lamp'
+          split: shots/paradox-2b.jpg
+          splitPrompt: 'a lively prairie town market that grew beside a railway line, farmers unloading crates, children running, washing on lines, warm afternoon sun'
+          move: none
+      title: { text: 'Richer, but not everyone', at: but, align: left, width: 0.55 }
+
+  - id: question
+    scene: illustration
+    say: 'Which raises the question. {#q}If AI is the new railroad, who ends up with the money?'
+    pad: [0.2, 0.55]
+    energy: 0.6
+    sfx: [{ at: q, kind: pop, gain: 0.5 }]
+    props:
+      fade: 0.25
+      shots:
+        - { image: shots/question-1.jpg, prompt: 'a pair of old railway tracks running out of a misty nineteenth-century landscape and turning into the straight service road of an enormous modern data centre at dusk, cooling units glowing softly', move: in }
+      title: { text: 'Who ends up with the money?', at: q, align: left, width: 0.6, size: 0.062 }
+
+  - id: book
+    scene: illustration
+    say: 'That is the thread of Capitalism in America, {#authors}by Alan Greenspan and Adrian
+      Wooldridge. Greenspan ran the Federal Reserve for nineteen years. {#flaw}In
+      [2008](=two thousand and eight) he told Congress: there was a flaw in his model of the world.'
+    pad: [0.2, 0.5]
+    energy: 0.4
+    sfx: [{ at: flaw, kind: thud, gain: 0.4 }]
+    props:
+      fade: 0.25
+      shots:
+        - { image: shots/book-1.jpg, prompt: 'a thick hardback history book lying open on a worn wooden desk under a green banker lamp, beside it a brass pocket watch and a cold cup of coffee, blank pages with no writing', move: in }
+        - { at: authors, image: shots/book-2.jpg, prompt: '@banker standing thoughtfully in front of a tall marble central-bank building at dawn, holding his glasses in one hand', move: out, focus: { x: 0.5, y: 0.35 } }
+        - { at: flaw, image: shots/book-3.jpg, prompt: '@banker sitting alone at a long witness table in a wood-panelled committee room, microphones in front of him, rows of empty seats behind, harsh overhead light', move: in, focus: { x: 0.5, y: 0.45 } }
+      # the badge clears when the quote lands, so the two do not stack in the same corner
+      badge: { valueFrom: facts.greenspan.value.en, labelFrom: facts.greenspan.label.en, at: authors, until: flaw, side: left, y: 0.08 }
+      labels:
+        - { textFrom: facts.greenspan.quote.en, x: 0.5, y: 0.3, at: flaw, tone: red }
+        - { textFrom: facts.greenspan.quoteLabel.en, x: 0.5, y: 0.38, at: flaw, tone: ink }
+
+  - id: capex
+    scene: illustration
+    say: '{#money}Microsoft, Amazon, Alphabet and Meta have planned up to
+      [$725bn](=seven hundred and twenty five billion dollars) of capital spending for the year.
+      {#scale}A building site the size of an industry.'
+    pad: [0.2, 0.5]
+    energy: 0.65
+    sfx: [{ at: money, kind: hit, gain: 0.55, snap: beat }]
+    props:
+      fade: 0.25
+      shots:
+        - { image: shots/capex-1.jpg, prompt: 'an enormous data centre under construction at night, tower cranes lit by floodlights, concrete shells stretching to the horizon, convoys of trucks queuing at the gate', move: in }
+        - { at: scale, image: shots/capex-2.jpg, prompt: 'a bird eye view of a colossal windowless data centre campus filling a valley, a small old farming town with a church spire tucked beside it for scale, power lines marching away over the hills', move: out }
+      badge: { valueFrom: facts.capex.value.en, labelFrom: facts.capex.label.en, at: money, side: right, y: 0.08 }
+      source: { textFrom: facts.capex.sourceLine.en }
+
+  - id: flip
+    scene: illustration
+    say: '{#cheap}Access to what it produces costs tens of dollars a month. {#asym}Building the
+      technology keeps getting dearer. Using it keeps getting cheaper.'
+    pad: [0.2, 0.5]
+    energy: 0.5
+    props:
+      fade: 0.25
+      shots:
+        - { image: shots/flip-1.jpg, prompt: '@viktor sitting at a small kitchen table late in the evening with one laptop, a mug and a houseplant, warm lamplight, through the window behind him the distant glow of the vast data centre', move: in, focus: { x: 0.45, y: 0.5 } }
+        - at: asym
+          image: shots/flip-2a.jpg
+          prompt: 'a towering construction site of steel and concrete seen from below, cranes against a hard blue sky, dozens of hard-hatted workers like ants'
+          split: shots/flip-2b.jpg
+          splitPrompt: 'a single open laptop glowing on a plain wooden table in a quiet room, one coffee cup beside it, soft morning light'
+          move: none
+      title: { text: 'Dear to build, cheap to use', at: asym, align: left, width: 0.62, size: 0.058 }
+
+  - id: trap
+    scene: illustration
+    say: 'But productivity is not income. {#week}A week of research now takes a day. {#all}If
+      everyone can do it, the price falls. {#split}The client gains; some goes to the employer,
+      some to the vendor. {#worker}The specialist gets no raise by default.'
+    pad: [0.2, 0.55]
+    energy: 0.55
+    sfx: [{ at: worker, kind: thud, gain: 0.45 }]
+    props:
+      fade: 0.25
+      shots:
+        - { image: shots/trap-1.jpg, prompt: '@anna at midnight almost buried behind towering stacks of reports and folders on her desk, seven paper coffee cups around her, rubbing her eyes', move: in }
+        - { at: all, image: shots/trap-2.jpg, prompt: 'a long open-plan office where a dozen identical tidy desks each hold a glowing laptop and a neat finished report, every worker leaning back relaxed at the same moment, flat even daylight', move: left }
+        - { at: split, image: shots/trap-3.jpg, prompt: 'a large gold coin on a workshop bench being carefully sliced into four uneven wedges with a chisel, four pairs of hands reaching in from the edges of the frame', move: in, focus: { x: 0.5, y: 0.55 } }
+        - { at: worker, image: shots/trap-4.jpg, prompt: '@anna standing by a window holding a thin paper payslip, looking at it with a flat tired expression, the office behind her already dark', move: out, focus: { x: 0.6, y: 0.4 } }
+      labels:
+        - { textFrom: facts.specialist.before.en, x: 0.26, y: 0.2, at: week, until: all, tone: red }
+        - { textFrom: facts.specialist.after.en, x: 0.72, y: 0.2, at: week, until: all, tone: teal }
+        - { textFrom: facts.split.client.en, x: 0.22, y: 0.18, at: split, until: worker, tone: teal }
+        - { textFrom: facts.split.employer.en, x: 0.62, y: 0.13, at: split, until: worker, tone: mustard }
+        - { textFrom: facts.split.vendor.en, x: 0.68, y: 0.26, at: split, until: worker, tone: blue }
+        - { textFrom: facts.split.worker.en, x: 0.3, y: 0.3, at: worker, tone: red }
+      source: { textFrom: facts.specialist.label.en }
+
+  - id: owners
+    scene: illustration
+    say: '{#own}Ownership is already concentrated. More than half of all corporate equities in the
+      United States belong to the richest one percent of families. {#stocks}A rising market, on its
+      own, makes most people no richer.'
+    pad: [0.2, 0.5]
+    energy: 0.5
+    sfx: [{ at: own, kind: hit, gain: 0.45 }]
+    props:
+      fade: 0.25
+      shots:
+        - { image: shots/owners-1.jpg, prompt: 'a cutaway of a tall narrow apartment tower where one vast luxurious penthouse occupies the whole upper half of the building and dozens of tiny cramped flats are stacked in the lower half', move: in }
+        - { at: stocks, image: shots/owners-2.jpg, prompt: 'a crowd of ordinary people on a cold pavement at night looking up through a plate-glass window at a bright trading floor where a line on a wall display climbs steeply, no words or figures on the display', move: out }
+      badge: { valueFrom: facts.equities.value.en, labelFrom: facts.equities.label.en, at: own, side: right, y: 0.08 }
+      source: { textFrom: facts.equities.sourceLine.en }
+
+  - id: shift
+    scene: illustration
+    say: 'But one thing is different. {#time}Knowledge used to be sold as time: more clients,
+      pricier projects. {#grow}Growing meant people, an office, money. {#now}Now the accountant can
+      build a service, the engineer can turn a method into a product. {#asset}Not hours — an asset.'
+    pad: [0.2, 0.55]
+    energy: 0.7
+    sfx: [{ at: now, kind: pop, gain: 0.55, snap: beat }, { at: asset, kind: chime, gain: 0.5 }]
+    props:
+      fade: 0.25
+      shots:
+        - { image: shots/shift-1.jpg, prompt: '@viktor in a small office handing a client a neat stack of finished papers across the desk while an oversized wall clock above them dominates the room, a queue of three more clients waiting at the door', move: in }
+        - { at: grow, image: shots/shift-2.jpg, prompt: 'a cramped old office being expanded: movers carrying in extra desks and filing cabinets through a narrow door, an overwhelmed manager counting on his fingers, plaster dust in the air', move: left }
+        - { at: now, image: shots/shift-3.jpg, prompt: '@viktor alone at his kitchen table building something on a laptop, around him float small glowing mechanical gears and tidy little paper machines assembling themselves, confident focused expression, warm night light', move: in, focus: { x: 0.5, y: 0.5 } }
+        - { at: asset, image: shots/shift-4.jpg, prompt: '@viktor asleep in an armchair at home with a blanket and a cat, while on the desk beside him a small tidy brass machine quietly keeps turning and dropping coins into a jar, moonlight through the window', move: out }
+      # no "hours"/"asset" labels here: they collided with the headline band, which says the same words
+      title: { text: 'Not hours, an asset', at: asset, align: right, width: 0.45 }
+
+  - id: caveat
+    scene: illustration
+    say: 'Not every one will work. {#demand}It needs customers, trust, a feel for the market.
+      Technology lowers the cost of building; it does not create demand.'
+    pad: [0.2, 0.5]
+    energy: 0.4
+    props:
+      fade: 0.25
+      shots:
+        - { image: shots/caveat-1.jpg, prompt: '@anna standing hopefully beside a small handmade market stall of neatly arranged goods on an empty street at dawn, not a single customer in sight, shutters still down opposite', move: in, focus: { x: 0.4, y: 0.5 } }
+        - { at: demand, image: shots/caveat-2.jpg, prompt: 'a beautifully built little workshop with its door propped open and a welcome mat, perfect tools laid out inside, an empty path of untrodden grass leading to it', move: out }
+      title: { text: 'AI does not create demand', at: demand, align: left, width: 0.55, size: 0.058 }
+
+  - id: close
+    scene: illustration
+    say: '{#two}Capital keeps concentrating in a few giants — and at the same time thousands of
+      small independent businesses become possible. {#chance}Perhaps the real chance is not doing
+      ten times more work, {#cta}but owning something that keeps creating value without you.'
+    pad: [0.2, 1.2]
+    energy: 0.6
+    sfx: [{ at: cta, kind: chime, gain: 0.55 }]
+    props:
+      fade: 0.25
+      shots:
+        - at: two
+          image: shots/close-1a.jpg
+          prompt: 'one colossal mirrored corporate tower rising alone above low clouds, seen from far below'
+          split: shots/close-1b.jpg
+          splitPrompt: 'a warm narrow street of dozens of tiny lit workshops and studios, each with its own open door and a person working inside'
+          move: none
+        - { at: chance, image: shots/close-2.jpg, prompt: '@anna standing at a fork in a country road at sunrise with a small bag, one path leading to distant towers and the other to a cluster of small bright workshops, she is looking at both', move: in, focus: { x: 0.5, y: 0.5 } }
+        - { at: cta, image: shots/close-3.jpg, prompt: '@viktor opening a window at sunrise and stretching, behind him on the desk the small brass machine still turning by itself, first light filling the room', move: in, focus: { x: 0.5, y: 0.45 } }
+      title: { text: 'Own it, do not only work it', at: cta, align: left, width: 0.58, size: 0.055 }

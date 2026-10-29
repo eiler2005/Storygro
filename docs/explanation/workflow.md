@@ -30,6 +30,8 @@ The three approvals are recorded in each episode's `review.yaml` in Git; the pla
 
 The recipe every format shares, as it was run for the October 2026 episodes. [Video formats](video-formats.md) says which look to pick; the commands are `npm run storygro -- <command>`.
 
+**Instagram Reels:** use the owner-approved [full-frame standard](../adr/0007-instagram-reels.md) throughout this workflow. Start with `new … --target instagram-reels`; compose the background edge to edge and keep important text inside `safe: reels`. The [Reels recipe](../how-to/instagram-without-cropping.md) covers face/overlay collisions, caption review and retaining Original / 9:16 during upload. Safe margins must not turn into visible padding around a shrunken edit.
+
 | # | Step | Who | Commands | Move on when |
 |---|---|---|---|---|
 | 1 | **Brief:** topic, audience, language, length, format | owner | — | the folder name, the target length and the format are agreed |

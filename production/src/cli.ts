@@ -19,6 +19,7 @@ import { deliverables, packageEpisode, qaState, writeSubtitles } from './package
 import { qa } from './qa.ts';
 import { cards, frames, mux, stills } from './render.ts';
 import { serve } from './serve.ts';
+import { fitSocialVideo } from './social-fit.ts';
 import { loadSpec } from './spec.ts';
 import { appendEntries, entriesFor, type Found, LEXICON_PATH, loadLexicon, lookupStress, nameAround, spokenWithMarks, uncheckedNames, WORD as LEX_WORD } from './lexicon.ts';
 import { buildTimeline, resolveAt, type Timeline, workDir, workUrl, writeTimeline } from './timeline.ts';
@@ -42,13 +43,14 @@ const HELP = `storygro — explainer videos as code
   storygro tracker  <videos-dir> [--md f]   every episode: stage, whose move, approvals, QA, questions
   storygro preview  <reel.yaml>             live preview with sound in the browser
   storygro render   <reel.yaml> [--draft]   voice → score → frames → master + web MP4 → subtitles → QA
+  storygro social   <reel.yaml> <dir>      optional review copies with visible padding; native Reels use render
   storygro qa       <reel.yaml>             check the rendered file, scenes, numbers, safe area, speech
   storygro subs     <reel.yaml>             write <name>.srt and <name>.vtt from the timeline
   storygro carousel <carousel.yaml>         one PNG per scene at its key moment → carousel/
   storygro series   <series.yaml> [--md f]  episodes of a series: length, approval, QA verdict, latest package
   storygro capture  <x.capture.yaml>        record a scripted browser session (frames + finger) for a screencast scene
   storygro styles                           list the styles in production/styles/ (cartoon, cut-paper, …)
-  storygro new      <folder> --style <id> [--lang en] [--title "…"]
+  storygro new      <folder> --style <id> [--lang en] [--title "…"] [--target instagram-reels]
                                              start a content project in a style: episode, script template, facts
   storygro images   <reel.yaml> [--dry-run] [--force] [--only <scene>]
                                              generate the pictures its shots ask for (local mflux), record them in images.json
@@ -77,7 +79,7 @@ const opt = (f: string) => {
   const i = argv.indexOf(f);
   return i >= 0 ? argv[i + 1] : undefined;
 };
-const VALUED = ['--blur', '--from', '--to', '--out', '--port', '--backlog', '--md', '--variant', '--platform', '--account', '--note', '--url', '--external-id', '--window', '--source', '--at', '--ledger', '--metrics', '--style', '--lang', '--title', '--only', '--inbox', '--step', '--by'];
+const VALUED = ['--blur', '--from', '--to', '--out', '--port', '--backlog', '--md', '--variant', '--platform', '--account', '--note', '--url', '--external-id', '--window', '--source', '--at', '--ledger', '--metrics', '--style', '--lang', '--title', '--target', '--only', '--inbox', '--step', '--by'];
 const positional = argv.filter((a, i) => !a.startsWith('--') && !VALUED.includes(argv[i - 1] ?? ''));
 const [cmd, specPath, ...rest] = positional;
 if (flag('--allow-errors')) process.env.STORYGRO_ALLOW_ERRORS = '1';
@@ -150,9 +152,9 @@ if (cmd === 'capture') {
 
 if (cmd === 'new') {
   const id = opt('--style');
-  if (!id) throw new Error('usage: storygro new <folder> --style <id> [--lang en] [--title "…"] — see storygro styles');
+  if (!id) throw new Error('usage: storygro new <folder> --style <id> [--lang en] [--title "…"] [--target instagram-reels] — see storygro styles');
   const style = loadStyle(id);
-  for (const f of scaffold(specPath, style, { lang: opt('--lang'), title: opt('--title') })) console.log(`✔ ${f}`);
+  for (const f of scaffold(specPath, style, { lang: opt('--lang'), title: opt('--title'), target: opt('--target') })) console.log(`✔ ${f}`);
   console.log(`  next: write the script, then ${style.def.images ? `storygro images ${join(specPath, `${opt('--lang') ?? 'en'}.reel.yaml`)} and ` : ''}storygro board`);
   process.exit(0);
 }
@@ -263,6 +265,14 @@ const summary = (tl: Timeline) =>
   `${tl.scenes.length} scenes, ${tl.duration.toFixed(1)} s${tl.scenes.some((s) => s.wav) ? '' : ' (estimated)'}`;
 
 switch (cmd) {
+  case 'social': {
+    if (!rest[0]) throw new Error('usage: storygro social <reel.yaml> <new-output-dir>');
+    if (!approval(l).approved) throw new Error('source storyboard changed — approve and render the source first');
+    const q = qaState(l);
+    if (q.problem) throw new Error(`social export refused: ${q.problem}`);
+    await fitSocialVideo(join(out, `${l.name}.mp4`), resolve(rest[0]));
+    break;
+  }
   case 'voice': {
     const tl = await timeline();
     for (const s of tl.scenes) console.log(`  ${s.id.padEnd(12)} ${s.start.toFixed(1).padStart(5)}s +${s.duration.toFixed(1)}s`);

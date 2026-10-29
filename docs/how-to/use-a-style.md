@@ -23,6 +23,14 @@ This writes `episode.yaml`, `en.reel.yaml` from the style's template, `facts.jso
 
 ## Override what you need
 
+For Instagram Reels, start with the repository's [full-frame standard](instagram-without-cropping.md):
+
+```sh
+npm run storygro -- new content/videos/<id> --style cartoon --lang ru --target instagram-reels
+```
+
+This works with every style and writes explicit vertical format, `safe: reels` and four-word captions (retaining captions-off in kinetic type). Illustrated projects also receive portrait image dimensions and composition guidance. Existing episode settings stay in their own specs.
+
 The reel's own fields win over the style's defaults; objects merge one level deep:
 
 ```yaml

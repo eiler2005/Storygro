@@ -10,3 +10,4 @@ Short records of decisions that shape the repository: the context, what was deci
 | [0004](0004-docs-structure-and-media.md) | Diátaxis documentation with generated English previews | accepted · 2026-10-20 |
 | [0005](0005-styles-and-generated-pictures.md) | Styles as a unit of reuse; local generated pictures | accepted · 2026-10-20 |
 | [0006](0006-research-scan.md) | A research scan that sets loud headlines aside | accepted · 2026-10-20 |
+| [0007](0007-instagram-reels.md) | Native full-frame Instagram Reels across styles and series | accepted · 2026-10-29 |

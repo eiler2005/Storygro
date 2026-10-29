@@ -4,6 +4,8 @@
 
 ## Presets
 
+For Instagram Reels, the owner-approved [repository standard](../adr/0007-instagram-reels.md) is a full-frame 1080×1920 canvas at 30 fps, `safe: reels`, and short captions. New projects can select it with `new --target instagram-reels`; use the [production recipe](../how-to/instagram-without-cropping.md) for composition, QA and uploading.
+
 ```yaml
 format: { preset: vertical, fps: 30 }      # 1080×1920 — Reels, Shorts, TikTok
 format: { preset: landscape }              # 1920×1080 (default) — YouTube, LinkedIn, sites
@@ -13,6 +15,8 @@ format: { width: 1080, height: 1920 }      # explicit size still works
 ```
 
 A preset only sets the canvas. A good vertical video also needs scenes composed for 9:16 — the cut-paper scenes are; the landscape product scenes (`chat`, `grid`, `spotlight`, `pins`, `end-card`, …) are not.
+
+For Instagram, [compose a full-frame Reel](../how-to/instagram-without-cropping.md): backgrounds fill the 9:16 canvas while text respects the safe area. The optional `social` command adds visible padding to preserve an existing edit; it is not the preferred fix for a native Reels composition. Retain the matching aspect ratio during upload.
 
 ## Motion blur
 

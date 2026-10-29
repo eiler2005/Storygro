@@ -280,7 +280,7 @@ entries:
     kind: scenes
     stage: look
     title: Illustration scene
-    what: Full-frame pictures that change on cues with a camera move, split frames, and DOM overlays (headline band, number badge, labels, source line, and an optional photograph fact card).
+    what: Full-frame pictures that change on cues with a camera move, split frames, and DOM overlays (headline band, scalable number badge, labels fitted into the safe area, source line, and an optional compact portrait fact card).
     when: The cartoon style or any piece built from pictures.
     scenes: [illustration]
     status: pilot
@@ -580,6 +580,30 @@ entries:
     how: npm run storygro -- carousel examples/ai-jobs/en.carousel.yaml
     status: stable
     docs: docs/how-to/carousel-and-release.md
+
+  - id: instagram-reels-native
+    kind: method
+    stage: make
+    title: Native full-frame Instagram Reels
+    what: Owner-approved 1080×1920 at 30 fps with edge-to-edge backgrounds, safe reels for text, short captions and individual overlay placement. No padding around a shrunken edit; inspect all shots, cues and final MP4 before retaining Original / 9:16 on upload.
+    when: Every new or remade Instagram Reel, across styles and series.
+    commands: [new]
+    how: npm run storygro -- new content/videos/<id> --style cartoon --lang ru --target instagram-reels
+    status: stable
+    docs: docs/how-to/instagram-without-cropping.md
+    examples: [content/videos/football-legends-01-matthews/README.md]
+
+  - id: social-fit
+    kind: tool
+    stage: ship
+    title: Preserve a complete video with padding
+    what: Fits an existing master inside Reels UI margins and a square canvas with navy padding, preserving the whole picture and copying AAC audio; verifies full decoding, frame count, size, duration and audio hash in a separate review manifest.
+    when: Visible borders are explicitly wanted to preserve every pixel of an existing edit. For native Reels, recompose the scenes full-frame instead.
+    commands: [social]
+    how: npm run storygro -- social content/videos/<id>/ru.reel.yaml <new-output-dir>
+    status: pilot
+    docs: docs/how-to/instagram-without-cropping.md
+    examples: [content/videos/football-legends-01-matthews/README.md]
 
   - id: technical-qa
     kind: tool

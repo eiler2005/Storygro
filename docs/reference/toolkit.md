@@ -2,7 +2,7 @@
 
 <!-- Generated from production/toolkit.yaml by `npm run docs:toolkit`. Edit the YAML, not this page. -->
 
-Every way Storygro makes content, in one bank: **22 methods**, **23 tools**, **4 styles**, **6 scene families** and **6 providers**, by production stage. Agents read [`production/toolkit.yaml`](../../production/toolkit.yaml) to pick an approach; this page is generated from it, and `npm test` fails when a command, style or scene is missing from the bank or a link is broken.
+Every way Storygro makes content, in one bank: **23 methods**, **24 tools**, **4 styles**, **6 scene families** and **6 providers**, by production stage. Agents read [`production/toolkit.yaml`](../../production/toolkit.yaml) to pick an approach; this page is generated from it, and `npm test` fails when a command, style or scene is missing from the bank or a link is broken.
 
 **Status:** *stable* — used across pieces · *pilot* — works, reviewed on one or two pieces · *planned* — not implemented.
 
@@ -13,9 +13,9 @@ Every way Storygro makes content, in one bank: **22 methods**, **23 tools**, **4
 | **write** — Turn it into a script as data | [Script as data](#script-as-data) · [Story structures](#story-structures) · [One worked example](#one-worked-example) · [Language variants](#language-variants) · [Brand profile and series](#brand-profile-and-series) · [Children's list cartoon](#childrens-list-cartoon) |
 | **look** — Decide how it looks | [Cartoon explainer](#cartoon-explainer) · [Cut-paper explainer](#cut-paper-explainer) · [Editorial collage](#editorial-collage) · [Cut-paper scenes](#cut-paper-scenes) · [Kinetic typography](#kinetic-typography) · [Kinetic and diagram scenes](#kinetic-and-diagram-scenes) · [Springs, beat grid and motion blur](#springs-beat-grid-and-motion-blur) · [Collage scene](#collage-scene) · [Illustration scene](#illustration-scene) · [Screencast scene](#screencast-scene) · [Landscape product scenes](#landscape-product-scenes) · [Generated illustrations](#generated-illustrations) · [Z-Image-Turbo via mflux](#z-image-turbo-via-mflux) · [Recognisable caricatures, overlays off faces](#recognisable-caricatures-overlays-off-faces) · [GPT Image through the Codex CLI](#gpt-image-through-the-codex-cli) · [Recurring cast](#recurring-cast) · [Reference pictures of recurring hosts](#reference-pictures-of-recurring-hosts) · [No text in pictures](#no-text-in-pictures) · [Screen capture](#screen-capture) · [A new scene module](#a-new-scene-module) |
 | **voice** — Narration, sound and timing | [Local narration and timing](#local-narration-and-timing) · [Narrator design](#narrator-design) · [Pronunciation and say-as](#pronunciation-and-say-as) · [Russian stress and homographs](#russian-stress-and-homographs) · [Pronunciation dictionary and stress lookup](#pronunciation-dictionary-and-stress-lookup) · [Voice bench](#voice-bench) · [Chatterbox Multilingual](#chatterbox-multilingual) · [OmniVoice Russian narrator](#omnivoice-russian-narrator) · [Music and sound effects](#music-and-sound-effects) |
-| **make** — Storyboard, approval and rendering | [Stills and live preview](#stills-and-live-preview) · [Storyboard and approval](#storyboard-and-approval) · [Plan document and stepped approvals](#plan-document-and-stepped-approvals) · [Render](#render) · [Formats, safe areas and captions](#formats-safe-areas-and-captions) · [Carousel cards](#carousel-cards) |
+| **make** — Storyboard, approval and rendering | [Stills and live preview](#stills-and-live-preview) · [Storyboard and approval](#storyboard-and-approval) · [Plan document and stepped approvals](#plan-document-and-stepped-approvals) · [Render](#render) · [Formats, safe areas and captions](#formats-safe-areas-and-captions) · [Carousel cards](#carousel-cards) · [Native full-frame Instagram Reels](#native-full-frame-instagram-reels) |
 | **check** — Technical QA and the human review | [Technical QA](#technical-qa) · [Human review](#human-review) |
-| **ship** — Release, publication record and metrics | [Episode tracker](#episode-tracker) · [Release package](#release-package) · [Publication ledger and metrics](#publication-ledger-and-metrics) · [Platform upload and analytics APIs](#platform-upload-and-analytics-apis) |
+| **ship** — Release, publication record and metrics | [Episode tracker](#episode-tracker) · [Preserve a complete video with padding](#preserve-a-complete-video-with-padding) · [Release package](#release-package) · [Publication ledger and metrics](#publication-ledger-and-metrics) · [Platform upload and analytics APIs](#platform-upload-and-analytics-apis) |
 | **maintain** — Keep the repository and its media healthy | [Local environments](#local-environments) · [Repository checks](#repository-checks) · [Documentation previews, the toolkit page and the registry](#documentation-previews-the-toolkit-page-and-the-registry) · [CLI help](#cli-help) |
 
 A new piece usually takes one entry per stage: a topic (choose), sources and facts (research), a script in a style (write, look), narration (voice), storyboard and render (make), QA and your own review (check), a package (ship).
@@ -314,7 +314,7 @@ One layered scene — text, labels, image cut-outs, panels, arrows — composed 
 
 *scenes · pilot*
 
-Full-frame pictures that change on cues with a camera move, split frames, and DOM overlays (headline band, number badge, labels, source line, and an optional photograph fact card).
+Full-frame pictures that change on cues with a camera move, split frames, and DOM overlays (headline band, scalable number badge, labels fitted into the safe area, source line, and an optional compact portrait fact card).
 
 **Scenes:** `illustration`
 
@@ -626,6 +626,18 @@ One 1080×1350 card per scene at its key moment, from a carousel spec with its o
 
 **See:** [docs](../../docs/how-to/carousel-and-release.md)
 
+### Native full-frame Instagram Reels
+
+*method · stable* · commands: `new`
+
+Owner-approved 1080×1920 at 30 fps with edge-to-edge backgrounds, safe reels for text, short captions and individual overlay placement. No padding around a shrunken edit; inspect all shots, cues and final MP4 before retaining Original / 9:16 on upload.
+
+**Use when:** Every new or remade Instagram Reel, across styles and series.
+
+**How:** `npm run storygro -- new content/videos/<id> --style cartoon --lang ru --target instagram-reels`
+
+**See:** [docs](../../docs/how-to/instagram-without-cropping.md) · [football-legends-01-matthews/README.md](../../content/videos/football-legends-01-matthews/README.md)
+
 ## 7 · Check — Technical QA and the human review
 
 ### Technical QA
@@ -663,6 +675,18 @@ One table across every episode and variant — stage, whose move, the three appr
 **How:** `npm run storygro -- tracker content/videos --md content/TRACKER.md`
 
 **See:** [docs](../../docs/explanation/content-workflow.md)
+
+### Preserve a complete video with padding
+
+*tool · pilot* · commands: `social`
+
+Fits an existing master inside Reels UI margins and a square canvas with navy padding, preserving the whole picture and copying AAC audio; verifies full decoding, frame count, size, duration and audio hash in a separate review manifest.
+
+**Use when:** Visible borders are explicitly wanted to preserve every pixel of an existing edit. For native Reels, recompose the scenes full-frame instead.
+
+**How:** `npm run storygro -- social content/videos/<id>/ru.reel.yaml <new-output-dir>`
+
+**See:** [docs](../../docs/how-to/instagram-without-cropping.md) · [football-legends-01-matthews/README.md](../../content/videos/football-legends-01-matthews/README.md)
 
 ### Release package
 

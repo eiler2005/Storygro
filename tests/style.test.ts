@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
-import { mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+import { execFileSync } from 'node:child_process';
+import { existsSync, mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join, resolve } from 'node:path';
 import { test } from 'node:test';
@@ -96,6 +97,47 @@ test('new Russian projects receive the selected voice; existing episodes keep th
   const old = loadSpec(join(root, 'content/videos/micro1-work-data/ru.reel.yaml')).spec.voice;
   assert.equal(old.engine, 'qwen3');
   assert.equal(old.speed, 0.96);
+});
+
+test('Instagram Reels target builds native vertical timelines for every style and retains voice and kinetic choices', async (t) => {
+  const dir = mkdtempSync(join(tmpdir(), 'storygro-reels-target-'));
+  t.after(() => rmSync(dir, { recursive: true, force: true }));
+  for (const style of listStyles()) {
+    const project = join(dir, style.def.id);
+    scaffold(project, style, { lang: 'ru', target: 'instagram-reels' });
+    const l = loadSpec(join(project, 'ru.reel.yaml'));
+    assert.equal(l.spec.voice.engine, 'omnivoice');
+    assert.equal(l.spec.voice.speed, 0.9);
+    const tl = await buildTimeline({ ...l, spec: { ...l.spec, voice: { ...l.spec.voice, engine: 'none' } } }, { voice: false });
+    assert.deepEqual([tl.width, tl.height, tl.fps, tl.safe.profile], [1080, 1920, 30, 'reels']);
+    assert.equal(tl.captions.maxWords, 4);
+    assert.equal(tl.captions.show, style.def.id !== 'kinetic-type');
+    if (style.def.id === 'kinetic-type') assert.equal(tl.blur, 4);
+    if (style.def.id === 'cartoon') {
+      const images = styleImages(l)!;
+      assert.deepEqual([images.width, images.height], [1088, 1920]);
+      const jobs = imageJobs(l);
+      assert.equal(jobs.length, 4);
+      assert.match(jobs[0]!.prompt, /Full-frame vertical 9:16/);
+      assert.doesNotMatch(jobs[0]!.prompt, /wide composition|\{subject\}|@host/);
+      assert.match(jobs[0]!.prompt, /Flat comic book illustration/);
+      assert.equal((l.spec.scenes[1]!.props.badge as { size: number }).size, 0.085);
+    }
+  }
+  const normal = join(dir, 'normal-cartoon');
+  scaffold(normal, loadStyle('cartoon'));
+  assert.equal(loadSpec(join(normal, 'en.reel.yaml')).spec.format.width, 1920);
+});
+
+test('new CLI forwards the Reels target and refuses unsupported targets before creating files', (t) => {
+  const dir = mkdtempSync(join(tmpdir(), 'storygro-reels-cli-'));
+  t.after(() => rmSync(dir, { recursive: true, force: true }));
+  const project = join(dir, 'cli-reel');
+  execFileSync(process.execPath, ['--import', 'tsx', join(root, 'production/src/cli.ts'), 'new', project, '--style', 'cartoon', '--target', 'instagram-reels'], { cwd: root });
+  assert.equal(loadSpec(join(project, 'en.reel.yaml')).spec.safe, 'reels');
+  const invalid = join(dir, 'invalid');
+  assert.throws(() => scaffold(invalid, loadStyle('cartoon'), { target: 'square-ish' }), /unknown target/);
+  assert.equal(existsSync(invalid), false);
 });
 
 test('a kinetic-type project scaffolds and builds: dark tokens, captions off, motion blur on', async (t) => {

@@ -10,7 +10,7 @@ style: cartoon
 title: 'Стэнли Мэтьюз'
 lang: ru
 format: { preset: vertical, fps: 30 }
-safe: phone
+safe: reels
 voice:
   engine: omnivoice
   model: k2-fsa/OmniVoice
@@ -21,7 +21,7 @@ voice:
 music: { bpm: 104, key: D, progression: [I, V, vi, IV], gain: 0.12, drop: comeback#win }
 loudness: -14
 theme: theme.css
-captions: { show: true, maxWords: 5 }
+captions: { show: true, maxWords: 4 }
 transition: { kind: fade, dur: 0.3 }
 data: { facts: facts.json }
 stills: { cover: card@1.6, final: comeback@win, hosts: question@1.5 }
@@ -90,9 +90,9 @@ scenes:
     sfx: [{ at: start, kind: swell, gain: 0.25 }, { at: age, kind: pop, gain: 0.35 }]
     props:
       shots:
-        - { image: shots/hook.jpg, prompt: '@matvey on a green football pitch at golden hour holding up an old sepia football trading card with a portrait of @matthews, staring at it with huge astonished eyes and his mouth wide open, his ears up; @sofia leans in over his shoulder, curious, one eyebrow raised; a modern stadium softly blurred behind them, floodlights starting to glow', move: in, zoom: 0.08, focus: { x: 0.45, y: 0.55 } }
+        - { image: shots/hook.jpg, prompt: '@matvey on a green football pitch at golden hour holding up an old sepia football trading card with a portrait of @matthews, staring at it with huge astonished eyes and his mouth wide open, his ears up; @sofia leans in over his shoulder, curious, one eyebrow raised; a modern stadium softly blurred behind them, floodlights starting to glow', move: in, zoom: 0.045, focus: { x: 0.45, y: 0.55 } }
       # left: Sofia's face fills the top right
-      badge: { valueFrom: facts.age.value, labelFrom: facts.age.label, at: age, side: left, y: 0.03 }
+      badge: { valueFrom: facts.age.value, labelFrom: facts.age.label, at: age, side: left, y: 0.01, size: 0.085 }
 
   # 2–4 с: микрозаставка рубрики
   - id: intro
@@ -104,10 +104,10 @@ scenes:
     sfx: [{ at: start, kind: hit, gain: 0.3 }, { at: 0.5, kind: chime, gain: 0.4 }]
     props:
       shots:
-        - { image: shots/intro.jpg, prompt: 'the series title moment: @matvey stops a rolling classic black-and-white football with his boot and grins with excitement; @sofia turns and gestures enthusiastically toward a luminous golden football-shaped trophy on a dark plinth between them; a soft golden light sweeps across the trophy, a few golden sparkles in the air; a beautiful stadium at golden hour with floodlights, faint white tactical chalk arrows and circles on the grass', move: in, zoom: 0.06, focus: { x: 0.5, y: 0.58 } }
-      title: { textFrom: facts.series.title, at: 0.15, size: 0.055 }
+        - { image: shots/intro.jpg, prompt: 'the series title moment: @matvey stops a rolling classic black-and-white football with his boot and grins with excitement; @sofia turns and gestures enthusiastically toward a luminous golden football-shaped trophy on a dark plinth between them; a soft golden light sweeps across the trophy, a few golden sparkles in the air; a beautiful stadium at golden hour with floodlights, faint white tactical chalk arrows and circles on the grass', move: in, zoom: 0.045, focus: { x: 0.5, y: 0.58 } }
+      title: { textFrom: facts.series.title, at: 0.15, size: 0.046 }
       labels:
-        - { textFrom: facts.series.project, x: 0.5, y: 0.255, at: 0.3, tone: plum }
+        - { textFrom: facts.series.project, x: 0.46, y: 0.23, at: 0.3, tone: plum }
 
   # 4–12 с: карточка игрока
   - id: card
@@ -117,16 +117,17 @@ scenes:
     energy: 0.5
     props:
       shots:
-        # the card sits low, over the hosts' legs: Matthews' head is at the top of this picture
-        - { image: shots/card-1.jpg, seed: 84032, prompt: 'a wide shot of a 1950s English football ground at sunset: the upper forty percent of the frame is open golden evening sky above a low old stadium roof, with nothing else in it; below it, in the middle distance in the centre of the frame, @matthews stands on the pitch holding an old leather ball under his arm, his head exactly at the vertical middle of the frame, packed old terraces with men in flat caps behind him; in the foreground at the bottom @matvey and @sofia look up at him with admiration, Sofia presenting him with an open hand; gentle vintage film grain on the historical part', move: in, zoom: 0.06, focus: { x: 0.5, y: 0.62 } }
-        - { at: club, image: shots/card-2.jpg, seed: 61641, prompt: 'a 1950s football match in England: @matthews runs down the right wing with the old leather ball at his feet, @blackpool teammates running in support, a defender from @bolton chasing; packed old terraces full of cheering men in flat caps and scarves, smoke and mist in the air, warm sepia-tinted vintage colour grading with subtle film grain; the upper third of the frame is hazy grey sky', move: right, zoom: 0.08, focus: { x: 0.5, y: 0.62 } }
+        # Reframed for Reels; exact imagegen edit prompt and reference checksum are in images.json.
+        - { image: shots/card-reels.png, move: in, zoom: 0.035, focus: { x: 0.5, y: 0.4 } }
+        - { at: club, image: shots/card-2.jpg, seed: 61641, prompt: 'a 1950s football match in England: @matthews runs down the right wing with the old leather ball at his feet, @blackpool teammates running in support, a defender from @bolton chasing; packed old terraces full of cheering men in flat caps and scarves, smoke and mist in the air, warm sepia-tinted vintage colour grading with subtle film grain; the upper third of the frame is hazy grey sky', move: right, zoom: 0.045, focus: { x: 0.5, y: 0.62 } }
       portrait:
         image: shots/portrait.jpg
         until: club
         prompt: 'a tight head-and-shoulders close-up portrait of @matthews that fills the whole frame: his face large in the upper middle of the frame, the collar of his tangerine shirt at the bottom edge, looking slightly to the side with a calm modest smile, a plain warm cream background, soft studio light, the look of a 1950s collectible football card; no body below the chest'
         at: 0.25
-        y: 0.585
-        height: 0.2
+        y: 0.475
+        height: 0.16
+        compact: true
         nameFrom: facts.matthews.name
         countryFrom: facts.matthews.country
         valueFrom: facts.matthews.year
@@ -140,8 +141,8 @@ scenes:
     sfx: [{ at: dribble, kind: ding, gain: 0.35 }]
     props:
       shots:
-        - { image: shots/weapon-1.jpg, prompt: '@matthews, slim and wiry, stands calmly with the old leather ball at his feet between two much bigger, broad-shouldered @bolton defenders who tower over him on a muddy 1950s pitch; he looks small next to them but relaxed and smiling; packed terraces behind, warm sepia-tinted vintage grading with subtle film grain', move: in, zoom: 0.07, focus: { x: 0.5, y: 0.6 } }
-        - { at: weapon, image: shots/weapon-2.jpg, prompt: 'an extreme close-up at grass level, with no person''s face or head anywhere in the frame: only an old brown leather football and one muddy old leather football boot with a white sock gently touching it on wet grass, a warm magical golden glow and a few sparkles around the ball as if it were a secret weapon, blurred legs of defenders in the background, the upper part of the frame a soft golden blur of the stadium, vintage film grain', move: in, zoom: 0.1, focus: { x: 0.5, y: 0.62 } }
+        - { image: shots/weapon-1.jpg, prompt: '@matthews, slim and wiry, stands calmly with the old leather ball at his feet between two much bigger, broad-shouldered @bolton defenders who tower over him on a muddy 1950s pitch; he looks small next to them but relaxed and smiling; packed terraces behind, warm sepia-tinted vintage grading with subtle film grain', move: in, zoom: 0.045, focus: { x: 0.5, y: 0.6 } }
+        - { at: weapon, image: shots/weapon-2.jpg, prompt: 'an extreme close-up at grass level, with no person''s face or head anywhere in the frame: only an old brown leather football and one muddy old leather football boot with a white sock gently touching it on wet grass, a warm magical golden glow and a few sparkles around the ball as if it were a secret weapon, blurred legs of defenders in the background, the upper part of the frame a soft golden blur of the stadium, vintage film grain', move: in, zoom: 0.045, focus: { x: 0.5, y: 0.62 } }
       title: { text: 'Дриблинг', at: dribble }
 
   - id: what
@@ -152,8 +153,8 @@ scenes:
     sfx: [{ at: start, kind: pop, gain: 0.3 }]
     props:
       shots:
-        - { image: shots/what-1.jpg, prompt: '@sofia on a modern green training pitch stands beside a dark green chalkboard on an easel covered with simple white chalk tactical drawings of arrows, circles and crosses (no writing at all), holding a piece of chalk and raising one finger with a curious, clever look; @matvey hugs a classic black-and-white football and listens with wide eyes; golden-hour light, a stadium behind', move: in, zoom: 0.07, focus: { x: 0.5, y: 0.58 } }
-        - { at: def, image: shots/what-2.jpg, prompt: '@matvey dribbles a classic black-and-white football in a zigzag around a row of orange training cones, keeping the ball close to his boot, while @sofia stretches out one foot trying to steal it and misses, both laughing; a dotted white chalk line on the grass shows his zigzag path; golden-hour light on a modern pitch', move: right, zoom: 0.08, focus: { x: 0.5, y: 0.6 } }
+        - { image: shots/what-1.jpg, prompt: '@sofia on a modern green training pitch stands beside a dark green chalkboard on an easel covered with simple white chalk tactical drawings of arrows, circles and crosses (no writing at all), holding a piece of chalk and raising one finger with a curious, clever look; @matvey hugs a classic black-and-white football and listens with wide eyes; golden-hour light, a stadium behind', move: in, zoom: 0.045, focus: { x: 0.5, y: 0.58 } }
+        - { at: def, image: shots/what-2.jpg, prompt: '@matvey dribbles a classic black-and-white football in a zigzag around a row of orange training cones, keeping the ball close to his boot, while @sofia stretches out one foot trying to steal it and misses, both laughing; a dotted white chalk line on the grass shows his zigzag path; golden-hour light on a modern pitch', move: right, zoom: 0.045, focus: { x: 0.5, y: 0.6 } }
 
   - id: feint
     scene: illustration
@@ -163,9 +164,9 @@ scenes:
     sfx: [{ at: shoulder, kind: whoosh, gain: 0.35 }, { at: gone, kind: pop, gain: 0.35 }]
     props:
       shots:
-        - { image: shots/feint-1.jpg, prompt: 'a one-on-one duel on a 1950s pitch near the right touchline: @matthews faces a crouching defender from @bolton, the old leather ball at his feet, the two of them eye to eye, tension in the air, crowd in flat caps leaning over the low wall behind; warm sepia-tinted vintage grading with subtle film grain', move: in, zoom: 0.08, focus: { x: 0.5, y: 0.58 } }
-        - { at: shoulder, image: shots/feint-2.jpg, prompt: '@matthews dips his left shoulder sharply as if to go left, his body leaning, while the defender from @bolton throws himself the wrong way with arms flailing; curved motion lines show the fake; the ball stays at Matthews'' right foot; 1950s pitch, crowd behind, warm sepia-tinted vintage grading with subtle film grain', move: left, zoom: 0.08, focus: { x: 0.5, y: 0.58 } }
-        - { at: gone, image: shots/feint-3.jpg, prompt: 'the defender from @bolton sits on the muddy grass looking confused, his head turned the wrong way, while @matthews glides away along the right touchline with the ball, light and quick; the crowd in flat caps cheers and laughs; warm sepia-tinted vintage grading with subtle film grain', move: right, zoom: 0.08, focus: { x: 0.5, y: 0.6 } }
+        - { image: shots/feint-1.jpg, prompt: 'a one-on-one duel on a 1950s pitch near the right touchline: @matthews faces a crouching defender from @bolton, the old leather ball at his feet, the two of them eye to eye, tension in the air, crowd in flat caps leaning over the low wall behind; warm sepia-tinted vintage grading with subtle film grain', move: in, zoom: 0.045, focus: { x: 0.5, y: 0.58 } }
+        - { at: shoulder, image: shots/feint-2.jpg, prompt: '@matthews dips his left shoulder sharply as if to go left, his body leaning, while the defender from @bolton throws himself the wrong way with arms flailing; curved motion lines show the fake; the ball stays at Matthews'' right foot; 1950s pitch, crowd behind, warm sepia-tinted vintage grading with subtle film grain', move: left, zoom: 0.045, focus: { x: 0.5, y: 0.58 } }
+        - { at: gone, image: shots/feint-3.jpg, prompt: 'the defender from @bolton sits on the muddy grass looking confused, his head turned the wrong way, while @matthews glides away along the right touchline with the ball, light and quick; the crowd in flat caps cheers and laughs; warm sepia-tinted vintage grading with subtle film grain', move: right, zoom: 0.045, focus: { x: 0.5, y: 0.6 } }
 
   - id: final
     scene: illustration
@@ -175,11 +176,11 @@ scenes:
     sfx: [{ at: start, kind: swell, gain: 0.3 }]
     props:
       shots:
-        - { image: shots/final.jpg, prompt: 'a grand old national stadium with two white domed towers on a sunny day in May 1953, a hundred thousand spectators in flat caps and hats, the two teams walking out side by side: @blackpool and @bolton, with @matthews among the Blackpool players; in the front row of the old stands @matvey and @sofia sit small among the 1950s crowd in their own modern clothes, wide-eyed like time travellers; warm vintage colour grading with subtle film grain', move: in, zoom: 0.07, focus: { x: 0.5, y: 0.6 } }
-      # low labels instead of a headline: Matthews walks out near the top of the picture
+        - { image: shots/final.jpg, prompt: 'a grand old national stadium with two white domed towers on a sunny day in May 1953, a hundred thousand spectators in flat caps and hats, the two teams walking out side by side: @blackpool and @bolton, with @matthews among the Blackpool players; in the front row of the old stands @matvey and @sofia sit small among the 1950s crowd in their own modern clothes, wide-eyed like time travellers; warm vintage colour grading with subtle film grain', move: in, zoom: 0.045, focus: { x: 0.5, y: 0.6 } }
+      # Labels sit between the players and hosts, above the caption strip.
       labels:
-        - { textFrom: facts.final.title, x: 0.5, y: 0.745, at: 0.3, tone: navy }
-        - { textFrom: facts.final.year, x: 0.5, y: 0.8, at: 0.6, tone: accent }
+        - { textFrom: facts.final.title, x: 0.46, y: 0.38, at: 0.3, tone: navy }
+        - { textFrom: facts.final.year, x: 0.46, y: 0.43, at: 0.6, tone: accent }
 
   - id: comeback
     scene: illustration
@@ -190,12 +191,12 @@ scenes:
     sfx: [{ at: back, kind: riser, gain: 0.3 }, { at: win, kind: chime, gain: 0.55 }, { at: win, kind: swell, gain: 0.3 }]
     props:
       shots:
-        - { image: shots/comeback-1.jpg, prompt: 'the @blackpool players stand with their heads down and hands on hips, disappointed, while @bolton players celebrate in the background; @matthews looks up, calm and determined; an old wooden stadium scoreboard with blank panels behind them; 1953 cup final atmosphere, warm sepia-tinted vintage grading with subtle film grain', move: in, zoom: 0.07, focus: { x: 0.5, y: 0.6 } }
-        - { at: back, image: shots/comeback-2.jpg, prompt: '@matthews races down the right wing and crosses the old leather ball into the penalty area with a sweeping kick, @blackpool teammates sprinting in, the whole crowd rising to its feet; dynamic low angle, motion lines, warm vintage colour grading with subtle film grain', move: right, zoom: 0.09, focus: { x: 0.5, y: 0.58 } }
-        - { at: win, image: shots/comeback-3.jpg, prompt: 'pure joy: @blackpool players hug @matthews and jump with their arms in the air, spectators throw their flat caps up into the sky, confetti and golden light; in the front row of the old stands @matvey and @sofia jump and cheer with their arms up; warm vintage colour grading turning brighter and more colourful', move: out, zoom: 0.08, focus: { x: 0.5, y: 0.55 } }
-      badge: { valueFrom: facts.final.before, labelFrom: facts.final.teams, at: 0.2, until: back, side: right, y: 0.02, tone: navy }
+        - { image: shots/comeback-1.jpg, prompt: 'the @blackpool players stand with their heads down and hands on hips, disappointed, while @bolton players celebrate in the background; @matthews looks up, calm and determined; an old wooden stadium scoreboard with blank panels behind them; 1953 cup final atmosphere, warm sepia-tinted vintage grading with subtle film grain', move: in, zoom: 0.045, focus: { x: 0.5, y: 0.6 } }
+        - { at: back, image: shots/comeback-2.jpg, prompt: '@matthews races down the right wing and crosses the old leather ball into the penalty area with a sweeping kick, @blackpool teammates sprinting in, the whole crowd rising to its feet; dynamic low angle, motion lines, warm vintage colour grading with subtle film grain', move: right, zoom: 0.045, focus: { x: 0.5, y: 0.58 } }
+        - { at: win, image: shots/comeback-3.jpg, prompt: 'pure joy: @blackpool players hug @matthews and jump with their arms in the air, spectators throw their flat caps up into the sky, confetti and golden light; in the front row of the old stands @matvey and @sofia jump and cheer with their arms up; warm vintage colour grading turning brighter and more colourful', move: out, zoom: 0.045, focus: { x: 0.5, y: 0.55 } }
+      badge: { valueFrom: facts.final.before, labelFrom: facts.final.teams, at: 0.2, until: back, side: left, y: 0.34, tone: navy, size: 0.07 }
       labels:
-        - { textFrom: facts.final.after, x: 0.8, y: 0.17, at: win, tone: accent }
+        - { textFrom: facts.final.after, x: 0.75, y: 0.17, at: win, tone: accent }
 
   - id: fifty
     scene: illustration
@@ -205,12 +206,12 @@ scenes:
     sfx: [{ at: fifty, kind: ding, gain: 0.35 }, { at: record, kind: chime, gain: 0.35 }]
     props:
       shots:
-        - { image: shots/fifty-1.jpg, prompt: '@matthews-old still dribbles the ball past a much younger, surprised defender in a plain white shirt in a 1960s match, light on his feet, a full stadium behind; warm vintage 1960s colour grading with subtle film grain', move: right, zoom: 0.08, focus: { x: 0.5, y: 0.58 } }
-        - { at: fifty, image: shots/fifty-2.jpg, prompt: '@matthews-old waves goodbye to a cheering crowd at the end of his last match, smiling warmly, his teammates applauding around him, the evening sun low and golden over the old stadium; warm vintage 1960s colour grading', move: in, zoom: 0.07, focus: { x: 0.5, y: 0.55 } }
-        - { at: record, image: shots/fifty-3.jpg, prompt: '@matvey and @sofia on a modern pitch at golden hour beside a luminous golden football-shaped trophy on a dark plinth; Matvey holds up an old sepia football card of @matthews and counts on his fingers in amazement; Sofia smiles knowingly with her paws behind her back', move: out, zoom: 0.07, focus: { x: 0.5, y: 0.58 } }
-      badge: { valueFrom: facts.career.end, labelFrom: facts.career.endLabel, at: fifty, until: record, side: left, y: 0.02 }
+        - { image: shots/fifty-1.jpg, prompt: '@matthews-old still dribbles the ball past a much younger, surprised defender in a plain white shirt in a 1960s match, light on his feet, a full stadium behind; warm vintage 1960s colour grading with subtle film grain', move: right, zoom: 0.045, focus: { x: 0.5, y: 0.58 } }
+        - { at: fifty, image: shots/fifty-2.jpg, prompt: '@matthews-old waves goodbye to a cheering crowd at the end of his last match, smiling warmly, his teammates applauding around him, the evening sun low and golden over the old stadium; warm vintage 1960s colour grading', move: in, zoom: 0.045, focus: { x: 0.5, y: 0.55 } }
+        - { at: record, image: shots/fifty-3.jpg, prompt: '@matvey and @sofia on a modern pitch at golden hour beside a luminous golden football-shaped trophy on a dark plinth; Matvey holds up an old sepia football card of @matthews and counts on his fingers in amazement; Sofia smiles knowingly with her paws behind her back', move: out, zoom: 0.045, focus: { x: 0.5, y: 0.58 } }
+      badge: { valueFrom: facts.career.end, labelFrom: facts.career.endLabel, at: fifty, until: record, side: left, y: 0.02, size: 0.085 }
       labels:
-        - { textFrom: facts.career.record, x: 0.5, y: 0.76, at: record, tone: accent }
+        - { textFrom: facts.career.record, x: 0.46, y: 0.61, at: record, tone: accent }
 
   - id: lesson
     scene: illustration
@@ -219,7 +220,7 @@ scenes:
     energy: 0.45
     props:
       shots:
-        - { image: shots/lesson.jpg, prompt: 'a warm meeting across time on a green pitch at golden hour: @matthews-old kneels on one knee and shows @matvey how to dip a shoulder over the ball, both concentrating, Matvey copying the move with his tongue out; @sofia stands beside them watching with a delighted smile; the glow of the setting sun, a stadium softly blurred behind', move: in, zoom: 0.07, focus: { x: 0.5, y: 0.58 } }
+        - { image: shots/lesson.jpg, prompt: 'a warm meeting across time on a green pitch at golden hour: @matthews-old kneels on one knee and shows @matvey how to dip a shoulder over the ball, both concentrating, Matvey copying the move with his tongue out; @sofia stands beside them watching with a delighted smile; the glow of the setting sun, a stadium softly blurred behind', move: in, zoom: 0.045, focus: { x: 0.5, y: 0.58 } }
 
   - id: skills
     scene: kinetic
@@ -246,5 +247,5 @@ scenes:
     sfx: [{ at: q, kind: chime, gain: 0.3 }]
     props:
       shots:
-        - { image: shots/question.jpg, prompt: '@matvey and @sofia close to the camera on a pitch at sunset, smiling straight at the viewer: Matvey proudly keeps the ball up on his knee, Sofia balances gracefully on one foot in a gymnast pose with her arms out; the luminous golden football-shaped trophy glows on its plinth behind them, warm golden-hour stadium lights', move: in, zoom: 0.06, focus: { x: 0.5, y: 0.55 } }
-      title: { textFrom: facts.question.text, at: q, size: 0.05 }
+        - { image: shots/question.jpg, prompt: '@matvey and @sofia close to the camera on a pitch at sunset, smiling straight at the viewer: Matvey proudly keeps the ball up on his knee, Sofia balances gracefully on one foot in a gymnast pose with her arms out; the luminous golden football-shaped trophy glows on its plinth behind them, warm golden-hour stadium lights', move: in, zoom: 0.045, focus: { x: 0.5, y: 0.55 } }
+      title: { textFrom: facts.question.text, at: q, size: 0.044 }

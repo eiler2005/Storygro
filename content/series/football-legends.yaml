@@ -7,7 +7,9 @@ format: >-
   енот Матвей (6) и белочка София (8) знакомятся с легендой. Хук 0–2 с, микрозаставка, карточка игрока, одна
   главная история с финтом, голом или сейвом, факт и вопрос зрителю. Премиальная стилизованная 3D-картинка
   GPT Image (Codex) с эталонами ведущих (images.refs), палитра тёмно-синий/золото/газон/кремовый, рассказчик
-  OmniVoice B 0,90; тексты — от владельца, дословно; библия — football-legends.md
+  OmniVoice B 0,90; тексты — от владельца, дословно; библия — football-legends.md.
+  Стандарт Reels 29.10.2026: полный 1080×1920/30 fps без полей, safe reels, подписи до четырёх слов;
+  создание через new --target instagram-reels, рецепт — docs/how-to/instagram-without-cropping.md.
 cadence: по запросу владельца
 episodes:
   - ../videos/football-legends-01-matthews/episode.yaml

@@ -4,6 +4,12 @@ Notable changes to the Storygro engine and repository. Content releases (videos)
 
 ## [Unreleased]
 
+### Instagram Reels production standard
+- Owner-approved full-frame 1080×1920/30 fps Reels across all styles and series, with `safe: reels` for text and no added borders: [ADR 0007](docs/adr/0007-instagram-reels.md), [production recipe](docs/how-to/instagram-without-cropping.md), agent instructions and series documentation.
+- `new --target instagram-reels` writes the vertical canvas, safe profile and four-word captions; keeps the style's kinetic captions-off/motion-blur settings and selected Russian narrator; illustrated projects get portrait image settings and smaller overlays.
+- `illustration`: scalable badges, compact portrait cards above captions, labels fitted and clamped into the safe content area. Matthews was recomposed and rendered full-frame; exact illustration-edit provenance and small review previews are recorded.
+- Optional `social` exports preserve an existing master with explicit padding and unchanged AAC audio, with decoding and checksum checks. The padded Matthews attempt was rejected; these derivatives are not the native Reels workflow.
+
 ### Reference pictures of recurring hosts and the «Легенды футбола» series
 - `images.refs` in a reel: reference pictures per cast member. The `codex` provider attaches them (`codex exec -i`) to every shot that names `@name`, in batches of their own, and tells GPT Image to keep those characters exactly; `images.json` records each reference's SHA-256 and a changed reference marks the picture changed. Other providers warn and ignore them.
 - `storygro images` also makes the picture of an `illustration` portrait card (`props.portrait.prompt`).

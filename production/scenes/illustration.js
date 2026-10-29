@@ -15,11 +15,11 @@
 //   fade:    seconds of cross-fade between shots (default 0 = a cut, as in most cartoon explainers)
 //   title:   { text, at?, until?, align?, width?, size? }    headline band at the top; align left|right keeps it to one side
 //            (width: share of the safe box, default 0.5) so a face stays clear
-//   badge:   { value, label?, at?, until?, tone?, side?: left|right, y?: 0..1 }   a big number on a card; y = its top
+//   badge:   { value, label?, at?, until?, tone?, side?: left|right, y?: 0..1, size? }   size = number height / stage height
 //            within the text box (default 0.22), lower it to keep a face clear
 //   labels:  [{ text, x, y, at?, until?, tone? }]       small tags pinned to the picture (x, y in 0..1)
 //   source:  string or { text }                        small source line, bottom left (sourceFrom / textFrom bind it)
-//   portrait: { image, name, country?, value?, label?, at?, until?, y?, width?, height? }
+//   portrait: { image, name, country?, value?, label?, at?, until?, y?, width?, height?, compact? }
 //             an authentic photograph in a separate animated fact card; texts support the usual From bindings
 export default {
   mount(root, ctx) {
@@ -76,8 +76,9 @@ export default {
         throw new Error('illustration: portrait needs image and name');
       const available = box.right - box.left;
       const width = available * clamp(portrait.width ?? 1, 0.3, 1);
-      const height = Math.min(H * clamp(portrait.height ?? 0.255, 0.16, 0.5), H * 0.55);
-      const top = Math.max(box.top, H * clamp(portrait.y ?? 0.13, 0, 0.8));
+      const height = Math.min(H * clamp(portrait.height ?? 0.255, 0.16, 0.5), box.bottom - box.top);
+      const top = clamp(H * clamp(portrait.y ?? 0.13, 0, 0.8), box.top, box.bottom - height);
+      const textScale = portrait.compact ? Math.min(1, height / (H * 0.24)) : 1;
       portraitCard = h('div', { class: 'rc-portrait-card', style: {
         position: 'absolute', left: `${box.left}px`, top: `${top}px`, width: `${width}px`, height: `${height}px`,
         display: 'flex', gap: `${W * 0.025}px`, boxSizing: 'border-box', overflow: 'hidden',
@@ -92,15 +93,15 @@ export default {
       } }));
       const info = h('div', { style: {
         flex: '1', minWidth: '0', display: 'flex', flexDirection: 'column', justifyContent: 'center',
-        gap: `${H * 0.009}px`, fontFamily: 'var(--ct-font, sans-serif)',
+        gap: `${H * 0.009 * textScale}px`, fontFamily: 'var(--ct-font, sans-serif)',
       } });
-      info.append(h('div', { style: { fontSize: `${Math.min(H * 0.029, width * 0.061)}px`, fontWeight: '800', lineHeight: '1.08', overflowWrap: 'anywhere' } }, portrait.name));
-      if (portrait.country) info.append(h('div', { style: { fontSize: `${H * 0.017}px`, fontWeight: '600', color: '#516570' } }, portrait.country));
+      info.append(h('div', { style: { fontSize: `${Math.min(H * 0.029 * textScale, width * 0.061)}px`, fontWeight: '800', lineHeight: '1.08', overflowWrap: 'anywhere' } }, portrait.name));
+      if (portrait.country) info.append(h('div', { style: { fontSize: `${H * 0.017 * textScale}px`, fontWeight: '600', color: '#516570' } }, portrait.country));
       if (portrait.value !== undefined) info.append(h('div', { style: {
-        fontSize: `${H * (String(portrait.value).length > 8 ? 0.025 : 0.051)}px`, lineHeight: '1.05',
+        fontSize: `${H * (String(portrait.value).length > 8 ? 0.025 : 0.051) * textScale}px`, lineHeight: '1.05',
         fontWeight: '850', color: '#b42d61', overflowWrap: 'anywhere',
       } }, String(portrait.value)));
-      if (portrait.label) info.append(h('div', { style: { fontSize: `${H * 0.019}px`, lineHeight: '1.18', fontWeight: '650' } }, portrait.label));
+      if (portrait.label) info.append(h('div', { style: { fontSize: `${H * Math.max(0.019 * textScale, portrait.compact ? 0.017 : 0)}px`, lineHeight: '1.18', fontWeight: '650' } }, portrait.label));
       portraitCard.append(info);
       overlay.append(portraitCard);
     }
@@ -135,6 +136,7 @@ export default {
     let value = null;
     if (badge && badge.value !== undefined) {
       const right = (badge.side ?? 'right') === 'right';
+      const badgeScale = clamp(badge.size ?? 0.13, 0.04, 0.15) / 0.13;
       card = h(
         'div',
         {
@@ -142,13 +144,13 @@ export default {
             position: 'absolute', [right ? 'right' : 'left']: `${right ? W - box.right : box.left}px`,
             top: `${Math.round(box.top + (box.bottom - box.top) * clamp(badge.y ?? 0.22))}px`, maxWidth: `${Math.round(W * 0.34)}px`,
             background: 'var(--ct-card, #fffaf0)', borderRadius: `${Math.round(H * 0.018)}px`,
-            padding: `${Math.round(H * 0.02)}px ${Math.round(H * 0.03)}px`, boxShadow: '0 10px 0 rgba(31, 26, 20, .16), 0 18px 40px rgba(31, 26, 20, .18)',
+            padding: `${Math.round(H * 0.02 * badgeScale)}px ${Math.round(H * 0.03 * badgeScale)}px`, boxShadow: '0 10px 0 rgba(31, 26, 20, .16), 0 18px 40px rgba(31, 26, 20, .18)',
             border: `${Math.max(3, Math.round(H * 0.004))}px solid var(--ct-ink, #1f1a14)`, transformOrigin: right ? '100% 50%' : '0 50%',
           },
         },
-        (value = h('div', { style: { font: `${Math.round(H * (String(badge.value).length > 6 ? 0.085 : 0.13))}px/1 var(--ct-display, Impact, sans-serif)`, whiteSpace: 'nowrap', width: 'max-content', fontWeight: 'var(--ct-display-weight, 600)', color: tone(badge.tone) } }, String(badge.value))),
+        (value = h('div', { style: { font: `${Math.round(H * (String(badge.value).length > 6 ? 0.085 : 0.13) * badgeScale)}px/1 var(--ct-display, Impact, sans-serif)`, whiteSpace: 'nowrap', width: 'max-content', fontWeight: 'var(--ct-display-weight, 600)', color: tone(badge.tone) } }, String(badge.value))),
         badge.label
-          ? h('div', { style: { font: `700 ${Math.round(H * 0.027)}px/1.25 var(--ct-font, sans-serif)`, color: 'var(--ct-ink, #1f1a14)', marginTop: `${Math.round(H * 0.008)}px` } }, badge.label)
+          ? h('div', { style: { font: `700 ${Math.round(H * 0.027 * badgeScale)}px/1.25 var(--ct-font, sans-serif)`, color: 'var(--ct-ink, #1f1a14)', marginTop: `${Math.round(H * 0.008)}px` } }, badge.label)
           : '',
       );
       overlay.append(card);
@@ -188,6 +190,17 @@ export default {
     let fitted = false;
 
     return (t) => {
+      if (!fitted) tags.forEach((el, i) => {
+        // Place the complete label inside the content box, above captions. Measure without animation.
+        let size = parseFloat(getComputedStyle(el).fontSize);
+        for (let n = 0; n < 40 && el.offsetWidth > box.right - box.left - 24; n++) {
+          size *= 0.94;
+          el.style.fontSize = `${size}px`;
+        }
+        const x = clamp((labels[i].x ?? 0.5) * W, box.left + el.offsetWidth / 2 + 12, box.right - el.offsetWidth / 2 - 12);
+        const y = clamp((labels[i].y ?? 0.5) * H, box.top + el.offsetHeight / 2 + 12, box.bottom - el.offsetHeight / 2 - 12);
+        set(el, { left: `${x}px`, top: `${y}px` });
+      });
       if (!fitted && bandText) {
         // a long word cannot wrap: shrink the headline until it fits the band (a one-word name on a tall stage)
         let size = parseFloat(getComputedStyle(bandText).fontSize);

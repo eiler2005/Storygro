@@ -302,6 +302,21 @@
    "licence": "GPT Image through the Codex CLI image tool; under the OpenAI terms the output belongs to the account holder",
    "sha256": "f97d489be45a1bee1e5846f595a7dde4f04b5ae158bfea41239ebcd691246094",
    "createdAt": "2026-10-28T18:15:19.076Z"
+  },
+  "shots/card-reels.png": {
+   "prompt": "Use case: identity-preserve. Edit target: the attached existing Storygro football illustration. Recompose it for a FULL-BLEED vertical 9:16 Instagram Reel, 1088 x 1920 if possible. Preserve exactly the three character identities, faces, fur, royal-blue kit of Matvey, plum tracksuit of Sofia, tangerine 1950s kit of Stanley Matthews, warm stadium setting, cinematic high-quality stylized 3D rendering and lighting. Change the staging: Matthews now kneels on one knee beside the two children, holding the same brown leather football. All THREE complete heads including ears and ponytail must fit inside the upper-middle central area, roughly x=170..860 and y=420..830 of a 1088x1920 canvas, grouped naturally together, warmly smiling at one another. Show their bodies and feet ending around y=1120; leave the whole lower part from y=1150 to 1920 as beautiful simple softly focused green pitch with evening light. Keep the top 300 pixels as stadium sky. All important facial features between 22% and 44% down the frame; no face at any edge. This space is essential for a later fact-card overlay at y=950..1250 and subtitles at y=1320..1440, but DO NOT draw those overlays. The image itself fills the whole canvas, no borders, no letterboxing, no panels, no typography, no text, no numbers, no logos, no watermark. Do not change the visual identity or add characters.",
+   "seed": 0,
+   "provider": "imagegen",
+   "model": "OpenAI built-in image generation (model identifier not exposed)",
+   "width": 943,
+   "height": 1667,
+   "steps": 0,
+   "licence": "OpenAI image tool output; account terms apply. Seed 0 is a placeholder, not reproducible.",
+   "refs": {
+    "shots/card-1.jpg": "e40d11a05eadf74def0e9d8c3a2e9a6b2204a013d54b40162eb08748e602828c"
+   },
+   "sha256": "e01d78b4f53087932db67723745ada46b3364d1d87c7076a11461b6d700d97cd",
+   "createdAt": "2026-10-29T18:42:57.125Z"
   }
  }
 }

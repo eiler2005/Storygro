@@ -26,7 +26,7 @@ Guide: [transcribe and analyse a reference](../how-to/transcribe-a-reference.md)
 | Command | Does | Writes |
 |---|---|---|
 | `styles` | lists the styles in `production/styles/` | — |
-| `new <folder> --style <id> [--lang en] [--title "…"]` | starts a content project in a style; refuses a folder with files | `episode.yaml`, `<lang>.reel.yaml`, `facts.json`, `sources.md`, `CREDITS.md` |
+| `new <folder> --style <id> [--lang en] [--title "…"] [--target instagram-reels]` | starts a content project in a style; the Reels target writes the [native vertical standard](../how-to/instagram-without-cropping.md); refuses a folder with files or an unknown target | `episode.yaml`, `<lang>.reel.yaml`, `facts.json`, `sources.md`, `CREDITS.md` |
 | `images <spec> [--dry-run] [--force] [--only <scene>]` | generates the pictures the shots ask for — missing ones and those whose prompt or seed changed; keeps hand-made files; `--dry-run` lists prompts and states. Provider from the style or `images.provider`: `mflux` (local), `codex` (GPT Image through the Codex CLI, batched, online), `manual` | pictures at their paths, `images.json` (prompt, seed, model, licence, SHA-256); `prompts.md` with the `manual` provider |
 
 Guides: [use a style](../how-to/use-a-style.md), [cartoon tutorial](../tutorials/cartoon-explainer.md). Fields: [styles reference](styles.md).
@@ -68,6 +68,7 @@ Gates and checks: [quality](../explanation/quality.md).
 | Command | Does | Writes |
 |---|---|---|
 | `deliver <spec> [dir]` | copies one variant's complete set + manifest; refuses gaps | `~/Downloads/<name>/` by default |
+| `social <spec> <new-dir>` | optional explicitly requested exports with padding; preserves the entire master and AAC audio, verifies decoding and hashes; native Reels use scene composition and `render` | two bordered MP4s and `social-manifest.json`; [guide](../how-to/instagram-without-cropping.md) |
 | `package <episode.yaml> [dir]` | all variants of an episode → one release folder + manifest; refuses gaps | `.reel/releases/<episode>-<date>/` |
 | `series <series.yaml> [--md f]` | episodes of a series: length, approval, QA verdict, latest package | Markdown table |
 | `tracker <videos-dir> [--md f] [--ledger f]` | every episode and variant: stage, whose move, approvals, length, QA, sourced facts, open questions, publications | `content/TRACKER.md` |

@@ -131,7 +131,8 @@ export function shotPrompt(images: StyleImages, subject: string, cast: Record<st
  * A new content project in a style: episode.yaml, `<lang>.reel.yaml` from the style's template,
  * an empty facts file, sources and credits. Refuses a folder that already has files.
  */
-export function scaffold(dir: string, style: LoadedStyle, opts: { lang?: string; title?: string } = {}): string[] {
+export function scaffold(dir: string, style: LoadedStyle, opts: { lang?: string; title?: string; target?: string } = {}): string[] {
+  if (opts.target && opts.target !== 'instagram-reels') throw new Error(`unknown target "${opts.target}" — supported: instagram-reels`);
   const lang = opts.lang ?? 'en';
   const id = basename(resolve(dir));
   if (!/^[a-z0-9-]+$/.test(id)) throw new Error(`folder name "${id}" must be lower-case letters, digits and hyphens (it becomes the episode id)`);
@@ -150,6 +151,34 @@ export function scaffold(dir: string, style: LoadedStyle, opts: { lang?: string;
     const doc = parseDocument(script);
     doc.set('voice', { engine: selected.engine, ...(selected.model ? { model: selected.model } : {}),
       voice: 'assets/voice/narrator-ru.wav', speed: selected.speed, stress: selected.stress });
+    script = doc.toString();
+  }
+  if (opts.target === 'instagram-reels') {
+    const doc = parseDocument(script);
+    const current = applyStyle(doc.toJS() as Record<string, unknown>, style);
+    const format = isObject(current.format) ? current.format : {};
+    const captions = isObject(current.captions) ? current.captions : {};
+    doc.set('format', { preset: 'vertical', width: 1080, height: 1920, fps: 30, ...(format.blur ? { blur: format.blur } : {}) });
+    doc.set('safe', 'reels');
+    // Kinetic type uses its words as captions; keep the style's show=false.
+    doc.set('captions', { ...captions, maxWords: 4 });
+    if (style.def.images) {
+      const images = isObject(current.images) ? current.images : {};
+      const look = String(images.prompt ?? style.def.images.prompt).replace(/\bwide composition\b/gi, 'vertical composition');
+      doc.set('images', { ...images, width: 1088, height: 1920,
+        prompt: `Full-frame vertical 9:16 composition, edge-to-edge background, no borders or letterboxing. ${look} Keep complete faces away from the edges and leave space for separately drawn titles, fact cards and captions. No generated text.` });
+    }
+    // Starting sizes for the illustration template; the storyboard still needs visual review.
+    const scenes = current.scenes as { scene: string; props?: Record<string, unknown> }[];
+    for (const [i, scene] of scenes.entries()) {
+      if (scene.scene !== 'illustration' || !scene.props) continue;
+      const p = scene.props;
+      if (isObject(p.title) && p.title.size === undefined) doc.setIn(['scenes', i, 'props', 'title', 'size'], 0.046);
+      if (isObject(p.badge) && p.badge.size === undefined) doc.setIn(['scenes', i, 'props', 'badge', 'size'], 0.085);
+      for (const [j, shot] of (Array.isArray(p.shots) ? p.shots : []).entries())
+        if (isObject(shot) && shot.zoom === undefined) doc.setIn(['scenes', i, 'props', 'shots', j, 'zoom'], 0.045);
+    }
+    doc.commentBefore = `${doc.commentBefore ?? ''}\n Instagram Reels: full-frame picture, no padding; safe margins apply to text.\n Review every face, cue and caption, then retain Original / 9:16 during upload.`;
     script = doc.toString();
   }
   mkdirSync(dir, { recursive: true });

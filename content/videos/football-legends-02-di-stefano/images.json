@@ -1,0 +1,309 @@
+{
+ "images": 1,
+ "files": {
+  "shots/question.jpg": {
+   "prompt": "Premium stylized 3D family animation film still with the polish of a modern feature-animation studio, not photorealistic and not babyish: expressive faces, beautifully detailed soft fur and fabric, cinematic warm light, a rich detailed background, a palette of deep navy blue, warm gold, lush pitch green and cream white with restrained orange and plum accents. Full-frame vertical 9:16 composition, edge-to-edge background, no borders or letterboxing. The top fifth of the frame is calm sky, stands or background with no heads, faces, hands or ball; every head and face sits between one fifth and two thirds of the height, away from the side edges; the bottom quarter is simple grass, floor or crowd seen from behind, without faces. Matvey (a small six-year-old anthropomorphic raccoon boy with soft grey-brown fur, a dark eye mask, a white muzzle, big lively dark-brown eyes, round ears with white edges and a fluffy tail with dark rings, wearing a plain royal-blue football kit with white collar trim, blue-and-white striped socks and blue-and-white boots) and Sofia (his sister, an eight-year-old anthropomorphic red squirrel girl, a little taller than Matvey, with a round childlike face, chestnut-orange fur, a cream muzzle, tufted ears, big warm amber eyes, a short high ponytail with a plum hair band and a large fluffy curled tail, wearing a plain plum-purple zip tracksuit with thin white stripes and white-and-lilac trainers) on a modern pitch at sunset, both thinking: Matvey holds a black-and-white football and looks towards a goal, one paw on his chin; Sofia taps her cheek thoughtfully and looks at the viewer; the luminous golden football-shaped trophy glows on its plinth far behind them, warm golden-hour stadium lights. No text, no letters, no numbers, no logos, no crests, no flags, no watermark, no extra limbs, no duplicate characters.",
+   "seed": 43245,
+   "provider": "codex",
+   "model": "gpt-6-astra (Codex image tool)",
+   "width": 1088,
+   "height": 1920,
+   "steps": 0,
+   "licence": "GPT Image through the Codex CLI image tool; under the OpenAI terms the output belongs to the account holder",
+   "refs": {
+    "../../series/football-legends/cast/matvey-face.png": "70d429f91006b8d818eb13f653e5cc6ad1c5726feade2bc94c8aa4e44dd496c2",
+    "../../series/football-legends/cast/hosts-full.png": "49c92b4bca5df88e90d529034e158fb7a48a79de4c7f98d49ccf764944d2be35",
+    "../../series/football-legends/cast/sofia-face.png": "8e8f0e504835d506d25edb8123c78392be69f0457631dfa5fe3a8259adafd914"
+   },
+   "sha256": "026bdb94556f339683cacbef73f1d6e3c7c52d375c5412937a2ceca54bdc8cbc",
+   "createdAt": "2026-10-29T20:24:26.123Z"
+  },
+  "shots/answer.jpg": {
+   "prompt": "Premium stylized 3D family animation film still with the polish of a modern feature-animation studio, not photorealistic and not babyish: expressive faces, beautifully detailed soft fur and fabric, cinematic warm light, a rich detailed background, a palette of deep navy blue, warm gold, lush pitch green and cream white with restrained orange and plum accents. Full-frame vertical 9:16 composition, edge-to-edge background, no borders or letterboxing. The top fifth of the frame is calm sky, stands or background with no heads, faces, hands or ball; every head and face sits between one fifth and two thirds of the height, away from the side edges; the bottom quarter is simple grass, floor or crowd seen from behind, without faces. Alfredo Di Stéfano (the Argentine-born Spanish footballer of the 1950s as a respectful, recognisable stylized 3D caricature: a lean, athletic man of about thirty with a long face, a high forehead with thinning light-brown hair combed back, strong dark eyebrows, a strong nose and an intense, focused look, wearing a plain all-white 1950s football kit with a white collar, long white shorts, white socks and old brown leather boots) in his all-white kit, Matvey (a small six-year-old anthropomorphic raccoon boy with soft grey-brown fur, a dark eye mask, a white muzzle, big lively dark-brown eyes, round ears with white edges and a fluffy tail with dark rings, wearing a plain royal-blue football kit with white collar trim, blue-and-white striped socks and blue-and-white boots) and Sofia (his sister, an eight-year-old anthropomorphic red squirrel girl, a little taller than Matvey, with a round childlike face, chestnut-orange fur, a cream muzzle, tufted ears, big warm amber eyes, a short high ponytail with a plum hair band and a large fluffy curled tail, wearing a plain plum-purple zip tracksuit with thin white stripes and white-and-lilac trainers) on a modern green pitch at golden hour pass a black-and-white football between them in a little triangle, all three laughing, Matvey about to shoot towards a goal; a modern stadium softly blurred behind. No text, no letters, no numbers, no logos, no crests, no flags, no watermark, no extra limbs, no duplicate characters.",
+   "seed": 3890,
+   "provider": "codex",
+   "model": "gpt-6-astra (Codex image tool)",
+   "width": 1088,
+   "height": 1920,
+   "steps": 0,
+   "licence": "GPT Image through the Codex CLI image tool; under the OpenAI terms the output belongs to the account holder",
+   "refs": {
+    "../../series/football-legends/cast/matvey-face.png": "70d429f91006b8d818eb13f653e5cc6ad1c5726feade2bc94c8aa4e44dd496c2",
+    "../../series/football-legends/cast/hosts-full.png": "49c92b4bca5df88e90d529034e158fb7a48a79de4c7f98d49ccf764944d2be35",
+    "../../series/football-legends/cast/sofia-face.png": "8e8f0e504835d506d25edb8123c78392be69f0457631dfa5fe3a8259adafd914"
+   },
+   "sha256": "5fb3b28785924eb25372547a1fa2eb634319625f58724b3fba92b76fde670868",
+   "createdAt": "2026-10-29T20:24:26.188Z"
+  },
+  "shots/hook-2.jpg": {
+   "prompt": "Premium stylized 3D family animation film still with the polish of a modern feature-animation studio, not photorealistic and not babyish: expressive faces, beautifully detailed soft fur and fabric, cinematic warm light, a rich detailed background, a palette of deep navy blue, warm gold, lush pitch green and cream white with restrained orange and plum accents. Full-frame vertical 9:16 composition, edge-to-edge background, no borders or letterboxing. The top fifth of the frame is calm sky, stands or background with no heads, faces, hands or ball; every head and face sits between one fifth and two thirds of the height, away from the side edges; the bottom quarter is simple grass, floor or crowd seen from behind, without faces. a 1950s match in a packed old stadium: Alfredo Di Stéfano (the Argentine-born Spanish footballer of the 1950s as a respectful, recognisable stylized 3D caricature: a lean, athletic man of about thirty with a long face, a high forehead with thinning light-brown hair combed back, strong dark eyebrows, a strong nose and an intense, focused look, wearing a plain all-white 1950s football kit with a white collar, long white shorts, white socks and old brown leather boots) wins the old leather ball in front of his own penalty area, right next to his own goal and his goalkeeper, already looking up the pitch to start an attack; opponents (1950s footballers in plain dark red shirts and black shorts) around him; warm sepia-tinted vintage grading with subtle film grain. No text, no letters, no numbers, no logos, no crests, no flags, no watermark, no extra limbs, no duplicate characters.",
+   "seed": 31831,
+   "provider": "codex",
+   "model": "gpt-6-astra (Codex image tool)",
+   "width": 1088,
+   "height": 1920,
+   "steps": 0,
+   "licence": "GPT Image through the Codex CLI image tool; under the OpenAI terms the output belongs to the account holder",
+   "sha256": "e5ba398a53d22e8bb7523d9492a0d74006866b5b03098219417a03b4a7d309e5",
+   "createdAt": "2026-10-29T20:25:57.097Z"
+  },
+  "shots/hook-3.jpg": {
+   "prompt": "Premium stylized 3D family animation film still with the polish of a modern feature-animation studio, not photorealistic and not babyish: expressive faces, beautifully detailed soft fur and fabric, cinematic warm light, a rich detailed background, a palette of deep navy blue, warm gold, lush pitch green and cream white with restrained orange and plum accents. Full-frame vertical 9:16 composition, edge-to-edge background, no borders or letterboxing. The top fifth of the frame is calm sky, stands or background with no heads, faces, hands or ball; every head and face sits between one fifth and two thirds of the height, away from the side edges; the bottom quarter is simple grass, floor or crowd seen from behind, without faces. Alfredo Di Stéfano (the Argentine-born Spanish footballer of the 1950s as a respectful, recognisable stylized 3D caricature: a lean, athletic man of about thirty with a long face, a high forehead with thinning light-brown hair combed back, strong dark eyebrows, a strong nose and an intense, focused look, wearing a plain all-white 1950s football kit with a white collar, long white shorts, white socks and old brown leather boots) at the halfway line plays a long pass with the old leather ball to a teammate from his teammates (1950s footballers in plain all-white kits with long white shorts) and immediately sprints forward past a surprised opponent from opponents (1950s footballers in plain dark red shirts and black shorts), motion lines behind him; a packed 1950s stadium; warm sepia-tinted vintage grading with subtle film grain. No text, no letters, no numbers, no logos, no crests, no flags, no watermark, no extra limbs, no duplicate characters.",
+   "seed": 82610,
+   "provider": "codex",
+   "model": "gpt-6-astra (Codex image tool)",
+   "width": 1088,
+   "height": 1920,
+   "steps": 0,
+   "licence": "GPT Image through the Codex CLI image tool; under the OpenAI terms the output belongs to the account holder",
+   "sha256": "eb71fb1c9301996e9070a53bc7a47407d387221df2fc0e13e5f44a3d0ac8f2e2",
+   "createdAt": "2026-10-29T20:25:57.157Z"
+  },
+  "shots/hook-4.jpg": {
+   "prompt": "Premium stylized 3D family animation film still with the polish of a modern feature-animation studio, not photorealistic and not babyish: expressive faces, beautifully detailed soft fur and fabric, cinematic warm light, a rich detailed background, a palette of deep navy blue, warm gold, lush pitch green and cream white with restrained orange and plum accents. Full-frame vertical 9:16 composition, edge-to-edge background, no borders or letterboxing. The top fifth of the frame is calm sky, stands or background with no heads, faces, hands or ball; every head and face sits between one fifth and two thirds of the height, away from the side edges; the bottom quarter is simple grass, floor or crowd seen from behind, without faces. seconds later Alfredo Di Stéfano (the Argentine-born Spanish footballer of the 1950s as a respectful, recognisable stylized 3D caricature: a lean, athletic man of about thirty with a long face, a high forehead with thinning light-brown hair combed back, strong dark eyebrows, a strong nose and an intense, focused look, wearing a plain all-white 1950s football kit with a white collar, long white shorts, white socks and old brown leather boots) is already in front of the opponents' goal at the other end of the pitch, shooting the old leather ball past a diving goalkeeper in a dark kit into the net, the 1950s crowd behind the goal rising; warm sepia-tinted vintage grading with subtle film grain. No text, no letters, no numbers, no logos, no crests, no flags, no watermark, no extra limbs, no duplicate characters.",
+   "seed": 15706,
+   "provider": "codex",
+   "model": "gpt-6-astra (Codex image tool)",
+   "width": 1088,
+   "height": 1920,
+   "steps": 0,
+   "licence": "GPT Image through the Codex CLI image tool; under the OpenAI terms the output belongs to the account holder",
+   "sha256": "f69f3e7a512b0c63e58c0269e0e7d9077836d57b62cb48489d8bc260af4eb8bb",
+   "createdAt": "2026-10-29T20:25:57.223Z"
+  },
+  "shots/card-2.jpg": {
+   "prompt": "Premium stylized 3D family animation film still with the polish of a modern feature-animation studio, not photorealistic and not babyish: expressive faces, beautifully detailed soft fur and fabric, cinematic warm light, a rich detailed background, a palette of deep navy blue, warm gold, lush pitch green and cream white with restrained orange and plum accents. Full-frame vertical 9:16 composition, edge-to-edge background, no borders or letterboxing. The top fifth of the frame is calm sky, stands or background with no heads, faces, hands or ball; every head and face sits between one fifth and two thirds of the height, away from the side edges; the bottom quarter is simple grass, floor or crowd seen from behind, without faces. a sunny 1930s street in an old neighbourhood of Buenos Aires: colourful low houses with balconies, cobblestones, a tram in the distance; a boy of about ten in a white shirt and shorts kicks a worn leather ball against a wall while other children watch; warm nostalgic vintage colours. No text, no letters, no numbers, no logos, no crests, no flags, no watermark, no extra limbs, no duplicate characters.",
+   "seed": 61642,
+   "provider": "codex",
+   "model": "gpt-6-astra (Codex image tool)",
+   "width": 1088,
+   "height": 1920,
+   "steps": 0,
+   "licence": "GPT Image through the Codex CLI image tool; under the OpenAI terms the output belongs to the account holder",
+   "sha256": "08b0be72248e6e4094fb379bbc551afd3f8d579544d9fc67fd0d932a02090741",
+   "createdAt": "2026-10-29T20:25:57.299Z"
+  },
+  "shots/card-3.jpg": {
+   "prompt": "Premium stylized 3D family animation film still with the polish of a modern feature-animation studio, not photorealistic and not babyish: expressive faces, beautifully detailed soft fur and fabric, cinematic warm light, a rich detailed background, a palette of deep navy blue, warm gold, lush pitch green and cream white with restrained orange and plum accents. Full-frame vertical 9:16 composition, edge-to-edge background, no borders or letterboxing. The top fifth of the frame is calm sky, stands or background with no heads, faces, hands or ball; every head and face sits between one fifth and two thirds of the height, away from the side edges; the bottom quarter is simple grass, floor or crowd seen from behind, without faces. Alfredo Di Stéfano (the same lean man with a long face, a high forehead and thinning light-brown hair combed back, strong dark eyebrows and a strong nose, wearing a plain red 1950s football shirt with a collar, dark blue shorts and black socks) dribbles the old leather ball forward in a late-1950s international match in a full stadium, an opponent in a plain white shirt chasing him; warm vintage colour grading with subtle film grain. No text, no letters, no numbers, no logos, no crests, no flags, no watermark, no extra limbs, no duplicate characters.",
+   "seed": 54909,
+   "provider": "codex",
+   "model": "gpt-6-astra (Codex image tool)",
+   "width": 1088,
+   "height": 1920,
+   "steps": 0,
+   "licence": "GPT Image through the Codex CLI image tool; under the OpenAI terms the output belongs to the account holder",
+   "sha256": "0ca1e6bbed02ccb8138f2ee8d4d9b3eddb2451aaf7d31e29b18ca12256d51c38",
+   "createdAt": "2026-10-29T20:25:57.362Z"
+  },
+  "shots/hook.jpg": {
+   "prompt": "Premium stylized 3D family animation film still with the polish of a modern feature-animation studio, not photorealistic and not babyish: expressive faces, beautifully detailed soft fur and fabric, cinematic warm light, a rich detailed background, a palette of deep navy blue, warm gold, lush pitch green and cream white with restrained orange and plum accents. Full-frame vertical 9:16 composition, edge-to-edge background, no borders or letterboxing. The top fifth of the frame is calm sky, stands or background with no heads, faces, hands or ball; every head and face sits between one fifth and two thirds of the height, away from the side edges; the bottom quarter is simple grass, floor or crowd seen from behind, without faces. Matvey (a small six-year-old anthropomorphic raccoon boy with soft grey-brown fur, a dark eye mask, a white muzzle, big lively dark-brown eyes, round ears with white edges and a fluffy tail with dark rings, wearing a plain royal-blue football kit with white collar trim, blue-and-white striped socks and blue-and-white boots) and Sofia (his sister, an eight-year-old anthropomorphic red squirrel girl, a little taller than Matvey, with a round childlike face, chestnut-orange fur, a cream muzzle, tufted ears, big warm amber eyes, a short high ponytail with a plum hair band and a large fluffy curled tail, wearing a plain plum-purple zip tracksuit with thin white stripes and white-and-lilac trainers) on a modern green football pitch at golden hour: Matvey holds up an old sepia football trading card with a portrait of Alfredo Di Stéfano (the Argentine-born Spanish footballer of the 1950s as a respectful, recognisable stylized 3D caricature: a lean, athletic man of about thirty with a long face, a high forehead with thinning light-brown hair combed back, strong dark eyebrows, a strong nose and an intense, focused look, wearing a plain all-white 1950s football kit with a white collar, long white shorts, white socks and old brown leather boots), staring at it with huge excited eyes; Sofia (his sister, an eight-year-old anthropomorphic red squirrel girl, a little taller than Matvey, with a round childlike face, chestnut-orange fur, a cream muzzle, tufted ears, big warm amber eyes, a short high ponytail with a plum hair band and a large fluffy curled tail, wearing a plain plum-purple zip tracksuit with thin white stripes and white-and-lilac trainers) kneels beside him and traces a long dotted white chalk line on the grass that runs from one goal far behind them towards the other, explaining with a clever smile; a modern stadium softly blurred behind, floodlights starting to glow. No text, no letters, no numbers, no logos, no crests, no flags, no watermark, no extra limbs, no duplicate characters.",
+   "seed": 76361,
+   "provider": "codex",
+   "model": "gpt-6-astra (Codex image tool)",
+   "width": 1088,
+   "height": 1920,
+   "steps": 0,
+   "licence": "GPT Image through the Codex CLI image tool; under the OpenAI terms the output belongs to the account holder",
+   "refs": {
+    "../../series/football-legends/cast/matvey-face.png": "70d429f91006b8d818eb13f653e5cc6ad1c5726feade2bc94c8aa4e44dd496c2",
+    "../../series/football-legends/cast/hosts-full.png": "49c92b4bca5df88e90d529034e158fb7a48a79de4c7f98d49ccf764944d2be35",
+    "../../series/football-legends/cast/sofia-face.png": "8e8f0e504835d506d25edb8123c78392be69f0457631dfa5fe3a8259adafd914"
+   },
+   "sha256": "89d9bce44948edc7a3dab2f309d142c66d9c393dded40a578d8e5534dcaf6626",
+   "createdAt": "2026-10-29T20:26:58.847Z"
+  },
+  "shots/card.jpg": {
+   "prompt": "Premium stylized 3D family animation film still with the polish of a modern feature-animation studio, not photorealistic and not babyish: expressive faces, beautifully detailed soft fur and fabric, cinematic warm light, a rich detailed background, a palette of deep navy blue, warm gold, lush pitch green and cream white with restrained orange and plum accents. Full-frame vertical 9:16 composition, edge-to-edge background, no borders or letterboxing. The top fifth of the frame is calm sky, stands or background with no heads, faces, hands or ball; every head and face sits between one fifth and two thirds of the height, away from the side edges; the bottom quarter is simple grass, floor or crowd seen from behind, without faces. Alfredo Di Stéfano (the Argentine-born Spanish footballer of the 1950s as a respectful, recognisable stylized 3D caricature: a lean, athletic man of about thirty with a long face, a high forehead with thinning light-brown hair combed back, strong dark eyebrows, a strong nose and an intense, focused look, wearing a plain all-white 1950s football kit with a white collar, long white shorts, white socks and old brown leather boots) kneels on one knee on a modern green pitch at golden hour between Matvey (a small six-year-old anthropomorphic raccoon boy with soft grey-brown fur, a dark eye mask, a white muzzle, big lively dark-brown eyes, round ears with white edges and a fluffy tail with dark rings, wearing a plain royal-blue football kit with white collar trim, blue-and-white striped socks and blue-and-white boots) and Sofia (his sister, an eight-year-old anthropomorphic red squirrel girl, a little taller than Matvey, with a round childlike face, chestnut-orange fur, a cream muzzle, tufted ears, big warm amber eyes, a short high ponytail with a plum hair band and a large fluffy curled tail, wearing a plain plum-purple zip tracksuit with thin white stripes and white-and-lilac trainers), holding an old brown leather football, all three smiling warmly at one another; their three heads close together in the upper middle of the frame; a modern stadium softly blurred behind; the lower part of the frame simple green grass. No text, no letters, no numbers, no logos, no crests, no flags, no watermark, no extra limbs, no duplicate characters.",
+   "seed": 84033,
+   "provider": "codex",
+   "model": "gpt-6-astra (Codex image tool)",
+   "width": 1088,
+   "height": 1920,
+   "steps": 0,
+   "licence": "GPT Image through the Codex CLI image tool; under the OpenAI terms the output belongs to the account holder",
+   "refs": {
+    "../../series/football-legends/cast/matvey-face.png": "70d429f91006b8d818eb13f653e5cc6ad1c5726feade2bc94c8aa4e44dd496c2",
+    "../../series/football-legends/cast/hosts-full.png": "49c92b4bca5df88e90d529034e158fb7a48a79de4c7f98d49ccf764944d2be35",
+    "../../series/football-legends/cast/sofia-face.png": "8e8f0e504835d506d25edb8123c78392be69f0457631dfa5fe3a8259adafd914"
+   },
+   "sha256": "c504d9605df96d6ac87c8712519363fb41d3b673e34e766489239e114c618347",
+   "createdAt": "2026-10-29T20:26:58.920Z"
+  },
+  "shots/award-2.jpg": {
+   "prompt": "Premium stylized 3D family animation film still with the polish of a modern feature-animation studio, not photorealistic and not babyish: expressive faces, beautifully detailed soft fur and fabric, cinematic warm light, a rich detailed background, a palette of deep navy blue, warm gold, lush pitch green and cream white with restrained orange and plum accents. Full-frame vertical 9:16 composition, edge-to-edge background, no borders or letterboxing. The top fifth of the frame is calm sky, stands or background with no heads, faces, hands or ball; every head and face sits between one fifth and two thirds of the height, away from the side edges; the bottom quarter is simple grass, floor or crowd seen from behind, without faces. Matvey (a small six-year-old anthropomorphic raccoon boy with soft grey-brown fur, a dark eye mask, a white muzzle, big lively dark-brown eyes, round ears with white edges and a fluffy tail with dark rings, wearing a plain royal-blue football kit with white collar trim, blue-and-white striped socks and blue-and-white boots) and Sofia (his sister, an eight-year-old anthropomorphic red squirrel girl, a little taller than Matvey, with a round childlike face, chestnut-orange fur, a cream muzzle, tufted ears, big warm amber eyes, a short high ponytail with a plum hair band and a large fluffy curled tail, wearing a plain plum-purple zip tracksuit with thin white stripes and white-and-lilac trainers) on a modern pitch at golden hour stand beside two identical luminous golden football-shaped trophies on dark plinths; Sofia proudly shows two fingers, Matvey looks from one trophy to the other with his mouth open in amazement. No text, no letters, no numbers, no logos, no crests, no flags, no watermark, no extra limbs, no duplicate characters.",
+   "seed": 97621,
+   "provider": "codex",
+   "model": "gpt-6-astra (Codex image tool)",
+   "width": 1088,
+   "height": 1920,
+   "steps": 0,
+   "licence": "GPT Image through the Codex CLI image tool; under the OpenAI terms the output belongs to the account holder",
+   "refs": {
+    "../../series/football-legends/cast/matvey-face.png": "70d429f91006b8d818eb13f653e5cc6ad1c5726feade2bc94c8aa4e44dd496c2",
+    "../../series/football-legends/cast/hosts-full.png": "49c92b4bca5df88e90d529034e158fb7a48a79de4c7f98d49ccf764944d2be35",
+    "../../series/football-legends/cast/sofia-face.png": "8e8f0e504835d506d25edb8123c78392be69f0457631dfa5fe3a8259adafd914"
+   },
+   "sha256": "db1b0fab7c368f48dfcf53028a333a55246f1e9ce382d858fe76980778e5946d",
+   "createdAt": "2026-10-29T20:26:58.997Z"
+  },
+  "shots/cups-1.jpg": {
+   "prompt": "Premium stylized 3D family animation film still with the polish of a modern feature-animation studio, not photorealistic and not babyish: expressive faces, beautifully detailed soft fur and fabric, cinematic warm light, a rich detailed background, a palette of deep navy blue, warm gold, lush pitch green and cream white with restrained orange and plum accents. Full-frame vertical 9:16 composition, edge-to-edge background, no borders or letterboxing. The top fifth of the frame is calm sky, stands or background with no heads, faces, hands or ball; every head and face sits between one fifth and two thirds of the height, away from the side edges; the bottom quarter is simple grass, floor or crowd seen from behind, without faces. a row of five identical large shining silver trophy cups with big handles standing side by side on a long wooden table in an old trophy room, warm light from a window; Matvey (a small six-year-old anthropomorphic raccoon boy with soft grey-brown fur, a dark eye mask, a white muzzle, big lively dark-brown eyes, round ears with white edges and a fluffy tail with dark rings, wearing a plain royal-blue football kit with white collar trim, blue-and-white striped socks and blue-and-white boots) and Sofia (his sister, an eight-year-old anthropomorphic red squirrel girl, a little taller than Matvey, with a round childlike face, chestnut-orange fur, a cream muzzle, tufted ears, big warm amber eyes, a short high ponytail with a plum hair band and a large fluffy curled tail, wearing a plain plum-purple zip tracksuit with thin white stripes and white-and-lilac trainers) stand behind the right half of the table and lean in to look at the cups with wide eyes, their heads between one third and one half of the frame height; the upper left quarter shows only calm wooden shelves and the window, with no heads; warm colours. No text, no letters, no numbers, no logos, no crests, no flags, no watermark, no extra limbs, no duplicate characters.",
+   "seed": 38006,
+   "provider": "codex",
+   "model": "gpt-6-astra (Codex image tool)",
+   "width": 1088,
+   "height": 1920,
+   "steps": 0,
+   "licence": "GPT Image through the Codex CLI image tool; under the OpenAI terms the output belongs to the account holder",
+   "refs": {
+    "../../series/football-legends/cast/matvey-face.png": "70d429f91006b8d818eb13f653e5cc6ad1c5726feade2bc94c8aa4e44dd496c2",
+    "../../series/football-legends/cast/hosts-full.png": "49c92b4bca5df88e90d529034e158fb7a48a79de4c7f98d49ccf764944d2be35",
+    "../../series/football-legends/cast/sofia-face.png": "8e8f0e504835d506d25edb8123c78392be69f0457631dfa5fe3a8259adafd914"
+   },
+   "sha256": "1f3ba500429e83a208803dc44cc469b572d248d41a84f34df1dffcfab4e04bb9",
+   "createdAt": "2026-10-29T20:35:55.866Z"
+  },
+  "shots/cups-2.jpg": {
+   "prompt": "Premium stylized 3D family animation film still with the polish of a modern feature-animation studio, not photorealistic and not babyish: expressive faces, beautifully detailed soft fur and fabric, cinematic warm light, a rich detailed background, a palette of deep navy blue, warm gold, lush pitch green and cream white with restrained orange and plum accents. Full-frame vertical 9:16 composition, edge-to-edge background, no borders or letterboxing. The top fifth of the frame is calm sky, stands or background with no heads, faces, hands or ball; every head and face sits between one fifth and two thirds of the height, away from the side edges; the bottom quarter is simple grass, floor or crowd seen from behind, without faces. his teammates (1950s footballers in plain all-white kits with long white shorts) lift Alfredo Di Stéfano (the Argentine-born Spanish footballer of the 1950s as a respectful, recognisable stylized 3D caricature: a lean, athletic man of about thirty with a long face, a high forehead with thinning light-brown hair combed back, strong dark eyebrows, a strong nose and an intense, focused look, wearing a plain all-white 1950s football kit with a white collar, long white shorts, white socks and old brown leather boots) onto their shoulders, he holds up a large shining silver trophy cup with big handles, all of them laughing in a packed 1950s stadium at night under floodlights, confetti in the air; the crowd behind them cheering; the bottom quarter of the frame shows only grass and the backs of photographers; warm vintage colour grading turning brighter. No text, no letters, no numbers, no logos, no crests, no flags, no watermark, no extra limbs, no duplicate characters.",
+   "seed": 22274,
+   "provider": "codex",
+   "model": "gpt-6-astra (Codex image tool)",
+   "width": 1088,
+   "height": 1920,
+   "steps": 0,
+   "licence": "GPT Image through the Codex CLI image tool; under the OpenAI terms the output belongs to the account holder",
+   "sha256": "f5fb1c12e97a089e574a8c6edbfb0cdd1c80bdc3b9d09826016364f2a77c7e82",
+   "createdAt": "2026-10-29T20:35:07.932Z"
+  },
+  "shots/skill-6.jpg": {
+   "prompt": "Premium stylized 3D family animation film still with the polish of a modern feature-animation studio, not photorealistic and not babyish: expressive faces, beautifully detailed soft fur and fabric, cinematic warm light, a rich detailed background, a palette of deep navy blue, warm gold, lush pitch green and cream white with restrained orange and plum accents. Full-frame vertical 9:16 composition, edge-to-edge background, no borders or letterboxing. The top fifth of the frame is calm sky, stands or background with no heads, faces, hands or ball; every head and face sits between one fifth and two thirds of the height, away from the side edges; the bottom quarter is simple grass, floor or crowd seen from behind, without faces. Sofia (his sister, an eight-year-old anthropomorphic red squirrel girl, a little taller than Matvey, with a round childlike face, chestnut-orange fur, a cream muzzle, tufted ears, big warm amber eyes, a short high ponytail with a plum hair band and a large fluffy curled tail, wearing a plain plum-purple zip tracksuit with thin white stripes and white-and-lilac trainers) stands beside a dark green chalkboard on an easel on a modern pitch at golden hour; the board shows simple white chalk arrows and circles of a team moving together (no writing at all); she points at the arrows while Matvey (a small six-year-old anthropomorphic raccoon boy with soft grey-brown fur, a dark eye mask, a white muzzle, big lively dark-brown eyes, round ears with white edges and a fluffy tail with dark rings, wearing a plain royal-blue football kit with white collar trim, blue-and-white striped socks and blue-and-white boots), holding a black-and-white football, follows them with wide eyes. No text, no letters, no numbers, no logos, no crests, no flags, no watermark, no extra limbs, no duplicate characters.",
+   "seed": 85089,
+   "provider": "codex",
+   "model": "gpt-6-astra (Codex image tool)",
+   "width": 1088,
+   "height": 1920,
+   "steps": 0,
+   "licence": "GPT Image through the Codex CLI image tool; under the OpenAI terms the output belongs to the account holder",
+   "refs": {
+    "../../series/football-legends/cast/sofia-face.png": "8e8f0e504835d506d25edb8123c78392be69f0457631dfa5fe3a8259adafd914",
+    "../../series/football-legends/cast/hosts-full.png": "49c92b4bca5df88e90d529034e158fb7a48a79de4c7f98d49ccf764944d2be35",
+    "../../series/football-legends/cast/matvey-face.png": "70d429f91006b8d818eb13f653e5cc6ad1c5726feade2bc94c8aa4e44dd496c2"
+   },
+   "sha256": "523b8a78bd3ac362127f9cae6632c4dec395e1b46995630c8665ba39cc4a1bb0",
+   "createdAt": "2026-10-29T20:28:12.169Z"
+  },
+  "shots/skill-3.jpg": {
+   "prompt": "Premium stylized 3D family animation film still with the polish of a modern feature-animation studio, not photorealistic and not babyish: expressive faces, beautifully detailed soft fur and fabric, cinematic warm light, a rich detailed background, a palette of deep navy blue, warm gold, lush pitch green and cream white with restrained orange and plum accents. Full-frame vertical 9:16 composition, edge-to-edge background, no borders or letterboxing. The top fifth of the frame is calm sky, stands or background with no heads, faces, hands or ball; every head and face sits between one fifth and two thirds of the height, away from the side edges; the bottom quarter is simple grass, floor or crowd seen from behind, without faces. Alfredo Di Stéfano (the Argentine-born Spanish footballer of the 1950s as a respectful, recognisable stylized 3D caricature: a lean, athletic man of about thirty with a long face, a high forehead with thinning light-brown hair combed back, strong dark eyebrows, a strong nose and an intense, focused look, wearing a plain all-white 1950s football kit with a white collar, long white shorts, white socks and old brown leather boots) carries the old leather ball forward through midfield with his head up, pointing with one arm to show a teammate from his teammates (1950s footballers in plain all-white kits with long white shorts) where to run; a 1950s stadium; warm sepia-tinted vintage grading with subtle film grain. No text, no letters, no numbers, no logos, no crests, no flags, no watermark, no extra limbs, no duplicate characters.",
+   "seed": 53057,
+   "provider": "codex",
+   "model": "gpt-6-astra (Codex image tool)",
+   "width": 1088,
+   "height": 1920,
+   "steps": 0,
+   "licence": "GPT Image through the Codex CLI image tool; under the OpenAI terms the output belongs to the account holder",
+   "sha256": "1d326f6e8460473c4c60d16bfe6e82274d58688931ff3b8ab05f839b100a1eab",
+   "createdAt": "2026-10-29T20:29:00.290Z"
+  },
+  "shots/skill-4.jpg": {
+   "prompt": "Premium stylized 3D family animation film still with the polish of a modern feature-animation studio, not photorealistic and not babyish: expressive faces, beautifully detailed soft fur and fabric, cinematic warm light, a rich detailed background, a palette of deep navy blue, warm gold, lush pitch green and cream white with restrained orange and plum accents. Full-frame vertical 9:16 composition, edge-to-edge background, no borders or letterboxing. The top fifth of the frame is calm sky, stands or background with no heads, faces, hands or ball; every head and face sits between one fifth and two thirds of the height, away from the side edges; the bottom quarter is simple grass, floor or crowd seen from behind, without faces. Alfredo Di Stéfano (the Argentine-born Spanish footballer of the 1950s as a respectful, recognisable stylized 3D caricature: a lean, athletic man of about thirty with a long face, a high forehead with thinning light-brown hair combed back, strong dark eyebrows, a strong nose and an intense, focused look, wearing a plain all-white 1950s football kit with a white collar, long white shorts, white socks and old brown leather boots) plays a precise pass with the inside of his boot, the old leather ball rolling along a curved dotted path to a teammate from his teammates (1950s footballers in plain all-white kits with long white shorts) who is running free; a 1950s stadium; warm sepia-tinted vintage grading with subtle film grain. No text, no letters, no numbers, no logos, no crests, no flags, no watermark, no extra limbs, no duplicate characters.",
+   "seed": 50638,
+   "provider": "codex",
+   "model": "gpt-6-astra (Codex image tool)",
+   "width": 1088,
+   "height": 1920,
+   "steps": 0,
+   "licence": "GPT Image through the Codex CLI image tool; under the OpenAI terms the output belongs to the account holder",
+   "sha256": "55ebc54789e043c62dd788651c1ccd537817f4bbe412a88eac4fdf8ac541c0dc",
+   "createdAt": "2026-10-29T20:29:00.350Z"
+  },
+  "shots/skill-5.jpg": {
+   "prompt": "Premium stylized 3D family animation film still with the polish of a modern feature-animation studio, not photorealistic and not babyish: expressive faces, beautifully detailed soft fur and fabric, cinematic warm light, a rich detailed background, a palette of deep navy blue, warm gold, lush pitch green and cream white with restrained orange and plum accents. Full-frame vertical 9:16 composition, edge-to-edge background, no borders or letterboxing. The top fifth of the frame is calm sky, stands or background with no heads, faces, hands or ball; every head and face sits between one fifth and two thirds of the height, away from the side edges; the bottom quarter is simple grass, floor or crowd seen from behind, without faces. Alfredo Di Stéfano (the Argentine-born Spanish footballer of the 1950s as a respectful, recognisable stylized 3D caricature: a lean, athletic man of about thirty with a long face, a high forehead with thinning light-brown hair combed back, strong dark eyebrows, a strong nose and an intense, focused look, wearing a plain all-white 1950s football kit with a white collar, long white shorts, white socks and old brown leather boots) heads the old leather ball powerfully into the net past a goalkeeper in a dark kit, the crowd behind the goal leaping up; a 1950s stadium; warm sepia-tinted vintage grading with subtle film grain. No text, no letters, no numbers, no logos, no crests, no flags, no watermark, no extra limbs, no duplicate characters.",
+   "seed": 86590,
+   "provider": "codex",
+   "model": "gpt-6-astra (Codex image tool)",
+   "width": 1088,
+   "height": 1920,
+   "steps": 0,
+   "licence": "GPT Image through the Codex CLI image tool; under the OpenAI terms the output belongs to the account holder",
+   "sha256": "67ebd06177087097c30a5cbf4c6a0ea08102a56238fd14c822e75c54a4d806d4",
+   "createdAt": "2026-10-29T20:29:00.412Z"
+  },
+  "shots/card-4.jpg": {
+   "prompt": "Premium stylized 3D family animation film still with the polish of a modern feature-animation studio, not photorealistic and not babyish: expressive faces, beautifully detailed soft fur and fabric, cinematic warm light, a rich detailed background, a palette of deep navy blue, warm gold, lush pitch green and cream white with restrained orange and plum accents. Full-frame vertical 9:16 composition, edge-to-edge background, no borders or letterboxing. The top fifth of the frame is calm sky, stands or background with no heads, faces, hands or ball; every head and face sits between one fifth and two thirds of the height, away from the side edges; the bottom quarter is simple grass, floor or crowd seen from behind, without faces. Alfredo Di Stéfano (the Argentine-born Spanish footballer of the 1950s as a respectful, recognisable stylized 3D caricature: a lean, athletic man of about thirty with a long face, a high forehead with thinning light-brown hair combed back, strong dark eyebrows, a strong nose and an intense, focused look, wearing a plain all-white 1950s football kit with a white collar, long white shorts, white socks and old brown leather boots) in his all-white kit raises his arms in celebration in front of a huge, packed 1950s stadium at night under the floodlights, the white-clad crowd cheering; his teammates (1950s footballers in plain all-white kits with long white shorts) running towards him; warm vintage colour grading with subtle film grain. No text, no letters, no numbers, no logos, no crests, no flags, no watermark, no extra limbs, no duplicate characters.",
+   "seed": 29730,
+   "provider": "codex",
+   "model": "gpt-6-astra (Codex image tool)",
+   "width": 1088,
+   "height": 1920,
+   "steps": 0,
+   "licence": "GPT Image through the Codex CLI image tool; under the OpenAI terms the output belongs to the account holder",
+   "sha256": "1d3350b161911b52e2be3bb188514a9124e3ba81ac013a97c2af87613b4ddff4",
+   "createdAt": "2026-10-29T20:30:01.146Z"
+  },
+  "shots/portrait.jpg": {
+   "prompt": "Premium stylized 3D family animation film still with the polish of a modern feature-animation studio, not photorealistic and not babyish: expressive faces, beautifully detailed soft fur and fabric, cinematic warm light, a rich detailed background, a palette of deep navy blue, warm gold, lush pitch green and cream white with restrained orange and plum accents. Full-frame vertical 9:16 composition, edge-to-edge background, no borders or letterboxing. The top fifth of the frame is calm sky, stands or background with no heads, faces, hands or ball; every head and face sits between one fifth and two thirds of the height, away from the side edges; the bottom quarter is simple grass, floor or crowd seen from behind, without faces. a tight head-and-shoulders close-up portrait of Alfredo Di Stéfano (the Argentine-born Spanish footballer of the 1950s as a respectful, recognisable stylized 3D caricature: a lean, athletic man of about thirty with a long face, a high forehead with thinning light-brown hair combed back, strong dark eyebrows, a strong nose and an intense, focused look, wearing a plain all-white 1950s football kit with a white collar, long white shorts, white socks and old brown leather boots) that fills the whole frame: his face large in the upper middle of the frame, the collar of his white shirt at the bottom edge, looking slightly to the side with a calm, confident half-smile, a plain warm cream background, soft studio light, the look of a 1950s collectible football card; no body below the chest. No text, no letters, no numbers, no logos, no crests, no flags, no watermark, no extra limbs, no duplicate characters.",
+   "seed": 79486,
+   "provider": "codex",
+   "model": "gpt-6-astra (Codex image tool)",
+   "width": 1088,
+   "height": 1920,
+   "steps": 0,
+   "licence": "GPT Image through the Codex CLI image tool; under the OpenAI terms the output belongs to the account holder",
+   "sha256": "76f804648de78129fcd523ca3d976740f5ed51108dcc66bff90a3e90e3c2db24",
+   "createdAt": "2026-10-29T20:30:01.202Z"
+  },
+  "shots/award-1.jpg": {
+   "prompt": "Premium stylized 3D family animation film still with the polish of a modern feature-animation studio, not photorealistic and not babyish: expressive faces, beautifully detailed soft fur and fabric, cinematic warm light, a rich detailed background, a palette of deep navy blue, warm gold, lush pitch green and cream white with restrained orange and plum accents. Full-frame vertical 9:16 composition, edge-to-edge background, no borders or letterboxing. The top fifth of the frame is calm sky, stands or background with no heads, faces, hands or ball; every head and face sits between one fifth and two thirds of the height, away from the side edges; the bottom quarter is simple grass, floor or crowd seen from behind, without faces. Alfredo Di Stéfano (the Argentine-born Spanish footballer of the 1950s as a respectful, recognisable stylized 3D caricature: a lean, athletic man of about thirty with a long face, a high forehead with thinning light-brown hair combed back, strong dark eyebrows, a strong nose and an intense, focused look, wearing a plain all-white 1950s football kit with a white collar, long white shorts, white socks and old brown leather boots) in an elegant 1950s dark suit and tie holds up a luminous golden football-shaped trophy on a small stage, smiling modestly, photographers with old flash cameras around him, warm golden light; warm vintage colour grading with subtle film grain. No text, no letters, no numbers, no logos, no crests, no flags, no watermark, no extra limbs, no duplicate characters.",
+   "seed": 5131,
+   "provider": "codex",
+   "model": "gpt-6-astra (Codex image tool)",
+   "width": 1088,
+   "height": 1920,
+   "steps": 0,
+   "licence": "GPT Image through the Codex CLI image tool; under the OpenAI terms the output belongs to the account holder",
+   "sha256": "3cbff4c5fe5a48fb1041ebe55f89dfbc700f843f01ae291ae93b575753418b6b",
+   "createdAt": "2026-10-29T20:30:01.262Z"
+  },
+  "shots/skill-1.jpg": {
+   "prompt": "Premium stylized 3D family animation film still with the polish of a modern feature-animation studio, not photorealistic and not babyish: expressive faces, beautifully detailed soft fur and fabric, cinematic warm light, a rich detailed background, a palette of deep navy blue, warm gold, lush pitch green and cream white with restrained orange and plum accents. Full-frame vertical 9:16 composition, edge-to-edge background, no borders or letterboxing. The top fifth of the frame is calm sky, stands or background with no heads, faces, hands or ball; every head and face sits between one fifth and two thirds of the height, away from the side edges; the bottom quarter is simple grass, floor or crowd seen from behind, without faces. Alfredo Di Stéfano (the Argentine-born Spanish footballer of the 1950s as a respectful, recognisable stylized 3D caricature: a lean, athletic man of about thirty with a long face, a high forehead with thinning light-brown hair combed back, strong dark eyebrows, a strong nose and an intense, focused look, wearing a plain all-white 1950s football kit with a white collar, long white shorts, white socks and old brown leather boots) stands in the middle of an old 1950s pitch with the old leather ball at his feet, head up, scanning the whole field like a conductor, teammates from his teammates (1950s footballers in plain all-white kits with long white shorts) and opponents (1950s footballers in plain dark red shirts and black shorts) around him; a full stadium; warm sepia-tinted vintage grading with subtle film grain. No text, no letters, no numbers, no logos, no crests, no flags, no watermark, no extra limbs, no duplicate characters.",
+   "seed": 59016,
+   "provider": "codex",
+   "model": "gpt-6-astra (Codex image tool)",
+   "width": 1088,
+   "height": 1920,
+   "steps": 0,
+   "licence": "GPT Image through the Codex CLI image tool; under the OpenAI terms the output belongs to the account holder",
+   "sha256": "37cfd0dbcf135d9b19fe769211640adc6125ff91467407e773fa7383e9f138f9",
+   "createdAt": "2026-10-29T20:30:01.319Z"
+  },
+  "shots/skill-2.jpg": {
+   "prompt": "Premium stylized 3D family animation film still with the polish of a modern feature-animation studio, not photorealistic and not babyish: expressive faces, beautifully detailed soft fur and fabric, cinematic warm light, a rich detailed background, a palette of deep navy blue, warm gold, lush pitch green and cream white with restrained orange and plum accents. Full-frame vertical 9:16 composition, edge-to-edge background, no borders or letterboxing. The top fifth of the frame is calm sky, stands or background with no heads, faces, hands or ball; every head and face sits between one fifth and two thirds of the height, away from the side edges; the bottom quarter is simple grass, floor or crowd seen from behind, without faces. Alfredo Di Stéfano (the Argentine-born Spanish footballer of the 1950s as a respectful, recognisable stylized 3D caricature: a lean, athletic man of about thirty with a long face, a high forehead with thinning light-brown hair combed back, strong dark eyebrows, a strong nose and an intense, focused look, wearing a plain all-white 1950s football kit with a white collar, long white shorts, white socks and old brown leather boots) sprints back to defend near his own goal and slides in to take the old leather ball cleanly from an attacker from opponents (1950s footballers in plain dark red shirts and black shorts); a 1950s stadium; warm sepia-tinted vintage grading with subtle film grain. No text, no letters, no numbers, no logos, no crests, no flags, no watermark, no extra limbs, no duplicate characters.",
+   "seed": 62749,
+   "provider": "codex",
+   "model": "gpt-6-astra (Codex image tool)",
+   "width": 1088,
+   "height": 1920,
+   "steps": 0,
+   "licence": "GPT Image through the Codex CLI image tool; under the OpenAI terms the output belongs to the account holder",
+   "sha256": "c7be17654887c2f0465a9177a94d9dc57e40bb8920ab92976ba473d08d5a24c8",
+   "createdAt": "2026-10-29T20:30:01.377Z"
+  },
+  "shots/intro.jpg": {
+   "prompt": "Premium stylized 3D family animation film still with the polish of a modern feature-animation studio, not photorealistic and not babyish: expressive faces, beautifully detailed soft fur and fabric, cinematic warm light, a rich detailed background, a palette of deep navy blue, warm gold, lush pitch green and cream white with restrained orange and plum accents. Tall vertical composition: the main action and every face in the middle of the frame, the top sixth calm and uncluttered, the bottom quarter simple grass, floor or crowd without faces. the series title moment: Matvey (a small six-year-old anthropomorphic raccoon boy with soft grey-brown fur, a dark eye mask, a white muzzle, big lively dark-brown eyes, round ears with white edges and a fluffy tail with dark rings, wearing a plain royal-blue football kit with white collar trim, blue-and-white striped socks and blue-and-white boots) stops a rolling classic black-and-white football with his boot and grins with excitement; Sofia (his sister, an eight-year-old anthropomorphic red squirrel girl, a little taller than Matvey, with a round childlike face, chestnut-orange fur, a cream muzzle, tufted ears, big warm amber eyes, a short high ponytail with a plum hair band and a large fluffy curled tail, wearing a plain plum-purple zip tracksuit with thin white stripes and white-and-lilac trainers) turns and gestures enthusiastically toward a luminous golden football-shaped trophy on a dark plinth between them; a soft golden light sweeps across the trophy, a few golden sparkles in the air; a beautiful stadium at golden hour with floodlights, faint white tactical chalk arrows and circles on the grass. No text, no letters, no numbers, no logos, no crests, no flags, no watermark, no extra limbs, no duplicate characters.",
+   "seed": 58198,
+   "provider": "codex",
+   "model": "gpt-6-astra (Codex image tool)",
+   "width": 1088,
+   "height": 1920,
+   "steps": 0,
+   "licence": "GPT Image through the Codex CLI image tool; under the OpenAI terms the output belongs to the account holder Copied from episode 1 (football-legends-01-matthews/shots/intro.jpg), the series intro picture.",
+   "refs": {
+    "../../series/football-legends/cast/matvey-face.png": "70d429f91006b8d818eb13f653e5cc6ad1c5726feade2bc94c8aa4e44dd496c2",
+    "../../series/football-legends/cast/hosts-full.png": "49c92b4bca5df88e90d529034e158fb7a48a79de4c7f98d49ccf764944d2be35",
+    "../../series/football-legends/cast/sofia-face.png": "8e8f0e504835d506d25edb8123c78392be69f0457631dfa5fe3a8259adafd914"
+   },
+   "sha256": "4c541222ac915963be6d99eb0851704ccf66b6076b2bc2628d004861a1654dcc",
+   "createdAt": "2026-10-28T18:10:22.460Z"
+  }
+ }
+}

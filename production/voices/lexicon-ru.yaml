@@ -377,3 +377,39 @@ words:
   - word: Кубка
     say: К+убка
     source: 'ru.wiktionary, «кубок»: Р. ед. ч. «ку́бка» (checked by hand, 2026-10-28)'
+  - word: Альфредо
+    say: Альфр+едо
+    source: 'ru.wikipedia, «Ди Стефано, Альфредо»: «…Альфре́до Ди Сте́фано Лаулье́ (исп. Alfredo Di St…» (storygro stress --lookup, 2026-10-29)'
+  - word: Испании
+    say: Исп+ании
+    source: 'ru.wiktionary, «Испания»: «…мн. ч. Им. Испа́ния Испа́нии Р. Испа́нии Испа́ний…» (storygro stress --lookup, 2026-10-29)'
+  - word: Реале
+    say: Ре+але
+    # the lookup matched an unrelated surname; this is «Реал» in the prepositional case, same stress
+    source: 'ru.wikipedia, «Реал Мадрид (футбольный клуб)»: «…«Реа́л Мадри́д»…»; предложный падеж «в Реа́ле» (checked by hand, 2026-10-29)'
+  - word: Буэнос-Айресе
+    say: Бу+энос-+Айресе
+    forms: [Буэнос-Айрес, Буэнос-Айреса]
+    source: 'ru.wikipedia, «Буэнос-Айрес»: «Буэ́нос-А́йрес» (checked by hand, 2026-10-29)'
+  - word: Реал
+    say: Ре+ал
+    source: 'ru.wikipedia, «Реал Мадрид (футбольный клуб)»: «…«Реа́л Мадри́д» (исп. Real Madrid Club de Fútb…» (storygro stress --lookup, 2026-10-29)'
+  - word: Мадрид
+    say: Мадр+ид
+    source: 'ru.wikipedia, «Реал Мадрид (футбольный клуб)»: «…«Реа́л Мадри́д» (исп. Real Madrid Club de Fútbol, испа…» (storygro stress --lookup, 2026-10-29)'
+  - word: Кубков
+    say: К+убков
+    source: 'ru.wikipedia, «Кубок обладателей кубков УЕФА»: «…Ку́бок облада́телей ку́бков (англ. UEFA Cup Winners'' Cup) — европей…» (storygro stress --lookup, 2026-10-29)'
+  - word: голы
+    say: г+олы
+    # homograph: го́лы (goals) and голы́ (naked). OmniVoice B said голы́ in football-legends-02 (the owner
+    # heard it, 29.10.2026) while the phonemes read `ɡ oː l i` — the recogniser does not tell these two
+    # apart, so there is no check: write г+олы in the script and listen
+    source: 'ru.wiktionary, «гол»: «Им. мн. го́лы» (checked by hand, 2026-10-29)'
+  - word: вперёд
+    say: впер+ёд
+    forms: [вперед]
+    # OmniVoice B, football-legends-02 (29.10.2026): unmarked `f p ɛ r j o d` — a full е in the first
+    # syllable, heard by the owner as «впЯред»; the right reading reduces it
+    check: { right: 'p[ʲ]? [ɪiəɨ]ː? ?[rɾ]', wrong: 'p[ʲ]? [eɛæa]ː? ?[rɾ]' }
+    source: 'ru.wiktionary, «вперёд»: «впе-рёд» (ударение на ё; checked by hand, 2026-10-29)'

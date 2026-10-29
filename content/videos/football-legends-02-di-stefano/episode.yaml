@@ -1,0 +1,7 @@
+episode: 1
+id: football-legends-02-di-stefano
+title: "Альфредо Ди Стефано"
+sources: sources.md
+credits: CREDITS.md
+variants:
+  - { id: ru, spec: ru.reel.yaml }

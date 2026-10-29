@@ -1,0 +1,46 @@
+{
+ "_about": "Every text and number on screen. Sources and quotes in sources.md.",
+ "series": {
+  "_source": "Owner's brief «рекомендации» (2026-10-28): «Маленькие большие дела · Легенды футбола · Истории обладателей «Золотого мяча»»",
+  "title": "Легенды футбола",
+  "project": "Маленькие большие дела"
+ },
+ "player": {
+  "_source": "Owner's script, episode 2: «1957 и 1959 годы · «Реал Мадрид» · Нападающий»; Wikipedia «Alfredo Di Stéfano»: «He was awarded the Ballon d'Or in 1957 and 1959», Spain 1957–1961",
+  "name": "Альфредо Ди Стефано",
+  "country": "Испания",
+  "years": "1957 · 1959",
+  "label": "«Реал Мадрид» · нападающий"
+ },
+ "born": {
+  "_source": "Wikipedia «Alfredo Di Stéfano»: «Place of birth: Buenos Aires, Argentina»; «He played international football for Argentina and Colombia before becoming a naturalised citizen of Spain and playing for its national team»",
+  "city": "Буэнос-Айрес",
+  "spain": "сборная Испании",
+  "club": "«Реал Мадрид»"
+ },
+ "award": {
+  "_source": "Wikipedia «Alfredo Di Stéfano»: «He was awarded the Ballon d'Or in 1957 and 1959»",
+  "count": "2",
+  "label": "«Золотых мяча»",
+  "first": "1957",
+  "second": "1959"
+ },
+ "cups": {
+  "_source": "UEFA.com, «The greatest teams of all time: Real Madrid 1956-60» (2015): «In their five consecutive European Cup-winning campaigns…»; «Di Stéfano notably scored in all five of their final wins»",
+  "count": "5",
+  "label": "Кубков чемпионов подряд",
+  "years": "1956–1960"
+ },
+ "skill": {
+  "_source": "The owner's script, episode 2: «Его особенность заключалась в универсальности»",
+  "title": "Универсальность"
+ },
+ "question": {
+  "_source": "The owner's script, episode 2: «Вопрос зрителю: «Как думаешь, что полезнее для команды: забивать самому или уметь помогать всем игрокам?»»",
+  "text": "Как думаешь, что полезнее для команды: забивать самому или уметь помогать всем игрокам?"
+ },
+ "answer": {
+  "_source": "The owner's script, episode 2: «Наверное, лучший ответ — и то и другое»",
+  "text": "И то и другое"
+ }
+}

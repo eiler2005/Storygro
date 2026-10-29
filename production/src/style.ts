@@ -166,10 +166,13 @@ export function scaffold(dir: string, style: LoadedStyle, opts: { lang?: string;
       const images = isObject(current.images) ? current.images : {};
       const look = String(images.prompt ?? style.def.images.prompt).replace(/\bwide composition\b/gi, 'vertical composition');
       doc.set('images', { ...images, width: 1088, height: 1920,
-        prompt: `Full-frame vertical 9:16 composition, edge-to-edge background, no borders or letterboxing. ${look} Keep complete faces away from the edges and leave space for separately drawn titles, fact cards and captions. No generated text.` });
+        // Instagram also shows the Reel cropped to 4:5 in the feed, which hides the top and bottom 285 px.
+        prompt: `Full-frame vertical 9:16 composition, edge-to-edge background, no borders or letterboxing. ${look} The top fifth of the frame is calm sky, stands or background with no heads, faces, hands or ball; every head and face sits between one fifth and two thirds of the height, away from the side edges; the bottom quarter is simple ground without faces. Leave space for separately drawn titles, fact cards and captions. No generated text.` });
     }
     // Starting sizes for the illustration template; the storyboard still needs visual review.
-    const scenes = current.scenes as { scene: string; props?: Record<string, unknown> }[];
+    const scenes = current.scenes as { id: string; scene: string; props?: Record<string, unknown> }[];
+    // An explicit cover, so deliver writes one to upload: the first frame, which Instagram would pick anyway.
+    if (!isObject(current.stills) || current.stills.cover === undefined) doc.setIn(['stills', 'cover'], `${scenes[0]!.id}@0`);
     for (const [i, scene] of scenes.entries()) {
       if (scene.scene !== 'illustration' || !scene.props) continue;
       const p = scene.props;
@@ -178,7 +181,7 @@ export function scaffold(dir: string, style: LoadedStyle, opts: { lang?: string;
       for (const [j, shot] of (Array.isArray(p.shots) ? p.shots : []).entries())
         if (isObject(shot) && shot.zoom === undefined) doc.setIn(['scenes', i, 'props', 'shots', j, 'zoom'], 0.045);
     }
-    doc.commentBefore = `${doc.commentBefore ?? ''}\n Instagram Reels: full-frame picture, no padding; safe margins apply to text.\n Review every face, cue and caption, then retain Original / 9:16 during upload.`;
+    doc.commentBefore = `${doc.commentBefore ?? ''}\n Instagram Reels: full-frame picture, no padding; safe margins apply to text.\n The feed crops the Reel to 4:5 and link previews to 1:1: check heads and the cover with storygro still --guides,\n then QA's feed-preview.jpg and cover-preview.jpg; a long caption under a face: scene captions: { maxWords: 3 }.\n Review every face, cue and caption, then retain Original / 9:16 during upload.`;
     script = doc.toString();
   }
   mkdirSync(dir, { recursive: true });

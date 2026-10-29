@@ -317,6 +317,126 @@
    },
    "sha256": "e01d78b4f53087932db67723745ada46b3364d1d87c7076a11461b6d700d97cd",
    "createdAt": "2026-10-29T18:42:57.125Z"
+  },
+  "shots/hook-reels.jpg": {
+   "prompt": "Use case: identity-preserve reframe. Edit target: the attached existing Storygro football illustration. Keep it the same picture: the same characters with exactly the same faces, fur, hair, clothes and colours, the same poses and action, the same setting, light, premium stylized 3D rendering and colour grading. Only reframe it for a full-bleed vertical 9:16 Instagram Reel (portrait, 1024x1536 or the closest tall size): pull the camera back a little so the characters sit lower and slightly smaller in the frame, and extend the scene above them with more of the same background. Instagram crops the top of this picture in the feed, so no part of any head (hair, ears, ear tufts, ponytail, caps) may be in the top 22% of the frame; the top 22% shows only golden-hour sky and the softly blurred floodlit stadium. All faces sit between 26% and 62% of the frame height. Keep everything important away from the left and right 8% of the width, which will be cropped. Matvey still holds up the old sepia trading card with the portrait of the footballer, clearly visible, and Sofia still leans over his shoulder; keep the upper-left quarter calm sky and stands, free of heads. The image fills the whole canvas: no borders, no letterboxing, no panels, no text, no letters, no numbers, no logos, no crests, no watermark. Do not add or remove characters.",
+   "seed": 0,
+   "provider": "codex",
+   "model": "gpt-6-astra (Codex image tool)",
+   "width": 1088,
+   "height": 1920,
+   "steps": 0,
+   "licence": "GPT Image through the Codex CLI image tool; under the OpenAI terms the output belongs to the account holder. Edit of the referenced original; seed 0 is a placeholder, not reproducible.",
+   "refs": {
+    "shots/hook.jpg": "e9679ad65592efc276f2488594a05759407b336879537bf94dbf5b9860fc0433"
+   },
+   "sha256": "5697fd1356e9803b7d334f0bccced966cc9134d3c6ba26e6df15955964f5884f",
+   "createdAt": "2026-10-29T19:31:28.000Z"
+  },
+  "shots/what-1-reels.jpg": {
+   "prompt": "Use case: identity-preserve reframe. Edit target: the attached existing Storygro football illustration. Keep it the same picture: the same characters with exactly the same faces, fur, hair, clothes and colours, the same poses and action, the same setting, light, premium stylized 3D rendering and colour grading. Only reframe it for a full-bleed vertical 9:16 Instagram Reel (portrait, 1024x1536 or the closest tall size): pull the camera back a little so the characters sit lower and slightly smaller in the frame, and extend the scene above them with more of the same background. Instagram crops the top of this picture in the feed, so no part of any head (hair, ears, ear tufts, ponytail, caps) may be in the top 22% of the frame; the top 22% shows only golden-hour sky, floodlights and the stadium stand. All faces sit between 26% and 62% of the frame height. Keep everything important away from the left and right 8% of the width, which will be cropped. Sofia still stands beside the chalkboard on its easel with arrows and circles (no writing), holding chalk and raising one finger; Matvey still hugs the black-and-white football. The image fills the whole canvas: no borders, no letterboxing, no panels, no text, no letters, no numbers, no logos, no crests, no watermark. Do not add or remove characters.",
+   "seed": 0,
+   "provider": "codex",
+   "model": "gpt-6-astra (Codex image tool)",
+   "width": 1088,
+   "height": 1920,
+   "steps": 0,
+   "licence": "GPT Image through the Codex CLI image tool; under the OpenAI terms the output belongs to the account holder. Edit of the referenced original; seed 0 is a placeholder, not reproducible.",
+   "refs": {
+    "shots/what-1.jpg": "d6cd320abe4960772a72108696979cdcb31f56762799cfd0d5dc76dd631b1e77"
+   },
+   "sha256": "3917d07993520ee7f31c762f43d76090adce8f6afa385afffb5dd7519eab3390",
+   "createdAt": "2026-10-29T19:31:28.000Z"
+  },
+  "shots/what-2-reels.jpg": {
+   "prompt": "Use case: identity-preserve reframe. Edit target: the attached existing Storygro football illustration. Keep it the same picture: the same characters with exactly the same faces, fur, hair, clothes and colours, the same poses and action, the same setting, light, premium stylized 3D rendering and colour grading. Only reframe it for a full-bleed vertical 9:16 Instagram Reel (portrait, 1024x1536 or the closest tall size): pull the camera back a little so the characters sit lower and slightly smaller in the frame, and extend the scene above them with more of the same background. Instagram crops the top of this picture in the feed, so no part of any head (hair, ears, ear tufts, ponytail, caps) may be in the top 22% of the frame; the top 22% shows only golden-hour sky, trees and the stadium. All faces sit between 26% and 62% of the frame height. Keep everything important away from the left and right 8% of the width, which will be cropped. Matvey still dribbles the black-and-white ball past the orange cones and Sofia still reaches out a foot; keep the dotted chalk zigzag line on the grass. The image fills the whole canvas: no borders, no letterboxing, no panels, no text, no letters, no numbers, no logos, no crests, no watermark. Do not add or remove characters.",
+   "seed": 0,
+   "provider": "codex",
+   "model": "gpt-6-astra (Codex image tool)",
+   "width": 1088,
+   "height": 1920,
+   "steps": 0,
+   "licence": "GPT Image through the Codex CLI image tool; under the OpenAI terms the output belongs to the account holder. Edit of the referenced original; seed 0 is a placeholder, not reproducible.",
+   "refs": {
+    "shots/what-2.jpg": "75150294f712558b87a22a202f3034cd786f5cebd159701b418f239e7799e1e0"
+   },
+   "sha256": "7d494f5a377062b8f8de4fde06bd7e9089fe826e62fd82bb28c8a4ae416f2934",
+   "createdAt": "2026-10-29T19:31:28.000Z"
+  },
+  "shots/fifty-3-reels.jpg": {
+   "prompt": "Use case: identity-preserve reframe. Edit target: the attached existing Storygro football illustration. Keep it the same picture: the same characters with exactly the same faces, fur, hair, clothes and colours, the same poses and action, the same setting, light, premium stylized 3D rendering and colour grading. Only reframe it for a full-bleed vertical 9:16 Instagram Reel (portrait, 1024x1536 or the closest tall size): pull the camera back a little so the characters sit lower and slightly smaller in the frame, and extend the scene above them with more of the same background. Instagram crops the top of this picture in the feed, so no part of any head (hair, ears, ear tufts, ponytail, caps) may be in the top 22% of the frame; the top 22% shows only golden-hour sky and trees behind the pitch. All faces sit between 26% and 62% of the frame height. Keep everything important away from the left and right 8% of the width, which will be cropped. Matvey still holds up the old sepia football card and Sofia still stands beside the luminous golden football-shaped trophy on its dark plinth. The image fills the whole canvas: no borders, no letterboxing, no panels, no text, no letters, no numbers, no logos, no crests, no watermark. Do not add or remove characters.",
+   "seed": 0,
+   "provider": "codex",
+   "model": "gpt-6-astra (Codex image tool)",
+   "width": 1088,
+   "height": 1920,
+   "steps": 0,
+   "licence": "GPT Image through the Codex CLI image tool; under the OpenAI terms the output belongs to the account holder. Edit of the referenced original; seed 0 is a placeholder, not reproducible.",
+   "refs": {
+    "shots/fifty-3.jpg": "690848ad442bc81a7beac016f4e88ba03635dcee1212351e0f5019bea67126d2"
+   },
+   "sha256": "5896331fadb59e816180c6790de76d833b4e942e11747cf9d7e1685e3758fcf3",
+   "createdAt": "2026-10-29T19:31:28.000Z"
+  },
+  "shots/feint-3-reels.jpg": {
+   "prompt": "Use case: identity-preserve reframe. Edit target: the attached existing Storygro football illustration. Keep it the same picture: the same characters with exactly the same faces, fur, hair, clothes and colours, the same poses and action, the same setting, light, premium stylized 3D rendering and colour grading. Only reframe it for a full-bleed vertical 9:16 Instagram Reel (portrait, 1024x1536 or the closest tall size): pull the camera back a little so the characters sit lower and slightly smaller in the frame, and extend the scene above them with more of the same background. Instagram crops the top of this picture in the feed, so no part of any head (hair, ears, ear tufts, ponytail, caps) may be in the top 22% of the frame; the top 22% shows only hazy sky and the roof of the old stand. All faces sit between 26% and 62% of the frame height. Keep everything important away from the left and right 8% of the width, which will be cropped. The defender still sits on the muddy grass looking the wrong way and the footballer in the tangerine shirt still glides away with the ball along the touchline; the crowd in flat caps behind. The image fills the whole canvas: no borders, no letterboxing, no panels, no text, no letters, no numbers, no logos, no crests, no watermark. Do not add or remove characters.",
+   "seed": 0,
+   "provider": "codex",
+   "model": "gpt-6-astra (Codex image tool)",
+   "width": 1088,
+   "height": 1920,
+   "steps": 0,
+   "licence": "GPT Image through the Codex CLI image tool; under the OpenAI terms the output belongs to the account holder. Edit of the referenced original; seed 0 is a placeholder, not reproducible.",
+   "refs": {
+    "shots/feint-3.jpg": "a4964f8c45b29264c61cf8a53f746b13aba5911afc67efe45f6828d3b882ad83"
+   },
+   "sha256": "f5452e2f3870ce1ba6e6cfc3a0f1a9def4fda356fb8d529b465d4659a59e2b6b",
+   "createdAt": "2026-10-29T19:31:28.000Z"
+  },
+  "shots/final-reels.jpg": {
+   "prompt": "Use case: identity-preserve reframe. Edit target: the attached existing Storygro football illustration. Keep it the same picture: the same characters with exactly the same faces, fur, hair, clothes and colours, the same poses and action, the same setting, light, premium stylized 3D rendering and colour grading. Only reframe it for a full-bleed vertical 9:16 Instagram Reel (portrait, 1024x1536 or the closest tall size): pull the camera back a little so the characters sit lower and slightly smaller in the frame, and extend the scene above them with more of the same background. Instagram crops the top of this picture in the feed, so no part of any head (hair, ears, ear tufts, ponytail, caps) may be in the top 22% of the frame; the top 22% shows only sunny sky, the two white domed towers and the upper tiers of the stadium. All faces sit between 26% and 62% of the frame height. Keep everything important away from the left and right 8% of the width, which will be cropped. The two teams still walk out side by side, the footballer in the tangerine shirt at the front of the Blackpool players; Matvey and Sofia still sit small in the front row of the old stands. Lay the picture out in bands of the frame height: the players' heads between 24% and 32%, their bodies down to about 50%; Matvey's and Sofia's heads, ears included, between 46% and 54%, their faces ending by 62%, their bodies by 70%. From 66% to 78% there must be no face at all, because a caption covers it: only the hosts' bodies, the wooden barrier and the backs of spectators' flat caps. The image fills the whole canvas: no borders, no letterboxing, no panels, no text, no letters, no numbers, no logos, no crests, no watermark. Do not add or remove characters.",
+   "seed": 0,
+   "provider": "codex",
+   "model": "gpt-6-astra (Codex image tool)",
+   "width": 1088,
+   "height": 1920,
+   "steps": 0,
+   "licence": "GPT Image through the Codex CLI image tool; under the OpenAI terms the output belongs to the account holder. Edit of the referenced original; seed 0 is a placeholder, not reproducible.",
+   "refs": {
+    "shots/final.jpg": "c712f82fb49bf59eb2d0fcf48f5a62b495a276f21cb91a8054ebdfe004b7f10a"
+   },
+   "sha256": "c62c2e3b6a1b8d953e286346423ea04238442dab82b59cc9aa256bcd4c164a09",
+   "createdAt": "2026-10-29T19:34:42.000Z"
+  },
+  "shots/comeback-1-reels.jpg": {
+   "prompt": "Use case: identity-preserve reframe. Edit target: the attached existing Storygro football illustration. Keep it the same picture: the same characters with exactly the same faces, fur, hair, clothes and colours, the same poses and action, the same setting, light, premium stylized 3D rendering and colour grading. Only reframe it for a full-bleed vertical 9:16 Instagram Reel (portrait, 1024x1536 or the closest tall size): pull the camera back a little so the characters sit lower and slightly smaller in the frame, and extend the scene above them with more of the same background. Instagram crops the top of this picture in the feed, so no part of any head (hair, ears, ear tufts, ponytail, caps) may be in the top 22% of the frame; the top 22% shows only sky and the old wooden stadium scoreboard with blank panels. All faces sit between 26% and 62% of the frame height. Keep everything important away from the left and right 8% of the width, which will be cropped. The footballer in the tangerine shirt still looks up, calm and determined, his disappointed teammates around him; keep the left third of the upper middle calm (stands, no faces). The image fills the whole canvas: no borders, no letterboxing, no panels, no text, no letters, no numbers, no logos, no crests, no watermark. Do not add or remove characters.",
+   "seed": 0,
+   "provider": "codex",
+   "model": "gpt-6-astra (Codex image tool)",
+   "width": 1088,
+   "height": 1920,
+   "steps": 0,
+   "licence": "GPT Image through the Codex CLI image tool; under the OpenAI terms the output belongs to the account holder. Edit of the referenced original; seed 0 is a placeholder, not reproducible.",
+   "refs": {
+    "shots/comeback-1.jpg": "6cb42187551f938c29161643dbb3abc11cc8ba0a9270f82f62f2fc0448335668"
+   },
+   "sha256": "7b0f391509e8e866f48103b543f1fd538673e9f5654a7ceb1999f4c54f7e4b04",
+   "createdAt": "2026-10-29T19:31:28.000Z"
+  },
+  "shots/comeback-3-reels.jpg": {
+   "prompt": "Use case: identity-preserve reframe. Edit target: the attached existing Storygro football illustration. Keep it the same picture: the same characters with exactly the same faces, fur, hair, clothes and colours, the same poses and action, the same setting, light, premium stylized 3D rendering and colour grading. Only reframe it for a full-bleed vertical 9:16 Instagram Reel (portrait, 1024x1536 or the closest tall size): pull the camera back a little so the characters sit lower and slightly smaller in the frame, and extend the scene above them with more of the same background. Instagram crops the top of this picture in the feed, so no part of any head (hair, ears, ear tufts, ponytail, caps) may be in the top 22% of the frame; the top 22% shows only sky full of thrown flat caps, confetti and golden light; a raised fist may reach into it, but no head. All faces sit between 26% and 62% of the frame height. Keep everything important away from the left and right 8% of the width, which will be cropped. The teammates still hold the footballer in the tangerine shirt up in celebration and Matvey and Sofia still cheer in the front row with their arms up. Lay the picture out in bands of the frame height: the celebrated footballer's head between 24% and 32%, his teammates' heads between 30% and 44%; Matvey's and Sofia's heads, ears included, between 44% and 52%, their faces ending by 60%, their bodies by 70%. From 66% to 78% there must be no face at all, because a caption covers it: only the hosts' bodies, the barrier of the stands and the backs of spectators. The image fills the whole canvas: no borders, no letterboxing, no panels, no text, no letters, no numbers, no logos, no crests, no watermark. Do not add or remove characters.",
+   "seed": 0,
+   "provider": "codex",
+   "model": "gpt-6-astra (Codex image tool)",
+   "width": 1088,
+   "height": 1920,
+   "steps": 0,
+   "licence": "GPT Image through the Codex CLI image tool; under the OpenAI terms the output belongs to the account holder. Edit of the referenced original; seed 0 is a placeholder, not reproducible.",
+   "refs": {
+    "shots/comeback-3.jpg": "98a78a5fa95150023e467bcba0365ec80405fef7f9eea10060a52a91e4bdb364"
+   },
+   "sha256": "c09c2a3807bb6c62d0f184253365e69f8f96781ff94a54f2a2e5f73a83a568b9",
+   "createdAt": "2026-10-29T19:34:42.000Z"
   }
  }
 }

@@ -13,7 +13,7 @@
 
 | | | Кто и когда |
 |---|---|---|
-| Сценарий | ⚙️ техническое (агент) | agent 2026-10-29 |
+| Сценарий | ✏️ изменено после одобрения | agent 2026-10-29 |
 | Раскадровка | ⚙️ техническое (агент) | agent 2026-10-29 |
 | Выпуск | ⏳ ждёт |   |
 
@@ -23,13 +23,14 @@
 
 - [x] **owner** · Устраивает ли вариант с полями в Downloads/football-legends-01-matthews-instagram-2026-10-29? — 29.10.2026 владелец отклонил: «посмотри само видео — криво»; отдельно выделил красным пустое место по бокам и попросил изучить рекомендации и переделать.
 - [x] **owner** · Устраивают ли композиция без полей, размер карточки и субтитры в новой версии Downloads/football-legends-01-matthews-reels-native-2026-10-29? Превью — preview/reels-native.jpg. — 29.10.2026 владелец: «утверди также это для всего репо как формат ролика для reels в инстаграм … далее комит и пуш + документация». Исправленный формат принят как общий стандарт; агент не записывает одобрение релиза от имени владельца.
+- [x] **owner** · Опубликованная версия DfFuW2QPoWb обрезалась сверху в ленте (Instagram показывает Reels как 4:5). Новая версия в Downloads/football-legends-01-matthews-reels-feed-2026-10-29: восемь картинок перерисованы с запасом сверху, плашки ниже линии ленты, обложка — первый кадр. Устраивает ли она на телефоне — в Reels, в ленте и в сетке профиля? — 29.10.2026: публикация DfFzkZbhrdv всё равно была обрезана — Instagram хранил квадрат 1080×1080, центральную часть файла. Причина — квадратный кадр при загрузке. Владелец загрузил тот же файл как Reels с оригинальным кадром: «да, сработало», «запиши этот метод загрузки в репо».
 - [x] **owner** · После просмотра: подходят ли темп, картинка и сложность для детей 6–10 лет? Это вид для всей серии. — Владелец 28.10.2026: «давай комит и пуш, принимаем» — оставлено как есть
 - [x] **owner** · «Мэтьюз» озвучен латиницей (Matthews): ударение верное, но местами слышен английский звук «th». Оставить так или вернуть русское «Мэтьюз», где голос часто ставит ударение на «ю»? — Владелец 28.10.2026: «давай комит и пуш, принимаем» — оставлено как есть
 - [x] **owner** · Послушайте «камбэк» и «возрастным» — модель распознавания не уверена в ударении. «Камбэк» и «самым возрастным» — слова из вашего текста; оставить или заменить на «отыгралась» и «самым взрослым»? — Владелец 28.10.2026: «давай комит и пуш, принимаем» — оставлено как есть
 - [ ] **owner** · Матвей и София сейчас только в картинках, текст читает один рассказчик. Нужны ли им свои синтетические детские голоса и реплики в следующих выпусках?
 - [x] **owner** · Выпуск длится 87 с при ориентире 1:30–2:00: текст не растягивал, добавил только паузы после финта и «4:3». Устраивает или добавить сцену (например, анонс следующего героя — Ди Стефано)? — Владелец 28.10.2026: «давай комит и пуш, принимаем» — оставлено как есть
 
-**Заметки:** Сделано по просьбе владельца 28.10.2026: серия для Instagram на русском по документам «рекомендации» и «Футболисты_1 выпуск», картинки GPT Image (Codex), визуальные аналоги изучены. Лица ведущих показаны владельцу до генерации и утверждены («да, герои устраивают»); эталоны приложены к каждому кадру с ведущими (images.refs). Текст рассказчика — сценарий владельца дословно по его указанию («если он хороший и плотный и по делу, то не меняй»); все факты проверены, источники в sources.md. Рендер 87,04 с, 1080×1920, 30 fps, −14 LUFS, 21 картинка GPT Image (ни одна не отклонена), OmniVoice B 0,90; QA 13/13 pass (preview/QA.md). Кадры готового MP4 просмотрены, подписи не закрывают лица. Прослушивание и одобрение владельца не зафиксированы. Публикации не было; веб-версия отправлена владельцу на телефон. 28.10.2026 владелец посмотрел и ответил «принимаем»: выпуск оставлен как есть, вопросы по выпуску закрыты. Вопрос о голосах ведущих относится к следующим выпускам и остаётся открытым. Одобрение релиза в approvals владелец записывает сам (storygro approve --step release --by …); агент его не записывает. 29.10.2026 владелец сообщил об обрезке в Instagram. Веб-плеер отдаёт 720×720 из исходных 1080×1920; изготовлены отдельные review-экспорты 9:16 с отступами Reels и 1:1 с боковыми полями. Весь исходный кадр сохранён, звук скопирован побайтно; проверены полный декод, 2611 кадров и 39 визуальных моментов каждого файла. Исходный монтаж и его одобрения не заменялись; новые файлы не опубликованы и ждут просмотра владельца. QA экспортов и сравнение — preview/QA.instagram.md, preview/instagram-comparison.jpg. В тот же день владелец отклонил поля и показал вторую публикацию DfFqM86tGcx (тоже 720×720). Прежнее вписывание признано неудачным. Изучены рекомендации Meta на Adobe: вертикаль 9:16, звук, понятный монтаж и безопасное расположение текста. Сцены пересобраны на весь кадр: safe reels, короткие приподнятые субтитры, компактная карточка и плашки вне лиц, мягче камера. Кадр знакомства отредактирован встроенным imagegen; фактический промпт и хеш эталона в images.json. Одобрение новой композиции агентом — только техническое, не от имени владельца.
+**Заметки:** Сделано по просьбе владельца 28.10.2026: серия для Instagram на русском по документам «рекомендации» и «Футболисты_1 выпуск», картинки GPT Image (Codex), визуальные аналоги изучены. Лица ведущих показаны владельцу до генерации и утверждены («да, герои устраивают»); эталоны приложены к каждому кадру с ведущими (images.refs). Текст рассказчика — сценарий владельца дословно по его указанию («если он хороший и плотный и по делу, то не меняй»); все факты проверены, источники в sources.md. Рендер 87,04 с, 1080×1920, 30 fps, −14 LUFS, 21 картинка GPT Image (ни одна не отклонена), OmniVoice B 0,90; QA 13/13 pass (preview/QA.md). Кадры готового MP4 просмотрены, подписи не закрывают лица. Прослушивание и одобрение владельца не зафиксированы. Публикации не было; веб-версия отправлена владельцу на телефон. 28.10.2026 владелец посмотрел и ответил «принимаем»: выпуск оставлен как есть, вопросы по выпуску закрыты. Вопрос о голосах ведущих относится к следующим выпускам и остаётся открытым. Одобрение релиза в approvals владелец записывает сам (storygro approve --step release --by …); агент его не записывает. 29.10.2026 владелец сообщил об обрезке в Instagram. Веб-плеер отдаёт 720×720 из исходных 1080×1920; изготовлены отдельные review-экспорты 9:16 с отступами Reels и 1:1 с боковыми полями. Весь исходный кадр сохранён, звук скопирован побайтно; проверены полный декод, 2611 кадров и 39 визуальных моментов каждого файла. Исходный монтаж и его одобрения не заменялись; новые файлы не опубликованы и ждут просмотра владельца. QA экспортов и сравнение — preview/QA.instagram.md, preview/instagram-comparison.jpg. В тот же день владелец отклонил поля и показал вторую публикацию DfFqM86tGcx (тоже 720×720). Прежнее вписывание признано неудачным. Изучены рекомендации Meta на Adobe: вертикаль 9:16, звук, понятный монтаж и безопасное расположение текста. Сцены пересобраны на весь кадр: safe reels, короткие приподнятые субтитры, компактная карточка и плашки вне лиц, мягче камера. Кадр знакомства отредактирован встроенным imagegen; фактический промпт и хеш эталона в images.json. Одобрение новой композиции агентом — только техническое, не от имени владельца. Вечером 29.10.2026 владелец опубликовал её (DfFuW2QPoWb) и сообщил: «обрезается сверху». Причина — обрезка ленты 4:5; верхний отступ reels поднят до 320 px для всего репозитория. Владелец попросил переделать выпуск полностью («придется полностью, переделай»). Восемь картинок перерисованы с запасом сверху через GPT Image с оригиналом как эталоном, камера мягче в четырёх кадрах, обложка — первый кадр хука. Подробности — README и preview/QA.reels-feed.md.
 
 ## Хук
 
@@ -49,7 +50,7 @@
 
 **Картинки:**
 
-- @matvey on a green football pitch at golden hour holding up an old sepia football trading card with a portrait of @matthews, staring at it with huge astonished eyes and his mouth wide open, his ears up; @sofia leans in over his shoulder, curious, one eyebrow raised; a modern stadium softly blurred behind them, floodlights starting to glow — ok
+- shots/hook-reels.jpg — ok
 
 **Звук:** swell @0.0, pop @2.6
 
@@ -123,8 +124,8 @@
 
 **Картинки:**
 
-- @sofia on a modern green training pitch stands beside a dark green chalkboard on an easel covered with simple white chalk tactical drawings of arrows, circles and crosses (no writing at all), holding a piece of chalk and raising one finger with a curious, clever look; @matvey hugs a classic black-and-white football and listens with wide eyes; golden-hour light, a stadium behind — ok
-- `@def` @matvey dribbles a classic black-and-white football in a zigzag around a row of orange training cones, keeping the ball close to his boot, while @sofia stretches out one foot trying to steal it and misses, both laughing; a dotted white chalk line on the grass shows his zigzag path; golden-hour light on a modern pitch — ok
+- shots/what-1-reels.jpg — ok
+- `@def` shots/what-2-reels.jpg — ok
 
 **Звук:** pop @0.0
 
@@ -140,7 +141,7 @@
 
 - a one-on-one duel on a 1950s pitch near the right touchline: @matthews faces a crouching defender from @bolton, the old leather ball at his feet, the two of them eye to eye, tension in the air, crowd in flat caps leaning over the low wall behind; warm sepia-tinted vintage grading with subtle film grain — ok
 - `@shoulder` @matthews dips his left shoulder sharply as if to go left, his body leaning, while the defender from @bolton throws himself the wrong way with arms flailing; curved motion lines show the fake; the ball stays at Matthews' right foot; 1950s pitch, crowd behind, warm sepia-tinted vintage grading with subtle film grain — ok
-- `@gone` the defender from @bolton sits on the muddy grass looking confused, his head turned the wrong way, while @matthews glides away along the right touchline with the ball, light and quick; the crowd in flat caps cheers and laughs; warm sepia-tinted vintage grading with subtle film grain — ok
+- `@gone` shots/feint-3-reels.jpg — ok
 
 **На слух:** Мэтьюз — верно (дубль 1)
 
@@ -158,7 +159,7 @@
 
 **Картинки:**
 
-- a grand old national stadium with two white domed towers on a sunny day in May 1953, a hundred thousand spectators in flat caps and hats, the two teams walking out side by side: @blackpool and @bolton, with @matthews among the Blackpool players; in the front row of the old stands @matvey and @sofia sit small among the 1950s crowd in their own modern clothes, wide-eyed like time travellers; warm vintage colour grading with subtle film grain — ok
+- shots/final-reels.jpg — ok
 
 **Ударения:** Блэкпулу → Блэ́кпулу (автор)
 
@@ -178,9 +179,9 @@
 
 **Картинки:**
 
-- the @blackpool players stand with their heads down and hands on hips, disappointed, while @bolton players celebrate in the background; @matthews looks up, calm and determined; an old wooden stadium scoreboard with blank panels behind them; 1953 cup final atmosphere, warm sepia-tinted vintage grading with subtle film grain — ok
+- shots/comeback-1-reels.jpg — ok
 - `@back` @matthews races down the right wing and crosses the old leather ball into the penalty area with a sweeping kick, @blackpool teammates sprinting in, the whole crowd rising to its feet; dynamic low angle, motion lines, warm vintage colour grading with subtle film grain — ok
-- `@win` pure joy: @blackpool players hug @matthews and jump with their arms in the air, spectators throw their flat caps up into the sky, confetti and golden light; in the front row of the old stands @matvey and @sofia jump and cheer with their arms up; warm vintage colour grading turning brighter and more colourful — ok
+- `@win` shots/comeback-3-reels.jpg — ok
 
 **Звук:** riser @2.6, chime @4.3, swell @4.3
 
@@ -200,7 +201,7 @@
 
 - @matthews-old still dribbles the ball past a much younger, surprised defender in a plain white shirt in a 1960s match, light on his feet, a full stadium behind; warm vintage 1960s colour grading with subtle film grain — ok
 - `@fifty` @matthews-old waves goodbye to a cheering crowd at the end of his last match, smiling warmly, his teammates applauding around him, the evening sun low and golden over the old stadium; warm vintage 1960s colour grading — ok
-- `@record` @matvey and @sofia on a modern pitch at golden hour beside a luminous golden football-shaped trophy on a dark plinth; Matvey holds up an old sepia football card of @matthews and counts on his fingers in amazement; Sofia smiles knowingly with her paws behind her back — ok
+- `@record` shots/fifty-3-reels.jpg — ok
 
 **На слух:** Мэтьюз — верно (дубль 1)
 

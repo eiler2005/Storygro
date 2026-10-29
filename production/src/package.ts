@@ -58,8 +58,49 @@ export function deliverables(l: LoadedSpec, tl: Timeline) {
     [join(w, 'board.pdf'), `${l.name}-storyboard.pdf`],
     [join(w, 'QA.md'), `${l.name}-QA.md`],
     ...[...Object.keys(tl.stills), ...Object.keys(tl.cards)].map((k): [string, string] => [join(w, 'stills', `${k}.png`), `${l.name}-${k}.png`]),
+    // QA's views of the file as the feed and link previews crop it
+    ...(tl.safe.crops ?? []).map((c): [string, string] => [join(w, `${c.name}-preview.jpg`), `${l.name}-${c.name}-preview.jpg`]),
   ];
   return { required, missing: required.filter(([src]) => !existsSync(src)).map(([src]) => src) };
+}
+
+/**
+ * How to upload a Reel without losing its frame, for the delivery folder: profiles with platform
+ * crops (`reels`, `vertical`) only. Instagram's post flows crop a portrait video to a square unless
+ * Original / 9:16 is chosen; the owner confirmed the Reels flow on 29 October 2026.
+ */
+export function uploadNote(l: LoadedSpec, tl: Timeline): string | null {
+  if (!tl.safe.crops?.length) return null;
+  const cover = tl.stills.cover !== undefined ? `${l.name}-cover.png` : null;
+  const views = tl.safe.crops.map((c) => `${l.name}-${c.name}-preview.jpg`).join(', ');
+  const size = `${tl.width}×${tl.height}`;
+  if (l.spec.lang === 'ru')
+    return [
+      `Загрузка в Instagram — ${l.name}.mp4 (${size}, 9:16)`,
+      '',
+      '1. Загружать как Reels: в приложении «+» → «Видео Reels». В «Публикации» и на сайте instagram.com',
+      '   кадр по умолчанию бывает квадратным: нажать иконку обрезки (две стрелки, слева внизу) → «Оригинал».',
+      '2. Превью перед публикацией должно быть вертикальным: виден верх кадра и субтитры внизу.',
+      '   Квадратное превью — верх и низ будут отрезаны.',
+      ...(cover ? [`3. Обложка — ${cover}: «Изменить обложку» → «Добавить из фотопленки».`] : ['3. Обложка — первый кадр ролика.']),
+      `4. После публикации: npm run storygro -- instagram-check <ссылка>. Instagram должен хранить ${size};`,
+      '   1080×1080 значит, что ролик обрезан до квадрата: удалить и загрузить заново.',
+      `5. Так ролик выглядит в ленте и в превью ссылки: ${views}.`,
+      '',
+    ].join('\n');
+  return [
+    `Uploading to Instagram — ${l.name}.mp4 (${size}, 9:16)`,
+    '',
+    '1. Upload it as a Reel: in the app, + → Reel. The Post flow and instagram.com can default to a square',
+    '   crop: press the crop icon (two arrows, bottom left) → Original.',
+    '2. The preview before sharing must be tall, showing the top of the frame and the captions at the bottom.',
+    '   A square preview means the top and bottom will be cut off.',
+    ...(cover ? [`3. Cover: ${cover} (Edit cover → Add from camera roll).`] : ['3. Cover: the first frame.']),
+    `4. After sharing: npm run storygro -- instagram-check <link>. Instagram should store ${size};`,
+    '   1080×1080 means the Reel was cropped to a square: delete it and upload again.',
+    `5. How it looks in the feed and in link previews: ${views}.`,
+    '',
+  ].join('\n');
 }
 
 /** QA result of the current master, or why it cannot be trusted. */

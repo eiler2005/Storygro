@@ -53,6 +53,8 @@ const SceneSpec = z.object({
   say: z.string().default(''),
   /** caption text when it should differ from `say` */
   caption: z.string().optional(),
+  /** shorter caption phrases in this scene, e.g. so a two-line caption does not cover a face */
+  captions: z.object({ maxWords: z.number().int().min(1) }).optional(),
   /** silence before and after the voice, seconds */
   pad: z.tuple([z.number(), z.number()]).default([0.25, 0.45]),
   /** minimum length, seconds */

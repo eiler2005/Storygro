@@ -32,6 +32,7 @@ scenes:
     say: >-
       It's already in the data. {#a}Employment … fell about [11%](=eleven percent). {#b}…
     caption: …                             # optional caption text instead of `say`
+    captions: { maxWords: 3 }              # optional shorter caption phrases in this scene
     pad: [0.25, 0.8]                       # silence before/after the voice
     min: 4                                 # optional minimum length
     energy: 0.4                            # music intensity 0..1

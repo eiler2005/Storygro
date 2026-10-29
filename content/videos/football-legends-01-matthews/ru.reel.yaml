@@ -24,7 +24,7 @@ theme: theme.css
 captions: { show: true, maxWords: 4 }
 transition: { kind: fade, dur: 0.3 }
 data: { facts: facts.json }
-stills: { cover: card@1.6, final: comeback@win, hosts: question@1.5 }
+stills: { cover: hook@0, final: comeback@win, hosts: question@1.5 }
 images:
   # GPT Image through the Codex CLI; the 3D look and palette from the owner's brief
   provider: codex
@@ -90,8 +90,9 @@ scenes:
     sfx: [{ at: start, kind: swell, gain: 0.25 }, { at: age, kind: pop, gain: 0.35 }]
     props:
       shots:
-        - { image: shots/hook.jpg, prompt: '@matvey on a green football pitch at golden hour holding up an old sepia football trading card with a portrait of @matthews, staring at it with huge astonished eyes and his mouth wide open, his ears up; @sofia leans in over his shoulder, curious, one eyebrow raised; a modern stadium softly blurred behind them, floodlights starting to glow', move: in, zoom: 0.045, focus: { x: 0.45, y: 0.55 } }
-      # left: Sofia's face fills the top right
+        # headroom for the 4:5 feed crop (29.10.2026): edit prompt and original checksum in images.json
+        - { image: shots/hook-reels.jpg, move: in, zoom: 0.045, focus: { x: 0.45, y: 0.55 } }
+      # left, in the sky above the hosts (the picture keeps the top fifth free)
       badge: { valueFrom: facts.age.value, labelFrom: facts.age.label, at: age, side: left, y: 0.01, size: 0.085 }
 
   # 2–4 с: микрозаставка рубрики
@@ -104,10 +105,10 @@ scenes:
     sfx: [{ at: start, kind: hit, gain: 0.3 }, { at: 0.5, kind: chime, gain: 0.4 }]
     props:
       shots:
-        - { image: shots/intro.jpg, prompt: 'the series title moment: @matvey stops a rolling classic black-and-white football with his boot and grins with excitement; @sofia turns and gestures enthusiastically toward a luminous golden football-shaped trophy on a dark plinth between them; a soft golden light sweeps across the trophy, a few golden sparkles in the air; a beautiful stadium at golden hour with floodlights, faint white tactical chalk arrows and circles on the grass', move: in, zoom: 0.045, focus: { x: 0.5, y: 0.58 } }
+        - { image: shots/intro.jpg, prompt: 'the series title moment: @matvey stops a rolling classic black-and-white football with his boot and grins with excitement; @sofia turns and gestures enthusiastically toward a luminous golden football-shaped trophy on a dark plinth between them; a soft golden light sweeps across the trophy, a few golden sparkles in the air; a beautiful stadium at golden hour with floodlights, faint white tactical chalk arrows and circles on the grass', move: in, zoom: 0.02, focus: { x: 0.5, y: 0.58 } }
       title: { textFrom: facts.series.title, at: 0.15, size: 0.046 }
       labels:
-        - { textFrom: facts.series.project, x: 0.46, y: 0.23, at: 0.3, tone: plum }
+        - { textFrom: facts.series.project, x: 0.46, y: 0.275, at: 0.3, tone: plum }
 
   # 4–12 с: карточка игрока
   - id: card
@@ -153,8 +154,10 @@ scenes:
     sfx: [{ at: start, kind: pop, gain: 0.3 }]
     props:
       shots:
-        - { image: shots/what-1.jpg, prompt: '@sofia on a modern green training pitch stands beside a dark green chalkboard on an easel covered with simple white chalk tactical drawings of arrows, circles and crosses (no writing at all), holding a piece of chalk and raising one finger with a curious, clever look; @matvey hugs a classic black-and-white football and listens with wide eyes; golden-hour light, a stadium behind', move: in, zoom: 0.045, focus: { x: 0.5, y: 0.58 } }
-        - { at: def, image: shots/what-2.jpg, prompt: '@matvey dribbles a classic black-and-white football in a zigzag around a row of orange training cones, keeping the ball close to his boot, while @sofia stretches out one foot trying to steal it and misses, both laughing; a dotted white chalk line on the grass shows his zigzag path; golden-hour light on a modern pitch', move: right, zoom: 0.045, focus: { x: 0.5, y: 0.6 } }
+        # headroom for the 4:5 feed crop (29.10.2026): edit prompt and original checksum in images.json
+        - { image: shots/what-1-reels.jpg, move: in, zoom: 0.045, focus: { x: 0.5, y: 0.58 } }
+        # headroom for the 4:5 feed crop (29.10.2026): edit prompt and original checksum in images.json
+        - { at: def, image: shots/what-2-reels.jpg, move: right, zoom: 0.045, focus: { x: 0.5, y: 0.6 } }
 
   - id: feint
     scene: illustration
@@ -164,23 +167,27 @@ scenes:
     sfx: [{ at: shoulder, kind: whoosh, gain: 0.35 }, { at: gone, kind: pop, gain: 0.35 }]
     props:
       shots:
-        - { image: shots/feint-1.jpg, prompt: 'a one-on-one duel on a 1950s pitch near the right touchline: @matthews faces a crouching defender from @bolton, the old leather ball at his feet, the two of them eye to eye, tension in the air, crowd in flat caps leaning over the low wall behind; warm sepia-tinted vintage grading with subtle film grain', move: in, zoom: 0.045, focus: { x: 0.5, y: 0.58 } }
+        - { image: shots/feint-1.jpg, prompt: 'a one-on-one duel on a 1950s pitch near the right touchline: @matthews faces a crouching defender from @bolton, the old leather ball at his feet, the two of them eye to eye, tension in the air, crowd in flat caps leaning over the low wall behind; warm sepia-tinted vintage grading with subtle film grain', move: in, zoom: 0.02, focus: { x: 0.5, y: 0.58 } }
         - { at: shoulder, image: shots/feint-2.jpg, prompt: '@matthews dips his left shoulder sharply as if to go left, his body leaning, while the defender from @bolton throws himself the wrong way with arms flailing; curved motion lines show the fake; the ball stays at Matthews'' right foot; 1950s pitch, crowd behind, warm sepia-tinted vintage grading with subtle film grain', move: left, zoom: 0.045, focus: { x: 0.5, y: 0.58 } }
-        - { at: gone, image: shots/feint-3.jpg, prompt: 'the defender from @bolton sits on the muddy grass looking confused, his head turned the wrong way, while @matthews glides away along the right touchline with the ball, light and quick; the crowd in flat caps cheers and laughs; warm sepia-tinted vintage grading with subtle film grain', move: right, zoom: 0.045, focus: { x: 0.5, y: 0.6 } }
+        # headroom for the 4:5 feed crop (29.10.2026): edit prompt and original checksum in images.json
+        - { at: gone, image: shots/feint-3-reels.jpg, move: right, zoom: 0.045, focus: { x: 0.5, y: 0.6 } }
 
   - id: final
     scene: illustration
     say: 'В [1953](=тысяча девятьсот пятьдесят третьем) году он помог «Бл+экпулу» выиграть знаменитый финал Кубка Англии.'
     pad: [0.2, 0.35]
+    # one-line captions: a two-line phrase would cover the hosts' faces in the front row
+    captions: { maxWords: 3 }
     energy: 0.6
     sfx: [{ at: start, kind: swell, gain: 0.3 }]
     props:
       shots:
-        - { image: shots/final.jpg, prompt: 'a grand old national stadium with two white domed towers on a sunny day in May 1953, a hundred thousand spectators in flat caps and hats, the two teams walking out side by side: @blackpool and @bolton, with @matthews among the Blackpool players; in the front row of the old stands @matvey and @sofia sit small among the 1950s crowd in their own modern clothes, wide-eyed like time travellers; warm vintage colour grading with subtle film grain', move: in, zoom: 0.045, focus: { x: 0.5, y: 0.6 } }
-      # Labels sit between the players and hosts, above the caption strip.
+        # headroom for the 4:5 feed crop (29.10.2026): edit prompt and original checksum in images.json
+        - { image: shots/final-reels.jpg, move: in, zoom: 0.045, focus: { x: 0.5, y: 0.6 } }
+      # Labels sit in the sky above the players' heads, below the feed crop.
       labels:
-        - { textFrom: facts.final.title, x: 0.46, y: 0.38, at: 0.3, tone: navy }
-        - { textFrom: facts.final.year, x: 0.46, y: 0.43, at: 0.6, tone: accent }
+        - { textFrom: facts.final.title, x: 0.46, y: 0.22, at: 0.3, tone: navy }
+        - { textFrom: facts.final.year, x: 0.46, y: 0.27, at: 0.6, tone: accent }
 
   - id: comeback
     scene: illustration
@@ -191,9 +198,11 @@ scenes:
     sfx: [{ at: back, kind: riser, gain: 0.3 }, { at: win, kind: chime, gain: 0.55 }, { at: win, kind: swell, gain: 0.3 }]
     props:
       shots:
-        - { image: shots/comeback-1.jpg, prompt: 'the @blackpool players stand with their heads down and hands on hips, disappointed, while @bolton players celebrate in the background; @matthews looks up, calm and determined; an old wooden stadium scoreboard with blank panels behind them; 1953 cup final atmosphere, warm sepia-tinted vintage grading with subtle film grain', move: in, zoom: 0.045, focus: { x: 0.5, y: 0.6 } }
-        - { at: back, image: shots/comeback-2.jpg, prompt: '@matthews races down the right wing and crosses the old leather ball into the penalty area with a sweeping kick, @blackpool teammates sprinting in, the whole crowd rising to its feet; dynamic low angle, motion lines, warm vintage colour grading with subtle film grain', move: right, zoom: 0.045, focus: { x: 0.5, y: 0.58 } }
-        - { at: win, image: shots/comeback-3.jpg, prompt: 'pure joy: @blackpool players hug @matthews and jump with their arms in the air, spectators throw their flat caps up into the sky, confetti and golden light; in the front row of the old stands @matvey and @sofia jump and cheer with their arms up; warm vintage colour grading turning brighter and more colourful', move: out, zoom: 0.045, focus: { x: 0.5, y: 0.55 } }
+        # headroom for the 4:5 feed crop (29.10.2026): edit prompt and original checksum in images.json
+        - { image: shots/comeback-1-reels.jpg, move: in, zoom: 0.045, focus: { x: 0.5, y: 0.6 } }
+        - { at: back, image: shots/comeback-2.jpg, prompt: '@matthews races down the right wing and crosses the old leather ball into the penalty area with a sweeping kick, @blackpool teammates sprinting in, the whole crowd rising to its feet; dynamic low angle, motion lines, warm vintage colour grading with subtle film grain', move: right, zoom: 0.02, focus: { x: 0.5, y: 0.58 } }
+        # headroom for the 4:5 feed crop (29.10.2026): edit prompt and original checksum in images.json
+        - { at: win, image: shots/comeback-3-reels.jpg, move: out, zoom: 0.045, focus: { x: 0.5, y: 0.55 } }
       badge: { valueFrom: facts.final.before, labelFrom: facts.final.teams, at: 0.2, until: back, side: left, y: 0.34, tone: navy, size: 0.07 }
       labels:
         - { textFrom: facts.final.after, x: 0.75, y: 0.17, at: win, tone: accent }
@@ -208,7 +217,8 @@ scenes:
       shots:
         - { image: shots/fifty-1.jpg, prompt: '@matthews-old still dribbles the ball past a much younger, surprised defender in a plain white shirt in a 1960s match, light on his feet, a full stadium behind; warm vintage 1960s colour grading with subtle film grain', move: right, zoom: 0.045, focus: { x: 0.5, y: 0.58 } }
         - { at: fifty, image: shots/fifty-2.jpg, prompt: '@matthews-old waves goodbye to a cheering crowd at the end of his last match, smiling warmly, his teammates applauding around him, the evening sun low and golden over the old stadium; warm vintage 1960s colour grading', move: in, zoom: 0.045, focus: { x: 0.5, y: 0.55 } }
-        - { at: record, image: shots/fifty-3.jpg, prompt: '@matvey and @sofia on a modern pitch at golden hour beside a luminous golden football-shaped trophy on a dark plinth; Matvey holds up an old sepia football card of @matthews and counts on his fingers in amazement; Sofia smiles knowingly with her paws behind her back', move: out, zoom: 0.045, focus: { x: 0.5, y: 0.58 } }
+        # headroom for the 4:5 feed crop (29.10.2026): edit prompt and original checksum in images.json
+        - { at: record, image: shots/fifty-3-reels.jpg, move: out, zoom: 0.045, focus: { x: 0.5, y: 0.58 } }
       badge: { valueFrom: facts.career.end, labelFrom: facts.career.endLabel, at: fifty, until: record, side: left, y: 0.02, size: 0.085 }
       labels:
         - { textFrom: facts.career.record, x: 0.46, y: 0.61, at: record, tone: accent }
@@ -220,7 +230,7 @@ scenes:
     energy: 0.45
     props:
       shots:
-        - { image: shots/lesson.jpg, prompt: 'a warm meeting across time on a green pitch at golden hour: @matthews-old kneels on one knee and shows @matvey how to dip a shoulder over the ball, both concentrating, Matvey copying the move with his tongue out; @sofia stands beside them watching with a delighted smile; the glow of the setting sun, a stadium softly blurred behind', move: in, zoom: 0.045, focus: { x: 0.5, y: 0.58 } }
+        - { image: shots/lesson.jpg, prompt: 'a warm meeting across time on a green pitch at golden hour: @matthews-old kneels on one knee and shows @matvey how to dip a shoulder over the ball, both concentrating, Matvey copying the move with his tongue out; @sofia stands beside them watching with a delighted smile; the glow of the setting sun, a stadium softly blurred behind', move: in, zoom: 0.02, focus: { x: 0.5, y: 0.58 } }
 
   - id: skills
     scene: kinetic

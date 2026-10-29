@@ -111,6 +111,7 @@ test('Instagram Reels target builds native vertical timelines for every style an
     const tl = await buildTimeline({ ...l, spec: { ...l.spec, voice: { ...l.spec.voice, engine: 'none' } } }, { voice: false });
     assert.deepEqual([tl.width, tl.height, tl.fps, tl.safe.profile], [1080, 1920, 30, 'reels']);
     assert.equal(tl.captions.maxWords, 4);
+    assert.equal(tl.stills.cover, 0, 'the first frame is the explicit cover');
     assert.equal(tl.captions.show, style.def.id !== 'kinetic-type');
     if (style.def.id === 'kinetic-type') assert.equal(tl.blur, 4);
     if (style.def.id === 'cartoon') {
@@ -119,6 +120,7 @@ test('Instagram Reels target builds native vertical timelines for every style an
       const jobs = imageJobs(l);
       assert.equal(jobs.length, 4);
       assert.match(jobs[0]!.prompt, /Full-frame vertical 9:16/);
+      assert.match(jobs[0]!.prompt, /top fifth of the frame .* no heads, faces/);
       assert.doesNotMatch(jobs[0]!.prompt, /wide composition|\{subject\}|@host/);
       assert.match(jobs[0]!.prompt, /Flat comic book illustration/);
       assert.equal((l.spec.scenes[1]!.props.badge as { size: number }).size, 0.085);

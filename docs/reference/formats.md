@@ -31,15 +31,15 @@ format: { preset: vertical, fps: 30, blur: 4 }
 Platforms draw their interface over the video: the account name and caption at the bottom, the like/comment/share rail on the right, the header at the top. Text under that UI is unreadable. Storygro keeps per-platform margins in [`production/runtime/safe-zones.json`](../../production/runtime/safe-zones.json) and uses them three ways:
 
 1. the player exposes them to scenes and themes as `--rc-safe-top`, `--rc-safe-bottom`, `--rc-safe-left`, `--rc-safe-right`, `--rc-safe-x` and positions captions with `--rc-caption-bottom` (a theme may override them);
-2. `storygro still … --guides` and `preview --guides` paint the UI zones in red so you can see them;
+2. `storygro still … --guides` and `preview --guides` paint the UI zones in red so you can see them, and a profile's crop windows as yellow dashed lines;
 3. the storyboard and QA measure every visible text box at every cue and report text that reaches into the margins.
 
 The profile follows from the aspect ratio (`vertical`, `portrait`, `square`, `landscape`) or is named with `safe:` in the spec. Margins are in pixels on a 1080-wide reference and scale with the canvas width.
 
 | Profile | Top | Bottom | Left | Right | Caption baseline from bottom | Use |
 |---|---|---|---|---|---|---|
-| `vertical` (default for 9:16) | 250 | 460 | 60 | 200 | 490 | one cut for Reels and Shorts (union of both) |
-| `reels` | 220 | 460 | 60 | 150 | 490 | Instagram Reels, organic |
+| `vertical` (default for 9:16) | 320 | 460 | 60 | 200 | 490 | one cut for Reels and Shorts (union of both) |
+| `reels` | 320 | 460 | 60 | 150 | 490 | Instagram Reels, organic, including the 4:5 feed crop |
 | `shorts` | 250 | 400 | 50 | 200 | 430 | YouTube Shorts, organic |
 | `reels-ads` | 270 | 670 | 65 | 65 | 690 | Meta ads guidance |
 | `shorts-ads` | 288 | 672 | 48 | 192 | 690 | YouTube vertical ads guidance |
@@ -49,6 +49,8 @@ The profile follows from the aspect ratio (`vertical`, `portrait`, `square`, `la
 | `landscape` (1920×1080) | 150 | 190 | 140 | 140 | 54 | the historical launch film |
 
 **Where the numbers come from (checked 18 Oct 2026).** Platforms publish safe zones for ads only, and they disagree with each other and with third-party tools. The ad profiles follow the most cited figures: Meta — 14 % top, 35 % bottom, 6 % sides on 1080×1920 ([Hopper HQ summary of Meta guidance](https://www.hopperhq.com/blog/instagram-reel-size/)); YouTube vertical ads — 288 / 672 / 48 / 192 px ([Socialync](https://www.socialync.io/tools/safe-zones/youtube-shorts), [Revid](https://www.revid.ai/youtube-shorts-safe-zone)). The organic profiles are conservative estimates from measurements of current apps ([Adkit, March 2026](https://adkit.so/tools/safe-zones/youtube), [Adkit Meta](https://adkit.so/tools/safe-zones/meta)). Treat them as defaults: upload a private test and look at it on a phone; adjust the JSON if the apps change.
+
+**Instagram crops (29 Oct 2026).** Outside the Reels player Instagram shows a centred crop of the same 9:16 file: 4:5 in the home feed (285 px hidden at the top and the bottom), 3:4 on the profile grid (240 px), and a 1:1 square of the cover in link previews (420 px). The full-screen header alone needs about 220 px, so `reels` and `vertical` use 320 px at the top: the feed crop plus an inset. Instagram does not document these crops; the 4:5 and 3:4 figures come from [Hopper HQ](https://www.hopperhq.com/blog/instagram-reel-size/) and [Inro](https://www.inro.social/blog/instagram-post-size), and the square preview was measured on a published Reel. The profiles list these windows under `crops`: `feed` is how the video plays in the feed, and `cover` is how its cover appears in link previews. `--guides` draws them as yellow dashed lines. Text is checked against the margins automatically, and QA also fails cover text outside the `cover` square. Faces cannot be checked automatically. QA therefore writes `feed-preview.jpg` (the MP4 cropped like the feed at every caption phrase and scene) and `cover-preview.jpg` for a person to look at; `deliver` copies both and writes `UPLOAD.txt`. None of this helps if the upload itself crops the Reel to a square: see [Upload](../how-to/instagram-without-cropping.md#upload) and `instagram-check`. See [the Reels recipe](../how-to/instagram-without-cropping.md#one-reel-several-shapes).
 
 ### In a scene
 
@@ -65,6 +67,7 @@ captions: { show: true, maxWords: 5 }   # 5 words a phrase reads well at 9:16; 7
 ```
 
 - Phrases break after sentence punctuation, after a comma once a phrase has four words, or at `maxWords`. The spoken word is highlighted.
+- A scene can use shorter phrases with `captions: { maxWords: 3 }`. A long four-word phrase wraps to two lines and the taller box reaches higher, so use this where a face sits just above the caption strip. Subtitle files follow the same phrases.
 - The text is the script's spelling: say-as hints (`[11%](=одиннадцать процентов)`) show the written form; `caption:` on a scene replaces the caption text entirely (timings are then spread across the spoken span).
 - The theme styles `.rc-caption` and `.rc-word.on`; position and width come from the safe area.
 - `render` also writes `<name>.srt` and `<name>.vtt` with the same phrases and times (`storygro subs` rewrites them from the timeline). Upload them where a platform supports subtitle files (YouTube); on Instagram the burned-in captions are enough — do not switch on automatic captions on top of them.

@@ -2,7 +2,7 @@
 
 <!-- Generated from production/toolkit.yaml by `npm run docs:toolkit`. Edit the YAML, not this page. -->
 
-Every way Storygro makes content, in one bank: **23 methods**, **24 tools**, **4 styles**, **6 scene families** and **6 providers**, by production stage. Agents read [`production/toolkit.yaml`](../../production/toolkit.yaml) to pick an approach; this page is generated from it, and `npm test` fails when a command, style or scene is missing from the bank or a link is broken.
+Every way Storygro makes content, in one bank: **23 methods**, **25 tools**, **4 styles**, **6 scene families** and **6 providers**, by production stage. Agents read [`production/toolkit.yaml`](../../production/toolkit.yaml) to pick an approach; this page is generated from it, and `npm test` fails when a command, style or scene is missing from the bank or a link is broken.
 
 **Status:** *stable* — used across pieces · *pilot* — works, reviewed on one or two pieces · *planned* — not implemented.
 
@@ -15,7 +15,7 @@ Every way Storygro makes content, in one bank: **23 methods**, **24 tools**, **4
 | **voice** — Narration, sound and timing | [Local narration and timing](#local-narration-and-timing) · [Narrator design](#narrator-design) · [Pronunciation and say-as](#pronunciation-and-say-as) · [Russian stress and homographs](#russian-stress-and-homographs) · [Pronunciation dictionary and stress lookup](#pronunciation-dictionary-and-stress-lookup) · [Voice bench](#voice-bench) · [Chatterbox Multilingual](#chatterbox-multilingual) · [OmniVoice Russian narrator](#omnivoice-russian-narrator) · [Music and sound effects](#music-and-sound-effects) |
 | **make** — Storyboard, approval and rendering | [Stills and live preview](#stills-and-live-preview) · [Storyboard and approval](#storyboard-and-approval) · [Plan document and stepped approvals](#plan-document-and-stepped-approvals) · [Render](#render) · [Formats, safe areas and captions](#formats-safe-areas-and-captions) · [Carousel cards](#carousel-cards) · [Native full-frame Instagram Reels](#native-full-frame-instagram-reels) |
 | **check** — Technical QA and the human review | [Technical QA](#technical-qa) · [Human review](#human-review) |
-| **ship** — Release, publication record and metrics | [Episode tracker](#episode-tracker) · [Preserve a complete video with padding](#preserve-a-complete-video-with-padding) · [Release package](#release-package) · [Publication ledger and metrics](#publication-ledger-and-metrics) · [Platform upload and analytics APIs](#platform-upload-and-analytics-apis) |
+| **ship** — Release, publication record and metrics | [Episode tracker](#episode-tracker) · [Check what Instagram stored](#check-what-instagram-stored) · [Preserve a complete video with padding](#preserve-a-complete-video-with-padding) · [Release package](#release-package) · [Publication ledger and metrics](#publication-ledger-and-metrics) · [Platform upload and analytics APIs](#platform-upload-and-analytics-apis) |
 | **maintain** — Keep the repository and its media healthy | [Local environments](#local-environments) · [Repository checks](#repository-checks) · [Documentation previews, the toolkit page and the registry](#documentation-previews-the-toolkit-page-and-the-registry) · [CLI help](#cli-help) |
 
 A new piece usually takes one entry per stage: a topic (choose), sources and facts (research), a script in a style (write, look), narration (voice), storyboard and render (make), QA and your own review (check), a package (ship).
@@ -630,7 +630,7 @@ One 1080×1350 card per scene at its key moment, from a carousel spec with its o
 
 *method · stable* · commands: `new`
 
-Owner-approved 1080×1920 at 30 fps with edge-to-edge backgrounds, safe reels for text, short captions and individual overlay placement. No padding around a shrunken edit; inspect all shots, cues and final MP4 before retaining Original / 9:16 on upload.
+Owner-approved 1080×1920 at 30 fps with edge-to-edge backgrounds, safe reels for text, short captions and individual overlay placement. Text and heads stay below the 4:5 feed crop (320 px), the cover inside the 1:1 preview; still --guides draws both, QA checks cover text and writes feed and cover sheets of the MP4. No padding around a shrunken edit. Upload as a Reel keeping Original / 9:16 (UPLOAD.txt), then instagram-check the post.
 
 **Use when:** Every new or remade Instagram Reel, across styles and series.
 
@@ -675,6 +675,18 @@ One table across every episode and variant — stage, whose move, the three appr
 **How:** `npm run storygro -- tracker content/videos --md content/TRACKER.md`
 
 **See:** [docs](../../docs/explanation/content-workflow.md)
+
+### Check what Instagram stored
+
+*tool · stable* · commands: `instagram-check`
+
+Reads a published post's public embed page and measures the full-size cover frame Instagram stored, which has the stored video's shape; 1080×1920 passes, a square or 4:5 means the upload cropped the Reel. Unofficial page; reports a deleted or private post.
+
+**Use when:** Right after every Instagram upload, and before calling a published Reel cropped or fine.
+
+**How:** `npm run storygro -- instagram-check https://www.instagram.com/p/<code>/`
+
+**See:** [docs](../../docs/how-to/instagram-without-cropping.md#upload)
 
 ### Preserve a complete video with padding
 

@@ -68,6 +68,7 @@ Gates and checks: [quality](../explanation/quality.md).
 | Command | Does | Writes |
 |---|---|---|
 | `deliver <spec> [dir]` | copies one variant's complete set + manifest; refuses gaps | `~/Downloads/<name>/` by default |
+| `instagram-check <link>` | after an upload: measures the cover frame Instagram stored (via the public embed page) and fails unless it is 9:16 | prints e.g. `1080×1920 (9:16)`; exit 1 for a square or 4:5 |
 | `social <spec> <new-dir>` | optional explicitly requested exports with padding; preserves the entire master and AAC audio, verifies decoding and hashes; native Reels use scene composition and `render` | two bordered MP4s and `social-manifest.json`; [guide](../how-to/instagram-without-cropping.md) |
 | `package <episode.yaml> [dir]` | all variants of an episode → one release folder + manifest; refuses gaps | `.reel/releases/<episode>-<date>/` |
 | `series <series.yaml> [--md f]` | episodes of a series: length, approval, QA verdict, latest package | Markdown table |

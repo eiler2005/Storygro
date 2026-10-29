@@ -11,6 +11,11 @@ export function phrases(words: Word[], maxWords: number): Word[][] {
   const out: Word[][] = [];
   let cur: Word[] = [];
   for (const w of words) {
+    // a dash on its own after a full phrase belongs to that phrase, not to a caption of its own
+    if (!cur.length && out.length && /^[—–-]+$/.test(w.w)) {
+      out[out.length - 1]!.push(w);
+      continue;
+    }
     cur.push(w);
     const end = /[.!?…:;—][»"”)]*$/.test(w.w) || (/,[»"”)]*$/.test(w.w) && cur.length >= 4);
     if (end || cur.length >= maxWords) {
@@ -26,7 +31,7 @@ export function phrases(words: Word[], maxWords: number): Word[][] {
 export function subtitleCues(tl: Timeline): Cue[] {
   const cues: Cue[] = [];
   for (const s of tl.scenes) {
-    const ph = phrases(s.words, tl.captions?.maxWords ?? 7);
+    const ph = phrases(s.words, s.maxWords ?? tl.captions?.maxWords ?? 7);
     ph.forEach((p, i) => {
       const next = ph[i + 1];
       const start = s.start + Math.max(0, p[0]!.start - 0.08);

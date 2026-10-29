@@ -21,6 +21,8 @@ export interface TextBox {
   h: number;
   /** px the text sticks out of the box it sits in (a card, a band, a label); 0 inside or without one */
   over?: number;
+  /** reel seconds of the sample */
+  at?: number;
 }
 export interface SceneShot {
   id: string;
@@ -107,13 +109,18 @@ export async function captureScenes(l: LoadedSpec, tl: Timeline, opts: { samples
       const png = join(dir, `${s.id}.png`);
       writeFileSync(png, await tab.shot('jpeg', 80));
       const seen = await tab.eval<{ text: string; boxes: TextBox[] }>(VISIBLE_TEXT(s.id));
-      const boxes = [...seen.boxes];
-      if (opts.samples)
+      const boxes = seen.boxes.map((b) => ({ ...b, at: s.start + at }));
+      if (opts.samples) {
         // twice per cue: early (an overlay that leaves soon) and late (one still growing into its full size)
-        for (const c of new Set(Object.values(s.cues).flatMap((v) => [0.6, 1.4].map((d) => Math.min(Math.max(v + d, tIn), tOut))))) {
+        const times = new Set(Object.values(s.cues).flatMap((v) => [0.6, 1.4].map((d) => Math.min(Math.max(v + d, tIn), tOut))));
+        // and the cover: the platform shows that frame cropped
+        const cover = coverTime(tl);
+        if (cover >= s.start && cover < s.end) times.add(cover - s.start);
+        for (const c of times) {
           await tab.eval(`reel.seek(${s.start + c})`);
-          boxes.push(...(await tab.eval<{ boxes: TextBox[] }>(VISIBLE_TEXT(s.id))).boxes);
+          boxes.push(...(await tab.eval<{ boxes: TextBox[] }>(VISIBLE_TEXT(s.id))).boxes.map((b) => ({ ...b, at: s.start + c })));
         }
+      }
       shots.push({ id: s.id, at, png, text: seen.text.replace(/\n{2,}/g, '\n').trim(), boxes });
     }
     await assertNoErrors(tab, 'storyboard');
@@ -136,6 +143,24 @@ export function safeAreaMisses(shots: SceneShot[], safe: SafeArea, width: number
         : b.x + b.w > width - safe.right + tolerance ? 'right'
         : '';
       if (edge && !misses.some((m) => m.scene === s.id && m.text === b.t)) misses.push({ scene: s.id, text: b.t, edge });
+    }
+  return misses;
+}
+
+/** Reel seconds of the cover: `stills.cover`, or the first frame, which platforms use when none is chosen. */
+export const coverTime = (tl: Timeline) => tl.stills.cover ?? 0;
+
+/** Text of the cover frame that the `cover` crop (a link preview's square) cuts off. */
+export function coverTextMisses(shots: SceneShot[], tl: Timeline, tolerance = 4) {
+  const crop = tl.safe.crops?.find((c) => c.name === 'cover');
+  if (!crop) return [];
+  const t = coverTime(tl);
+  const misses: { scene: string; text: string; edge: string }[] = [];
+  for (const s of shots)
+    for (const b of s.boxes) {
+      if (b.at === undefined || Math.abs(b.at - t) > 0.001) continue;
+      const edge = b.y < crop.cut - tolerance ? 'top' : b.y + b.h > tl.height - crop.cut + tolerance ? 'bottom' : '';
+      if (edge && !misses.some((m) => m.text === b.t)) misses.push({ scene: s.id, text: b.t, edge });
     }
   return misses;
 }

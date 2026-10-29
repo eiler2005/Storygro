@@ -4,7 +4,9 @@ import { tmpdir } from 'node:os';
 import { join, resolve } from 'node:path';
 import { test, type TestContext } from 'node:test';
 import { stringify } from 'yaml';
-import { approval, approve } from '../production/src/board.ts';
+import { approval, approve, coverTextMisses, coverTime } from '../production/src/board.ts';
+import { deliverables } from '../production/src/package.ts';
+import { feedMoments } from '../production/src/qa.ts';
 import { serve } from '../production/src/serve.ts';
 import { captionText, loadSpec, spokenText } from '../production/src/spec.ts';
 import { phrases, subtitleCues, toSrt, toVtt } from '../production/src/subtitles.ts';
@@ -144,6 +146,47 @@ test('vertical format gets the vertical safe area, scaled to the stage width', a
   await assert.rejects(buildTimeline(loadSpec(p3), { voice: false }), /unknown safe-area profile/);
 });
 
+test('Instagram text margins cover the feed crop; the cover crop is the link preview square', async t => {
+  for (const safe of ['reels', 'vertical']) {
+    const { path } = fixture(t, { format: { preset: 'vertical' }, safe });
+    const { safe: s } = await buildTimeline(loadSpec(path), { voice: false });
+    const feed = s.crops?.find((c) => c.name === 'feed');
+    assert.deepEqual([feed?.ratio, feed?.cut], ['4:5', 285]); // (1920 − 1080 × 5/4) / 2
+    assert.ok(s.top > feed!.cut && s.bottom > feed!.cut, `${safe}: text must stay inside the feed crop`);
+    assert.deepEqual(s.crops?.find((c) => c.name === 'cover'), { name: 'cover', ratio: '1:1', cut: 420 });
+  }
+  const { path } = fixture(t, { format: { preset: 'vertical' }, safe: 'shorts' });
+  assert.equal((await buildTimeline(loadSpec(path), { voice: false })).safe.crops, undefined);
+});
+
+test('cover text is checked against the square preview at the cover moment only', async t => {
+  const { path } = fixture(t, {
+    format: { preset: 'vertical' }, safe: 'reels', stills: { cover: 'intro@0.5' },
+    scenes: [{ id: 'intro', scene: 'statement', say: 'One idea, said slowly.' }],
+  });
+  const tl = await buildTimeline(loadSpec(path), { voice: false });
+  assert.equal(coverTime(tl), 0.5);
+  const box = (t: string, y: number, at: number) => ({ t, x: 100, y, w: 400, h: 80, at });
+  const shots = [{ id: 'intro', at: 1, png: '', text: '', boxes: [box('Title', 340, 0.5), box('Inside', 700, 0.5), box('Later', 340, 1.2)] }];
+  assert.deepEqual(coverTextMisses(shots, tl), [{ scene: 'intro', text: 'Title', edge: 'top' }]);
+  const { path: wide } = fixture(t, { safe: 'landscape' });
+  assert.deepEqual(coverTextMisses(shots, await buildTimeline(loadSpec(wide), { voice: false })), []);
+});
+
+test('the feed review sheet samples every caption phrase and scene, and deliver includes both views', async t => {
+  const { path } = fixture(t, {
+    format: { preset: 'vertical' }, safe: 'reels', captions: { show: true, maxWords: 3 },
+    scenes: [{ id: 'a', scene: 'statement', say: 'One two three four five six.' }, { id: 'b', scene: 'statement', say: 'Seven.' }],
+  });
+  const l = loadSpec(path);
+  const tl = await buildTimeline(l, { voice: false });
+  const moments = feedMoments(tl);
+  assert.ok(moments.length >= subtitleCues(tl).length);
+  assert.ok(moments.every((m, i) => m < tl.duration && (i === 0 || m - moments[i - 1]! >= 0.3)));
+  const names = deliverables(l, tl).required.map(([, name]) => name);
+  assert.ok(names.includes(`${l.name}-feed-preview.jpg`) && names.includes(`${l.name}-cover-preview.jpg`));
+});
+
 test('say-as hints keep the written form in captions and the spoken form for the voice', t => {
   const { path } = fixture(t, { scenes: [{ id: 'a', scene: 'statement', say: 'Упала на [11%](=одиннадцать процентов) {#x}в [ИИ](=и-и).' }] });
   const s = loadSpec(path).spec.scenes[0]!;
@@ -167,6 +210,24 @@ test('subtitles follow the caption phrases and timings', async t => {
   assert.ok(cues.every((c, i) => c.end > c.start && (i === 0 || c.start >= cues[i - 1]!.start)));
   assert.match(toSrt(cues), /^1\n00:00:00,\d{3} --> 00:00:0\d,\d{3}\nOne two three\n/);
   assert.match(toVtt(cues), /^WEBVTT\n\n00:00:00\.\d{3} --> /);
+});
+
+test('a scene can shorten its own caption phrases', async t => {
+  const { path } = fixture(t, {
+    captions: { show: true, maxWords: 4 },
+    scenes: [
+      { id: 'a', scene: 'statement', say: 'One two three four five.' },
+      { id: 'b', scene: 'statement', say: 'Six seven eight nine ten.', captions: { maxWords: 2 } },
+    ],
+  });
+  const tl = await buildTimeline(loadSpec(path), { voice: false });
+  assert.equal(tl.scenes[0]!.maxWords, undefined);
+  assert.deepEqual(subtitleCues(tl).map(c => c.text), ['One two three four', 'five.', 'Six seven', 'eight nine', 'ten.']);
+});
+
+test('a lone dash after a full phrase stays with that phrase', () => {
+  const words = ['Мэтьюз', 'доказывал,', 'что', 'возраст', '—', 'не', 'главное.'].map((w, i) => ({ w, start: i, end: i + 0.5 }));
+  assert.deepEqual(phrases(words, 4).map(p => p.map(w => w.w).join(' ')), ['Мэтьюз доказывал, что возраст —', 'не главное.']);
 });
 
 test('a caption phrase also ends at sentence punctuation before a closing quote', () => {

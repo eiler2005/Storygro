@@ -33,6 +33,8 @@ export interface TimedScene {
   cues: Record<string, number>;
   /** scene seconds, caption spelling */
   words: Word[];
+  /** this scene's words per caption phrase, when it overrides `captions.maxWords` */
+  maxWords?: number;
   energy: number;
   /** `snap` only while the timeline is built; the written timeline has snapped times */
   sfx: { t: number; kind: string; gain: number; dur?: number; snap?: keyof typeof SNAP_BEATS }[];
@@ -48,6 +50,11 @@ export interface SafeArea {
   left: number;
   right: number;
   caption: number;
+  /**
+   * centred windows the platform also shows: `feed` (how the video plays in the feed) and `cover`
+   * (how its cover appears in link previews); `cut` px are hidden above and below
+   */
+  crops?: { name: string; ratio: string; cut: number }[];
 }
 export interface Timeline {
   title: string;
@@ -84,7 +91,7 @@ const hash = (s: string) => createHash('sha1').update(s).digest('hex').slice(0, 
 export function safeArea(l: LoadedSpec): SafeArea {
   const zones = JSON.parse(readFileSync(join(REEL_ROOT, 'runtime', 'safe-zones.json'), 'utf8')) as Record<
     string,
-    { ref: [number, number]; top: number; bottom: number; left: number; right: number; caption: number }
+    { ref: [number, number]; top: number; bottom: number; left: number; right: number; caption: number; crops?: Record<string, [number, number]> }
   >;
   const { width, height } = l.spec.format;
   const profile =
@@ -93,7 +100,12 @@ export function safeArea(l: LoadedSpec): SafeArea {
   if (!z || profile.startsWith('_')) throw new Error(`unknown safe-area profile "${profile}" (runtime/safe-zones.json)`);
   const k = width / z.ref[0];
   const r = (v: number) => Math.round(v * k);
-  return { profile, top: r(z.top), bottom: r(z.bottom), left: r(z.left), right: r(z.right), caption: r(z.caption) };
+  const safe: SafeArea = { profile, top: r(z.top), bottom: r(z.bottom), left: r(z.left), right: r(z.right), caption: r(z.caption) };
+  // a crop keeps the full width, so it only hides rows when its window is shorter than the stage
+  const crops = Object.entries(z.crops ?? {})
+    .map(([name, [w, h]]) => ({ name, ratio: `${w}:${h}`, cut: Math.round((height - (width * h) / w) / 2) }))
+    .filter((c) => c.cut > 0);
+  return crops.length ? { ...safe, crops } : safe;
 }
 
 /** Engines whose Russian stress comes from py/stress.py; bump the version when its output changes. */
@@ -257,6 +269,7 @@ export async function buildTimeline(l: LoadedSpec, opts: { voice?: boolean } = {
       voice: meta,
       cues,
       words: captionWords(s, meta).map((w) => ({ ...w, start: w.start + voiceAt, end: w.end + voiceAt })),
+      ...(s.captions ? { maxWords: s.captions.maxWords } : {}),
       energy,
       sfx: s.sfx.map((x) => ({ t: t + at(x.at), kind: x.kind, gain: x.gain, dur: x.dur, snap: x.snap })),
       transition: i === 0 ? null : (s.transition ?? spec.transition),

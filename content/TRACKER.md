@@ -31,7 +31,7 @@
 | [Где проверять работу ИИ-агента](videos/ai-agent-checks/README.md) | ru (ru) | business-explainers | раскадровка | ждёт тебя: одобрить раскадровку | — ⚙️ ⏳ | 44 с | pass | 2/2 | — | — |
 | [The AI industry is buying what you know about your job](videos/ai-buys-work-knowledge/README.md) | en (en) | — | раскадровка | ждёт тебя: одобрить раскадровку | — ✏️ ⏳ | 62.3 с | pass | 5/5 | — | — |
 | [Золотой мяч: кто самый лучший?](videos/ballon-dor-kids/PLAN.ru.md) | ru (ru) | kids-football | сценарий | ждёт тебя: одобрить сценарий | ⏳ ✏️ ⏳ | 89.1 с | pass | 7/7 | 3 | — |
-| [Стэнли Мэтьюз](videos/football-legends-01-matthews/PLAN.ru.md) | ru (ru) | — | сценарий | ждёт тебя: одобрить сценарий | ⚙️ ⚙️ ⏳ | 87 с | pass | 7/7 | 1 | — |
+| [Стэнли Мэтьюз](videos/football-legends-01-matthews/PLAN.ru.md) | ru (ru) | — | сценарий | ждёт тебя: одобрить сценарий | ✏️ ⚙️ ⏳ | 87 с | pass | 7/7 | 1 | — |
 | [Звёзды футбола: собираем альбом](videos/football-stars-kids/PLAN.ru.md) | ru (ru) | kids-football | сценарий | ждёт тебя: одобрить сценарий | ⏳ ✏️ ⏳ | 117.5 с | pass | 14/14 | 3 | — |
 | [Будущее работы — кто отвечает за результат](videos/future-of-work/README.md) | ru (ru) | business-explainers | раскадровка | ждёт тебя: одобрить раскадровку | — ✏️ ⏳ | 76.8 с | pass | 2/2 | — | — |
 | [Интер Майами: финальный пас](videos/inter-miami-magic-pass/PLAN.ru.md) | ru (ru) | — | сценарий | ждёт тебя: одобрить сценарий | ⚙️ ✏️ ⏳ | 114.5 с | pass | 7/7 | 1 | — |

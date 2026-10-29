@@ -102,9 +102,14 @@ const phrases = tl.scenes.map((s) => {
   const out = [];
   let cur = [];
   for (const w of s.words) {
+    // a dash on its own after a full phrase belongs to that phrase (same rule as subtitles.ts)
+    if (!cur.length && out.length && /^[—–-]+$/.test(w.w)) {
+      out[out.length - 1].push(w);
+      continue;
+    }
     cur.push(w);
     const end = /[.!?…:;—][»"”)]*$/.test(w.w) || (/,[»"”)]*$/.test(w.w) && cur.length >= 4);
-    if (end || cur.length >= (tl.captions?.maxWords ?? 7)) {
+    if (end || cur.length >= (s.maxWords ?? tl.captions?.maxWords ?? 7)) {
       out.push(cur);
       cur = [];
     }
@@ -232,6 +237,16 @@ if (params.has('guides') && tl.safe) {
         style: { position: 'absolute', left: `${s.left}px`, right: `${s.right}px`, top: `${s.top}px`, bottom: `${s.bottom}px`, outline: '3px dashed rgba(255,255,255,.8)' },
       }),
       kit.h('div', { style: { position: 'absolute', left: '12px', top: '10px', font: '600 22px monospace', color: '#fff' } }, `safe: ${s.profile}`),
+      // where the feed and link previews cut the same video: faces and the cover's title belong between the lines
+      ...(s.crops ?? []).flatMap((c) =>
+        [{ top: `${c.cut}px` }, { bottom: `${c.cut}px` }].map((edge) =>
+          kit.h(
+            'div',
+            { style: { position: 'absolute', left: 0, right: 0, ...edge, borderTop: '3px dashed rgba(255,214,0,.95)' } },
+            kit.h('span', { style: { position: 'absolute', right: '12px', [edge.top ? 'top' : 'bottom']: '4px', font: '600 22px monospace', color: '#ffd600' } }, `${c.name} ${c.ratio}`),
+          ),
+        ),
+      ),
     ),
   );
 }

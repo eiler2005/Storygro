@@ -15,7 +15,8 @@ import { seriesMarkdown, seriesStatus } from './brand.ts';
 import * as P from './publish.ts';
 import { collectTrends, loadIdeas, loadTrendsConfig, type TrendsReport, trendsMarkdown } from './ideas.ts';
 import { parse as parseYaml } from 'yaml';
-import { deliverables, packageEpisode, qaState, writeSubtitles } from './package.ts';
+import { instagramShape } from './instagram.ts';
+import { deliverables, packageEpisode, qaState, uploadNote, writeSubtitles } from './package.ts';
 import { qa } from './qa.ts';
 import { cards, frames, mux, stills } from './render.ts';
 import { serve } from './serve.ts';
@@ -62,6 +63,7 @@ const HELP = `storygro — explainer videos as code
   storygro metrics  add <id> --window 7d --source "…" views=1200 likes=80 | report
   storygro deliver  <reel.yaml> [dir]       copy the complete set + manifest.json to one folder
                                              (default ~/Downloads/<name>); refuses missing files
+  storygro instagram-check <post link>      after an upload: did Instagram keep the 9:16 frame or crop it
   storygro package  <episode.yaml> [dir]    all variants of an episode → one release folder + manifest
 
   A spec named <variant>.reel.yaml (e.g. ru.reel.yaml) works in .reel/<variant>/, so language
@@ -148,6 +150,13 @@ if (cmd === 'capture') {
   console.log(`\n✔ ${r.meta.frames} frames, ${r.meta.duration} s at ${r.meta.fps} fps, ${r.meta.pixels.width}×${r.meta.pixels.height} → ${r.out}`);
   if (r.meta.taps.length) console.log(`  taps at ${r.meta.taps.map((t) => `${t.t}s`).join(', ')}`);
   process.exit(0);
+}
+
+if (cmd === 'instagram-check') {
+  if (!specPath) throw new Error('usage: storygro instagram-check <post or reel link>');
+  const r = await instagramShape(specPath);
+  console.log(`${r.ok ? '✔' : '✖'} ${r.code}: stored ${r.width}×${r.height} (${r.ratio}) — ${r.note}`);
+  process.exit(r.ok ? 0 : 1);
 }
 
 if (cmd === 'new') {
@@ -429,6 +438,12 @@ switch (cmd) {
       copyFileSync(src, join(dir, dst));
       files.push(fileEntry(join(dir, dst), dir));
       console.log(`✔ ${join(dir, dst)}`);
+    }
+    const note = uploadNote(l, tl);
+    if (note) {
+      writeFileSync(join(dir, 'UPLOAD.txt'), note);
+      files.push(fileEntry(join(dir, 'UPLOAD.txt'), dir));
+      console.log(`✔ ${join(dir, 'UPLOAD.txt')}`);
     }
     const manifest = {
       name: l.name,

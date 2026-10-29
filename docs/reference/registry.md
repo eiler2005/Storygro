@@ -195,7 +195,9 @@ Checks run by `storygro qa` (see `production/src/qa.ts`); the visual ones guard 
 - Audio track
 - Brand rules
 - Codec and pixels
+- Cover text inside the … preview
 - Dictionary words keep their stress
+- Feed and cover views
 - Frame 0 is a hook
 - Length
 - Loudness

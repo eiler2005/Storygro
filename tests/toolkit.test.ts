@@ -11,7 +11,7 @@ const toolkit = loadToolkit();
 test('every CLI command is in the toolkit, and the toolkit names no command that does not exist', () => {
   const cli = readFileSync(join(root, 'production/src/cli.ts'), 'utf8');
   const help = cli.slice(cli.indexOf('const HELP'), cli.indexOf('`;', cli.indexOf('const HELP')));
-  const commands = new Set([...help.matchAll(/storygro ([a-z]+)/g)].map((m) => m[1]!));
+  const commands = new Set([...help.matchAll(/storygro ([a-z][a-z-]*)/g)].map((m) => m[1]!));
   commands.add('help');
   const used = new Set(toolkit.entries.flatMap((e) => e.commands));
   assert.deepEqual([...commands].filter((c) => !used.has(c)), [], 'commands missing from production/toolkit.yaml');

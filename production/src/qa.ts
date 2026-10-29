@@ -2,9 +2,10 @@ import { spawnSync } from 'node:child_process';
 import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import { join, relative, resolve } from 'node:path';
 import { brandFindings, loadBrand } from './brand.ts';
-import { boxMisses, captureScenes, factsGate, safeAreaMisses, type SceneShot } from './board.ts';
+import { boxMisses, captureScenes, coverTextMisses, coverTime, factsGate, keyMoment, safeAreaMisses, type SceneShot } from './board.ts';
 import { entryOf, loadLexicon, WORD as LEX_WORD } from './lexicon.ts';
 import { captionText, type LoadedSpec, spokenText } from './spec.ts';
+import { subtitleCues } from './subtitles.ts';
 import { type Timeline, workDir } from './timeline.ts';
 import { ffmpeg, python, REEL_ROOT } from './tools.ts';
 
@@ -132,6 +133,47 @@ export function editDistance(x: string, y: string): number {
 
 const ok = (b: boolean): Status => (b ? 'pass' : 'fail');
 
+/** Moments for the feed review sheet: every caption phrase (where a caption can cover a face) and each scene's key moment. */
+export function feedMoments(tl: Timeline): number[] {
+  const all = [
+    ...(tl.captions?.show ? subtitleCues(tl).map((c) => (c.start + c.end) / 2) : []),
+    ...tl.scenes.map((s) => s.start + keyMoment(s)),
+  ].sort((a, b) => a - b);
+  const out: number[] = [];
+  for (const t of all) if (!out.length || t - out.at(-1)! >= 0.3) out.push(Math.min(t, tl.duration - 1 / tl.fps));
+  return out;
+}
+
+/**
+ * What the platform shows of the actual file outside its own player, for a person to look at: the
+ * video cropped like the feed at every caption phrase and key moment (`feed-preview.jpg`), and the
+ * cover cropped like a link preview (`cover-preview.jpg`). Heads cut at the top and captions over
+ * faces show here; no check can see a face.
+ */
+function cropPreviews(l: LoadedSpec, tl: Timeline, video: string): { made: string[]; failed: string[] } {
+  const made: string[] = [];
+  const failed: string[] = [];
+  const run = (out: string, args: string[]) => {
+    const r = spawnSync(ffmpeg(), ['-v', 'error', '-y', ...args, '-frames:v', '1', '-q:v', '4', out], { encoding: 'utf8' });
+    (r.status === 0 && existsSync(out) ? made : failed).push(out);
+  };
+  const window = (cut: number, width: number) => `crop=${tl.width}:${tl.height - 2 * cut}:0:${cut},scale=${width}:-2`;
+  const feed = tl.safe.crops?.find((c) => c.name === 'feed');
+  if (feed) {
+    const frames = feedMoments(tl).map((t) => Math.round(t * tl.fps));
+    const cols = 8;
+    const select = `select='${frames.map((n) => `eq(n,${n})`).join('+')}'`;
+    run(join(workDir(l), 'feed-preview.jpg'), ['-i', video, '-vf', `${select},${window(feed.cut, 216)},tile=${cols}x${Math.ceil(frames.length / cols)}:padding=6:color=white`, '-fps_mode', 'passthrough']);
+  }
+  const cover = tl.safe.crops?.find((c) => c.name === 'cover');
+  if (cover) {
+    const still = join(workDir(l), 'stills', 'cover.png');
+    const src = tl.stills.cover !== undefined && existsSync(still) ? ['-i', still] : ['-ss', String(coverTime(tl)), '-i', video];
+    run(join(workDir(l), 'cover-preview.jpg'), [...src, '-vf', window(cover.cut, 540)]);
+  }
+  return { made, failed };
+}
+
 /** Checks the delivered file the way a viewer and a platform will meet it. Writes QA.md and qa.json. */
 export async function qa(l: LoadedSpec, tl: Timeline, video: string) {
   const checks: Check[] = [];
@@ -213,6 +255,27 @@ export async function qa(l: LoadedSpec, tl: Timeline, video: string) {
       name: 'Text fits its box',
       status: ok(spill.length === 0),
       detail: spill.length ? spill.slice(0, 6).map((m) => `${m.scene}: "${m.text}" (${m.over}px out)`).join('; ') : 'every card, band and label at every cue',
+    });
+    const cover = tl.safe.crops?.find((c) => c.name === 'cover');
+    if (cover) {
+      const cut = coverTextMisses(shots, tl);
+      checks.push({
+        name: `Cover text inside the ${cover.ratio} preview`,
+        status: ok(cut.length === 0),
+        detail: cut.length ? cut.slice(0, 6).map((m) => `${m.scene}: "${m.text}" (${m.edge})`).join('; ') : `cover at ${coverTime(tl).toFixed(1)} s`,
+      });
+    }
+  }
+
+  // what the feed and link previews show of the file: sheets to look at, not a verdict on faces
+  const p = cropPreviews(l, tl, video);
+  if (p.made.length || p.failed.length) {
+    checks.push({
+      name: 'Feed and cover views',
+      status: ok(p.failed.length === 0),
+      detail: p.failed.length
+        ? `could not write ${p.failed.map((f) => relative(l.dir, f)).join(', ')}`
+        : `look at ${p.made.map((f) => relative(workDir(l), f)).join(' and ')}: heads inside the crop, captions off faces`,
     });
   }
 

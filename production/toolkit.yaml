@@ -585,13 +585,24 @@ entries:
     kind: method
     stage: make
     title: Native full-frame Instagram Reels
-    what: Owner-approved 1080×1920 at 30 fps with edge-to-edge backgrounds, safe reels for text, short captions and individual overlay placement. No padding around a shrunken edit; inspect all shots, cues and final MP4 before retaining Original / 9:16 on upload.
+    what: Owner-approved 1080×1920 at 30 fps with edge-to-edge backgrounds, safe reels for text, short captions and individual overlay placement. Text and heads stay below the 4:5 feed crop (320 px), the cover inside the 1:1 preview; still --guides draws both, QA checks cover text and writes feed and cover sheets of the MP4. No padding around a shrunken edit. Upload as a Reel keeping Original / 9:16 (UPLOAD.txt), then instagram-check the post.
     when: Every new or remade Instagram Reel, across styles and series.
     commands: [new]
     how: npm run storygro -- new content/videos/<id> --style cartoon --lang ru --target instagram-reels
     status: stable
     docs: docs/how-to/instagram-without-cropping.md
     examples: [content/videos/football-legends-01-matthews/README.md]
+
+  - id: instagram-check
+    kind: tool
+    stage: ship
+    title: Check what Instagram stored
+    what: Reads a published post's public embed page and measures the full-size cover frame Instagram stored, which has the stored video's shape; 1080×1920 passes, a square or 4:5 means the upload cropped the Reel. Unofficial page; reports a deleted or private post.
+    when: Right after every Instagram upload, and before calling a published Reel cropped or fine.
+    commands: [instagram-check]
+    how: npm run storygro -- instagram-check https://www.instagram.com/p/<code>/
+    status: stable
+    docs: docs/how-to/instagram-without-cropping.md#upload
 
   - id: social-fit
     kind: tool

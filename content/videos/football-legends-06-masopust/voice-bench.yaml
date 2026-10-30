@@ -1,0 +1,18 @@
+bench: 1
+language: ru
+candidates:
+  - id: selected-narrator
+    engine: omnivoice
+    model: k2-fsa/OmniVoice
+    voice: assets/voice/narrator-ru.wav
+    speed: 0.90
+    stress: 'off'
+sentences:
+  - id: names-1
+    text: Гол забил Йозеф Масопуст. Он был полузащитником пражского клуба «Дукла».
+  - id: names-2
+    text: Гол забил Йозеф Масопуст. Он был полузащитником пражского клуба «Дукла».
+  - id: names-3
+    text: Гол забил Йозеф Масопуст. Он был полузащитником пражского клуба «Дукла».
+  - id: names-4
+    text: Гол забил Йозеф Масопуст. Он был полузащитником пражского клуба «Дукла».

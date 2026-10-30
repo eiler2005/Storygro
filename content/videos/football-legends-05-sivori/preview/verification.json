@@ -1,17 +1,17 @@
 {
- "duration": 82.82400000000001,
+ "duration": 81.324,
  "size": [
   1080,
   1920
  ],
  "fps": 30,
- "frames": 2483,
- "webFrames": 2483,
+ "frames": 2438,
+ "webFrames": 2438,
  "moments": 38,
- "masterSHA256": "662cd5c726435a7c9a8fb0f1264d39380344686ff5d9ad0a0dcad8de3a77d680",
+ "masterSHA256": "b3d627b8ed2b512ae993039c0c91bd1a74952bef762111391b2e52c4cdc7c528",
  "qa": "pass",
  "captionSamples": 164,
- "reverseSeekSamples": 81,
+ "reverseSeekSamples": 76,
  "layoutFailures": 0,
  "voiceCorrection": [
   {
@@ -44,12 +44,12 @@
   {
    "name": "Audio track",
    "status": "pass",
-   "detail": "Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 196 kb/s (default)"
+   "detail": "Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 197 kb/s (default)"
   },
   {
    "name": "Length",
    "status": "pass",
-   "detail": "82.82 s (planned 82.82 s)"
+   "detail": "81.32 s (planned 81.32 s)"
   },
   {
    "name": "Loudness",
@@ -59,7 +59,7 @@
   {
    "name": "Frame 0 is a hook",
    "status": "pass",
-   "detail": "contrast 1969 (needs content, not a black frame)"
+   "detail": "contrast 2207 (needs content, not a black frame)"
   },
   {
    "name": "No black stretches",
@@ -69,12 +69,12 @@
   {
    "name": "Scenes render without errors",
    "status": "pass",
-   "detail": "15 scenes, missing images/fonts included"
+   "detail": "14 scenes, missing images/fonts included"
   },
   {
    "name": "Numbers come from the facts",
    "status": "pass",
-   "detail": "15 scenes read"
+   "detail": "14 scenes read"
   },
   {
    "name": "Text clear of platform UI (reels)",
@@ -106,5 +106,6 @@
    "status": "pass",
    "detail": "1 of 1 heard right"
   }
- ]
+ ],
+ "revision": "Shared first-frame identity; original narration retained; redundant intro removed."
 }

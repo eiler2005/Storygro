@@ -1,0 +1,36 @@
+{
+ "_about": "All screen text and numbers are bound here; quotations and caveats are in sources.md.",
+ "series": {
+  "_source": "Owner brief, 30 October 2026: first-frame project/series identity, golden football emblem, distinct detailed historical atmosphere; subsequent request to test retention hooks.",
+  "project": "Маленькие большие дела",
+  "title": "Легенды футбола",
+  "episode": "Йозеф Масопуст"
+ },
+ "player": {
+  "_source": "[S2] https://www.uefa.com/news-media/news/0222-0f8a9ecabdbc-a5e988df6a89-1000--uefa-president-s-award-to-josef-masopust/; [S3] https://ballondor.com/all-rankings?year=1962",
+  "name": "Йозеф Масопуст",
+  "card": "1962 · Чехословакия · «Дукла»",
+  "club": "Полузащитник «Дуклы»",
+  "year": "1962",
+  "award": "«Золотой мяч» · 1962"
+ },
+ "match": {
+  "_source": "[S1] https://datencenter.dfb.de/en/data-center/fifa-world-cup/1962-in-chile/final/136944",
+  "title": "Финал чемпионата мира",
+  "venue": "Сантьяго · «Насьональ»",
+  "lead": "Бразилия 0:1 Чехословакия",
+  "equal": "Бразилия 1:1 Чехословакия",
+  "final": "Бразилия 3:1 Чехословакия",
+  "minute": "15-я минута · Масопуст",
+  "equalMinute": "17-я минута · Амарилдо"
+ },
+ "story": {
+  "_source": "Owner supplied script and authorised retention experiment; editorial questions and lesson, not measured performance.",
+  "hook": "Гол. Поражение. «Золотой мяч»?",
+  "skills": "Контроль · пас · подключение",
+  "doubt": "Поражение = плохая игра?",
+  "payoff": "Вклад больше одного результата",
+  "lesson": "Поддержка тоже важна",
+  "question": "Что скажешь другу после поражения?"
+ }
+}

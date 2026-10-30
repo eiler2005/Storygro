@@ -1,0 +1,413 @@
+reel: 1
+style: cartoon
+title: Йозеф Масопуст — гол в финале чемпионата мира
+lang: ru
+data:
+  facts: facts.json
+images:
+  provider: manual
+  model: OpenAI built-in GPT Image (identifier not exposed)
+  seed: 0
+  width: 1088
+  height: 1920
+  prompt: "{subject}. Series visual bible and exact per-shot prompts in images.json. Built-in image tool
+    selected explicitly by the owner, not seed reproducible."
+post:
+  title: Легенды футбола · Йозеф Масопуст
+  text: >-
+    Гол в финале. Поражение. И «Золотой мяч» в том же году. Матвей и София разбираются, почему один результат
+    не описывает весь вклад игрока.
+
+
+    Как бы ты поддержал друга после такой игры?
+
+
+    Выпуск 6 «Легенд футбола» проекта «Маленькие большие дела». Финал 1962 года: Бразилия — Чехословакия, 3:1;
+    гол Масопуста на 15-й минуте. Источники: DFB, UEFA, Ballon d’Or. Исторические сцены — художественные
+    иллюстрации GPT Image по архивным ориентирам, не документальная запись конкретных эпизодов. Голос
+    рассказчика синтетический (OmniVoice). Не связано с футболистами, федерациями или организаторами награды.
+  tags:
+    - футбол
+    - детям
+    - легендыфутбола
+    - масопуст
+    - золотоймяч
+    - поддержка
+scenes:
+  - id: hook
+    scene: series-cover
+    say: Гол в финале. Поражение. {#match}И «Золотой мяч» в том же году. Как такое возможно?
+    pad:
+      - 0.05
+      - 0.2
+    energy: 0.8
+    props:
+      image: shots/cover.png
+      projectFrom: facts.series.project
+      titleFrom: facts.series.title
+      emblem: /rc/styles/cartoon/golden-ball.svg
+      reveal: shots/final-v2.png
+      revealAt: match
+    sfx:
+      - at: start
+        kind: chime
+        gain: 0.18
+  - id: setup
+    scene: illustration
+    say: "Представьте: финал чемпионата мира! На поле сборная Бразилии, действующие чемпионы мира, {#rivals}а
+      напротив — сборная Чехословакии."
+    pad:
+      - 0.15
+      - 0.3
+    energy: 0.65
+    props:
+      shots:
+        - image: shots/pass.png
+          move: in
+          zoom: 0.02
+          focus: &a1
+            x: 0.5
+            y: 0.47
+        - image: shots/final-v2.png
+          move: in
+          zoom: 0.02
+          focus: *a1
+          at: rivals
+      labels: []
+  - id: lead
+    scene: illustration
+    say: И вдруг первой забивает Чехословакия!
+    pad:
+      - 0.15
+      - 0.3
+    energy: 0.65
+    props:
+      shots:
+        - image: shots/goal.png
+          move: in
+          zoom: 0.02
+          focus:
+            x: 0.5
+            y: 0.47
+      labels:
+        - textFrom: facts.match.lead
+          x: 0.46
+          y: 0.19
+          at: -1
+          tone: navy
+    sfx:
+      - at: start
+        kind: swell
+        gain: 0.17
+  - id: identity
+    scene: illustration
+    say: Гол забил Йозеф Масопуст.
+    pad:
+      - 0.15
+      - 0.3
+    energy: 0.65
+    props:
+      shots:
+        - image: shots/goal.png
+          move: in
+          zoom: 0.02
+          focus:
+            x: 0.5
+            y: 0.47
+      labels:
+        - textFrom: facts.player.name
+          x: 0.46
+          y: 0.19
+          at: -1
+          tone: navy
+  - id: club
+    scene: illustration
+    say: Он был полузащитником пражского клуба «Дукла» и одним из важнейших игроков своей сборной.
+    pad:
+      - 0.15
+      - 0.3
+    energy: 0.65
+    props:
+      shots:
+        - image: shots/dukla.png
+          move: in
+          zoom: 0.02
+          focus:
+            x: 0.5
+            y: 0.47
+      labels: []
+  - id: award
+    scene: illustration
+    say: В [1962](=тысяча девятьсот шестьдесят втором) году Масопуст получил «Золотой мяч».
+    pad:
+      - 0.15
+      - 0.3
+    energy: 0.65
+    props:
+      shots:
+        - image: shots/award.png
+          move: in
+          zoom: 0.02
+          focus:
+            x: 0.5
+            y: 0.47
+      labels:
+        - textFrom: facts.player.award
+          x: 0.46
+          y: 0.19
+          at: -1
+          tone: navy
+  - id: skills
+    scene: illustration
+    say: Его ценили за умение контролировать мяч, отдавать передачи {#pass}и подключаться к атакам.
+    pad:
+      - 0.15
+      - 0.3
+    energy: 0.65
+    props:
+      shots:
+        - image: shots/final-v2.png
+          move: in
+          zoom: 0.02
+          focus:
+            x: 0.5
+            y: 0.47
+        - image: shots/pass.png
+          at: pass
+          move: in
+          zoom: 0.02
+          focus:
+            x: 0.5
+            y: 0.47
+      labels: []
+  - id: minute
+    scene: illustration
+    say: В финале чемпионата мира Масопуст открыл счёт на [15-й](=пятнадцатой) минуте.
+    pad:
+      - 0.15
+      - 0.3
+    energy: 0.65
+    props:
+      shots:
+        - image: shots/goal.png
+          move: in
+          zoom: 0.02
+          focus:
+            x: 0.5
+            y: 0.47
+      labels:
+        - textFrom: facts.match.minute
+          x: 0.46
+          y: 0.19
+          at: -1
+          tone: navy
+  - id: equalise
+    scene: illustration
+    say: "Но радость была недолгой: Бразилия сравняла счёт всего через две минуты,"
+    pad:
+      - 0.15
+      - 0.3
+    energy: 0.65
+    props:
+      shots:
+        - image: shots/brazil.png
+          move: in
+          zoom: 0.02
+          focus:
+            x: 0.5
+            y: 0.47
+      labels:
+        - textFrom: facts.match.equal
+          x: 0.46
+          y: 0.19
+          at: -1
+          tone: navy
+  - id: result
+    scene: illustration
+    say: а затем забила ещё два мяча и победила [3:1](=три один).
+    pad:
+      - 0.15
+      - 0.3
+    energy: 0.65
+    props:
+      shots:
+        - image: shots/brazil.png
+          move: in
+          zoom: 0.02
+          focus:
+            x: 0.5
+            y: 0.47
+      labels:
+        - textFrom: facts.match.final
+          x: 0.46
+          y: 0.19
+          at: -1
+          tone: navy
+    sfx:
+      - at: start
+        kind: whoosh
+        gain: 0.14
+  - id: doubt
+    scene: illustration
+    say: Значит ли это, что Масопуст сыграл плохо? Совсем нет!
+    pad:
+      - 0.15
+      - 0.3
+    energy: 0.65
+    props:
+      shots:
+        - image: shots/defeat-v2.png
+          move: in
+          zoom: 0.02
+          focus:
+            x: 0.5
+            y: 0.47
+      labels:
+        - textFrom: facts.story.doubt
+          x: 0.46
+          y: 0.19
+          at: -1
+          tone: navy
+  - id: payoff
+    scene: illustration
+    say: Он помог своей команде добраться до финала чемпионата мира {#goal}и забил гол в самом важном матче
+      турнира.
+    pad:
+      - 0.15
+      - 0.3
+    energy: 0.65
+    props:
+      shots:
+        - image: shots/team-v2.png
+          move: in
+          zoom: 0.02
+          focus:
+            x: 0.5
+            y: 0.47
+        - image: shots/goal.png
+          at: goal
+          move: in
+          zoom: 0.02
+          focus:
+            x: 0.5
+            y: 0.47
+      labels:
+        - textFrom: facts.story.payoff
+          x: 0.46
+          y: 0.19
+          at: -1
+          tone: navy
+  - id: lesson
+    scene: illustration
+    say: В спорте результат не всегда зависит от одного человека.
+    pad:
+      - 0.15
+      - 0.3
+    energy: 0.65
+    props:
+      shots:
+        - image: shots/team-v2.png
+          move: in
+          zoom: 0.02
+          focus:
+            x: 0.5
+            y: 0.47
+      labels: []
+  - id: loss
+    scene: illustration
+    say: Даже если ты сделал что-то замечательное, команда может проиграть.
+    pad:
+      - 0.15
+      - 0.3
+    energy: 0.65
+    props:
+      shots:
+        - image: shots/defeat-v2.png
+          move: in
+          zoom: 0.02
+          focus:
+            x: 0.5
+            y: 0.47
+      labels: []
+  - id: contribution
+    scene: illustration
+    say: "И наоборот: иногда можно сыграть неидеально, {#team}но всё равно внести огромный вклад в общую победу."
+    pad:
+      - 0.15
+      - 0.3
+    energy: 0.65
+    props:
+      shots:
+        - image: shots/pass.png
+          move: in
+          zoom: 0.02
+          focus:
+            x: 0.5
+            y: 0.47
+        - image: shots/team-v2.png
+          at: team
+          move: in
+          zoom: 0.02
+          focus:
+            x: 0.5
+            y: 0.47
+      labels: []
+  - id: question
+    scene: illustration
+    say: Как бы ты поддержал друга, который забил красивый гол, но его команда всё равно проиграла?
+    pad:
+      - 0.2
+      - 1.2
+    energy: 0.65
+    props:
+      shots:
+        - image: shots/support.png
+          move: in
+          zoom: 0.02
+          focus:
+            x: 0.5
+            y: 0.47
+      labels:
+        - textFrom: facts.story.question
+          x: 0.46
+          y: 0.19
+          at: -1
+          tone: navy
+    sfx:
+      - at: start
+        kind: chime
+        gain: 0.17
+voice:
+  engine: omnivoice
+  model: k2-fsa/OmniVoice
+  voice: assets/voice/narrator-ru.wav
+  speed: 0.9
+  stress: off
+format:
+  preset: vertical
+  width: 1080
+  height: 1920
+  fps: 30
+safe: reels
+captions:
+  show: true
+  maxWords: 4
+stills:
+  cover: hook@0
+  final: payoff@1
+  hosts: question@1
+music:
+  bpm: 112
+  key: D
+  progression:
+    - I
+    - V
+    - vi
+    - IV
+  gain: 0.1
+  drop: lead
+loudness: -14
+theme: theme.css
+transition:
+  kind: cut
+  dur: 0

@@ -1,0 +1,30 @@
+review: 1
+questions:
+  - id: voice
+    ask: Подходят ли произношение «Йозеф Масопуст», «Дукла» и рассказчик в готовом MP4?
+    for: owner
+    open: true
+  - id: retention
+    ask: Работает ли начало с парадоксом и ответ после поражения? Обложка, темп, исторические образы и итоговый
+      вопрос?
+    for: owner
+    open: true
+notes: Owner authorised first-frame series identity, episode-specific detailed atmosphere, built-in newest
+  available GPT Image, and a retention experiment. Added only an opening curiosity hook; the supplied story
+  and final question remain, pasted source labels removed. Technical approval is not owner approval. No
+  promise of reach or completion rate. Final technical version 88.09 s; QA 15/15, full decode 2638 frames per
+  file, 41 inspected MP4 moments; 175 caption samples and 90 reverse seeks including frame-zero/reveal
+  boundary, no layout failures. Feed/cover inspected. Four name/club bench runs generated; no stress verdict.
+  Owner listening and retention evaluation remain open; no publication.
+approvals:
+  ru:
+    script:
+      hash: cb0371153762
+      at: 2026-10-30T18:42:57.431Z
+      by: agent
+      role: agent
+    storyboard:
+      hash: abde3e5b5c79
+      at: 2026-10-30T18:42:57.799Z
+      by: agent
+      role: agent

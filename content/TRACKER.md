@@ -2,7 +2,7 @@
 
 > Сгенерировано `storygro tracker` 2026-10-30. Одобрения и вопросы — из `review.yaml` в Git; длительность, проверка (QA) и рендер — локальное состояние этой копии (`.reel/`), публикации — из журнала. Не правьте вручную.
 
-**Ждут тебя: 19** · сценарий 14 · раскадровка 4 · просмотр 1 · готово 0 · опубликовано 0
+**Ждут тебя: 20** · сценарий 15 · раскадровка 4 · просмотр 1 · готово 0 · опубликовано 0
 
 ## Ждут тебя
 
@@ -16,6 +16,7 @@
 - [Раймон Копа — мастер обводки](videos/football-legends-03-kopa/PLAN.ru.md) (ru) — одобрить сценарий
 - [Луис Суарес Мирамонтес — архитектор футбола](videos/football-legends-04-suarez/PLAN.ru.md) (ru) — одобрить сценарий
 - [Омар Сивори — маленький волшебник с мячом](videos/football-legends-05-sivori/PLAN.ru.md) (ru) — одобрить сценарий
+- [Йозеф Масопуст — гол в финале чемпионата мира](videos/football-legends-06-masopust/PLAN.ru.md) (ru) — одобрить сценарий
 - [Звёзды футбола: собираем альбом](videos/football-stars-kids/PLAN.ru.md) (ru) — одобрить сценарий
 - [Будущее работы — кто отвечает за результат](videos/future-of-work/README.md) (ru) — одобрить раскадровку
 - [Интер Майами: финальный пас](videos/inter-miami-magic-pass/PLAN.ru.md) (ru) — одобрить сценарий
@@ -39,7 +40,8 @@
 | [Альфредо Ди Стефано](videos/football-legends-02-di-stefano/PLAN.ru.md) | ru (ru) | — | сценарий | ждёт тебя: одобрить сценарий | ⚙️ ⚙️ ⏳ | 92.9 с | pass | 8/8 | 5 | — |
 | [Раймон Копа — мастер обводки](videos/football-legends-03-kopa/PLAN.ru.md) | ru (ru) | football-legends | сценарий | ждёт тебя: одобрить сценарий | ⚙️ ⚙️ ⏳ | 84.4 с | pass | 8/8 | 2 | — |
 | [Луис Суарес Мирамонтес — архитектор футбола](videos/football-legends-04-suarez/PLAN.ru.md) | ru (ru) | football-legends | сценарий | ждёт тебя: одобрить сценарий | ⚙️ ⚙️ ⏳ | 91.3 с | pass | 9/9 | 2 | — |
-| [Омар Сивори — маленький волшебник с мячом](videos/football-legends-05-sivori/PLAN.ru.md) | ru (ru) | football-legends | сценарий | ждёт тебя: одобрить сценарий | ✏️ ⚙️ ⏳ | 82.8 с | pass | 7/7 | 2 | — |
+| [Омар Сивори — маленький волшебник с мячом](videos/football-legends-05-sivori/PLAN.ru.md) | ru (ru) | football-legends | сценарий | ждёт тебя: одобрить сценарий | ⚙️ ⚙️ ⏳ | 81.3 с | pass | 7/7 | 2 | — |
+| [Йозеф Масопуст — гол в финале чемпионата мира](videos/football-legends-06-masopust/PLAN.ru.md) | ru (ru) | football-legends | сценарий | ждёт тебя: одобрить сценарий | ⚙️ ⚙️ ⏳ | 88.1 с | pass | 4/4 | 2 | — |
 | [Звёзды футбола: собираем альбом](videos/football-stars-kids/PLAN.ru.md) | ru (ru) | kids-football | сценарий | ждёт тебя: одобрить сценарий | ⏳ ✏️ ⏳ | 117.5 с | pass | 14/14 | 3 | — |
 | [Будущее работы — кто отвечает за результат](videos/future-of-work/README.md) | ru (ru) | business-explainers | раскадровка | ждёт тебя: одобрить раскадровку | — ✏️ ⏳ | 76.8 с | pass | 2/2 | — | — |
 | [Интер Майами: финальный пас](videos/inter-miami-magic-pass/PLAN.ru.md) | ru (ru) | — | сценарий | ждёт тебя: одобрить сценарий | ⚙️ ✏️ ⏳ | 114.5 с | pass | 7/7 | 1 | — |

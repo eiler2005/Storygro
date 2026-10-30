@@ -6,6 +6,19 @@ A reel.yaml entry sets `scene:` to one of the modules below and passes its props
 
 A **cue** is a named marker in the `say:` text, such as `{#claim}`. A cue prop accepts either a cue name or a number of seconds from the start of the scene.
 
+## series-cover
+
+Full-frame episode art with a project/series title and optional emblem, readable at frame zero. Import `production/styles/cartoon/football-legends.css` in the episode theme (or supply the equivalent `.fl-series-*` layout). The identity stays inside the safe box and central square preview. Optional `reveal` changes to story artwork and hides the title at `revealAt`; the switch is deterministic for arbitrary seeking. See [the series recipe](../how-to/football-series.md).
+
+| Prop | Meaning |
+|---|---|
+| `image` | Required initial artwork, relative to the episode |
+| `project`, `title` | Required text; use `projectFrom` / `titleFrom` fact bindings |
+| `subtitle` | Optional episode label from data |
+| `emblem` | Optional image URL, such as `/rc/styles/cartoon/golden-ball.svg` |
+| `reveal` | Optional story image to replace the initial artwork |
+| `revealAt` | Cue name or scene seconds; default 1.8 |
+
 ## collage
 
 <img src="../media/scenes/collage.jpg" width="180" alt="A frame of the collage scene">

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 148" role="img" aria-label="Golden football award symbol">
+  <defs><radialGradient id="gold" cx=".3" cy=".2"><stop stop-color="#fff5ba"/><stop offset=".45" stop-color="#e8bd51"/><stop offset="1" stop-color="#9e6a16"/></radialGradient></defs>
+  <path d="M28 112 43 98 76 99 93 115 100 137 20 137Z" fill="#c7a65b" stroke="#f4dda0" stroke-width="3"/>
+  <path d="m28 112 24 8-8 17m8-17 24-7 17 2m-17-2 4 24" fill="none" stroke="#826b3e" stroke-width="2"/>
+  <circle cx="60" cy="57" r="47" fill="url(#gold)" stroke="#ffe7a2" stroke-width="3"/>
+  <g fill="none" stroke="#8f651e" stroke-width="2.4"><path d="m60 36 19 14-7 22H48l-7-22Z"/><path d="m60 36-1-24m20 38 24-5M72 72l14 20M48 72 32 92M41 50 17 44M59 12l-20 9-22 23 1 24 14 24 27 12 27-12 17-25V45L84 22Z"/><path d="m39 21 2 29m43-28-5 28M18 68l30 4m55-5-31 5m-13 32 1-32"/></g>
+  <path d="M31 37Q39 20 55 20" fill="none" stroke="#fff6c8" stroke-width="5" stroke-linecap="round"/>
+</svg>

@@ -469,3 +469,18 @@ words:
     say: удост+оенный
     forms: [удостоенным]
     source: 'ru.wiktionary, «удостоенный»: «удосто́енный», «удосто́енным»; https://ru.wiktionary.org/wiki/удостоенный (owner correction, checked 2026-10-30)'
+  - word: Чехословакии
+    say: Чехослов+акии
+    source: 'ru.wiktionary, «Чехословакия»: «…мн. ч. Им. Чехослова́кия Чехослова́кии Р. Чехослова́кии Чехослов…» (storygro stress --lookup, 2026-10-30)'
+  - word: Чехословакия
+    say: Чехослов+акия
+    source: 'ru.wikipedia, «Чехословакия»: «…Чехослова́кия (чеш. Československo, словац. Česko-Slo…» (storygro stress --lookup, 2026-10-30)'
+  - word: Йозеф
+    say: Й+озеф
+    source: 'ru.wikipedia, «Масопуст, Йозеф»: «…Йо́зеф Ма́сопуст (чеш. Josef Masopust; 9 февра…» (storygro stress --lookup, 2026-10-30)'
+  - word: Масопуст
+    say: М+асопуст
+    source: 'ru.wikipedia, «Масопуст, Йозеф»: «…Йо́зеф Ма́сопуст (чеш. Josef Masopust; 9 февраля 1931[…]…» (storygro stress --lookup, 2026-10-30)'
+  - word: Дукла
+    say: Д+укла
+    source: 'ru.wikipedia, «Дукла (футбольный клуб, Прага)»: «…«Ду́кла» (чеш. Dukla Praha) — чешский профессио…» (storygro stress --lookup, 2026-10-30)'

@@ -1,0 +1,266 @@
+{
+ "files": {
+  "shots/portrait.png": {
+   "prompt": "Use case: historical-scene. Premium feature-animation 3D film character reference, detailed natural fabric and expressive mature face, not photographic, not babyish. A historically recognisable Josef Masopust in 1962, age31, match the supplied archival portrait's facial proportions exactly: angular broad forehead, thick dark eyebrows, short dark side-parted slightly waved hair with forelock, straight broad nose, clean shaven, strong rectangular jaw, fair skin. He is NOT Omar Sivori, NOT generic handsome modern footballer. Full body in plain white short-sleeve shirt with red V neck, red shorts, white socks with thin red hoops, plain black leather football boots. Standing calmly with a worn brown leather football at his boot on the pitch of Santiago Estadio Nacional 1962: broad open oval concrete terraces, one low covered main stand, slim period floodlights, distant hazy Andes, no modern roof ring. Chilean late autumn sunny early afternoon, crisp pale turquoise sky, warm ochre concrete, lush muted green grass, subtle red accents. Vertical 9:16 full bleed. Top 25% calm sky no heads, face centred x45% y40%; body to85%, bottom simple grass. No lettering, numbers, crests, sponsors, watermarks or flags. This is one cohesive film still, no layout panels.",
+   "seed": 0,
+   "provider": "imagegen",
+   "model": "OpenAI built-in image generation (identifier not exposed)",
+   "width": 941,
+   "height": 1672,
+   "steps": 0,
+   "licence": "OpenAI tool output terms; historical portrait reference: Unknown/Anefo, Dutch National Archives, CC BY-SA 3.0 NL. Adapted historical illustrations retain attribution/share-alike; see CREDITS.md. Original host references are owner supplied.",
+   "refs": {
+    "../../../private/football-legends-06-masopust/references/masopust-1962.jpg": "6ac7c2a2029d96c510a8d1ffd0bd0b5d99420fc347c8973545cbffdeda933e18"
+   },
+   "sha256": "becdc13111483a4817fc55202aebb5800882664d326148910b5677b0fbf53595",
+   "createdAt": 1793385215582
+  },
+  "shots/cover.png": {
+   "prompt": "Use case: illustration-story. Premium feature-animation 3D film still, richly detailed fur, cloth, architecture and grass, expressive story acting. Use supplied reference solely as immutable character identity: same Matvey grey-brown child raccoon in plain royal blue football kit and blue-white socks, same Sofia red squirrel child with tufted ears, ponytail and fluffy tail in plum tracksuit and white-lilac trainers, no redesign. Both at the sideline of Estadio Nacional Santiago Chile in 1962: open broad oval pale ochre concrete terraces, crowd in period clothing, low main stand canopy on one side only, slim period floodlights, Andes blue haze in distance, no ring roof, no Turin tower. Sunny early afternoon, turquoise pale sky, red terracotta track, muted emerald pitch. They smile with curious anticipation, one worn brown leather ball on grass near Matvey. Full-bleed portrait 9:16. Important composition for opening title: top 42% is sky/upper stands without faces or objects; Matvey and Sofia full bodies centred in x20%-78%, heads at y48%-55%, feet y84%. Bottom15% simple grass. Space above heads for two crisp titles later. No trophy in artwork, no text, letters, logos, crests, numbers, signs or watermarks.",
+   "seed": 0,
+   "provider": "imagegen",
+   "model": "OpenAI built-in image generation (identifier not exposed)",
+   "width": 940,
+   "height": 1672,
+   "steps": 0,
+   "licence": "OpenAI tool output terms; historical portrait reference: Unknown/Anefo, Dutch National Archives, CC BY-SA 3.0 NL. Adapted historical illustrations retain attribution/share-alike; see CREDITS.md. Original host references are owner supplied.",
+   "refs": {
+    "../../series/football-legends/cast/hosts-full.png": "49c92b4bca5df88e90d529034e158fb7a48a79de4c7f98d49ccf764944d2be35"
+   },
+   "sha256": "795f3571422d2bdef685260ed92ef1e3b690bbbaeae5969c31e9a70e9628ddde",
+   "createdAt": 1793385215591
+  },
+  "shots/portrait-v2.png": {
+   "prompt": "Use case: illustration-story / historical-scene. Clearly stylised premium 3D feature ANIMATION, not live-action, not a photograph: appealing expressive shaped facial planes, subtly oversized animated eyes, soft rendered skin, high-end cloth/fur detail, coherent sculpted forms, sophisticated family-film visual storytelling. Portrait full bleed 9:16 edge-to-edge, no panels/borders. No text, letters, numbers, crests, sponsors, watermarks or flags. Early afternoon Chilean late autumn sun, turquoise sky, ochre terraces, terracotta track, emerald pitch. Santiago Estadio Nacional in 1962: broad open oval concrete terraces, low canopy only along one main stand, period slim lattice floodlight poles, distant subtle hazy Andes, no modern roof ring or Turin tower. All heads below top25%, away from side10%; bottom22% plain grass for captions, action/ball y45%-65%. Create a full body identity reference of Josef Masopust age31. Reference1 is his actual 1962 portrait: exact identity with broad forehead, low short side-parted black hair with subtle forelock NOT dense curly pompadour, thick dark brows, long straight broad nose, strong rectangular jaw, fair skin, clean shaven. Reference2 ONLY animation/fur visual style, do not turn him into an animal. Plain white short sleeve red V neck shirt, red shorts, white socks with thin red hoops, plain black boots. Calm confident standing pose, his face at42% height, worn brown leather ball at65% beside lifted foot on low turf mound. No lettering.",
+   "seed": 0,
+   "provider": "imagegen",
+   "model": "OpenAI built-in image generation (identifier not exposed)",
+   "width": 941,
+   "height": 1672,
+   "steps": 0,
+   "licence": "OpenAI tool output terms; historical portrait reference: Unknown/Anefo, Dutch National Archives, CC BY-SA 3.0 NL. Adapted historical illustrations retain attribution/share-alike; see CREDITS.md. Original host references are owner supplied.",
+   "refs": {
+    "../../../private/football-legends-06-masopust/references/masopust-1962.jpg": "6ac7c2a2029d96c510a8d1ffd0bd0b5d99420fc347c8973545cbffdeda933e18",
+    "../../series/football-legends/cast/hosts-full.png": "49c92b4bca5df88e90d529034e158fb7a48a79de4c7f98d49ccf764944d2be35"
+   },
+   "sha256": "04604fbd663b1b5e66da87bcce8d083cd8b22f7b1f0757c1409dd47d1e2d71a0",
+   "createdAt": 1793385215599
+  },
+  "shots/final.png": {
+   "prompt": "Use case: illustration-story / historical-scene. Clearly stylised premium 3D feature ANIMATION, not live-action, not a photograph: appealing expressive shaped facial planes, subtly oversized animated eyes, soft rendered skin, high-end cloth/fur detail, coherent sculpted forms, sophisticated family-film visual storytelling. Portrait full bleed 9:16 edge-to-edge, no panels/borders. No text, letters, numbers, crests, sponsors, watermarks or flags. Early afternoon Chilean late autumn sun, turquoise sky, ochre terraces, terracotta track, emerald pitch. Santiago Estadio Nacional in 1962: broad open oval concrete terraces, low canopy only along one main stand, period slim lattice floodlight poles, distant subtle hazy Andes, no modern roof ring or Turin tower. All heads below top25%, away from side10%; bottom22% plain grass for captions, action/ball y45%-65%. Establish the world cup final as a dramatic low pitch-side wide shot: two DISTINCT football teams facing off for the ball, Czechoslovak players white red-V-neck shirts/red shorts/white socks thin red hoops, Brazilians yellow green-collar shirts/blue shorts/white socks. At centre Josef Masopust matching archival reference has possession, controlled intent. Nearby Brazilian defender with dark skin, cropped hair and broad nose, another Brazilian with medium brown skin and short curly hair further back; distinctly different faces and bodies. Do not make them copies of Masopust; no Pele likeness or implied participation. Main action midframe with ball visible y62%. Period crowd, no modern gear. Cinematic depth, vivid anticipation.",
+   "seed": 0,
+   "provider": "imagegen",
+   "model": "OpenAI built-in image generation (identifier not exposed)",
+   "width": 941,
+   "height": 1672,
+   "steps": 0,
+   "licence": "OpenAI tool output terms; historical portrait reference: Unknown/Anefo, Dutch National Archives, CC BY-SA 3.0 NL. Adapted historical illustrations retain attribution/share-alike; see CREDITS.md. Original host references are owner supplied.",
+   "refs": {
+    "../../../private/football-legends-06-masopust/references/masopust-1962.jpg": "6ac7c2a2029d96c510a8d1ffd0bd0b5d99420fc347c8973545cbffdeda933e18",
+    "../../series/football-legends/cast/hosts-full.png": "49c92b4bca5df88e90d529034e158fb7a48a79de4c7f98d49ccf764944d2be35"
+   },
+   "sha256": "f744460582b7975de407f53a5f7f153b93f842ed36865df675405b41bf337b8f",
+   "createdAt": 1793385215606
+  },
+  "shots/final-v2.png": {
+   "prompt": "Edit only the football and sock trim in this image. Replace the anachronistic black-and-white pentagon football with the historically appropriate 1962 Chile style plain worn dark TAN/BROWN leather football with elongated stitched leather panels, no black patches, no white patches, no lettering. Remove green/yellow stripes from Brazilian socks: plain white socks in1962. Preserve ALL faces, positions, animation style, bodies, jerseys, shorts, stadium, framing, sunlight, background, every other detail exactly. No text.",
+   "seed": 0,
+   "provider": "imagegen",
+   "model": "OpenAI built-in image generation (identifier not exposed)",
+   "width": 941,
+   "height": 1672,
+   "steps": 0,
+   "licence": "OpenAI tool output terms; historical portrait reference: Unknown/Anefo, Dutch National Archives, CC BY-SA 3.0 NL. Adapted historical illustrations retain attribution/share-alike; see CREDITS.md. Original host references are owner supplied.",
+   "refs": {
+    "shots/final.png": "f744460582b7975de407f53a5f7f153b93f842ed36865df675405b41bf337b8f"
+   },
+   "sha256": "072b557f2aafafe5caf7f4ba3e17ca4b3288064a24a499bda0dccd1a42f8a48e",
+   "createdAt": 1793385215611,
+   "sourceGeneration": {
+    "prompt": "Use case: illustration-story / historical-scene. Clearly stylised premium 3D feature ANIMATION, not live-action, not a photograph: appealing expressive shaped facial planes, subtly oversized animated eyes, soft rendered skin, high-end cloth/fur detail, coherent sculpted forms, sophisticated family-film visual storytelling. Portrait full bleed 9:16 edge-to-edge, no panels/borders. No text, letters, numbers, crests, sponsors, watermarks or flags. Early afternoon Chilean late autumn sun, turquoise sky, ochre terraces, terracotta track, emerald pitch. Santiago Estadio Nacional in 1962: broad open oval concrete terraces, low canopy only along one main stand, period slim lattice floodlight poles, distant subtle hazy Andes, no modern roof ring or Turin tower. All heads below top25%, away from side10%; bottom22% plain grass for captions, action/ball y45%-65%. Establish the world cup final as a dramatic low pitch-side wide shot: two DISTINCT football teams facing off for the ball, Czechoslovak players white red-V-neck shirts/red shorts/white socks thin red hoops, Brazilians yellow green-collar shirts/blue shorts/white socks. At centre Josef Masopust matching archival reference has possession, controlled intent. Nearby Brazilian defender with dark skin, cropped hair and broad nose, another Brazilian with medium brown skin and short curly hair further back; distinctly different faces and bodies. Do not make them copies of Masopust; no Pele likeness or implied participation. Main action midframe with ball visible y62%. Period crowd, no modern gear. Cinematic depth, vivid anticipation.",
+    "refs": {
+     "../../../private/football-legends-06-masopust/references/masopust-1962.jpg": "6ac7c2a2029d96c510a8d1ffd0bd0b5d99420fc347c8973545cbffdeda933e18",
+     "../../series/football-legends/cast/hosts-full.png": "49c92b4bca5df88e90d529034e158fb7a48a79de4c7f98d49ccf764944d2be35"
+    },
+    "sha256": "f744460582b7975de407f53a5f7f153b93f842ed36865df675405b41bf337b8f",
+    "model": "OpenAI built-in image generation (identifier not exposed)"
+   }
+  },
+  "shots/goal.png": {
+   "prompt": "Use case: illustration-story / historical-scene. Clearly stylised premium 3D feature ANIMATION, not live-action, not a photograph: appealing expressive shaped facial planes, subtly oversized animated eyes, soft rendered skin, high-end cloth/fur detail, coherent sculpted forms, sophisticated family-film visual storytelling. Portrait full bleed 9:16 edge-to-edge, no panels/borders. No text, letters, numbers, crests, sponsors, watermarks or flags. Early afternoon Chilean late autumn sun, turquoise sky, ochre terraces, terracotta track, emerald pitch. Santiago Estadio Nacional in 1962: broad open oval concrete terraces, low canopy only along one main stand, period slim lattice floodlight poles, distant subtle hazy Andes, no modern roof ring or Turin tower. All heads below top25%, away from side10%; bottom22% plain grass for captions, action/ball y45%-65%. Josef Masopust, same face as identity reference1, is finishing a decisive low shot, white shirt red V, red shorts, white socks with thin red hoops. A worn TAN BROWN LEATHER stitched elongated-panel 1962 ball leaves his BLACK boot at y60%, heading toward the net on the right; keep it clearly separated from feet. A goalkeeper in plain charcoal/blue-grey long sleeve sweater, black shorts and dark socks dives to right, ball beyond his reach, single believable goal frame and taut square net. Brazilian defender left wearing yellow withgreenVcollar, blue shorts, PLAIN WHITE SOCKS (NO modern trim), distinct dark skin and short hair. Dynamic diagonal composition, no flying superhero poses, no modern blackwhite pentagon ball, no duplicated limbs. Scoring play is an illustration, not a traced match frame.",
+   "seed": 0,
+   "provider": "imagegen",
+   "model": "OpenAI built-in image generation (identifier not exposed)",
+   "width": 941,
+   "height": 1672,
+   "steps": 0,
+   "licence": "OpenAI tool output terms; historical portrait reference: Unknown/Anefo, Dutch National Archives, CC BY-SA 3.0 NL. Adapted historical illustrations retain attribution/share-alike; see CREDITS.md. Original host references are owner supplied.",
+   "refs": {
+    "shots/portrait-v2.png": "04604fbd663b1b5e66da87bcce8d083cd8b22f7b1f0757c1409dd47d1e2d71a0",
+    "../../series/football-legends/cast/hosts-full.png": "49c92b4bca5df88e90d529034e158fb7a48a79de4c7f98d49ccf764944d2be35"
+   },
+   "sha256": "22d6e8d59ae9f927e5fbef15aab3125949ede7539dec3f03dc0afc76681901bd",
+   "createdAt": 1793385215617
+  },
+  "shots/dukla.png": {
+   "prompt": "Use case: historical-scene. Same premium 3D ANIMATED family feature-film style as reference2, high detail, NOT photograph. Josef Masopust identity reference1, age31, shortdarkhair, fairskin, angularstraightnose andbroadforehead; he now wears Dukla Prague's period plain dark maroon football shirt with yellow/gold shoulders and collar, maroon shorts, maroon socks, black boots. Fullbody receiving a pass on Juliska's hillside ground in Prague, early1960s, sloped concrete terraces, leafy trees, distant old Prague rooftops, soft cooler central European daylight, burgundy-gold-green palette. Two teammates DIFFERENT faces from him (one fair and longer faced withlightbrownsidepart, one receding darkhair), same maroon kit. Brown stitched leather ball, never blackwhite. Full bleed9:16. Faces y32%-52%, action midframe; top25% sky/trees clear for title, bottom22% simple grass for captions. No letters, numbers, crests, logos, sponsors, watermarks or flags. Do not show Brazil or Santiago mountains in this Prague club scene.",
+   "seed": 0,
+   "provider": "imagegen",
+   "model": "OpenAI built-in image generation (identifier not exposed)",
+   "width": 941,
+   "height": 1671,
+   "steps": 0,
+   "licence": "OpenAI tool output terms; historical portrait reference: Unknown/Anefo, Dutch National Archives, CC BY-SA 3.0 NL. Adapted historical illustrations retain attribution/share-alike; see CREDITS.md. Original host references are owner supplied.",
+   "refs": {
+    "shots/portrait-v2.png": "04604fbd663b1b5e66da87bcce8d083cd8b22f7b1f0757c1409dd47d1e2d71a0",
+    "../../series/football-legends/cast/hosts-full.png": "49c92b4bca5df88e90d529034e158fb7a48a79de4c7f98d49ccf764944d2be35"
+   },
+   "sha256": "d283eb47ee438a094b0147eae52355a3da7570ab3ea1caab69a7585ee8d89917",
+   "createdAt": 1793385215623
+  },
+  "shots/award.png": {
+   "prompt": "Use case: illustration-story / historical-scene. Clearly stylised premium 3D feature ANIMATION, not live-action, not a photograph: appealing expressive shaped facial planes, subtly oversized animated eyes, soft rendered skin, high-end cloth/fur detail, coherent sculpted forms, sophisticated family-film visual storytelling. Portrait full bleed 9:16 edge-to-edge, no panels/borders. No text, letters, numbers, crests, sponsors, watermarks or flags. Early afternoon Chilean late autumn sun, turquoise sky, ochre terraces, terracotta track, emerald pitch. Santiago Estadio Nacional in 1962: broad open oval concrete terraces, low canopy only along one main stand, period slim lattice floodlight poles, distant subtle hazy Andes, no modern roof ring or Turin tower. All heads below top25%, away from side10%; bottom22% plain grass for captions, action/ball y45%-65%. Josef Masopust in his Dukla Prague club maroon shirt with GOLD shoulders, maroon shorts and socks holds a recognisable golden football trophy on a rough mineral rock base with both hands at chest height. This is an illustrative award portrait, not a claim of a specific ceremony. Same 31-year-old face as reference1. Crucial framing: show figure smaller, hair begins 36% down the canvas, face between38%-46%, trophy55%, shoes84%; TOP THIRD is empty pale turquoise sky. He and trophy at x45%, neutral proud soft smile. No other people. Never draw world cup figurine trophy. No text, numbers, brands or ribbons. Warm gold glints, rich fabric, soft face shape, character animation notphotograph.",
+   "seed": 0,
+   "provider": "imagegen",
+   "model": "OpenAI built-in image generation (identifier not exposed)",
+   "width": 941,
+   "height": 1672,
+   "steps": 0,
+   "licence": "OpenAI tool output terms; historical portrait reference: Unknown/Anefo, Dutch National Archives, CC BY-SA 3.0 NL. Adapted historical illustrations retain attribution/share-alike; see CREDITS.md. Original host references are owner supplied.",
+   "refs": {
+    "shots/portrait-v2.png": "04604fbd663b1b5e66da87bcce8d083cd8b22f7b1f0757c1409dd47d1e2d71a0",
+    "../../series/football-legends/cast/hosts-full.png": "49c92b4bca5df88e90d529034e158fb7a48a79de4c7f98d49ccf764944d2be35"
+   },
+   "sha256": "a9a2bd9f77dcac9561c7f4eeb7bd447e4a857936c68117f65b24221376095fc2",
+   "createdAt": 1793385215628
+  },
+  "shots/defeat.png": {
+   "prompt": "Use case: illustration-story / historical-scene. Clearly stylised premium 3D feature ANIMATION, not live-action, not a photograph: appealing expressive shaped facial planes, subtly oversized animated eyes, soft rendered skin, high-end cloth/fur detail, coherent sculpted forms, sophisticated family-film visual storytelling. Portrait full bleed 9:16 edge-to-edge, no panels/borders. No text, letters, numbers, crests, sponsors, watermarks or flags. Early afternoon Chilean late autumn sun, turquoise sky, ochre terraces, terracotta track, emerald pitch. Santiago Estadio Nacional in 1962: broad open oval concrete terraces, low canopy only along one main stand, period slim lattice floodlight poles, distant subtle hazy Andes, no modern roof ring or Turin tower. All heads below top25%, away from side10%; bottom22% plain grass for captions, action/ball y45%-65%. A quiet human-scale moment AFTER the final: Josef Masopust in white redVneck shirt and red shorts sits on a plain wooden sideline bench, a DIFFERENT Czechoslovak teammate with fair short lightbrownhair and longer lean face in matching white/red kit sits beside him and places a reassuring hand on his shoulder. Masopust looks disappointed but composed, teammate supportive, no tears or humiliation. Main heads y42%-51% and centred x25%-65%, upperthird calm sky/emptyterraces. In distant background two Brazilian players yellow shirts blue shorts white socks embrace in restrained celebration, tiny distinct silhouettes, not foreground. Wide enough bodies and gestures visible, warm reflective afternoon, no scoreboards, no text. Brown leather ball at benchfoot. Same athleteface asreference1.",
+   "seed": 0,
+   "provider": "imagegen",
+   "model": "OpenAI built-in image generation (identifier not exposed)",
+   "width": 941,
+   "height": 1672,
+   "steps": 0,
+   "licence": "OpenAI tool output terms; historical portrait reference: Unknown/Anefo, Dutch National Archives, CC BY-SA 3.0 NL. Adapted historical illustrations retain attribution/share-alike; see CREDITS.md. Original host references are owner supplied.",
+   "refs": {
+    "shots/portrait-v2.png": "04604fbd663b1b5e66da87bcce8d083cd8b22f7b1f0757c1409dd47d1e2d71a0",
+    "../../series/football-legends/cast/hosts-full.png": "49c92b4bca5df88e90d529034e158fb7a48a79de4c7f98d49ccf764944d2be35"
+   },
+   "sha256": "b4a7d1f891bcf367ac2421529335e32a0f6ed032830913417618406c6a371bef",
+   "createdAt": 1793385215633
+  },
+  "shots/team.png": {
+   "prompt": "Use case: illustration-story / historical-scene. Clearly stylised premium 3D feature ANIMATION, not live-action, not a photograph: appealing expressive shaped facial planes, subtly oversized animated eyes, soft rendered skin, high-end cloth/fur detail, coherent sculpted forms, sophisticated family-film visual storytelling. Portrait full bleed 9:16 edge-to-edge, no panels/borders. No text, letters, numbers, crests, sponsors, watermarks or flags. Early afternoon Chilean late autumn sun, turquoise sky, ochre terraces, terracotta track, emerald pitch. Santiago Estadio Nacional in 1962: broad open oval concrete terraces, low canopy only along one main stand, period slim lattice floodlight poles, distant subtle hazy Andes, no modern roof ring or Turin tower. All heads below top25%, away from side10%; bottom22% plain grass for captions, action/ball y45%-65%. Czechoslovak team support and collective achievement: Josef Masopust at centre matching identity reference1, with three visibly DIFFERENT teammates (one fair longfaced and lightbrownsidepart, one receding hair broad faced, one dark slim moustache-freeyoungface). All wear plain WHITE redVcollar shirts, RED shorts, WHITE redhoop socks, blackboots. They stand in a loose shoulder-to-shoulder huddle pitchside after final, hands on shoulders, tired but respectfully proud. NO trophy NO celebratorywinnerpose, silvermedals notshown toavoidfabricatedceremony. Show all main faces around42%-52% down canvas, upperthirdsky+openstands, bodies to86%, grass below. Worn tanbrown stitched leather football. No Brazil shirts among these four and no duplicate faces.",
+   "seed": 0,
+   "provider": "imagegen",
+   "model": "OpenAI built-in image generation (identifier not exposed)",
+   "width": 941,
+   "height": 1672,
+   "steps": 0,
+   "licence": "OpenAI tool output terms; historical portrait reference: Unknown/Anefo, Dutch National Archives, CC BY-SA 3.0 NL. Adapted historical illustrations retain attribution/share-alike; see CREDITS.md. Original host references are owner supplied.",
+   "refs": {
+    "shots/portrait-v2.png": "04604fbd663b1b5e66da87bcce8d083cd8b22f7b1f0757c1409dd47d1e2d71a0",
+    "../../series/football-legends/cast/hosts-full.png": "49c92b4bca5df88e90d529034e158fb7a48a79de4c7f98d49ccf764944d2be35"
+   },
+   "sha256": "c5e53c3ba17b3ff99812148ec0d976a8566a28a2be3ac0c44e17e996b4edf569",
+   "createdAt": 1793385215639
+  },
+  "shots/pass.png": {
+   "prompt": "Use case: illustration-story / historical-scene. Clearly stylised premium 3D feature ANIMATION, not live-action, not a photograph: appealing expressive shaped facial planes, subtly oversized animated eyes, soft rendered skin, high-end cloth/fur detail, coherent sculpted forms, sophisticated family-film visual storytelling. Portrait full bleed 9:16 edge-to-edge, no panels/borders. No text, letters, numbers, crests, sponsors, watermarks or flags. Early afternoon Chilean late autumn sun, turquoise sky, ochre terraces, terracotta track, emerald pitch. Santiago Estadio Nacional in 1962: broad open oval concrete terraces, low canopy only along one main stand, period slim lattice floodlight poles, distant subtle hazy Andes, no modern roof ring or Turin tower. All heads below top25%, away from side10%; bottom22% plain grass for captions, action/ball y45%-65%. Midfield intelligence, not another portrait: Josef Masopust matching reference1 in WHITE redVshirt RED shorts WHITE redhoop socks plays a grounded pass with a BROWN stitched leather 1962 ball across open grass to a clearly DIFFERENT fair lightbrownhaired teammate in same white/red kit at left. Brazilian defender yellow greenVshirt blue shorts PLAIN WHITE socks watches, distinct darkskin croppedhair. Wide camera, figures smaller: every head starts BELOW35% height and all faces between38%-52%, main ball at60%, boots65%-72%; lowerquarter simple foreground grass, topthird open sky and stadium. Strong readable passing lane, no drawn arrows or text. No blackwhite ball. No duplicate players. Detailed animation posture and period uniforms.",
+   "seed": 0,
+   "provider": "imagegen",
+   "model": "OpenAI built-in image generation (identifier not exposed)",
+   "width": 941,
+   "height": 1672,
+   "steps": 0,
+   "licence": "OpenAI tool output terms; historical portrait reference: Unknown/Anefo, Dutch National Archives, CC BY-SA 3.0 NL. Adapted historical illustrations retain attribution/share-alike; see CREDITS.md. Original host references are owner supplied.",
+   "refs": {
+    "shots/portrait-v2.png": "04604fbd663b1b5e66da87bcce8d083cd8b22f7b1f0757c1409dd47d1e2d71a0",
+    "../../series/football-legends/cast/hosts-full.png": "49c92b4bca5df88e90d529034e158fb7a48a79de4c7f98d49ccf764944d2be35"
+   },
+   "sha256": "1340409e6d58ff71936f949406227480eca3d88ea520d890d6eee1cc8ebaf6b7",
+   "createdAt": 1793385215645
+  },
+  "shots/brazil.png": {
+   "prompt": "Use case: illustration-story / historical-scene. Clearly stylised premium 3D feature ANIMATION, not live-action, not a photograph: appealing expressive shaped facial planes, subtly oversized animated eyes, soft rendered skin, high-end cloth/fur detail, coherent sculpted forms, sophisticated family-film visual storytelling. Portrait full bleed 9:16 edge-to-edge, no panels/borders. No text, letters, numbers, crests, sponsors, watermarks or flags. Early afternoon Chilean late autumn sun, turquoise sky, ochre terraces, terracotta track, emerald pitch. Santiago Estadio Nacional in 1962: broad open oval concrete terraces, low canopy only along one main stand, period slim lattice floodlight poles, distant subtle hazy Andes, no modern roof ring or Turin tower. All heads below top25%, away from side10%; bottom22% plain grass for captions, action/ball y45%-65%. A Brazil goal changing the outcome, with clearly distinct teams: Brazilian attacking player in yellow greenVcollar shirt, blue shorts, PLAIN WHITE socks, blackboots, mediumbrownskin and short blackhair raises a fist beside a goal, second DIFFERENT darkerskinned Brazilian with broaderface in samekit congratulates him; in distance a Czechoslovak goalkeeper in charcoal shirt picks up a TAN BROWN stitched leather ball from INSIDE net. White/red Czechoslovak outfieldplayers further away. Do NOT portray Pele: no famous identifiable Brazilian likeness or numbers. Wide shot figures small enough HEADS BELOW34% HEIGHT, faces38%-48%, ball/netclearlybelow55%, foregroundbottomquarter grass. Illustrative goal aftermath, not reconstruction of an identified specific scorer. No trophies, no scoreboard or text.",
+   "seed": 0,
+   "provider": "imagegen",
+   "model": "OpenAI built-in image generation (identifier not exposed)",
+   "width": 941,
+   "height": 1672,
+   "steps": 0,
+   "licence": "OpenAI tool output terms; historical portrait reference: Unknown/Anefo, Dutch National Archives, CC BY-SA 3.0 NL. Adapted historical illustrations retain attribution/share-alike; see CREDITS.md. Original host references are owner supplied.",
+   "refs": {
+    "shots/portrait-v2.png": "04604fbd663b1b5e66da87bcce8d083cd8b22f7b1f0757c1409dd47d1e2d71a0",
+    "../../series/football-legends/cast/hosts-full.png": "49c92b4bca5df88e90d529034e158fb7a48a79de4c7f98d49ccf764944d2be35"
+   },
+   "sha256": "b3576f0a698d5196fc19de92d56fa7352dd2eb3491930ee297e6af2888013bb2",
+   "createdAt": 1793385215650
+  },
+  "shots/support.png": {
+   "prompt": "Use case: illustration-story / historical-scene. Clearly stylised premium 3D feature ANIMATION, not live-action, not a photograph: appealing expressive shaped facial planes, subtly oversized animated eyes, soft rendered skin, high-end cloth/fur detail, coherent sculpted forms, sophisticated family-film visual storytelling. Portrait full bleed 9:16 edge-to-edge, no panels/borders. No text, letters, numbers, crests, sponsors, watermarks or flags. Early afternoon Chilean late autumn sun, turquoise sky, ochre terraces, terracotta track, emerald pitch. Santiago Estadio Nacional in 1962: broad open oval concrete terraces, low canopy only along one main stand, period slim lattice floodlight poles, distant subtle hazy Andes, no modern roof ring or Turin tower. All heads below top25%, away from side10%; bottom22% plain grass for captions, action/ball y45%-65%. The exact Matvey raccoon boy and Sofia red squirrel girl from reference1, unchanged faces, age, fur markings and clothes. Matvey in royalbluekit sits on sideline wooden bench looking a little disappointed after a game, ball brownleather at feet. Sofia in plumtracksuit sits beside him, comforting him with a warm smile and one hand on his shoulder, Matvey begins to smile. Main heads around y45%-55%, bodies to80%, top38% clear sky/stands for question overlay, bottom20% simple grass. Intimate supportive body language, no tears, no humiliation. Same sunnySantiago1962 stadiumworld, detailedsoftfur, animatedfamilyfilmnotphoto. No medals, trophies, text, logos or extra characters.",
+   "seed": 0,
+   "provider": "imagegen",
+   "model": "OpenAI built-in image generation (identifier not exposed)",
+   "width": 941,
+   "height": 1672,
+   "steps": 0,
+   "licence": "OpenAI tool output terms; historical portrait reference: Unknown/Anefo, Dutch National Archives, CC BY-SA 3.0 NL. Adapted historical illustrations retain attribution/share-alike; see CREDITS.md. Original host references are owner supplied.",
+   "refs": {
+    "../../series/football-legends/cast/hosts-full.png": "49c92b4bca5df88e90d529034e158fb7a48a79de4c7f98d49ccf764944d2be35"
+   },
+   "sha256": "2f45cfb0a71d32e5d5faf1ff98d17c4ea56d6dbed1ff3962ffcd7a35a4ed9180",
+   "createdAt": 1793385215654
+  },
+  "shots/team-v2.png": {
+   "prompt": "Recompose this exact animation image for a vertical Instagram feed crop. Keep the same FOUR distinct players, Josef Masopust's face, team uniforms, gestures, ball, stadium, colour and beautiful animation rendering. Scale the WHOLE GROUP of four players down about15% and lower it so the TOP OF EVERY HEAD is BELOW 30% of the full canvas height. Fully show all four faces safely inside horizontal margins10%-85%. The bottom of boots may sit at84% height, lower15% simple grass. Fill added space with matching sky/stadium seamlessly. The top30% has no heads. No new people, no text, no numerals, no logos. Keep white redVshirts/redshorts/white redhoopsocks.",
+   "seed": 0,
+   "provider": "imagegen",
+   "model": "OpenAI built-in image generation (identifier not exposed)",
+   "width": 941,
+   "height": 1672,
+   "steps": 0,
+   "licence": "OpenAI tool output terms; historical portrait reference: Unknown/Anefo, Dutch National Archives, CC BY-SA 3.0 NL. Adapted historical illustrations retain attribution/share-alike; see CREDITS.md. Original host references are owner supplied.",
+   "refs": {
+    "../../../../../.codex/generated_images/01a188e1-81ca-7ce1-8a50-36bd8d134d29/exec-707b44cd-1496-4b17-adf7-2cfd77cce92b.png": "c5e53c3ba17b3ff99812148ec0d976a8566a28a2be3ac0c44e17e996b4edf569"
+   },
+   "sha256": "0653f95e3897988c52835e55bf8be4596c048a4d9c935803f2fc5f7861e62cbd",
+   "createdAt": 1793385215661,
+   "sourceGeneration": {
+    "prompt": "Use case: illustration-story / historical-scene. Clearly stylised premium 3D feature ANIMATION, not live-action, not a photograph: appealing expressive shaped facial planes, subtly oversized animated eyes, soft rendered skin, high-end cloth/fur detail, coherent sculpted forms, sophisticated family-film visual storytelling. Portrait full bleed 9:16 edge-to-edge, no panels/borders. No text, letters, numbers, crests, sponsors, watermarks or flags. Early afternoon Chilean late autumn sun, turquoise sky, ochre terraces, terracotta track, emerald pitch. Santiago Estadio Nacional in 1962: broad open oval concrete terraces, low canopy only along one main stand, period slim lattice floodlight poles, distant subtle hazy Andes, no modern roof ring or Turin tower. All heads below top25%, away from side10%; bottom22% plain grass for captions, action/ball y45%-65%. Czechoslovak team support and collective achievement: Josef Masopust at centre matching identity reference1, with three visibly DIFFERENT teammates (one fair longfaced and lightbrownsidepart, one receding hair broad faced, one dark slim moustache-freeyoungface). All wear plain WHITE redVcollar shirts, RED shorts, WHITE redhoop socks, blackboots. They stand in a loose shoulder-to-shoulder huddle pitchside after final, hands on shoulders, tired but respectfully proud. NO trophy NO celebratorywinnerpose, silvermedals notshown toavoidfabricatedceremony. Show all main faces around42%-52% down canvas, upperthirdsky+openstands, bodies to86%, grass below. Worn tanbrown stitched leather football. No Brazil shirts among these four and no duplicate faces.",
+    "refs": {
+     "shots/portrait-v2.png": "04604fbd663b1b5e66da87bcce8d083cd8b22f7b1f0757c1409dd47d1e2d71a0",
+     "../../series/football-legends/cast/hosts-full.png": "49c92b4bca5df88e90d529034e158fb7a48a79de4c7f98d49ccf764944d2be35"
+    },
+    "sha256": "c5e53c3ba17b3ff99812148ec0d976a8566a28a2be3ac0c44e17e996b4edf569",
+    "model": "OpenAI built-in image generation (identifier not exposed)"
+   }
+  },
+  "shots/defeat-v2.png": {
+   "prompt": "Edit only the small yellow shirt of the celebrating Brazilian player in the background on the right: REMOVE the green number 10 so the shirt is plain solid yellow. Remove any other lettering, digits or logos from clothing. Keep all faces, hair, bodies, poses, foreground supportive moment, brown ball, kits, sunlight, stadium and exact framing unchanged. No text, no numbers.",
+   "seed": 0,
+   "provider": "imagegen",
+   "model": "OpenAI built-in image generation (identifier not exposed)",
+   "width": 941,
+   "height": 1672,
+   "steps": 0,
+   "licence": "OpenAI tool output terms; historical portrait reference: Unknown/Anefo, Dutch National Archives, CC BY-SA 3.0 NL. Adapted historical illustrations retain attribution/share-alike; see CREDITS.md. Original host references are owner supplied.",
+   "refs": {
+    "../../../../../.codex/generated_images/01a188e1-81ca-7ce1-8a50-36bd8d134d29/exec-619bdf2d-d684-4af2-b2bd-5ccab3cce9ab.png": "b4a7d1f891bcf367ac2421529335e32a0f6ed032830913417618406c6a371bef"
+   },
+   "sha256": "7953b67260be5f3c592f6a4bd67507b9ee32cd7e35f0604cfb14d6840e49c61a",
+   "createdAt": 1793385215666,
+   "sourceGeneration": {
+    "prompt": "Use case: illustration-story / historical-scene. Clearly stylised premium 3D feature ANIMATION, not live-action, not a photograph: appealing expressive shaped facial planes, subtly oversized animated eyes, soft rendered skin, high-end cloth/fur detail, coherent sculpted forms, sophisticated family-film visual storytelling. Portrait full bleed 9:16 edge-to-edge, no panels/borders. No text, letters, numbers, crests, sponsors, watermarks or flags. Early afternoon Chilean late autumn sun, turquoise sky, ochre terraces, terracotta track, emerald pitch. Santiago Estadio Nacional in 1962: broad open oval concrete terraces, low canopy only along one main stand, period slim lattice floodlight poles, distant subtle hazy Andes, no modern roof ring or Turin tower. All heads below top25%, away from side10%; bottom22% plain grass for captions, action/ball y45%-65%. A quiet human-scale moment AFTER the final: Josef Masopust in white redVneck shirt and red shorts sits on a plain wooden sideline bench, a DIFFERENT Czechoslovak teammate with fair short lightbrownhair and longer lean face in matching white/red kit sits beside him and places a reassuring hand on his shoulder. Masopust looks disappointed but composed, teammate supportive, no tears or humiliation. Main heads y42%-51% and centred x25%-65%, upperthird calm sky/emptyterraces. In distant background two Brazilian players yellow shirts blue shorts white socks embrace in restrained celebration, tiny distinct silhouettes, not foreground. Wide enough bodies and gestures visible, warm reflective afternoon, no scoreboards, no text. Brown leather ball at benchfoot. Same athleteface asreference1.",
+    "refs": {
+     "shots/portrait-v2.png": "04604fbd663b1b5e66da87bcce8d083cd8b22f7b1f0757c1409dd47d1e2d71a0",
+     "../../series/football-legends/cast/hosts-full.png": "49c92b4bca5df88e90d529034e158fb7a48a79de4c7f98d49ccf764944d2be35"
+    },
+    "sha256": "b4a7d1f891bcf367ac2421529335e32a0f6ed032830913417618406c6a371bef",
+    "model": "OpenAI built-in image generation (identifier not exposed)"
+   }
+  }
+ },
+ "_about": "Built-in GPT Image explicitly requested by owner. Exact model version not exposed; seed placeholder is not reproducible. Rejected initial portraits/variants remain recorded for provenance, not selected."
+}

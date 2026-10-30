@@ -27,6 +27,7 @@
 | Make cards and a release folder | [Carousel and release](how-to/carousel-and-release.md) |
 | Make an Instagram Reel that fills the frame | [Repository standard and production recipe](how-to/instagram-without-cropping.md) · [ADR 0007](adr/0007-instagram-reels.md) |
 | Keep a rubric consistent | [Brand and series](how-to/brand-and-series.md) |
+| Produce Football Legends with a shared cover and distinct historical worlds | [Series production recipe and retention pilot](how-to/football-series.md) |
 | Publish and record metrics | [Publish manually](how-to/publish-manually.md) |
 | Understand who decides what and which model does which job | [How we work](explanation/how-we-work.md) |
 | Contribute a change | [CONTRIBUTING](../CONTRIBUTING.md) |

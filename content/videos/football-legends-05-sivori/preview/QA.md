@@ -8,13 +8,13 @@ File: `.reel/ru/football-legends-05-sivori-ru.mp4` (relative to the spec)
 |---|---|---|
 | Codec and pixels | pass | h264, yuv420p |
 | Size | pass | 1080×1920 |
-| Audio track | pass | Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 196 kb/s (default) |
-| Length | pass | 82.82 s (planned 82.82 s) |
+| Audio track | pass | Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 197 kb/s (default) |
+| Length | pass | 81.32 s (planned 81.32 s) |
 | Loudness | pass | -14 LUFS integrated (target -14), true peak -1 dBFS |
-| Frame 0 is a hook | pass | contrast 1969 (needs content, not a black frame) |
+| Frame 0 is a hook | pass | contrast 2207 (needs content, not a black frame) |
 | No black stretches | pass | none ≥ 0.4 s |
-| Scenes render without errors | pass | 15 scenes, missing images/fonts included |
-| Numbers come from the facts | pass | 15 scenes read |
+| Scenes render without errors | pass | 14 scenes, missing images/fonts included |
+| Numbers come from the facts | pass | 14 scenes read |
 | Text clear of platform UI (reels) | pass | every cue checked |
 | Text fits its box | pass | every card, band and label at every cue |
 | Cover text inside the 1:1 preview | pass | cover at 0.0 s |

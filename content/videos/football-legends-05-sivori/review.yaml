@@ -15,16 +15,20 @@ notes: "Owner request 30 October 2026: episode 5, previous hosts, Juventus stadi
   had confused homographs: corrected to голы́, shared dictionary гол+ы, scene hint голЫ. Confirmed удостОенным
   retained. Same OmniVoice B, 0.90, stress off. Old O-based scores invalid. Final 82.82 s; QA 15/15; full
   decode 2483 frames per file; 38 inspected MP4 moments; 164 caption samples and 81 reverse seeks without
-  layout failures. Technical approvals only; corrected MP4 owner listening open; not published."
+  layout failures. Technical approvals only; corrected MP4 owner listening open; not published. Owner
+  requested a common series identity at frame zero on 30 October 2026. Added shared cover/emblem/theme,
+  removed redundant intro; selected narration and goals/удостоенным WAVs unchanged. New version 81.32 s, 2438
+  frames, 38 reviewed MP4 moments; technical QA 15/15. Supersedes earlier duration/frame counts in these
+  historical notes. No owner release approval."
 approvals:
   ru:
     script:
-      hash: d59e87c69204
-      at: 2026-10-30T15:05:41.043Z
+      hash: ff655fd53918
+      at: 2026-10-30T18:35:56.288Z
       by: agent
       role: agent
     storyboard:
-      hash: e031cb99871a
-      at: 2026-10-30T15:05:41.431Z
+      hash: fd1d03ae6c54
+      at: 2026-10-30T18:35:56.655Z
       by: agent
       role: agent

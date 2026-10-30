@@ -97,26 +97,19 @@ post:
     - золотоймяч
 scenes:
   - id: hook
-    scene: illustration
+    scene: series-cover
     say: Можно ли обыграть защитника, который кажется гораздо сильнее и крупнее тебя?
     pad:
       - 0.15
       - 0.35
     energy: 0.65
     props:
-      shots:
-        - image: shots/hook-v2.png
-          move: in
-          zoom: 0.025
-          focus:
-            x: 0.5
-            y: 0.38
-      labels:
-        - textFrom: facts.hook.text
-          x: 0.46
-          y: 0.255
-          at: -1
-          tone: navy
+      image: shots/question.png
+      projectFrom: facts.series.project
+      titleFrom: facts.series.title
+      emblem: /rc/styles/cartoon/golden-ball.svg
+      reveal: shots/hook-v2.png
+      revealAt: 1.8
     sfx:
       - at: start
         kind: swell
@@ -146,27 +139,6 @@ scenes:
       - at: start
         kind: whoosh
         gain: 0.28
-  - id: intro
-    scene: illustration
-    say: ""
-    min: 1.5
-    energy: 0.65
-    sfx:
-      - at: start
-        kind: chime
-        gain: 0.25
-    props:
-      shots:
-        - image: shots/intro.png
-          move: in
-          zoom: 0.025
-          focus:
-            x: 0.5
-            y: 0.38
-      title:
-        textFrom: facts.series.title
-        at: 0.1
-        size: 0.044
   - id: roots
     scene: illustration
     say: Сивори родился в Аргентине, {#italy}а потом играл в Италии за знаменитый «Ювентус».

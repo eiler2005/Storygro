@@ -1,0 +1,114 @@
+{
+ "duration": 88.08600000000001,
+ "size": [
+  1080,
+  1920
+ ],
+ "fps": 30,
+ "frames": 2638,
+ "webFrames": 2638,
+ "moments": 41,
+ "masterSHA256": "fd30a35ca70149170c93cc47ae84a049b5ddb8a637d07e14e69eff0b1b946dbf",
+ "qa": "pass",
+ "captionSamples": 175,
+ "reverseSeekSamples": 90,
+ "layoutFailures": 0,
+ "voice": [
+  {
+   "scene": "hook",
+   "file": "hook-c9c6939ff012.wav",
+   "sha256": "7107f65aa23ec9b1d82b58adf33a806ee564d95f7ae25c1f17d3b26fb639d254",
+   "matched": 1
+  },
+  {
+   "scene": "identity",
+   "file": "identity-dffdf23efd4a.wav",
+   "sha256": "0433b096f6c029bfcba36cefcb006fddcf447b3907022bcbf12661bda2c3acde",
+   "matched": 1
+  },
+  {
+   "scene": "club",
+   "file": "club-a7d8eabed9da.wav",
+   "sha256": "4f94856a06a4946288be039e023e3b87d4641e41e7d3869c506bd87fa71c4cc2",
+   "matched": 1
+  }
+ ],
+ "voiceListening": "Owner listening open. No subjective or automated stress verdict claimed.",
+ "checks": [
+  {
+   "name": "Codec and pixels",
+   "status": "pass",
+   "detail": "h264, yuv420p"
+  },
+  {
+   "name": "Size",
+   "status": "pass",
+   "detail": "1080×1920"
+  },
+  {
+   "name": "Audio track",
+   "status": "pass",
+   "detail": "Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 196 kb/s (default)"
+  },
+  {
+   "name": "Length",
+   "status": "pass",
+   "detail": "88.09 s (planned 88.09 s)"
+  },
+  {
+   "name": "Loudness",
+   "status": "pass",
+   "detail": "-14 LUFS integrated (target -14), true peak -1.1 dBFS"
+  },
+  {
+   "name": "Frame 0 is a hook",
+   "status": "pass",
+   "detail": "contrast 1912 (needs content, not a black frame)"
+  },
+  {
+   "name": "No black stretches",
+   "status": "pass",
+   "detail": "none ≥ 0.4 s"
+  },
+  {
+   "name": "Scenes render without errors",
+   "status": "pass",
+   "detail": "16 scenes, missing images/fonts included"
+  },
+  {
+   "name": "Numbers come from the facts",
+   "status": "pass",
+   "detail": "16 scenes read"
+  },
+  {
+   "name": "Text clear of platform UI (reels)",
+   "status": "pass",
+   "detail": "every cue checked"
+  },
+  {
+   "name": "Text fits its box",
+   "status": "pass",
+   "detail": "every card, band and label at every cue"
+  },
+  {
+   "name": "Cover text inside the 1:1 preview",
+   "status": "pass",
+   "detail": "cover at 0.0 s"
+  },
+  {
+   "name": "Feed and cover views",
+   "status": "pass",
+   "detail": "look at feed-preview.jpg and cover-preview.jpg: heads inside the crop, captions off faces"
+  },
+  {
+   "name": "Whisper hears the script",
+   "status": "pass",
+   "detail": "every scene ≥ 85% of its words (lowest 88%)"
+  },
+  {
+   "name": "Dictionary words keep their stress",
+   "status": "pass",
+   "detail": "2 of 2 heard right"
+  }
+ ]
+}

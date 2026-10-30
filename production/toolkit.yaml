@@ -286,6 +286,26 @@ entries:
     status: pilot
     docs: docs/reference/scenes.md#illustration
 
+  - id: football-series-retention
+    kind: method
+    stage: look
+    title: Illustrated series identity and retention pilot
+    what: Shared first-frame identity with episode-specific researched art, immediate narration, a factual curiosity hook, narrative image changes, a resolved opening question and an empathetic viewer question.
+    when: An illustrated recurring series; episode 6 is the owner-authorised retention experiment, not measured uplift.
+    status: pilot
+    docs: docs/how-to/football-series.md
+    examples: [content/videos/football-legends-06-masopust/README.md]
+
+  - id: scenes-series-cover
+    kind: scenes
+    stage: look
+    title: Series opening cover
+    what: A readable project and series identity with an optional emblem over full-frame episode-specific art, visible from frame zero and composed inside the central preview square.
+    when: A recurring illustrated series needs a recognisable opening and distinct episode settings.
+    scenes: [series-cover]
+    status: pilot
+    docs: docs/reference/scenes.md#series-cover
+
   - id: scenes-screencast
     kind: scenes
     stage: look

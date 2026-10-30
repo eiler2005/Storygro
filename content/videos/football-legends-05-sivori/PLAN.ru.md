@@ -5,7 +5,7 @@
 | | |
 |---|---|
 | Статус | **сценарий** · ждёт тебя: одобрить сценарий |
-| Длительность | 82.8 с (по озвучке) · 15 сцен |
+| Длительность | 81.3 с (по озвучке) · 14 сцен |
 | Формат | 1080×1920, 30 fps · style `cartoon` |
 | Голос | omnivoice · assets/voice/narrator-ru.wav · 0.9 |
 | Серия | football-legends |
@@ -14,7 +14,7 @@
 
 | | | Кто и когда |
 |---|---|---|
-| Сценарий | ✏️ изменено после одобрения | agent 2026-10-30 |
+| Сценарий | ⚙️ техническое (агент) | agent 2026-10-30 |
 | Раскадровка | ⚙️ техническое (агент) | agent 2026-10-30 |
 | Выпуск | ⏳ ждёт |   |
 
@@ -25,7 +25,7 @@
 - [ ] **owner** · Подходят ли туринский «Комунале», новая прохладная палитра, сходство Сивори и игровые эпизоды?
 - [ ] **owner** · Послушайте «Омар Сивори», «Ювентус» и «голы»: автоматические проверки не доказывают правильное ударение.
 
-**Заметки:** Owner request 30 October 2026: episode 5, previous hosts, Juventus stadium and distinct atmosphere. Exact narration retained except pasted source labels. Historical Turin Comunale, not the 2011 stadium. Owner confirmed удостоенным in probe B, rejected the goals probes and explicitly clarified stress on Ы. The agent had confused homographs: corrected to голы́, shared dictionary гол+ы, scene hint голЫ. Confirmed удостОенным retained. Same OmniVoice B, 0.90, stress off. Old O-based scores invalid. Final 82.82 s; QA 15/15; full decode 2483 frames per file; 38 inspected MP4 moments; 164 caption samples and 81 reverse seeks without layout failures. Technical approvals only; corrected MP4 owner listening open; not published.
+**Заметки:** Owner request 30 October 2026: episode 5, previous hosts, Juventus stadium and distinct atmosphere. Exact narration retained except pasted source labels. Historical Turin Comunale, not the 2011 stadium. Owner confirmed удостоенным in probe B, rejected the goals probes and explicitly clarified stress on Ы. The agent had confused homographs: corrected to голы́, shared dictionary гол+ы, scene hint голЫ. Confirmed удостОенным retained. Same OmniVoice B, 0.90, stress off. Old O-based scores invalid. Final 82.82 s; QA 15/15; full decode 2483 frames per file; 38 inspected MP4 moments; 164 caption samples and 81 reverse seeks without layout failures. Technical approvals only; corrected MP4 owner listening open; not published. Owner requested a common series identity at frame zero on 30 October 2026. Added shared cover/emblem/theme, removed redundant intro; selected narration and goals/удостоенным WAVs unchanged. New version 81.32 s, 2438 frames, 38 reviewed MP4 moments; technical QA 15/15. Supersedes earlier duration/frame counts in these historical notes. No owner release approval.
 
 ## Хук
 
@@ -33,7 +33,7 @@
 
 ## Сцены
 
-### 1. hook · 0.0–5.8 с · `illustration`
+### 1. hook · 0.0–5.8 с · `series-cover`
 
 ![hook: кадр в ключевой момент, затем картинки сцены по порядку](preview/plan/ru/hook.jpg)
 
@@ -41,15 +41,11 @@
 
 **Голос:** Можно ли обыграть защитника, который кажется гораздо сильнее и крупнее тебя?
 
-**На экране:** «Техника против силы»
-
-**Картинки:**
-
-- shots/hook-v2.png — ok
+**На экране:** «Маленькие большие дела» · «Легенды футбола» · «1.8»
 
 **Звук:** swell @0.0
 
-**Факты:** `facts.hook.text` = «Техника против силы»
+**Факты:** `facts.series.project` = «Маленькие большие дела» · `facts.series.title` = «Легенды футбола»
 
 ### 2. answer · 5.8–11.6 с · `illustration`
 
@@ -69,25 +65,7 @@
 
 **Факты:** `facts.player.name` = «Омар Сивори»
 
-### 3. intro · 11.6–13.1 с · `illustration`
-
-![intro: кадр в ключевой момент, затем картинки сцены по порядку](preview/plan/ru/intro.jpg)
-
-<sub>кадр в ключевой момент, затем картинки сцены по порядку</sub>
-
-**Голос:**
-
-**На экране:** «Легенды футбола»
-
-**Картинки:**
-
-- shots/intro.png — ok
-
-**Звук:** chime @0.0
-
-**Факты:** `facts.series.title` = «Легенды футбола»
-
-### 4. roots · 13.1–18.5 с · `illustration`
+### 3. roots · 11.6–17.0 с · `illustration`
 
 ![roots: кадр в ключевой момент, затем картинки сцены по порядку](preview/plan/ru/roots.jpg)
 
@@ -104,7 +82,7 @@
 
 **Факты:** `facts.player.birth` = «Родился в Аргентине» · `facts.venue.name` = «Турин · стадион «Комунале»»
 
-### 5. award · 18.5–23.4 с · `illustration`
+### 4. award · 17.0–21.9 с · `illustration`
 
 ![award: кадр в ключевой момент, затем картинки сцены по порядку](preview/plan/ru/award.jpg)
 
@@ -122,7 +100,7 @@
 
 **Факты:** `facts.award.full` = ««Золотой мяч» · 1961»
 
-### 6. first · 23.4–28.4 с · `illustration`
+### 5. first · 21.9–26.9 с · `illustration`
 
 ![first: кадр в ключевой момент, затем картинки сцены по порядку](preview/plan/ru/first.jpg)
 
@@ -138,7 +116,7 @@
 
 **Факты:** `facts.award.first` = «Первый лауреат «Ювентуса»»
 
-### 7. skill · 28.4–33.2 с · `illustration`
+### 6. skill · 26.9–31.7 с · `illustration`
 
 ![skill: кадр в ключевой момент, затем картинки сцены по порядку](preview/plan/ru/skill.jpg)
 
@@ -154,7 +132,7 @@
 
 **Факты:** `facts.player.name` = «Омар Сивори» · `facts.player.card` = «1961 · Италия · «Ювентус»»
 
-### 8. control · 33.2–39.8 с · `illustration`
+### 7. control · 31.7–38.3 с · `illustration`
 
 ![control: кадр в ключевой момент, затем картинки сцены по порядку](preview/plan/ru/control.jpg)
 
@@ -171,7 +149,7 @@
 
 **Факты:** `facts.skill.control` = «Мяч рядом с ногами»
 
-### 9. escape · 39.8–43.8 с · `illustration`
+### 8. escape · 38.3–42.3 с · `illustration`
 
 ![escape: кадр в ключевой момент, затем картинки сцены по порядку](preview/plan/ru/escape.jpg)
 
@@ -190,7 +168,7 @@
 
 **Факты:** `facts.skill.escape` = «Один шаг — и он свободен»
 
-### 10. space · 43.8–53.6 с · `illustration`
+### 9. space · 42.3–52.1 с · `illustration`
 
 ![space: кадр в ключевой момент, затем картинки сцены по порядку](preview/plan/ru/space.jpg)
 
@@ -207,7 +185,7 @@
 
 **Факты:** `facts.skill.space` = «Найти выход из тесноты»
 
-### 11. bridge · 53.6–56.7 с · `illustration`
+### 10. bridge · 52.1–55.2 с · `illustration`
 
 ![bridge: кадр в ключевой момент, затем картинки сцены по порядку](preview/plan/ru/bridge.jpg)
 
@@ -219,7 +197,7 @@
 
 - shots/tight.png — ok
 
-### 12. goals · 56.7–64.6 с · `illustration`
+### 11. goals · 55.2–63.1 с · `illustration`
 
 ![goals: кадр в ключевой момент, затем картинки сцены по порядку](preview/plan/ru/goals.jpg)
 
@@ -238,7 +216,7 @@
 
 **Факты:** `facts.skill.goals` = «Техника и голы»
 
-### 13. lesson · 64.6–70.5 с · `illustration`
+### 12. lesson · 63.1–69.0 с · `illustration`
 
 ![lesson: кадр в ключевой момент, затем картинки сцены по порядку](preview/plan/ru/lesson.jpg)
 
@@ -254,7 +232,7 @@
 
 **Факты:** `facts.skill.lesson` = «Размер не решает»
 
-### 14. qualities · 70.5–75.9 с · `illustration`
+### 13. qualities · 69.0–74.4 с · `illustration`
 
 ![qualities: кадр в ключевой момент, затем картинки сцены по порядку](preview/plan/ru/qualities.jpg)
 
@@ -272,7 +250,7 @@
 
 **Факты:** `facts.skill.agility` = «Ловкость» · `facts.skill.courage` = «Смелость» · `facts.skill.think` = «Быстро соображать»
 
-### 15. question · 75.9–82.8 с · `illustration`
+### 14. question · 74.4–81.3 с · `illustration`
 
 ![question: кадр в ключевой момент, затем картинки сцены по порядку](preview/plan/ru/question.jpg)
 

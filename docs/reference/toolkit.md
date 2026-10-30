@@ -2,7 +2,7 @@
 
 <!-- Generated from production/toolkit.yaml by `npm run docs:toolkit`. Edit the YAML, not this page. -->
 
-Every way Storygro makes content, in one bank: **23 methods**, **25 tools**, **4 styles**, **6 scene families** and **6 providers**, by production stage. Agents read [`production/toolkit.yaml`](../../production/toolkit.yaml) to pick an approach; this page is generated from it, and `npm test` fails when a command, style or scene is missing from the bank or a link is broken.
+Every way Storygro makes content, in one bank: **24 methods**, **25 tools**, **4 styles**, **7 scene families** and **6 providers**, by production stage. Agents read [`production/toolkit.yaml`](../../production/toolkit.yaml) to pick an approach; this page is generated from it, and `npm test` fails when a command, style or scene is missing from the bank or a link is broken.
 
 **Status:** *stable* — used across pieces · *pilot* — works, reviewed on one or two pieces · *planned* — not implemented.
 
@@ -11,7 +11,7 @@ Every way Storygro makes content, in one bank: **23 methods**, **25 tools**, **4
 | **choose** — Pick a topic worth a piece | [Editorial ranking](#editorial-ranking) · [Trend scan and watchlist](#trend-scan-and-watchlist) · [Research scan with picks](#research-scan-with-picks) · [X digest through Grok](#x-digest-through-grok) · [Angles from a scan](#angles-from-a-scan) |
 | **research** — Find and check what is true | [Primary-source research](#primary-source-research) · [Facts as data](#facts-as-data) · [Reference analysis](#reference-analysis) · [Transcript and pace statistics](#transcript-and-pace-statistics) · [Whisper (mlx-whisper)](#whisper-mlx-whisper) |
 | **write** — Turn it into a script as data | [Script as data](#script-as-data) · [Story structures](#story-structures) · [One worked example](#one-worked-example) · [Language variants](#language-variants) · [Brand profile and series](#brand-profile-and-series) · [Children's list cartoon](#childrens-list-cartoon) |
-| **look** — Decide how it looks | [Cartoon explainer](#cartoon-explainer) · [Cut-paper explainer](#cut-paper-explainer) · [Editorial collage](#editorial-collage) · [Cut-paper scenes](#cut-paper-scenes) · [Kinetic typography](#kinetic-typography) · [Kinetic and diagram scenes](#kinetic-and-diagram-scenes) · [Springs, beat grid and motion blur](#springs-beat-grid-and-motion-blur) · [Collage scene](#collage-scene) · [Illustration scene](#illustration-scene) · [Screencast scene](#screencast-scene) · [Landscape product scenes](#landscape-product-scenes) · [Generated illustrations](#generated-illustrations) · [Z-Image-Turbo via mflux](#z-image-turbo-via-mflux) · [Recognisable caricatures, overlays off faces](#recognisable-caricatures-overlays-off-faces) · [GPT Image through the Codex CLI](#gpt-image-through-the-codex-cli) · [Recurring cast](#recurring-cast) · [Reference pictures of recurring hosts](#reference-pictures-of-recurring-hosts) · [No text in pictures](#no-text-in-pictures) · [Screen capture](#screen-capture) · [A new scene module](#a-new-scene-module) |
+| **look** — Decide how it looks | [Cartoon explainer](#cartoon-explainer) · [Cut-paper explainer](#cut-paper-explainer) · [Editorial collage](#editorial-collage) · [Cut-paper scenes](#cut-paper-scenes) · [Kinetic typography](#kinetic-typography) · [Kinetic and diagram scenes](#kinetic-and-diagram-scenes) · [Springs, beat grid and motion blur](#springs-beat-grid-and-motion-blur) · [Collage scene](#collage-scene) · [Illustration scene](#illustration-scene) · [Illustrated series identity and retention pilot](#illustrated-series-identity-and-retention-pilot) · [Series opening cover](#series-opening-cover) · [Screencast scene](#screencast-scene) · [Landscape product scenes](#landscape-product-scenes) · [Generated illustrations](#generated-illustrations) · [Z-Image-Turbo via mflux](#z-image-turbo-via-mflux) · [Recognisable caricatures, overlays off faces](#recognisable-caricatures-overlays-off-faces) · [GPT Image through the Codex CLI](#gpt-image-through-the-codex-cli) · [Recurring cast](#recurring-cast) · [Reference pictures of recurring hosts](#reference-pictures-of-recurring-hosts) · [No text in pictures](#no-text-in-pictures) · [Screen capture](#screen-capture) · [A new scene module](#a-new-scene-module) |
 | **voice** — Narration, sound and timing | [Local narration and timing](#local-narration-and-timing) · [Narrator design](#narrator-design) · [Pronunciation and say-as](#pronunciation-and-say-as) · [Russian stress and homographs](#russian-stress-and-homographs) · [Pronunciation dictionary and stress lookup](#pronunciation-dictionary-and-stress-lookup) · [Voice bench](#voice-bench) · [Chatterbox Multilingual](#chatterbox-multilingual) · [OmniVoice Russian narrator](#omnivoice-russian-narrator) · [Music and sound effects](#music-and-sound-effects) |
 | **make** — Storyboard, approval and rendering | [Stills and live preview](#stills-and-live-preview) · [Storyboard and approval](#storyboard-and-approval) · [Plan document and stepped approvals](#plan-document-and-stepped-approvals) · [Render](#render) · [Formats, safe areas and captions](#formats-safe-areas-and-captions) · [Carousel cards](#carousel-cards) · [Native full-frame Instagram Reels](#native-full-frame-instagram-reels) |
 | **check** — Technical QA and the human review | [Technical QA](#technical-qa) · [Human review](#human-review) |
@@ -321,6 +321,28 @@ Full-frame pictures that change on cues with a camera move, split frames, and DO
 **Use when:** The cartoon style or any piece built from pictures.
 
 **See:** [docs](../../docs/reference/scenes.md#illustration)
+
+### Illustrated series identity and retention pilot
+
+*method · pilot*
+
+Shared first-frame identity with episode-specific researched art, immediate narration, a factual curiosity hook, narrative image changes, a resolved opening question and an empathetic viewer question.
+
+**Use when:** An illustrated recurring series; episode 6 is the owner-authorised retention experiment, not measured uplift.
+
+**See:** [docs](../../docs/how-to/football-series.md) · [football-legends-06-masopust/README.md](../../content/videos/football-legends-06-masopust/README.md)
+
+### Series opening cover
+
+*scenes · pilot*
+
+A readable project and series identity with an optional emblem over full-frame episode-specific art, visible from frame zero and composed inside the central preview square.
+
+**Scenes:** `series-cover`
+
+**Use when:** A recurring illustrated series needs a recognisable opening and distinct episode settings.
+
+**See:** [docs](../../docs/reference/scenes.md#series-cover)
 
 ### Screencast scene
 

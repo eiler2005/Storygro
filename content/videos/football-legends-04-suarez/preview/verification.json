@@ -1,0 +1,94 @@
+{
+ "duration": 91.327,
+ "size": [
+  1080,
+  1920
+ ],
+ "fps": 30,
+ "frames": 2737,
+ "webFrames": 2737,
+ "moments": 35,
+ "masterSHA256": "c47350df91ccd63c92223d2b2dc7c7bb262d9c3159bcc044b80e3b9e5d104c55",
+ "qa": "pass",
+ "captionSamples": 163,
+ "reverseSeekSamples": 78,
+ "layoutFailures": 0,
+ "voiceListening": "Owner listening open; award surname stress inconclusive",
+ "checks": [
+  {
+   "name": "Codec and pixels",
+   "status": "pass",
+   "detail": "h264, yuv420p"
+  },
+  {
+   "name": "Size",
+   "status": "pass",
+   "detail": "1080×1920"
+  },
+  {
+   "name": "Audio track",
+   "status": "pass",
+   "detail": "Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 196 kb/s (default)"
+  },
+  {
+   "name": "Length",
+   "status": "pass",
+   "detail": "91.33 s (planned 91.33 s)"
+  },
+  {
+   "name": "Loudness",
+   "status": "pass",
+   "detail": "-14 LUFS integrated (target -14), true peak -1.1 dBFS"
+  },
+  {
+   "name": "Frame 0 is a hook",
+   "status": "pass",
+   "detail": "contrast 2601 (needs content, not a black frame)"
+  },
+  {
+   "name": "No black stretches",
+   "status": "pass",
+   "detail": "none ≥ 0.4 s"
+  },
+  {
+   "name": "Scenes render without errors",
+   "status": "pass",
+   "detail": "15 scenes, missing images/fonts included"
+  },
+  {
+   "name": "Numbers come from the facts",
+   "status": "pass",
+   "detail": "15 scenes read"
+  },
+  {
+   "name": "Text clear of platform UI (reels)",
+   "status": "pass",
+   "detail": "every cue checked"
+  },
+  {
+   "name": "Text fits its box",
+   "status": "pass",
+   "detail": "every card, band and label at every cue"
+  },
+  {
+   "name": "Cover text inside the 1:1 preview",
+   "status": "pass",
+   "detail": "cover at 0.0 s"
+  },
+  {
+   "name": "Feed and cover views",
+   "status": "pass",
+   "detail": "look at feed-preview.jpg and cover-preview.jpg: heads inside the crop, captions off faces"
+  },
+  {
+   "name": "Whisper hears the script",
+   "status": "pass",
+   "detail": "every scene ≥ 85% of its words (lowest 90%)"
+  },
+  {
+   "name": "Dictionary words keep their stress",
+   "status": "pass",
+   "detail": "1 of 1 heard right"
+  }
+ ]
+}

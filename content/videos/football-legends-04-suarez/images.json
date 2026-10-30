@@ -1,0 +1,224 @@
+{
+ "images": 1,
+ "files": {
+  "shots/portrait.png": {
+   "prompt": "Identity-preserving transformation of the FIRST reference photo: it is the historical Spanish footballer LUIS SUÁREZ MIRAMONTES (born1935), NOT the modern Uruguayan Luis Suarez. Create a very high-quality respectful stylized3D animated-film head-and-shoulders PORTRAIT, with close recognizable likeness to the photographed man. Preserve his DISTINCTIVE high broad forehead and receding M-shaped hairline, short dark-brown wavy hair brushed straight back (NOT a thick quiff), deep-set dark eyes under pronounced eyebrows, long oval face, broad straight nose with rounded tip, clean-shaven jaw, the actual ear/nose/mouth geometry and restrained intelligent half-smile. A slim man in his late20s/early30s, no beard and no tattoos. Avoid generic handsome cartoon-man facial proportions. Second image is STYLE ONLY (render/fur-film aesthetic); no animal features on the man. Warm cream studio background, complete head/hair/chin, shoulders in an authentic1960 plain FC Barcelona shirt with BROAD dark-maroon and deep royal-blue vertical stripes and plain crew neck, no crest, no sponsors, no shirt numbers. Tight portrait, ideally1024x1280. No text, no border, no other people.",
+   "seed": 0,
+   "provider": "imagegen",
+   "model": "OpenAI built-in image generation (identifier not exposed)",
+   "width": 1122,
+   "height": 1402,
+   "steps": 0,
+   "licence": "OpenAI image tool output; account terms apply. Seed 0 is a placeholder, not reproducible.",
+   "refs": {
+    "../../../private/football-legends-04-suarez/references/miramontes-face.jpg": "0fc8a33207d24cfa78e3e0329abe389c7f9660de088d68512385b987cad48fbe",
+    "../../series/football-legends/cast/hosts-full.png": "49c92b4bca5df88e90d529034e158fb7a48a79de4c7f98d49ccf764944d2be35"
+   },
+   "sha256": "452b08f5f0635ed480bf7f58e9f1328b0c774becfa4315c18848f54e0a5014f6",
+   "createdAt": 1793364212056
+  },
+  "shots/hook.png": {
+   "prompt": "A premium cinematic stylized 3D family-animation film still: subtle expressive acting, exquisite fabric and fur, film-quality anatomy, warm gold/navy/green/cream colour palette, physically plausible objects and light, high detail. Full-bleed vertical 9:16 ideally1088x1920, no borders or panels, absolutely no text, no letters, no numbers, no watermarks, no sponsor logos or club crests. Instagram composition: top22% calm stadium or sky, every complete head incl ears/hair below25% and above58%, important faces away from side edges; bottom quarter simple grass, room for later captions. Preserve EXACT identities of the attached two hosts: Matvey, six-year-old raccoon in royal-blue football kit, white trim, striped blue/white socks and boots; Sofia, eight-year-old red squirrel girl with high ponytail and plum-purple tracksuit with white stripes/lilac trainers. Do not change age, facial shapes, fur or clothes. On a golden-hour stadium training pitch, a funny visual metaphor for 'football architect': Matvey holds a small beautiful wooden toy HOUSE with an astonished curious expression; Sofia next to him holds a little football tactics board with an outlined pitch and simple circular player magnets connected by a couple of clean arrows (NO text/numbers), smiling as if explaining how to build an attack. ONE normal black-white football at their feet. Their COMPLETE heads incl ears/ponytail inside x18%..82%, y38%..55%; top35% clear beautiful sunset sky for later headline. Figures end around78%, bottom grass. Lifelike toy proportions, correct fingers/paws, no extra animals.",
+   "seed": 0,
+   "provider": "imagegen",
+   "model": "OpenAI built-in image generation (identifier not exposed)",
+   "width": 941,
+   "height": 1672,
+   "steps": 0,
+   "licence": "OpenAI image tool output; account terms apply. Seed 0 is a placeholder, not reproducible.",
+   "refs": {
+    "../../series/football-legends/cast/matvey-face.png": "70d429f91006b8d818eb13f653e5cc6ad1c5726feade2bc94c8aa4e44dd496c2",
+    "../../series/football-legends/cast/sofia-face.png": "8e8f0e504835d506d25edb8123c78392be69f0457631dfa5fe3a8259adafd914",
+    "../../series/football-legends/cast/hosts-full.png": "49c92b4bca5df88e90d529034e158fb7a48a79de4c7f98d49ccf764944d2be35"
+   },
+   "sha256": "11ab5b5ea0139b827c50521cfb2d1edfda06fba69dc0aa936ed7e8caf7233273",
+   "createdAt": 1793364212065
+  },
+  "shots/card-v2.png": {
+   "prompt": "A premium cinematic stylized 3D family-animation film still: subtle expressive acting, exquisite fabric and fur, film-quality anatomy, warm gold/navy/green/cream colour palette, physically plausible objects and light, high detail. Full-bleed vertical 9:16 ideally1088x1920, no borders or panels, absolutely no text, no letters, no numbers, no watermarks, no sponsor logos or club crests. Instagram composition: top22% calm stadium or sky, every complete head incl ears/hair below25% and above58%, important faces away from side edges; bottom quarter simple grass, room for later captions. Historical Luis Suárez Miramontes, born1935, Spanish midfielder: preserve the FIRST generated portrait and SECOND archival face closely: high broad forehead, receding M-hairline, brushed-back dark brown hair, pronounced eyebrows, long oval face, broad straight nose, clean shaven. Slim adult late20s. Never use the modern Uruguayan's face. RECOMPOSE from scratch. Elegant single-person portrait on stadium, no animals, no other people, ONE ball. CRITICAL LAYOUT: upper ONE THIRD of frame completely empty warm stadium sky; his COMPLETE hair begins at y34%, chin y49%, shoulders y53%; no head above y34%. Waistup Luis smiles calmly holding one old brown leather ball at his side at y67%. Authentic Barcelona broad maroon/blue stripes, no sponsors. Camera further away so full head small enough within central x30%..70%. Bottom quarter plain grass suitable for later player card. Leave y18%..30% clear for later text. Golden hour, excellent fabric, expressive recognizable face, no generated text.",
+   "seed": 0,
+   "provider": "imagegen",
+   "model": "OpenAI built-in image generation (identifier not exposed)",
+   "width": 948,
+   "height": 1659,
+   "steps": 0,
+   "licence": "OpenAI image tool output; account terms apply. Seed 0 is a placeholder, not reproducible.",
+   "refs": {
+    "../../../../../.codex/generated_images/01a188e1-81ca-7ce1-8a50-36bd8d134d29/exec-9b53eb86-7322-406e-af4e-c9e7376d4744.png": "452b08f5f0635ed480bf7f58e9f1328b0c774becfa4315c18848f54e0a5014f6",
+    "../../../private/football-legends-04-suarez/references/miramontes-face.jpg": "0fc8a33207d24cfa78e3e0329abe389c7f9660de088d68512385b987cad48fbe"
+   },
+   "sha256": "e3fc71271e4585569c67b0cfc2ea939168d9bd30e669f897c7ba1312be718e43",
+   "createdAt": 1793364212070
+  },
+  "shots/names.png": {
+   "prompt": "A premium cinematic stylized 3D family-animation film still: subtle expressive acting, exquisite fabric and fur, film-quality anatomy, warm gold/navy/green/cream colour palette, physically plausible objects and light, high detail. Full-bleed vertical 9:16 ideally1088x1920, no borders or panels, absolutely no text, no letters, no numbers, no watermarks, no sponsor logos or club crests. Instagram composition: top22% calm stadium or sky, every complete head incl ears/hair below25% and above58%, important faces away from side edges; bottom quarter simple grass, room for later captions. Two DIFFERENT footballers, a respectful stylized3D cinema comparison on one warm-green stadium background, not in same match. LEFT historical Spanish Luis Suárez Miramontes based on first2photos: receding high forehead, swept-back hair, clean-shaven long oval face, slim shoulders,1960 Barcelona maroon/blue stripes; head center x28%,y40%. RIGHT MODERN Uruguayan Luis Suárez Díaz based on THIRD portrait: modern short black hair, stronger wide jaw, brown eyes, characteristic visible front teeth and light stubble, stocky muscular shoulders, plain Uruguay SKY-BLUE football shirt with dark trim; head center x71%,y40%. Both complete heads between30%..50%, medium waist-up portraits, do NOT mix faces or kits. No animal hosts. Room for later name captions at y57%. No awards, no text.",
+   "seed": 0,
+   "provider": "imagegen",
+   "model": "OpenAI built-in image generation (identifier not exposed)",
+   "width": 941,
+   "height": 1672,
+   "steps": 0,
+   "licence": "OpenAI image tool output; account terms apply. Seed 0 is a placeholder, not reproducible.",
+   "refs": {
+    "../../../../../.codex/generated_images/01a188e1-81ca-7ce1-8a50-36bd8d134d29/exec-9b53eb86-7322-406e-af4e-c9e7376d4744.png": "452b08f5f0635ed480bf7f58e9f1328b0c774becfa4315c18848f54e0a5014f6",
+    "../../../private/football-legends-04-suarez/references/miramontes-face.jpg": "0fc8a33207d24cfa78e3e0329abe389c7f9660de088d68512385b987cad48fbe",
+    "../inter-miami-magic-pass/shots/portrait-suarez.png": "340ea683130784dc3f2d57aa901d94b6918c3e9e659d72fd91eeaa8932caffb5"
+   },
+   "sha256": "779abe06a1b4d520748247ee788a1c1aea66e79e21bf2f2c13ce7b6d9c2848b9",
+   "createdAt": 1793364212076
+  },
+  "shots/award-v2.png": {
+   "prompt": "A premium cinematic stylized 3D family-animation film still: subtle expressive acting, exquisite fabric and fur, film-quality anatomy, warm gold/navy/green/cream colour palette, physically plausible objects and light, high detail. Full-bleed vertical 9:16 ideally1088x1920, no borders or panels, absolutely no text, no letters, no numbers, no watermarks, no sponsor logos or club crests. Instagram composition: top22% calm stadium or sky, every complete head incl ears/hair below25% and above58%, important faces away from side edges; bottom quarter simple grass, room for later captions. Historical Luis Suárez Miramontes, born1935, Spanish midfielder: preserve the FIRST generated portrait and SECOND archival face closely: high broad forehead, receding M-hairline, brushed-back dark brown hair, pronounced eyebrows, long oval face, broad straight nose, clean shaven. Slim adult late20s. Never use the modern Uruguayan's face. A WIDE composition with lots of empty sky: UPPER ONE THIRD (0%..33% height) absolutely EMPTY twilight stadium sky. Entire player's hair BEGINS at34% frame height, chin at48%, shoulders at52%, waist at78%. Luis SMALLER in frame, centered, wearing1960 Barcelona broad maroon/blue striped shirt and navyshorts. He carefully holds one SMALL golden faceted football on a rough crystalline rock base with both hands at y60%..69%. Respectful elegant award still. Do NOT make a tight portrait. No other people, no flags, no logo or lettering. Bottom15% simple green turf. Head must not enter topthird.",
+   "seed": 0,
+   "provider": "imagegen",
+   "model": "OpenAI built-in image generation (identifier not exposed)",
+   "width": 941,
+   "height": 1672,
+   "steps": 0,
+   "licence": "OpenAI image tool output; account terms apply. Seed 0 is a placeholder, not reproducible.",
+   "refs": {
+    "../../../../../.codex/generated_images/01a188e1-81ca-7ce1-8a50-36bd8d134d29/exec-9b53eb86-7322-406e-af4e-c9e7376d4744.png": "452b08f5f0635ed480bf7f58e9f1328b0c774becfa4315c18848f54e0a5014f6",
+    "../../../private/football-legends-04-suarez/references/miramontes-face.jpg": "0fc8a33207d24cfa78e3e0329abe389c7f9660de088d68512385b987cad48fbe"
+   },
+   "sha256": "6d03be6f6885bcbdd4a07f2f40e9e5cbf510dff70a74cf33bcdb74889d38b8e6",
+   "createdAt": 1793364212080
+  },
+  "shots/pass.png": {
+   "prompt": "A premium cinematic stylized 3D family-animation film still: subtle expressive acting, exquisite fabric and fur, film-quality anatomy, warm gold/navy/green/cream colour palette, physically plausible objects and light, high detail. Full-bleed vertical 9:16 ideally1088x1920, no borders or panels, absolutely no text, no letters, no numbers, no watermarks, no sponsor logos or club crests. Instagram composition: top22% calm stadium or sky, every complete head incl ears/hair below25% and above58%, important faces away from side edges; bottom quarter simple grass, room for later captions. Historical Luis Suárez Miramontes, born1935, Spanish midfielder: preserve the FIRST generated portrait and SECOND archival face closely: high broad forehead, receding M-hairline, brushed-back dark brown hair, pronounced eyebrows, long oval face, broad straight nose, clean shaven. Slim adult late20s. Never use the modern Uruguayan's face. Historical Luis Suárez Miramontes, born1935, Spanish midfielder: preserve the FIRST generated portrait and SECOND archival face closely: high broad forehead, receding M-hairline, brushed-back dark brown hair, pronounced eyebrows, long oval face, broad straight nose, clean shaven. Slim adult late20s. Never use the modern Uruguayan's face. Dynamic wide pitch scene at1960s Barcelona. Luis at LEFT x30%, head y34%, body angled RIGHT, has JUST played a low pass with inside of right boot. ONE vintage brown leather football lies midway along the straight path to an OPEN TEAMMATE at RIGHT x73%, head y43%, looking toward ball, receiving stance. Teammate visibly DIFFERENT man: tall, narrow angular face, low forehead and thick straight black hair, NO receding hairline, clean shaven. Both wear matching broad MAROON and BLUE Barcelona shirts, NAVY shorts/dark socks/brown leatherboots. One opponent middle background in PLAIN WHITE shirt/white shorts is bypassed, broad rounded face and short fair wavy hair. Football trajectory plausible along grass between passer and receiver, no glowing arrows, no duplicated balls. Entire humans including boots, no cropped heads. Crowd distant unidentifiable.",
+   "seed": 0,
+   "provider": "imagegen",
+   "model": "OpenAI built-in image generation (identifier not exposed)",
+   "width": 948,
+   "height": 1659,
+   "steps": 0,
+   "licence": "OpenAI image tool output; account terms apply. Seed 0 is a placeholder, not reproducible.",
+   "refs": {
+    "../../../../../.codex/generated_images/01a188e1-81ca-7ce1-8a50-36bd8d134d29/exec-9b53eb86-7322-406e-af4e-c9e7376d4744.png": "452b08f5f0635ed480bf7f58e9f1328b0c774becfa4315c18848f54e0a5014f6",
+    "../../../private/football-legends-04-suarez/references/miramontes-face.jpg": "0fc8a33207d24cfa78e3e0329abe389c7f9660de088d68512385b987cad48fbe"
+   },
+   "sha256": "884a1e5e7acd282d8ecdb23ae7004dcd6fc1b51b753e2fd912158b6ee0632162",
+   "createdAt": 1793364212084
+  },
+  "shots/vision.png": {
+   "prompt": "A premium cinematic stylized 3D family-animation film still: subtle expressive acting, exquisite fabric and fur, film-quality anatomy, warm gold/navy/green/cream colour palette, physically plausible objects and light, high detail. Full-bleed vertical 9:16 ideally1088x1920, no borders or panels, absolutely no text, no letters, no numbers, no watermarks, no sponsor logos or club crests. Instagram composition: top22% calm stadium or sky, every complete head incl ears/hair below25% and above58%, important faces away from side edges; bottom quarter simple grass, room for later captions. Historical Luis Suárez Miramontes, born1935, Spanish midfielder: preserve the FIRST generated portrait and SECOND archival face closely: high broad forehead, receding M-hairline, brushed-back dark brown hair, pronounced eyebrows, long oval face, broad straight nose, clean shaven. Slim adult late20s. Never use the modern Uruguayan's face. An elevated cinematic bird's-eye view of a1960s football pitch as a readable MAP of a passing opportunity. Only FOUR full-body players on grass, all entirely within central x20%..80%,y30%..72%; no close-up face and no person cut off. Luis left lower y61% in Barcelona MAROON/BLUE stripes/NAVY shorts, head recognizable from reference. At upper-right y40% an OPEN TEAMMATE in matching Barcelona kit, thick black hair/square jaw. Two opponents in ALL WHITE kit, visibly different fair-haired men, are grouped center-left and leave a clear diagonal passing lane fromLuis to teammate. ONE brown leather ball beside Luis's right boot. A subtle chalk-white single ARROW overlays the grass connecting that ball directly to the free teammate, never crossing an opponent. Accurate grass/pitch lines, natural shadows, believable spacing. Upper25% distant stadium, lower25% simple grass; no diagram panels or text.",
+   "seed": 0,
+   "provider": "imagegen",
+   "model": "OpenAI built-in image generation (identifier not exposed)",
+   "width": 948,
+   "height": 1659,
+   "steps": 0,
+   "licence": "OpenAI image tool output; account terms apply. Seed 0 is a placeholder, not reproducible.",
+   "refs": {
+    "../../../../../.codex/generated_images/01a188e1-81ca-7ce1-8a50-36bd8d134d29/exec-9b53eb86-7322-406e-af4e-c9e7376d4744.png": "452b08f5f0635ed480bf7f58e9f1328b0c774becfa4315c18848f54e0a5014f6",
+    "../../../private/football-legends-04-suarez/references/miramontes-face.jpg": "0fc8a33207d24cfa78e3e0329abe389c7f9660de088d68512385b987cad48fbe"
+   },
+   "sha256": "a486f01100fe9ccb3c151504d35b5c6a7d9c16f0638350497f38ffa0019af882",
+   "createdAt": 1793364212088
+  },
+  "shots/inter.png": {
+   "prompt": "A premium cinematic stylized 3D family-animation film still: subtle expressive acting, exquisite fabric and fur, film-quality anatomy, warm gold/navy/green/cream colour palette, physically plausible objects and light, high detail. Full-bleed vertical 9:16 ideally1088x1920, no borders or panels, absolutely no text, no letters, no numbers, no watermarks, no sponsor logos or club crests. Instagram composition: top22% calm stadium or sky, every complete head incl ears/hair below25% and above58%, important faces away from side edges; bottom quarter simple grass, room for later captions. Historical Luis Suárez Miramontes, born1935, Spanish midfielder: preserve the FIRST generated portrait and SECOND archival face closely: high broad forehead, receding M-hairline, brushed-back dark brown hair, pronounced eyebrows, long oval face, broad straight nose, clean shaven. Slim adult late20s. Never use the modern Uruguayan's face. Cinematic1960s Inter Milan training pitch. Luis on the LEFT x33%,head y34%, passes ONE brown stitched leather football along ground toward a different TEAMMATE on RIGHT x70%,head y42%. Both wear authentic broad BLACK and ROYAL-BLUE vertical stripes, WHITE shorts and dark socks/brown leatherboots (like THIRD archival team photo), NO maroon anywhere. Teammate is taller with short thick straight black hair, LOW forehead, squared jaw, clean-shaven, different nose and face fromLuis. Opponent in distant middle wears plain WHITE kit, short fair curly hair. Everyone looking at the SAME ball between receiver and passer, realistic foot positions and pass route. Full bodies. Warm beautiful stadium.",
+   "seed": 0,
+   "provider": "imagegen",
+   "model": "OpenAI built-in image generation (identifier not exposed)",
+   "width": 941,
+   "height": 1672,
+   "steps": 0,
+   "licence": "OpenAI image tool output; account terms apply. Seed 0 is a placeholder, not reproducible.",
+   "refs": {
+    "../../../../../.codex/generated_images/01a188e1-81ca-7ce1-8a50-36bd8d134d29/exec-9b53eb86-7322-406e-af4e-c9e7376d4744.png": "452b08f5f0635ed480bf7f58e9f1328b0c774becfa4315c18848f54e0a5014f6",
+    "../../../private/football-legends-04-suarez/references/miramontes-face.jpg": "0fc8a33207d24cfa78e3e0329abe389c7f9660de088d68512385b987cad48fbe",
+    "../../../private/football-legends-04-suarez/references/inter-1964.jpg": "52a518a40205adf79ab3b20bbc88af92e59fefa3a84e48b0a4749c97d7a9d875"
+   },
+   "sha256": "59ff22c7f40a8efa20df396f5de1e50a888e38ebfa06d3aeabccc8588b2ae415",
+   "createdAt": 1793364212093
+  },
+  "shots/inter-team.png": {
+   "prompt": "A premium cinematic stylized 3D family-animation film still: subtle expressive acting, exquisite fabric and fur, film-quality anatomy, warm gold/navy/green/cream colour palette, physically plausible objects and light, high detail. Full-bleed vertical 9:16 ideally1088x1920, no borders or panels, absolutely no text, no letters, no numbers, no watermarks, no sponsor logos or club crests. Instagram composition: top22% calm stadium or sky, every complete head incl ears/hair below25% and above58%, important faces away from side edges; bottom quarter simple grass, room for later captions. Historical Luis Suárez Miramontes, born1935, Spanish midfielder: preserve the FIRST generated portrait and SECOND archival face closely: high broad forehead, receding M-hairline, brushed-back dark brown hair, pronounced eyebrows, long oval face, broad straight nose, clean shaven. Slim adult late20s. Never use the modern Uruguayan's face. Mediumwide illustration of1960s Inter Milan teammates happy after a victory on pitch, NOT an exact historical final. CRITICAL upper30% empty stadium sky; ALL complete heads only between y34%..49%, NO cropped hair. Central Luis x48%, flanked by two visibly DIFFERENT anonymous teammates: left tall angular low-forehead black straight hair, right shorter rounded face/light-brown wavy hair. All wear identical authentic broad BLACK and ROYAL BLUE vertically striped crewneck shirts, WHITE shorts, darksocks. They have arms naturally around shoulders. No trophies, no flags, no awards, no other prominent faces, no animalhosts. Bottom25% grass. Full knees/boots optional but faces clear and faithful. Warm stadium light.",
+   "seed": 0,
+   "provider": "imagegen",
+   "model": "OpenAI built-in image generation (identifier not exposed)",
+   "width": 941,
+   "height": 1672,
+   "steps": 0,
+   "licence": "OpenAI image tool output; account terms apply. Seed 0 is a placeholder, not reproducible.",
+   "refs": {
+    "../../../../../.codex/generated_images/01a188e1-81ca-7ce1-8a50-36bd8d134d29/exec-9b53eb86-7322-406e-af4e-c9e7376d4744.png": "452b08f5f0635ed480bf7f58e9f1328b0c774becfa4315c18848f54e0a5014f6",
+    "../../../private/football-legends-04-suarez/references/miramontes-face.jpg": "0fc8a33207d24cfa78e3e0329abe389c7f9660de088d68512385b987cad48fbe",
+    "../../../private/football-legends-04-suarez/references/inter-1964.jpg": "52a518a40205adf79ab3b20bbc88af92e59fefa3a84e48b0a4749c97d7a9d875"
+   },
+   "sha256": "f08e3d1e17eca08ecaee62f267eb18a35a46fb7b72ce4dd862fe32df56021acd",
+   "createdAt": 1793364212097
+  },
+  "shots/spain-v2.png": {
+   "prompt": "A premium cinematic stylized 3D family-animation film still: subtle expressive acting, exquisite fabric and fur, film-quality anatomy, warm gold/navy/green/cream colour palette, physically plausible objects and light, high detail. Full-bleed vertical 9:16 ideally1088x1920, no borders or panels, absolutely no text, no letters, no numbers, no watermarks, no sponsor logos or club crests. Instagram composition: top22% calm stadium or sky, every complete head incl ears/hair below25% and above58%, important faces away from side edges; bottom quarter simple grass, room for later captions. Historical Luis Suárez Miramontes, born1935, Spanish midfielder: preserve the FIRST generated portrait and SECOND archival face closely: high broad forehead, receding M-hairline, brushed-back dark brown hair, pronounced eyebrows, long oval face, broad straight nose, clean shaven. Slim adult late20s. Never use the modern Uruguayan's face. A WIDE celebratory1964 Spain scene. Upper ONE THIRD frame entirely EMPTY blue/gold stadium sky, no humans. All THREE COMPLETE heads entirely BELOW y35%, between35%..50%, feet around84%. Luis center x50%,flankedLEFT x26% by verydifferent angularface blackhaired teammate and RIGHT x74% by roundedface lightbrownwavyhaired teammate. All three SAME plain RED vintage crewneck shirts with no crest/sponsors, NAVY shorts and dark socks/brownleatherboots. Arms naturally around shoulders, restrained happy smiles. Central Luis recognizable from portrait not modernUruguayan. No trophy, no banners, no crowd faces near them. Accurate hands and legs. Lower15% simple grass. Faces smaller tofit feedcropping, no heads above35%.",
+   "seed": 0,
+   "provider": "imagegen",
+   "model": "OpenAI built-in image generation (identifier not exposed)",
+   "width": 941,
+   "height": 1672,
+   "steps": 0,
+   "licence": "OpenAI image tool output; account terms apply. Seed 0 is a placeholder, not reproducible.",
+   "refs": {
+    "../../../../../.codex/generated_images/01a188e1-81ca-7ce1-8a50-36bd8d134d29/exec-9b53eb86-7322-406e-af4e-c9e7376d4744.png": "452b08f5f0635ed480bf7f58e9f1328b0c774becfa4315c18848f54e0a5014f6",
+    "../../../private/football-legends-04-suarez/references/miramontes-face.jpg": "0fc8a33207d24cfa78e3e0329abe389c7f9660de088d68512385b987cad48fbe",
+    "../../../private/football-legends-04-suarez/references/spain-1964.jpg": "fffa78fd16ea71b18402d1bc28b3424583d7a5a4b2f3b2ee25c66d9b7a8990c8"
+   },
+   "sha256": "e938051f780eeae664e102ccb78ec2cbbb18a34cb6e268341c2312028135102f",
+   "createdAt": 1793364212101
+  },
+  "shots/lesson.png": {
+   "prompt": "A premium cinematic stylized 3D family-animation film still: subtle expressive acting, exquisite fabric and fur, film-quality anatomy, warm gold/navy/green/cream colour palette, physically plausible objects and light, high detail. Full-bleed vertical 9:16 ideally1088x1920, no borders or panels, absolutely no text, no letters, no numbers, no watermarks, no sponsor logos or club crests. Instagram composition: top22% calm stadium or sky, every complete head incl ears/hair below25% and above58%, important faces away from side edges; bottom quarter simple grass, room for later captions. Preserve EXACT identities of attached hosts: six-year-old Matvey raccoon in royal-bluefootballkit, white trim, blue/white socks and boots; eight-year-old Sofia red squirrel girl in plum-purple tracksuit, white stripes and lilac trainers, high ponytail. Upper30% is EMPTY sunset sky. EVERY complete head/hair/ears only y35%..55%. Full bodies in central x20%..80%, bottom20% simple grass. A warm teaching moment: Matvey holds ONE normal football at chest, listening attentively to Luis Suarez Miramontes who kneels at his level beside Sofia. Luis recognizable from fourth generatedportrait and fifth historicalphoto: receding highforehead, long ovalface, brushedbackdarkhair, clean shaven, in Barcelona broad maroon/blue stripes and navyshorts. All three clearly different heads and correcthands. The footballer with an open relaxed palm gestures to free space onpitch, showing that an intelligent pass helpsfriends. Faces x27%..73%,y36%..53%; no one cropped. No house, no board, no awards. Sole ball, no other people.",
+   "seed": 0,
+   "provider": "imagegen",
+   "model": "OpenAI built-in image generation (identifier not exposed)",
+   "width": 941,
+   "height": 1672,
+   "steps": 0,
+   "licence": "OpenAI image tool output; account terms apply. Seed 0 is a placeholder, not reproducible.",
+   "refs": {
+    "../../series/football-legends/cast/matvey-face.png": "70d429f91006b8d818eb13f653e5cc6ad1c5726feade2bc94c8aa4e44dd496c2",
+    "../../series/football-legends/cast/sofia-face.png": "8e8f0e504835d506d25edb8123c78392be69f0457631dfa5fe3a8259adafd914",
+    "../../series/football-legends/cast/hosts-full.png": "49c92b4bca5df88e90d529034e158fb7a48a79de4c7f98d49ccf764944d2be35",
+    "../../../../../.codex/generated_images/01a188e1-81ca-7ce1-8a50-36bd8d134d29/exec-9b53eb86-7322-406e-af4e-c9e7376d4744.png": "452b08f5f0635ed480bf7f58e9f1328b0c774becfa4315c18848f54e0a5014f6",
+    "../../../private/football-legends-04-suarez/references/miramontes-face.jpg": "0fc8a33207d24cfa78e3e0329abe389c7f9660de088d68512385b987cad48fbe"
+   },
+   "sha256": "701c19dbdb7801bdcdea469cbde87e864e3d988e4a73bb08dbaf8f4b7c03f5b3",
+   "createdAt": 1793364212107
+  },
+  "shots/question.png": {
+   "prompt": "A premium cinematic stylized 3D family-animation film still: subtle expressive acting, exquisite fabric and fur, film-quality anatomy, warm gold/navy/green/cream colour palette, physically plausible objects and light, high detail. Full-bleed vertical 9:16 ideally1088x1920, no borders or panels, absolutely no text, no letters, no numbers, no watermarks, no sponsor logos or club crests. Instagram composition: top22% calm stadium or sky, every complete head incl ears/hair below25% and above58%, important faces away from side edges; bottom quarter simple grass, room for later captions. Preserve EXACT identities of attached hosts: six-year-old Matvey raccoon in royal-bluefootballkit, white trim, blue/white socks and boots; eight-year-old Sofia red squirrel girl in plum-purple tracksuit, white stripes and lilac trainers, high ponytail. Upper30% is EMPTY sunset sky. EVERY complete head/hair/ears only y35%..55%. Full bodies in central x20%..80%, bottom20% simple grass. A charming interactive moment on a training pitch: Matvey onLEFT x32% looks thoughtfully down at ONE black/white football near his feet at y74%. Sofia onRIGHT x69%, standing freely with no defenders around her, gently raises ONE hand asking for a pass, friendly eyes looking atMatvey. Matvey's torso opens towardSofia, a realistic unobstructed ground passing lane between them. Correct paws with sensible fingers, believable ball scale. No house, board, arrows, trophies, other people, text or labels. Detailed softfur and fabrics, warmrimlight, high quality.",
+   "seed": 0,
+   "provider": "imagegen",
+   "model": "OpenAI built-in image generation (identifier not exposed)",
+   "width": 941,
+   "height": 1672,
+   "steps": 0,
+   "licence": "OpenAI image tool output; account terms apply. Seed 0 is a placeholder, not reproducible.",
+   "refs": {
+    "../../series/football-legends/cast/matvey-face.png": "70d429f91006b8d818eb13f653e5cc6ad1c5726feade2bc94c8aa4e44dd496c2",
+    "../../series/football-legends/cast/sofia-face.png": "8e8f0e504835d506d25edb8123c78392be69f0457631dfa5fe3a8259adafd914",
+    "../../series/football-legends/cast/hosts-full.png": "49c92b4bca5df88e90d529034e158fb7a48a79de4c7f98d49ccf764944d2be35"
+   },
+   "sha256": "19be405fc18edf83ad0a9ccbd751205143d9cb7b2609e4a4986aa69953968c29",
+   "createdAt": 1793364212114
+  },
+  "shots/intro.jpg": {
+   "prompt": "Premium stylized 3D family animation film still with the polish of a modern feature-animation studio, not photorealistic and not babyish: expressive faces, beautifully detailed soft fur and fabric, cinematic warm light, a rich detailed background, a palette of deep navy blue, warm gold, lush pitch green and cream white with restrained orange and plum accents. Tall vertical composition: the main action and every face in the middle of the frame, the top sixth calm and uncluttered, the bottom quarter simple grass, floor or crowd without faces. the series title moment: Matvey (a small six-year-old anthropomorphic raccoon boy with soft grey-brown fur, a dark eye mask, a white muzzle, big lively dark-brown eyes, round ears with white edges and a fluffy tail with dark rings, wearing a plain royal-blue football kit with white collar trim, blue-and-white striped socks and blue-and-white boots) stops a rolling classic black-and-white football with his boot and grins with excitement; Sofia (his sister, an eight-year-old anthropomorphic red squirrel girl, a little taller than Matvey, with a round childlike face, chestnut-orange fur, a cream muzzle, tufted ears, big warm amber eyes, a short high ponytail with a plum hair band and a large fluffy curled tail, wearing a plain plum-purple zip tracksuit with thin white stripes and white-and-lilac trainers) turns and gestures enthusiastically toward a luminous golden football-shaped trophy on a dark plinth between them; a soft golden light sweeps across the trophy, a few golden sparkles in the air; a beautiful stadium at golden hour with floodlights, faint white tactical chalk arrows and circles on the grass. No text, no letters, no numbers, no logos, no crests, no flags, no watermark, no extra limbs, no duplicate characters.",
+   "seed": 58198,
+   "provider": "codex",
+   "model": "gpt-6-astra (Codex image tool)",
+   "width": 1088,
+   "height": 1920,
+   "steps": 0,
+   "licence": "GPT Image through the Codex CLI image tool; under the OpenAI terms the output belongs to the account holder Copied from episode 1 (football-legends-01-matthews/shots/intro.jpg), the series intro picture.",
+   "refs": {
+    "../../series/football-legends/cast/matvey-face.png": "70d429f91006b8d818eb13f653e5cc6ad1c5726feade2bc94c8aa4e44dd496c2",
+    "../../series/football-legends/cast/hosts-full.png": "49c92b4bca5df88e90d529034e158fb7a48a79de4c7f98d49ccf764944d2be35",
+    "../../series/football-legends/cast/sofia-face.png": "8e8f0e504835d506d25edb8123c78392be69f0457631dfa5fe3a8259adafd914"
+   },
+   "sha256": "4c541222ac915963be6d99eb0851704ccf66b6076b2bc2628d004861a1654dcc",
+   "createdAt": "2026-10-28T18:10:22.460Z",
+   "reusedFrom": "content/videos/football-legends-02-di-stefano/shots/intro.jpg"
+  }
+ }
+}

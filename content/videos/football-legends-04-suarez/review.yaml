@@ -1,0 +1,29 @@
+review: 1
+questions:
+  - id: likeness
+    ask: Подтвердите сходство исторического Суареса, различимость игроков и качество иллюстраций.
+    for: owner
+    open: true
+  - id: voice
+    ask: Послушайте произношение «Луис Суарес Мирамонтес» и названий клубов; ASR не доказывает правильность
+      ударений.
+    for: owner
+    open: true
+notes: "Owner request, 30 October 2026: episode 4, exact supplied narration, original Matvey/Sofia; particular
+  attention to likeness, era-specific kits and distinct teammates. Removed only pasted UEFA citation markers
+  and section labels. Technical approvals are not owner approvals. Рендер 91.33 с, 15/15 QA pass; полный декод
+  по 2737 кадров; просмотрены 35 моментов MP4, лента 4:5 и квадрат обложки. 163 момента субтитров и 78
+  обратных переходов без ошибок. Стенд имени: 3/4 подтверждены, 1 неясен; фамилия в реплике награждения
+  требует слуха владельца. Ролик не опубликован."
+approvals:
+  ru:
+    script:
+      hash: 4928acb3c7cd
+      at: 2026-10-30T12:48:52.375Z
+      by: agent
+      role: agent
+    storyboard:
+      hash: cd9269068221
+      at: 2026-10-30T12:48:52.656Z
+      by: agent
+      role: agent

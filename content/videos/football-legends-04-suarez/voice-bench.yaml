@@ -1,0 +1,13 @@
+bench: 1
+language: ru
+candidates:
+  - id: baseline
+    engine: omnivoice
+    model: k2-fsa/OmniVoice
+    voice: assets/voice/narrator-ru.wav
+    speed: 0.9
+    stress: 'off'
+sentences:
+  - id: miramontes
+    text: Один из самых известных — испанец Луис Суарес Мирамонтес.
+    check: { word: Мирамонтес, right: 'm [oɔ] n', wrong: 'm [ɐə] n' }

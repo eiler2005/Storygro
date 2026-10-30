@@ -1,0 +1,66 @@
+{
+ "_about": "All displayed labels and numbers are bound here; short source quotations and caveats are in sources.md.",
+ "series": {
+  "_source": "Owner's brief «рекомендации» (2026-10-28): «Маленькие большие дела · Легенды футбола · Истории обладателей «Золотого мяча»»",
+  "title": "Легенды футбола",
+  "project": "Маленькие большие дела"
+ },
+ "hook": {
+  "_source": "Owner script, 30 October 2026: architecture metaphor.",
+  "text": "Архитектор атак"
+ },
+ "player": {
+  "_source": "[S1] https://www.uefa.com/news-media/news/0283-187370f4166c-84a2b286587c-1000--remembering-spain-icon-luis-suarez/; [S4] https://www.fcbarcelona.com/en/ficha/648220/luis-suarez",
+  "name": "Луис Суарес Мирамонтес",
+  "country": "Испания",
+  "year": "1960",
+  "label": "«Барселона» · полузащитник",
+  "card": "1960 · Испания · «Барселона»"
+ },
+ "names": {
+  "_source": "[S3] https://www.fcbarcelona.com/en/football/first-team/news/1122399/from-one-luis-suarez-to-another",
+  "spanish": "Луис Суарес Мирамонтес",
+  "uruguayan": "Луис Суарес Диас",
+  "spain": "Испания",
+  "uruguay": "Уругвай",
+  "different": "Два разных футболиста"
+ },
+ "award": {
+  "_source": "[S1] https://www.uefa.com/news-media/news/0283-187370f4166c-84a2b286587c-1000--remembering-spain-icon-luis-suarez/",
+  "year": "1960",
+  "title": "«Золотой мяч»",
+  "first": "Первый лауреат, родившийся в Испании",
+  "full": "«Золотой мяч» · 1960"
+ },
+ "skill": {
+  "_source": "[S2] https://www.uefa.com/uefaeuro/history/news/0253-0d80144ac44a-042b512864ec-1000--luis-suarez-spain-s-first-euro-superstar/; [S5] https://www.inter.it/it/notizie/2016-10-28-luis-suarez-faro-e-architetto; owner lesson.",
+  "pass": "Точный пас",
+  "vision": "Видеть свободного партнёра",
+  "link": "Связывать оборону с атакой",
+  "team": "Мастерство для команды"
+ },
+ "inter": {
+  "_source": "[S1] https://www.uefa.com/news-media/news/0283-187370f4166c-84a2b286587c-1000--remembering-spain-icon-luis-suarez/; [S5] https://www.inter.it/it/notizie/2016-10-28-luis-suarez-faro-e-architetto",
+  "name": "«Интер»",
+  "years": "1964 · 1965",
+  "title": "Кубок европейских чемпионов",
+  "count": "2",
+  "label": "победы подряд",
+  "full": "1964 · 1965 — победы подряд"
+ },
+ "spain": {
+  "_source": "[S1] https://www.uefa.com/news-media/news/0283-187370f4166c-84a2b286587c-1000--remembering-spain-icon-luis-suarez/; [S2] https://www.uefa.com/uefaeuro/history/news/0253-0d80144ac44a-042b512864ec-1000--luis-suarez-spain-s-first-euro-superstar/",
+  "title": "Чемпион Европы",
+  "year": "1964",
+  "team": "Сборная Испании",
+  "full": "Чемпион Европы · 1964"
+ },
+ "question": {
+  "_source": "Owner script, 30 October 2026, closing question.",
+  "short": "Мяч или товарищ?",
+  "ball": "Мяч",
+  "teammate": "Свободный товарищ",
+  "text": "Что ты заметил бы первым на поле: мяч или свободного товарища?",
+  "mate": "Товарищ"
+ }
+}

@@ -2,7 +2,7 @@
 
 > Сгенерировано `storygro tracker` 2026-10-30. Одобрения и вопросы — из `review.yaml` в Git; длительность, проверка (QA) и рендер — локальное состояние этой копии (`.reel/`), публикации — из журнала. Не правьте вручную.
 
-**Ждут тебя: 17** · сценарий 12 · раскадровка 4 · просмотр 1 · готово 0 · опубликовано 0
+**Ждут тебя: 18** · сценарий 13 · раскадровка 4 · просмотр 1 · готово 0 · опубликовано 0
 
 ## Ждут тебя
 
@@ -14,6 +14,7 @@
 - [Стэнли Мэтьюз](videos/football-legends-01-matthews/PLAN.ru.md) (ru) — одобрить сценарий
 - [Альфредо Ди Стефано](videos/football-legends-02-di-stefano/PLAN.ru.md) (ru) — одобрить сценарий
 - [Раймон Копа — мастер обводки](videos/football-legends-03-kopa/PLAN.ru.md) (ru) — одобрить сценарий
+- [Луис Суарес Мирамонтес — архитектор футбола](videos/football-legends-04-suarez/PLAN.ru.md) (ru) — одобрить сценарий
 - [Звёзды футбола: собираем альбом](videos/football-stars-kids/PLAN.ru.md) (ru) — одобрить сценарий
 - [Будущее работы — кто отвечает за результат](videos/future-of-work/README.md) (ru) — одобрить раскадровку
 - [Интер Майами: финальный пас](videos/inter-miami-magic-pass/PLAN.ru.md) (ru) — одобрить сценарий
@@ -36,6 +37,7 @@
 | [Стэнли Мэтьюз](videos/football-legends-01-matthews/PLAN.ru.md) | ru (ru) | — | сценарий | ждёт тебя: одобрить сценарий | ✏️ ⚙️ ⏳ | 87 с | pass | 7/7 | 1 | — |
 | [Альфредо Ди Стефано](videos/football-legends-02-di-stefano/PLAN.ru.md) | ru (ru) | — | сценарий | ждёт тебя: одобрить сценарий | ⚙️ ⚙️ ⏳ | 92.9 с | pass | 8/8 | 5 | — |
 | [Раймон Копа — мастер обводки](videos/football-legends-03-kopa/PLAN.ru.md) | ru (ru) | football-legends | сценарий | ждёт тебя: одобрить сценарий | ⚙️ ⚙️ ⏳ | 84.4 с | pass | 8/8 | 2 | — |
+| [Луис Суарес Мирамонтес — архитектор футбола](videos/football-legends-04-suarez/PLAN.ru.md) | ru (ru) | football-legends | сценарий | ждёт тебя: одобрить сценарий | ⚙️ ⚙️ ⏳ | 91.3 с | pass | 9/9 | 2 | — |
 | [Звёзды футбола: собираем альбом](videos/football-stars-kids/PLAN.ru.md) | ru (ru) | kids-football | сценарий | ждёт тебя: одобрить сценарий | ⏳ ✏️ ⏳ | 117.5 с | pass | 14/14 | 3 | — |
 | [Будущее работы — кто отвечает за результат](videos/future-of-work/README.md) | ru (ru) | business-explainers | раскадровка | ждёт тебя: одобрить раскадровку | — ✏️ ⏳ | 76.8 с | pass | 2/2 | — | — |
 | [Интер Майами: финальный пас](videos/inter-miami-magic-pass/PLAN.ru.md) | ru (ru) | — | сценарий | ждёт тебя: одобрить сценарий | ⚙️ ✏️ ⏳ | 114.5 с | pass | 7/7 | 1 | — |

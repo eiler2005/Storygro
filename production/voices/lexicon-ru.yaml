@@ -436,3 +436,18 @@ words:
   - word: Жюст
     say: Ж+юст
     source: 'ru.wikipedia, «Фонтен, Жюст»: «Жюст Фонте́н (фр. Just Fontaine)»; French Just /ʒyst/ is monosyllabic (checked 2026-10-30)'
+  - word: Луис
+    say: Лу+ис
+    source: 'ru.wikipedia, «Суарес Мирамонтес, Луис»: «…Луи́с Суа́рес Мирамо́нтес (исп. Luis Suárez M…» (storygro stress --lookup, 2026-10-30)'
+  - word: Луисом
+    say: Лу+исом
+    source: 'Inflected form of Луи́с; ru.wikipedia, «Суарес Мирамонтес, Луис» (checked 2026-10-30)'
+  - word: Мирамонтес
+    say: Мирам+онтес
+    source: 'ru.wikipedia, «Суарес Мирамонтес, Луис»: «…Луи́с Суа́рес Мирамо́нтес (исп. Luis Suárez Miramontes; 2 мая 193…» (storygro stress --lookup, 2026-10-30)'
+  - word: Суаресом
+    say: Су+аресом
+    source: 'ru.wiktionary, «Суарес»: «…са Суа́рес Суа́ресов Тв. Суа́ресом Суа́рес Суа́ресами Пр. С…» (storygro stress --lookup, 2026-10-30)'
+  - word: Барселону
+    say: Барсел+ону
+    source: 'ru.wiktionary, «Барселона»: «…Барсело́не Барсело́нам В. Барсело́ну Барсело́ны Тв. Барсело́но…» (storygro stress --lookup, 2026-10-30)'

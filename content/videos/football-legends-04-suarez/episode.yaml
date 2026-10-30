@@ -1,0 +1,9 @@
+episode: 1
+id: football-legends-04-suarez
+title: Луис Суарес Мирамонтес — архитектор футбола
+sources: sources.md
+credits: CREDITS.md
+variants:
+  - id: ru
+    spec: ru.reel.yaml
+series: football-legends

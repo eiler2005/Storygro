@@ -1,0 +1,472 @@
+reel: 1
+style: cartoon
+title: Луис Суарес Мирамонтес — архитектор футбола
+lang: ru
+format:
+  preset: vertical
+  width: 1080
+  height: 1920
+  fps: 30
+safe: reels
+voice:
+  engine: omnivoice
+  model: k2-fsa/OmniVoice
+  voice: assets/voice/narrator-ru.wav
+  speed: 0.9
+  stress: off
+music:
+  bpm: 112
+  key: D
+  progression:
+    - I
+    - V
+    - vi
+    - IV
+  gain: 0.11
+  drop: build
+loudness: -14
+theme: theme.css
+captions:
+  show: true
+  maxWords: 4
+transition:
+  kind: cut
+  dur: 0
+data:
+  facts: facts.json
+stills:
+  cover: hook@0
+  final: spain@1
+  hosts: question@1.5
+images:
+  provider: manual
+  model: OpenAI built-in image generation (identifier not exposed)
+  seed: 60
+  width: 1088
+  height: 1920
+  prompt: "Premium stylized 3D family animation film still with the polish of a modern feature-animation studio,
+    not photorealistic and not babyish: expressive faces, beautifully detailed soft fur and fabric, cinematic
+    warm light, a rich detailed background, a palette of deep navy blue, warm gold, lush pitch green and cream
+    white with restrained orange and plum accents. Full-frame vertical 9:16 composition, edge-to-edge
+    background, no borders or letterboxing. The top fifth of the frame is calm sky, stands or background with
+    no heads, faces, hands or ball; every head and face sits between one fifth and two thirds of the height,
+    away from the side edges; the bottom quarter is simple grass, floor or crowd seen from behind, without
+    faces. {subject}. No text, no letters, no numbers, no logos, no crests, no flags, no watermark, no extra
+    limbs, no duplicate characters."
+  cast:
+    matvey: Matvey (a small six-year-old anthropomorphic raccoon boy with soft grey-brown fur, a dark eye mask, a
+      white muzzle, big lively dark-brown eyes, round ears with white edges and a fluffy tail with dark rings,
+      wearing a plain royal-blue football kit with white collar trim, blue-and-white striped socks and
+      blue-and-white boots)
+    sofia: Sofia (his sister, an eight-year-old anthropomorphic red squirrel girl, a little taller than Matvey,
+      with a round childlike face, chestnut-orange fur, a cream muzzle, tufted ears, big warm amber eyes, a
+      short high ponytail with a plum hair band and a large fluffy curled tail, wearing a plain plum-purple
+      zip tracksuit with thin white stripes and white-and-lilac trainers)
+    suarez: Historical Luis Suárez Miramontes, not Luis Suárez Díaz. Receding high forehead, brushed-back hair,
+      long oval face and clean-shaven jaw; exact photo and generated portrait references in images.json. Team
+      kit follows each scene.
+  refs:
+    matvey:
+      - ../../series/football-legends/cast/matvey-face.png
+      - ../../series/football-legends/cast/hosts-full.png
+    sofia:
+      - ../../series/football-legends/cast/sofia-face.png
+      - ../../series/football-legends/cast/hosts-full.png
+post:
+  title: Легенды футбола · Луис Суарес Мирамонтес
+  text: >-
+    Футбольный архитектор строит атаки. Матвей и София знакомятся с Луисом Суаресом Мирамонтесом — испанским
+    полузащитником, обладателем «Золотого мяча» 1960 года. Это другой футболист, не современный уругвайский
+    нападающий.
+
+
+    Что замечаешь первым: МЯЧ или СВОБОДНОГО ТОВАРИЩА?
+
+
+    Выпуск 4 рубрики «Легенды футбола» проекта «Маленькие большие дела». Источники: UEFA, FC Barcelona, Inter.
+    Иллюстрации созданы с помощью GPT Image по архивным визуальным ориентирам; игровые эпизоды условные, это
+    не запись исторических матчей. Голос рассказчика синтетический (OmniVoice). Ролик не связан с
+    футболистами, клубами или организаторами награды.
+  tags:
+    - футбол
+    - детям
+    - легендыфутбола
+    - луиссуарес
+    - барселона
+    - интер
+    - золотоймяч
+scenes:
+  - id: hook
+    scene: illustration
+    say: Когда слышишь слово «архитектор», обычно представляешь человека, который строит дома.
+    pad:
+      - 0.15
+      - 0.35
+    energy: 0.6
+    props:
+      shots:
+        - image: shots/hook.png
+          move: in
+          zoom: 0.025
+          focus:
+            x: 0.5
+            y: 0.4
+      labels:
+        - textFrom: facts.hook.text
+          x: 0.46
+          y: 0.255
+          at: -1
+          tone: navy
+    sfx:
+      - at: start
+        kind: swell
+        gain: 0.23
+  - id: build
+    scene: illustration
+    say: Но в футболе тоже есть архитекторы — они строят атаки!
+    pad:
+      - 0.15
+      - 0.35
+    energy: 0.6
+    props:
+      shots:
+        - image: shots/hook.png
+          move: in
+          zoom: 0.025
+          focus:
+            x: 0.5
+            y: 0.4
+      labels:
+        - textFrom: facts.hook.text
+          x: 0.46
+          y: 0.255
+          at: -1
+          tone: navy
+    sfx:
+      - at: start
+        kind: pop
+        gain: 0.24
+  - id: intro
+    scene: illustration
+    say: ""
+    min: 1.5
+    energy: 0.7
+    sfx:
+      - at: start
+        kind: chime
+        gain: 0.28
+    props:
+      shots:
+        - image: shots/intro.jpg
+          move: in
+          zoom: 0.02
+          focus:
+            x: 0.5
+            y: 0.15
+      title:
+        textFrom: facts.series.title
+        at: 0.1
+        size: 0.046
+      labels: []
+  - id: card
+    scene: illustration
+    say: Один из самых известных — испанец Луис Суарес Мирамонтес.
+    pad:
+      - 0.15
+      - 0.35
+    energy: 0.6
+    props:
+      shots:
+        - image: shots/card-v2.png
+          move: in
+          zoom: 0.025
+          focus:
+            x: 0.5
+            y: 0.4
+      title:
+        textFrom: facts.player.name
+        at: 0.1
+        size: 0.037
+      labels:
+        - textFrom: facts.player.card
+          x: 0.46
+          y: 0.6
+          at: 0.2
+          tone: navy
+  - id: names
+    scene: illustration
+    say: "Не путайте его с более современным уругвайским нападающим Луисом Суаресом: это два разных футболиста."
+    pad:
+      - 0.15
+      - 0.35
+    energy: 0.6
+    props:
+      shots:
+        - image: shots/names.png
+          move: in
+          zoom: 0.025
+          focus:
+            x: 0.5
+            y: 0.4
+      labels:
+        - textFrom: facts.names.spain
+          x: 0.25
+          y: 0.57
+          at: 0.1
+          tone: navy
+        - textFrom: facts.names.uruguay
+          x: 0.72
+          y: 0.57
+          at: 0.1
+          tone: green
+  - id: award
+    scene: illustration
+    say: В [1960](=тысяча девятьсот шестидесятом) году Луис Суарес Мирамонтес получил «Золотой мяч», играя за
+      «Барселону».
+    pad:
+      - 0.15
+      - 0.35
+    energy: 0.6
+    props:
+      shots:
+        - image: shots/award-v2.png
+          move: in
+          zoom: 0.025
+          focus:
+            x: 0.5
+            y: 0.4
+      labels:
+        - textFrom: facts.award.full
+          x: 0.46
+          y: 0.24
+          at: 0.1
+          tone: accent
+  - id: first
+    scene: illustration
+    say: Он стал первым испанцем, выигравшим награду, который родился в Испании.
+    pad:
+      - 0.15
+      - 0.35
+    energy: 0.6
+    props:
+      shots:
+        - image: shots/award-v2.png
+          move: in
+          zoom: 0.025
+          focus:
+            x: 0.5
+            y: 0.4
+      labels:
+        - textFrom: facts.award.first
+          x: 0.46
+          y: 0.25
+          at: 0.1
+          tone: navy
+  - id: work
+    scene: illustration
+    say: Суарес был полузащитником. Его работа — находить свободных партнёров, выбирать точные передачи {#link}и
+      связывать оборону с атакой.
+    pad:
+      - 0.15
+      - 0.35
+    energy: 0.6
+    props:
+      shots:
+        - image: shots/pass.png
+          move: in
+          zoom: 0.025
+          focus:
+            x: 0.5
+            y: 0.4
+        - image: shots/vision.png
+          at: link
+          move: in
+          zoom: 0.025
+          focus:
+            x: 0.5
+            y: 0.4
+      labels:
+        - textFrom: facts.skill.pass
+          x: 0.46
+          y: 0.24
+          at: 0.1
+          tone: navy
+  - id: map
+    scene: illustration
+    say: "Он видел поле словно карту: понимал, кто свободен, куда направить мяч {#chance}и где через секунду
+      появится возможность."
+    pad:
+      - 0.15
+      - 0.35
+    energy: 0.6
+    props:
+      shots:
+        - image: shots/vision.png
+          move: in
+          zoom: 0.025
+          focus:
+            x: 0.5
+            y: 0.4
+        - image: shots/pass.png
+          at: chance
+          move: in
+          zoom: 0.025
+          focus:
+            x: 0.5
+            y: 0.4
+      labels:
+        - textFrom: facts.skill.vision
+          x: 0.46
+          y: 0.24
+          at: 0.1
+          tone: navy
+  - id: inter
+    scene: illustration
+    say: Позже он перешёл в итальянский «Интер» и помог клубу выиграть два Кубка европейских чемпионов подряд —
+    pad:
+      - 0.15
+      - 0.35
+    energy: 0.6
+    props:
+      shots:
+        - image: shots/inter.png
+          move: in
+          zoom: 0.025
+          focus:
+            x: 0.5
+            y: 0.4
+        - image: shots/inter-team.png
+          at: 4
+          move: in
+          zoom: 0.025
+          focus:
+            x: 0.5
+            y: 0.4
+      labels:
+        - textFrom: facts.inter.name
+          x: 0.46
+          y: 0.6
+          at: 0.1
+          tone: navy
+  - id: cups
+    scene: illustration
+    say: в [1964](=тысяча девятьсот шестьдесят четвёртом) и [1965](=тысяча девятьсот шестьдесят пятом) годах.
+    pad:
+      - 0.15
+      - 0.35
+    energy: 0.6
+    props:
+      shots:
+        - image: shots/inter-team.png
+          move: in
+          zoom: 0.025
+          focus:
+            x: 0.5
+            y: 0.4
+      labels:
+        - textFrom: facts.inter.full
+          x: 0.46
+          y: 0.6
+          at: 0.1
+          tone: navy
+  - id: spain
+    scene: illustration
+    say: А со сборной Испании он стал чемпионом Европы в [1964](=тысяча девятьсот шестьдесят четвёртом) году.
+    pad:
+      - 0.15
+      - 0.35
+    energy: 0.6
+    props:
+      shots:
+        - image: shots/spain-v2.png
+          move: in
+          zoom: 0.025
+          focus:
+            x: 0.5
+            y: 0.4
+      labels:
+        - textFrom: facts.spain.full
+          x: 0.46
+          y: 0.61
+          at: 0.1
+          tone: accent
+  - id: lesson
+    scene: illustration
+    say: Суарес показывает, что не обязательно забивать больше всех, чтобы стать великим футболистом.
+    pad:
+      - 0.15
+      - 0.35
+    energy: 0.6
+    props:
+      shots:
+        - image: shots/lesson.png
+          move: in
+          zoom: 0.025
+          focus:
+            x: 0.5
+            y: 0.4
+      labels:
+        - textFrom: facts.skill.team
+          x: 0.46
+          y: 0.24
+          at: 0.1
+          tone: navy
+  - id: chance
+    scene: illustration
+    say: Иногда один точный пас создаёт шанс для всей команды.
+    pad:
+      - 0.15
+      - 0.35
+    energy: 0.6
+    props:
+      shots:
+        - image: shots/pass.png
+          move: in
+          zoom: 0.025
+          focus:
+            x: 0.5
+            y: 0.4
+      labels:
+        - textFrom: facts.skill.pass
+          x: 0.46
+          y: 0.24
+          at: 0.1
+          tone: green
+    sfx:
+      - at: start
+        kind: chime
+        gain: 0.25
+  - id: question
+    scene: illustration
+    say: "Что ты заметил бы первым на поле: мяч {#friend}или свободного товарища?"
+    pad:
+      - 0.2
+      - 1.6
+    energy: 0.6
+    props:
+      shots:
+        - image: shots/question.png
+          move: in
+          zoom: 0.025
+          focus:
+            x: 0.5
+            y: 0.4
+      title:
+        textFrom: facts.question.short
+        at: 0.1
+        size: 0.046
+      labels:
+        - textFrom: facts.question.ball
+          x: 0.25
+          y: 0.61
+          at: 0.2
+          tone: accent
+        - textFrom: facts.question.mate
+          x: 0.69
+          y: 0.61
+          at: friend
+          tone: green
+    sfx:
+      - at: start
+        kind: chime
+        gain: 0.28

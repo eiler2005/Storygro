@@ -1,0 +1,498 @@
+reel: 1
+style: cartoon
+title: Омар Сивори — маленький волшебник с мячом
+lang: ru
+format:
+  preset: vertical
+  width: 1080
+  height: 1920
+  fps: 30
+safe: reels
+voice:
+  engine: omnivoice
+  model: k2-fsa/OmniVoice
+  voice: assets/voice/narrator-ru.wav
+  speed: 0.9
+  stress: off
+music:
+  bpm: 118
+  key: G
+  progression:
+    - I
+    - vi
+    - IV
+    - V
+  gain: 0.11
+  drop: answer
+loudness: -14
+theme: theme.css
+captions:
+  show: true
+  maxWords: 4
+transition:
+  kind: cut
+  dur: 0
+data:
+  facts: facts.json
+stills:
+  cover: hook@0
+  final: roots@italy
+  hosts: question@1.5
+images:
+  provider: manual
+  model: OpenAI built-in image generation (identifier not exposed)
+  seed: 61
+  width: 1088
+  height: 1920
+  prompt: "Premium stylized 3D family animation film still with the polish of a modern feature-animation studio,
+    not photorealistic and not babyish: expressive faces, beautifully detailed soft fur and fabric, cinematic
+    warm light, a rich detailed background, a palette of deep navy blue, warm gold, lush pitch green and cream
+    white with restrained orange and plum accents. Full-frame vertical 9:16 composition, edge-to-edge
+    background, no borders or letterboxing. The top fifth of the frame is calm sky, stands or background with
+    no heads, faces, hands or ball; every head and face sits between one fifth and two thirds of the height,
+    away from the side edges; the bottom quarter is simple grass, floor or crowd seen from behind, without
+    faces. {subject}. No text, no letters, no numbers, no logos, no crests, no flags, no watermark, no extra
+    limbs, no duplicate characters."
+  cast:
+    matvey: Matvey (a small six-year-old anthropomorphic raccoon boy with soft grey-brown fur, a dark eye mask, a
+      white muzzle, big lively dark-brown eyes, round ears with white edges and a fluffy tail with dark rings,
+      wearing a plain royal-blue football kit with white collar trim, blue-and-white striped socks and
+      blue-and-white boots)
+    sofia: Sofia (his sister, an eight-year-old anthropomorphic red squirrel girl, a little taller than Matvey,
+      with a round childlike face, chestnut-orange fur, a cream muzzle, tufted ears, big warm amber eyes, a
+      short high ponytail with a plum hair band and a large fluffy curled tail, wearing a plain plum-purple
+      zip tracksuit with thin white stripes and white-and-lilac trainers)
+    sivori: Historical Omar Sivori in1961, low dense wavy black hair, broad cheek/jaw, dark eyes, short compact
+      forward, Juventus black/white stripes, white shorts and socks rolled to ankles. Reference portrait and
+      archival photo inputs recorded per shot.
+  refs:
+    matvey:
+      - ../../series/football-legends/cast/matvey-face.png
+      - ../../series/football-legends/cast/hosts-full.png
+    sofia:
+      - ../../series/football-legends/cast/sofia-face.png
+      - ../../series/football-legends/cast/hosts-full.png
+post:
+  title: Легенды футбола · Омар Сивори
+  text: >-
+    Крупнее — не значит непобедимее. Матвей и София знакомятся с Омаром Сивори, первым обладателем «Золотого
+    мяча» в истории «Ювентуса» (1961). Ловкость, смелость и быстрая мысль помогали ему находить выход из
+    тесноты.
+
+
+    А ты чем обыграл бы большого защитника?
+
+
+    Выпуск 5 рубрики «Легенды футбола» проекта «Маленькие большие дела». Источники: Juventus, UEFA,
+    MuseoTorino. В исторических сценах — туринский «Комунале», домашний стадион «Ювентуса» той эпохи.
+    Иллюстрации созданы с помощью GPT Image по архивным ориентирам; игровые эпизоды условные, это не
+    документальная запись матчей. Голос рассказчика синтетический (OmniVoice). Ролик не связан с футболистами,
+    клубами или организаторами награды.
+  tags:
+    - футбол
+    - детям
+    - легендыфутбола
+    - сивори
+    - ювентус
+    - золотоймяч
+scenes:
+  - id: hook
+    scene: illustration
+    say: Можно ли обыграть защитника, который кажется гораздо сильнее и крупнее тебя?
+    pad:
+      - 0.15
+      - 0.35
+    energy: 0.65
+    props:
+      shots:
+        - image: shots/hook-v2.png
+          move: in
+          zoom: 0.025
+          focus:
+            x: 0.5
+            y: 0.38
+      labels:
+        - textFrom: facts.hook.text
+          x: 0.46
+          y: 0.255
+          at: -1
+          tone: navy
+    sfx:
+      - at: start
+        kind: swell
+        gain: 0.22
+  - id: answer
+    scene: illustration
+    say: Омар Сивори показывал, что да — если у тебя отличная техника и быстрая голова!
+    pad:
+      - 0.15
+      - 0.35
+    energy: 0.65
+    props:
+      shots:
+        - image: shots/reveal.png
+          move: in
+          zoom: 0.025
+          focus:
+            x: 0.5
+            y: 0.38
+      labels:
+        - textFrom: facts.player.name
+          x: 0.46
+          y: 0.24
+          at: 0.1
+          tone: navy
+    sfx:
+      - at: start
+        kind: whoosh
+        gain: 0.28
+  - id: intro
+    scene: illustration
+    say: ""
+    min: 1.5
+    energy: 0.65
+    sfx:
+      - at: start
+        kind: chime
+        gain: 0.25
+    props:
+      shots:
+        - image: shots/intro.png
+          move: in
+          zoom: 0.025
+          focus:
+            x: 0.5
+            y: 0.38
+      title:
+        textFrom: facts.series.title
+        at: 0.1
+        size: 0.044
+  - id: roots
+    scene: illustration
+    say: Сивори родился в Аргентине, {#italy}а потом играл в Италии за знаменитый «Ювентус».
+    pad:
+      - 0.15
+      - 0.35
+    energy: 0.65
+    props:
+      shots:
+        - image: shots/card.png
+          move: in
+          zoom: 0.025
+          focus:
+            x: 0.5
+            y: 0.38
+        - image: shots/stadium.png
+          at: italy
+          move: in
+          zoom: 0.025
+          focus:
+            x: 0.5
+            y: 0.38
+      labels:
+        - textFrom: facts.player.birth
+          x: 0.46
+          y: 0.21
+          at: 0.1
+          tone: navy
+          until: italy
+        - textFrom: facts.venue.name
+          x: 0.46
+          y: 0.26
+          at: italy
+          tone: navy
+  - id: award
+    scene: illustration
+    say: В [1961](=тысяча девятьсот шестьдесят первом) году он получил «Золотой мяч»
+    pad:
+      - 0.15
+      - 0.35
+    energy: 0.65
+    props:
+      shots:
+        - image: shots/award.png
+          move: in
+          zoom: 0.025
+          focus:
+            x: 0.5
+            y: 0.38
+      labels:
+        - textFrom: facts.award.full
+          x: 0.46
+          y: 0.58
+          at: 0.1
+          tone: accent
+  - id: first
+    scene: illustration
+    say: и стал первым футболистом «Ювентуса», [удостоенным](=удостОенным) этой награды.
+    pad:
+      - 0.15
+      - 0.35
+    energy: 0.65
+    props:
+      shots:
+        - image: shots/award.png
+          move: in
+          zoom: 0.025
+          focus:
+            x: 0.5
+            y: 0.38
+      labels:
+        - textFrom: facts.award.first
+          x: 0.46
+          y: 0.58
+          at: 0.1
+          tone: navy
+  - id: skill
+    scene: illustration
+    say: Сивори был невысоким, ловким и очень техничным нападающим.
+    pad:
+      - 0.15
+      - 0.35
+    energy: 0.65
+    props:
+      shots:
+        - image: shots/card.png
+          move: in
+          zoom: 0.025
+          focus:
+            x: 0.5
+            y: 0.38
+      title:
+        textFrom: facts.player.name
+        at: 0.1
+        size: 0.037
+      labels:
+        - textFrom: facts.player.card
+          x: 0.46
+          y: 0.58
+          at: 0.1
+          tone: navy
+  - id: control
+    scene: illustration
+    say: Он мог вести мяч так близко к ногам, что защитнику было трудно понять, куда тот двинется дальше.
+    pad:
+      - 0.15
+      - 0.35
+    energy: 0.65
+    props:
+      shots:
+        - image: shots/boots-v2.png
+          move: in
+          zoom: 0.025
+          focus:
+            x: 0.5
+            y: 0.38
+        - image: shots/hook-v2.png
+          at: 3.5
+          move: in
+          zoom: 0.025
+          focus:
+            x: 0.5
+            y: 0.38
+      labels:
+        - textFrom: facts.skill.control
+          x: 0.46
+          y: 0.24
+          at: 0.1
+          tone: navy
+  - id: escape
+    scene: illustration
+    say: Один неверный шаг — {#escape}и Сивори уже убегал к воротам!
+    pad:
+      - 0.15
+      - 0.35
+    energy: 0.65
+    props:
+      shots:
+        - image: shots/hook-v2.png
+          move: in
+          zoom: 0.025
+          focus:
+            x: 0.5
+            y: 0.38
+        - image: shots/reveal.png
+          at: escape
+          move: in
+          zoom: 0.025
+          focus:
+            x: 0.5
+            y: 0.38
+      labels:
+        - textFrom: facts.skill.escape
+          x: 0.46
+          y: 0.24
+          at: escape
+          tone: navy
+    sfx:
+      - at: escape
+        kind: whoosh
+        gain: 0.3
+  - id: space
+    scene: illustration
+    say: Он любил неожиданные решения, смело шёл в обводку {#gap}и умел создавать опасность даже там, где,
+      казалось, места для атаки совсем не осталось.
+    pad:
+      - 0.15
+      - 0.35
+    energy: 0.65
+    props:
+      shots:
+        - image: shots/tight.png
+          move: in
+          zoom: 0.025
+          focus:
+            x: 0.5
+            y: 0.38
+        - image: shots/gap.png
+          at: gap
+          move: in
+          zoom: 0.025
+          focus:
+            x: 0.5
+            y: 0.38
+      labels:
+        - textFrom: facts.skill.space
+          x: 0.46
+          y: 0.24
+          at: 0.1
+          tone: navy
+  - id: bridge
+    scene: illustration
+    say: Но одна техника не делает игрока великим.
+    pad: &a1
+      - 0.15
+      - 0.35
+    energy: 0.65
+    props:
+      shots:
+        - image: shots/tight.png
+          move: in
+          zoom: 0.025
+          focus:
+            x: 0.5
+            y: 0.38
+    sfx: []
+  - id: goals
+    scene: illustration
+    say: Сивори ещё и забивал [голы](=голЫ), находил правильные моменты для удара {#team}и помогал своей команде
+      добиваться побед.
+    pad: *a1
+    energy: 0.65
+    props:
+      shots:
+        - image: shots/finish-clean.png
+          move: in
+          zoom: 0.025
+          focus:
+            x: 0.5
+            y: 0.38
+        - image: shots/team.png
+          move: in
+          zoom: 0.025
+          focus:
+            x: 0.5
+            y: 0.38
+          at: team
+      labels:
+        - textFrom: facts.skill.goals
+          x: 0.46
+          y: 0.24
+          at: 0.1
+          tone: navy
+          until: team
+    sfx:
+      - at: start
+        kind: pop
+        gain: 0.26
+  - id: lesson
+    scene: illustration
+    say: "Его карьера напоминает: не всегда нужно быть самым большим или самым сильным."
+    pad:
+      - 0.15
+      - 0.35
+    energy: 0.65
+    props:
+      shots:
+        - image: shots/lesson.png
+          move: in
+          zoom: 0.025
+          focus:
+            x: 0.5
+            y: 0.38
+      labels:
+        - textFrom: facts.skill.lesson
+          x: 0.46
+          y: 0.24
+          at: 0.1
+          tone: navy
+  - id: qualities
+    scene: illustration
+    say: Иногда преимущество — в ловкости, {#courage}смелости {#think}и умении быстро соображать.
+    pad:
+      - 0.15
+      - 0.35
+    energy: 0.65
+    props:
+      shots:
+        - image: shots/boots-v2.png
+          move: in
+          zoom: 0.025
+          focus:
+            x: 0.5
+            y: 0.38
+        - image: shots/reveal.png
+          at: courage
+          move: in
+          zoom: 0.025
+          focus:
+            x: 0.5
+            y: 0.38
+        - image: shots/question.png
+          at: think
+          move: in
+          zoom: 0.025
+          focus:
+            x: 0.5
+            y: 0.38
+      labels:
+        - textFrom: facts.skill.agility
+          x: 0.46
+          y: 0.24
+          at: 0.1
+          tone: green
+          until: courage
+        - textFrom: facts.skill.courage
+          x: 0.46
+          y: 0.24
+          at: courage
+          tone: accent
+          until: think
+        - textFrom: facts.skill.think
+          x: 0.46
+          y: 0.24
+          at: think
+          tone: navy
+  - id: question
+    scene: illustration
+    say: Если защитник намного крупнее тебя, какие качества помогут его обыграть?
+    pad:
+      - 0.2
+      - 1.6
+    energy: 0.65
+    props:
+      shots:
+        - image: shots/question.png
+          move: in
+          zoom: 0.025
+          focus:
+            x: 0.5
+            y: 0.38
+      title:
+        textFrom: facts.question.short
+        at: 0.1
+        size: 0.039
+    sfx:
+      - at: start
+        kind: chime
+        gain: 0.25

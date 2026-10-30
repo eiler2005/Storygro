@@ -401,11 +401,12 @@ words:
     say: К+убков
     source: 'ru.wikipedia, «Кубок обладателей кубков УЕФА»: «…Ку́бок облада́телей ку́бков (англ. UEFA Cup Winners'' Cup) — европей…» (storygro stress --lookup, 2026-10-29)'
   - word: голы
-    say: г+олы
-    # homograph: го́лы (goals) and голы́ (naked). OmniVoice B said голы́ in football-legends-02 (the owner
-    # heard it, 29.10.2026) while the phonemes read `ɡ oː l i` — the recogniser does not tell these two
-    # apart, so there is no check: write г+олы in the script and listen
-    source: 'ru.wiktionary, «гол»: «Им. мн. го́лы» (checked by hand, 2026-10-29)'
+    say: гол+ы
+    # Football noun plural голы́; the short adjective го́лы is a different form.
+    # The previous entry reversed them. Corrected after the owner's explicit clarification,
+    # 2026-10-30, against Gramota's inflection table. Old /o/-based bench scores are invalid.
+    # There is no automatic stress check: phoneme spelling alone is not a listening verdict.
+    source: 'Грамота.ру, «гол», football noun, inflection: «именительный | гол | голы́»; https://gramota.ru/meta/gol (owner correction, verified 2026-10-30)'
   - word: вперёд
     say: впер+ёд
     forms: [вперед]
@@ -451,3 +452,20 @@ words:
   - word: Барселону
     say: Барсел+ону
     source: 'ru.wiktionary, «Барселона»: «…Барсело́не Барсело́нам В. Барсело́ну Барсело́ны Тв. Барсело́но…» (storygro stress --lookup, 2026-10-30)'
+  - word: Сивори
+    say: С+ивори
+    source: 'ru.wikipedia, «Сивори, Омар»: «…Энри́ке Ома́р Си́вори (исп. Enrique Omar Sívori; 2 октября 19…» (storygro stress --lookup, 2026-10-30)'
+  - word: Италии
+    say: Ит+алии
+    source: 'ru.wiktionary, «Италия»: «…мн. ч. Им. Ита́лия Ита́лии Р. Ита́лии Ита́лий…» (storygro stress --lookup, 2026-10-30)'
+  - word: Ювентус
+    say: Юв+ентус
+    forms: [Ювентуса]
+    source: 'ru.wikipedia, «Ювентус»: «…«Юве́нтус» (итал. Juventus Football Club, итальян…» (storygro stress --lookup, 2026-10-30)'
+  - word: Омар
+    say: Ом+ар
+    source: 'ru.wikipedia, «Сивори, Омар»: «Энри́ке Ома́р Си́вори» (checked 2026-10-30; personal name, not inferred from the common noun)'
+  - word: удостоенный
+    say: удост+оенный
+    forms: [удостоенным]
+    source: 'ru.wiktionary, «удостоенный»: «удосто́енный», «удосто́енным»; https://ru.wiktionary.org/wiki/удостоенный (owner correction, checked 2026-10-30)'

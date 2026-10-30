@@ -1,0 +1,30 @@
+review: 1
+questions:
+  - id: visual
+    ask: Подходят ли туринский «Комунале», новая прохладная палитра, сходство Сивори и игровые эпизоды?
+    for: owner
+    open: true
+  - id: voice
+    ask: "Послушайте «Омар Сивори», «Ювентус» и «голы»: автоматические проверки не доказывают правильное
+      ударение."
+    for: owner
+    open: true
+notes: "Owner request 30 October 2026: episode 5, previous hosts, Juventus stadium and distinct atmosphere.
+  Exact narration retained except pasted source labels. Historical Turin Comunale, not the 2011 stadium. Owner
+  confirmed удостоенным in probe B, rejected the goals probes and explicitly clarified stress on Ы. The agent
+  had confused homographs: corrected to голы́, shared dictionary гол+ы, scene hint голЫ. Confirmed удостОенным
+  retained. Same OmniVoice B, 0.90, stress off. Old O-based scores invalid. Final 82.82 s; QA 15/15; full
+  decode 2483 frames per file; 38 inspected MP4 moments; 164 caption samples and 81 reverse seeks without
+  layout failures. Technical approvals only; corrected MP4 owner listening open; not published."
+approvals:
+  ru:
+    script:
+      hash: d59e87c69204
+      at: 2026-10-30T15:05:41.043Z
+      by: agent
+      role: agent
+    storyboard:
+      hash: e031cb99871a
+      at: 2026-10-30T15:05:41.431Z
+      by: agent
+      role: agent

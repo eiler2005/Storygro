@@ -1,0 +1,276 @@
+{
+ "images": 1,
+ "files": {
+  "shots/portrait.png": {
+   "prompt": "Respectful recognizable stylized 3D family-film portrait of OMAR SÍVORI in1961 based closely on first TWO historical photographs. NOT Luis Suarez, NOT Kopa. Distinctive voluminous wavy almost-black hair with low dense hairline and loose forward wave, broad cheekbones and strong broad cheek/jaw plane, dark eyes under straight thick brows, compact nose, quite large head relative to short compact athletic body, clean shaven, young man26, subtle mischievous intelligent smile, ears/nose/mouth closely matched. THIRD reference is render/style ONLY; no animal features on human. Head-and-shoulders, plain softsilver studio background, exquisite textile and expressive face, clearly animated-film rendering with some caricature, NOT flat photo or photomontage. Authentic1961 Juventus shirt: broad BLACK and WHITE vertical stripes, white open V collar with little black turned-down collar points as the photo, no club crest, no sponsors or lettering/numbers. Complete hair/chin/shoulders. No text/watermark/borders. Portrait ideally1024x1280.",
+   "seed": 0,
+   "provider": "imagegen",
+   "model": "OpenAI built-in image generation (identifier not exposed)",
+   "width": 1122,
+   "height": 1402,
+   "steps": 0,
+   "licence": "OpenAI image tool output; account terms apply. Seed 0 is a placeholder, not reproducible.",
+   "refs": {
+    "../../../private/football-legends-05-sivori/references/sivori.jpg": "d7ad723fd531d106e47b92e1ac42305df866dead0025f0fc4f07c3a217559f78",
+    "../../../private/football-legends-05-sivori/references/sivori-comunale.jpg": "364c41fcf28e39c8cd9a7b3802f7f5b1c8af5f57141a9bfd2913035294956912",
+    "../../series/football-legends/cast/hosts-full.png": "49c92b4bca5df88e90d529034e158fb7a48a79de4c7f98d49ccf764944d2be35"
+   },
+   "sha256": "69091dd526bdac192be6db6295475d68d3143d97046e9e41c145eb3fdd07d886",
+   "createdAt": 1793366664255
+  },
+  "shots/stadium.png": {
+   "prompt": "Premium cinematic stylized3D family animated-film still, expressive acting, exquisite fabric/grass/fur, slightly caricatured human proportions, NOT a pasted photograph. Full-bleed vertical9:16, ideal1088x1920. COOL TURIN late-afternoon silver-blue daylight, emerald turf, black/white accents, subtle amber rimlight, no orange sunset. Absolutely NO text, lettering, numbers, logos, sponsor marks, watermark, frame or borders. IMPORTANT COMPOSITION: upper one-third mostly calm sky or empty architecture, ALL full heads/hair/ears fully below y30% and above y56%, faces away fromedges. Bottomquarter simple ground for later captions. SETTING: historical STADIO COMUNALE in Turin in1961, Juventus home, based on attached architectural photograph: OPEN oval concrete terraces, red-brown athletics track surrounding green pitch, grey rationalist exterior with repeated square concrete piers and openings, tall simple rectangular MARATHON TOWER with a narrow dark vertical window strip. No modern roof ring or suspension cables, no modern Allianz or DelleAlpi architecture, no modernLED advertisements. Interpretive historical illustration, not a literal gamephoto. Architectural establishing shot from high oblique viewpoint, recreate the building geometry of reference, open oval stadium, packed stands and pitch, rationalist grey exterior, prominent rectangular Marathon tower on left, red clay ovaltrack. Turin low-rise early1960s city blocks and hazy Alpine ridge, no skyscrapers. Building fills central y30%..70%; top30% silverblue sky, lower25% tree-lined plaza with tiny indistinct period vehicles. Crisp handcrafted miniature3D appearance, gorgeous realistic architecture without invented lettering.",
+   "seed": 0,
+   "provider": "imagegen",
+   "model": "OpenAI built-in image generation (identifier not exposed)",
+   "width": 941,
+   "height": 1672,
+   "steps": 0,
+   "licence": "OpenAI image tool output; account terms apply. Seed 0 is a placeholder, not reproducible.",
+   "refs": {
+    "../../../private/football-legends-05-sivori/references/comunale-1960s.jpg": "2016208f72bd66e255ab82f74eeb72db87a2a47b405ca3664dc22e459640edb6"
+   },
+   "sha256": "4a9b58c7e6b6317dae1dd0f3e06cd1fea51f267662385b011b34ea221643e1ec",
+   "createdAt": 1793366664263
+  },
+  "shots/hook-v2.png": {
+   "prompt": "Premium cinematic stylized3D family animated-film still, expressive acting, exquisite fabric/grass/fur, slightly caricatured human proportions, NOT a pasted photograph. Full-bleed vertical9:16, ideal1088x1920. COOL TURIN late-afternoon silver-blue daylight, emerald turf, black/white accents, subtle amber rimlight, no orange sunset. Absolutely NO text, lettering, numbers, logos, sponsor marks, watermark, frame or borders. IMPORTANT COMPOSITION: upper one-third mostly calm sky or empty architecture, ALL full heads/hair/ears fully below y30% and above y56%, faces away fromedges. Bottomquarter simple ground for later captions. SETTING: historical STADIO COMUNALE in Turin in1961, Juventus home, based on attached architectural photograph: OPEN oval concrete terraces, red-brown athletics track surrounding green pitch, grey rationalist exterior with repeated square concrete piers and openings, tall simple rectangular MARATHON TOWER with a narrow dark vertical window strip. No modern roof ring or suspension cables, no modern Allianz or DelleAlpi architecture, no modernLED advertisements. Interpretive historical illustration, not a literal gamephoto. OMAR SÍVORI,26, from first portrait and second archive face: thick voluminous wavy nearly black hair and LOW hairline with forward wave, broad strong cheek/jaw shape, straight thick brows, dark eyes, compact broad nose, larger head-to-body, SHORT COMPACT athletic frame, clean-shaven, mischievous subtle smile.1961 JUVENTUS kit: broad BLACK/WHITE vertical shirt stripes, white V/open collar with black collar tips, WHITE shorts, white socks rolled DOWN to ANKLES exposing lower legs, black/brown old leatherboots. Not Suarez or Kopa. RECOMPOSE a readable full-body duel, WIDER camera and much more empty sky overhead than previous composition. Tall anonymous defender on RIGHTx70% in plain BURGUNDYshirt WHITEshorts/burgundykneehighsocks, shortlightbrownhair/squareface; shortSivori on LEFTx33% with ONE vintagebrownball at LEFT boot. BOTH characters smaller and lower: defender COMPLETE HAIR starts EXACTLY y39%,chin49%; Sivorihair starts y47%,chin57%. Entirefeetbyy86%. Upper36% EMPTY sky, with distant MarathonTower at farleft, no humanheads or hands there. Their scale difference clear, correctfeet/paws, no contact/fighting. No close-up. Both faces safe inside central square. Plain grass atbottom.",
+   "seed": 0,
+   "provider": "imagegen",
+   "model": "OpenAI built-in image generation (identifier not exposed)",
+   "width": 941,
+   "height": 1672,
+   "steps": 0,
+   "licence": "OpenAI image tool output; account terms apply. Seed 0 is a placeholder, not reproducible.",
+   "refs": {
+    "../../../../../.codex/generated_images/01a188e1-81ca-7ce1-8a50-36bd8d134d29/exec-fb604c09-b19d-4285-aaf7-d3722cb1d7f2.png": "69091dd526bdac192be6db6295475d68d3143d97046e9e41c145eb3fdd07d886",
+    "../../../private/football-legends-05-sivori/references/sivori.jpg": "d7ad723fd531d106e47b92e1ac42305df866dead0025f0fc4f07c3a217559f78",
+    "../../../private/football-legends-05-sivori/references/comunale-1960s.jpg": "2016208f72bd66e255ab82f74eeb72db87a2a47b405ca3664dc22e459640edb6",
+    "../../../private/football-legends-05-sivori/references/sivori-action.jpg": "d38e57f1bce6d368824aae44a06d85bfb6d540698bb44a781b697f7f134861aa"
+   },
+   "sha256": "780c22af446fe99b7a2803b7d886c432c6db0882657402ad53d5c0b9fd0cd58a",
+   "createdAt": 1793366664271
+  },
+  "shots/reveal.png": {
+   "prompt": "Premium cinematic stylized3D family animated-film still, expressive acting, exquisite fabric/grass/fur, slightly caricatured human proportions, NOT a pasted photograph. Full-bleed vertical9:16, ideal1088x1920. COOL TURIN late-afternoon silver-blue daylight, emerald turf, black/white accents, subtle amber rimlight, no orange sunset. Absolutely NO text, lettering, numbers, logos, sponsor marks, watermark, frame or borders. IMPORTANT COMPOSITION: upper one-third mostly calm sky or empty architecture, ALL full heads/hair/ears fully below y30% and above y56%, faces away fromedges. Bottomquarter simple ground for later captions. SETTING: historical STADIO COMUNALE in Turin in1961, Juventus home, based on attached architectural photograph: OPEN oval concrete terraces, red-brown athletics track surrounding green pitch, grey rationalist exterior with repeated square concrete piers and openings, tall simple rectangular MARATHON TOWER with a narrow dark vertical window strip. No modern roof ring or suspension cables, no modern Allianz or DelleAlpi architecture, no modernLED advertisements. Interpretive historical illustration, not a literal gamephoto. OMAR SÍVORI,26, from first portrait and second archive face: thick voluminous wavy nearly black hair and LOW hairline with forward wave, broad strong cheek/jaw shape, straight thick brows, dark eyes, compact broad nose, larger head-to-body, SHORT COMPACT athletic frame, clean-shaven, mischievous subtle smile.1961 JUVENTUS kit: broad BLACK/WHITE vertical shirt stripes, white V/open collar with black collar tips, WHITE shorts, white socks rolled DOWN to ANKLES exposing lower legs, black/brown old leatherboots. Not Suarez or Kopa. Continuation of reference football duel: same SHORT Sivori is now on RIGHT front x64%,heady38%..49%, accelerating into OPEN space toward goal atfar-right distance. He has nudged ONE brownleatherball in front of LEFTfoot at y72%, ballcontrolledclosely. The SAME TALL defender now BEHIND him on LEFTx32%,heady33%..43%, same plain BURGUNDYshirt WHITEshorts burgundysocks, shortlightbrownhair/squarejaw, weight wrongfooted and lookingbackatSivori. Do not have defender blocking his route or duplicateballs. Full bodies, plausible runninglegs, leftfoot technique, dynamiccinematicgrasslevelwideview. Upper30%emptycoolsky, no streaks/effects/labels.",
+   "seed": 0,
+   "provider": "imagegen",
+   "model": "OpenAI built-in image generation (identifier not exposed)",
+   "width": 941,
+   "height": 1672,
+   "steps": 0,
+   "licence": "OpenAI image tool output; account terms apply. Seed 0 is a placeholder, not reproducible.",
+   "refs": {
+    "../../../../../.codex/generated_images/01a188e1-81ca-7ce1-8a50-36bd8d134d29/exec-fb604c09-b19d-4285-aaf7-d3722cb1d7f2.png": "69091dd526bdac192be6db6295475d68d3143d97046e9e41c145eb3fdd07d886",
+    "../../../private/football-legends-05-sivori/references/sivori.jpg": "d7ad723fd531d106e47b92e1ac42305df866dead0025f0fc4f07c3a217559f78",
+    "../../../private/football-legends-05-sivori/references/comunale-1960s.jpg": "2016208f72bd66e255ab82f74eeb72db87a2a47b405ca3664dc22e459640edb6",
+    "../../../private/football-legends-05-sivori/references/sivori-action.jpg": "d38e57f1bce6d368824aae44a06d85bfb6d540698bb44a781b697f7f134861aa",
+    "../../../../../.codex/generated_images/01a188e1-81ca-7ce1-8a50-36bd8d134d29/exec-2405e851-e2ed-4485-83d8-683daea08d29.png": "2ebd908c1693f9dee41db0cb588d907194081ab8c72ac0e34b9c9c4bd3009f35"
+   },
+   "sha256": "013e0413b462a5de4167fb7dfbf2236d8af2a528c6403aae8259ecc51e872235",
+   "createdAt": 1793366664280
+  },
+  "shots/intro.png": {
+   "prompt": "Premium cinematic stylized3D family animated-film still, expressive acting, exquisite fabric/grass/fur, slightly caricatured human proportions, NOT a pasted photograph. Full-bleed vertical9:16, ideal1088x1920. COOL TURIN late-afternoon silver-blue daylight, emerald turf, black/white accents, subtle amber rimlight, no orange sunset. Absolutely NO text, lettering, numbers, logos, sponsor marks, watermark, frame or borders. IMPORTANT COMPOSITION: upper one-third mostly calm sky or empty architecture, ALL full heads/hair/ears fully below y30% and above y56%, faces away fromedges. Bottomquarter simple ground for later captions. SETTING: historical STADIO COMUNALE in Turin in1961, Juventus home, based on attached architectural photograph: OPEN oval concrete terraces, red-brown athletics track surrounding green pitch, grey rationalist exterior with repeated square concrete piers and openings, tall simple rectangular MARATHON TOWER with a narrow dark vertical window strip. No modern roof ring or suspension cables, no modern Allianz or DelleAlpi architecture, no modernLED advertisements. Interpretive historical illustration, not a literal gamephoto. Preserve EXACT two originalhosts fromfirst3references: Matvey six-year-old grey-brown raccoon in bluefootballkit/whitetrim, bluewhitesocks/boots; Sofia eight-year-old redsquirrel with highponytail, plum tracksuit/whitestripes/lilactrainers. Both standing on the redclay track near edgeofgrass, excitedly point toward tall rectangular MarathonTower behind open terraces. Matveyleft/Sofiaright. Complete heads incl hair/ears at y37%..53%, bodies to78%; upper30% clear silverblue sky, visible rationalist stadium curvedconcretepiers and tower, bottom grass/track. No awards, extraanimalcharacters, toyhouse, modern roof orflagswithlogos.",
+   "seed": 0,
+   "provider": "imagegen",
+   "model": "OpenAI built-in image generation (identifier not exposed)",
+   "width": 948,
+   "height": 1659,
+   "steps": 0,
+   "licence": "OpenAI image tool output; account terms apply. Seed 0 is a placeholder, not reproducible.",
+   "refs": {
+    "../../series/football-legends/cast/matvey-face.png": "70d429f91006b8d818eb13f653e5cc6ad1c5726feade2bc94c8aa4e44dd496c2",
+    "../../series/football-legends/cast/sofia-face.png": "8e8f0e504835d506d25edb8123c78392be69f0457631dfa5fe3a8259adafd914",
+    "../../series/football-legends/cast/hosts-full.png": "49c92b4bca5df88e90d529034e158fb7a48a79de4c7f98d49ccf764944d2be35",
+    "../../../private/football-legends-05-sivori/references/comunale-1960s.jpg": "2016208f72bd66e255ab82f74eeb72db87a2a47b405ca3664dc22e459640edb6"
+   },
+   "sha256": "eacfe03f0bf8daf4e696e2b9b18fb1ed24d02aca3e9663bf92ce3f95feecbae4",
+   "createdAt": 1793366664291
+  },
+  "shots/card.png": {
+   "prompt": "Premium cinematic stylized3D family animated-film still, expressive acting, exquisite fabric/grass/fur, slightly caricatured human proportions, NOT a pasted photograph. Full-bleed vertical9:16, ideal1088x1920. COOL TURIN late-afternoon silver-blue daylight, emerald turf, black/white accents, subtle amber rimlight, no orange sunset. Absolutely NO text, lettering, numbers, logos, sponsor marks, watermark, frame or borders. IMPORTANT COMPOSITION: upper one-third mostly calm sky or empty architecture, ALL full heads/hair/ears fully below y30% and above y56%, faces away fromedges. Bottomquarter simple ground for later captions. SETTING: historical STADIO COMUNALE in Turin in1961, Juventus home, based on attached architectural photograph: OPEN oval concrete terraces, red-brown athletics track surrounding green pitch, grey rationalist exterior with repeated square concrete piers and openings, tall simple rectangular MARATHON TOWER with a narrow dark vertical window strip. No modern roof ring or suspension cables, no modern Allianz or DelleAlpi architecture, no modernLED advertisements. Interpretive historical illustration, not a literal gamephoto. OMAR SÍVORI,26, from first portrait and second archive face: thick voluminous wavy nearly black hair and LOW hairline with forward wave, broad strong cheek/jaw shape, straight thick brows, dark eyes, compact broad nose, larger head-to-body, SHORT COMPACT athletic frame, clean-shaven, mischievous subtle smile.1961 JUVENTUS kit: broad BLACK/WHITE vertical shirt stripes, white V/open collar with black collar tips, WHITE shorts, white socks rolled DOWN to ANKLES exposing lower legs, black/brown old leatherboots. Not Suarez or Kopa. SINGLE-person WIDE player portrait on pitch. CRITICAL upper33% completely empty silverblue sky. All hair starts y35%, face/chin ends49%, shoulders53%, waist78%. Sivori small enough in frame, centeredx50%, smiling a little, hands relaxed at sides, NO ball or trophy, no other people. Show the recognizable dense wavyhair NOT receding and original face. Plenty of clear space above head and below shoulders for separatelydrawn nameandfacts.",
+   "seed": 0,
+   "provider": "imagegen",
+   "model": "OpenAI built-in image generation (identifier not exposed)",
+   "width": 941,
+   "height": 1672,
+   "steps": 0,
+   "licence": "OpenAI image tool output; account terms apply. Seed 0 is a placeholder, not reproducible.",
+   "refs": {
+    "../../../../../.codex/generated_images/01a188e1-81ca-7ce1-8a50-36bd8d134d29/exec-fb604c09-b19d-4285-aaf7-d3722cb1d7f2.png": "69091dd526bdac192be6db6295475d68d3143d97046e9e41c145eb3fdd07d886",
+    "../../../private/football-legends-05-sivori/references/sivori.jpg": "d7ad723fd531d106e47b92e1ac42305df866dead0025f0fc4f07c3a217559f78",
+    "../../../private/football-legends-05-sivori/references/comunale-1960s.jpg": "2016208f72bd66e255ab82f74eeb72db87a2a47b405ca3664dc22e459640edb6",
+    "../../../private/football-legends-05-sivori/references/sivori-action.jpg": "d38e57f1bce6d368824aae44a06d85bfb6d540698bb44a781b697f7f134861aa"
+   },
+   "sha256": "f4f54131942908ba6566b672919a8f72c1d333ed8431b8a4b69b63eb23153bbb",
+   "createdAt": 1793366664297
+  },
+  "shots/award.png": {
+   "prompt": "Premium cinematic stylized3D family animated-film still, expressive acting, exquisite fabric/grass/fur, slightly caricatured human proportions, NOT a pasted photograph. Full-bleed vertical9:16, ideal1088x1920. COOL TURIN late-afternoon silver-blue daylight, emerald turf, black/white accents, subtle amber rimlight, no orange sunset. Absolutely NO text, lettering, numbers, logos, sponsor marks, watermark, frame or borders. IMPORTANT COMPOSITION: upper one-third mostly calm sky or empty architecture, ALL full heads/hair/ears fully below y30% and above y56%, faces away fromedges. Bottomquarter simple ground for later captions. SETTING: historical STADIO COMUNALE in Turin in1961, Juventus home, based on attached architectural photograph: OPEN oval concrete terraces, red-brown athletics track surrounding green pitch, grey rationalist exterior with repeated square concrete piers and openings, tall simple rectangular MARATHON TOWER with a narrow dark vertical window strip. No modern roof ring or suspension cables, no modern Allianz or DelleAlpi architecture, no modernLED advertisements. Interpretive historical illustration, not a literal gamephoto. OMAR SÍVORI,26, from first portrait and second archive face: thick voluminous wavy nearly black hair and LOW hairline with forward wave, broad strong cheek/jaw shape, straight thick brows, dark eyes, compact broad nose, larger head-to-body, SHORT COMPACT athletic frame, clean-shaven, mischievous subtle smile.1961 JUVENTUS kit: broad BLACK/WHITE vertical shirt stripes, white V/open collar with black collar tips, WHITE shorts, white socks rolled DOWN to ANKLES exposing lower legs, black/brown old leatherboots. Not Suarez or Kopa. WIDE respectful award still, SINGLEperson centered in pitch, no teammates or hosts. CRITICAL upper ONE THIRD totally EMPTY silverblue sky, ALL hair begins y36%,chin50%, shoulders54%,waist79%. Do not make tightportrait. Sivori holds ONE SMALL GOLDEN faceted football on roughcrystalline rockbase (BallondOr, not handledcup), with bothhandsnaturally supportingbase aty65%..73%. Accurateidentityandclothes, slightlyproudsmile, oldopenterraces and MarathonTower leftdistant. No confetti. Roomaboveheadforlaterlabel; no image text.",
+   "seed": 0,
+   "provider": "imagegen",
+   "model": "OpenAI built-in image generation (identifier not exposed)",
+   "width": 941,
+   "height": 1672,
+   "steps": 0,
+   "licence": "OpenAI image tool output; account terms apply. Seed 0 is a placeholder, not reproducible.",
+   "refs": {
+    "../../../../../.codex/generated_images/01a188e1-81ca-7ce1-8a50-36bd8d134d29/exec-fb604c09-b19d-4285-aaf7-d3722cb1d7f2.png": "69091dd526bdac192be6db6295475d68d3143d97046e9e41c145eb3fdd07d886",
+    "../../../private/football-legends-05-sivori/references/sivori.jpg": "d7ad723fd531d106e47b92e1ac42305df866dead0025f0fc4f07c3a217559f78",
+    "../../../private/football-legends-05-sivori/references/comunale-1960s.jpg": "2016208f72bd66e255ab82f74eeb72db87a2a47b405ca3664dc22e459640edb6",
+    "../../../private/football-legends-05-sivori/references/sivori-action.jpg": "d38e57f1bce6d368824aae44a06d85bfb6d540698bb44a781b697f7f134861aa"
+   },
+   "sha256": "4649734e02bad230412b1b48b647b738b4cc62d8284b01318d924e8d3d15b9cc",
+   "createdAt": 1793366664303
+  },
+  "shots/boots-v2.png": {
+   "prompt": "Recompose this supplied football close-up for vertical9:16. Preserve the exact 1960s ball texture, plain black/white Juventus shirt/white shorts, socks rolled DOWN to ankles, old black leather boots and blue-daylight Stadio Comunale aesthetic. Critical change: move the WHOLE action much HIGHER in frame. The ONE brown leather football must be centered x50%,y46%, with its complete bottom edge ABOVE y56%. Controlling boot touches its side at sameheight. Cropped lowerlegs enter fromTOP, no faces. Bottom FORTY PERCENT of frame (y60%..100%) ONLY beautifully blurred foreground grass, NO ball/feet/people there; later subtitles will occupy it. Top20% calm blurred grass/architecture with roomforlabel. Do not add a secondball, logo, text or extra foot. Keep anatomical legs and believable groundcontact; this is a wide close-up rather than an extreme enlargedboot.",
+   "seed": 0,
+   "provider": "imagegen",
+   "model": "OpenAI built-in image generation (identifier not exposed)",
+   "width": 941,
+   "height": 1672,
+   "steps": 0,
+   "licence": "OpenAI image tool output; account terms apply. Seed 0 is a placeholder, not reproducible.",
+   "refs": {
+    "../../../../../.codex/generated_images/01a188e1-81ca-7ce1-8a50-36bd8d134d29/exec-02013947-1408-4b45-8f6d-21dbef8fc95a.png": "805e8420fa2f9d16fd72f89162b43dbeaf14c2f94114682352fc4cd385aa63c4"
+   },
+   "sha256": "10b42e177eb7353aea59994ebcf4a5df255c70e63b0f3dff312d1d43c645faaf",
+   "createdAt": 1793366664309,
+   "sourceGeneration": {
+    "prompt": "Premium cinematic stylized3D family animated-film still, expressive acting, exquisite fabric/grass/fur, slightly caricatured human proportions, NOT a pasted photograph. Full-bleed vertical9:16, ideal1088x1920. COOL TURIN late-afternoon silver-blue daylight, emerald turf, black/white accents, subtle amber rimlight, no orange sunset. Absolutely NO text, lettering, numbers, logos, sponsor marks, watermark, frame or borders. IMPORTANT COMPOSITION: upper one-third mostly calm sky or empty architecture, ALL full heads/hair/ears fully below y30% and above y56%, faces away fromedges. Bottomquarter simple ground for later captions. SETTING: historical STADIO COMUNALE in Turin in1961, Juventus home, based on attached architectural photograph: OPEN oval concrete terraces, red-brown athletics track surrounding green pitch, grey rationalist exterior with repeated square concrete piers and openings, tall simple rectangular MARATHON TOWER with a narrow dark vertical window strip. No modern roof ring or suspension cables, no modern Allianz or DelleAlpi architecture, no modernLED advertisements. Interpretive historical illustration, not a literal gamephoto. Extreme detailed football close-up on Sivori's LEFT FOOT controlling ONE brown stitched1960leatherball, inside/sole touch only inchesfromball; whiteJuventusshorts visible attop, bare shins with WHITE SOCKS rolled DOWN to ANKLES, classic blackleatherboots. Defender's distantlegs with burgundyknee-highsocks and brownboots are visible in softbackground; exactly TWO player'slegs perplayer, no extrafoot. Mainleftfoot/ballcenterframe aty50%..62%, upper35% softunfocused stadiumgrass/track forlatercaption, lower25%simplegrass. Exquisite leatherstitches, physicallyplausiblegroundcontact/ballscale, silverblue daylight. No faces, no logos or shoelettering.",
+    "provider": "imagegen",
+    "model": "OpenAI built-in image generation (identifier not exposed)",
+    "sha256": "805e8420fa2f9d16fd72f89162b43dbeaf14c2f94114682352fc4cd385aa63c4",
+    "width": 941,
+    "height": 1672,
+    "refs": {
+     "../../../../../.codex/generated_images/01a188e1-81ca-7ce1-8a50-36bd8d134d29/exec-fb604c09-b19d-4285-aaf7-d3722cb1d7f2.png": "69091dd526bdac192be6db6295475d68d3143d97046e9e41c145eb3fdd07d886",
+     "../../../private/football-legends-05-sivori/references/sivori.jpg": "d7ad723fd531d106e47b92e1ac42305df866dead0025f0fc4f07c3a217559f78",
+     "../../../private/football-legends-05-sivori/references/comunale-1960s.jpg": "2016208f72bd66e255ab82f74eeb72db87a2a47b405ca3664dc22e459640edb6",
+     "../../../private/football-legends-05-sivori/references/sivori-action.jpg": "d38e57f1bce6d368824aae44a06d85bfb6d540698bb44a781b697f7f134861aa"
+    }
+   }
+  },
+  "shots/tight.png": {
+   "prompt": "Premium cinematic stylized3D family animated-film still, expressive acting, exquisite fabric/grass/fur, slightly caricatured human proportions, NOT a pasted photograph. Full-bleed vertical9:16, ideal1088x1920. COOL TURIN late-afternoon silver-blue daylight, emerald turf, black/white accents, subtle amber rimlight, no orange sunset. Absolutely NO text, lettering, numbers, logos, sponsor marks, watermark, frame or borders. IMPORTANT COMPOSITION: upper one-third mostly calm sky or empty architecture, ALL full heads/hair/ears fully below y30% and above y56%, faces away fromedges. Bottomquarter simple ground for later captions. SETTING: historical STADIO COMUNALE in Turin in1961, Juventus home, based on attached architectural photograph: OPEN oval concrete terraces, red-brown athletics track surrounding green pitch, grey rationalist exterior with repeated square concrete piers and openings, tall simple rectangular MARATHON TOWER with a narrow dark vertical window strip. No modern roof ring or suspension cables, no modern Allianz or DelleAlpi architecture, no modernLED advertisements. Interpretive historical illustration, not a literal gamephoto. OMAR SÍVORI,26, from first portrait and second archive face: thick voluminous wavy nearly black hair and LOW hairline with forward wave, broad strong cheek/jaw shape, straight thick brows, dark eyes, compact broad nose, larger head-to-body, SHORT COMPACT athletic frame, clean-shaven, mischievous subtle smile.1961 JUVENTUS kit: broad BLACK/WHITE vertical shirt stripes, white V/open collar with black collar tips, WHITE shorts, white socks rolled DOWN to ANKLES exposing lower legs, black/brown old leatherboots. Not Suarez or Kopa. Tactical high threequarter view, physically clear tight-space dribble: SHORT Sivori centerx50%,heady40%, one vintagebrownball at LEFTboot aty65%. TWO visibly DIFFERENT tall anonymous defenders both in plain BURGUNDYshirts WHITEshorts burgundyknee-highsocks: LEFT man short lightbrown curlyhair squarejaw, RIGHTman darkflatstraighthair angularnarrowface. They close from sides, leave narrow open grasslane between them extendingtoward farwhitegoal. Sivori lowbalancedstance, sidesteps, ballwithinbootlength. Wholebodiesandallfeet, onlythreeplayers+oneball, no tacklecontact. Upper30%calmopenstadiumarchitecture andsky; darkcrowdblurfaces.",
+   "seed": 0,
+   "provider": "imagegen",
+   "model": "OpenAI built-in image generation (identifier not exposed)",
+   "width": 941,
+   "height": 1672,
+   "steps": 0,
+   "licence": "OpenAI image tool output; account terms apply. Seed 0 is a placeholder, not reproducible.",
+   "refs": {
+    "../../../../../.codex/generated_images/01a188e1-81ca-7ce1-8a50-36bd8d134d29/exec-fb604c09-b19d-4285-aaf7-d3722cb1d7f2.png": "69091dd526bdac192be6db6295475d68d3143d97046e9e41c145eb3fdd07d886",
+    "../../../private/football-legends-05-sivori/references/sivori.jpg": "d7ad723fd531d106e47b92e1ac42305df866dead0025f0fc4f07c3a217559f78",
+    "../../../private/football-legends-05-sivori/references/comunale-1960s.jpg": "2016208f72bd66e255ab82f74eeb72db87a2a47b405ca3664dc22e459640edb6",
+    "../../../private/football-legends-05-sivori/references/sivori-action.jpg": "d38e57f1bce6d368824aae44a06d85bfb6d540698bb44a781b697f7f134861aa"
+   },
+   "sha256": "4df9ec27ea217e21280bd32f43171adad38ef666d1768fae13694e15d5c2b656",
+   "createdAt": 1793366664315
+  },
+  "shots/gap.png": {
+   "prompt": "Premium cinematic stylized3D family animated-film still, expressive acting, exquisite fabric/grass/fur, slightly caricatured human proportions, NOT a pasted photograph. Full-bleed vertical9:16, ideal1088x1920. COOL TURIN late-afternoon silver-blue daylight, emerald turf, black/white accents, subtle amber rimlight, no orange sunset. Absolutely NO text, lettering, numbers, logos, sponsor marks, watermark, frame or borders. IMPORTANT COMPOSITION: upper one-third mostly calm sky or empty architecture, ALL full heads/hair/ears fully below y30% and above y56%, faces away fromedges. Bottomquarter simple ground for later captions. SETTING: historical STADIO COMUNALE in Turin in1961, Juventus home, based on attached architectural photograph: OPEN oval concrete terraces, red-brown athletics track surrounding green pitch, grey rationalist exterior with repeated square concrete piers and openings, tall simple rectangular MARATHON TOWER with a narrow dark vertical window strip. No modern roof ring or suspension cables, no modern Allianz or DelleAlpi architecture, no modernLED advertisements. Interpretive historical illustration, not a literal gamephoto. OMAR SÍVORI,26, from first portrait and second archive face: thick voluminous wavy nearly black hair and LOW hairline with forward wave, broad strong cheek/jaw shape, straight thick brows, dark eyes, compact broad nose, larger head-to-body, SHORT COMPACT athletic frame, clean-shaven, mischievous subtle smile.1961 JUVENTUS kit: broad BLACK/WHITE vertical shirt stripes, white V/open collar with black collar tips, WHITE shorts, white socks rolled DOWN to ANKLES exposing lower legs, black/brown old leatherboots. Not Suarez or Kopa. Continuation of a tightspace dribble from elevated threequarterview. SHORT Sivori atfrontcenterx54%,heady40%..50%, has PASSED between two burgundy/whiteshort defenders now BOTH behindhim atx30%and73%,headsy33%..43%. LEFTdefender squarejaw shortlightbrowncurlyhair, RIGHT angularface flatdarkhair; both burgundysocks. ONE vintagebrownball atSivori LEFTfoot y72%; there is CLEAR OPEN grass allthewayfromhim to a distant whitegoal infront-right. Correctweight transferandrunninglegs, no defendersinfrontpath, no duplicateball or extra limbs. Fullbodies, elegant spatialstory, subtle3D stylization, no effects.",
+   "seed": 0,
+   "provider": "imagegen",
+   "model": "OpenAI built-in image generation (identifier not exposed)",
+   "width": 941,
+   "height": 1672,
+   "steps": 0,
+   "licence": "OpenAI image tool output; account terms apply. Seed 0 is a placeholder, not reproducible.",
+   "refs": {
+    "../../../../../.codex/generated_images/01a188e1-81ca-7ce1-8a50-36bd8d134d29/exec-fb604c09-b19d-4285-aaf7-d3722cb1d7f2.png": "69091dd526bdac192be6db6295475d68d3143d97046e9e41c145eb3fdd07d886",
+    "../../../private/football-legends-05-sivori/references/sivori.jpg": "d7ad723fd531d106e47b92e1ac42305df866dead0025f0fc4f07c3a217559f78",
+    "../../../private/football-legends-05-sivori/references/comunale-1960s.jpg": "2016208f72bd66e255ab82f74eeb72db87a2a47b405ca3664dc22e459640edb6",
+    "../../../private/football-legends-05-sivori/references/sivori-action.jpg": "d38e57f1bce6d368824aae44a06d85bfb6d540698bb44a781b697f7f134861aa"
+   },
+   "sha256": "42d9c326b8b30dc876393bb753c223413e67c78990de05f5780e0f60e7b50dfe",
+   "createdAt": 1793366664321
+  },
+  "shots/finish-clean.png": {
+   "prompt": "Edit this supplied football illustration. Preserve EVERYTHING: same Omar Sivori face and wavy hair, body, left-foot strike, single ball, goalkeeper and his distinct face/tealkit, stadium, tower, composition, crop, grass, light, texture and resolution. ONLY remove the small gold star and red-white-green shield patch on the striker's chest. Replace those patches with continuous normal BLACK/WHITE striped shirt fabric matching surrounding folds and stripe width. Shirt front must be plain stripes with no badge, crest, letters, numbers, sponsor marks or watermarks. No other changes.",
+   "seed": 0,
+   "provider": "imagegen",
+   "model": "OpenAI built-in image generation (identifier not exposed)",
+   "width": 941,
+   "height": 1672,
+   "steps": 0,
+   "licence": "OpenAI image tool output; account terms apply. Seed 0 is a placeholder, not reproducible.",
+   "refs": {
+    "../../../../../.codex/generated_images/01a188e1-81ca-7ce1-8a50-36bd8d134d29/exec-53317530-668a-4526-8dcb-cc6935e3d16e.png": "14cbb7cb881d6084f6c2857c203df6857ad1d82b303cbf3d1a7009b19cbfeca4"
+   },
+   "sha256": "13cf2d4469205159d714f110923b70f42f88d1b36b58850daaeeaf7209434d2f",
+   "createdAt": 1793366664325,
+   "sourceGeneration": {
+    "prompt": "Premium cinematic stylized3D family animated-film still, expressive acting, exquisite fabric/grass/fur, slightly caricatured human proportions, NOT a pasted photograph. Full-bleed vertical9:16, ideal1088x1920. COOL TURIN late-afternoon silver-blue daylight, emerald turf, black/white accents, subtle amber rimlight, no orange sunset. Absolutely NO text, lettering, numbers, logos, sponsor marks, watermark, frame or borders. IMPORTANT COMPOSITION: upper one-third mostly calm sky or empty architecture, ALL full heads/hair/ears fully below y30% and above y56%, faces away fromedges. Bottomquarter simple ground for later captions. SETTING: historical STADIO COMUNALE in Turin in1961, Juventus home, based on attached architectural photograph: OPEN oval concrete terraces, red-brown athletics track surrounding green pitch, grey rationalist exterior with repeated square concrete piers and openings, tall simple rectangular MARATHON TOWER with a narrow dark vertical window strip. No modern roof ring or suspension cables, no modern Allianz or DelleAlpi architecture, no modernLED advertisements. Interpretive historical illustration, not a literal gamephoto. OMAR SÍVORI,26, from first portrait and second archive face: thick voluminous wavy nearly black hair and LOW hairline with forward wave, broad strong cheek/jaw shape, straight thick brows, dark eyes, compact broad nose, larger head-to-body, SHORT COMPACT athletic frame, clean-shaven, mischievous subtle smile.1961 JUVENTUS kit: broad BLACK/WHITE vertical shirt stripes, white V/open collar with black collar tips, WHITE shorts, white socks rolled DOWN to ANKLES exposing lower legs, black/brown old leatherboots. Not Suarez or Kopa. Cinematic WIDE shot from side of penaltyarea,1960s illustrative action. Sivori atLEFTx30%,heady36%..46%, striking ONE vintagebrownball with LEFTinstep, his RIGHTleg plantedon grass. Ball just leaves LEFTboot at y68%, travellingtoward the WHITErectangulargoal onRIGHTmiddle distance. Goal mouth/readable net and keeper distinguishable; goalkeeper in PLAIN TEALlongsleeve shirt and DARKshorts, DIFFERENTroundface/shortfairhair, bendsreadywithgloveslooking at SAMEball, not celebrating/holding anotherball. No secondballinthegoal. No tallrivalinfront, no otherforegroundplayers, no scoreboardorclaimofexactgoal. Completeheads, no croppedlegs, upper30%calmsilverblue sky.",
+    "provider": "imagegen",
+    "model": "OpenAI built-in image generation (identifier not exposed)",
+    "sha256": "14cbb7cb881d6084f6c2857c203df6857ad1d82b303cbf3d1a7009b19cbfeca4",
+    "width": 941,
+    "height": 1672,
+    "refs": {
+     "../../../../../.codex/generated_images/01a188e1-81ca-7ce1-8a50-36bd8d134d29/exec-fb604c09-b19d-4285-aaf7-d3722cb1d7f2.png": "69091dd526bdac192be6db6295475d68d3143d97046e9e41c145eb3fdd07d886",
+     "../../../private/football-legends-05-sivori/references/sivori.jpg": "d7ad723fd531d106e47b92e1ac42305df866dead0025f0fc4f07c3a217559f78",
+     "../../../private/football-legends-05-sivori/references/comunale-1960s.jpg": "2016208f72bd66e255ab82f74eeb72db87a2a47b405ca3664dc22e459640edb6",
+     "../../../private/football-legends-05-sivori/references/sivori-action.jpg": "d38e57f1bce6d368824aae44a06d85bfb6d540698bb44a781b697f7f134861aa"
+    }
+   }
+  },
+  "shots/team.png": {
+   "prompt": "Premium cinematic stylized3D family animated-film still, expressive acting, exquisite fabric/grass/fur, slightly caricatured human proportions, NOT a pasted photograph. Full-bleed vertical9:16, ideal1088x1920. COOL TURIN late-afternoon silver-blue daylight, emerald turf, black/white accents, subtle amber rimlight, no orange sunset. Absolutely NO text, lettering, numbers, logos, sponsor marks, watermark, frame or borders. IMPORTANT COMPOSITION: upper one-third mostly calm sky or empty architecture, ALL full heads/hair/ears fully below y30% and above y56%, faces away fromedges. Bottomquarter simple ground for later captions. SETTING: historical STADIO COMUNALE in Turin in1961, Juventus home, based on attached architectural photograph: OPEN oval concrete terraces, red-brown athletics track surrounding green pitch, grey rationalist exterior with repeated square concrete piers and openings, tall simple rectangular MARATHON TOWER with a narrow dark vertical window strip. No modern roof ring or suspension cables, no modern Allianz or DelleAlpi architecture, no modernLED advertisements. Interpretive historical illustration, not a literal gamephoto. OMAR SÍVORI,26, from first portrait and second archive face: thick voluminous wavy nearly black hair and LOW hairline with forward wave, broad strong cheek/jaw shape, straight thick brows, dark eyes, compact broad nose, larger head-to-body, SHORT COMPACT athletic frame, clean-shaven, mischievous subtle smile.1961 JUVENTUS kit: broad BLACK/WHITE vertical shirt stripes, white V/open collar with black collar tips, WHITE shorts, white socks rolled DOWN to ANKLES exposing lower legs, black/brown old leatherboots. Not Suarez or Kopa. WIDE three-man Juventus celebration on grass, no trophies. Sivori in centerx50%, ENTIRE heady38%..49%, two clearlyDIFFERENT anonymous teammates: LEFT tall/lean PALEskin, SHORTFAIRHAIR with highrecedingforehead and narrowpointedchin; RIGHT tallercompactbuild, VERYSHORTFLATBLACKHAIR, angularsquarejaw, longnose. All wear SAME1961 BLACKWHITEstripedshirts WHITEshorts, NO burgundy or teal. ONLY Sivori has verythickwavyhair and shortheight, socksdown; otherplayerswhiteknee-highsocks. Naturally armsaroundshoulders, happy smiles, no clonefaces, handsanatomicallyplausible. Upper30%clearbluishsky, bottom25%grass, no awards.",
+   "seed": 0,
+   "provider": "imagegen",
+   "model": "OpenAI built-in image generation (identifier not exposed)",
+   "width": 941,
+   "height": 1672,
+   "steps": 0,
+   "licence": "OpenAI image tool output; account terms apply. Seed 0 is a placeholder, not reproducible.",
+   "refs": {
+    "../../../../../.codex/generated_images/01a188e1-81ca-7ce1-8a50-36bd8d134d29/exec-fb604c09-b19d-4285-aaf7-d3722cb1d7f2.png": "69091dd526bdac192be6db6295475d68d3143d97046e9e41c145eb3fdd07d886",
+    "../../../private/football-legends-05-sivori/references/sivori.jpg": "d7ad723fd531d106e47b92e1ac42305df866dead0025f0fc4f07c3a217559f78",
+    "../../../private/football-legends-05-sivori/references/comunale-1960s.jpg": "2016208f72bd66e255ab82f74eeb72db87a2a47b405ca3664dc22e459640edb6",
+    "../../../private/football-legends-05-sivori/references/sivori-action.jpg": "d38e57f1bce6d368824aae44a06d85bfb6d540698bb44a781b697f7f134861aa"
+   },
+   "sha256": "316537aa4df94d430e18180be7501fd86b5e9228c042ee212f64a90fd59d73a5",
+   "createdAt": 1793366664330
+  },
+  "shots/lesson.png": {
+   "prompt": "Premium cinematic stylized3D family animated-film still, expressive acting, exquisite fabric/grass/fur, slightly caricatured human proportions, NOT a pasted photograph. Full-bleed vertical9:16, ideal1088x1920. COOL TURIN late-afternoon silver-blue daylight, emerald turf, black/white accents, subtle amber rimlight, no orange sunset. Absolutely NO text, lettering, numbers, logos, sponsor marks, watermark, frame or borders. IMPORTANT COMPOSITION: upper one-third mostly calm sky or empty architecture, ALL full heads/hair/ears fully below y30% and above y56%, faces away fromedges. Bottomquarter simple ground for later captions. SETTING: historical STADIO COMUNALE in Turin in1961, Juventus home, based on attached architectural photograph: OPEN oval concrete terraces, red-brown athletics track surrounding green pitch, grey rationalist exterior with repeated square concrete piers and openings, tall simple rectangular MARATHON TOWER with a narrow dark vertical window strip. No modern roof ring or suspension cables, no modern Allianz or DelleAlpi architecture, no modernLED advertisements. Interpretive historical illustration, not a literal gamephoto. Preserve EXACT Matvey and Sofia from attached originalreferences: sixyearold greybrown raccoonMatvey withdarkeyemask,bluefootballkit/white trim/bluewhitesocks/boots; eightyearold red squirrelSofia withhighponytail, plumtracksuit/white stripes/lilactrainers. Agesfacesfurandclothes unchanged. All COMPLETE hair/ears/heads ONLY y37%..56%, no cropping; fullbodiesincentral x20%..80%, upper30%emptycoolsky. Matvey onleft performs a low controlled footballturn around ONE static tall SOFT padded practice dummy, navyblue featureless uprightcylinderwithroundedtop onstablebase atx56%,heightaboutadultwaist. ONE black/whiteball besideMatvey's RIGHTboot, no collision. Sofia onright watches attentivelywithsupportive smileandclappinghands. Realisticplayfultraining, no fightingorrecklessness. The dummy is visuallymuchbiggerthanMatvey and still in itsplace, showing agility beats force. No humans orrealfootballers, no secondball, no toyhouse, no tacticboard. Redtrack/ovalComunale and rectangulartowerinthebackground.",
+   "seed": 0,
+   "provider": "imagegen",
+   "model": "OpenAI built-in image generation (identifier not exposed)",
+   "width": 948,
+   "height": 1659,
+   "steps": 0,
+   "licence": "OpenAI image tool output; account terms apply. Seed 0 is a placeholder, not reproducible.",
+   "refs": {
+    "../../series/football-legends/cast/matvey-face.png": "70d429f91006b8d818eb13f653e5cc6ad1c5726feade2bc94c8aa4e44dd496c2",
+    "../../series/football-legends/cast/sofia-face.png": "8e8f0e504835d506d25edb8123c78392be69f0457631dfa5fe3a8259adafd914",
+    "../../series/football-legends/cast/hosts-full.png": "49c92b4bca5df88e90d529034e158fb7a48a79de4c7f98d49ccf764944d2be35",
+    "../../../private/football-legends-05-sivori/references/comunale-1960s.jpg": "2016208f72bd66e255ab82f74eeb72db87a2a47b405ca3664dc22e459640edb6"
+   },
+   "sha256": "c1e25952f0f93f89164686dc70fa61968fb3c8339df1a24e2f8d447753f59323",
+   "createdAt": 1793366664337
+  },
+  "shots/question.png": {
+   "prompt": "Premium cinematic stylized3D family animated-film still, expressive acting, exquisite fabric/grass/fur, slightly caricatured human proportions, NOT a pasted photograph. Full-bleed vertical9:16, ideal1088x1920. COOL TURIN late-afternoon silver-blue daylight, emerald turf, black/white accents, subtle amber rimlight, no orange sunset. Absolutely NO text, lettering, numbers, logos, sponsor marks, watermark, frame or borders. IMPORTANT COMPOSITION: upper one-third mostly calm sky or empty architecture, ALL full heads/hair/ears fully below y30% and above y56%, faces away fromedges. Bottomquarter simple ground for later captions. SETTING: historical STADIO COMUNALE in Turin in1961, Juventus home, based on attached architectural photograph: OPEN oval concrete terraces, red-brown athletics track surrounding green pitch, grey rationalist exterior with repeated square concrete piers and openings, tall simple rectangular MARATHON TOWER with a narrow dark vertical window strip. No modern roof ring or suspension cables, no modern Allianz or DelleAlpi architecture, no modernLED advertisements. Interpretive historical illustration, not a literal gamephoto. Preserve EXACT Matvey and Sofia from attached originalreferences: sixyearold greybrown raccoonMatvey withdarkeyemask,bluefootballkit/white trim/bluewhitesocks/boots; eightyearold red squirrelSofia withhighponytail, plumtracksuit/white stripes/lilactrainers. Agesfacesfurandclothes unchanged. All COMPLETE hair/ears/heads ONLY y37%..56%, no cropping; fullbodiesincentral x20%..80%, upper30%emptycoolsky. Twohosts pauseafterpractice nearpitchsideline. Matvey atLEFT x32%, onefoot gentlyrestingonONE black-whiteball, thoughtfully rubschinwithonepaw; Sofia atRIGHT x68%, smilingasksanopenquestion withonepalmup. Between/behindthem lie TWO small orangetrainingcones forming a clear little zigzag lane, NO writingorpanels. VisibleopenovalComunaleconcreteterraces/tallMarathontower inbackground; keepdistancetowerperspectivebelievable, no modernroof. No humans, no trophies or extras. Highquality detailedfur, polishedexpressiveeyeline, crispfullbodies/boots at82%.",
+   "seed": 0,
+   "provider": "imagegen",
+   "model": "OpenAI built-in image generation (identifier not exposed)",
+   "width": 941,
+   "height": 1672,
+   "steps": 0,
+   "licence": "OpenAI image tool output; account terms apply. Seed 0 is a placeholder, not reproducible.",
+   "refs": {
+    "../../series/football-legends/cast/matvey-face.png": "70d429f91006b8d818eb13f653e5cc6ad1c5726feade2bc94c8aa4e44dd496c2",
+    "../../series/football-legends/cast/sofia-face.png": "8e8f0e504835d506d25edb8123c78392be69f0457631dfa5fe3a8259adafd914",
+    "../../series/football-legends/cast/hosts-full.png": "49c92b4bca5df88e90d529034e158fb7a48a79de4c7f98d49ccf764944d2be35",
+    "../../../private/football-legends-05-sivori/references/comunale-1960s.jpg": "2016208f72bd66e255ab82f74eeb72db87a2a47b405ca3664dc22e459640edb6"
+   },
+   "sha256": "c8862aed6fa0be6eee0f76b6612c46116f46cde6e6bb5816a6a347f41f1d0995",
+   "createdAt": 1793366664346
+  }
+ }
+}

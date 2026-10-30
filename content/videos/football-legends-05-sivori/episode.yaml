@@ -1,0 +1,9 @@
+episode: 1
+id: football-legends-05-sivori
+title: Омар Сивори — маленький волшебник с мячом
+sources: sources.md
+credits: CREDITS.md
+variants:
+  - id: ru
+    spec: ru.reel.yaml
+series: football-legends

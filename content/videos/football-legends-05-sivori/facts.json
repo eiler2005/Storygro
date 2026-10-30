@@ -1,0 +1,48 @@
+{
+ "_about": "Every displayed label and number is bound here. Sources and short quotations are in sources.md.",
+ "series": {
+  "_source": "Owner's brief «рекомендации» (2026-10-28): «Маленькие большие дела · Легенды футбола · Истории обладателей «Золотого мяча»»",
+  "title": "Легенды футбола",
+  "project": "Маленькие большие дела"
+ },
+ "hook": {
+  "_source": "Owner script, 30 October 2026, opening challenge.",
+  "text": "Техника против силы"
+ },
+ "player": {
+  "_source": "[S1] https://halloffame.juventus.com/en/hall-of-fame/omar-sivori; [S2] https://www.uefa.com/news-media/news/01a6-0f8468996d18-885e335d5842-1000--juve-legend-sivori-dies/; [S3] https://www.uefa.com/ballondor/news/0292-1c27056169a7-bc88d1fdba43-1000--ballon-d-or-laureates-who-has-won-football-s-most-prestig/",
+  "name": "Омар Сивори",
+  "country": "Италия",
+  "birth": "Родился в Аргентине",
+  "year": "1961",
+  "club": "«Ювентус»",
+  "position": "Нападающий",
+  "card": "1961 · Италия · «Ювентус»"
+ },
+ "venue": {
+  "_source": "[S4] https://www.juventus.com/en/news/articles/29-june-1933-juve-debut-at-the-comunale; [S5] https://museotorino.it/view/s/bf2dbd90ce2d4a33b9a29bbc0def2037",
+  "name": "Турин · стадион «Комунале»"
+ },
+ "award": {
+  "_source": "[S1] https://halloffame.juventus.com/en/hall-of-fame/omar-sivori; [S3] https://www.uefa.com/ballondor/news/0292-1c27056169a7-bc88d1fdba43-1000--ballon-d-or-laureates-who-has-won-football-s-most-prestig/",
+  "full": "«Золотой мяч» · 1961",
+  "first": "Первый лауреат «Ювентуса»"
+ },
+ "skill": {
+  "_source": "[S1] https://halloffame.juventus.com/en/hall-of-fame/omar-sivori; [S2] https://www.uefa.com/news-media/news/01a6-0f8468996d18-885e335d5842-1000--juve-legend-sivori-dies/; owner illustration/lesson.",
+  "control": "Мяч рядом с ногами",
+  "escape": "Один шаг — и он свободен",
+  "space": "Найти выход из тесноты",
+  "goals": "Техника и голы",
+  "team": "Помогать команде",
+  "agility": "Ловкость",
+  "courage": "Смелость",
+  "think": "Быстро соображать",
+  "lesson": "Размер не решает"
+ },
+ "question": {
+  "_source": "Owner script, 30 October 2026, final question.",
+  "short": "Как обыграть крупного защитника?",
+  "text": "Если защитник намного крупнее тебя, какие качества помогут его обыграть?"
+ }
+}

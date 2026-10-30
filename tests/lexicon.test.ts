@@ -16,6 +16,9 @@ test('the dictionary loads: every entry has a stress mark and a source, and ever
   assert.equal(lex.say.get('лионеля'), 'Лион+еля');
   assert.equal(lex.say.get('месси'), 'М+есси');
   assert.ok(lexiconJob(lex)['месси']!.check, 'Месси carries its phoneme check to the narration');
+  assert.equal(lex.say.get('голы'), 'гол+ы', 'football noun plural has ending stress, unlike the short adjective');
+  assert.match(entryOf('голы', lex)!.source, /gramota\.ru\/meta\/gol/);
+  assert.equal(lex.say.get('удостоенным'), 'удост+оенным');
 });
 
 test('a case form takes the stress of its entry only when it shares the letters before it', () => {

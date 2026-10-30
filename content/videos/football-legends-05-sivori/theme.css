@@ -1,0 +1,11 @@
+@import url('/rc/styles/cartoon/theme.css');
+/* Episode 5: Turin silver, charcoal and icy blue; hosts retain their own colours. */
+:root { --ct-ink:#17222e; --ct-band:#f0f3f5; --ct-card:#fff; --ct-accent:#a76b19; --ct-teal:#28736a; --ct-mustard:#d3b56d; --ct-navy:#17222e; --ct-gold:#d3b56d; --ct-plum:#654d75; }
+.rc-caption { font-size:52px; line-height:1.18; max-width:min(820px,var(--rc-caption-max,820px)); color:#f5f7fa; background:rgba(15,24,34,.89); border:2px solid rgba(203,221,234,.65); border-radius:18px; padding:14px 24px; -webkit-text-stroke:0; text-shadow:0 2px 5px rgba(0,0,0,.45); }
+.rc-word.on { color:#e8d18d; }
+:root { --kt-ink:#f5f7fa; --kt-accent:#e8d18d; --kt-accent2:#bfd9ef; }
+
+/* Keep captions above the low ball in the full-body dribbling shots. */
+.rc-caption { bottom:570px !important; }
+/* The strike ball is higher than the dribbling ball; keep its flight visible. */
+#stage:has(.rc-scene--goals:not([style*="display: none"])) .rc-caption { bottom:800px !important; }

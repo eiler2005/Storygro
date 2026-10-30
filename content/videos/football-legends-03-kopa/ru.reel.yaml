@@ -1,0 +1,474 @@
+# Episode 3. Owner script preserved; copied source label and section headings are not narrated.
+reel: 1
+style: cartoon
+title: Раймон Копа — мастер обводки
+lang: ru
+format:
+  preset: vertical
+  width: 1080
+  height: 1920
+  fps: 30
+safe: reels
+voice:
+  engine: omnivoice
+  model: k2-fsa/OmniVoice
+  voice: assets/voice/narrator-ru.wav
+  speed: 0.9
+  stress: marks
+music:
+  bpm: 112
+  key: D
+  progression:
+    - I
+    - V
+    - vi
+    - IV
+  gain: 0.11
+  drop: surprise#turn
+loudness: -14
+theme: theme.css
+captions:
+  show: true
+  maxWords: 4
+transition:
+  kind: cut
+  dur: 0
+data:
+  facts: facts.json
+stills:
+  cover: hook@0
+  final: fontaine@goals
+  hosts: question@1.5
+images:
+  provider: manual
+  model: OpenAI built-in image generation (identifier not exposed)
+  seed: 58
+  width: 1088
+  height: 1920
+  prompt: "Premium stylized 3D family animation film still with the polish of a modern feature-animation studio,
+    not photorealistic and not babyish: expressive faces, beautifully detailed soft fur and fabric, cinematic
+    warm light, a rich detailed background, a palette of deep navy blue, warm gold, lush pitch green and cream
+    white with restrained orange and plum accents. Full-frame vertical 9:16 composition, edge-to-edge
+    background, no borders or letterboxing. The top fifth of the frame is calm sky, stands or background with
+    no heads, faces, hands or ball; every head and face sits between one fifth and two thirds of the height,
+    away from the side edges; the bottom quarter is simple grass, floor or crowd seen from behind, without
+    faces. {subject}. No text, no letters, no numbers, no logos, no crests, no flags, no watermark, no extra
+    limbs, no duplicate characters."
+  cast:
+    matvey: Matvey (a small six-year-old anthropomorphic raccoon boy with soft grey-brown fur, a dark eye mask, a
+      white muzzle, big lively dark-brown eyes, round ears with white edges and a fluffy tail with dark rings,
+      wearing a plain royal-blue football kit with white collar trim, blue-and-white striped socks and
+      blue-and-white boots)
+    sofia: Sofia (his sister, an eight-year-old anthropomorphic red squirrel girl, a little taller than Matvey,
+      with a round childlike face, chestnut-orange fur, a cream muzzle, tufted ears, big warm amber eyes, a
+      short high ponytail with a plum hair band and a large fluffy curled tail, wearing a plain plum-purple
+      zip tracksuit with thin white stripes and white-and-lilac trainers)
+    kopa: "Raymond Kopa in 1958, respectful recognizable stylized 3D caricature: a short compact stocky French
+      young man with a broad oval face, short dark slicked-back side-parted hair, thick dark eyebrows,
+      prominent straight nose and a clean-shaven friendly face; plain all-white 1950s kit, long shorts and
+      brown boots"
+    fontaine: Just Fontaine in 1958, a young compact athletic French striker with short dark hair, broad forehead,
+      rounded face and strong eyebrows, plain royal-blue shirt with white collar, white shorts, red socks and
+      old brown leather boots
+  refs:
+    matvey:
+      - ../../series/football-legends/cast/matvey-face.png
+      - ../../series/football-legends/cast/hosts-full.png
+    sofia:
+      - ../../series/football-legends/cast/sofia-face.png
+      - ../../series/football-legends/cast/hosts-full.png
+post:
+  title: Легенды футбола · Раймон Копа — мастер обводки
+  text: >-
+    Обвести соперника или отдать пас? Матвей и София знакомятся с Раймоном Копа — первым французским
+    обладателем «Золотого мяча» (1958). Его техника впечатляла, а умение вовремя поделиться мячом помогало
+    команде.
+
+
+    Выбери свой вариант: ОБВОДКА или ПАС — и объясни почему.
+
+
+    Выпуск 3 рубрики «Легенды футбола» проекта «Маленькие большие дела». Источники: UEFA, Fédération Française
+    de Football, Real Madrid, FIFA. Иллюстрации созданы с помощью GPT Image; это дружеские шаржи, а не
+    документальная съёмка матчей. Голос рассказчика синтетический (OmniVoice). Ролик не связан с футболистами,
+    клубами и организаторами награды.
+  tags:
+    - футбол
+    - детям
+    - легендыфутбола
+    - копа
+    - золотоймяч
+    - реалмадрид
+scenes:
+  - id: hook
+    scene: illustration
+    say: Представьте защитника, который внимательно следит за мячом и старается угадать каждое движение соперника.
+    pad:
+      - 0.15
+      - 0.35
+    energy: 0.6
+    props:
+      shots:
+        - image: shots/hook.png
+          move: in
+          zoom: 0.028
+          focus:
+            x: 0.5
+            y: 0.35
+      labels:
+        - textFrom: facts.hook.text
+          x: 0.46
+          y: 0.3
+          at: -1
+          tone: navy
+    transition:
+      kind: cut
+      dur: 0
+    sfx:
+      - at: start
+        kind: swell
+        gain: 0.23
+  - id: surprise
+    scene: illustration
+    say: И вдруг — {#turn}раз! — футболист оказывается с другой стороны. Как он это сделал?
+    pad:
+      - 0.15
+      - 0.35
+    energy: 0.8
+    props:
+      shots:
+        - image: shots/hook.png
+          move: in
+          zoom: 0.028
+          focus:
+            x: 0.5
+            y: 0.35
+        - image: shots/hook-reveal.png
+          at: turn
+          move: in
+          zoom: 0.028
+          focus:
+            x: 0.5
+            y: 0.35
+    transition:
+      kind: cut
+      dur: 0
+    sfx:
+      - at: turn
+        kind: whoosh
+        gain: 0.35
+      - at: turn
+        kind: pop
+        gain: 0.22
+  - id: intro
+    scene: illustration
+    say: ""
+    min: 1.5
+    energy: 0.7
+    transition:
+      kind: cut
+      dur: 0
+    sfx:
+      - at: start
+        kind: chime
+        gain: 0.28
+    props:
+      shots:
+        - image: shots/intro.jpg
+          move: in
+          zoom: 0.02
+          focus:
+            x: 0.5
+            y: 0.15
+      title:
+        textFrom: facts.series.title
+        at: 0.1
+        size: 0.046
+      labels:
+        - textFrom: facts.series.project
+          x: 0.46
+          y: 0.275
+          at: 0.2
+          tone: plum
+  - id: card
+    scene: illustration
+    say: Так мог играть Райм+он [Копа](=Кап+а) — французский мастер дриблинга.
+    pad:
+      - 0.15
+      - 0.35
+    energy: 0.6
+    props:
+      shots:
+        - image: shots/card.png
+          move: in
+          zoom: 0.028
+          focus:
+            x: 0.5
+            y: 0.35
+      portrait:
+        image: shots/portrait.png
+        at: 0.15
+        y: 0.475
+        height: 0.16
+        compact: true
+        nameFrom: facts.player.name
+        countryFrom: facts.player.country
+        valueFrom: facts.player.year
+        labelFrom: facts.player.label
+  - id: award
+    scene: illustration
+    say: В [1958](=тысяча девятьсот пятьдесят восьмом) году он получил «Золотой мяч», выступая за мадридский
+      «Реал». {#first}Он стал первым французом, получившим эту награду.
+    pad:
+      - 0.15
+      - 0.35
+    energy: 0.6
+    props:
+      shots:
+        - image: shots/award.png
+          move: in
+          zoom: 0.028
+          focus:
+            x: 0.5
+            y: 0.35
+      labels:
+        - textFrom: facts.award.year
+          x: 0.19
+          y: 0.24
+          at: 0.1
+          tone: accent
+        - textFrom: facts.award.first
+          x: 0.46
+          y: 0.6
+          at: first
+          tone: navy
+  - id: tight
+    scene: illustration
+    say: "[Копа](=Кап+а) умел обводить соперников в очень тесном пространстве."
+    pad:
+      - 0.15
+      - 0.35
+    energy: 0.6
+    props:
+      shots:
+        - image: shots/tight.png
+          move: in
+          zoom: 0.028
+          focus:
+            x: 0.5
+            y: 0.35
+      labels:
+        - textFrom: facts.skill.tight
+          x: 0.46
+          y: 0.24
+          at: 0.2
+          tone: navy
+  - id: moves
+    scene: illustration
+    say: Он мог резко изменить направление, {#touch}быстро прокинуть мяч {#open}и открыться для передачи.
+    pad:
+      - 0.15
+      - 0.35
+    energy: 0.6
+    props:
+      shots:
+        - image: shots/tight.png
+          move: in
+          zoom: 0.028
+          focus:
+            x: 0.5
+            y: 0.35
+        - image: shots/boots.png
+          at: touch
+          move: in
+          zoom: 0.028
+          focus:
+            x: 0.5
+            y: 0.35
+        - image: shots/pass.png
+          at: open
+          move: in
+          zoom: 0.028
+          focus:
+            x: 0.5
+            y: 0.35
+    sfx:
+      - at: touch
+        kind: pop
+        gain: 0.25
+      - at: open
+        kind: whoosh
+        gain: 0.25
+  - id: choice
+    scene: illustration
+    say: Но главное — он понимал, когда стоит обыгрывать соперника, {#pass}а когда лучше отдать пас.
+    pad:
+      - 0.15
+      - 0.35
+    energy: 0.6
+    props:
+      shots:
+        - image: shots/tight.png
+          move: in
+          zoom: 0.028
+          focus:
+            x: 0.5
+            y: 0.35
+        - image: shots/pass.png
+          at: pass
+          move: in
+          zoom: 0.028
+          focus:
+            x: 0.5
+            y: 0.35
+      labels:
+        - textFrom: facts.skill.dribble
+          x: 0.46
+          y: 0.24
+          at: 0.3
+          until: pass
+          tone: accent
+        - textFrom: facts.skill.pass
+          x: 0.46
+          y: 0.24
+          at: pass
+          tone: green
+  - id: france
+    scene: illustration
+    say: В сборной Франции [Копа](=Кап+а) тоже прославился. {#world}На чемпионате мира [1958](=тысяча девятьсот
+      пятьдесят восьмого) года французы заняли третье место,
+    pad:
+      - 0.15
+      - 0.35
+    energy: 0.6
+    props:
+      shots:
+        - image: shots/france.png
+          move: in
+          zoom: 0.028
+          focus:
+            x: 0.5
+            y: 0.35
+      badge:
+        valueFrom: facts.france.place
+        labelFrom: facts.france.placeLabel
+        at: world
+        side: left
+        y: 0.05
+        size: 0.075
+      labels:
+        - textFrom: facts.france.year
+          x: 0.46
+          y: 0.24
+          at: world
+          tone: navy
+  - id: fontaine
+    scene: illustration
+    say: а его партнёр по атаке Жюст Фонт+ен забил невероятные {#goals}[13](=тринадцать) голов за турнир.
+    pad:
+      - 0.15
+      - 0.35
+    energy: 0.8
+    props:
+      shots:
+        - image: shots/fontaine.png
+          move: in
+          zoom: 0.028
+          focus:
+            x: 0.5
+            y: 0.35
+      badge:
+        valueFrom: facts.fontaine.goals
+        labelFrom: facts.fontaine.label
+        at: goals
+        side: left
+        y: 0.02
+        size: 0.085
+      labels:
+        - textFrom: facts.fontaine.name
+          x: 0.64
+          y: 0.59
+          at: 0.2
+          tone: navy
+    sfx:
+      - at: goals
+        kind: chime
+        gain: 0.4
+  - id: team
+    scene: illustration
+    say: "[Копа](=Кап+а) помогал команде создавать опасные моменты, и его техника делала игру особенно зрелищной."
+    pad:
+      - 0.15
+      - 0.35
+    energy: 0.6
+    props:
+      shots:
+        - image: shots/pass.png
+          move: in
+          zoom: 0.028
+          focus:
+            x: 0.5
+            y: 0.35
+        - image: shots/team.png
+          at: 3.2
+          move: in
+          zoom: 0.028
+          focus:
+            x: 0.5
+            y: 0.35
+  - id: lesson
+    scene: illustration
+    say: Красивые финты — это здорово, {#team}но футболист становится по-настоящему полезным, когда его мастерство
+      помогает команде.
+    pad:
+      - 0.15
+      - 0.35
+    energy: 0.6
+    props:
+      shots:
+        - image: shots/lesson.png
+          move: in
+          zoom: 0.028
+          focus:
+            x: 0.5
+            y: 0.35
+      labels:
+        - textFrom: facts.skill.team
+          x: 0.46
+          y: 0.25
+          at: team
+          tone: green
+  - id: question
+    scene: illustration
+    say: Ты бы попробовал обвести соперника {#pass}или отдал бы пас свободному товарищу?
+    pad:
+      - 0.2
+      - 1.6
+    energy: 0.6
+    props:
+      shots:
+        - image: shots/question.png
+          move: in
+          zoom: 0.028
+          focus:
+            x: 0.5
+            y: 0.35
+      title:
+        textFrom: facts.question.short
+        at: 0.1
+        size: 0.046
+      labels:
+        - textFrom: facts.skill.dribble
+          x: 0.26
+          y: 0.6
+          at: 0.2
+          tone: accent
+        - textFrom: facts.skill.pass
+          x: 0.69
+          y: 0.6
+          at: pass
+          tone: green
+    sfx:
+      - at: start
+        kind: chime
+        gain: 0.28

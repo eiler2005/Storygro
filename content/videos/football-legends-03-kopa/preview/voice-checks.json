@@ -1,0 +1,176 @@
+{
+ "date": "2026-10-30",
+ "voice": "OmniVoice B",
+ "speed": 0.9,
+ "criterion": "Phonetic vowel reduction, not a listening verdict or guaranteed stress detection",
+ "firstAttempt": "Initial plain-text mode comparison had no effective author marks and is excluded.",
+ "baseline": [
+  {
+   "candidate": "baseline-off",
+   "line": "fontaine",
+   "phones": "j i v o p a r t ɲ o r p o a t aɪ k i ʒ u s t f o n t ə n z aɪ b i l n i v i r a j t n y t r i n a ts d ɡ a l o v z a t u r ɲ i r",
+   "right": false,
+   "wrong": true,
+   "heard": "Его партнер по атаке Жуст Фонтен забил невероятные 13 голов за турнир."
+  },
+  {
+   "candidate": "baseline-off",
+   "line": "fontaine~1",
+   "phones": "h i v o p a r t ɲ o r p a t a k e ʒ u s t f o n t ə n z a b i l n i v i r j a t n iː t r i n a ts i d ɡ a l o v z a t u r ɲ i r",
+   "right": false,
+   "wrong": true
+  },
+  {
+   "candidate": "baseline-off",
+   "line": "fontaine~2",
+   "phones": "j i v o p a r t ɲ o r p a a t a k i ʒ u s t f o n t ə n z a b i l n i v i r j a t n e t r i n a ts i dʒ ɡ a l o v z a t u r ɲ i",
+   "right": false,
+   "wrong": true
+  },
+  {
+   "candidate": "baseline-off",
+   "line": "fontaine~3",
+   "phones": "j i v o p a r t ɲ o r p o a t a k i ʒ u s t f o n t ə n z a b i l n i v i r j a t n i t r i n a ts e t ɡ a l o v z a t u r ɲ i r",
+   "right": false,
+   "wrong": true
+  },
+  {
+   "candidate": "baseline-off",
+   "line": "kopa",
+   "phones": "t a k m o k i ɡ r aɪ t s r aɪ m o n k o p a f r a n ts u s k iː m aɪ s t ɪ r d r iː b l ɪ n ɡ e",
+   "right": false,
+   "wrong": true,
+   "heard": "Так мог играть Раймон Копа, французский мастер дриблинга."
+  },
+  {
+   "candidate": "baseline-off",
+   "line": "kopa~1",
+   "phones": "d a k m o k ə ɡ r aɪ ts r aɪ m o n k o p a f r a n ts uː s k iː m aɪ s t i r d r i b l i n ɡ",
+   "right": false,
+   "wrong": true
+  },
+  {
+   "candidate": "baseline-off",
+   "line": "kopa~2",
+   "phones": "t a k m o k ə ɡ r aɪ tʃ r aɪ m ə n k o p a f r a n ts uː s k iː m aɪ s t i r d r iː b l i n ɡ ʌ",
+   "right": false,
+   "wrong": true
+  },
+  {
+   "candidate": "baseline-off",
+   "line": "kopa~3",
+   "phones": "t a k m o k ɪ l ɡ r aɪ ts r aɪ m a n k o p a f r a n ts uː s k iː m aɪ s t ɪ r d r i b l ɪ n ɡ ə",
+   "right": false,
+   "wrong": true
+  },
+  {
+   "candidate": "names-marked",
+   "line": "fontaine",
+   "phones": "j i v o p a r t ɲ o r p a a t a k i ʒ u s t f a n t e n z a b i l ɲ i v i r a j a t n t r i n a ts e d i ɡ a l o v z a t u r ɲ i",
+   "right": true,
+   "wrong": false,
+   "heard": "Его партнер по атаке Жуст Фонтен забил невероятные 13 голов за турнир."
+  },
+  {
+   "candidate": "names-marked",
+   "line": "fontaine~1",
+   "phones": "j i v o p a r t ɲ o r p o a t aː k i ʒ u s t f a n t e n z aɪ b i l ɲ i v i r j a t n e t e r i n a t e l o p z a t u r n i r",
+   "right": true,
+   "wrong": false
+  },
+  {
+   "candidate": "names-marked",
+   "line": "fontaine~2",
+   "phones": "j i v o p a r t ɲ o r p a t a k i ʒ u s t f o n t ə n z aɪ b i l n i v i r a j a t n t r i n a ts e d ɡ a l o v z a t u r ɲ i r",
+   "right": false,
+   "wrong": true
+  },
+  {
+   "candidate": "names-marked",
+   "line": "fontaine~3",
+   "phones": "h i v o p a r t ɲ o r p a t a k i ʒ u s t f a n t e n z a b i l n i v i r j a t n aɪ t r i n a ts e d iː ɡ a l o v z a t u r ɲ i r",
+   "right": true,
+   "wrong": false
+  },
+  {
+   "candidate": "names-marked",
+   "line": "kopa",
+   "phones": "t a k m o k ə ɡ r aɪ t r aɪ m o n k o p a f r a n ts u s k iː m aɪ s t i r d r i b l i n ɡ ə",
+   "right": false,
+   "wrong": true,
+   "heard": "Так мог играть Раймон Копа, французский мастер дриблинга."
+  },
+  {
+   "candidate": "names-marked",
+   "line": "kopa~1",
+   "phones": "t a k m o k i ɡ r aɪ t r aɪ m o n k o p a f r a n ts u s k iː m aɪ s t e r d r iː b l ɪ n ɡ ə",
+   "right": false,
+   "wrong": true
+  },
+  {
+   "candidate": "names-marked",
+   "line": "kopa~2",
+   "phones": "d a k m o k ɪ ɡ r aɪ ts s r aɪ m o n k o p a f r a n ts u k iː m aɪ s t ɪ r d r i b l i n ɡ ə",
+   "right": false,
+   "wrong": true
+  },
+  {
+   "candidate": "names-marked",
+   "line": "kopa~3",
+   "phones": "d a k m o k i ɡ r aɪ tʃ r aɪ m o n k o p a f r a n ts u s k iː m aɪ s t ɪ r b r iː b l i n ɡ ə",
+   "right": false,
+   "wrong": true
+  }
+ ],
+ "respell": [
+  {
+   "line": "kopa",
+   "heard": "Так мог играть Раймонд Капа, французский мастер дриблинга.",
+   "phones": "t a k m o k ə ɡ r aɪ ts r r aɪ m o n k a p a f r a n ts u s k iː m aɪ s t ɪ r d r i b l i n ɡ ə",
+   "criterionPass": true
+  },
+  {
+   "line": "kopa~1",
+   "heard": "Так мог играть Раймон Капа, французский мастер дриблинга.",
+   "phones": "t a k m o k i ɡ r aɪ t r aɪ m o n k a p a f r a n ts uː s k iː m aɪ s t ɪ r d r iː b l i n ɡ a",
+   "criterionPass": true
+  },
+  {
+   "line": "kopa~2",
+   "heard": "Так мог играть Раймонд Капа, французский мастер дриблинга.",
+   "phones": "t a k m o k i ɡ r aɪ ts r aɪ m ʊ n k a p a f r a n ts uː s k iː m aɪ s t ə r d r iː b l i n ɡ ʌ",
+   "criterionPass": true
+  },
+  {
+   "line": "kopa~3",
+   "heard": "Так мог играть Раймон Капа, французский мастер дриблинга.",
+   "phones": "t a k m o k ɨ ɡ r aɪ t ts r aɪ m o n k a p a f r a n ts u s k iː m aɪ s t i r d i b l i n ɡ a",
+   "criterionPass": true
+  },
+  {
+   "line": "fontaine",
+   "heard": "Его партнер по атаке Жуст Фонтен забил невероятные 13 голов за турнир.",
+   "phones": "j i v o p a r t ɲ o r p a a t a k i ʒ u s t f a n t e n z a b i l ɲ i v i r a j a t n t r i n a ts e d i ɡ a l o v z a t u r ɲ i",
+   "criterionPass": true
+  },
+  {
+   "line": "fontaine~1",
+   "heard": "Его партнер по атаке Жуст Фонтен забил невероятный тринок за турнир.",
+   "phones": "j i v o p a r t ɲ o r p o a t aː k i ʒ u s t f a n t e n z aɪ b i l ɲ i v i r j a t n e t e r i n a t e l o p z a t u r n i r",
+   "criterionPass": true
+  },
+  {
+   "line": "fontaine~2",
+   "heard": "Его партнер по атаке Жуст Фонтен забил невероятные 13 голов за турнир.",
+   "phones": "j i v o p a r t ɲ o r p a t a k i ʒ u s t f o n t ə n z aɪ b i l n i v i r a j a t n t r i n a ts e d ɡ a l o v z a t u r ɲ i r",
+   "criterionPass": false
+  },
+  {
+   "line": "fontaine~3",
+   "heard": "Его партнер по атаке Жуст Фонтен забил невероятные 13 голов за турнир.",
+   "phones": "h i v o p a r t ɲ o r p a t a k i ʒ u s t f a n t e n z a b i l n i v i r j a t n aɪ t r i n a ts e d iː ɡ a l o v z a t u r ɲ i r",
+   "criterionPass": true
+  }
+ ],
+ "limits": "No subjective listening claim. Full long benchmark command hit a 120s command limit after synthesis; saved takes were analyzed independently. The shorter respelling bench completed. UTMOS is not used to select the narrator."
+}

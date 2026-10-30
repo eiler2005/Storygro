@@ -302,7 +302,7 @@ export async function writePlan(l: LoadedSpec, tl: Timeline, captured?: SceneSho
     const refs = factRefs(spec.props, data);
     lines.push(`### ${i + 1}. ${s.id} · ${s.start.toFixed(1)}–${(s.start + s.duration).toFixed(1)} ${w.sec} · \`${spec.scene}\``, '');
     if (made) lines.push(`![${s.id}: ${w.frame}](${relative(l.dir, img)})`, '', `<sub>${w.frame}</sub>`, '');
-    lines.push(`**${w.voiceLabel}:** ${captionText(spec)}`, '');
+    lines.push(`**${w.voiceLabel}:** ${captionText(spec)}`.trimEnd(), '');
     if (text.length) lines.push(`**${w.screen}:** ${text.map((t) => `«${cell(t)}»`).join(' · ')}`, '');
     if (pics.length) {
       lines.push(`**${w.pictures}:**`, '');

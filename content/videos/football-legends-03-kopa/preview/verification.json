@@ -1,0 +1,94 @@
+{
+ "duration": 84.369,
+ "size": [
+  1080,
+  1920
+ ],
+ "fps": 30,
+ "frames": 2530,
+ "webFrames": 2530,
+ "moments": 37,
+ "masterSHA256": "395898debc19f6c459958883ba85235b36dc60d769ed0d06790535df56f12d1b",
+ "qa": "pass",
+ "captionSamples": 155,
+ "reverseSeekSamples": 74,
+ "layoutFailures": 0,
+ "voiceListening": "not claimed; owner review open",
+ "checks": [
+  {
+   "name": "Codec and pixels",
+   "status": "pass",
+   "detail": "h264, yuv420p"
+  },
+  {
+   "name": "Size",
+   "status": "pass",
+   "detail": "1080×1920"
+  },
+  {
+   "name": "Audio track",
+   "status": "pass",
+   "detail": "Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 197 kb/s (default)"
+  },
+  {
+   "name": "Length",
+   "status": "pass",
+   "detail": "84.37 s (planned 84.37 s)"
+  },
+  {
+   "name": "Loudness",
+   "status": "pass",
+   "detail": "-14 LUFS integrated (target -14), true peak -0.9 dBFS"
+  },
+  {
+   "name": "Frame 0 is a hook",
+   "status": "pass",
+   "detail": "contrast 2331 (needs content, not a black frame)"
+  },
+  {
+   "name": "No black stretches",
+   "status": "pass",
+   "detail": "none ≥ 0.4 s"
+  },
+  {
+   "name": "Scenes render without errors",
+   "status": "pass",
+   "detail": "13 scenes, missing images/fonts included"
+  },
+  {
+   "name": "Numbers come from the facts",
+   "status": "pass",
+   "detail": "13 scenes read"
+  },
+  {
+   "name": "Text clear of platform UI (reels)",
+   "status": "pass",
+   "detail": "every cue checked"
+  },
+  {
+   "name": "Text fits its box",
+   "status": "pass",
+   "detail": "every card, band and label at every cue"
+  },
+  {
+   "name": "Cover text inside the 1:1 preview",
+   "status": "pass",
+   "detail": "cover at 0.0 s"
+  },
+  {
+   "name": "Feed and cover views",
+   "status": "pass",
+   "detail": "look at feed-preview.jpg and cover-preview.jpg: heads inside the crop, captions off faces"
+  },
+  {
+   "name": "Whisper hears the script",
+   "status": "pass",
+   "detail": "every scene ≥ 85% of its words (lowest 92%)"
+  },
+  {
+   "name": "Dictionary words keep their stress",
+   "status": "pass",
+   "detail": "3 of 6 heard right, 3 unclear (listen)"
+  }
+ ]
+}

@@ -413,3 +413,26 @@ words:
     # syllable, heard by the owner as «впЯред»; the right reading reduces it
     check: { right: 'p[ʲ]? [ɪiəɨ]ː? ?[rɾ]', wrong: 'p[ʲ]? [eɛæa]ː? ?[rɾ]' }
     source: 'ru.wiktionary, «вперёд»: «впе-рёд» (ударение на ё; checked by hand, 2026-10-29)'
+  - word: Раймон
+    say: Райм+он
+    source: 'ru.wikipedia, «Копа, Раймон»: «…Раймо́н Копа́ (фр. Raymond Kopa, при рождении К…» (storygro stress --lookup, 2026-10-30)'
+  - word: Копа
+    say: Кап+а
+    # OmniVoice B .90, episode 3 bench 2026-10-30: Копа/Коп+а kept full о in 8/8 takes;
+    # phonetic Кап+а reduced it correctly in 4/4. This is a spoken spelling, never on-screen copy.
+    # Leave other engines unmarked; this episode uses an explicit say-as hint after the bench.
+    mark: false
+    check: { right: 'k [ɐaʌə]ː? p [aɑ]', wrong: 'k [oɔ]ː? p [aɐə]' }
+    source: 'ru.wikipedia, «Копа, Раймон»: «…Раймо́н Копа́ (фр. Raymond Kopa, при рождении Копаше́…» (storygro stress --lookup, 2026-10-30)'
+  - word: Франции
+    say: Фр+анции
+    source: 'ru.wiktionary, «Франция»: «…мн. ч. Им. Фра́нция Фра́нции Р. Фра́нции Фра́нций…» (storygro stress --lookup, 2026-10-30)'
+  - word: Фонтен
+    say: Фонт+ен
+    # OmniVoice B .90, 2026-10-30: unmarked 0/4, Фонт+ен 3/4 by vowel reduction;
+    # keep checking the rendered word and retry a wrong take. Not a substitute for listening.
+    check: { right: 'f [ɐaʌə]ː? n t [eɛ]', wrong: 'f [oɔ]ː? n t [əɐ]' }
+    source: 'ru.wikipedia, «Фонтен, Жюст»: «…Жюст Фонте́н (фр. Just Fontaine; 18 августа 1933, Ма…» (storygro stress --lookup, 2026-10-30)'
+  - word: Жюст
+    say: Ж+юст
+    source: 'ru.wikipedia, «Фонтен, Жюст»: «Жюст Фонте́н (фр. Just Fontaine)»; French Just /ʒyst/ is monosyllabic (checked 2026-10-30)'

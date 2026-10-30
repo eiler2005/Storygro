@@ -1,0 +1,228 @@
+{
+ "images": 1,
+ "files": {
+  "shots/hook.png": {
+   "prompt": "Identity-preserve reference images: first Matvey's face, second Sofia's face, third both hosts full body. Create a brand-new premium cinematic stylized 3D family-animation film still, full-bleed vertical 9:16, ideally 1088x1920. Keep these EXACT two child characters and their recognizable faces, fur, proportions and clothes: Matvey the six-year-old raccoon boy in royal blue football kit with white trim and blue-white socks/boots; Sofia the eight-year-old red squirrel girl with high ponytail and plum-purple tracksuit with white stripes and lilac trainers. Scene: on a beautiful green training pitch at golden hour, Matvey crouches as a determined defender, eyebrows down and eyes glued to the classic black-and-white ball between them; Sofia faces him, a mischievous clever smile, leaning her upper body one way while her foot is ready to take the ball the other way. Funny anticipation, expressive reaction, a playful duel, no other animals. Medium wide 3/4 camera, dynamic foreground grass, warm stadium bokeh; deep navy, gold, green, cream palette. COMPOSITION REQUIRED: complete heads including ears and ponytail between 37% and 57% down the canvas, both faces safely within x=18%..82%. Top 35% is ONLY beautiful empty sunset stadium/sky (for later headline overlay), bottom 25% softly focused grass. All bodies/ball comfortably visible in the middle, no edge crop of heads, no text, no typography, no numbers, no letters, no logos, no watermark, no panels, no borders. Match the references' high-quality 3D rendering, don't change costumes or age.",
+   "seed": 0,
+   "provider": "imagegen",
+   "model": "OpenAI built-in image generation (identifier not exposed)",
+   "width": 941,
+   "height": 1672,
+   "steps": 0,
+   "licence": "OpenAI image tool output; account terms apply. Seed 0 is a placeholder, not reproducible.",
+   "refs": {
+    "../../series/football-legends/cast/matvey-face.png": "70d429f91006b8d818eb13f653e5cc6ad1c5726feade2bc94c8aa4e44dd496c2",
+    "../../series/football-legends/cast/sofia-face.png": "8e8f0e504835d506d25edb8123c78392be69f0457631dfa5fe3a8259adafd914",
+    "../../series/football-legends/cast/hosts-full.png": "49c92b4bca5df88e90d529034e158fb7a48a79de4c7f98d49ccf764944d2be35"
+   },
+   "sha256": "cae986fce34fa68467dda51f7db2cb98bc2b8d4944ac71e9a547df0dfed23b01",
+   "createdAt": 1793360308807
+  },
+  "shots/hook-reveal.png": {
+   "prompt": "Use attached references ONLY to preserve the exact Matvey raccoon boy (six, royal blue football kit, striped blue-white socks, blue-white boots) and Sofia squirrel girl (eight, high ponytail, plum-purple tracksuit with white stripes, lilac trainers), including faces/fur/body proportions, not to copy the reference layout. Premium cinematic stylized 3D family animation, intricate fur/fabric, warm gold/navy/green/cream palette, beautiful stadium bokeh. Full-bleed vertical 9:16, ideally 1088x1920. No text, numbers, logos, watermarks, borders, panels or baked-in typography. Keep every whole head/ears/ponytail between y=27% and y=53%, away from side edges; bottom quarter is simple softly focused grass; top fifth stadium/sky without heads. The funny payoff to a football duel on the training pitch: Sofia has swiftly dribbled around Matvey and is now just BEHIND him to his right with the single black-and-white ball under her foot, smiling knowingly. Matvey still crouches facing the WRONG direction, then looks over his shoulder with wide astonished eyes and mouth a little open. Clear humorous silhouette and clever surprise, dynamic small curved motion trail in dust at shoe level only. Exactly two characters, natural correct limbs. Faces between 39% and 55%, sky top35% clear for headline overlay. Camera medium-wide at child height, stadium warm sunset.",
+   "seed": 0,
+   "provider": "imagegen",
+   "model": "OpenAI built-in image generation (identifier not exposed)",
+   "width": 941,
+   "height": 1672,
+   "steps": 0,
+   "licence": "OpenAI image tool output; account terms apply. Seed 0 is a placeholder, not reproducible.",
+   "refs": {
+    "../../series/football-legends/cast/matvey-face.png": "70d429f91006b8d818eb13f653e5cc6ad1c5726feade2bc94c8aa4e44dd496c2",
+    "../../series/football-legends/cast/sofia-face.png": "8e8f0e504835d506d25edb8123c78392be69f0457631dfa5fe3a8259adafd914",
+    "../../series/football-legends/cast/hosts-full.png": "49c92b4bca5df88e90d529034e158fb7a48a79de4c7f98d49ccf764944d2be35"
+   },
+   "sha256": "f9307adb4b05a9f3d5c4e9c36e49325b3f60947e725846bbd2c1f2f0a9259fd0",
+   "createdAt": 1793360308815
+  },
+  "shots/card.png": {
+   "prompt": "Use attached references ONLY to preserve the exact Matvey raccoon boy (six, royal blue football kit, striped blue-white socks, blue-white boots) and Sofia squirrel girl (eight, high ponytail, plum-purple tracksuit with white stripes, lilac trainers), including faces/fur/body proportions, not to copy the reference layout. Premium cinematic stylized 3D family animation, intricate fur/fabric, warm gold/navy/green/cream palette, beautiful stadium bokeh. Full-bleed vertical 9:16, ideally 1088x1920. No text, numbers, logos, watermarks, borders, panels or baked-in typography. Keep every whole head/ears/ponytail between y=27% and y=53%, away from side edges; bottom quarter is simple softly focused grass; top fifth stadium/sky without heads. NEW historical guest: a recognisable respectful 1958 Raymond Kopa caricature, compact and stocky young French man, short dark slicked-back side-parted hair, broad oval face, thick dark eyebrows, prominent straight nose, clean shaven, friendly half-smile; plain white 1950s Real Madrid kit with white collar, long white shorts, white socks, brown leather boots, no logos. Kopa kneels on one knee BETWEEN Matvey and Sofia, holding a brown leather ball, smiling warmly. The three faces form a close compact triangle between 28% and 44% down the picture; all feet end by 65%. Leave area from 48% to 64% down as torsos/legs with no faces, suitable for later fact card. Modern pitch at golden hour, soft realistic evening light, uncluttered grass below. This image establishes Kopa's consistent face for later shots. Only these three characters.",
+   "seed": 0,
+   "provider": "imagegen",
+   "model": "OpenAI built-in image generation (identifier not exposed)",
+   "width": 941,
+   "height": 1672,
+   "steps": 0,
+   "licence": "OpenAI image tool output; account terms apply. Seed 0 is a placeholder, not reproducible.",
+   "refs": {
+    "../../series/football-legends/cast/matvey-face.png": "70d429f91006b8d818eb13f653e5cc6ad1c5726feade2bc94c8aa4e44dd496c2",
+    "../../series/football-legends/cast/sofia-face.png": "8e8f0e504835d506d25edb8123c78392be69f0457631dfa5fe3a8259adafd914",
+    "../../series/football-legends/cast/hosts-full.png": "49c92b4bca5df88e90d529034e158fb7a48a79de4c7f98d49ccf764944d2be35"
+   },
+   "sha256": "807a571caf0a593e8371dc45f311dbae872a97a972458cc559dfd9e895a4b25e",
+   "createdAt": 1793360308822
+  },
+  "shots/boots.png": {
+   "prompt": "Create a full-bleed vertical 9:16 cinematic high-end stylized 3D football animation still, ideally1088x1920. Dramatic extreme close-up at wet grass level of a SINGLE old brown leather football being gently rolled sideways by one scuffed brown 1950s boot with white sock. Two opponents' dark boots reach in from the sides but cannot touch the ball; clever precision in tiny space. No heads or faces anywhere. Dramatic shallow depth of field, stadium golden bokeh, navy and warm cream highlights, slightly sepia vintage grading, beautifully detailed leather stitching and flying grass. Ball in central rectangle x25..75%, y40..60%, top and bottom softer stadium/grass for text overlays. One ball only, no logos, no text, no numbers, no watermark, no border, no panels. Action must be anatomically plausible.",
+   "seed": 0,
+   "provider": "imagegen",
+   "model": "OpenAI built-in image generation (identifier not exposed)",
+   "width": 941,
+   "height": 1672,
+   "steps": 0,
+   "licence": "OpenAI image tool output; account terms apply. Seed 0 is a placeholder, not reproducible.",
+   "refs": {},
+   "sha256": "369fef6e81066402e8016e817900f8e0f31e3927eec6e5f309934210a629ccc4",
+   "createdAt": 1793360308827
+  },
+  "shots/intro.jpg": {
+   "prompt": "Premium stylized 3D family animation film still with the polish of a modern feature-animation studio, not photorealistic and not babyish: expressive faces, beautifully detailed soft fur and fabric, cinematic warm light, a rich detailed background, a palette of deep navy blue, warm gold, lush pitch green and cream white with restrained orange and plum accents. Tall vertical composition: the main action and every face in the middle of the frame, the top sixth calm and uncluttered, the bottom quarter simple grass, floor or crowd without faces. the series title moment: Matvey (a small six-year-old anthropomorphic raccoon boy with soft grey-brown fur, a dark eye mask, a white muzzle, big lively dark-brown eyes, round ears with white edges and a fluffy tail with dark rings, wearing a plain royal-blue football kit with white collar trim, blue-and-white striped socks and blue-and-white boots) stops a rolling classic black-and-white football with his boot and grins with excitement; Sofia (his sister, an eight-year-old anthropomorphic red squirrel girl, a little taller than Matvey, with a round childlike face, chestnut-orange fur, a cream muzzle, tufted ears, big warm amber eyes, a short high ponytail with a plum hair band and a large fluffy curled tail, wearing a plain plum-purple zip tracksuit with thin white stripes and white-and-lilac trainers) turns and gestures enthusiastically toward a luminous golden football-shaped trophy on a dark plinth between them; a soft golden light sweeps across the trophy, a few golden sparkles in the air; a beautiful stadium at golden hour with floodlights, faint white tactical chalk arrows and circles on the grass. No text, no letters, no numbers, no logos, no crests, no flags, no watermark, no extra limbs, no duplicate characters.",
+   "seed": 58198,
+   "provider": "codex",
+   "model": "gpt-6-astra (Codex image tool)",
+   "width": 1088,
+   "height": 1920,
+   "steps": 0,
+   "licence": "GPT Image through the Codex CLI image tool; under the OpenAI terms the output belongs to the account holder Copied from episode 1 (football-legends-01-matthews/shots/intro.jpg), the series intro picture.",
+   "refs": {
+    "../../series/football-legends/cast/matvey-face.png": "70d429f91006b8d818eb13f653e5cc6ad1c5726feade2bc94c8aa4e44dd496c2",
+    "../../series/football-legends/cast/hosts-full.png": "49c92b4bca5df88e90d529034e158fb7a48a79de4c7f98d49ccf764944d2be35",
+    "../../series/football-legends/cast/sofia-face.png": "8e8f0e504835d506d25edb8123c78392be69f0457631dfa5fe3a8259adafd914"
+   },
+   "sha256": "4c541222ac915963be6d99eb0851704ccf66b6076b2bc2628d004861a1654dcc",
+   "createdAt": "2026-10-28T18:10:22.460Z",
+   "reusedFrom": "content/videos/football-legends-02-di-stefano/shots/intro.jpg"
+  },
+  "shots/award.png": {
+   "prompt": "Use attached references ONLY to preserve the exact Matvey raccoon boy (six, royal blue football kit, striped blue-white socks, blue-white boots) and Sofia squirrel girl (eight, high ponytail, plum-purple tracksuit with white stripes, lilac trainers), including faces/fur/body proportions, not to copy the reference layout. Premium cinematic stylized 3D family animation, intricate fur/fabric, warm gold/navy/green/cream palette, beautiful stadium bokeh. Full-bleed vertical 9:16, ideally 1088x1920. No text, numbers, logos, watermarks, borders, panels or baked-in typography. Keep every whole head/ears/ponytail between y=27% and y=53%, away from side edges; bottom quarter is simple softly focused grass; top fifth stadium/sky without heads. The fourth attached image is ONLY the identity reference for Raymond Kopa in his white kit; preserve his face. New scene: Kopa stands on the right-centre of a beautiful 1950s stadium pitch holding a beautiful glowing golden football award in both hands at his waist, warmly smiling, full figure. Matvey and Sofia on his sides look up with delighted surprise and applaud. All complete heads clustered y=30%..45% with open stadium and sky ABOVE them; at y=24% a later date label will be added (do not draw it). Rich soft golden particles in light, celebratory but tasteful, no extra trophies, no confetti covering faces.",
+   "seed": 0,
+   "provider": "imagegen",
+   "model": "OpenAI built-in image generation (identifier not exposed)",
+   "width": 941,
+   "height": 1672,
+   "steps": 0,
+   "licence": "OpenAI image tool output; account terms apply. Seed 0 is a placeholder, not reproducible.",
+   "refs": {
+    "../../series/football-legends/cast/matvey-face.png": "70d429f91006b8d818eb13f653e5cc6ad1c5726feade2bc94c8aa4e44dd496c2",
+    "../../series/football-legends/cast/sofia-face.png": "8e8f0e504835d506d25edb8123c78392be69f0457631dfa5fe3a8259adafd914",
+    "../../series/football-legends/cast/hosts-full.png": "49c92b4bca5df88e90d529034e158fb7a48a79de4c7f98d49ccf764944d2be35",
+    "shots/card.png": "807a571caf0a593e8371dc45f311dbae872a97a972458cc559dfd9e895a4b25e"
+   },
+   "sha256": "143b9ae7fdff63e8198518f28ddcbd63a0a959539d9ecd2b6f83c2c5cc1e4815",
+   "createdAt": 1793360308836
+  },
+  "shots/tight.png": {
+   "prompt": "Use attached image ONLY as the face/clothing identity reference for Raymond Kopa: preserve his short compact stocky build, dark slicked hair, broad oval face and expressive eyebrows, plain white 1950s kit, long white shorts, brown boots. Create a premium stylized 3D cinematic family-animation action still, full-bleed vertical 9:16, ideally1088x1920. He is in an exciting CLOSE duel between TWO taller adult human defenders in plain maroon shirts and black shorts, in a 1950s stadium with old terraces and spectators in flat caps. His SINGLE old brown leather ball is kept almost touching his boot; he dips his shoulder and squeezes past the first defender, second defender wrong-footed, athletic and anatomically correct, funny surprise on defenders. Low three-quarter camera, crisp Kopa/ball, subtle motion blur only in background, golden vintage light. ALL complete heads y=27%..47%, keep TOP FIFTH stadium/sky without heads; bottom quarter simple out-of-focus grass. Empty space at y=24% for a later overlay, no text, no logos, no watermarks, no borders. Do not include the animal hosts in this scene.",
+   "seed": 0,
+   "provider": "imagegen",
+   "model": "OpenAI built-in image generation (identifier not exposed)",
+   "width": 941,
+   "height": 1672,
+   "steps": 0,
+   "licence": "OpenAI image tool output; account terms apply. Seed 0 is a placeholder, not reproducible.",
+   "refs": {
+    "shots/card.png": "807a571caf0a593e8371dc45f311dbae872a97a972458cc559dfd9e895a4b25e"
+   },
+   "sha256": "27f71f46bb4a57fd18db6e2c73e8fae779fc63f2d64fea7f24f1a260e6d76933",
+   "createdAt": 1793360308841
+  },
+  "shots/pass.png": {
+   "prompt": "Use attached image only as the identity reference for Raymond Kopa, the central man, with the SAME face, dark slicked hair, short compact stocky build and plain all-white 1950s football kit. Create a new premium cinematic stylized 3D family-animation still, full-bleed 9:16, ideally1088x1920. A clearly readable TEAM PLAY: Kopa near the right touchline has two maroon-shirted defenders crowding towards him; rather than forcing a dribble, he plays a sharp grounded diagonal pass with the ONE old brown leather ball towards an unmarked white-shirted teammate running into open green space in front of goal. Slightly elevated 3/4 tactical camera, Kopa in near right foreground and teammate centre-left midground, show the space and a subtle swoosh path on grass (no letters), packed 1950s stadium. Warm vintage golden light with navy shadows. All heads entirely between25% and48% down, away from edges; top fifth stadium/sky, bottom quarter simple green pitch. Keep room above heads for a later overlay. No animal hosts, no text, no numbers, no logos, no watermark, no panels or borders.",
+   "seed": 0,
+   "provider": "imagegen",
+   "model": "OpenAI built-in image generation (identifier not exposed)",
+   "width": 941,
+   "height": 1672,
+   "steps": 0,
+   "licence": "OpenAI image tool output; account terms apply. Seed 0 is a placeholder, not reproducible.",
+   "refs": {
+    "shots/card.png": "807a571caf0a593e8371dc45f311dbae872a97a972458cc559dfd9e895a4b25e"
+   },
+   "sha256": "f9da265c43c11cc943a7cabe7e81bd6c82808107ddfd675b1db6199a26cd315a",
+   "createdAt": 1793360308846
+  },
+  "shots/france.png": {
+   "prompt": "Use the attached image only as the identity reference for Raymond Kopa (central man): keep exactly his facial likeness, dark slicked-back hair, stocky compact build and young clean-shaven face. New image: premium cinematic stylized 3D family animation, full-bleed vertical9:16, ideally1088x1920, warm vintage golden lighting and detailed fabric, old1950s stadium, no text, numbers, logos, watermark, borders, panels. Top fifth sky/stands without heads; all complete heads below25% and above55%; bottom quarter simple green grass. No animal hosts. Kopa now wears the FRANCE kit: plain royal-blue shirt with white collar, white shorts, red socks and brown boots. He and his French teammates are happily celebrating together on the pitch in Sweden1958 after their match for third place, proud and smiling but no trophy, no medals, no podium drawn. Kopa stands to the right of centre, teammates embrace shoulder-to-shoulder. Team heads concentrated on the RIGHT TWO THIRDS, y30%..48%, leaving left-upper rectangle x5%..42%, y20%..38% as empty blurred stands for a later badge. Small Nordic stadium, clear late afternoon. No flags and no printed badges.",
+   "seed": 0,
+   "provider": "imagegen",
+   "model": "OpenAI built-in image generation (identifier not exposed)",
+   "width": 941,
+   "height": 1672,
+   "steps": 0,
+   "licence": "OpenAI image tool output; account terms apply. Seed 0 is a placeholder, not reproducible.",
+   "refs": {
+    "shots/card.png": "807a571caf0a593e8371dc45f311dbae872a97a972458cc559dfd9e895a4b25e"
+   },
+   "sha256": "08c60a5b7cd04f4940b823a4d6e3b9b154ef09560b2d844177c46a8a86e8e1b1",
+   "createdAt": 1793360308850
+  },
+  "shots/fontaine.png": {
+   "prompt": "Use the attached image only as the identity reference for Raymond Kopa (central man): keep exactly his facial likeness, dark slicked-back hair, stocky compact build and young clean-shaven face. New image: premium cinematic stylized 3D family animation, full-bleed vertical9:16, ideally1088x1920, warm vintage golden lighting and detailed fabric, old1950s stadium, no text, numbers, logos, watermark, borders, panels. Top fifth sky/stands without heads; all complete heads below25% and above55%; bottom quarter simple green grass. No animal hosts. An illustrative French attack: Just Fontaine in royal-blue plain shirt, white shorts, red socks and brown boots shoots the SINGLE old leather ball at goal after a teammate's pass. Fontaine is a recognizable friendly1958 caricature: broad forehead, short dark hair, strong eyebrows, rounded face, young athletic compact man. Fontaine in RIGHT-centre foreground, Kopa in matching blue kit slightly behind him on the RIGHT, keeper diving in background. Shot catches the ball just leaving boot, goal in midground; no physical impossibilities. All important heads x50%..85%, y35%..50%. Entire LEFT UPPER rectangle x5%..42%, y20%..40% empty sky/stands for later13-goal badge. This is a generic example, not a reconstruction of any exact historical goal. No trophy.",
+   "seed": 0,
+   "provider": "imagegen",
+   "model": "OpenAI built-in image generation (identifier not exposed)",
+   "width": 941,
+   "height": 1671,
+   "steps": 0,
+   "licence": "OpenAI image tool output; account terms apply. Seed 0 is a placeholder, not reproducible.",
+   "refs": {
+    "shots/card.png": "807a571caf0a593e8371dc45f311dbae872a97a972458cc559dfd9e895a4b25e"
+   },
+   "sha256": "d3e1c661c263eac23317e285dfdbf14b51966c71a0c814f86b6029a0445da585",
+   "createdAt": 1793360308854
+  },
+  "shots/lesson.png": {
+   "prompt": "Use attached references ONLY to preserve the exact Matvey raccoon boy (six, royal blue football kit, striped blue-white socks, blue-white boots) and Sofia squirrel girl (eight, high ponytail, plum-purple tracksuit with white stripes, lilac trainers), including faces/fur/body proportions, not to copy the reference layout. Premium cinematic stylized 3D family animation, intricate fur/fabric, warm gold/navy/green/cream palette, beautiful stadium bokeh. Full-bleed vertical 9:16, ideally 1088x1920. No text, numbers, logos, watermarks, borders, panels or baked-in typography. Keep every whole head/ears/ponytail between y=27% and y=53%, away from side edges; bottom quarter is simple softly focused grass; top fifth stadium/sky without heads. The fourth reference defines Raymond Kopa's face and white1950s kit. New scene: Kopa kneels beside Matvey, gently coaching him in a simple pass towards Sofia standing two metres away. Matvey rolls a single black-white ball towards Sofia with an eager smile, Sofia holds out both hands in readiness and smiles encouragingly. Kopa's hand points to the open passing lane; clear teamwork, warm proud emotions, modern training pitch at golden hour. All THREE complete heads in a broad cluster y37%..55%, upper35% sunset stadium entirely clear, bodies and feet end by75%; simple blurred grass below. Keep EXACT two host outfits and faces, no extra animals.",
+   "seed": 0,
+   "provider": "imagegen",
+   "model": "OpenAI built-in image generation (identifier not exposed)",
+   "width": 941,
+   "height": 1672,
+   "steps": 0,
+   "licence": "OpenAI image tool output; account terms apply. Seed 0 is a placeholder, not reproducible.",
+   "refs": {
+    "../../series/football-legends/cast/matvey-face.png": "70d429f91006b8d818eb13f653e5cc6ad1c5726feade2bc94c8aa4e44dd496c2",
+    "../../series/football-legends/cast/sofia-face.png": "8e8f0e504835d506d25edb8123c78392be69f0457631dfa5fe3a8259adafd914",
+    "../../series/football-legends/cast/hosts-full.png": "49c92b4bca5df88e90d529034e158fb7a48a79de4c7f98d49ccf764944d2be35",
+    "shots/card.png": "807a571caf0a593e8371dc45f311dbae872a97a972458cc559dfd9e895a4b25e"
+   },
+   "sha256": "28c2af4f0e4d7912861d75364bd55cb6cb5d429294206a4be156863040ab66e2",
+   "createdAt": 1793360308861
+  },
+  "shots/question.png": {
+   "prompt": "Use attached references ONLY to preserve the exact Matvey raccoon boy (six, royal blue football kit, striped blue-white socks, blue-white boots) and Sofia squirrel girl (eight, high ponytail, plum-purple tracksuit with white stripes, lilac trainers), including faces/fur/body proportions, not to copy the reference layout. Premium cinematic stylized 3D family animation, intricate fur/fabric, warm gold/navy/green/cream palette, beautiful stadium bokeh. Full-bleed vertical 9:16, ideally 1088x1920. No text, numbers, logos, watermarks, borders, panels or baked-in typography. Keep every whole head/ears/ponytail between y=27% and y=53%, away from side edges; bottom quarter is simple softly focused grass; top fifth stadium/sky without heads. Final invitation to the viewer: Matvey and Sofia standing side by side facing the camera on the golden training pitch, with ONE black-and-white ball between their feet. Matvey on the LEFT lifts one paw in a playful ready-to-dribble pose, Sofia on the RIGHT opens a palm towards empty pitch suggesting a pass, friendly questioning smiles, engaging eye contact with viewer, no human guest. Heads and complete ears/ponytail fit x18%..82%, y32%..49%. Top28% sunset stadium is clear for later question headline, y58%..64% simple clothes/grass for later two choice labels. No drawn labels or symbols, no arrows, no extra ball. Modern stadium, cinematic rich lighting.",
+   "seed": 0,
+   "provider": "imagegen",
+   "model": "OpenAI built-in image generation (identifier not exposed)",
+   "width": 941,
+   "height": 1672,
+   "steps": 0,
+   "licence": "OpenAI image tool output; account terms apply. Seed 0 is a placeholder, not reproducible.",
+   "refs": {
+    "../../series/football-legends/cast/matvey-face.png": "70d429f91006b8d818eb13f653e5cc6ad1c5726feade2bc94c8aa4e44dd496c2",
+    "../../series/football-legends/cast/sofia-face.png": "8e8f0e504835d506d25edb8123c78392be69f0457631dfa5fe3a8259adafd914",
+    "../../series/football-legends/cast/hosts-full.png": "49c92b4bca5df88e90d529034e158fb7a48a79de4c7f98d49ccf764944d2be35"
+   },
+   "sha256": "f00128a8dae6d9934c322fdc32e99cce3a8ba9143cf6786473c8b65ab47564b2",
+   "createdAt": 1793360308867
+  },
+  "shots/portrait.png": {
+   "prompt": "Identity-preserving EDIT of attached picture: make a tight head-and-shoulders collectible PORTRAIT of ONLY the central human Raymond Kopa, preserving his exact recognizable face, short dark slicked hair, dark brows and friendly expression. Remove the animal hosts and stadium, replace background with plain warm cream paper/studio light. Keep his plain white1950s shirt collar at lower edge. High-quality stylized3D family-animation appearance, respectful 1958 caricature, face centred and large, complete hair and chin visible, no body below chest, no hands, no ball. Vertical portrait ideally1024x1280. No border, no typography, no letters, no numbers, no logos, no watermark.",
+   "seed": 0,
+   "provider": "imagegen",
+   "model": "OpenAI built-in image generation (identifier not exposed)",
+   "width": 1122,
+   "height": 1402,
+   "steps": 0,
+   "licence": "OpenAI image tool output; account terms apply. Seed 0 is a placeholder, not reproducible.",
+   "refs": {
+    "shots/card.png": "807a571caf0a593e8371dc45f311dbae872a97a972458cc559dfd9e895a4b25e"
+   },
+   "sha256": "653c6136a0db0e7cbc4dc8bdcd3196d8465938169d2ea714d74267071f4460de",
+   "createdAt": 1793360308871
+  },
+  "shots/team.png": {
+   "prompt": "Create a new premium stylized3D cinematic football illustration, full-bleed vertical9:16 ideally1088x1920. An unusually striking BIRD'S-EYE tactical shot of a1950s football attack: a small group of white-shirted human footballers combine in a triangular passing move around maroon-shirted defenders, ONE brown leather ball moving on a clean visible lane towards an unmarked white player. Stylized chalk-white curved swoosh and subtle golden glints indicate the ball path but absolutely NO letters or numbers. Green pitch fills every edge, intricate grass, long warm stadium shadows, white line of penalty area in upper-middle, rich navy/gold/green/cream family-animation rendering. No visible close-up faces: players viewed from directly overhead. The central passing triangle occupies the middle60% of frame, bottom20% grass uncluttered for captions. No logos, no watermark, no panels or borders. This is illustrative tactics, not an exact reconstruction.",
+   "seed": 0,
+   "provider": "imagegen",
+   "model": "OpenAI built-in image generation (identifier not exposed)",
+   "width": 941,
+   "height": 1672,
+   "steps": 0,
+   "licence": "OpenAI image tool output; account terms apply. Seed 0 is a placeholder, not reproducible.",
+   "refs": {},
+   "sha256": "63d7a831d3db15647349aa646276186aa87a294d3da72568ba820354f81e00b9",
+   "createdAt": 1793360308877
+  }
+ }
+}

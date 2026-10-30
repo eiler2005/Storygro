@@ -4,7 +4,7 @@
 
 > **Audience:** anyone choosing what to reuse · generated from the reel specs, styles, scene and runtime sources
 
-One page for what exists: every reel script and its scene sequence, the story structure of each style, and every visual component with the reels that use it. It lists 22 reels, 4 styles, 23 scenes and the runtime helpers. For methods and tools see the [toolkit](toolkit.md); for scene props see the [scene catalog](scenes.md); for episode status see `content/TRACKER.md`.
+One page for what exists: every reel script and its scene sequence, the story structure of each style, and every visual component with the reels that use it. It lists 23 reels, 4 styles, 23 scenes and the runtime helpers. For methods and tools see the [toolkit](toolkit.md); for scene props see the [scene catalog](scenes.md); for episode status see `content/TRACKER.md`.
 
 ## Contents
 
@@ -27,6 +27,7 @@ Storyboard approval is the role recorded in the folder's `review.yaml` (`owner`,
 | [ballon-dor-kids/ru.reel.yaml](../../content/videos/ballon-dor-kids/ru.reel.yaml) | Золотой мяч: кто самый лучший? | ru | cartoon | 1080×1920@30 | qwen3 | 9 | illustration ×9 | agent |
 | [football-legends-01-matthews/ru.reel.yaml](../../content/videos/football-legends-01-matthews/ru.reel.yaml) | Стэнли Мэтьюз | ru | cartoon | 1080×1920@30 | omnivoice | 12 | illustration ×10 → kinetic → illustration | agent |
 | [football-legends-02-di-stefano/ru.reel.yaml](../../content/videos/football-legends-02-di-stefano/ru.reel.yaml) | Альфредо Ди Стефано | ru | cartoon | 1080×1920@30 | omnivoice | 9 | illustration ×9 | agent |
+| [football-legends-03-kopa/ru.reel.yaml](../../content/videos/football-legends-03-kopa/ru.reel.yaml) | Раймон Копа — мастер обводки | ru | cartoon | 1080×1920@30 | omnivoice | 13 | illustration ×13 | agent |
 | [football-stars-kids/ru.reel.yaml](../../content/videos/football-stars-kids/ru.reel.yaml) | Звёзды футбола: собираем альбом | ru | cartoon | 1080×1920@30 | qwen3 | 19 | illustration → kinetic → illustration ×7 → kinetic → illustration ×3 → kinetic → illustration ×5 | agent |
 | [future-of-work/ru.reel.yaml](../../content/videos/future-of-work/ru.reel.yaml) | Будущее работы — кто отвечает за результат | ru | — | 1080×1920@30 | kokoro | 6 | headline → task-stack → crowd → steps ×2 → outro | — |
 | [inter-miami-magic-pass/ru.reel.yaml](../../content/videos/inter-miami-magic-pass/ru.reel.yaml) | Интер Майами: финальный пас | ru | cartoon | 1080×1920@30 | qwen3 | 12 | illustration ×12 | agent |
@@ -103,7 +104,7 @@ Status: pilot. Pacing: 140–175 words/min, 15–45 s long.
 | `end-card` | Landscape product scenes | end-card — the call to act: a slow, tilted wall of real slides behind the mark + name, the tagline on a cue, | [props](scenes.md#end-card) | 1: slidecraft-launch |
 | `grid` | Landscape product scenes | grid — real slides are dealt from a deck into a grid, scanned row by row, then all checked at once. | [props](scenes.md#grid) | 1: slidecraft-launch |
 | `headline` | Cut-paper scenes | headline — one big claim on cut paper, revealed word by word, with an optional marker on a key | [props](scenes.md#headline) | 4: ai-agent-checks, ai-jobs, future-of-work, slidecraft-demo |
-| `illustration` | Illustration scene | illustration — a cartoon-explainer beat: full-frame illustrations that change on cues, each with a | [props](scenes.md#illustration) | 10: agents-open-door, ai-buys-work-knowledge, ballon-dor-kids, football-legends-01-matthews, football-legends-02-di-stefano, football-stars-kids, inter-miami-magic-pass, matvey-mimo-vorot, spartak-cska-derby, who-gets-rich-on-ai |
+| `illustration` | Illustration scene | illustration — a cartoon-explainer beat: full-frame illustrations that change on cues, each with a | [props](scenes.md#illustration) | 11: agents-open-door, ai-buys-work-knowledge, ballon-dor-kids, football-legends-01-matthews, football-legends-02-di-stefano, football-legends-03-kopa, football-stars-kids, inter-miami-magic-pass, matvey-mimo-vorot, spartak-cska-derby, who-gets-rich-on-ai |
 | `kinetic` | Kinetic and diagram scenes | kinetic — kinetic typography on a dark field: each word lands when the narrator says it, on a spring. | [props](scenes.md#kinetic) | 5: agent-motion-studio, football-legends-01-matthews, football-stars-kids, matvey-mimo-vorot, scene-gallery |
 | `ladder` | Cut-paper scenes | ladder — a career as a paper ladder: rungs are levels (or the tasks people learn on), figures stand | [props](scenes.md#ladder) | 1: ai-jobs |
 | `logo-reveal` | Landscape product scenes | logo-reveal — a line of light grows, slides converge from the edges, snap into the stacked-cards mark | [props](scenes.md#logo-reveal) | 1: slidecraft-launch |

@@ -19,7 +19,25 @@ Full-frame episode art with a project/series title and optional emblem, readable
 | `reveal` | Optional story image to replace the initial artwork |
 | `revealAt` | Cue name or scene seconds; default 1.8 |
 
+## archive-photo
+
+An authentic photograph inside a dated card over a full-frame background. The photo remains still while the background moves gently. Every visible label comes from data; changing the order of seeks preserves the same frame. Used by [Football Legends9](../../content/videos/football-legends-09-eusebio/DIRECTION.md) for a1963 player portrait and a clearly dated2003 stadium view. Children's episodes show a story title and a short date; authors, usernames and licence codes belong in the post and documentation. Follow the [series photo workflow](../how-to/football-series.md).
+
+| Prop | Meaning |
+|---|---|
+| `image` | Required authentic photo, relative to the episode |
+| `background` | Required full-frame backdrop; the whole Reel is never letterboxed |
+| `title` | Required heading; bind with `titleFrom` |
+| `caption` | Required photo date/context; bind with `captionFrom` |
+| `credit` | Optional explicitly requested credit; omitted in the children's series |
+| `fit` | `contain` (default, complete image) or explicit `cover` presentation crop |
+| `position` | CSS object position for a declared crop; default `50% 50%` |
+| `portrait` | Narrower photo frame, default `false` |
+
+Preserve originals, source/licence URLs, dates, hashes and crop notes in `photos.json`. A label must distinguish the photo date from the narrated historical event, especially when the venue photo is later. Do not generatively retouch an archive photograph.
+
 ## collage
+
 
 <img src="../media/scenes/collage.jpg" width="180" alt="A frame of the collage scene">
 

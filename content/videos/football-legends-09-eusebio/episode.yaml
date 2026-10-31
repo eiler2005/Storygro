@@ -1,0 +1,9 @@
+episode: 1
+id: football-legends-09-eusebio
+title: Эусебио — «Чёрная пантера», которая не сдавалась
+sources: sources.md
+credits: CREDITS.md
+variants:
+  - id: ru
+    spec: ru.reel.yaml
+series: football-legends

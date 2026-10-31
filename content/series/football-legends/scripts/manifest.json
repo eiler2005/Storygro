@@ -1,0 +1,84 @@
+{
+  "importedOn": "2026-10-31",
+  "source": "Owner-selected local Downloads DOCX files, episodes 9–15",
+  "originalStorage": "Ignored private/football-legends-source-documents; originals unchanged",
+  "scripts": [
+    {
+      "episode": 9,
+      "sourceFile": "Футболисты_9.docx",
+      "sourceSha256": "2fa369e5c23ee3a322c9f399020c9e05a0f98ab8656d972478f5ad9619c92479",
+      "sourceBytes": 16469,
+      "script": "09.md",
+      "scriptSha256": "80ba55efd168aa19940a02765e8b6fab7133244e7f806c3a09781e47840224c5",
+      "originalLocalPath": "private/football-legends-source-documents/Футболисты_9.docx",
+      "hyperlinks": [],
+      "status": "owner-source-unverified-not-release-approval"
+    },
+    {
+      "episode": 10,
+      "sourceFile": "Футболисты_10.docx",
+      "sourceSha256": "83691caa4eca6c10c076ee75b027bc19598525299929d52ef0a96da9533f5076",
+      "sourceBytes": 16357,
+      "script": "10.md",
+      "scriptSha256": "b05c73d19e00304bf84a419a21190a5efb2c418e0431676ac6b890ec0c68ef88",
+      "originalLocalPath": "private/football-legends-source-documents/Футболисты_10.docx",
+      "hyperlinks": [],
+      "status": "owner-source-unverified-not-release-approval"
+    },
+    {
+      "episode": 11,
+      "sourceFile": "Футболисты_11.docx",
+      "sourceSha256": "8484c4e736c00852647a0176c9f4c654cd436dfe2db2b424a469d1fba3eca1be",
+      "sourceBytes": 16474,
+      "script": "11.md",
+      "scriptSha256": "2eabd9ee4bac7911f8b4a6c50c6a0fd1ef5e6d67c582a9e7176747f3571dd1da",
+      "originalLocalPath": "private/football-legends-source-documents/Футболисты_11.docx",
+      "hyperlinks": [],
+      "status": "owner-source-unverified-not-release-approval"
+    },
+    {
+      "episode": 12,
+      "sourceFile": "Футболисты_12.docx",
+      "sourceSha256": "55fb6af9de197b580976783d2ac985a3cd0338da943fe6a58b4acf3a92c7faf9",
+      "sourceBytes": 16481,
+      "script": "12.md",
+      "scriptSha256": "0d2c7db5c98d5c2997424738622b56ce735d58516149abfe65e72328fe395af3",
+      "originalLocalPath": "private/football-legends-source-documents/Футболисты_12.docx",
+      "hyperlinks": [],
+      "status": "owner-source-unverified-not-release-approval"
+    },
+    {
+      "episode": 13,
+      "sourceFile": "Футболисты_13.docx",
+      "sourceSha256": "b7688f72d47da6f617cddd1f3b6c5f1e11aca33d288cbdb38b264bb59e1737d9",
+      "sourceBytes": 16401,
+      "script": "13.md",
+      "scriptSha256": "e81b0b45945ddfef11847123240a623e18ee28efcef2669724a91c85e2c39f9a",
+      "originalLocalPath": "private/football-legends-source-documents/Футболисты_13.docx",
+      "hyperlinks": [],
+      "status": "owner-source-unverified-not-release-approval"
+    },
+    {
+      "episode": 14,
+      "sourceFile": "Футболисты_14.docx",
+      "sourceSha256": "26953dddfb8afb2f1cb2e67b966873277040b570e3244f63c0e95fa4bf84fea7",
+      "sourceBytes": 16387,
+      "script": "14.md",
+      "scriptSha256": "e0937abe3caa1eecb4e07acd222daadff6d9444306c9c06d49dec984f29307eb",
+      "originalLocalPath": "private/football-legends-source-documents/Футболисты_14.docx",
+      "hyperlinks": [],
+      "status": "owner-source-unverified-not-release-approval"
+    },
+    {
+      "episode": 15,
+      "sourceFile": "Футболисты_15.docx",
+      "sourceSha256": "545d3bb81a6b29588f2e33771c2f6acef2c3b2d6aca3542ed1542ab6a7bb2bfa",
+      "sourceBytes": 16565,
+      "script": "15.md",
+      "scriptSha256": "b11b3d91ce1d0647e5a6e65113ae081143c66ddfd8963c116daad710777bfca8",
+      "originalLocalPath": "private/football-legends-source-documents/Футболисты_15.docx",
+      "hyperlinks": [],
+      "status": "owner-source-unverified-not-release-approval"
+    }
+  ]
+}

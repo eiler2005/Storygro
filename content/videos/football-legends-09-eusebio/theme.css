@@ -1,0 +1,6 @@
+@import url('/rc/styles/cartoon/football-legends.css');
+/* Liverpool1966: silver daylight, teal roofs, vermilion and emerald. */
+:root { --fl-ink:#163943; --fl-paper:#fff8e8; --fl-gold:#e8bf58; --fl-caption-bottom:490px; --ct-ink:#163943; --ct-band:#fff8e8; --ct-navy:#163943; --ct-accent:#d84938; --kt-ink:#fff8e8; --kt-accent:#e8bf58; --kt-accent2:#94d9d2; }
+/* Action captions keep the boot, ball and goal line clear. */
+body:has(.rc-scene--first:not([style*="display: none"]), .rc-scene--second:not([style*="display: none"]), .rc-scene--equal:not([style*="display: none"]), .rc-scene--lead:not([style*="display: none"]), .rc-scene--panther:not([style*="display: none"])) .rc-caption,
+body:has(.rc-scene--hook:not([style*="display: none"]) .fl-series-cover[style*="visibility: hidden"]) .rc-caption { top:450px !important; bottom:auto !important; }

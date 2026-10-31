@@ -531,3 +531,37 @@ words:
     # Context-dependent: record the norm, never globally force plural stress onto singular/count forms.
     # OmniVoice/off uses an explicit pronunciation hint only in an unambiguous plural sentence.
     source: 'https://gramota.ru/meta/master: nominative plural мастера́, genitive singular ма́стера; owner review and grammatical check, 31 October 2026. Episode8 rephrases три разных мастера as эти мастера с разными умениями before hinting мастерА.'
+  - word: Эусебио
+    say: Эус+ебио
+    mark: false
+    source: 'https://ru.wikipedia.org/wiki/Эйсебио: Portuguese player Эузе́биу / established Russian Эйсе́био, Portuguese [ewˈzɛβju]; owner spelling Эусебио retains stress on е. Reviewed 2026-10-31; rejected automatic lookup of unrelated Spanish player Eusebio Sacristan.'
+  - word: Бенфика
+    say: Бенф+ика
+    forms: [Бенфики, Бенфике, Бенфику, Бенфикой]
+    mark: false
+    source: 'https://ru.wikipedia.org/wiki/Бенфика_(футбольный_клуб,_Лиссабон): «Бенфи́ка», Portuguese [sɨˈpɔɾ liʒˈboɐ i βɐ̃jˈfikɐ]; reviewed2026-10-31. Preserve selected OmniVoice/off; pronunciation still requires listening.'
+  - word: Северной
+    say: С+еверной
+    mark: false
+    source: 'ru.wikipedia, «Великобритания»: «…динённое Короле́вство Великобрита́нии и Се́верной Ирла́ндии (англ. United Kingdom of Grea…» (storygro stress --lookup, 2026-10-31)'
+  - word: Кореи
+    say: Кор+еи
+    mark: false
+    source: 'ru.wiktionary, «Корея»: «…. мн. ч. Им. Коре́я Коре́и Р. Коре́и Коре́й Д…» (storygro stress --lookup, 2026-10-31)'
+  - word: Португалии
+    say: Португ+алии
+    mark: false
+    source: 'ru.wikipedia, «Сборная Португалии по футболу»: «…Сбо́рная Португа́лии по футбо́лу (порт. A Seleção Nacional d…» (storygro stress --lookup, 2026-10-31)'
+  - word: Мозамбике
+    say: Мозамб+ике
+    mark: false
+    source: 'ru.wiktionary, «Мозамбик»: «…амби́ком Мозамби́ками Пр. Мозамби́ке Мозамби́ках Мо - з…» (storygro stress --lookup, 2026-10-31)'
+  - word: Португалия
+    say: Португ+алия
+    mark: false
+    source: 'ru.wikipedia, «Португалия»: «…Португа́лия (порт. Portugal [puɾtuˈɡaɫ]), официальн…» (storygro stress --lookup, 2026-10-31)'
+  - word: пантера
+    say: пант+ера
+    forms: [пантерой, пантеры, пантеру, пантере]
+    mark: false
+    source: 'https://ruslang.ru/sites/default/files/doc/normativnyje_slovari/orfoepicheskij_slovar.pdf: «ПАНТЕ́РА, панте́ры, мн. панте́ры, панте́рам», hard т before stressed э. Owner found wrong stress in episode9, 2026-10-31; OmniVoice/off uses explicit пантЭрой hint there. Local vowel-reduction heuristic returned p a n t e r i; listening review remains required.'

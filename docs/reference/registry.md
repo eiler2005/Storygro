@@ -4,7 +4,7 @@
 
 > **Audience:** anyone choosing what to reuse · generated from the reel specs, styles, scene and runtime sources
 
-One page for what exists: every reel script and its scene sequence, the story structure of each style, and every visual component with the reels that use it. It lists 28 reels, 4 styles, 24 scenes and the runtime helpers. For methods and tools see the [toolkit](toolkit.md); for scene props see the [scene catalog](scenes.md); for episode status see `content/TRACKER.md`.
+One page for what exists: every reel script and its scene sequence, the story structure of each style, and every visual component with the reels that use it. It lists 29 reels, 4 styles, 25 scenes and the runtime helpers. For methods and tools see the [toolkit](toolkit.md); for scene props see the [scene catalog](scenes.md); for episode status see `content/TRACKER.md`.
 
 ## Contents
 
@@ -33,6 +33,7 @@ Storyboard approval is the role recorded in the folder's `review.yaml` (`owner`,
 | [football-legends-06-masopust/ru.reel.yaml](../../content/videos/football-legends-06-masopust/ru.reel.yaml) | Йозеф Масопуст — гол в финале чемпионата мира | ru | cartoon | 1080×1920@30 | omnivoice | 16 | series-cover → illustration ×15 | agent |
 | [football-legends-07-yashin/ru.reel.yaml](../../content/videos/football-legends-07-yashin/ru.reel.yaml) | Лев Яшин — вратарь, который получил «Золотой мяч» | ru | cartoon | 1080×1920@30 | omnivoice | 17 | series-cover → illustration ×16 | agent |
 | [football-legends-08-law/ru.reel.yaml](../../content/videos/football-legends-08-law/ru.reel.yaml) | Денис Лоу — король голов | ru | cartoon | 1080×1920@30 | omnivoice | 13 | series-cover → illustration ×12 | agent |
+| [football-legends-09-eusebio/ru.reel.yaml](../../content/videos/football-legends-09-eusebio/ru.reel.yaml) | Эусебио — «Чёрная пантера», которая не сдавалась | ru | cartoon | 1080×1920@30 | omnivoice | 13 | series-cover → illustration → archive-photo ×2 → illustration → archive-photo → illustration ×7 | agent |
 | [football-stars-kids/ru.reel.yaml](../../content/videos/football-stars-kids/ru.reel.yaml) | Звёзды футбола: собираем альбом | ru | cartoon | 1080×1920@30 | qwen3 | 19 | illustration → kinetic → illustration ×7 → kinetic → illustration ×3 → kinetic → illustration ×5 | agent |
 | [future-of-work/ru.reel.yaml](../../content/videos/future-of-work/ru.reel.yaml) | Будущее работы — кто отвечает за результат | ru | — | 1080×1920@30 | kokoro | 6 | headline → task-stack → crowd → steps ×2 → outro | — |
 | [inter-miami-magic-pass/ru.reel.yaml](../../content/videos/inter-miami-magic-pass/ru.reel.yaml) | Интер Майами: финальный пас | ru | cartoon | 1080×1920@30 | qwen3 | 12 | illustration ×12 | agent |
@@ -102,6 +103,7 @@ Status: pilot. Pacing: 140–175 words/min, 15–45 s long.
 
 | Scene | Family | What it does | Props | Used by |
 |---|---|---|---|---|
+| `archive-photo` | Dated authentic photo card | A dated authentic photograph over a full-frame background. Text is supplied as data. | [props](scenes.md#archive-photo) | 1: football-legends-09-eusebio |
 | `chart` | Cut-paper scenes | chart — data drawn on paper: horizontal bars that grow, or lines that draw themselves left to right. | [props](scenes.md#chart) | 1: scene-gallery |
 | `chat` | Landscape product scenes | chat — a prompt types itself into an AI chat window and is sent on a cue; the reply starts. | [props](scenes.md#chat) | 1: slidecraft-launch |
 | `collage` | Collage scene | Editorial collage: graph paper, raster cut-outs, torn labels and small UI windows. | [props](scenes.md#collage) | 3: editorial-collage, micro1-work-data, scene-gallery |
@@ -109,7 +111,7 @@ Status: pilot. Pacing: 140–175 words/min, 15–45 s long.
 | `end-card` | Landscape product scenes | end-card — the call to act: a slow, tilted wall of real slides behind the mark + name, the tagline on a cue, | [props](scenes.md#end-card) | 1: slidecraft-launch |
 | `grid` | Landscape product scenes | grid — real slides are dealt from a deck into a grid, scanned row by row, then all checked at once. | [props](scenes.md#grid) | 1: slidecraft-launch |
 | `headline` | Cut-paper scenes | headline — one big claim on cut paper, revealed word by word, with an optional marker on a key | [props](scenes.md#headline) | 4: ai-agent-checks, ai-jobs, future-of-work, slidecraft-demo |
-| `illustration` | Illustration scene | illustration — a cartoon-explainer beat: full-frame illustrations that change on cues, each with a | [props](scenes.md#illustration) | 16: agents-open-door, ai-buys-work-knowledge, ballon-dor-kids, football-legends-01-matthews, football-legends-02-di-stefano, football-legends-03-kopa, football-legends-04-suarez, football-legends-05-sivori, football-legends-06-masopust, football-legends-07-yashin, football-legends-08-law, football-stars-kids, inter-miami-magic-pass, matvey-mimo-vorot, spartak-cska-derby, who-gets-rich-on-ai |
+| `illustration` | Illustration scene | illustration — a cartoon-explainer beat: full-frame illustrations that change on cues, each with a | [props](scenes.md#illustration) | 17: agents-open-door, ai-buys-work-knowledge, ballon-dor-kids, football-legends-01-matthews, football-legends-02-di-stefano, football-legends-03-kopa, football-legends-04-suarez, football-legends-05-sivori, football-legends-06-masopust, football-legends-07-yashin, football-legends-08-law, football-legends-09-eusebio, football-stars-kids, inter-miami-magic-pass, matvey-mimo-vorot, spartak-cska-derby, who-gets-rich-on-ai |
 | `kinetic` | Kinetic and diagram scenes | kinetic — kinetic typography on a dark field: each word lands when the narrator says it, on a spring. | [props](scenes.md#kinetic) | 5: agent-motion-studio, football-legends-01-matthews, football-stars-kids, matvey-mimo-vorot, scene-gallery |
 | `ladder` | Cut-paper scenes | ladder — a career as a paper ladder: rungs are levels (or the tasks people learn on), figures stand | [props](scenes.md#ladder) | 1: ai-jobs |
 | `logo-reveal` | Landscape product scenes | logo-reveal — a line of light grows, slides converge from the edges, snap into the stacked-cards mark | [props](scenes.md#logo-reveal) | 1: slidecraft-launch |
@@ -118,7 +120,7 @@ Status: pilot. Pacing: 140–175 words/min, 15–45 s long.
 | `process` | Kinetic and diagram scenes | process — a flow in isometric 2.5D: numbered stations on a zigzag path, and one glowing token that | [props](scenes.md#process) | 2: agent-motion-studio, scene-gallery |
 | `scale` | Kinetic and diagram scenes | scale — a comparison of sizes: circles (or squares) whose areas are proportional to the values, | [props](scenes.md#scale) | 2: agent-motion-studio, scene-gallery |
 | `screencast` | Screencast scene | screencast — a recorded browser session (from `storygro capture`) inside a phone on paper: the real | [props](scenes.md#screencast) | 2: scene-gallery, slidecraft-demo |
-| `series-cover` | Series opening cover | A readable first-frame series identity over episode-specific, full-bleed artwork. | [props](scenes.md#series-cover) | 4: football-legends-05-sivori, football-legends-06-masopust, football-legends-07-yashin, football-legends-08-law |
+| `series-cover` | Series opening cover | A readable first-frame series identity over episode-specific, full-bleed artwork. | [props](scenes.md#series-cover) | 5: football-legends-05-sivori, football-legends-06-masopust, football-legends-07-yashin, football-legends-08-law, football-legends-09-eusebio |
 | `spotlight` | Landscape product scenes | spotlight — a slide is checked: a checklist builds on the right, a magnifier grows out of one row of | [props](scenes.md#spotlight) | 1: slidecraft-launch |
 | `stack` | Landscape product scenes | stack — numbered claims drop into a list card one by one; a stamp then approves them all. | [props](scenes.md#stack) | 1: slidecraft-launch |
 | `stat` | Cut-paper scenes | stat — numbers on torn paper cards (one to three read best), each with a label, dropping on cues; | [props](scenes.md#stat) | 2: ai-agent-checks, ai-jobs |

@@ -1,0 +1,37 @@
+review: 1
+questions:
+  - id: story
+    ask: Подходит ли рабочая редакция с ранним первым голом, последовательным камбэком и сохранённым финальным
+      вопросом?
+    for: owner
+    open: true
+  - id: cover
+    ask: Подходит ли Эусебио в действии на заставке и игрушечная «Чёрная пантера» как метафора прозвища?
+    for: owner
+    open: true
+  - id: voice
+    ask: В V2 подходят ли замедленный темп, исправленное «панте́рой», пауза после 5:3 и остальные имена/интонации?
+    for: owner
+    open: true
+notes: >-
+  V2 owner-requested pacing/stress revision, 31 October 2026. Same OmniVoice B narrator at 0.82/off instead of
+  0.90/off; explicit пантЭрой pronunciation hint; final 5:3 held 1.60s after speech, other result/photo holds
+  extended. 98.436s, 13 scenes, 1080x1920/30; QA pass, 47 MP4 moments and feed/cover inspected; master/web
+  decode 2953/2953 frames. 142 runtime samples/76 caption phrases clear; 16 reverse seeks have identical
+  visible DOM, with separately recorded maximum 1/255 GPU pixel rounding. First visible goal
+  5.492000000000001s. 8 selected illustrations/9 generations. Real player1963/venue2003 photos with clear
+  dates; attribution/licences in post/docs only. V1 delivery preserved. Voice speed, duration and photo
+  changes confound FL-R1; no measured retention result. The model interface cannot receive audio: final
+  auditory/stress/editorial owner review remains open, ASR is technical evidence only. No publication.
+approvals:
+  ru:
+    script:
+      hash: 225e76f045ae
+      at: 2026-10-31T11:24:29.995Z
+      by: agent
+      role: agent
+    storyboard:
+      hash: 13e33dc55af0
+      at: 2026-10-31T11:24:36.442Z
+      by: agent
+      role: agent

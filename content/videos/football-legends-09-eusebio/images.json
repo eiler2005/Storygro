@@ -1,0 +1,162 @@
+{
+  "files": {
+    "shots/cover-action.png": {
+      "prompt": "Use case: illustration-story / historical-scene. Asset: opening background for a premium family 3D animated football-history Reel, portrait 1088x1920, full bleed, one continuous image, no panels. Reference image 1 is the exact identity/style reference for original hosts Matvey and Sofia, not an edit target. Reference image 2 is a 1963 archive likeness reference for Eusebio, not a kit reference; translate his specific face into the same polished stylized 3D medium.\nScene: Goodison Park, Liverpool, July 1966, BEFORE the later tall main stand: intimate old two-tier British stands with dark steel roof supports, packed period crowd, silvery bright overcast afternoon, teal-grey sky, lively saturated emerald turf and vermilion jerseys, beautifully textured fabric/fur, cinematic feature-animation finish. No modern bowl, LED ads or futuristic skyline.\nOPENING ACTION: Eusebio, a lean muscular young Black Mozambican-Portuguese man, short dense black curls, recognisable broad nose, defined lips, clean-shaven face from reference 2, is already dribbling one tan stitched leather period ball from left toward right past one Korean defender. Eusebio wears a 1966 Portugal red long-sleeved jersey with green round neck/cuffs, plain white shorts, green socks and black leather boots, no badge. Opponent is a distinct East Asian adult man in plain white long-sleeved shirt with BLUE V-neck and blue cuffs, white shorts, RED socks, black boots. Clear physical distance, anatomically correct legs and planted feet. Eusebio's expression determined, opponent focused and respectful.\nAt the touchline, exact small blue-kit raccoon Matvey and slightly taller child plum-tracksuit squirrel Sofia from reference 1 react to the unfolding action rather than pose: Matvey anxiously half-covers eyes but peeks through fingers; Sofia leans forward excitedly. Keep hosts' child proportions and faces unchanged. One small friendly black-panther plush with emerald eyes sits beside Sofia as a playful nickname metaphor, clearly a toy, no real predator on pitch. No second football. \nLAYOUT CRITICAL: Top 35% shows only atmospheric roofs/sky, naturally continuous detailed background left for externally typeset identity. All heads/ears at y=760–1080; all three principal faces and hero/opponent action occupy central square y=420–1500. Hero face near x=.48,y=.43; hosts flank near x=.22 and .76,y=.55, defender near right without hiding anyone. Ball near y=.72, unobstructed below faces. No face in the top crop. Clear hierarchy and readable silhouettes at phone size, rich background softer focus. Text: NONE. No letters, numbers, scoreboard, logos, crests, sponsor marks, watermarks or added borders.",
+      "seed": 0,
+      "provider": "imagegen",
+      "model": "OpenAI built-in GPT Image (identifier not exposed)",
+      "width": 944,
+      "height": 1667,
+      "steps": 0,
+      "licence": "OpenAI built-in image tool output; account terms apply. Seed0 is a placeholder, not seed-reproducible.",
+      "refs": {
+        "../../series/football-legends/cast/hosts-full.png": "49c92b4bca5df88e90d529034e158fb7a48a79de4c7f98d49ccf764944d2be35",
+        "../../../private/reels-research/eusebio-1963.jpg": "7ede592965f19877021bf051b1326aadead42b72193012cbf9914e183c8b6820"
+      },
+      "sha256": "437fb885b3804c3af5e18a3439cd6ceee3500afabfbea4e6239131ddd03b7f87",
+      "createdAt": 1793442306124.0144,
+      "selected": true,
+      "referenceRoles": "Original hosts lock fictional cast;1963 CC0 portrait locks likeness only; generated episode frame locks kit, style and venue. New action is an original artistic interpretation, not an archival frame copy."
+    },
+    "shots/strike.png": {
+      "prompt": "Use case: illustration-story historical football. Create ONE full-bleed portrait1088x1920 premium stylized3D family-feature animation illustration. Reference1 is the established character/kit/venue continuity image; reference2 is authentic Eusebio face reference only. New camera, not a duplicate of reference1. Show the decisive instant before a powerful RIGHT-FOOT shot, Eusebio attacking from LEFT toward RIGHT at Goodison Park,Liverpool,July1966. Same recognisable young Black man, short dense black curls, broad nose and strong lips, realistic athletic human anatomy translated into polished family3D, clean shaven, determined. Portugal red long-sleeved shirt, GREEN round collar/cuffs, WHITE shorts, GREEN socks, black leather boots. His LEFT boot is planted BESIDE the ONE tan stitched vintage leather ball; right foot drawn back in a believable shooting motion, clear separation of legs. One East Asian defender in WHITE long sleeves and shorts, BLUE V-neck/cuffs, RED socks, black boots turns to close him down from the right, anatomically correct. A real open shooting lane leads toward the white square-post netted goal visible in upper-right middle distance. No contact, no airborne pileup, no ball behind the shooting foot. Cohesive silvery English daylight, rich emerald grass with tiny turf flecks, crimson kit, softer old packed close stands with roof pillars and iron lattice balconies, no post1970 tall main stand, no modern bowl. No animal hosts and no panther in this action shot. Composition: all heads y=.37–.53, face/legs/ball central80% width; ball and kicking action y=.68–.77, full feet with margins. Top30% shows roof/sky for data overlays. Visual hierarchy crystal clear at small phone size. Texture and likeness at highest quality, dynamic action but no motion smearing of faces. No lettering,numbers,logos,crests,watermarks,scoreboards,borders or panels.",
+      "seed": 0,
+      "provider": "imagegen",
+      "model": "OpenAI built-in GPT Image (identifier not exposed)",
+      "width": 944,
+      "height": 1666,
+      "steps": 0,
+      "licence": "OpenAI built-in image tool output; account terms apply. Seed0 is a placeholder, not seed-reproducible.",
+      "refs": {
+        "shots/cover-action.png": "437fb885b3804c3af5e18a3439cd6ceee3500afabfbea4e6239131ddd03b7f87",
+        "../../../private/reels-research/eusebio-1963.jpg": "7ede592965f19877021bf051b1326aadead42b72193012cbf9914e183c8b6820"
+      },
+      "sha256": "5db9927e44e7994a54054c0d4276d4009435cbc0d7768cb3651f6be7aef107bc",
+      "createdAt": 1793442728786.6284,
+      "selected": true,
+      "referenceRoles": "Original hosts lock fictional cast;1963 CC0 portrait locks likeness only; generated episode frame locks kit, style and venue. New action is an original artistic interpretation, not an archival frame copy."
+    },
+    "shots/net.png": {
+      "prompt": "Use case: illustration-story historical football. ONE full-bleed portrait1088x1920 illustration, same premium family3D medium and silvery daylight as the reference. This is the immediate CONSEQUENCE of the shot in the reference, a different close camera on the goal, not the kicking pose again. At Goodison Park in1966, look at the lower RIGHT inside corner of an old white square-post football goal at turf level. ONE tan stitched leather period football has ALREADY COMPLETELY CROSSED the WHITE GOAL LINE and is caught just inside the bulging side net, behind the plane of the posts, stretching the cream cotton net. Show the geometry unambiguously: white post near x=.75, white goal line leading away, ball just behind that line within net, small grass blades and shadow anchor the ball. No ball on the outside of the net. A natural victorious result, not an impossible floating ball.\nIn softer middle distance to left, Eusebio with the same recognisable face and Portugal RED long sleeves/GREEN round collar/cuffs, WHITE shorts,GREEN socks is turning away to celebrate, visible face below y=.38. One defeated East Asian defender in WHITE shirt with BLUE V-neck/cuffs, WHITE shorts, RED socks behind him, respectful and disappointed. Don't show a goalkeeper if it would clutter the line. British close crowd, old two-tier stands, roof pillars, no modern high main stand or LED ads. Dynamic depth and beautiful film-quality materials, an original educational interpretation, no mimicked archival frame. Ball/net clue y=.58–.72, all faces below y=.35, top30% breathing space for data labels. One coherent photograph-like stylized scene, no panels. No text,numbers,logos,crests,sponsors,borders,watermark. No animal hosts or panther.",
+      "seed": 0,
+      "provider": "imagegen",
+      "model": "OpenAI built-in GPT Image (identifier not exposed)",
+      "width": 944,
+      "height": 1666,
+      "steps": 0,
+      "licence": "OpenAI built-in image tool output; account terms apply. Seed0 is a placeholder, not seed-reproducible.",
+      "refs": {
+        "shots/strike.png": "5db9927e44e7994a54054c0d4276d4009435cbc0d7768cb3651f6be7aef107bc"
+      },
+      "sha256": "1645959dc508acc53622cf4a453d537d4d67618561d0e11598a4f211022c306e",
+      "createdAt": 1793442846680.4048,
+      "selected": true,
+      "referenceRoles": "Original hosts lock fictional cast;1963 CC0 portrait locks likeness only; generated episode frame locks kit, style and venue. New action is an original artistic interpretation, not an archival frame copy."
+    },
+    "shots/sprint.png": {
+      "prompt": "Use case: illustration-story historical football. Generate ONE portrait1088x1920 full-bleed premium family3D animated-feature frame, preserving Eusebio's exact established face/kit and old1966 Goodison Park from reference1. This image demonstrates a RUN, different from the shooting frame. A slightly higher, wider sideline camera shows Eusebio accelerating from LEFT to RIGHT with ONE tan stitched old leather football a short step ahead of his right boot; it is controlled dribbling, ball touches/near the grass, not juggling. Same lean muscular young Black Portuguese-Mozambican adult, short tight black curls, broad nose, strong lips, clean-shaven, alert eyes scanning the lane. RED long-sleeve Portugal shirt with GREEN round collar/cuffs, WHITE shorts, GREEN socks, black leather boots. A Korean defender trails slightly behind at left in WHITE long-sleeves/shorts, BLUE V-neck/cuffs, RED socks; another distinct defender ahead-right beginning to close the lane. Clear visual cause: space ahead and the hero driving toward it, all three separated. No tackle/contact or injury. Keep one ball only.\nGoodison1966 close roofed two-tier stands with pillars, iron lattice balconies, silvery bright daytime, saturated emerald turf, beautifully tactile fabric, subtle grass kick-up and energy, faces sharp. Medium-wide framing, entire heads at y=.38–.48, no heads top30%, all main feet/ball y=.68–.76, visual action within central square. No hosts, real animals, toy, panther shadow or fantasy effects in the historical match itself. No modern roof bowl, huge later Main Stand or digital ads. No text,letters,numbers,logos,crests,watermarks,borders or panels. Likeness and anatomy extremely careful.",
+      "seed": 0,
+      "provider": "imagegen",
+      "model": "OpenAI built-in GPT Image (identifier not exposed)",
+      "width": 944,
+      "height": 1666,
+      "steps": 0,
+      "licence": "OpenAI built-in image tool output; account terms apply. Seed0 is a placeholder, not seed-reproducible.",
+      "refs": {
+        "shots/cover-action.png": "437fb885b3804c3af5e18a3439cd6ceee3500afabfbea4e6239131ddd03b7f87"
+      },
+      "sha256": "29bf4952e9aa5476fe4e6278be7d899daf4e822956bed5a1e9932ecb3cce224e",
+      "createdAt": 1793443099803.7727,
+      "selected": true,
+      "referenceRoles": "Original hosts lock fictional cast;1963 CC0 portrait locks likeness only; generated episode frame locks kit, style and venue. New action is an original artistic interpretation, not an archival frame copy."
+    },
+    "shots/penalty.png": {
+      "prompt": "Use case: illustration-story, historical football. ONE full-bleed portrait1088x1920 premium family3D animated-film illustration matching Eusebio's established face/kit/Goodison1966 architecture in reference. A clearly readable PENALTY KICK setup, new medium-wide camera from behind and slightly left of Eusebio looking toward the goal. Eusebio's head is turned just enough for recognisable profile, same short dense black curls and athletic adult proportions. Portugal RED long-sleeve jersey with GREEN round collar and cuffs, WHITE shorts,GREEN socks, black leather boots; no number/badge. He is taking the final step to strike the ONE stationary tan stitched leather ball on the small white penalty spot, left support boot beside the ball, right leg poised. Correct distance: the white goal is several body lengths ahead; goalkeeper, a distinct East Asian man in a plain dark charcoal period keeper jersey and black shorts, is centered between posts with arms spread, attentive. Two waiting outfield players only far outside the penalty area in background, not between kicker and goalkeeper: Korean WHITE shirt/shorts BLUE V-neck/cuffs RED socks, Portuguese red/white/green. No duplicated ball, no modern gloves or fluorescent footwear. \nAction flows left foreground toward right middle-distance goal, feet and ball clearly separated, ball and run-up occupy central square y=.58–.76, all heads below y=.34. Top30% softer old covered stands/sky with no important detail. Silver-blue English afternoon, emerald turf, white chalk, crisp kit fabric, subtle tension, feature-animation quality. Old white square posts and cream cotton net, British two-tier roofed terraces with pillars/iron-lattice balcony; no later high main stand, no digital advertising. Don't reproduce any archival photo composition. No animal hosts, panther, contact, injury. No text,letters,numbers,logos,crests,scoreboard,borders,watermarks.",
+      "seed": 0,
+      "provider": "imagegen",
+      "model": "OpenAI built-in GPT Image (identifier not exposed)",
+      "width": 944,
+      "height": 1666,
+      "steps": 0,
+      "licence": "OpenAI built-in image tool output; account terms apply. Seed0 is a placeholder, not seed-reproducible.",
+      "refs": {
+        "shots/cover-action.png": "437fb885b3804c3af5e18a3439cd6ceee3500afabfbea4e6239131ddd03b7f87"
+      },
+      "sha256": "33542b39cd0f12671da712643316a52b6d528a44eac003b2c27cf21bcc940d7c",
+      "createdAt": 1793443219356.476,
+      "selected": false,
+      "referenceRoles": "Original hosts lock fictional cast;1963 CC0 portrait locks likeness only; generated episode frame locks kit, style and venue. New action is an original artistic interpretation, not an archival frame copy."
+    },
+    "shots/celebration.png": {
+      "prompt": "Use case: illustration-story historical football. ONE portrait1088x1920 full-bleed premium3D family animation frame, same Eusebio likeness and1966Goodison venue/colors as reference1; reference2 preserves exact host identities. Show the earned TEAM CELEBRATION after a comeback. Eusebio centered, still recognisable young Black man with tight short curls and characteristic nose/lips, joyful relieved smile, Portugal RED long sleeves with GREEN round collar/cuffs, WHITE shorts,GREEN socks. He high-fives ONE clearly DIFFERENT Portuguese teammate on his right: lighter olive skin, narrow face, short straight dark side-part hair, clean-shaven, same period team kit, genuinely different face. Another tall Portuguese teammate behind-left with a longer face smiles. They form a clear separated triangular group, correct hands/fingers, one clean visible high-five contact and natural standing anatomy. ONE tan vintage football rests on grass near their feet, not held twice. Exact original hosts Matvey small blue-white raccoon and Sofia slightly taller child plum-tracksuit squirrel from reference2 clap from the touchline at lower sides, keeping all faces visible. No trophy, medallion, stage, confetti machines or claim of winning the World Cup.\nOld close packed British two-tier stands with steel roof posts/iron-lattice balconies, no later high main stand. Silvery bright afternoon, saturated emerald and scarlet, delicate fur/textile detail, warmth and relief. All heads/ears y=.38–.57, face group wholly in central square, feet/ball y=.73–.80, top30% roof/sky breathing space for a separate score overlay. Hero should read as part of a team. No panther in the real match. No generated text,numbers,logos,crests,sponsor marks,watermark,frames or panels.",
+      "seed": 0,
+      "provider": "imagegen",
+      "model": "OpenAI built-in GPT Image (identifier not exposed)",
+      "width": 944,
+      "height": 1666,
+      "steps": 0,
+      "licence": "OpenAI built-in image tool output; account terms apply. Seed0 is a placeholder, not seed-reproducible.",
+      "refs": {
+        "shots/cover-action.png": "437fb885b3804c3af5e18a3439cd6ceee3500afabfbea4e6239131ddd03b7f87",
+        "../../series/football-legends/cast/hosts-full.png": "49c92b4bca5df88e90d529034e158fb7a48a79de4c7f98d49ccf764944d2be35"
+      },
+      "sha256": "facf0c13d012c846eebe6e17d81dbda3ed7360b7dd99d6f5b6f38d69d0f27abb",
+      "createdAt": 1793443340657.5278,
+      "selected": true,
+      "referenceRoles": "Original hosts lock fictional cast;1963 CC0 portrait locks likeness only; generated episode frame locks kit, style and venue. New action is an original artistic interpretation, not an archival frame copy."
+    },
+    "shots/support.png": {
+      "prompt": "Use case: illustration-story. ONE full-bleed portrait1088x1920 premium family3D animation illustration, matching exact young Eusebio face/Portugal kit in reference1 and exact original Matvey/Sofia in reference2. An explicitly imagined gentle scene of TEAM SUPPORT, not a documented historical conversation. At the sideline of old1966GoodisonPark, Eusebio is crouching slightly to eye level with his raccoon host Matvey, palm reassuringly open, kind encouraging smile. Human face recognisable, normal human body, red long sleeves GREEN round neck/cuffs,white shorts,green socks,black old boots. Matvey, same young small raccoon in royal-blue/white football kit and striped socks, has been discouraged but is now lifting his head to listen, hands relaxed. Sofia, same slightly taller child squirrel in plum tracksuit with white stripes and tied tufted ponytail, stands beside him with a warm supportive expression, one hand gently on Matvey's shoulder. A distinct adult Portuguese teammate with olive skin and straight dark side-part hair stands nearby nodding, same team kit, not Eusebio's clone. ONE tan period football on grass between them. No additional modern black-and-white football. No medal,trophy or invented award ceremony.\nAll expressions clear, beautifully detailed fur/fabric, small-eye-line triangular composition, all full heads/ears y=.40–.58, feet/ball y=.75–.80, upper35% only soft roofs/sky for separate title. Quiet silver-blue daylight with warm facial bounce, soft rich emerald turf and red/plum/blue contrast. Old low roofed stands,pillars,iron lattice balcony, respectfully out of focus; no modern skyline,high later stand or digital ads. Lifelike touch but clearly stylized feature-animation medium. No written words,letters,numbers,logos,crests,watermarks,borders,panels or speech bubbles.",
+      "seed": 0,
+      "provider": "imagegen",
+      "model": "OpenAI built-in GPT Image (identifier not exposed)",
+      "width": 944,
+      "height": 1665,
+      "steps": 0,
+      "licence": "OpenAI built-in image tool output; account terms apply. Seed0 is a placeholder, not seed-reproducible.",
+      "refs": {
+        "shots/cover-action.png": "437fb885b3804c3af5e18a3439cd6ceee3500afabfbea4e6239131ddd03b7f87",
+        "../../series/football-legends/cast/hosts-full.png": "49c92b4bca5df88e90d529034e158fb7a48a79de4c7f98d49ccf764944d2be35"
+      },
+      "sha256": "85c58eed75fd1dfa521ad14143495a25ace36ddfba2d38386e9967a2a3b1390a",
+      "createdAt": 1793443435325.5288,
+      "selected": true,
+      "referenceRoles": "Original hosts lock fictional cast;1963 CC0 portrait locks likeness only; generated episode frame locks kit, style and venue. New action is an original artistic interpretation, not an archival frame copy."
+    },
+    "shots/question.png": {
+      "prompt": "Use case: illustration-story. ONE full-bleed portrait1088x1920 premium3D family-feature animated illustration. Reference1 locks original Matvey/Sofia faces,fur,age,wardrobe; reference2 locks young Eusebio identity/Portugal1966 kit and visual world. A fresh hopeful FINAL scene after the imagined support scene: Matvey, same small six-year-old raccoon boy in royal-blue shirt/shorts white trim,white-blue striped socks and blue-white boots, has decided to KEEP TRYING. He is taking an energetic first dribbling step from left toward right with ONE tan stitched leather football on grass. He looks determined and slightly comically over-serious, ears up, ringed tail balancing. Sofia,the slightly taller eight-year-old squirrel girl in plum zip tracksuit,white stripes,white-lilac trainers,tufted ears and plum ponytail tie, is jogging beside him gesturing toward the open space ahead, encouraging not scolding. Eusebio,recognisable young Black man with short dense curls,red Portugal long-sleeves GREEN round collar/cuffs,WHITE shorts,GREEN socks,black boots,stands farther back smiling supportively. A small friendly black-panther plush sits safely by the sideline, metaphorical toy only. No real animal predator, no extra football,no anthropomorphic Eusebio,no crown.\nSame old Goodison1966 low roofed close stands with pillars,iron-lattice balcony,beautiful silver-blue afternoon now a gentle bright cloud break,rich green grass,vermilion and plum accents. Character eyes/poses crystal clear at phone size, premium tactile fur and cloth, kind playful tone. All heads and ear tips between y=.39 and .60; keep them below space for external title. Single ball and boots at y=.72–.79,upper35% only natural sky/architecture; faces remain within central square. Entire background fills tall frame. No text,numbers,letters,logos,crests,watermarks,borders,panels or speech bubbles.",
+      "seed": 0,
+      "provider": "imagegen",
+      "model": "OpenAI built-in GPT Image (identifier not exposed)",
+      "width": 944,
+      "height": 1666,
+      "steps": 0,
+      "licence": "OpenAI built-in image tool output; account terms apply. Seed0 is a placeholder, not seed-reproducible.",
+      "refs": {
+        "../../series/football-legends/cast/hosts-full.png": "49c92b4bca5df88e90d529034e158fb7a48a79de4c7f98d49ccf764944d2be35",
+        "shots/cover-action.png": "437fb885b3804c3af5e18a3439cd6ceee3500afabfbea4e6239131ddd03b7f87"
+      },
+      "sha256": "a15dcd62977347606e27024f545af41c11d41e7ce095ad6af708ba44f787f6c9",
+      "createdAt": 1793443527880.3896,
+      "selected": true,
+      "referenceRoles": "Original hosts lock fictional cast;1963 CC0 portrait locks likeness only; generated episode frame locks kit, style and venue. New action is an original artistic interpretation, not an archival frame copy."
+    },
+    "shots/penalty-v2.png": {
+      "prompt": "Edit this generated illustration only. Correct the penalty setup: REMOVE BOTH outfield players who are standing beside the goal (the white-shirted man on the far left and the red-shirted man on the far right). They must be absent, leaving only Eusebio taking the penalty in the foreground and the single goalkeeper between the posts. Fill their former locations with the existing crowd/goal/grass seamlessly. Do not add substitute players anywhere inside the penalty area. Keep the exact Eusebio face and body, red shirt green round neck/cuffs white shorts green socks, same goalkeeper, one tan leather ball on spot, viewpoint, architecture, lighting, all anatomy, tall composition, texture and premium family3D medium. Preserve the whole frame, no crop and no text/logos/numbers.",
+      "seed": 0,
+      "provider": "imagegen",
+      "model": "OpenAI built-in GPT Image (identifier not exposed)",
+      "width": 944,
+      "height": 1665,
+      "steps": 0,
+      "licence": "OpenAI built-in image tool output; account terms apply. Seed0 is a placeholder, not seed-reproducible.",
+      "refs": {
+        "shots/penalty.png": "33542b39cd0f12671da712643316a52b6d528a44eac003b2c27cf21bcc940d7c"
+      },
+      "sha256": "8515f3ea53ce91b84a4b20b8589804153569c7bbfff74409a91dafc301fd3d77",
+      "createdAt": 1793443600125.993,
+      "selected": true,
+      "referenceRoles": "Original hosts lock fictional cast;1963 CC0 portrait locks likeness only; generated episode frame locks kit, style and venue. New action is an original artistic interpretation, not an archival frame copy."
+    }
+  }
+}

@@ -316,6 +316,17 @@ entries:
     status: pilot
     docs: docs/reference/scenes.md#series-cover
 
+  - id: scenes-archive-photo
+    kind: scenes
+    stage: look
+    title: Dated authentic photo card
+    what: An authentic photograph with data-bound story title and concise photo date over a full-frame background. Optional explicit credit is omitted in children's episodes; full provenance stays in the post and documentation. Contain preserves the photo; a declared portrait crop can improve recognition. Deterministic seeking; no AI retouch.
+    when: Football Legends or another factual series includes a rights-checked real player or venue photo alongside generated illustrations. A later photo is visibly dated as later.
+    scenes: [archive-photo]
+    status: pilot
+    docs: docs/reference/scenes.md#archive-photo
+    examples: [content/videos/football-legends-09-eusebio/DIRECTION.md]
+
   - id: scenes-screencast
     kind: scenes
     stage: look

@@ -1,0 +1,58 @@
+{
+  "_about": "Displayed text and numbers are sourced by group; see sources.md.",
+  "series": {
+    "_source": "[O1] Owner DOCX9: both titles, golden ball, name AND player at frame zero. [S3] FPF nickname.",
+    "project": "Маленькие большие дела",
+    "title": "Легенды футбола",
+    "episode": "Эусебио · «Чёрная пантера»"
+  },
+  "player": {
+    "_source": "[S2] SL Benfica,1965 Ballon d’Or; [S3] FPF, Benfica, Pantera Negra, skills; [S4] The FA, born in Mozambique.",
+    "name": "Эусебио",
+    "club": "«Бенфика» · Португалия",
+    "card": "1965 · Португалия · Нападающий",
+    "birth": "Родился в Мозамбике",
+    "nickname": "«Чёрная пантера»",
+    "award": "«Золотой мяч» · 1965",
+    "year": "1965"
+  },
+  "match": {
+    "_source": "[S1] FIFA: Portugal5–3 Korea DPR,23July1966,Goodison Park; Eusebio27,43pen,56,59pen,Jose Augusto80. All scores ordered Portugal:Korea DPR.",
+    "event": "Чемпионат мира · 1966",
+    "teams": "Португалия — Северная Корея",
+    "venue": "Ливерпуль · «Гудисон Парк»",
+    "behind": "0:3",
+    "first": "1:3",
+    "second": "2:3",
+    "equal": "3:3",
+    "lead": "4:3",
+    "final": "5:3",
+    "four": "4 гола Эусебио",
+    "penalty": "Пенальти",
+    "team": "Пятый мяч — гол партнёра"
+  },
+  "tournament": {
+    "_source": "[S1] FIFA and [S3] FPF: nine goals, Golden Boot, Portugal third in1966. The1965 award predates that tournament.",
+    "goals": "9 голов за турнир",
+    "bronze": "Португалия · 3-е место"
+  },
+  "story": {
+    "_source": "[O1] Owner9 lesson/question, adapted opening/action captions under requested research workflow; editorial text, not historical quotations.",
+    "opening": "Есть ли шанс при 0:3?",
+    "next": "Первый ответный гол!",
+    "speed": "Скорость · сила · удар",
+    "hope": "Искать следующий шанс",
+    "question": "Если команда проигрывает…",
+    "giveUp": "Опустить руки?",
+    "try": "Продолжать искать шанс?"
+  },
+  "archive": {
+    "_source": "[V1] Anefo/Nationaal Archief portrait22Oct1963,CC0; [P2] Simon Paul/Nsno1878,Goodisonend.jpg,summer2003,author public-domain release on Commons. Photo dates are not match dates.",
+    "playerTitle": "Эусебио",
+    "playerDate": "Фото 1963 года",
+    "playerCredit": "Anefo / Nationaal Archief · CC0",
+    "stadiumTitle": "«Гудисон Парк» · Ливерпуль",
+    "stadiumDate": "Фото 2003 года",
+    "stadiumCredit": "Simon Paul / Nsno1878 · Public domain"
+  }
+}

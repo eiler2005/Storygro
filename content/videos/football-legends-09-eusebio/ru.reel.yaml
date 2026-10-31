@@ -1,0 +1,426 @@
+reel: 1
+style: cartoon
+title: Эусебио — «Чёрная пантера», которая не сдавалась
+lang: ru
+format:
+  preset: vertical
+  width: 1080
+  height: 1920
+  fps: 30
+safe: reels
+voice:
+  engine: omnivoice
+  model: k2-fsa/OmniVoice
+  voice: assets/voice/narrator-ru.wav
+  speed: 0.82
+  stress: off
+music:
+  bpm: 122
+  key: C
+  progression:
+    - I
+    - V
+    - vi
+    - IV
+  gain: 0.1
+  drop: lead
+loudness: -14
+theme: theme.css
+captions:
+  show: true
+  maxWords: 3
+transition:
+  kind: cut
+  dur: 0
+data:
+  facts: facts.json
+stills:
+  cover: hook@0
+  final: win@1
+  hosts: question@1
+images:
+  provider: manual
+  model: OpenAI built-in GPT Image (identifier not exposed)
+  width: 1088
+  height: 1920
+  seed: 0
+  prompt: "{subject}. Premium family3D football history. No generated text. Actual prompts and reference hashes
+    in images.json."
+hooks:
+  - "Ноль: три. Вы бы опустили руки? А Эусебио уже идёт в атаку."
+  - Четыре гола одного игрока. Но спасут ли они команду?
+  - Почему его называли «Чёрной пантерой»?
+post:
+  title: Легенды футбола · Эусебио
+  text: >-
+    0:3 — и всё потеряно? Эусебио и сборная Португалии продолжили искать шанс. В четвертьфинале чемпионата
+    мира 1966 они победили Северную Корею 5:3: четыре гола забил Эусебио, пятый — его партнёр Жозе Аугушту.
+
+
+    «Золотой мяч» Эусебио получил ещё в 1965 году. На чемпионате мира 1966 он стал лучшим бомбардиром с
+    девятью голами, а Португалия заняла третье место.
+
+
+    Если твоя команда проигрывает, что лучше: опустить руки или продолжать искать шанс?
+
+
+    Выпуск 9 проекта «Маленькие большие дела · Легенды футбола». Источники: FIFA, FPF, SL Benfica, The FA.
+    Форма и эпоха: Historical Football Kits; облик игрока: портрет Anefo/Nationaal Archief 1963 года, CC0.
+    Иллюстрации созданы встроенным GPT Image; действия, ведущие и пантера-игрушка — художественная
+    интерпретация, не запись матча. Голос рассказчика синтетический (OmniVoice).
+
+
+    Реальные фото: Эусебио — Anefo / Nationaal Archief,22.10.1963,CC0
+    (commons.wikimedia.org/wiki/File:Wereldelftal._Eusebio,_Bestanddeelnr_915-6597.jpg); «Гудисон Парк» —
+    Simon Paul / Nsno1878,лето2003,public-domain release (commons.wikimedia.org/wiki/File:Goodisonend.jpg).
+    Даты фото подписаны; поздний вид стадиона не изображает матч1966. Портрет показан с кадрированием, фото
+    стадиона целиком; без AI-ретуши.
+  tags:
+    - футбол
+    - детям
+    - легендыфутбола
+    - эусебио
+    - португалия
+    - бенфика
+    - золотоймяч
+scenes:
+  - id: hook
+    scene: series-cover
+    say: "Ноль: три. Вы бы опустили руки? {#reveal}А Эусебио уже идёт в атаку."
+    pad:
+      - 0.03
+      - 0.12
+    energy: 0.88
+    props:
+      image: shots/cover-action.png
+      projectFrom: facts.series.project
+      titleFrom: facts.series.title
+      subtitleFrom: facts.series.episode
+      emblem: /rc/styles/cartoon/golden-ball.svg
+      reveal: shots/strike.png
+      revealAt: reveal
+    sfx:
+      - at: start
+        kind: swell
+        gain: 0.17
+      - at: reveal
+        kind: whoosh
+        gain: 0.1
+  - id: first
+    scene: illustration
+    say: Удар — {#net}и первый ответный гол! Но как сравнять счёт, а потом ещё и победить?
+    pad:
+      - 0.1
+      - 0.45
+    energy: 0.86
+    props:
+      shots:
+        - image: shots/strike.png
+          move: in
+          zoom: 0.018
+        - image: shots/net.png
+          at: net
+          move: in
+          zoom: 0.018
+      labels:
+        - textFrom: facts.match.first
+          x: 0.46
+          y: 0.19
+          at: net
+          tone: navy
+    sfx:
+      - at: net
+        kind: hit
+        gain: 0.17
+  - id: context
+    scene: archive-photo
+    say: Это был чемпионат мира [1966](=тысяча девятьсот шестьдесят шестого) года. Португалия играла против
+      Северной Кореи.
+    pad:
+      - 0.1
+      - 0.45
+    energy: 0.72
+    props:
+      image: shots/goodison-2003.jpg
+      background: shots/cover-action.png
+      titleFrom: facts.archive.stadiumTitle
+      captionFrom: facts.archive.stadiumDate
+      fit: contain
+  - id: identity
+    scene: archive-photo
+    say: Эусебио — нападающий сборной Португалии и «Бенфики». {#roots}Он родился в Мозамбике, а затем стал звездой
+      португальского футбола.
+    pad:
+      - 0.1
+      - 0.45
+    energy: 0.74
+    props:
+      image: shots/eusebio-1963.jpg
+      background: shots/cover-action.png
+      titleFrom: facts.archive.playerTitle
+      captionFrom: facts.archive.playerDate
+      portrait: true
+      fit: cover
+      position: 50% 45%
+  - id: panther
+    scene: illustration
+    say: Скорость, сила, мощный удар. За стремительные рывки его прозвали {#run}«Чёрной [пантерой](=пантЭрой)».
+    pad:
+      - 0.1
+      - 0.35
+    energy: 0.8
+    props:
+      shots:
+        - image: shots/sprint.png
+          move: right
+          zoom: 0.018
+      labels:
+        - textFrom: facts.story.speed
+          x: 0.46
+          y: 0.19
+          at: -1
+          until: run
+          tone: navy
+        - textFrom: facts.player.nickname
+          x: 0.46
+          y: 0.19
+          at: run
+          tone: navy
+    sfx:
+      - at: run
+        kind: whoosh
+        gain: 0.1
+  - id: award
+    scene: archive-photo
+    say: «Золотой мяч» он получил ещё годом раньше — в [1965](=тысяча девятьсот шестьдесят пятом) году.
+    pad:
+      - 0.1
+      - 0.45
+    energy: 0.73
+    props:
+      image: shots/eusebio-1963.jpg
+      background: shots/cover-action.png
+      titleFrom: facts.player.award
+      captionFrom: facts.archive.playerDate
+      portrait: true
+      fit: cover
+      position: 50% 45%
+    sfx:
+      - at: start
+        kind: chime
+        gain: 0.1
+  - id: second
+    scene: illustration
+    say: "Вернёмся к матчу. Португалия всё ещё проигрывает. Эусебио бьёт пенальти — {#goal}два: три."
+    pad:
+      - 0.1
+      - 0.6
+    energy: 0.8
+    props:
+      shots:
+        - image: shots/penalty-v2.png
+          move: in
+          zoom: 0.018
+        - image: shots/net.png
+          at: goal
+          move: out
+          zoom: 0.018
+      labels:
+        - textFrom: facts.match.penalty
+          x: 0.46
+          y: 0.19
+          at: -1
+          until: goal
+          tone: navy
+        - textFrom: facts.match.second
+          x: 0.46
+          y: 0.19
+          at: goal
+          tone: navy
+    sfx:
+      - at: goal
+        kind: hit
+        gain: 0.14
+  - id: equal
+    scene: illustration
+    say: "После перерыва — ещё один точный удар. {#goal}Уже три: три! Но ничьей мало."
+    pad:
+      - 0.1
+      - 0.65
+    energy: 0.83
+    props:
+      shots:
+        - image: shots/strike.png
+          move: right
+          zoom: 0.018
+        - image: shots/net.png
+          at: goal
+          move: in
+          zoom: 0.018
+      labels:
+        - textFrom: facts.match.equal
+          x: 0.46
+          y: 0.19
+          at: goal
+          tone: navy
+    sfx:
+      - at: goal
+        kind: hit
+        gain: 0.14
+  - id: lead
+    scene: illustration
+    say: "Рывок. Его останавливают с нарушением. {#penalty}Снова пенальти. {#goal}И теперь Португалия впереди —
+      четыре: три!"
+    pad:
+      - 0.1
+      - 0.8
+    energy: 0.86
+    props:
+      shots:
+        - image: shots/sprint.png
+          move: right
+          zoom: 0.018
+        - image: shots/penalty-v2.png
+          at: penalty
+          move: in
+          zoom: 0.018
+        - image: shots/net.png
+          at: goal
+          move: out
+          zoom: 0.018
+      labels:
+        - textFrom: facts.match.penalty
+          x: 0.46
+          y: 0.19
+          at: penalty
+          until: goal
+          tone: navy
+        - textFrom: facts.match.lead
+          x: 0.46
+          y: 0.19
+          at: goal
+          tone: navy
+    sfx:
+      - at: penalty
+        kind: whoosh
+        gain: 0.1
+      - at: goal
+        kind: hit
+        gain: 0.17
+  - id: win
+    scene: illustration
+    say: "Четыре гола в одном матче! {#team}А пятый мяч Португалии забил его партнёр. {#final}Команда победила
+      пять: три!"
+    pad:
+      - 0.1
+      - 1.6
+    energy: 0.83
+    props:
+      shots:
+        - image: shots/celebration.png
+          move: out
+          zoom: 0.018
+      labels:
+        - textFrom: facts.match.four
+          x: 0.46
+          y: 0.19
+          at: -1
+          until: team
+          tone: navy
+        - textFrom: facts.match.team
+          x: 0.46
+          y: 0.19
+          at: team
+          until: final
+          tone: navy
+        - textFrom: facts.match.final
+          x: 0.46
+          y: 0.19
+          at: final
+          tone: navy
+    sfx:
+      - at: final
+        kind: chime
+        gain: 0.14
+  - id: tournament
+    scene: illustration
+    say: На том чемпионате Эусебио забил девять голов и стал лучшим бомбардиром. {#bronze}Португалия заняла третье
+      место.
+    pad:
+      - 0.1
+      - 0.55
+    energy: 0.72
+    props:
+      shots:
+        - image: shots/support.png
+          move: in
+          zoom: 0.018
+        - image: shots/celebration.png
+          at: bronze
+          move: out
+          zoom: 0.018
+      labels:
+        - textFrom: facts.tournament.goals
+          x: 0.46
+          y: 0.19
+          at: -1
+          until: bronze
+          tone: navy
+        - textFrom: facts.tournament.bronze
+          x: 0.46
+          y: 0.19
+          at: bronze
+          tone: navy
+  - id: lesson
+    scene: illustration
+    say: Один игрок не может всегда спасти команду. Но пока матч не закончен, нельзя заранее решить, что всё
+      потеряно.
+    pad:
+      - 0.1
+      - 0.55
+    energy: 0.67
+    props:
+      shots:
+        - image: shots/support.png
+          move: out
+          zoom: 0.018
+      labels:
+        - textFrom: facts.story.hope
+          x: 0.46
+          y: 0.19
+          at: -1
+          tone: navy
+  - id: question
+    scene: illustration
+    say: "Если твоя команда проигрывает, что лучше: {#giveup}опустить руки {#try}или продолжать искать шанс?"
+    pad:
+      - 0.14
+      - 1.4
+    energy: 0.71
+    props:
+      shots:
+        - image: shots/question.png
+          move: in
+          zoom: 0.018
+      labels:
+        - textFrom: facts.story.question
+          x: 0.46
+          y: 0.19
+          at: -1
+          until: giveup
+          tone: navy
+        - textFrom: facts.story.giveUp
+          x: 0.46
+          y: 0.19
+          at: giveup
+          until: try
+          tone: navy
+        - textFrom: facts.story.try
+          x: 0.46
+          y: 0.19
+          at: try
+          tone: navy
+    sfx:
+      - at: start
+        kind: chime
+        gain: 0.1

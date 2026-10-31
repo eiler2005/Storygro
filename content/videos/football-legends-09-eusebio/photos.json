@@ -1,0 +1,63 @@
+{
+  "photos": 1,
+  "checkedOn": "2026-10-31",
+  "ownerRule": "Include authentic player and venue photos alongside illustration; dates and provenance visible.",
+  "files": {
+    "shots/eusebio-1963.jpg": {
+      "title": "Wereldelftal.Eusebio,Bestanddeelnr915-6597",
+      "creator": "Fotograaf Onbekend / Anefo; Nationaal Archief",
+      "photoDate": "1963-10-22",
+      "uploadDate": "2018-01-13",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Wereldelftal._Eusebio,_Bestanddeelnr_915-6597.jpg",
+      "archiveUrl": "http://proxy.handle.net/10648/aa4ac4fc-d0b4-102d-bcf8-003048976d84",
+      "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/9/94/Wereldelftal._Eusebio%2C_Bestanddeelnr_915-6597.jpg",
+      "licence": "CC0-1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "licenceEvidence": "File-specific Licensing section states CC0; Nationaal Archief partnership provenance. Verified2026-10-31.",
+      "use": [
+        "identity",
+        "award",
+        "generated-likeness-reference"
+      ],
+      "presentation": "Original JPEG pixels unchanged; CSS cover crop in portrait card,object-position50%45%. Photo date1963 visible; not represented as the1966 match or Benfica kit.",
+      "width": 2583,
+      "height": 3304,
+      "sha256": "7ede592965f19877021bf051b1326aadead42b72193012cbf9914e183c8b6820",
+      "bytes": 1810264,
+      "attributionLocation": [
+        "CREDITS.md",
+        "sources.md",
+        "publication-description"
+      ],
+      "onScreenCredit": false,
+      "childrensPresentation": "Story heading and short photo date only; no author usernames or licence codes in the frame."
+    },
+    "shots/goodison-2003.jpg": {
+      "title": "Goodisonend.jpg",
+      "creator": "Simon Paul / Nsno1878",
+      "photoDate": "summer2003",
+      "uploadDate": "2006-08-24",
+      "commonsTransferDate": "2009-05-06",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Goodisonend.jpg",
+      "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/9/94/Goodisonend.jpg",
+      "licence": "Public-domain release by author; fallback permission for any purpose without conditions where dedication is not possible",
+      "licenceUrl": "https://commons.wikimedia.org/wiki/File:Goodisonend.jpg#Licensing",
+      "licenceEvidence": "Author Nsno1878 releases work worldwide; description identifies Simon Paul and summer2003. Upload date is later and not the photo date. Verified2026-10-31.",
+      "use": [
+        "context"
+      ],
+      "presentation": "Complete original JPEG,contain in card; no pixel edits, recolouring or AI retouch. Visibly labelled photo2003, not1966 match footage.",
+      "width": 1080,
+      "height": 800,
+      "sha256": "73008bcce230dfff89904f013f84bc28ce11220269af71e1dc46aad0dd6ce9f0",
+      "bytes": 167825,
+      "attributionLocation": [
+        "CREDITS.md",
+        "sources.md",
+        "publication-description"
+      ],
+      "onScreenCredit": false,
+      "childrensPresentation": "Story heading and short photo date only; no author usernames or licence codes in the frame."
+    }
+  }
+}

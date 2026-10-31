@@ -1,0 +1,32 @@
+{
+  "duration": 98.436,
+  "size": [
+    1080,
+    1920
+  ],
+  "fps": 30,
+  "frames": 2953,
+  "webFrames": 2953,
+  "moments": 47,
+  "masterSHA256": "91848edb8caead5fb25a58a45bb93a469ef702d45decc7951d2896a1479efddf",
+  "qa": "pass",
+  "scenes": 13,
+  "captionPhrases": 76,
+  "runtimeSamples": 142,
+  "reverseSeeks": 16,
+  "textMisses": [],
+  "technicalTextMisses": [],
+  "reverseMisses": [],
+  "pixelRounding": [],
+  "pixelTolerance": "Identical visible DOM state required; at most1/255 channel rounding accepted and reported separately. Larger differences fail.",
+  "firstGoalSec": 5.492000000000001,
+  "auditoryReview": "Not performed: current model interface does not accept audio input; owner listening remains open. ASR is a separate technical check.",
+  "version": 2,
+  "voiceSpeed": 0.82,
+  "finalScorePostSpeechHoldSec": 1.6,
+  "qaChecks": 15,
+  "qaPassed": 15,
+  "viewedMp4Moments": 47,
+  "visuallyReviewed": "All 47 sampled MP4 moments; first/last, opening switch, first goal, photo inserts, all action cues, extended final-score hold, feed and cover. No technical credit text or guides in the exported cut.",
+  "ownerListening": "pending"
+}

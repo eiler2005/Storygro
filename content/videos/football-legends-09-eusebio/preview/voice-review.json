@@ -1,0 +1,10 @@
+{
+  "word": "пантерой",
+  "hint": "пантЭрой",
+  "start": 5.64,
+  "end": 6.38,
+  "phones": "p a n t e r i",
+  "phonemeHeuristic": true,
+  "humanListening": "pending; model cannot receive audio",
+  "caveat": "Heuristic vowel reduction check only; not a human stress verdict."
+}

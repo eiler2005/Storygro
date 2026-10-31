@@ -33,6 +33,8 @@ Write what changes at each beat and what question remains. A zoom, swell or cut 
 
 As an **editorial hypothesis**, make the situation clear in the first few seconds and offer a first reward roughly within the opening 5–8 seconds. These are review prompts, not automatic gates or Instagram thresholds. No ideal cut interval, retention percentage or duration has been established. Readability and the selected voice determine exact cues.
 
+Give children time to understand a result and inspect its picture. Hold a decisive score or reveal beyond the spoken phrase before moving on. Check this on the narrated timeline; frequent cuts alone do not establish retention. Keep the selected narrator and speed unless the owner requests a pace change, and record any such change as a confounder in an ongoing experiment. Episode9 v2 applies this after the owner found the 5:3 result too rushed.
+
 Test a complete 45–60-second script separately from the current approximately 80–90-second Football Legends format when adaptation is authorised. Keep the voice speed. Do not change length, opening, cast, music and ending together and attribute the result to one of them.
 
 ## Direct for a small screen

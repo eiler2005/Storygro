@@ -20,7 +20,10 @@ snapshots:
 experiments:
   - id: FL-R1
     status: selected-for-next-episode
-    execution: pending-next-episode-brief
+    execution: v2-review-cut-delivered-owner-listening-pending
+    episode: ../../videos/football-legends-09-eusebio/episode.yaml
+    direction: ../../videos/football-legends-09-eusebio/DIRECTION.md
+    added_confounders: Owner now requires real player/venue photo inserts and the player himself at frame zero. After viewing v1, the owner requested slower narration and longer result holds; v2 uses the same OmniVoice B narrator at 0.82/off instead of 0.90/off, plus longer end pads. Duration and voice speed are therefore no longer held fixed. Document these factors and do not isolate an opening effect from this release.
     priority: first
     question: Does readable action beneath the required first-frame identity improve the opening?
     treatment: Hero and obstacle already acting; hosts react; early visible consequence.

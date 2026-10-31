@@ -1,0 +1,5 @@
+@import url('/rc/styles/cartoon/football-legends.css');
+/* Episode7: wet emerald, sapphire storm light and gold; dark goalkeeper remains distinct. */
+:root { --fl-ink:#102c48; --fl-paper:#fff5dc; --fl-gold:#f4ce66; --fl-caption-bottom:490px; --ct-ink:#132b40; --ct-band:#fff5dc; --ct-navy:#102c48; --ct-accent:#ce7e2c; --kt-ink:#fff5dc; --kt-accent:#f4ce66; --kt-accent2:#91d9e1; }
+/* Action close-ups: keep the ball, gloves and the children's kicking feet visible. */
+#stage:has(.rc-scene--save:not([style*="display: none"]), .rc-scene--power:not([style*="display: none"]), .rc-scene--read:not([style*="display: none"]), .rc-scene--question:not([style*="display: none"])) .rc-caption { top:440px !important; bottom:auto !important; }

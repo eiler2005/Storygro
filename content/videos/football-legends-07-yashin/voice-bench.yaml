@@ -1,0 +1,18 @@
+bench: 1
+language: ru
+candidates:
+  - id: selected
+    engine: omnivoice
+    model: k2-fsa/OmniVoice
+    voice: assets/voice/narrator-ru.wav
+    speed: 0.90
+    stress: 'off'
+sentences:
+  - id: names-1
+    text: Это удалось Льву Яшину, который играл за московское «Динамо». Кто обычно забивает голЫ?
+  - id: names-2
+    text: Это удалось Льву Яшину, который играл за московское «Динамо». Кто обычно забивает голЫ?
+  - id: names-3
+    text: Это удалось Льву Яшину, который играл за московское «Динамо». Кто обычно забивает голЫ?
+  - id: names-4
+    text: Это удалось Льву Яшину, который играл за московское «Динамо». Кто обычно забивает голЫ?

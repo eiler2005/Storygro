@@ -1,0 +1,485 @@
+reel: 1
+style: cartoon
+title: Лев Яшин — вратарь, который получил «Золотой мяч»
+lang: ru
+format:
+  preset: vertical
+  width: 1080
+  height: 1920
+  fps: 30
+safe: reels
+voice:
+  engine: omnivoice
+  model: k2-fsa/OmniVoice
+  voice: assets/voice/narrator-ru.wav
+  speed: 0.9
+  stress: off
+music:
+  bpm: 126
+  key: D
+  progression:
+    - vi
+    - IV
+    - I
+    - V
+  gain: 0.1
+  drop: save
+loudness: -14
+theme: theme.css
+captions:
+  show: true
+  maxWords: 3
+transition:
+  kind: cut
+  dur: 0
+data:
+  facts: facts.json
+stills:
+  cover: hook@0
+  final: award@1
+  hosts: question@1
+images:
+  provider: manual
+  model: OpenAI built-in GPT Image (identifier not exposed)
+  seed: 0
+  width: 1088
+  height: 1920
+  prompt: "{subject}. Premium detailed family3D sports animation. Exact prompts/reference hashes and selected
+    variants in images.json. No generated lettering or numerals."
+post:
+  title: Легенды футбола · Лев Яшин
+  text: >-
+    Удар в угол — успеет ли вратарь? Матвей и София знакомятся со Львом Яшиным: единственным вратарём,
+    получившим «Золотой мяч» (1963). Его сила — не только реакция, но и решения, смелость и помощь защитникам.
+
+
+    Что важнее для вратаря: смелость, реакция или умение предугадать удар?
+
+
+    Выпуск 7 «Легенд футбола» проекта «Маленькие большие дела». Источники: Ballon d’Or, UEFA, FIFA, «Динамо»
+    Москва. Иллюстрации созданы встроенным GPT Image по архивным ориентирам; игровые сцены, свет и погода
+    художественные, не запись конкретного матча. Источник образа: Henk Lindeboom / Anefo, Nationaal Archief
+    (CC BY-SA 3.0 NL), адаптировано в 3D-иллюстрации. Голос рассказчика синтетический (OmniVoice). Ролик не
+    связан с футболистами, клубами или организаторами награды.
+  tags:
+    - футбол
+    - детям
+    - легендыфутбола
+    - левяшин
+    - вратарь
+    - золотоймяч
+scenes:
+  - id: hook
+    scene: series-cover
+    say: Удар в угол! Успеет {#shot}ли вратарь?
+    pad:
+      - 0.05
+      - 0.15
+    energy: 0.9
+    props:
+      image: shots/cover-v2.png
+      projectFrom: facts.series.project
+      titleFrom: facts.series.title
+      emblem: /rc/styles/cartoon/golden-ball.svg
+      reveal: shots/threat-v2.png
+      revealAt: shot
+    sfx:
+      - at: start
+        kind: swell
+        gain: 0.2
+      - at: shot
+        kind: whoosh
+        gain: 0.18
+  - id: attack
+    scene: illustration
+    say: Кто обычно забивает [голы](=голЫ)? Нападающие!
+    pad:
+      - 0.12
+      - 0.28
+    energy: 0.75
+    props:
+      shots:
+        - image: shots/threat-v2.png
+          move: in
+          zoom: 0.025
+          focus:
+            x: 0.5
+            y: 0.48
+      labels: []
+  - id: keeper
+    scene: illustration
+    say: А кто старается не дать им забить? Правильно, вратарь. {#best}Но может ли вратарь стать лучшим
+      футболистом Европы?
+    pad:
+      - 0.12
+      - 0.28
+    energy: 0.75
+    props:
+      shots:
+        - image: shots/portrait.png
+          move: in
+          zoom: 0.025
+          focus:
+            x: 0.5
+            y: 0.48
+        - image: shots/dive-v3.png
+          move: in
+          zoom: 0.025
+          focus:
+            x: 0.5
+            y: 0.48
+          at: best
+      labels:
+        - textFrom: facts.story.hook
+          x: 0.46
+          y: 0.19
+          at: best
+          tone: navy
+  - id: identity
+    scene: illustration
+    say: В [1963](=тысяча девятьсот шестьдесят третьем) году это удалось Льву Яшину — легендарному советскому
+      вратарю,
+    pad:
+      - 0.12
+      - 0.28
+    energy: 0.75
+    props:
+      shots:
+        - image: shots/portrait.png
+          move: in
+          zoom: 0.025
+          focus:
+            x: 0.5
+            y: 0.48
+      labels:
+        - textFrom: facts.player.name
+          x: 0.46
+          y: 0.19
+          at: -1
+          tone: navy
+  - id: club
+    scene: illustration
+    say: который играл за московское «Динамо» и сборную СССР.
+    pad:
+      - 0.12
+      - 0.28
+    energy: 0.75
+    props:
+      shots:
+        - image: shots/defence.png
+          move: in
+          zoom: 0.025
+          focus:
+            x: 0.5
+            y: 0.48
+      labels:
+        - textFrom: facts.player.card
+          x: 0.46
+          y: 0.19
+          at: -1
+          tone: navy
+  - id: award
+    scene: illustration
+    say: Он стал и по сей день остаётся единственным вратарём, получившим «Золотой мяч».
+    pad:
+      - 0.12
+      - 0.28
+    energy: 0.75
+    props:
+      shots:
+        - image: shots/award.png
+          move: in
+          zoom: 0.025
+          focus:
+            x: 0.5
+            y: 0.48
+      labels:
+        - textFrom: facts.player.only
+          x: 0.46
+          y: 0.6
+          at: -1
+          tone: navy
+    sfx:
+      - at: start
+        kind: chime
+        gain: 0.18
+  - id: spider
+    scene: illustration
+    say: Яшин выступал в тёмной форме, поэтому его часто называли «Чёрным пауком».
+    pad:
+      - 0.12
+      - 0.28
+    energy: 0.75
+    props:
+      shots:
+        - image: shots/portrait.png
+          move: in
+          zoom: 0.025
+          focus:
+            x: 0.5
+            y: 0.48
+      labels:
+        - textFrom: facts.player.nickname
+          x: 0.46
+          y: 0.19
+          at: -1
+          tone: navy
+  - id: save
+    scene: illustration
+    say: Он прыгал за мячом, {#catch}ловил сильные удары
+    pad:
+      - 0.12
+      - 0.28
+    energy: 0.75
+    props:
+      shots:
+        - image: shots/dive-v3.png
+          move: left
+          zoom: 0.025
+          focus:
+            x: 0.5
+            y: 0.48
+        - image: shots/catch.png
+          at: catch
+          move: in
+          zoom: 0.025
+          focus:
+            x: 0.5
+            y: 0.48
+      labels:
+        - textFrom: facts.skill.save
+          x: 0.46
+          y: 0.19
+          at: catch
+          tone: navy
+    sfx:
+      - at: catch
+        kind: pop
+        gain: 0.14
+  - id: rush
+    scene: illustration
+    say: и мог вовремя выбежать из ворот, чтобы помешать нападающему.
+    pad:
+      - 0.12
+      - 0.28
+    energy: 0.75
+    props:
+      shots:
+        - image: shots/rush-v2.png
+          move: in
+          zoom: 0.025
+          focus:
+            x: 0.5
+            y: 0.48
+      labels:
+        - textFrom: facts.skill.rush
+          x: 0.46
+          y: 0.19
+          at: -1
+          tone: navy
+  - id: power
+    scene: illustration
+    say: Но его главная суперсила была не только в ловкости.
+    pad:
+      - 0.12
+      - 0.28
+    energy: 0.75
+    props:
+      shots:
+        - image: shots/catch.png
+          move: in
+          zoom: 0.025
+          focus:
+            x: 0.5
+            y: 0.48
+      labels: []
+  - id: talk
+    scene: illustration
+    say: Яшин постоянно разговаривал с защитниками, подсказывал им, где занять позицию, {#team}и помогал всей
+      команде организовать оборону.
+    pad:
+      - 0.12
+      - 0.28
+    energy: 0.75
+    props:
+      shots:
+        - image: shots/defence.png
+          move: in
+          zoom: 0.025
+          focus:
+            x: 0.5
+            y: 0.48
+        - image: shots/team.png
+          move: in
+          zoom: 0.025
+          focus:
+            x: 0.5
+            y: 0.48
+          at: team
+      labels:
+        - textFrom: facts.skill.organise
+          x: 0.46
+          y: 0.19
+          at: -1
+          tone: navy
+          until: team
+        - textFrom: facts.skill.position
+          x: 0.46
+          y: 0.19
+          at: team
+          tone: navy
+  - id: euro
+    scene: illustration
+    say: В [1960](=тысяча девятьсот шестидесятом) году сборная СССР с Яшиным выиграла первый чемпионат Европы.
+    pad:
+      - 0.12
+      - 0.28
+    energy: 0.75
+    props:
+      shots:
+        - image: shots/europe-v2.png
+          move: in
+          zoom: 0.025
+          focus:
+            x: 0.5
+            y: 0.48
+      labels:
+        - textFrom: facts.history.euro
+          x: 0.46
+          y: 0.19
+          at: -1
+          tone: navy
+  - id: recognition
+    scene: illustration
+    say: А три года спустя футбольный мир признал его лучшим в Европе.
+    pad:
+      - 0.12
+      - 0.28
+    energy: 0.75
+    props:
+      shots:
+        - image: shots/award.png
+          move: in
+          zoom: 0.025
+          focus:
+            x: 0.5
+            y: 0.48
+      labels:
+        - textFrom: facts.history.recognition
+          x: 0.46
+          y: 0.6
+          at: -1
+          tone: navy
+  - id: lesson
+    scene: illustration
+    say: История Яшина показывает, что быть полезным команде можно по-разному.
+    pad:
+      - 0.12
+      - 0.28
+    energy: 0.75
+    props:
+      shots:
+        - image: shots/team.png
+          move: in
+          zoom: 0.025
+          focus:
+            x: 0.5
+            y: 0.48
+      labels:
+        - textFrom: facts.story.lesson
+          x: 0.46
+          y: 0.19
+          at: -1
+          tone: navy
+  - id: not-goals
+    scene: illustration
+    say: Вратарь не обязан забивать [голы](=голЫ).
+    pad:
+      - 0.12
+      - 0.28
+    energy: 0.75
+    props:
+      shots:
+        - image: shots/portrait.png
+          move: in
+          zoom: 0.025
+          focus:
+            x: 0.5
+            y: 0.48
+      labels: []
+  - id: read
+    scene: illustration
+    say: Его задача — вовремя прочитать игру, принять решение {#save}и спасти команду в самый трудный момент.
+    pad:
+      - 0.12
+      - 0.28
+    energy: 0.75
+    props:
+      shots:
+        - image: shots/rush-v2.png
+          move: in
+          zoom: 0.025
+          focus:
+            x: 0.5
+            y: 0.48
+        - image: shots/catch.png
+          at: save
+          move: in
+          zoom: 0.025
+          focus:
+            x: 0.5
+            y: 0.48
+      labels:
+        - textFrom: facts.skill.save
+          x: 0.46
+          y: 0.19
+          at: save
+          tone: navy
+    sfx:
+      - at: save
+        kind: pop
+        gain: 0.12
+  - id: question
+    scene: illustration
+    say: Каким навыком должен обладать хороший вратарь — {#courage}смелостью, {#reaction}реакцией или
+      {#prediction}умением предугадывать удар?
+    pad:
+      - 0.15
+      - 1.2
+    energy: 0.75
+    props:
+      shots:
+        - image: shots/question.png
+          move: in
+          zoom: 0.025
+          focus:
+            x: 0.5
+            y: 0.48
+      labels:
+        - textFrom: facts.story.question
+          x: 0.46
+          y: 0.19
+          at: -1
+          tone: navy
+          until: courage
+        - textFrom: facts.story.courage
+          x: 0.46
+          y: 0.19
+          at: courage
+          tone: navy
+          until: reaction
+        - textFrom: facts.story.reaction
+          x: 0.46
+          y: 0.19
+          at: reaction
+          tone: navy
+          until: prediction
+        - textFrom: facts.story.prediction
+          x: 0.46
+          y: 0.19
+          at: prediction
+          tone: navy
+    sfx:
+      - at: start
+        kind: chime
+        gain: 0.16

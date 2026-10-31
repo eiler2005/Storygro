@@ -484,3 +484,15 @@ words:
   - word: Дукла
     say: Д+укла
     source: 'ru.wikipedia, «Дукла (футбольный клуб, Прага)»: «…«Ду́кла» (чеш. Dukla Praha) — чешский профессио…» (storygro stress --lookup, 2026-10-30)'
+  - word: Яшину
+    say: +Яшину
+    source: 'ru.wikipedia, «Памятники Льву Яшину (Москва)»: «…Памятник Льву Я́шину — памятник прославленному футболисту-вр…» (storygro stress --lookup, 2026-10-30)'
+  - word: Динамо
+    say: Дин+амо
+    source: 'ru.wikipedia, «Динамо»: «…Дина́мо (греч. δύναμις, «сила») — первая состав…» (storygro stress --lookup, 2026-10-30)'
+  - word: Яшиным
+    say: +Яшиным
+    source: 'ru.wiktionary, «Яшин»: «…́шиных Д. Я́шину Я́шиной Я́шиным В. Я́шина Я́шину Я́шиных…» (storygro stress --lookup, 2026-10-30)'
+  - word: Яшина
+    say: +Яшина
+    source: 'ru.wiktionary, «Яшин»: «…м. ж. Им. Я́шин Я́шина Я́шины Р. Я́шина Я́шиной…» (storygro stress --lookup, 2026-10-30)'

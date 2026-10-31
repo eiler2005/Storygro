@@ -514,6 +514,17 @@ entries:
     status: pilot
     docs: docs/reference/voices.md
 
+  - id: complete-narration-beats
+    kind: method
+    stage: voice
+    title: Complete narration before scene cuts
+    what: Preserve question-answer pairs and conjunction-led clauses as complete narration beats when isolated takes truncate or full-file alignment loses words; change illustrations on cues inside the beat.
+    when: A short fragment fails speech QA despite a complete source script.
+    how: Retain every word, revoice with the selected narrator, inspect alignment and rerun full-file QA after rendering. Never lower the threshold or remove a word to hide the failure.
+    status: pilot
+    docs: docs/how-to/football-series.md
+    examples: [content/videos/football-legends-07-yashin/VOICE-REVIEW.md]
+
   - id: score
     kind: tool
     stage: voice

@@ -1,0 +1,40 @@
+{
+ "_about": "All on-screen text and numbers are data-bound. Quoted sources/caveats in sources.md.",
+ "series": {
+  "_source": "Owner script and request, 30 October 2026: episode7 Lev Yashin, a more suspenseful vivid detailed video, shared project/series title and golden football emblem on frame zero.",
+  "project": "Маленькие большие дела",
+  "title": "Легенды футбола",
+  "episode": "Лев Яшин"
+ },
+ "player": {
+  "_source": "[S1] https://ballondor.com/news/posts/can-a-goalkeeper-win-the-ballon-dor-what-history-says; [S2] https://www.uefa.com/uefaeuro/history/news/0253-0d7f20bc921c-495824f652eb-1000--uefaeuro1960-team-of-the-tournament/; [S4] https://stars.fcdynamo.ru/yashin.html",
+  "name": "Лев Яшин",
+  "card": "1963 · СССР · «Динамо» Москва",
+  "year": "1963",
+  "award": "«Золотой мяч» · 1963",
+  "only": "Единственный вратарь",
+  "nickname": "«Чёрный паук»",
+  "country": "СССР"
+ },
+ "history": {
+  "_source": "[S2] https://www.uefa.com/uefaeuro/history/news/0253-0d7f20bc921c-495824f652eb-1000--uefaeuro1960-team-of-the-tournament/; [S1] https://ballondor.com/news/posts/can-a-goalkeeper-win-the-ballon-dor-what-history-says",
+  "euro": "СССР · чемпионы Европы · 1960",
+  "recognition": "1963 · лучший в Европе"
+ },
+ "skill": {
+  "_source": "[S3] https://inside.fifa.com/tournaments/mens/worldcup/2018russia/news/2018-fifa-world-cup-russiatm-official-poster-unveiled-at-moscow-metro-2921534; [S2] https://www.uefa.com/uefaeuro/history/news/0253-0d7f20bc921c-495824f652eb-1000--uefaeuro1960-team-of-the-tournament/; owner script",
+  "save": "Мяч — в надёжных руках",
+  "rush": "Вовремя выйти из ворот",
+  "organise": "Он руководил обороной",
+  "position": "Вся команда защищает ворота"
+ },
+ "story": {
+  "_source": "Owner script and request, 30 October 2026: episode7 Lev Yashin, a more suspenseful vivid detailed video, shared project/series title and golden football emblem on frame zero.",
+  "hook": "Успеет ли вратарь?",
+  "question": "Что важнее для вратаря?",
+  "courage": "Смелость",
+  "reaction": "Реакция",
+  "prediction": "Предугадывание",
+  "lesson": "Каждая роль важна"
+ }
+}

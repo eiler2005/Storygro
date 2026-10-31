@@ -1,0 +1,30 @@
+review: 1
+questions:
+  - id: voice
+    ask: Подходят ли «Льву Яшину», «вратарём», «голы́» и рассказчик в готовом MP4?
+    for: owner
+    open: true
+  - id: action
+    ask: Достаточно ли напряжения в ударе/спасении, подходит ли яркая атмосфера и сходство Яшина?
+    for: owner
+    open: true
+notes: Owner supplied script preserved, excluding copied UEFA.com+1 and section headings. Added a short
+  illustrative action hook following request for a more suspenseful episode. Shared title/emblem at frame
+  zero. Match actions, weather and light are artistic, not claims of a particular recorded save. Same selected
+  narrator. Technical approvals only; no promise of retention uplift. Final technical version 90.19 s, 17
+  scenes, QA 15/15; full decode 2702 frames per file, 46 inspected MP4 moments and feed/cover crops; 175
+  caption samples and 98 reverse seeks with no layout failures. Truncated short keeper take replaced by a
+  complete context-preserving merged line, matched100%. 17 imagegen generations/11 selected. Owner
+  listening/editorial review remain open. No publication.
+approvals:
+  ru:
+    script:
+      hash: 01209919c4cb
+      at: 2026-10-30T19:51:24.262Z
+      by: agent
+      role: agent
+    storyboard:
+      hash: fc6fd06b8ea1
+      at: 2026-10-30T19:51:24.635Z
+      by: agent
+      role: agent

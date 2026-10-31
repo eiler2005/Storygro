@@ -1,0 +1,132 @@
+{
+ "duration": 90.193,
+ "size": [
+  1080,
+  1920
+ ],
+ "fps": 30,
+ "frames": 2702,
+ "webFrames": 2702,
+ "moments": 46,
+ "masterSHA256": "c93f0af9fd5ffd98f85c8c38fcc5832ada836d5fa88616bb7954d885515619aa",
+ "qa": "pass",
+ "captionSamples": 175,
+ "reverseSeekSamples": 98,
+ "layoutFailures": 0,
+ "voices": [
+  {
+   "scene": "hook",
+   "file": "hook-2a6d2220aee5.wav",
+   "sha256": "7acaa7163c29066b264039e5b97df7484dad64d0265db153e1ffb75f841498b2",
+   "matched": 1
+  },
+  {
+   "scene": "attack",
+   "file": "attack-e029e037646b.wav",
+   "sha256": "8fe3c405500d7e378cd647391d3b81076f13bf307a566b63c2129c0875dc18e3",
+   "matched": 1
+  },
+  {
+   "scene": "keeper",
+   "file": "keeper-87331bf37605.wav",
+   "sha256": "e33c803928a351779b63b808fd3215dca03d4317c17921fcacf9853a2d3b24a7",
+   "matched": 1
+  },
+  {
+   "scene": "identity",
+   "file": "identity-5a78440a020e.wav",
+   "sha256": "01f0c0e0d28588200aafff12f39bb67f9ec16b7b324be1851ddf80cd45a98736",
+   "matched": 1
+  },
+  {
+   "scene": "talk",
+   "file": "talk-fb73a4661c09.wav",
+   "sha256": "740c6deb69093bdaf2ea54ec2a220b885d1d09c4416e5a09bbb790bce13433a4",
+   "matched": 1
+  },
+  {
+   "scene": "not-goals",
+   "file": "not-goals-eab2de67b9e8.wav",
+   "sha256": "8284e9f7e5592c721a56a99bcb036505f3a594518184036aaec88fd2bf56ac70",
+   "matched": 1
+  }
+ ],
+ "voiceListening": "Owner listening open; technical matching does not establish stress or timbre approval.",
+ "checks": [
+  {
+   "name": "Codec and pixels",
+   "status": "pass",
+   "detail": "h264, yuv420p"
+  },
+  {
+   "name": "Size",
+   "status": "pass",
+   "detail": "1080×1920"
+  },
+  {
+   "name": "Audio track",
+   "status": "pass",
+   "detail": "Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 198 kb/s (default)"
+  },
+  {
+   "name": "Length",
+   "status": "pass",
+   "detail": "90.19 s (planned 90.19 s)"
+  },
+  {
+   "name": "Loudness",
+   "status": "pass",
+   "detail": "-14 LUFS integrated (target -14), true peak -1.1 dBFS"
+  },
+  {
+   "name": "Frame 0 is a hook",
+   "status": "pass",
+   "detail": "contrast 2156 (needs content, not a black frame)"
+  },
+  {
+   "name": "No black stretches",
+   "status": "pass",
+   "detail": "none ≥ 0.4 s"
+  },
+  {
+   "name": "Scenes render without errors",
+   "status": "pass",
+   "detail": "17 scenes, missing images/fonts included"
+  },
+  {
+   "name": "Numbers come from the facts",
+   "status": "pass",
+   "detail": "17 scenes read"
+  },
+  {
+   "name": "Text clear of platform UI (reels)",
+   "status": "pass",
+   "detail": "every cue checked"
+  },
+  {
+   "name": "Text fits its box",
+   "status": "pass",
+   "detail": "every card, band and label at every cue"
+  },
+  {
+   "name": "Cover text inside the 1:1 preview",
+   "status": "pass",
+   "detail": "cover at 0.0 s"
+  },
+  {
+   "name": "Feed and cover views",
+   "status": "pass",
+   "detail": "look at feed-preview.jpg and cover-preview.jpg: heads inside the crop, captions off faces"
+  },
+  {
+   "name": "Whisper hears the script",
+   "status": "pass",
+   "detail": "every scene ≥ 85% of its words (lowest 92%)"
+  },
+  {
+   "name": "Dictionary words keep their stress",
+   "status": "pass",
+   "detail": "1 of 1 heard right"
+  }
+ ]
+}

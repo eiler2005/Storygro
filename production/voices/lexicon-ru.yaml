@@ -611,3 +611,9 @@ words:
     forms: [Беллингемом]
     mark: false
     source: 'https://ru.wikipedia.org/wiki/Беллингем,_Джуд: «Бе́ллингем», English Bellingham /ˈbɛlɪŋəm/; instrumental keeps the stem stress. Reviewed31October2026.'
+  - word: Златан
+    say: Зл+атан
+    source: 'ru.wikipedia, «Ибрагимович, Златан»: «…Зла́тан Ибраги́мович (швед. и босн. Zlatan Ibra…» (storygro stress --lookup, 2026-10-31)'
+  - word: Ибрагимович
+    say: Ибраг+имович
+    source: 'ru.wikipedia, «Ибрагимович, Златан»: «…Зла́тан Ибраги́мович (швед. и босн. Zlatan Ibrahimović, швед…» (storygro stress --lookup, 2026-10-31)'

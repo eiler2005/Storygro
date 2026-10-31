@@ -1,0 +1,389 @@
+{
+  "duration": 25,
+  "size": [
+    1080,
+    1920
+  ],
+  "fps": 30,
+  "frames": 750,
+  "webFrames": 750,
+  "moments": 27,
+  "masterSHA256": "c5941d9165b6106819eab779ed43b56c27724dd446e745e2019e0711533204d7",
+  "qa": "pass",
+  "scenes": 7,
+  "captionPhrases": 16,
+  "runtimeSamples": 113,
+  "reverseSeeks": 81,
+  "textMisses": [],
+  "technicalTextMisses": [],
+  "reverseMisses": [],
+  "pixelRounding": [
+    {
+      "at": 24.98,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.00015866126543209876,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 16.628999999999998,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.00007908950617283951,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 15.849,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.00015142746913580246,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 16.509,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.0001253858024691358,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 18.25,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.00008101851851851852,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 13.229,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.00003713348765432099,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 12.429,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.00002845293209876543,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 11.649,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.0000308641975308642,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 11.609,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.00000771604938271605,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 12.089,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.000021219135802469135,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 10.509,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.00002652391975308642,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 12.059,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.00002845293209876543,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 11.259,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.00000626929012345679,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 10.479,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.000004340277777777778,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 10.459,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.000003858024691358025,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 14.039,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.0001345486111111111,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 10.469,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.000037615740740740744,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 9.35,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.00021508487654320989,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 8.549999999999999,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.00008101851851851852,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 7.77,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.00006076388888888889,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 7.7299999999999995,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.00010271990740740741,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 9.2,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.00010030864197530864,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 8.4,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.0001171875,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 7.619999999999999,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.00011140046296296297,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 7.6,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.00011140046296296297,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 10.439,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.00010464891975308641,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 7.609999999999999,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.00011140046296296297,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 7.04,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.00005594135802469136,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 6.24,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.00021701388888888888,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 5.46,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.00023823302469135803,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 5.42,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.0001099537037037037,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 5.7,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.00015817901234567902,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 4.9,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.00018518518518518518,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 4.12,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.00018422067901234567,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 4.08,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.0002107445987654321,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 5.4,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.00009693287037037037,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 4.6,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.00006413966049382716,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 3.82,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.00013551311728395062,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 3.8,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.00013551311728395062,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 7.58,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.00018132716049382717,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 3.8099999999999996,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.00013551311728395062,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 0.05,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.00018132716049382717,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 0.009999999999999998,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.00018132716049382717,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    }
+  ],
+  "rasterSummary": {
+    "maxChannelDifference": 1,
+    "maxPixelsAbove1": 0,
+    "maxMeanChannelDifference": 0.00023823302469135803
+  },
+  "pixelTolerance": "Exact visible DOM and SVG attributes required. Separately reported raster differences: <=1 channel intensity, or max<=32, mean<=0.001/255 and <=0.02% pixels above1. Larger differences fail. Sparse edge differences are consistent with browser rasterisation, not a changed scene state.",
+  "earlyPassSec": null,
+  "auditoryReview": "Owner listening pending: current model interface does not accept audio input. ASR/phonemes establish technical evidence only.",
+  "qaChecks": 14,
+  "qaPassed": 14,
+  "uniqueDrawings": 9,
+  "successfulGenerations": 15,
+  "photoAssets": 1,
+  "photoInserts": 1,
+  "photoSec": 3,
+  "illustratedSec": 22,
+  "illustratedShare": 0.88,
+  "firstGoalSec": 15.828999999999999,
+  "goalPostSpeechHold": 1,
+  "voiceSpeed": 0.82,
+  "viewedMp4Moments": 27,
+  "visuallyReviewed": "All sampled final MP4 moments, first/last, opening identity, nine artwork states and each shot cut, ball/keeper/empty-goal consequence, the one unchanged player photo/date, cushion joke and hero reaction. Feed crop and square cover viewed; cover recomposed after the first crop cut hosts' muzzles. Sequential illustrations/camera motion, not full skeletal animation.",
+  "publication": "none"
+}

@@ -1,0 +1,209 @@
+reel: 1
+style: cartoon
+title: Златан — через себя почти с 30 метров?!
+lang: ru
+format:
+  preset: vertical
+  width: 1080
+  height: 1920
+  fps: 30
+safe: reels
+voice:
+  engine: omnivoice
+  model: k2-fsa/OmniVoice
+  voice: assets/voice/narrator-ru.wav
+  speed: 0.82
+  stress: off
+music:
+  bpm: 112
+  key: D
+  progression:
+    - I
+    - V
+    - vi
+    - IV
+  gain: 0.075
+loudness: -14
+theme: theme.css
+captions:
+  show: true
+  maxWords: 3
+transition:
+  kind: cut
+  dur: 0
+data:
+  facts: facts.json
+stills:
+  cover: hook@0
+  final: joke@3
+images:
+  provider: manual
+  model: OpenAI built-in GPT Image (identifier not exposed)
+  width: 1088
+  height: 1920
+  seed: 0
+  prompt: "{subject}. Original detailed family3D cartoon, recognisable2012 Zlatan, approved supporting
+    Matvey/Sofia and enclosed Friends Arena. No words/numbers/logos in art; exact prompts and reference roles
+    in images.json."
+hooks:
+  - Через себя — почти с тридцати метров?!
+  - Вратарь далеко. А Златан — спиной к воротам!
+  - Он даже не смотрит на ворота. И забивает?!
+post:
+  title: Футбольный вау-факт! · Златан — удар через себя
+  text: |-
+    В ноябре 2012 года Златан Ибрагимович забил Англии ударом через себя примерно с 30 метров. Вратарь вышел из ворот и отбил мяч головой — Златан воспользовался моментом.
+
+    «Маленькие большие дела · ФУТБОЛЬНЫЙ ВАУ-ФАКТ!» Подробная рисованная история, новые оригинальные композиции по историческому эпизоду. Кадры и юмор ведущих — художественная постановка, не архивная видеозапись. Рисунки созданы встроенным GPT Image, голос синтетический: выбранный OmniVoice B.
+
+    Одна настоящая фотография: Илья Хохлов / Football.ua, июнь 2012, CC BY-SA 3.0; без AI-ретуши, native contain. Это снимок с EURO, не ноябрьского гола. Файл и лицензия: https://commons.wikimedia.org/wiki/File:Zlatan_Ibrahimovi%C4%87_Euro_2012_vs_England.JPG ; https://creativecommons.org/licenses/by-sa/3.0/
+    Архитектурный референс: Richard Matthews, Friends Arena, 14 ноября 2012, CC BY 2.0; в видео фотография арены не вставлялась. https://commons.wikimedia.org/wiki/File:Friends_Arena,_Stockholm.jpg
+
+    Факты: UEFA, Swedish FA, программа FA, Sveriges Radio. Полные источники и отдельные права: https://github.com/eiler2005/Storygro/blob/series/football-legends/content/videos/football-wow-02-zlatan/CREDITS.md
+  tags:
+    - футбол
+    - детям
+    - златан
+    - футбольныйвауфакт
+scenes:
+  - id: hook
+    scene: series-cover
+    say: Через себя — почти с тридцати метров?!
+    pad:
+      - 0.03
+      - 0.3
+    min: 3.8
+    props:
+      image: shots/cover-v4.png
+      projectFrom: facts.series.project
+      titleFrom: facts.series.title
+      subtitleFrom: facts.series.episode
+  - id: setup
+    scene: illustration
+    say: Вратарь Англии {#head}выбежал из ворот.
+    pad:
+      - 0.3
+      - 0.35
+    min: 3.8
+    props:
+      shots:
+        - image: shots/header-v2.png
+          move: in
+          zoom: 0.02
+          focus:
+            x: 0.5
+            y: 0.58
+      labels:
+        - textFrom: facts.story.date
+          at: 0
+          y: 0.245
+  - id: turn
+    scene: illustration
+    say: Златан — спиной к воротам.
+    pad:
+      - 0.15
+      - 0.3
+    min: 2.3
+    props:
+      shots:
+        - image: shots/turn-v3.png
+          move: in
+          zoom: 0.02
+          focus:
+            x: 0.5
+            y: 0.58
+  - id: kick
+    scene: illustration
+    say: Прыжок — {#strike}и удар через себя!
+    pad:
+      - 0.03
+      - 0.55
+    min: 3.6
+    props:
+      shots:
+        - image: shots/lift.png
+          move: in
+          zoom: 0.02
+          focus:
+            x: 0.5
+            y: 0.58
+        - image: shots/kick.png
+          at: strike
+          move: in
+          zoom: 0.02
+          focus:
+            x: 0.5
+            y: 0.58
+      fade: 0
+    sfx:
+      - at: strike
+        kind: thud
+        gain: 0.13
+  - id: goal
+    scene: illustration
+    say: Мяч летит {#net}в ворота! Гол!
+    pad:
+      - 0.85
+      - 1
+    min: 3.5
+    props:
+      shots:
+        - image: shots/flight.png
+          move: in
+          zoom: 0.02
+          focus:
+            x: 0.5
+            y: 0.58
+        - image: shots/net.png
+          at: net
+          move: in
+          zoom: 0.02
+          focus:
+            x: 0.5
+            y: 0.58
+      fade: 0
+    sfx:
+      - at: net
+        kind: swell
+        gain: 0.08
+  - id: archive
+    scene: archive-photo
+    say: Это Златан Ибрагимович!
+    pad:
+      - 0.25
+      - 0.35
+    min: 3
+    props:
+      background: shots/hero.png
+      image: shots/zlatan-2012.jpg
+      titleFrom: facts.archive.title
+      captionFrom: facts.archive.caption
+      fit: contain
+      portrait: true
+  - id: joke
+    scene: illustration
+    say: Такой удар повторить непросто!
+    pad:
+      - 0.1
+      - 1.1
+    min: 3.73
+    props:
+      shots:
+        - image: shots/cushion.png
+          move: in
+          zoom: 0.02
+          focus:
+            x: 0.5
+            y: 0.58
+        - image: shots/hero.png
+          at: 2.5
+          move: in
+          zoom: 0.02
+          focus:
+            x: 0.5
+            y: 0.58
+      fade: 0
+      labels:
+        - textFrom: facts.story.reaction
+          at: 2.5
+          y: 0.48

@@ -1,0 +1,282 @@
+{
+  "images": 1,
+  "files": {
+    "shots/cover.png": {
+      "prompt": "Use case: illustration-story. Asset: opening cover frame for a detailed family football cartoon, full-bleed portrait9:16.\nCreate an ORIGINAL premium cinematic stylized3D illustration of the recognisable Swedish footballer ZLATAN IBRAHIMOVIC at age31 in November2012, as the clear central protagonist. Long angular face, prominent strong nose/cheekbones, dark slicked-back hair tied in a small LOW ponytail, narrow moustache and little goatee of his2012 look, tall long-legged athletic build. Not a later high man-bun or grey retired appearance. His plain Sweden2012 shirt is golden-yellow with fine navy vertical pinstripes and navy V-neck trim, navy shorts, yellow socks; small plain navy captain armband. No lettering/numbers/logos.\nShow him airborne in a readable spectacular RIGHT-FOOT overhead bicycle kick, his back toward a FAR goal on the RIGHT, balanced ordinary human anatomy, exactly two arms/two legs. His body is mainly horizontal across the centre, one knee bent, right boot high beside ONE white football with dark geometric panels; face visible in3/4 view at around60% image height, ball/right boot near43–47%, torso54%. The goal is visibly small and distant in the right background, not beside him.\nReference1 locks the approved ORIGINAL supporting hosts: Matvey, small raccoon boy in royal-blue kit, and Sofia, red squirrel girl in plum tracksuit. Keep their exact faces/fur/clothes; make them smaller observers near the lower sides, looking up astonished, no attempt to perform the kick. Their faces/ears around67–73% height, inside the central square, not obscuring Zlatan or ball.\nReference2 is architecture/light research only: Friends Arena before its14Nov2012 opening match. Do NOT copy its photographic composition or its empty seating: create a new low sideline angle with full crowd, enclosed pale steel roof/trusses, multiple steep tiers, sparkling artificial lamps, cool navy/silver shadows, saturated yellow and emerald pitch. No sky, sunset, palms or vintage1958 stadium. Rich fabric/fur/skin/grass detail and expressive animated-film lighting, original drawing not a photo collage.\nCrucial title layout: upper36% contains only soft roof/stands/lights, NO faces/limbs/ball there. All main faces lie40–75% height and within central80% width. Whole image richly filled, clear foreground, no added bars. Absolutely NO text, letters, numbers, captions, watermarks, advertisements, badges or borders. This is an original staged cartoon, not a traced broadcast frame.",
+      "seed": 0,
+      "provider": "imagegen",
+      "model": "OpenAI built-in GPT Image (identifier not exposed)",
+      "width": 941,
+      "height": 1672,
+      "steps": 0,
+      "licence": "Built-in image output; account terms apply. Venue reference Richard Matthews / CC BY 2.0 remains separately credited. Seed 0 is a placeholder, not reproducible.",
+      "refs": {
+        "../../series/football-legends/cast/hosts-full.png": "49c92b4bca5df88e90d529034e158fb7a48a79de4c7f98d49ccf764944d2be35",
+        "../../../private/football-wow-zlatan/friends-2012.jpg": "76294eb5b71d874ffb94b3340a61b2aa9d4d8530dbe16002c52fb70c2704a4cf"
+      },
+      "sha256": "7882c122f7a641632841bd8dfd66b08a0a65fb30b8eb0aa1ba091cba3a7cfb26",
+      "createdAt": "2026-10-31T17:25:29.198Z",
+      "selected": false,
+      "referenceRoles": "Original cartoon composition; approved fictional cast/generated continuity and, where supplied, dated CC BY 2.0 venue architecture. Authentic player photo was researched/displayed separately, not supplied to image generation. No broadcast frame tracing."
+    },
+    "shots/cover-v2.png": {
+      "prompt": "Edit this ORIGINAL generated Zlatan cartoon cover. Preserve the exact recognisable2012 Zlatan face, low ponytail, narrow moustache/goatee, athletic build, airborne pose and approved raccoon/squirrel host identities and costumes, rich family3D style and enclosed Friends Arena.\nRecompose the entire character/action group LOWER and about20% smaller, expanding roof/stands above. Upper38% of the portrait must contain ONLY background, no ball, boot, head or hand. Put ball/raised boot at43–47% height, Zlatan face at58–62%, host faces/ears at68–74% and all faces within the central80% of width. No face, ball or limb can touch the image edges. This space is for later title overlay; do NOT draw that title. Zlatan stays much larger than hosts, foreground readable.\nCorrect the shirt styling to Sweden2012: yellow shirt with fine NAVY VERTICAL pinstripes running shoulder-to-hem, navy V-neck and sleeve edging, navy shorts, yellow socks. No horizontal stripe pattern on the shirt. Plain captain band, no printing.\nUse ONE white modern football with angular dark-grey/navy panel graphics, not the classic black pentagon ball. The distant small white goal on the right must be UNGUARDED: remove the green-clad person at the goal, since England's keeper has come out of goal in this story. The field behind remains coherent. No other people moved into the foreground.\nFull-bleed portrait9:16, no bars. Detailed original illustration, not a photo. Absolutely NO text, numbers, logos, ads, watermarks or borders.",
+      "seed": 0,
+      "provider": "imagegen",
+      "model": "OpenAI built-in GPT Image (identifier not exposed)",
+      "width": 941,
+      "height": 1672,
+      "steps": 0,
+      "licence": "Built-in image output; account terms apply. Venue reference Richard Matthews / CC BY 2.0 remains separately credited. Seed 0 is a placeholder, not reproducible.",
+      "refs": {
+        "shots/cover.png": "7882c122f7a641632841bd8dfd66b08a0a65fb30b8eb0aa1ba091cba3a7cfb26"
+      },
+      "sha256": "325576a513e9c2e90b1a0deb6d5a2440bf290fa8c5929c6188bf20b3be4099c3",
+      "createdAt": "2026-10-31T17:30:29.632Z",
+      "selected": false,
+      "referenceRoles": "Targeted edit of an original generated cartoon; no AI retouch of the authentic player photograph."
+    },
+    "shots/header.png": {
+      "prompt": "NEW original shot, state1 BEFORE the famous overhead kick, in the same detailed family3D cartoon as reference1. Preserve the recognisable2012 Zlatan face/hair/build and yellow fine-navy-VERTICAL-pinstripe shirt/navy shorts/yellow socks, and the white football with dark angular panels. Reference2 is Friends Arena architecture only; make a new original camera.\nShow a WIDE pitch-level view explaining the situation: England goalkeeper Joe Hart, a distinctly different fair-skinned man with short blond hair, in RED long-sleeve jersey, RED shorts and RED socks, is well OUTSIDE the penalty area and jumps slightly to HEAD the ONE football away. The ball is directly above/in front of his forehead. His hands are separated from the ball, he is not catching it. Zlatan is nearby to Hart's LEFT in the foreground, grounded and watching the ball, preparing to react. England's white goal with white net is SMALL and visibly FAR BEHIND Hart toward the RIGHT, completely unguarded. A clear white penalty-area line between Hart and goal proves he came far out. Two different England outfield defenders in white shirts/white shorts/white socks with small red trim are distant and start turning back, not standing at goal.\nCoherent perspective, meaningful open green distance between keeper and goal; not a close-range shot. Maintain future attack direction toward RIGHT. Tall enclosed Friends Arena, pale grey roof trusses, packed steep three-tier stands, dazzling artificial November match lights, cool silver/navy atmosphere, yellow-blue crowd. No sky or outdoor sunset. Expressive faces, rich fabric, grass blades, cinematic original animated-film polish.\nTop28% roof/stands left visually quiet for captions; faces and ball between40% and72% image height, no cropped heads, action within middle80% width. No hosts on playing field. Full-bleed9:16, absolutely NO text, numbers, printed logos, advertising, watermarks or borders.",
+      "seed": 0,
+      "provider": "imagegen",
+      "model": "OpenAI built-in GPT Image (identifier not exposed)",
+      "width": 941,
+      "height": 1672,
+      "steps": 0,
+      "licence": "Built-in image output; account terms apply. Venue reference Richard Matthews / CC BY 2.0 remains separately credited. Seed 0 is a placeholder, not reproducible.",
+      "refs": {
+        "shots/cover-v2.png": "325576a513e9c2e90b1a0deb6d5a2440bf290fa8c5929c6188bf20b3be4099c3",
+        "../../../private/football-wow-zlatan/friends-2012.jpg": "76294eb5b71d874ffb94b3340a61b2aa9d4d8530dbe16002c52fb70c2704a4cf"
+      },
+      "sha256": "1691c7f51bf4f8376f46fc2234ee80a34ab6ad1ee73fede7012fb24c9807b549",
+      "createdAt": "2026-10-31T17:32:33.245Z",
+      "selected": false,
+      "referenceRoles": "Original cartoon composition; approved fictional cast/generated continuity and, where supplied, dated CC BY 2.0 venue architecture. Authentic player photo was researched/displayed separately, not supplied to image generation. No broadcast frame tracing."
+    },
+    "shots/header-v2.png": {
+      "prompt": "Edit only the printed uniform markings in this ORIGINAL cartoon frame. Remove the small yellow number on Zlatan's navy shorts and ANY other digits, lettering or logo marks on all clothing. Replace them with the same uninterrupted navy/yellow/red/white fabric and natural folds. Preserve everything else exactly: all faces, hair, poses, ONE ball above the blond red-clad keeper's forehead, the distant empty goal, roof/lighting/crowd and full portrait composition. No new elements. The result must contain absolutely no letters, numbers, logos or watermark.",
+      "seed": 0,
+      "provider": "imagegen",
+      "model": "OpenAI built-in GPT Image (identifier not exposed)",
+      "width": 941,
+      "height": 1672,
+      "steps": 0,
+      "licence": "Built-in image output; account terms apply. Venue reference Richard Matthews / CC BY 2.0 remains separately credited. Seed 0 is a placeholder, not reproducible.",
+      "refs": {
+        "shots/header.png": "1691c7f51bf4f8376f46fc2234ee80a34ab6ad1ee73fede7012fb24c9807b549"
+      },
+      "sha256": "131ef286c69ddd04f9ed1eecee532612d2f3e73c6fa4f730260ca8e9f9a879fc",
+      "createdAt": "2026-10-31T17:33:58.802Z",
+      "selected": true,
+      "referenceRoles": "Targeted edit of an original generated cartoon; no AI retouch of the authentic player photograph."
+    },
+    "shots/turn.png": {
+      "prompt": "NEW original shot, state2 of the SAME2012 action. Use reference1 for established character/kit/arena continuity and reference2 for Zlatan's exact recognisable face. Detailed premium family3D illustration, portrait9:16.\nThe headed clearance has just sent the ONE white dark-angular-panel football UP and AWAY from the distant goal, toward the LEFT. Zlatan is central foreground, still on the grass, knees flexing and torso leaning back, deliberately turning his BACK toward the goal on the RIGHT while looking up-left at the descending ball. We see his face in a clear side3/4 profile, small low dark ponytail, angular nose, narrow goatee. He is preparing the bicycle kick, NOT kicking while standing and not yet horizontal. His hands naturally out for balance, exactly two arms/two legs. Ball near upper-left of his head at43% image height, his head near52%, feet near84%.\nKeep yellow Sweden2012 shirt with fine navy VERTICAL pinstripes, navy shorts and yellow socks, plain navy armband, unprinted clothing. England goalkeeper with short blond hair and all-RED kit has landed after heading and is now several metres behind/right of Zlatan, turning to RUN BACK toward the far RIGHT goal; he is not guarding the net. A distant white-clad defender also races back. White goal small in far-right background, lots of visible green pitch and a white penalty-area edge between foreground and net. The long shot distance must be obvious.\nSame enclosed Friends Arena pale roof trusses, packed multi-tier stands, strong artificial lamps, cool silver/navy shadows and vivid yellow/emerald foreground. New slightly closer side angle, original staging, no copied photograph/broadcast. Top28% quiet roof/crowd for captions, no face/ball cropped, all key action within middle80% width. No hosts on pitch, NO digits, letters, printed logos, ads, scoreboard text, watermarks or borders.",
+      "seed": 0,
+      "provider": "imagegen",
+      "model": "OpenAI built-in GPT Image (identifier not exposed)",
+      "width": 941,
+      "height": 1672,
+      "steps": 0,
+      "licence": "Built-in image output; account terms apply. Venue reference Richard Matthews / CC BY 2.0 remains separately credited. Seed 0 is a placeholder, not reproducible.",
+      "refs": {
+        "shots/header-v2.png": "131ef286c69ddd04f9ed1eecee532612d2f3e73c6fa4f730260ca8e9f9a879fc",
+        "shots/cover-v2.png": "325576a513e9c2e90b1a0deb6d5a2440bf290fa8c5929c6188bf20b3be4099c3"
+      },
+      "sha256": "4ffaa4c51bba3ea845a00c2af29df8343e401fcb961224953735530742d9908b",
+      "createdAt": "2026-10-31T17:35:01.323Z",
+      "selected": false,
+      "referenceRoles": "Original cartoon composition; approved fictional cast/generated continuity and, where supplied, dated CC BY 2.0 venue architecture. Authentic player photo was researched/displayed separately, not supplied to image generation. No broadcast frame tracing."
+    },
+    "shots/lift.png": {
+      "prompt": "NEW original shot, state3: Zlatan has just jumped and begins rotating backwards for the overhead kick. Same recognisable2012 angular face/low ponytail/slim goatee, same yellow fine navy VERTICAL-pinstriped Sweden shirt, COMPLETELY PLAIN UNPRINTED navy shorts with NO yellow marks anywhere, yellow socks/navy bands, dark boots. Preserve reference character/ball/arena continuity, create a different original side-camera angle.\nZlatan is central foreground, BOTH feet now clearly off the grass, torso leaning nearly horizontal backwards, knees folding up as he watches the ONE descending white dark-angular-panel ball to his upper LEFT. The kicking foot is NOT touching the ball yet: show a readable small gap and anticipation. Face in3/4 profile, natural anatomy with only two arms/two legs, arms out to balance. His BACK points toward the far RIGHT goal. Ball around43% image height, head/torso52–60%, boots around55–65%, full silhouette above78%.\nBlond England keeper in allRED kit and a different white-clad defender are several metres farther RIGHT running toward the distant SMALL empty white goal. Show long visible pitch distance and correct perspective, no goalkeeper standing inside the net. Same enclosed2012 Friends Arena steel trusses, packed tiers, cool navy/silver light and bright emerald pitch, original premium family3D illustration, sharp cloth/skin/grass detail, cinematic depth.\nTop28% roof/stands quiet for later captions, all important faces and ball inside frame and middle80% width. No hosts in the action area, no injury, no extra limbs, no classical brown/pentagon football. Full-bleed portrait9:16, absolutely NO letters, digits, badges, yellow shorts patches, advertising, logos, watermark or border.",
+      "seed": 0,
+      "provider": "imagegen",
+      "model": "OpenAI built-in GPT Image (identifier not exposed)",
+      "width": 941,
+      "height": 1672,
+      "steps": 0,
+      "licence": "Built-in image output; account terms apply. Venue reference Richard Matthews / CC BY 2.0 remains separately credited. Seed 0 is a placeholder, not reproducible.",
+      "refs": {
+        "shots/turn.png": "4ffaa4c51bba3ea845a00c2af29df8343e401fcb961224953735530742d9908b",
+        "shots/cover-v2.png": "325576a513e9c2e90b1a0deb6d5a2440bf290fa8c5929c6188bf20b3be4099c3"
+      },
+      "sha256": "dbe670ffb9227dc432130a375e67ee30bcf67053c2dc2c9bb888e00a5cce0457",
+      "createdAt": "2026-10-31T17:36:26.695Z",
+      "selected": true,
+      "referenceRoles": "Original cartoon composition; approved fictional cast/generated continuity and, where supplied, dated CC BY 2.0 venue architecture. Authentic player photo was researched/displayed separately, not supplied to image generation. No broadcast frame tracing."
+    },
+    "shots/kick.png": {
+      "prompt": "Create the NEXT original action state, CONTACT of the overhead kick, in the same2012 Zlatan family3D cartoon. Preserve reference face/low ponytail/goatee, body, yellow fine navy VERTICAL-pinstripe shirt, PLAIN UNPRINTED navy shorts with NO yellow marks, yellow socks and the ONE modern white/navy angular-panel football. Do not repeat the previous no-contact pose.\nNew slightly closer SIDE camera: Zlatan has rotated farther backward; his torso is nearly horizontal, head lower toward RIGHT, hips central, left leg bent for counterbalance. His RIGHT leg has swung UP and BACK OVER HIS HEAD, and the instep of his right boot is visibly striking the single ball ABOVE and a little RIGHT of his face, sending it toward the far RIGHT goal. Show an obvious boot/ball contact, not chest control, a normal volley, floating ball or a standing high kick. Natural human two-arm/two-leg anatomy, readable complete silhouette and visible recognisable face; fingertips not merged into the background.\nTarget composition: ball/right boot aroundx=.66,y=.37, Zlatan headx=.61,y=.55, torsox=.48,y=.56; body clear of all frame edges. Background keeper in RED has been beaten by the aerial shot, running back toward a SMALL empty white-net goal far RIGHT; white-clad defender farther back and different face. The long grass distance to the net remains visible.\nSame closed Friends Arena pale steel roof, packed steep crowd tiers, artificial silver/gold lamps and navy shadows, bright emerald grass, rich fabric/skin detail, cinematic premium stylized3D artwork. Top25% only soft roof/lights; no text, digits, numbers, printed logos, ads, watermarks or borders anywhere. Full-bleed portrait9:16, original staging rather than a copied broadcast frame.",
+      "seed": 0,
+      "provider": "imagegen",
+      "model": "OpenAI built-in GPT Image (identifier not exposed)",
+      "width": 941,
+      "height": 1672,
+      "steps": 0,
+      "licence": "Built-in image output; account terms apply. Venue reference Richard Matthews / CC BY 2.0 remains separately credited. Seed 0 is a placeholder, not reproducible.",
+      "refs": {
+        "shots/lift.png": "dbe670ffb9227dc432130a375e67ee30bcf67053c2dc2c9bb888e00a5cce0457",
+        "shots/cover-v2.png": "325576a513e9c2e90b1a0deb6d5a2440bf290fa8c5929c6188bf20b3be4099c3"
+      },
+      "sha256": "aca4b83d76402d0c480da66f122c34b107be547c392f38e4474564643a7b895b",
+      "createdAt": "2026-10-31T17:37:57.159Z",
+      "selected": true,
+      "referenceRoles": "Original cartoon composition; approved fictional cast/generated continuity and, where supplied, dated CC BY 2.0 venue architecture. Authentic player photo was researched/displayed separately, not supplied to image generation. No broadcast frame tracing."
+    },
+    "shots/flight.png": {
+      "prompt": "NEW original WIDE consequence shot after Zlatan's overhead kick, same detailed premium family3D2012 cartoon. Reference locks characters, kits, one white/navy angular-panel football, Friends Arena lighting/style; do not copy a photo.\nCamera now wider and slightly higher from the sideline so the LONG DISTANCE is unmistakable. Zlatan is small but recognisable at the far LEFT foreground, landing on the grass after the bicycle kick, yellow vertical-pinstriped shirt/plain navy shorts/yellow socks, low ponytail; no numbers or yellow shorts marks. Joe Hart, blond in ALL-RED goalkeeper kit, is in the middle distance racing desperately back toward the RIGHT. One different England defender in white is also chasing. The white goal with white net is at far RIGHT, completely unguarded by a goalkeeper. Show large uninterrupted green pitch and perspective of the penalty-area markings between shooter and net, not a shot from beside the goal.\nThe ONE football is high in a believable long ARC toward the right goal, already beyond the running keeper and descending toward the net. Place ball aroundx=.73,y=.46, goal aroundx=.80,y=.69; a short subtle motion streak can suggest travel but no duplicated balls or drawn numbers/arrows/diagrams. No ball in net yet.\nKeep the dramatic closed pale steel roof, packed blue/yellow crowd tiers, bright artificial lamps and cool silver/navy atmosphere. Clear action hierarchy: ball → empty goal → stranded keeper → Zlatan. Rich grass/cotton/skin textures, original cinematic cartoon staging. Upper26% quiet roof for captions, important faces/ball all inside frame; full-bleed portrait9:16. Absolutely NO lettering, digits, uniform print, ads, logos, watermark or border.",
+      "seed": 0,
+      "provider": "imagegen",
+      "model": "OpenAI built-in GPT Image (identifier not exposed)",
+      "width": 941,
+      "height": 1672,
+      "steps": 0,
+      "licence": "Built-in image output; account terms apply. Venue reference Richard Matthews / CC BY 2.0 remains separately credited. Seed 0 is a placeholder, not reproducible.",
+      "refs": {
+        "shots/kick.png": "aca4b83d76402d0c480da66f122c34b107be547c392f38e4474564643a7b895b",
+        "shots/header-v2.png": "131ef286c69ddd04f9ed1eecee532612d2f3e73c6fa4f730260ca8e9f9a879fc"
+      },
+      "sha256": "f9707e65f8ff5ef4f154dda26f0ab692d9c81e84742d53a523e44184fc3d201e",
+      "createdAt": "2026-10-31T17:39:34.878Z",
+      "selected": true,
+      "referenceRoles": "Original cartoon composition; approved fictional cast/generated continuity and, where supplied, dated CC BY 2.0 venue architecture. Authentic player photo was researched/displayed separately, not supplied to image generation. No broadcast frame tracing."
+    },
+    "shots/net.png": {
+      "prompt": "Use case: illustration-story. Create the next original cinematic cartoon frame AFTER the supplied flight reference. Same premium detailed family3D medium, enclosed Friends Arena November2012, pale steel truss roof, full blue/yellow crowd, artificial silver lights, emerald grass.\nNEW camera from alongside the RIGHT goal: the ONE white football with navy angular panels has clearly crossed the line and is caught INSIDE the bulging white net, lower-middle/right. Show goalposts and white goal-line clearly, a satisfying readable goal. No ball outside net or duplicated balls.\nJoe Hart, distinct pale blond goalkeeper in ALL RED, is stranded outside the goal farther LEFT, looking back too late. A white-clad England defender is farther away. Recognisable Zlatan, yellow fine NAVY VERTICAL pinstriped shirt, navy V-neck, completely PLAIN UNPRINTED NAVY shorts with NO yellow marks, yellow socks and dark boots, low dark ponytail, angular face/moustache/goatee, is farther left near where he shot, standing after the landing; his face differs from Hart. The goal remains EMPTY of a goalkeeper. Keep the shot geography consistent: ball travelled from left into right goal.\nOriginal staging, not a recreated photo. Rich net fibres, grass, stadium depth, clear visual consequence. Upper25% quiet roof for captions. All faces below upper20%, important ball/net in middle50–73%. Full-bleed portrait9:16. NO words, digits, letters, uniform print, advertisements, logos, watermarks or border.",
+      "seed": 0,
+      "provider": "imagegen",
+      "model": "OpenAI built-in GPT Image (identifier not exposed)",
+      "width": 941,
+      "height": 1672,
+      "steps": 0,
+      "licence": "Built-in image output; account terms apply. Venue reference Richard Matthews / CC BY 2.0 remains separately credited. Seed 0 is a placeholder, not reproducible.",
+      "refs": {
+        "shots/flight.png": "f9707e65f8ff5ef4f154dda26f0ab692d9c81e84742d53a523e44184fc3d201e",
+        "shots/header-v2.png": "131ef286c69ddd04f9ed1eecee532612d2f3e73c6fa4f730260ca8e9f9a879fc"
+      },
+      "sha256": "5af490ef67763e7499371c3a9a0260d63639c7ecf79547eb9975da7cc2321593",
+      "createdAt": "2026-10-31T17:43:25.912Z",
+      "selected": true,
+      "referenceRoles": "Original cartoon composition; approved fictional cast/generated continuity and, where supplied, dated CC BY 2.0 venue architecture. Authentic player photo was researched/displayed separately, not supplied to image generation. No broadcast frame tracing."
+    },
+    "shots/cushion.png": {
+      "prompt": "Use case: illustration-story. New original playful closing shot for a children's football short in the same premium detailed family3D cartoon as reference. Lock recognisable Zlatan and the two APPROVED hosts from reference: Matvey is small cute raccoon boy in plain blue football kit/striped socks, Sofia is orange squirrel girl with tuft/ears/large fluffy tail and purple tracksuit. Their distinct faces/costumes must match reference. No extra hosts.\nScene: safe sideline corner of the same enclosed modern Friends Arena, silver roof/night artificial lamps and full crowd; imaginative hosts are commentators, not historical match participants. ZLATAN remains the main taller CENTRAL foreground figure, warmly amused, yellow fine navy VERTICAL-pinstripe shirt, navy V-neck, COMPLETELY PLAIN UNPRINTED navy shorts with NO yellow marks, yellow socks, dark boots; long angular face, slicked-back hair/low ponytail, narrow moustache/goatee. Full figure centre, hands on hips, friendly smile.\nBeside him at lower LEFT, Matvey is ALREADY SITTING safely upright on a comically generous soft blue crash cushion on grass, ears up, surprised smiling expression, two feet relaxed in front. No fall, injury, pain, dangerous kick attempt or instructional demonstration. Sofia at lower RIGHT smiling kindly with an amused hand near mouth. One ball rests harmlessly nearby. The gentle visual joke: Zlatan makes a difficult skill look easy; Matvey chooses a very soft landing. No crown or unrelated props.\nCompose all main faces roughly in vertical45–63% and clear bottom caption area around68–75%; quiet upper28% roof. Rich fur/cloth/cushion/grass textures, bright yellow-blue-purple accents and clear expressions. Full-bleed portrait9:16. Absolutely NO letters, digits, printed kit numbers, labels, words, logos, ads, watermarks or borders. Original cartoon, no reference-photo tracing.",
+      "seed": 0,
+      "provider": "imagegen",
+      "model": "OpenAI built-in GPT Image (identifier not exposed)",
+      "width": 941,
+      "height": 1672,
+      "steps": 0,
+      "licence": "Built-in image output; account terms apply. Venue reference Richard Matthews / CC BY 2.0 remains separately credited. Seed 0 is a placeholder, not reproducible.",
+      "refs": {
+        "shots/cover-v2.png": "325576a513e9c2e90b1a0deb6d5a2440bf290fa8c5929c6188bf20b3be4099c3"
+      },
+      "sha256": "fe36f67ada096e793dda97358048e6e5534172167a4b2fff6a93580c0972a13e",
+      "createdAt": "2026-10-31T17:44:13.207Z",
+      "selected": true,
+      "referenceRoles": "Original cartoon composition; approved fictional cast/generated continuity and, where supplied, dated CC BY 2.0 venue architecture. Authentic player photo was researched/displayed separately, not supplied to image generation. No broadcast frame tracing."
+    },
+    "shots/hero.png": {
+      "prompt": "Use case: illustration-story. New closing HERO portrait, same detailed premium family3D cartoon. Use reference1 for Zlatan likeness, reference2 for approved supporting hosts identity. The main subject is clearly recognisable 31-year-old Zlatan Ibrahimovic, angular long nose/face, slicked-back long dark hair in LOW ponytail, narrow moustache/goatee, athletic, warm confident smile. Yellow Sweden2012 shirt with fine navy VERTICAL pinstripes and navy V-neck, plain navy armband; navy shorts fully plain unprinted. No uniform printing.\nComposition: medium waist-up portrait of Zlatan CENTRE, head around vertical43%, chest down to74%. Beside him slightly lower at left is raccoon boy Matvey in blue football shirt, at right squirrel girl Sofia in purple tracksuit with orange tuft/ears, both smiling at him. Their faces around57%height, above a clear horizontal strip at69%reserved for final reaction overlay; all faces entirely inside central preview square and below upper25%. They are smaller/supporting than Zlatan. No additional characters, no crown or costume change.\nSame enclosed Friends Arena roof with pale steel trusses and silver lights, deep navy/yellow crowd bokeh, bright cloth/skin/fur texture. Upper28% quiet roof only. Original cinematic cartoon portrait, not photo tracing. Full-bleed portrait9:16, vivid colours. NO letters, digits, numbers, kit markings, logo, ads, watermark or border.",
+      "seed": 0,
+      "provider": "imagegen",
+      "model": "OpenAI built-in GPT Image (identifier not exposed)",
+      "width": 941,
+      "height": 1672,
+      "steps": 0,
+      "licence": "Built-in image output; account terms apply. Venue reference Richard Matthews / CC BY 2.0 remains separately credited. Seed 0 is a placeholder, not reproducible.",
+      "refs": {
+        "shots/kick.png": "aca4b83d76402d0c480da66f122c34b107be547c392f38e4474564643a7b895b",
+        "shots/cushion.png": "fe36f67ada096e793dda97358048e6e5534172167a4b2fff6a93580c0972a13e"
+      },
+      "sha256": "a1679039bb548c5644d65a588048cb3cdf4410a9bcd4c5d60388f734fb7a254d",
+      "createdAt": "2026-10-31T17:45:05.928Z",
+      "selected": true,
+      "referenceRoles": "Original cartoon composition; approved fictional cast/generated continuity and, where supplied, dated CC BY 2.0 venue architecture. Authentic player photo was researched/displayed separately, not supplied to image generation. No broadcast frame tracing."
+    },
+    "shots/turn-v2.png": {
+      "prompt": "Use case: precise-object-edit. Edit this cartoon frame with exactly one change: remove the small yellow printed marks/digits on Zlatan's navy shorts near the viewer-left hip, and replace those marks with continuous matching plain navy fabric. Shorts must be completely plain unprinted navy, with no yellow marks anywhere. Preserve EVERYTHING else: identical face, low ponytail, pose, anatomy, ball position, yellow/navy vertical-pinstripe shirt, red goalkeeper, white defender, closed stadium, camera, lighting, grass and image dimensions. Do not add or move anything. No text, logos or numbers.",
+      "seed": 0,
+      "provider": "imagegen",
+      "model": "OpenAI built-in GPT Image (identifier not exposed)",
+      "width": 941,
+      "height": 1672,
+      "steps": 0,
+      "licence": "Built-in image output; account terms apply. Venue reference Richard Matthews / CC BY 2.0 remains separately credited. Seed 0 is a placeholder, not reproducible.",
+      "refs": {
+        "shots/turn.png": "4ffaa4c51bba3ea845a00c2af29df8343e401fcb961224953735530742d9908b"
+      },
+      "sha256": "39b548160b41b83a92151d8225af9da61bb2642d7ad85f34c88b688f8ff260bc",
+      "createdAt": "2026-10-31T17:45:51.433Z",
+      "selected": false,
+      "referenceRoles": "Targeted edit of an original generated cartoon; no AI retouch of the authentic player photograph."
+    },
+    "shots/turn-v3.png": {
+      "prompt": "Use case: precise-object-edit. Replace ONLY the entire navy shorts worn by the central footballer with completely blank solid navy-blue cloth shorts, including the waistband, both hips and all hems. At the viewer-left hip there is still a small yellow curved printed mark: REMOVE IT fully. There must be absolutely no yellow, white or coloured marks, piping, emblem, digit or print on ANY part of the shorts. Natural navy cloth shading/folds only. Preserve the exact same silhouette and leg pose. Everything outside shorts stays unchanged: identical face, hair, yellow striped shirt, ball, stadium, keeper and defender, grass, camera and light. No other change.",
+      "seed": 0,
+      "provider": "imagegen",
+      "model": "OpenAI built-in GPT Image (identifier not exposed)",
+      "width": 941,
+      "height": 1672,
+      "steps": 0,
+      "licence": "Built-in image output; account terms apply. Venue reference Richard Matthews / CC BY 2.0 remains separately credited. Seed 0 is a placeholder, not reproducible.",
+      "refs": {
+        "shots/turn-v2.png": "39b548160b41b83a92151d8225af9da61bb2642d7ad85f34c88b688f8ff260bc"
+      },
+      "sha256": "814126c816dfc0484aee5759ab74890e98f2eba4102c5e2d1123898fbd37c9de",
+      "createdAt": "2026-10-31T17:46:50.275Z",
+      "selected": true,
+      "referenceRoles": "Targeted edit of an original generated cartoon; no AI retouch of the authentic player photograph."
+    },
+    "shots/cover-v3.png": {
+      "prompt": "Use case: precise-object-edit. Recompose this SAME detailed family3D cartoon cover to fit the central square of a vertical film. Keep the SAME recognisable Zlatan, approved Matvey raccoon/Sofia squirrel, kits, closed2012FriendsArena, lighting and bicycle pose. Only adjust figure scale/placement.\nCRITICAL LAYOUT: make the ENTIRE group (Zlatan + both hosts + the football) about25% SMALLER, scaling towards a centre at x50%, y60%. This brings the two hosts' FULL FACES AND EARS UP into the picture's vertical59–71% band. Both complete heads including bottom chin/muzzle MUST be ABOVE y74%. Currently they are near bottom and get cut in a square preview: fix that. Keep them on plausible grass perspective, smaller and beside Zlatan. Their feet may fall below y78%; their heads may not. Do not crop any part of any face.\nThe raised boot and ONE white/navy ball should now occupy vertical43–49%, Zlatan's angular face around53–58%, body/legs below; action still clear and footballer larger/main. Reserve the ENTIRE upper38% only for roof/crowd, with no heads, ball or boots, because the title overlay is added separately there. Do not generate a title or card.\nPreserve cinematic silver roof lights, yellow vertical-pinstripe shirt and plain unprinted navy shorts/yellow socks, low ponytail and goatee; supporting hosts' correct clothing and expression. Full-bleed portrait9:16, no borders. Absolutely NO letters, numbers, logos, watermarks, advertisements or new props.",
+      "seed": 0,
+      "provider": "imagegen",
+      "model": "OpenAI built-in GPT Image (identifier not exposed)",
+      "width": 941,
+      "height": 1672,
+      "steps": 0,
+      "licence": "Built-in image output; account terms apply. Venue reference Richard Matthews / CC BY 2.0 remains separately credited. Seed 0 is a placeholder, not reproducible.",
+      "refs": {
+        "shots/cover-v2.png": "325576a513e9c2e90b1a0deb6d5a2440bf290fa8c5929c6188bf20b3be4099c3"
+      },
+      "sha256": "9ffedbb21707916d3bd16076989f90371edf48fc7e737dfe01fd74c45969fc78",
+      "createdAt": "2026-10-31T17:54:54.113Z",
+      "selected": false,
+      "referenceRoles": "Targeted edit of an original generated cartoon; no AI retouch of the authentic player photograph."
+    },
+    "shots/cover-v4.png": {
+      "prompt": "Use case: illustration-story. Create a NEW alternate cover composition, using supplied image only for the same premium family3D style and exact identities/kits/venue. Do NOT inherit the low position of the hosts.\nPortrait9:16. Reserve upper38% entirely as the enclosed pale-steel Friends Arena roof and lights, empty of foreground people/ball. Main central foreground is recognisable2012Zlatan making a bicycle kick, yellow fine navy VERTICAL pinstriped shirt/navy V-neck, plain unprinted navy shorts/yellow socks, low ponytail/moustache/goatee. His raised foot/ONE white/navy ball at x.28,y.46, angular face at x.63,y.60; body spans centre lower-middle, main and larger.\nIMPORTANT NEW HOST STAGING: Matvey raccoon boy in blue football kit and Sofia orange squirrel girl in purple tracksuit are CHEERING SPECTATORS BEHIND THE PLAYER, shown WAIST-UP leaning over a low distant stadium barrier, NOT full-length standing at the bottom. Matvey at left x.13 with his ENTIRE head/ears/muzzle in y.53–.62. Sofia at right x.84 with ENTIRE head/ears/muzzle in y.55–.65. Their faces are on EITHER SIDE of the central action, not covered by Zlatan's arms/boots. Show both complete faces fully above y.67, with comfortable space below their chins. Their lower bodies/feet are hidden naturally behind barrier/crowd, no floating figures. The faces MUST NOT be near the bottom quarter. They remain smaller and secondary, excitedly watching Zlatan. This is an imaginative illustrated preview, not a claim that the fictional hosts attended the match.\nRich cinematic grass/net/crowd details, cool silver/navy night atmosphere with bright yellow/blue/purple subjects. Full frame, no added border. NO letters, numbers, logos, uniform prints, ads, watermarks or text/card generated.",
+      "seed": 0,
+      "provider": "imagegen",
+      "model": "OpenAI built-in GPT Image (identifier not exposed)",
+      "width": 941,
+      "height": 1672,
+      "steps": 0,
+      "licence": "Built-in image output; account terms apply. Venue reference Richard Matthews / CC BY 2.0 remains separately credited. Seed 0 is a placeholder, not reproducible.",
+      "refs": {
+        "shots/cover-v3.png": "9ffedbb21707916d3bd16076989f90371edf48fc7e737dfe01fd74c45969fc78"
+      },
+      "sha256": "17a3c92a15b9a611a804d568c8f9b58900bc62a7cee63385645f39f306d87bad",
+      "createdAt": "2026-10-31T18:00:11.459Z",
+      "selected": true,
+      "referenceRoles": "New alternate cover composition. The generated reference locks likeness, approved fictional cast, kit, medium and venue; host staging changes to waist-up spectators to retain whole faces inside the square preview. Authentic player photo not supplied or AI-retouched."
+    },
+    "shots/zlatan-2012.jpg": {
+      "prompt": "Authentic June 2012 player photograph, one unchanged native-contain insert; not the November goal.",
+      "seed": 0,
+      "provider": "manual",
+      "model": "Original photograph",
+      "width": 435,
+      "height": 656,
+      "steps": 0,
+      "licence": "CC BY-SA3.0, Football.ua, photographer Илья Хохлов, VRT ticket2011101010016175; select CC option rather than alternate GFDL. Source and licence links retained in post/credits.",
+      "sha256": "a2723e78cb8637ed8794c3f5422a263526dc298c48ba31bdeec8d21467b274df",
+      "source": "https://commons.wikimedia.org/wiki/File:Zlatan_Ibrahimovi%C4%87_Euro_2012_vs_England.JPG",
+      "selected": true
+    }
+  },
+  "note": "9 selected original cartoon frames / 15 successful built-in generations; one original player photo insert. Exact model identifier not exposed. Original media ignored, prompts/provenance/small previews versioned."
+}

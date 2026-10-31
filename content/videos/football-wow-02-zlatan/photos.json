@@ -1,0 +1,42 @@
+{
+  "photos": 1,
+  "checked": "2026-10-31",
+  "items": [
+    {
+      "id": "zlatan-2012",
+      "sourceId": "P1",
+      "title": "File:Zlatan Ibrahimović Euro 2012 vs England.JPG",
+      "page": "https://commons.wikimedia.org/wiki/File:Zlatan_Ibrahimovi%C4%87_Euro_2012_vs_England.JPG",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Zlatan_Ibrahimovi%C4%87_Euro_2012_vs_England.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "uploadTimestamp": "2012-06-17T16:27:08Z",
+      "width": 435,
+      "height": 656,
+      "bytes": 51161,
+      "commonsSHA1": "784d7e539fd8b0896627ad114e9bff06a13a02b0",
+      "metadata": {
+        "DateTime": "2012-06-17 16:27:08",
+        "ObjectName": "Zlatan Ibrahimović Euro 2012 vs England",
+        "CommonsMetadataExtension": "1.2",
+        "Categories": "GFDL|License migration redundant|Items with VRTS permission confirmed|Photos from football.ua|Zlatan Ibrahimović in 2012|Photographs taken on 2012-06-17|Yellow and blue sports uniforms|Number 10 on association football kits|2012 UEFA European Championship Match 16, Sweden v England",
+        "Assessments": "",
+        "ImageDescription": "Zlatan Ibrahimović at the Euro 2012 match against England",
+        "DateTimeOriginal": "2012-06-17",
+        "Credit": "Football.ua",
+        "Artist": "Илья Хохлов",
+        "LicenseShortName": "CC BY-SA 3.0",
+        "UsageTerms": "Creative Commons Attribution-Share Alike 3.0",
+        "AttributionRequired": "true",
+        "Attribution": "Football.ua",
+        "LicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "Copyrighted": "True",
+        "Restrictions": "",
+        "License": "cc-by-sa-3.0"
+      },
+      "local": "shots/zlatan-2012.jpg",
+      "sha256": "a2723e78cb8637ed8794c3f5422a263526dc298c48ba31bdeec8d21467b274df",
+      "used": true,
+      "presentation": "One dated native contain photo insert. Original retained without AI retouch. June2012 EURO context, not the November2012 overhead-goal match. File date17June2012 conflicts with actual match15June; only month/year shown.",
+      "rightsBasis": "CC BY-SA3.0, Football.ua, photographer Илья Хохлов, VRT ticket2011101010016175; select CC option rather than alternate GFDL. Source and licence links retained in post/credits."
+    }
+  ]
+}

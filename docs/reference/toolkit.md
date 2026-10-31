@@ -232,7 +232,7 @@ A concise sourced football surprise with several connected illustrated action st
 
 **Use when:** The owner commissions a short Football Wow episode or deliberately remakes a football film under the cartoon-led rule. Keep calm speech, document original/adapted text and measure illustrated/photo screen time.
 
-**See:** [docs](../../docs/how-to/football-series.md#cartoon-led-short-stories) · [football-wow-01-pele/DIRECTION.md](../../content/videos/football-wow-01-pele/DIRECTION.md)
+**See:** [docs](../../docs/how-to/football-series.md#cartoon-led-short-stories) · [football-wow-01-pele/DIRECTION.md](../../content/videos/football-wow-01-pele/DIRECTION.md) · [football-wow-02-zlatan/DIRECTION.md](../../content/videos/football-wow-02-zlatan/DIRECTION.md)
 
 ### Cartoon explainer
 

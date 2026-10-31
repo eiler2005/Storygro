@@ -1,0 +1,11 @@
+@import url('/rc/styles/cartoon/football-legends.css');
+:root {--fl-ink:#152c4c;--fl-paper:#fff8df;--fl-gold:#f2ca3f;--ct-ink:#152c4c;--ct-band:#fff8df;--ct-accent:#256d94;}
+.fl-series-cover {padding:16px 20px;border-radius:18px;}
+.fl-series-project {font-size:30px;}
+.fl-series-title {font-size:52px;}
+.fl-series-subtitle {font-size:40px;margin-top:9px;}
+.rc-caption {top:330px!important;bottom:auto!important;font-size:48px;}
+body:has(.rc-scene--hook:not([style*="display: none"])) .rc-caption {visibility:hidden!important;}
+
+/* This shot keeps the ball clear above Zlatan. */
+body:has(.rc-scene--turn:not([style*="display: none"])) .rc-caption {top:1300px!important;}

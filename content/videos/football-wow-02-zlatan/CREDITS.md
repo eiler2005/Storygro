@@ -1,0 +1,8 @@
+# Credits
+
+- Owner source script02 preserved separately; production adaptation is a calm short cartoon. Fictional Matvey/Sofia are approved original hosts; the cushion joke is invented.
+- Original illustrations: built-in GPT Image, exact model ID not exposed; prompts, inputs, roles, selected variants and hashes in images.json. Original new compositions/poses, not copied press or broadcast frames.
+- One displayed authentic photograph: Илья Хохлов / Football.ua, June2012 EURO context, [file page](https://commons.wikimedia.org/wiki/File:Zlatan_Ibrahimovi%C4%87_Euro_2012_vs_England.JPG), [CC BY-SA3.0](https://creativecommons.org/licenses/by-sa/3.0/), VRT ticket2011101010016175. Original pixels unchanged, native contain; do not claim this is November2012. File date17June vs described match15June is recorded; only month/year shown. CC option selected rather than alternate GFDL.
+- Architecture reference only, not displayed: Richard Matthews, Friends Arena before opening match14November2012, [file page](https://commons.wikimedia.org/wiki/File:Friends_Arena,_Stockholm.jpg), [CC BY2.0](https://creativecommons.org/licenses/by/2.0/). Reference attribution retained; new illustrations use different camera/crowd/action, no photographic composition copied.
+- Narration: established synthetic OmniVoice B0.82/off, original reference unchanged, not any player's voice. Model weights CC-BY-NC; code Apache-2.0. Music/SFX synthesised locally; font OFL notices retained.
+- Photographic licences remain separate; no blanket new licence over mixed components. Engine source-available under PolyForm Shield1.0.0. No player/team/photographer/licensor endorsement.

@@ -1,0 +1,33 @@
+review: 1
+questions:
+  - id: story
+    for: owner
+    open: true
+    ask: Подходит ли короткая история гола через себя и финальная шутка ведущих?
+  - id: visual
+    for: owner
+    open: true
+    ask: Узнаваем ли Златан, понятны ли прыжок/дуга/далёкие ворота и достаточно ли рисунков?
+  - id: voice
+    for: owner
+    open: true
+    ask: Подходят ли темп, ударения имён и паузы в готовом видео?
+notes: "Technical review cut 31 October 2026: 25s, 7 scenes, 9 selected detailed drawings / 15 successful built-in generations; one authentic June 2012 photo insert 3s, illustrated 22s (88%). Native 1080x1920/30, QA 14/14, ASR all scenes 100%; master/web fully decode 750 frames each, 27 final MP4 moments and feed/square cover viewed. 113 text/cue samples, 16 caption phrases, 81 reverse seeks, no layout/state/technical-text errors. Exact DOM/SVG restored, separate raster difference max 1/255. Cover recomposed to retain complete host faces in square crop. First render ASR recognised all words but timed the initial words of setup/goal across scene boundaries; moved only their lead pads, kept voice/reference/speed and total 25s, then re-rendered/reviewed. Goal post-speech hold 1.00s. Names added to shared lexicon; stress off preserved. Owner listening/stress/pace/editorial review remains open; no owner approval or publication, WOW-R2 unmeasured."
+approvals:
+  ru:
+    script:
+      hash: 6d603fe22751
+      at: 2026-10-31T18:06:51.478Z
+      by: agent
+      role: agent
+    storyboard:
+      hash: a3bda3eee4a7
+      at: 2026-10-31T18:00:47.183Z
+      by: agent
+      role: agent
+    release:
+      hash: a3bda3eee4a7:c5941d9165b6
+      at: 2026-10-31T18:03:37.488Z
+      by: agent
+      role: agent
+      master: c5941d9165b6

@@ -2,7 +2,7 @@
 
 <!-- Generated from production/toolkit.yaml by `npm run docs:toolkit`. Edit the YAML, not this page. -->
 
-Every way Storygro makes content, in one bank: **26 methods**, **25 tools**, **4 styles**, **8 scene families** and **6 providers**, by production stage. Agents read [`production/toolkit.yaml`](../../production/toolkit.yaml) to pick an approach; this page is generated from it, and `npm test` fails when a command, style or scene is missing from the bank or a link is broken.
+Every way Storygro makes content, in one bank: **26 methods**, **25 tools**, **4 styles**, **10 scene families** and **6 providers**, by production stage. Agents read [`production/toolkit.yaml`](../../production/toolkit.yaml) to pick an approach; this page is generated from it, and `npm test` fails when a command, style or scene is missing from the bank or a link is broken.
 
 **Status:** *stable* — used across pieces · *pilot* — works, reviewed on one or two pieces · *planned* — not implemented.
 
@@ -11,7 +11,7 @@ Every way Storygro makes content, in one bank: **26 methods**, **25 tools**, **4
 | **choose** — Pick a topic worth a piece | [Editorial ranking](#editorial-ranking) · [Trend scan and watchlist](#trend-scan-and-watchlist) · [Research scan with picks](#research-scan-with-picks) · [X digest through Grok](#x-digest-through-grok) · [Angles from a scan](#angles-from-a-scan) |
 | **research** — Find and check what is true | [Primary-source research](#primary-source-research) · [Facts as data](#facts-as-data) · [Reference analysis](#reference-analysis) · [Transcript and pace statistics](#transcript-and-pace-statistics) · [Whisper (mlx-whisper)](#whisper-mlx-whisper) |
 | **write** — Turn it into a script as data | [Script as data](#script-as-data) · [Story structures](#story-structures) · [One worked example](#one-worked-example) · [Language variants](#language-variants) · [Brand profile and series](#brand-profile-and-series) · [Reels story direction and measured experiments](#reels-story-direction-and-measured-experiments) · [Children's list cartoon](#childrens-list-cartoon) |
-| **look** — Decide how it looks | [Cartoon explainer](#cartoon-explainer) · [Cut-paper explainer](#cut-paper-explainer) · [Editorial collage](#editorial-collage) · [Cut-paper scenes](#cut-paper-scenes) · [Kinetic typography](#kinetic-typography) · [Kinetic and diagram scenes](#kinetic-and-diagram-scenes) · [Springs, beat grid and motion blur](#springs-beat-grid-and-motion-blur) · [Collage scene](#collage-scene) · [Illustration scene](#illustration-scene) · [Illustrated series identity and retention pilot](#illustrated-series-identity-and-retention-pilot) · [Series opening cover](#series-opening-cover) · [Dated authentic photo card](#dated-authentic-photo-card) · [Screencast scene](#screencast-scene) · [Landscape product scenes](#landscape-product-scenes) · [Generated illustrations](#generated-illustrations) · [Z-Image-Turbo via mflux](#z-image-turbo-via-mflux) · [Recognisable caricatures, overlays off faces](#recognisable-caricatures-overlays-off-faces) · [GPT Image through the Codex CLI](#gpt-image-through-the-codex-cli) · [Recurring cast](#recurring-cast) · [Reference pictures of recurring hosts](#reference-pictures-of-recurring-hosts) · [No text in pictures](#no-text-in-pictures) · [Screen capture](#screen-capture) · [A new scene module](#a-new-scene-module) |
+| **look** — Decide how it looks | [Cartoon explainer](#cartoon-explainer) · [Cut-paper explainer](#cut-paper-explainer) · [Editorial collage](#editorial-collage) · [Cut-paper scenes](#cut-paper-scenes) · [Kinetic typography](#kinetic-typography) · [Kinetic and diagram scenes](#kinetic-and-diagram-scenes) · [Springs, beat grid and motion blur](#springs-beat-grid-and-motion-blur) · [Collage scene](#collage-scene) · [Illustration scene](#illustration-scene) · [Illustrated series identity and retention pilot](#illustrated-series-identity-and-retention-pilot) · [Series opening cover](#series-opening-cover) · [Dated authentic photo card](#dated-authentic-photo-card) · [Authentic photo pair with optional series identity](#authentic-photo-pair-with-optional-series-identity) · [Player-led authentic photo sequence](#player-led-authentic-photo-sequence) · [Screencast scene](#screencast-scene) · [Landscape product scenes](#landscape-product-scenes) · [Generated illustrations](#generated-illustrations) · [Z-Image-Turbo via mflux](#z-image-turbo-via-mflux) · [Recognisable caricatures, overlays off faces](#recognisable-caricatures-overlays-off-faces) · [GPT Image through the Codex CLI](#gpt-image-through-the-codex-cli) · [Recurring cast](#recurring-cast) · [Reference pictures of recurring hosts](#reference-pictures-of-recurring-hosts) · [No text in pictures](#no-text-in-pictures) · [Screen capture](#screen-capture) · [A new scene module](#a-new-scene-module) |
 | **voice** — Narration, sound and timing | [Local narration and timing](#local-narration-and-timing) · [Narrator design](#narrator-design) · [Pronunciation and say-as](#pronunciation-and-say-as) · [Russian stress and homographs](#russian-stress-and-homographs) · [Pronunciation dictionary and stress lookup](#pronunciation-dictionary-and-stress-lookup) · [Voice bench](#voice-bench) · [Chatterbox Multilingual](#chatterbox-multilingual) · [OmniVoice Russian narrator](#omnivoice-russian-narrator) · [Complete narration before scene cuts](#complete-narration-before-scene-cuts) · [Music and sound effects](#music-and-sound-effects) |
 | **make** — Storyboard, approval and rendering | [Stills and live preview](#stills-and-live-preview) · [Storyboard and approval](#storyboard-and-approval) · [Plan document and stepped approvals](#plan-document-and-stepped-approvals) · [Render](#render) · [Formats, safe areas and captions](#formats-safe-areas-and-captions) · [Carousel cards](#carousel-cards) · [Native full-frame Instagram Reels](#native-full-frame-instagram-reels) |
 | **check** — Technical QA and the human review | [Technical QA](#technical-qa) · [Human review](#human-review) |
@@ -365,6 +365,30 @@ An authentic photograph with data-bound story title and concise photo date over 
 **Use when:** Football Legends or another factual series includes a rights-checked real player or venue photo alongside generated illustrations. A later photo is visibly dated as later.
 
 **See:** [docs](../../docs/reference/scenes.md#archive-photo) · [football-legends-09-eusebio/DIRECTION.md](../../content/videos/football-legends-09-eusebio/DIRECTION.md)
+
+### Authentic photo pair with optional series identity
+
+*scenes · pilot*
+
+Two original photographs and data-bound short labels over full-frame artwork. Can reuse the existing series-cover identity and cue-driven reveal; original faces are never generatively retouched.
+
+**Scenes:** `photo-pair`
+
+**Use when:** A paired football story needs actual player likenesses with fictional hosts supporting nearby; compose hosts below the photo cards and retain full provenance outside the children's frame.
+
+**See:** [docs](../../docs/reference/scenes.md#photo-pair) · [football-now-01-messi-ronaldo/DIRECTION.md](../../content/videos/football-now-01-messi-ronaldo/DIRECTION.md)
+
+### Player-led authentic photo sequence
+
+*scenes · pilot*
+
+Cue-driven original photographs and short dated labels over a full-frame background; optional simple animated pass diagram sits beside the photograph. Data-bound titles stay above the photo and supporting hosts.
+
+**Scenes:** `photo-focus`
+
+**Use when:** A factual sports story needs the real player as the main subject and an illustrative passing mechanism without generative face editing or a claimed match reconstruction.
+
+**See:** [docs](../../docs/reference/scenes.md#photo-focus) · [football-now-02-madrid-playmakers/DIRECTION.md](../../content/videos/football-now-02-madrid-playmakers/DIRECTION.md)
 
 ### Screencast scene
 

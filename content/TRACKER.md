@@ -2,7 +2,7 @@
 
 > Сгенерировано `storygro tracker` 2026-10-31. Одобрения и вопросы — из `review.yaml` в Git; длительность, проверка (QA) и рендер — локальное состояние этой копии (`.reel/`), публикации — из журнала. Не правьте вручную.
 
-**Ждут тебя: 23** · сценарий 18 · раскадровка 4 · просмотр 1 · готово 0 · опубликовано 0
+**Ждут тебя: 25** · сценарий 20 · раскадровка 4 · просмотр 1 · готово 0 · опубликовано 0
 
 ## Ждут тебя
 
@@ -20,6 +20,8 @@
 - [Лев Яшин — вратарь, который получил «Золотой мяч»](videos/football-legends-07-yashin/PLAN.ru.md) (ru) — одобрить сценарий
 - [Денис Лоу — король голов](videos/football-legends-08-law/PLAN.ru.md) (ru) — одобрить сценарий
 - [Эусебио — «Чёрная пантера», которая не сдавалась](videos/football-legends-09-eusebio/PLAN.ru.md) (ru) — одобрить сценарий
+- [Месси и Роналду — два пути к рекордам](videos/football-now-01-messi-ronaldo/PLAN.ru.md) (ru) — одобрить сценарий
+- [Кроос и Модрич — дирижёры «Реала»](videos/football-now-02-madrid-playmakers/PLAN.ru.md) (ru) — одобрить сценарий
 - [Звёзды футбола: собираем альбом](videos/football-stars-kids/PLAN.ru.md) (ru) — одобрить сценарий
 - [Будущее работы — кто отвечает за результат](videos/future-of-work/README.md) (ru) — одобрить раскадровку
 - [Интер Майами: финальный пас](videos/inter-miami-magic-pass/PLAN.ru.md) (ru) — одобрить сценарий
@@ -48,6 +50,8 @@
 | [Лев Яшин — вратарь, который получил «Золотой мяч»](videos/football-legends-07-yashin/PLAN.ru.md) | ru (ru) | football-legends | сценарий | ждёт тебя: одобрить сценарий | ✏️ ⚙️ ⏳ | 90.2 с | pass | 5/5 | 2 | — |
 | [Денис Лоу — король голов](videos/football-legends-08-law/PLAN.ru.md) | ru (ru) | football-legends | сценарий | ждёт тебя: одобрить сценарий | ✏️ ⚙️ ⏳ | 83 с | pass | 5/5 | 2 | — |
 | [Эусебио — «Чёрная пантера», которая не сдавалась](videos/football-legends-09-eusebio/PLAN.ru.md) | ru (ru) | football-legends | сценарий | ждёт тебя: одобрить сценарий | ⚙️ ⚙️ ⏳ | 98.4 с | pass | 6/6 | 3 | — |
+| [Месси и Роналду — два пути к рекордам](videos/football-now-01-messi-ronaldo/PLAN.ru.md) | ru (ru) | football-now | сценарий | ждёт тебя: одобрить сценарий | ⚙️ ⚙️ ⏳ | 98.7 с | pass | 7/7 | 3 | — |
+| [Кроос и Модрич — дирижёры «Реала»](videos/football-now-02-madrid-playmakers/PLAN.ru.md) | ru (ru) | football-now | сценарий | ждёт тебя: одобрить сценарий | ⚙️ ⚙️ ⏳ | 108.3 с | pass | 7/7 | 3 | — |
 | [Звёзды футбола: собираем альбом](videos/football-stars-kids/PLAN.ru.md) | ru (ru) | kids-football | сценарий | ждёт тебя: одобрить сценарий | ⏳ ✏️ ⏳ | 117.5 с | pass | 14/14 | 3 | — |
 | [Будущее работы — кто отвечает за результат](videos/future-of-work/README.md) | ru (ru) | business-explainers | раскадровка | ждёт тебя: одобрить раскадровку | — ✏️ ⏳ | 76.8 с | pass | 2/2 | — | — |
 | [Интер Майами: финальный пас](videos/inter-miami-magic-pass/PLAN.ru.md) | ru (ru) | — | сценарий | ждёт тебя: одобрить сценарий | ⚙️ ✏️ ⏳ | 114.5 с | pass | 7/7 | 1 | — |

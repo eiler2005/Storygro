@@ -1,0 +1,9 @@
+episode: 1
+id: football-now-01-messi-ronaldo
+title: Месси и Роналду — два пути к рекордам
+sources: sources.md
+credits: CREDITS.md
+variants:
+  - id: ru
+    spec: ru.reel.yaml
+series: football-now

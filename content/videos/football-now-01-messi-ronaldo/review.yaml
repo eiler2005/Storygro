@@ -1,0 +1,38 @@
+review: 1
+questions:
+  - id: story
+    ask: Подходит ли авторский сценарий современного спецвыпуска и связь со следующей темой?
+    for: owner
+    open: true
+  - id: visual
+    ask: Подходит ли формат с настоящими футболистами в центре, меньшими ведущими рядом и простыми примерами
+      передач? Новые рисованные лица генератор отклонил.
+    for: owner
+    open: true
+  - id: voice
+    ask: Подходят ли спокойный темп, ударения имён и паузы в готовом видео?
+    for: owner
+    open: true
+notes: "Technical review cut, 31 October2026: 98.65899999999999s, 11 scenes,1080x1920/30; QA15/15, master/web
+  fully decoded2957/2957 frames. Inspected37 MP4 moments and feed/cover;68 caption phrases/239 runtime samples
+  clear;142 reverse seeks with Exact visible DOM/SVG state; observed raster max 30/255 at at most 32 pixels
+  above1 intensity across 1080x1920, with the full tolerance and samples recorded separately. Every scene
+  shows actual footballers as protagonists; Matvey/Sofia are smaller supporting hosts. 7 authentic licensed
+  photos, one selected illustrated host background. Built-in GPT Image blocked new recognisable player faces;
+  successful requests used fictional cast/environment only, no bypass or photo retouch. OmniVoice B0.82/off
+  unchanged; opening Messi retake uses explicit МЭсси hint; phoneme heuristic positive. Current model
+  interface cannot receive audio; subjective auditory/stress/editorial owner review stays open. NOW-R1 is
+  confounded by new paired/photo format and length, no measured retention. No owner approvals or publication
+  recorded."
+approvals:
+  ru:
+    script:
+      hash: a5f2efdda883
+      at: 2026-10-31T13:43:14.718Z
+      by: agent
+      role: agent
+    storyboard:
+      hash: 95a905782d89
+      at: 2026-10-31T13:43:15.155Z
+      by: agent
+      role: agent

@@ -1,0 +1,63 @@
+{
+  "series": {
+    "_source": "[O1] Owner31Oct2026 requests two modern specials between historical legends; identity/cast retained.",
+    "project": "Маленькие большие дела",
+    "title": "Легенды футбола",
+    "episode": "Месси и Роналду · Два пути к рекордам"
+  },
+  "players": {
+    "_source": "[S1] Inter Miami current profile; [S2] Saudi Pro League; [S5] FC Barcelona biography. [S7] More than twenty years calculated from senior appearances2003/2004 to31Oct2026.",
+    "messi": "Лионель Месси",
+    "ronaldo": "Криштиану Роналду",
+    "rosario": "Мальчик из Росарио",
+    "discipline": "Дисциплина каждый день",
+    "skills": "Рывок · прыжок · удар",
+    "vision": "Увидеть свободного товарища",
+    "both": "Талант и работа — у обоих",
+    "longevity": "Больше 20 лет в большом футболе"
+  },
+  "records": {
+    "_source": "[S4] UEFA140 Champions League goals,2003–2022 across three clubs; [S6] FC Barcelona91 goals in calendar2012,79club+12Argentina. Different statistics, not a head-to-head total.",
+    "ronaldo": "140 голов в Лиге чемпионов",
+    "ronaldoNote": "Рекорд Лиги чемпионов",
+    "messi": "91 гол за 2012 год",
+    "messiNote": "Клуб + сборная · календарный год"
+  },
+  "story": {
+    "_source": "[O1] Requested discipline/physical skills/genius and preference question; editorial lesson and cross-promotion, not quotations. [O2] Owner requires footballers as visual protagonists; hosts support them. Authentic player photos therefore remain visible in every story scene.",
+    "respect": "Соперничать с уважением",
+    "next": "Далее: Кроос и Модрич",
+    "question": "Месси или Роналду — и почему?",
+    "passExample": "Пример паса"
+  },
+  "archive": {
+    "_source": "[P1–P3] Specific Commons file pages; photo date, not upload date.",
+    "messi": "Фото 2018 года",
+    "ronaldo": "Фото 2023 года",
+    "kroos": "Фото 2018 года",
+    "modric": "Фото 2018 года",
+    "bernabeu": "Фото 2015 года",
+    "stadium": "«Сантьяго Бернабеу»",
+    "ronaldoJump": "Фото 2009 года",
+    "messiAction": "Фото 2012 года",
+    "venuePhoto": "«Бернабеу» · фото 2015 года"
+  },
+  "cover": {
+    "_source": "[P1] \"2018-06-16\"; [P2] \"Taken on 19 September 2023\"; [P7] \"2018-10-03 19:20:48\"; [P8] \"2018-06-26 19:30:51\"; native original photos, no generated player faces.",
+    "messi": "Месси · фото 2018",
+    "ronaldo": "Роналду · фото 2023",
+    "kroos": "Кроос · фото 2018",
+    "modric": "Модрич · фото 2018"
+  },
+  "photoDates": {
+    "_source": "[P1] \"2018-06-16\"; [P2] \"Taken on 19 September 2023\"; [P3] \"2015-01-11 17:48:27\"; [P4] \"2009-09-30 21:57:46\"; [P5] \"2012-02-29 23:31:46\"; [P6] \"2012-02-29\"; [P7] \"2018-10-03 19:20:48\"; [P8] \"2018-06-26 19:30:51\"",
+    "messi": "Фото 2018 года",
+    "ronaldo": "Фото 2023 года",
+    "bernabeu": "Фото 2015 года",
+    "ronaldoJump": "Фото 2009 года",
+    "messiDuel": "Фото 2012 года",
+    "messiControl": "Фото 2012 года",
+    "kroos": "Фото 2018 года",
+    "modric": "Фото 2018 года"
+  }
+}

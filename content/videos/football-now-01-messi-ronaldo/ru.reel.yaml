@@ -1,0 +1,350 @@
+reel: 1
+style: cartoon
+title: Месси и Роналду — два пути к рекордам
+lang: ru
+format:
+  preset: vertical
+  width: 1080
+  height: 1920
+  fps: 30
+safe: reels
+voice:
+  engine: omnivoice
+  model: k2-fsa/OmniVoice
+  voice: assets/voice/narrator-ru.wav
+  speed: 0.82
+  stress: off
+music:
+  bpm: 110
+  key: C
+  progression:
+    - I
+    - V
+    - vi
+    - IV
+  gain: 0.085
+  drop: messi-action
+loudness: -14
+theme: theme.css
+captions:
+  show: true
+  maxWords: 3
+transition:
+  kind: cut
+  dur: 0
+data:
+  facts: facts.json
+stills:
+  cover: hook@0
+  final: respect@1
+  hosts: question@1
+images:
+  provider: manual
+  model: OpenAI built-in GPT Image (identifier not exposed)
+  width: 1088
+  height: 1920
+  seed: 0
+  prompt: "{subject}. Original fictional Matvey/Sofia and football environment only. No generated real-player
+    faces; authentic player images are presented natively and recorded in photos.json."
+hooks:
+  - От легенд прошлого — к звёздам нашего времени! Месси и Роналду. В чём секрет их долгой карьеры?
+  - Один взлетает за мячом. Другой будто прячет его у ноги. Кто тебе ближе?
+  - Как удивлять футболом больше двадцати лет?
+post:
+  title: Легенды футбола · Месси и Роналду — два пути к рекордам
+  text: |-
+    От легенд прошлого — к звёздам нашего времени! Месси и Роналду: разные игровые качества, талант и постоянная работа у обоих. Рекорды относятся к разным показателям:140 голов Роналду в Лиге чемпионов и91 гол Месси за календарный2012год. Кто нравится тебе больше и за какое умение? Дальше — Кроос и Модрич.
+
+    «Маленькие большие дела · Легенды футбола». Игроки показаны настоящими фото, ведущие и фон — иллюстрации GPT Image. Фото без AI-ретуши; кадрирование указано в источниках. Примеры пасов — учебные схемы, не реконструкция матча. Голос синтетический, OmniVoice B.
+
+    Фото: Месси2018 — Екатерина Лаут, CC BY-SA 3.0; Роналду2023 — Mehdi Marizad, CC BY 4.0; Бернабеу2015 — Acruz319, CC BY-SA 4.0; Прыжок Роналду2009 — Alejandro Ramos, CC BY-SA 2.0; Месси2012 — Ludovic Péron, CC BY-SA 3.0; Кроос2018 — Антон Зайцев, CC BY-SA 3.0; Модрич2018 — Светлана Бекетова, CC BY-SA 3.0.
+    Полные страницы файлов, даты, лицензии и условия: https://github.com/eiler2005/Storygro/blob/series/football-legends/content/videos/football-now-01-messi-ronaldo/CREDITS.md
+  tags:
+    - футбол
+    - детям
+    - легендыфутбола
+    - месси
+    - роналду
+scenes:
+  - id: hook
+    scene: photo-pair
+    say: От легенд прошлого — к звёздам нашего времени! {#reveal}[Месси](=МЭсси) и Роналду. В чём секрет их долгой карьеры?
+    pad:
+      - 0.03
+      - 0.3
+    energy: 0.79
+    props:
+      image: shots/cover-v3.png
+      projectFrom: facts.series.project
+      titleFrom: facts.series.title
+      subtitleFrom: facts.series.episode
+      emblem: /rc/styles/cartoon/golden-ball.svg
+      portraits:
+        - image: shots/messi.jpg
+          labelFrom: facts.cover.messi
+          fit: cover
+          zoom: 1.45
+          position: 50% 0%
+          origin: 50% 0%
+        - image: shots/ronaldo.jpg
+          labelFrom: facts.cover.ronaldo
+          fit: cover
+          zoom: 1.45
+          position: 50% 0%
+          origin: 50% 0%
+    sfx:
+      - at: start
+        kind: swell
+        gain: 0.12
+      - at: reveal
+        kind: whoosh
+        gain: 0.09
+  - id: ronaldo-action
+    scene: photo-focus
+    say: У Криштиану — мощный рывок, высокий прыжок, точный удар. {#land}Но за силой стоят годы работы.
+    pad:
+      - 0.12
+      - 0.75
+    energy: 0.72
+    props:
+      background: shots/cover-v3.png
+      shots:
+        - image: shots/ronaldo-jump.jpg
+          captionFrom: facts.photoDates.ronaldoJump
+          fit: contain
+          position: 50% 0%
+        - image: shots/ronaldo.jpg
+          captionFrom: facts.photoDates.ronaldo
+          fit: cover
+          position: 50% 0%
+          at: land
+      titleFrom: facts.players.ronaldo
+      labels:
+        - textFrom: facts.players.skills
+          x: 0.46
+          y: 0.19
+          at: -1
+          until: land
+          tone: navy
+        - textFrom: facts.players.discipline
+          x: 0.46
+          y: 0.19
+          at: land
+          tone: navy
+    sfx:
+      - at: land
+        kind: hit
+        gain: 0.1
+  - id: ronaldo-photo
+    scene: photo-focus
+    say: Роналду постоянно тренируется и стремится стать лучше. {#work}Дисциплина помогает повторять сложное, даже
+      когда не хочется.
+    pad:
+      - 0.12
+      - 0.65
+    energy: 0.66
+    props:
+      background: shots/cover-v3.png
+      shots:
+        - image: shots/ronaldo.jpg
+          captionFrom: facts.photoDates.ronaldo
+          fit: cover
+          position: 50% 0%
+      titleFrom: facts.players.ronaldo
+  - id: ronaldo-record
+    scene: photo-focus
+    say: В Лиге чемпионов он забил [140](=сто сорок) голов. Это рекорд турнира. Но личный рекорд тоже зависит от
+      партнёров.
+    pad:
+      - 0.12
+      - 1.2
+    energy: 0.66
+    props:
+      background: shots/bernabeu.jpg
+      shots:
+        - image: shots/ronaldo.jpg
+          captionFrom: facts.photoDates.ronaldo
+          fit: cover
+          position: 50% 0%
+      titleFrom: facts.records.ronaldo
+      backgroundCaptionFrom: facts.archive.venuePhoto
+  - id: messi-photo
+    scene: photo-focus
+    say: Лионель Месси вырос в аргентинском городе Росарио. Невысокий мальчик стал футболистом, который замечает
+      то, что другие ещё не увидели.
+    pad:
+      - 0.12
+      - 0.65
+    energy: 0.66
+    props:
+      background: shots/cover-v3.png
+      shots:
+        - image: shots/messi.jpg
+          captionFrom: facts.photoDates.messi
+          fit: cover
+          position: 50% 0%
+      titleFrom: facts.players.messi
+  - id: messi-action
+    scene: photo-focus
+    say: Мяч рядом с левой ногой. {#pass}Месси умеет внезапно изменить направление и найти свободного партнёра.
+      Так проявляется его видение игры.
+    pad:
+      - 0.12
+      - 0.75
+    energy: 0.72
+    props:
+      background: shots/cover-v3.png
+      shots:
+        - image: shots/messi-control.jpg
+          captionFrom: facts.photoDates.messiControl
+          fit: cover
+          position: 100% 0%
+          zoom: 1.45
+          origin: 100% 0%
+      titleFrom: facts.players.messi
+      labels:
+        - textFrom: facts.players.vision
+          x: 0.46
+          y: 0.19
+          at: pass
+          tone: navy
+      diagram:
+        kind: curve
+        at: pass
+        labelFrom: facts.story.passExample
+    sfx:
+      - at: pass
+        kind: whoosh
+        gain: 0.09
+  - id: messi-record
+    scene: photo-focus
+    say: В [2012](=две тысячи двенадцатом) году он забил [91](=девяносто один) гол за клуб и сборную. {#record}За
+      один календарный год!
+    pad:
+      - 0.12
+      - 1.2
+    energy: 0.72
+    props:
+      background: shots/cover-v3.png
+      shots:
+        - image: shots/messi-control.jpg
+          captionFrom: facts.photoDates.messiControl
+          fit: cover
+          position: 100% 0%
+          zoom: 1.15
+          origin: 100% 0%
+      titleFrom: facts.records.messi
+      labels:
+        - textFrom: facts.records.messi
+          x: 0.46
+          y: 0.19
+          at: -1
+          until: record
+          tone: navy
+        - textFrom: facts.records.messiNote
+          x: 0.46
+          y: 0.19
+          at: record
+          tone: navy
+    sfx:
+      - at: record
+        kind: chime
+        gain: 0.1
+  - id: longevity
+    scene: photo-pair
+    say: Оба играют на взрослом уровне больше двадцати лет. {#both}У обоих есть талант, и оба много работают.
+      Гений тоже тренируется.
+    pad:
+      - 0.12
+      - 0.8
+    energy: 0.72
+    props:
+      image: shots/cover-v3.png
+      portraits:
+        - image: shots/messi.jpg
+          labelFrom: facts.cover.messi
+          fit: cover
+          zoom: 1.45
+          position: 50% 0%
+          origin: 50% 0%
+        - image: shots/ronaldo.jpg
+          labelFrom: facts.cover.ronaldo
+          fit: cover
+          zoom: 1.45
+          position: 50% 0%
+          origin: 50% 0%
+      headingFrom: facts.players.longevity
+  - id: respect
+    scene: photo-pair
+    say: Можно мечтать о рекорде и помнить о команде. {#respect}Уважать соперника и судью, поддерживать партнёров
+      и не сдаваться после ошибки.
+    pad:
+      - 0.12
+      - 1.1
+    energy: 0.72
+    props:
+      image: shots/cover-v3.png
+      portraits:
+        - image: shots/messi.jpg
+          labelFrom: facts.cover.messi
+          fit: cover
+          zoom: 1.45
+          position: 50% 0%
+          origin: 50% 0%
+        - image: shots/ronaldo.jpg
+          labelFrom: facts.cover.ronaldo
+          fit: cover
+          zoom: 1.45
+          position: 50% 0%
+          origin: 50% 0%
+      headingFrom: facts.story.respect
+  - id: next
+    scene: photo-pair
+    say: "Дальше — Модрич и Кроос: как они строили атаки «Реала» и кто сегодня продолжает эту работу."
+    pad:
+      - 0.12
+      - 0.65
+    energy: 0.72
+    props:
+      image: shots/cover-v3.png
+      portraits:
+        - image: shots/kroos.jpg
+          labelFrom: facts.cover.kroos
+          fit: cover
+          zoom: 1.8
+          position: 50% 0%
+          origin: 50% 0%
+        - image: shots/modric.jpg
+          labelFrom: facts.cover.modric
+          fit: cover
+          zoom: 1.6
+          position: 50% 0%
+          origin: 50% 0%
+      headingFrom: facts.story.next
+  - id: question
+    scene: photo-pair
+    say: Кто тебе нравится больше, Месси или Роналду, {#why}и за какое умение?
+    pad:
+      - 0.12
+      - 1.4
+    energy: 0.72
+    props:
+      image: shots/cover-v3.png
+      portraits:
+        - image: shots/messi.jpg
+          labelFrom: facts.cover.messi
+          fit: cover
+          zoom: 1.45
+          position: 50% 0%
+          origin: 50% 0%
+        - image: shots/ronaldo.jpg
+          labelFrom: facts.cover.ronaldo
+          fit: cover
+          zoom: 1.45
+          position: 50% 0%
+          origin: 50% 0%
+      headingFrom: facts.story.question
+    sfx:
+      - at: start
+        kind: chime
+        gain: 0.08

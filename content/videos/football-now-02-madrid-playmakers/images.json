@@ -1,0 +1,88 @@
+{
+  "files": {
+    "shots/cover.png": {
+      "prompt": "Use case: illustration-story. ONE portrait1088x1920 full-bleed premium family3D animated-feature background. The reference contains the exact ORIGINAL fictional child hosts Matvey the blue-kit raccoon and Sofia the plum-tracksuit orange squirrel. Preserve their faces, ears, age, fur, clothing and proportions. NO humans, human portraits or lookalikes are requested.\nOlder Madrid football stadium, teaching vignette inspired by the open-roof Bernabeu before redevelopment: steep layered grey-blue stands, pale seating, visible older cantilever roof trusses on long sides, open sapphire twilight sky, emerald pitch, cool pearl highlights and warm light from distant lamps. No modern continuous metal outer shell, no closed rolling roof, no fantasy skyline. Rich detailed architecture, grass and fabric, polished family-feature style.\nMAIN COMPOSITION for externally placed actual photographs: TOP60% of the portrait is only beautiful continuous sky/stands, NO heads, ears, limbs, objects or text. Large photo cards will occupy center y=.38–.61, keep this region quiet. The hosts are SMALL supporting guides at the lower left/right edges, not the central subjects: Matvey x=.20, Sofia x=.80. Their full ears begin below y=.66, faces y=.72–.75 (entire face above y=.78), bodies/feet down to y=.92. Each host occupies no more than20% image width. Matvey holds a tiny plain conductor baton playfully at waist level; Sofia points thoughtfully toward the center where the photographs will be added. No football in the illustration. No trophies or equipment hiding their faces. They react quietly and warmly instead of posing as the main heroes.\nPremium finely groomed fur, lifelike cloth, clean anatomy, crisp small faces, simple hierarchy, high-end film lighting. No real people, text, lettering, numbers, logos, crests, sponsors, signs, scoreboards, picture frames, borders, panels or watermark. Full background edge to edge, no artificial empty rectangle.",
+      "seed": 0,
+      "provider": "imagegen",
+      "model": "OpenAI built-in GPT Image (identifier not exposed)",
+      "width": 941,
+      "height": 1672,
+      "steps": 0,
+      "licence": "OpenAI built-in image output; account terms apply. Seed0 is a placeholder, not reproducible.",
+      "refs": {
+        "../../series/football-legends/cast/hosts-full.png": "49c92b4bca5df88e90d529034e158fb7a48a79de4c7f98d49ccf764944d2be35"
+      },
+      "sha256": "0fe088af71b3744325fd555147b3edab5e870f31673b34ffec97b71b19b4a0b8",
+      "createdAt": 1793452252225.1665,
+      "selected": false,
+      "referenceRoles": "Successful inputs contain only original fictional hosts and generated host/environment continuity. No real footballer photographs or face lookalikes in these generations."
+    },
+    "shots/cover-v2.png": {
+      "prompt": "Use case: precise-object-edit. Edit this background of ORIGINAL fictional raccoon Matvey and squirrel Sofia, no real human subjects. Keep exact identities/clothing, old open-roof stadium architecture, pearl/sapphire twilight and premium family3D finish. Make both hosts about60% of their current size, as quiet supporting guides near lower corners: Matvey x=.20, Sofia x=.80; faces centered y=.73, all faces above y=.78, ears begin below y=.65, feet near y=.91. Leave the main central area x=.25–.75,y=.35–.68 unobstructed for externally placed actual photo cards. Matvey's little conductor baton remains small; Sofia gestures toward center, no football. Also remove EVERY tiny letter-like mark, sponsor sign or word on all stadium fascia/ad bands, replacing them with plain continuous blue/cream architectural bands. No added names, text, numbers, symbols, portraits, real people, frames, panels, borders or watermark. Preserve the whole full-bleed image and natural detailed environment, do not resize the canvas or crop the entire composition.",
+      "seed": 0,
+      "provider": "imagegen",
+      "model": "OpenAI built-in GPT Image (identifier not exposed)",
+      "width": 941,
+      "height": 1672,
+      "steps": 0,
+      "licence": "OpenAI built-in image output; account terms apply. Seed0 is a placeholder, not reproducible.",
+      "refs": {
+        "shots/cover.png": "0fe088af71b3744325fd555147b3edab5e870f31673b34ffec97b71b19b4a0b8"
+      },
+      "sha256": "fdc48f8ec88d045a3294257d85fe2f63b48567d3507a948c88bc21ab56cead8e",
+      "createdAt": 1793452831988.5288,
+      "selected": true,
+      "referenceRoles": "Successful inputs contain only original fictional hosts and generated host/environment continuity. No real footballer photographs or face lookalikes in these generations."
+    },
+    "shots/kroos.jpg": {
+      "prompt": "Authentic licensed photograph, no AI generation or retouch. See photos.json/CREDITS.md.",
+      "seed": 0,
+      "provider": "manual",
+      "model": "Original photograph",
+      "width": 744,
+      "height": 1000,
+      "steps": 0,
+      "licence": "CC BY-SA 3.0 https://creativecommons.org/licenses/by-sa/3.0",
+      "sha256": "07e0e7379bf83fa54eb551fb74ece7eec44308a8727c216e7e05b53bcf80ddee",
+      "createdAt": 1793453800485.8928,
+      "selected": true,
+      "source": "https://commons.wikimedia.org/wiki/File:CSKA-RM18_(24).jpg",
+      "author": "Антон Зайцев",
+      "photoDate": "2018-10-03 19:20:48"
+    },
+    "shots/modric.jpg": {
+      "prompt": "Authentic licensed photograph, no AI generation or retouch. See photos.json/CREDITS.md.",
+      "seed": 0,
+      "provider": "manual",
+      "model": "Original photograph",
+      "width": 784,
+      "height": 1200,
+      "steps": 0,
+      "licence": "CC BY-SA 3.0 https://creativecommons.org/licenses/by-sa/3.0",
+      "sha256": "3de49f0e823f8b1cec0dae68dd6cbda873a5ee72712d37fb48b63c8cf28cd81c",
+      "createdAt": 1793453800486.4133,
+      "selected": true,
+      "source": "https://commons.wikimedia.org/wiki/File:Luka_Modri%C4%87_in_2018.jpg",
+      "author": "Светлана Бекетова",
+      "photoDate": "2018-06-26 19:30:51"
+    },
+    "shots/bernabeu.jpg": {
+      "prompt": "Authentic licensed photograph, no AI generation or retouch. See photos.json/CREDITS.md.",
+      "seed": 0,
+      "provider": "manual",
+      "model": "Original photograph",
+      "width": 3264,
+      "height": 2448,
+      "steps": 0,
+      "licence": "CC BY-SA 4.0 https://creativecommons.org/licenses/by-sa/4.0",
+      "sha256": "46afb7dc70b71747e17fc09e01dd9b4a507cad6ee6d7a67969048a782131042a",
+      "createdAt": 1793453800487.6272,
+      "selected": true,
+      "source": "https://commons.wikimedia.org/wiki/File:Santiago_Bernabeu_Stadium.jpg",
+      "author": "Acruz319",
+      "photoDate": "2015-01-11 17:48:27"
+    }
+  },
+  "notes": "Player-led native photo presentation with supporting original hosts. Photo originals remain unchanged; explicit CSS crop/zoom is a presentation choice. Exact built-in model identifier unavailable.",
+  "rejectedAttempts": []
+}

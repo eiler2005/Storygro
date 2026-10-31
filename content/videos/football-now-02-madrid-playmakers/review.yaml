@@ -1,0 +1,38 @@
+review: 1
+questions:
+  - id: story
+    ask: Подходит ли авторский сценарий современного спецвыпуска и связь со следующей темой?
+    for: owner
+    open: true
+  - id: visual
+    ask: Подходит ли формат с настоящими футболистами в центре, меньшими ведущими рядом и простыми примерами
+      передач? Новые рисованные лица генератор отклонил.
+    for: owner
+    open: true
+  - id: voice
+    ask: Подходят ли спокойный темп, ударения имён и паузы в готовом видео?
+    for: owner
+    open: true
+notes: "Technical review cut, 31 October2026: 108.279s, 11 scenes,1080x1920/30; QA14/14, master/web fully
+  decoded3245/3245 frames. Inspected43 MP4 moments and feed/cover;73 caption phrases/251 runtime samples
+  clear;148 reverse seeks with Exact visible DOM/SVG state; observed raster max 30/255 at at most 28 pixels
+  above1 intensity across 1080x1920, with the full tolerance and samples recorded separately. Every scene
+  shows actual footballers as protagonists; Matvey/Sofia are smaller supporting hosts. 3 authentic licensed
+  photos, one selected illustrated host background. Built-in GPT Image blocked new recognisable player faces;
+  successful requests used fictional cast/environment only, no bypass or photo retouch. OmniVoice B0.82/off
+  unchanged; short ending only announces separate future Guler/Bellingham episodes, not produced. Current
+  model interface cannot receive audio; subjective auditory/stress/editorial owner review stays open. NOW-R1
+  is confounded by new paired/photo format and length, no measured retention. No owner approvals or
+  publication recorded."
+approvals:
+  ru:
+    script:
+      hash: 51a01cb45d8c
+      at: 2026-10-31T13:41:30.837Z
+      by: agent
+      role: agent
+    storyboard:
+      hash: 1c4a303e255a
+      at: 2026-10-31T13:41:31.292Z
+      by: agent
+      role: agent

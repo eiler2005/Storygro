@@ -1,0 +1,359 @@
+reel: 1
+style: cartoon
+title: Кроос и Модрич — дирижёры «Реала»
+lang: ru
+format:
+  preset: vertical
+  width: 1080
+  height: 1920
+  fps: 30
+safe: reels
+voice:
+  engine: omnivoice
+  model: k2-fsa/OmniVoice
+  voice: assets/voice/narrator-ru.wav
+  speed: 0.82
+  stress: off
+music:
+  bpm: 104
+  key: C
+  progression:
+    - I
+    - V
+    - vi
+    - IV
+  gain: 0.085
+  drop: switch
+loudness: -14
+theme: theme.css
+captions:
+  show: true
+  maxWords: 3
+transition:
+  kind: cut
+  dur: 0
+data:
+  facts: facts.json
+stills:
+  cover: hook@0
+  final: legacy@1
+  hosts: next@1
+images:
+  provider: manual
+  model: OpenAI built-in GPT Image (identifier not exposed)
+  width: 1088
+  height: 1920
+  seed: 0
+  prompt: "{subject}. Original fictional Matvey/Sofia and football environment only. No generated real-player
+    faces; authentic player images are presented natively and recorded in photos.json."
+hooks:
+  - Гол забивает нападающий. А кто придумал атаку? Сегодня — Тони Кроос и Лука Модрич.
+  - Два дирижёра — и ни одного оркестра. Как они управляли игрой?
+  - Кто заменит Крооса и Модрича?
+post:
+  title: Легенды футбола · Кроос и Модрич — дирижёры «Реала»
+  text: |-
+    Кроос и Модрич: точность, темп и неожиданный пас, который помогает команде. Пять общих побед в Лиге чемпионов с «Реалом». Кроос завершил карьеру в2024; Модрич ушёл из клуба в2025. В будущих отдельных роликах — Гюлер и Беллингем, здесь только анонс.
+
+    «Маленькие большие дела · Легенды футбола». Игроки показаны настоящими фото, ведущие и фон — иллюстрации GPT Image. Фото без AI-ретуши; кадрирование указано в источниках. Примеры пасов — учебные схемы, не реконструкция матча. Голос синтетический, OmniVoice B.
+
+    Фото: Кроос2018 — Антон Зайцев, CC BY-SA 3.0; Модрич2018 — Светлана Бекетова, CC BY-SA 3.0; Бернабеу2015 — Acruz319, CC BY-SA 4.0.
+    Полные страницы файлов, даты, лицензии и условия: https://github.com/eiler2005/Storygro/blob/series/football-legends/content/videos/football-now-02-madrid-playmakers/CREDITS.md
+  tags:
+    - футбол
+    - детям
+    - легендыфутбола
+    - кроос
+    - модрич
+    - реалмадрид
+scenes:
+  - id: hook
+    scene: photo-pair
+    say: Гол забивает нападающий. {#reveal}А кто придумал атаку? Сегодня — Тони Кроос и Лука Модрич.
+    pad:
+      - 0.03
+      - 0.3
+    energy: 0.79
+    props:
+      image: shots/cover-v2.png
+      projectFrom: facts.series.project
+      titleFrom: facts.series.title
+      subtitleFrom: facts.series.episode
+      emblem: /rc/styles/cartoon/golden-ball.svg
+      portraits:
+        - image: shots/kroos.jpg
+          labelFrom: facts.cover.kroos
+          fit: cover
+          zoom: 1.8
+          position: 50% 0%
+          origin: 50% 0%
+        - image: shots/modric.jpg
+          labelFrom: facts.cover.modric
+          fit: cover
+          zoom: 1.6
+          position: 50% 0%
+          origin: 50% 0%
+    sfx:
+      - at: start
+        kind: swell
+        gain: 0.12
+      - at: reveal
+        kind: whoosh
+        gain: 0.09
+  - id: blocked
+    scene: photo-focus
+    say: "Представь: защитник перекрыл дорогу к воротам. {#space}Но на другом краю поля свободен партнёр. Как
+      доставить ему мяч?"
+    pad:
+      - 0.12
+      - 0.6
+    energy: 0.72
+    props:
+      background: shots/cover-v2.png
+      shots:
+        - image: shots/kroos.jpg
+          captionFrom: facts.photoDates.kroos
+          fit: cover
+          position: 50% 0%
+      titleFrom: facts.story.blocked
+      labels:
+        - textFrom: facts.story.blocked
+          x: 0.46
+          y: 0.19
+          at: -1
+          until: space
+          tone: navy
+        - textFrom: facts.players.tempo
+          x: 0.46
+          y: 0.19
+          at: space
+          tone: navy
+      diagram:
+        kind: switch
+        at: 0
+        labelFrom: facts.story.passExample
+  - id: kroos-photo
+    scene: photo-focus
+    say: Тони Кроос славился точными передачами и умением выбирать темп. Иногда короткий пас полезнее сильного
+      удара.
+    pad:
+      - 0.12
+      - 0.65
+    energy: 0.66
+    props:
+      background: shots/cover-v2.png
+      shots:
+        - image: shots/kroos.jpg
+          captionFrom: facts.photoDates.kroos
+          fit: cover
+          position: 50% 0%
+      titleFrom: facts.players.kroos
+  - id: switch
+    scene: photo-focus
+    say: Кроос замечал свободный фланг. Передача — {#receive}и мяч уже у товарища. Соперники разворачивались, а у
+      команды появлялось пространство.
+    pad:
+      - 0.12
+      - 1.2
+    energy: 0.72
+    props:
+      background: shots/cover-v2.png
+      shots:
+        - image: shots/kroos.jpg
+          captionFrom: facts.photoDates.kroos
+          fit: cover
+          position: 50% 0%
+      titleFrom: facts.players.tempo
+      labels:
+        - textFrom: facts.story.receive
+          x: 0.46
+          y: 0.19
+          at: receive
+          tone: navy
+      diagram:
+        kind: switch
+        at: receive
+        labelFrom: facts.story.passExample
+    sfx:
+      - at: receive
+        kind: whoosh
+        gain: 0.09
+  - id: modric-photo
+    scene: photo-focus
+    say: Лука Модрич видел неожиданные решения. Он мог отправить мяч внешней стороной стопы — мимо защитников,
+      прямо партнёру.
+    pad:
+      - 0.12
+      - 0.65
+    energy: 0.66
+    props:
+      background: shots/cover-v2.png
+      shots:
+        - image: shots/modric.jpg
+          captionFrom: facts.photoDates.modric
+          fit: cover
+          position: 50% 0%
+      titleFrom: facts.players.modric
+  - id: outside
+    scene: photo-focus
+    say: Модрич славился пасами внешней стороной стопы. {#curve}Так можно обогнуть защитника и найти товарища.
+      {#finish}Красота движения полезна, когда помогает продолжить атаку.
+    pad:
+      - 0.12
+      - 1.2
+    energy: 0.72
+    props:
+      background: shots/cover-v2.png
+      shots:
+        - image: shots/modric.jpg
+          captionFrom: facts.photoDates.modric
+          fit: cover
+          position: 50% 0%
+      titleFrom: facts.players.outside
+      labels:
+        - textFrom: facts.players.outside
+          x: 0.46
+          y: 0.19
+          at: -1
+          until: finish
+          tone: navy
+        - textFrom: facts.story.finish
+          x: 0.46
+          y: 0.19
+          at: finish
+          tone: navy
+      diagram:
+        kind: curve
+        at: curve
+        labelFrom: facts.story.passExample
+    sfx:
+      - at: curve
+        kind: whoosh
+        gain: 0.09
+      - at: finish
+        kind: chime
+        gain: 0.08
+  - id: trio
+    scene: photo-pair
+    say: Рядом с ними играл Каземиро, помогавший защищать команду. {#team}Успех создавал не один волшебный пас, а
+      взаимодействие.
+    pad:
+      - 0.12
+      - 0.75
+    energy: 0.72
+    props:
+      image: shots/cover-v2.png
+      portraits:
+        - image: shots/kroos.jpg
+          labelFrom: facts.cover.kroos
+          fit: cover
+          zoom: 1.8
+          position: 50% 0%
+          origin: 50% 0%
+        - image: shots/modric.jpg
+          labelFrom: facts.cover.modric
+          fit: cover
+          zoom: 1.6
+          position: 50% 0%
+          origin: 50% 0%
+      headingFrom: facts.players.trio
+  - id: legacy
+    scene: photo-pair
+    say: Вместе Кроос и Модрич помогли «Реалу» пять раз выиграть Лигу чемпионов. {#five}За красивыми атаками
+      стояли общие усилия.
+    pad:
+      - 0.12
+      - 1.2
+    energy: 0.66
+    props:
+      image: shots/bernabeu.jpg
+      portraits:
+        - image: shots/kroos.jpg
+          labelFrom: facts.cover.kroos
+          fit: cover
+          zoom: 1.8
+          position: 50% 0%
+          origin: 50% 0%
+        - image: shots/modric.jpg
+          labelFrom: facts.cover.modric
+          fit: cover
+          zoom: 1.6
+          position: 50% 0%
+          origin: 50% 0%
+      headingFrom: facts.legacy.joint
+      backgroundCaptionFrom: facts.archive.venuePhoto
+  - id: dates
+    scene: photo-pair
+    say: Кроос завершил карьеру в [2024](=две тысячи двадцать четвёртом) году. {#later}Модрич ушёл из «Реала» в
+      [2025](=две тысячи двадцать пятом) году. Их история в клубе уже особая.
+    pad:
+      - 0.12
+      - 0.75
+    energy: 0.72
+    props:
+      image: shots/cover-v2.png
+      portraits:
+        - image: shots/kroos.jpg
+          labelFrom: facts.cover.kroos
+          fit: cover
+          zoom: 1.8
+          position: 50% 0%
+          origin: 50% 0%
+        - image: shots/modric.jpg
+          labelFrom: facts.cover.modric
+          fit: cover
+          zoom: 1.6
+          position: 50% 0%
+          origin: 50% 0%
+      headingFrom: facts.story.legacyHeading
+  - id: lesson
+    scene: photo-pair
+    say: Хочешь помочь команде? {#see}Сначала посмотри, кто свободен, а потом отдай удобный пас. Великие атаки
+      начинаются с внимания к товарищу.
+    pad:
+      - 0.12
+      - 1.1
+    energy: 0.72
+    props:
+      image: shots/cover-v2.png
+      portraits:
+        - image: shots/kroos.jpg
+          labelFrom: facts.cover.kroos
+          fit: cover
+          zoom: 1.8
+          position: 50% 0%
+          origin: 50% 0%
+        - image: shots/modric.jpg
+          labelFrom: facts.cover.modric
+          fit: cover
+          zoom: 1.6
+          position: 50% 0%
+          origin: 50% 0%
+      headingFrom: facts.story.lesson
+  - id: next
+    scene: photo-pair
+    say: Дальше — Арда Гюлер и Джуд Беллингем. Каждому посвятим отдельный выпуск.
+    pad:
+      - 0.12
+      - 1.4
+    energy: 0.72
+    props:
+      image: shots/cover-v2.png
+      portraits:
+        - image: shots/kroos.jpg
+          labelFrom: facts.cover.kroos
+          fit: cover
+          zoom: 1.8
+          position: 50% 0%
+          origin: 50% 0%
+        - image: shots/modric.jpg
+          labelFrom: facts.cover.modric
+          fit: cover
+          zoom: 1.6
+          position: 50% 0%
+          origin: 50% 0%
+      headingFrom: facts.story.next
+    sfx:
+      - at: start
+        kind: chime
+        gain: 0.08

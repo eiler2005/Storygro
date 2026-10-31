@@ -1,0 +1,190 @@
+{
+  "duration": 98.65899999999999,
+  "size": [
+    1080,
+    1920
+  ],
+  "fps": 30,
+  "frames": 2957,
+  "webFrames": 2957,
+  "moments": 37,
+  "masterSHA256": "0bee60d18925abfe6d7e86fc7fe49dc6118b60348f1880092d0325ae55851d12",
+  "qa": "pass",
+  "scenes": 11,
+  "captionPhrases": 68,
+  "runtimeSamples": 239,
+  "reverseSeeks": 142,
+  "textMisses": [],
+  "technicalTextMisses": [],
+  "reverseMisses": [],
+  "pixelRounding": [
+    {
+      "at": 48.717000000000006,
+      "sameDom": true,
+      "maxChannelDifference": 30,
+      "meanChannelDifference": 0.00046875,
+      "pixelsAbove1": 6,
+      "fractionAbove1": 0.0000028935185185185184
+    },
+    {
+      "at": 47.917,
+      "sameDom": true,
+      "maxChannelDifference": 21,
+      "meanChannelDifference": 0.0005415702160493827,
+      "pixelsAbove1": 29,
+      "fractionAbove1": 0.00001398533950617284
+    },
+    {
+      "at": 47.137,
+      "sameDom": true,
+      "maxChannelDifference": 12,
+      "meanChannelDifference": 0.0000853587962962963,
+      "pixelsAbove1": 5,
+      "fractionAbove1": 0.0000024112654320987654
+    },
+    {
+      "at": 47.097,
+      "sameDom": true,
+      "maxChannelDifference": 18,
+      "meanChannelDifference": 0.00046151620370370373,
+      "pixelsAbove1": 30,
+      "fractionAbove1": 0.000014467592592592593
+    },
+    {
+      "at": 46.697,
+      "sameDom": true,
+      "maxChannelDifference": 12,
+      "meanChannelDifference": 0.0002546296296296296,
+      "pixelsAbove1": 7,
+      "fractionAbove1": 0.000003375771604938272
+    },
+    {
+      "at": 45.897000000000006,
+      "sameDom": true,
+      "maxChannelDifference": 12,
+      "meanChannelDifference": 0.00035445601851851854,
+      "pixelsAbove1": 4,
+      "fractionAbove1": 0.0000019290123456790124
+    },
+    {
+      "at": 45.117000000000004,
+      "sameDom": true,
+      "maxChannelDifference": 12,
+      "meanChannelDifference": 0.0002469135802469136,
+      "pixelsAbove1": 7,
+      "fractionAbove1": 0.000003375771604938272
+    },
+    {
+      "at": 45.077000000000005,
+      "sameDom": true,
+      "maxChannelDifference": 12,
+      "meanChannelDifference": 0.00024546682098765434,
+      "pixelsAbove1": 6,
+      "fractionAbove1": 0.0000028935185185185184
+    },
+    {
+      "at": 46.577000000000005,
+      "sameDom": true,
+      "maxChannelDifference": 12,
+      "meanChannelDifference": 0.0003559027777777778,
+      "pixelsAbove1": 5,
+      "fractionAbove1": 0.0000024112654320987654
+    },
+    {
+      "at": 45.777,
+      "sameDom": true,
+      "maxChannelDifference": 12,
+      "meanChannelDifference": 0.0003708526234567901,
+      "pixelsAbove1": 32,
+      "fractionAbove1": 0.0000154320987654321
+    },
+    {
+      "at": 44.99700000000001,
+      "sameDom": true,
+      "maxChannelDifference": 12,
+      "meanChannelDifference": 0.0003559027777777778,
+      "pixelsAbove1": 5,
+      "fractionAbove1": 0.0000024112654320987654
+    },
+    {
+      "at": 44.977000000000004,
+      "sameDom": true,
+      "maxChannelDifference": 12,
+      "meanChannelDifference": 0.00035445601851851854,
+      "pixelsAbove1": 4,
+      "fractionAbove1": 0.0000019290123456790124
+    },
+    {
+      "at": 55.580999999999996,
+      "sameDom": true,
+      "maxChannelDifference": 30,
+      "meanChannelDifference": 0.0005087770061728396,
+      "pixelsAbove1": 7,
+      "fractionAbove1": 0.000003375771604938272
+    },
+    {
+      "at": 44.987,
+      "sameDom": true,
+      "maxChannelDifference": 21,
+      "meanChannelDifference": 0.0004378858024691358,
+      "pixelsAbove1": 5,
+      "fractionAbove1": 0.0000024112654320987654
+    },
+    {
+      "at": 15.623000000000001,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 4.822530864197531e-7,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 14.843,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.000003375771604938272,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 14.823,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.000003375771604938272,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 24.582,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.000003375771604938272,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 14.833,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.000003375771604938272,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    }
+  ],
+  "rasterSummary": {
+    "maxChannelDifference": 30,
+    "maxPixelsAbove1": 32,
+    "maxMeanChannelDifference": 0.0005415702160493827
+  },
+  "pixelTolerance": "Exact visible DOM and SVG attributes required. Separately reported raster differences: <=1 channel intensity, or max<=32, mean<=0.001/255 and <=0.02% pixels above1. Larger differences fail. Sparse edge differences are consistent with browser rasterisation, not a changed scene state.",
+  "earlyPassSec": null,
+  "auditoryReview": "Not performed: current model interface does not accept audio input; owner listening remains open. ASR is a separate technical check.",
+  "voiceSpeed": 0.82,
+  "qaChecks": 15,
+  "qaPassed": 15,
+  "viewedMp4Moments": 37,
+  "visuallyReviewed": "All 37 sampled MP4 moments, first/last, photo/cue changes, pass diagrams and result holds, feed and square cover. Footballers remain the visual protagonists; fictional hosts support nearby. No technical attribution or guide overlays in the video.",
+  "authenticPhotosUsed": 7,
+  "ownerListening": "pending",
+  "publication": "none"
+}

@@ -4,7 +4,7 @@
 
 > **Audience:** anyone choosing what to reuse · generated from the reel specs, styles, scene and runtime sources
 
-One page for what exists: every reel script and its scene sequence, the story structure of each style, and every visual component with the reels that use it. It lists 29 reels, 4 styles, 25 scenes and the runtime helpers. For methods and tools see the [toolkit](toolkit.md); for scene props see the [scene catalog](scenes.md); for episode status see `content/TRACKER.md`.
+One page for what exists: every reel script and its scene sequence, the story structure of each style, and every visual component with the reels that use it. It lists 31 reels, 4 styles, 27 scenes and the runtime helpers. For methods and tools see the [toolkit](toolkit.md); for scene props see the [scene catalog](scenes.md); for episode status see `content/TRACKER.md`.
 
 ## Contents
 
@@ -34,6 +34,8 @@ Storyboard approval is the role recorded in the folder's `review.yaml` (`owner`,
 | [football-legends-07-yashin/ru.reel.yaml](../../content/videos/football-legends-07-yashin/ru.reel.yaml) | Лев Яшин — вратарь, который получил «Золотой мяч» | ru | cartoon | 1080×1920@30 | omnivoice | 17 | series-cover → illustration ×16 | agent |
 | [football-legends-08-law/ru.reel.yaml](../../content/videos/football-legends-08-law/ru.reel.yaml) | Денис Лоу — король голов | ru | cartoon | 1080×1920@30 | omnivoice | 13 | series-cover → illustration ×12 | agent |
 | [football-legends-09-eusebio/ru.reel.yaml](../../content/videos/football-legends-09-eusebio/ru.reel.yaml) | Эусебио — «Чёрная пантера», которая не сдавалась | ru | cartoon | 1080×1920@30 | omnivoice | 13 | series-cover → illustration → archive-photo ×2 → illustration → archive-photo → illustration ×7 | agent |
+| [football-now-01-messi-ronaldo/ru.reel.yaml](../../content/videos/football-now-01-messi-ronaldo/ru.reel.yaml) | Месси и Роналду — два пути к рекордам | ru | cartoon | 1080×1920@30 | omnivoice | 11 | photo-pair → photo-focus ×6 → photo-pair ×4 | agent |
+| [football-now-02-madrid-playmakers/ru.reel.yaml](../../content/videos/football-now-02-madrid-playmakers/ru.reel.yaml) | Кроос и Модрич — дирижёры «Реала» | ru | cartoon | 1080×1920@30 | omnivoice | 11 | photo-pair → photo-focus ×5 → photo-pair ×5 | agent |
 | [football-stars-kids/ru.reel.yaml](../../content/videos/football-stars-kids/ru.reel.yaml) | Звёзды футбола: собираем альбом | ru | cartoon | 1080×1920@30 | qwen3 | 19 | illustration → kinetic → illustration ×7 → kinetic → illustration ×3 → kinetic → illustration ×5 | agent |
 | [future-of-work/ru.reel.yaml](../../content/videos/future-of-work/ru.reel.yaml) | Будущее работы — кто отвечает за результат | ru | — | 1080×1920@30 | kokoro | 6 | headline → task-stack → crowd → steps ×2 → outro | — |
 | [inter-miami-magic-pass/ru.reel.yaml](../../content/videos/inter-miami-magic-pass/ru.reel.yaml) | Интер Майами: финальный пас | ru | cartoon | 1080×1920@30 | qwen3 | 12 | illustration ×12 | agent |
@@ -116,6 +118,8 @@ Status: pilot. Pacing: 140–175 words/min, 15–45 s long.
 | `ladder` | Cut-paper scenes | ladder — a career as a paper ladder: rungs are levels (or the tasks people learn on), figures stand | [props](scenes.md#ladder) | 1: ai-jobs |
 | `logo-reveal` | Landscape product scenes | logo-reveal — a line of light grows, slides converge from the edges, snap into the stacked-cards mark | [props](scenes.md#logo-reveal) | 1: slidecraft-launch |
 | `outro` | Cut-paper scenes | outro — the closing card: a short line that lands the idea, one call to action, and a sign-off | [props](scenes.md#outro) | 2: ai-jobs, future-of-work |
+| `photo-focus` | Player-led authentic photo sequence | Player-led authentic photo sequence. Native presentation only, no generative face changes. | [props](scenes.md#photo-focus) | 2: football-now-01-messi-ronaldo, football-now-02-madrid-playmakers |
+| `photo-pair` | Authentic photo pair with optional series identity | Authentic photographs on a full-frame illustrated background; optional shared series identity. | [props](scenes.md#photo-pair) | 2: football-now-01-messi-ronaldo, football-now-02-madrid-playmakers |
 | `pins` | Landscape product scenes | pins — a real slide open in a (fake) editor; callout pins land on cues, one object gets selected, | [props](scenes.md#pins) | 1: slidecraft-launch |
 | `process` | Kinetic and diagram scenes | process — a flow in isometric 2.5D: numbered stations on a zigzag path, and one glowing token that | [props](scenes.md#process) | 2: agent-motion-studio, scene-gallery |
 | `scale` | Kinetic and diagram scenes | scale — a comparison of sizes: circles (or squares) whose areas are proportional to the values, | [props](scenes.md#scale) | 2: agent-motion-studio, scene-gallery |

@@ -1,0 +1,5 @@
+@import url('/rc/styles/cartoon/football-legends.css');
+:root { --fl-ink:#172b4d; --fl-paper:#fff8ed; --fl-gold:#efc75c; --fl-caption-bottom:490px; --ct-ink:var(--fl-ink); --ct-band:#fff8ed; --ct-navy:var(--fl-ink); --ct-accent:#7f8fd8; --kt-ink:#fff8ed; --kt-accent:#efc75c; }
+/* Player photos lead; captions stay above photos and supporting hosts. */
+.rc-caption { top:450px !important; bottom:auto !important; }
+body:has(.rc-scene--hook:not([style*="display: none"]) .fl-series-cover[style*="visibility: visible"]) .rc-caption { visibility:hidden !important; }

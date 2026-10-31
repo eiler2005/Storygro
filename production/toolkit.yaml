@@ -327,6 +327,28 @@ entries:
     docs: docs/reference/scenes.md#archive-photo
     examples: [content/videos/football-legends-09-eusebio/DIRECTION.md]
 
+  - id: scenes-photo-pair
+    kind: scenes
+    stage: look
+    title: Authentic photo pair with optional series identity
+    what: Two original photographs and data-bound short labels over full-frame artwork. Can reuse the existing series-cover identity and cue-driven reveal; original faces are never generatively retouched.
+    when: A paired football story needs actual player likenesses with fictional hosts supporting nearby; compose hosts below the photo cards and retain full provenance outside the children's frame.
+    scenes: [photo-pair]
+    status: pilot
+    docs: docs/reference/scenes.md#photo-pair
+    examples: [content/videos/football-now-01-messi-ronaldo/DIRECTION.md]
+
+  - id: scenes-photo-focus
+    kind: scenes
+    stage: look
+    title: Player-led authentic photo sequence
+    what: Cue-driven original photographs and short dated labels over a full-frame background; optional simple animated pass diagram sits beside the photograph. Data-bound titles stay above the photo and supporting hosts.
+    when: A factual sports story needs the real player as the main subject and an illustrative passing mechanism without generative face editing or a claimed match reconstruction.
+    scenes: [photo-focus]
+    status: pilot
+    docs: docs/reference/scenes.md#photo-focus
+    examples: [content/videos/football-now-02-madrid-playmakers/DIRECTION.md]
+
   - id: scenes-screencast
     kind: scenes
     stage: look

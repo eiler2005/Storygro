@@ -1,0 +1,53 @@
+{
+  "series": {
+    "_source": "[O1] Owner clarifies episode2 is Kroos/Modric, Guler/Bellingham future only; shared identity retained. Conductors is an editorial metaphor, not sourced nickname.",
+    "project": "Маленькие большие дела",
+    "title": "Легенды футбола",
+    "episode": "Кроос и Модрич · Дирижёры «Реала»"
+  },
+  "players": {
+    "_source": "[S1] Real Madrid Kroos legacy profile; [S2/S3] Modric profile/interview. Casemiro is third member, not erased from history.",
+    "kroos": "Тони Кроос",
+    "modric": "Лука Модрич",
+    "trio": "Кроос · Модрич · Каземиро",
+    "tempo": "Увидеть свободный фланг",
+    "outside": "Пас внешней стороной стопы"
+  },
+  "legacy": {
+    "_source": "[S1/S2/S4] Five joint Real Madrid UCL wins2016,2017,2018,2022,2024; Kroos2013 Bayern win and Modric2014 Real win are not joint. [S5] Kroos retirement2024; [S6] Modric departure2025, not retirement.",
+    "joint": "5 Лиг чемпионов вместе",
+    "kroos": "Кроос · завершил карьеру в 2024",
+    "modric": "Модрич · ушёл из «Реала» в 2025"
+  },
+  "story": {
+    "_source": "[O1] Editorial child-friendly demonstration and requested future bridge, not named-match reconstruction or official heir designation; [S7] current squad contains Guler and Bellingham. [O2] Owner requires footballers as visual protagonists; hosts support them. Authentic player photos therefore remain visible in every story scene.",
+    "blocked": "Центр закрыт. Где свободно?",
+    "receive": "У партнёра появилось пространство",
+    "finish": "Удобный пас помогает команде",
+    "lesson": "Сначала увидеть товарища",
+    "next": "Далее отдельно: Гюлер и Беллингем",
+    "legacyHeading": "Их история в «Реале»",
+    "passExample": "Пример паса"
+  },
+  "archive": {
+    "_source": "[P1–P3] Specific Commons file pages; photo date, not upload date.",
+    "messi": "Фото 2018 года",
+    "ronaldo": "Фото 2023 года",
+    "kroos": "Фото 2018 года",
+    "modric": "Фото 2018 года",
+    "bernabeu": "Фото 2015 года",
+    "stadium": "«Сантьяго Бернабеу»",
+    "venuePhoto": "«Бернабеу» · фото 2015 года"
+  },
+  "cover": {
+    "_source": "[P1] \"2018-10-03 19:20:48\"; [P2] \"2018-06-26 19:30:51\"; native original photos, no generated player faces.",
+    "kroos": "Кроос · фото 2018",
+    "modric": "Модрич · фото 2018"
+  },
+  "photoDates": {
+    "_source": "[P1] \"2018-10-03 19:20:48\"; [P2] \"2018-06-26 19:30:51\"; [P3] \"2015-01-11 17:48:27\"",
+    "kroos": "Фото 2018 года",
+    "modric": "Фото 2018 года",
+    "bernabeu": "Фото 2015 года"
+  }
+}

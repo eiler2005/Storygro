@@ -1,0 +1,814 @@
+{
+  "duration": 108.279,
+  "size": [
+    1080,
+    1920
+  ],
+  "fps": 30,
+  "frames": 3245,
+  "webFrames": 3245,
+  "moments": 43,
+  "masterSHA256": "c61302bf8bf04d27aed644ccd3efb0b1c41bc8c1346927aa8c4ba233a27dce50",
+  "qa": "pass",
+  "scenes": 11,
+  "captionPhrases": 73,
+  "runtimeSamples": 251,
+  "reverseSeeks": 148,
+  "textMisses": [],
+  "technicalTextMisses": [],
+  "reverseMisses": [],
+  "pixelRounding": [
+    {
+      "at": 101.198,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 4.822530864197531e-7,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 101.178,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 4.822530864197531e-7,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 108.259,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 4.822530864197531e-7,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 101.188,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 4.822530864197531e-7,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 93.74499999999999,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 9.645061728395062e-7,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 92.945,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 9.645061728395062e-7,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 92.16499999999999,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 9.645061728395062e-7,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 92.125,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 9.645061728395062e-7,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 101.15799999999999,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.0000014467592592592592,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 91.80499999999999,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 4.822530864197531e-7,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 90.225,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 4.822530864197531e-7,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 90.18499999999999,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 4.822530864197531e-7,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 90.88499999999999,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 4.822530864197531e-7,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 90.10499999999999,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.0000014467592592592592,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 90.085,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.0000014467592592592592,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 101.158,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.0000014467592592592592,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 90.095,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.0000014467592592592592,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 84.213,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 4.822530864197531e-7,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 83.413,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 4.822530864197531e-7,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 82.633,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 4.822530864197531e-7,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 82.59299999999999,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 4.822530864197531e-7,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 79.853,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 4.822530864197531e-7,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 78.273,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 4.822530864197531e-7,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 78.23299999999999,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 4.822530864197531e-7,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 78.93299999999999,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 4.822530864197531e-7,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 78.15299999999999,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 4.822530864197531e-7,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 78.133,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 4.822530864197531e-7,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 90.065,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 4.822530864197531e-7,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 78.143,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 4.822530864197531e-7,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 64.776,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.000009645061728395062,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 63.97599999999999,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.000009645061728395062,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 63.19599999999999,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.000009645061728395062,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 63.15599999999999,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.000009645061728395062,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 59.33599999999999,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.000009645061728395062,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 58.556,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.000009645061728395062,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 58.535999999999994,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.000009645061728395062,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 68.139,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.000009645061728395062,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 58.54599999999999,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.000009645061728395062,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 54.757999999999996,
+      "sameDom": true,
+      "maxChannelDifference": 30,
+      "meanChannelDifference": 0.00014130015432098765,
+      "pixelsAbove1": 2,
+      "fractionAbove1": 9.645061728395062e-7
+    },
+    {
+      "at": 53.95799999999999,
+      "sameDom": true,
+      "maxChannelDifference": 23,
+      "meanChannelDifference": 0.0006071566358024691,
+      "pixelsAbove1": 13,
+      "fractionAbove1": 0.00000626929012345679
+    },
+    {
+      "at": 53.17799999999999,
+      "sameDom": true,
+      "maxChannelDifference": 30,
+      "meanChannelDifference": 0.00014178240740740742,
+      "pixelsAbove1": 2,
+      "fractionAbove1": 9.645061728395062e-7
+    },
+    {
+      "at": 53.13799999999999,
+      "sameDom": true,
+      "maxChannelDifference": 21,
+      "meanChannelDifference": 0.00013695987654320987,
+      "pixelsAbove1": 2,
+      "fractionAbove1": 9.645061728395062e-7
+    },
+    {
+      "at": 51.077999999999996,
+      "sameDom": true,
+      "maxChannelDifference": 30,
+      "meanChannelDifference": 0.0006168016975308642,
+      "pixelsAbove1": 13,
+      "fractionAbove1": 0.00000626929012345679
+    },
+    {
+      "at": 50.27799999999999,
+      "sameDom": true,
+      "maxChannelDifference": 21,
+      "meanChannelDifference": 0.000544945987654321,
+      "pixelsAbove1": 11,
+      "fractionAbove1": 0.000005304783950617284
+    },
+    {
+      "at": 49.49799999999999,
+      "sameDom": true,
+      "maxChannelDifference": 23,
+      "meanChannelDifference": 0.00008342978395061729,
+      "pixelsAbove1": 5,
+      "fractionAbove1": 0.0000024112654320987654
+    },
+    {
+      "at": 49.45799999999999,
+      "sameDom": true,
+      "maxChannelDifference": 12,
+      "meanChannelDifference": 0.00043306327160493827,
+      "pixelsAbove1": 11,
+      "fractionAbove1": 0.000005304783950617284
+    },
+    {
+      "at": 47.41799999999999,
+      "sameDom": true,
+      "maxChannelDifference": 10,
+      "meanChannelDifference": 0.0000072337962962962966,
+      "pixelsAbove1": 3,
+      "fractionAbove1": 0.0000014467592592592592
+    },
+    {
+      "at": 46.617999999999995,
+      "sameDom": true,
+      "maxChannelDifference": 12,
+      "meanChannelDifference": 0.0004272762345679012,
+      "pixelsAbove1": 4,
+      "fractionAbove1": 0.0000019290123456790124
+    },
+    {
+      "at": 45.837999999999994,
+      "sameDom": true,
+      "maxChannelDifference": 10,
+      "meanChannelDifference": 0.000006751543209876544,
+      "pixelsAbove1": 3,
+      "fractionAbove1": 0.0000014467592592592592
+    },
+    {
+      "at": 45.797999999999995,
+      "sameDom": true,
+      "maxChannelDifference": 2,
+      "meanChannelDifference": 0.000003375771604938272,
+      "pixelsAbove1": 2,
+      "fractionAbove1": 9.645061728395062e-7
+    },
+    {
+      "at": 47.297999999999995,
+      "sameDom": true,
+      "maxChannelDifference": 12,
+      "meanChannelDifference": 0.0004325810185185185,
+      "pixelsAbove1": 5,
+      "fractionAbove1": 0.0000024112654320987654
+    },
+    {
+      "at": 46.49799999999999,
+      "sameDom": true,
+      "maxChannelDifference": 2,
+      "meanChannelDifference": 0.000003858024691358025,
+      "pixelsAbove1": 2,
+      "fractionAbove1": 9.645061728395062e-7
+    },
+    {
+      "at": 45.717999999999996,
+      "sameDom": true,
+      "maxChannelDifference": 12,
+      "meanChannelDifference": 0.00043306327160493827,
+      "pixelsAbove1": 5,
+      "fractionAbove1": 0.0000024112654320987654
+    },
+    {
+      "at": 45.69799999999999,
+      "sameDom": true,
+      "maxChannelDifference": 12,
+      "meanChannelDifference": 0.000427758487654321,
+      "pixelsAbove1": 4,
+      "fractionAbove1": 0.0000019290123456790124
+    },
+    {
+      "at": 58.51599999999999,
+      "sameDom": true,
+      "maxChannelDifference": 30,
+      "meanChannelDifference": 0.0005994405864197531,
+      "pixelsAbove1": 5,
+      "fractionAbove1": 0.0000024112654320987654
+    },
+    {
+      "at": 45.70799999999999,
+      "sameDom": true,
+      "maxChannelDifference": 21,
+      "meanChannelDifference": 0.0005396412037037037,
+      "pixelsAbove1": 5,
+      "fractionAbove1": 0.0000024112654320987654
+    },
+    {
+      "at": 37.724,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 9.645061728395062e-7,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 36.924,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 4.822530864197531e-7,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 36.104,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 9.645061728395062e-7,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 36.803999999999995,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 9.645061728395062e-7,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 36.024,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 9.645061728395062e-7,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 45.67799999999999,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 9.645061728395062e-7,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 30.367,
+      "sameDom": true,
+      "maxChannelDifference": 30,
+      "meanChannelDifference": 0.0006264467592592592,
+      "pixelsAbove1": 5,
+      "fractionAbove1": 0.0000024112654320987654
+    },
+    {
+      "at": 29.567,
+      "sameDom": true,
+      "maxChannelDifference": 21,
+      "meanChannelDifference": 0.0004427083333333333,
+      "pixelsAbove1": 4,
+      "fractionAbove1": 0.0000019290123456790124
+    },
+    {
+      "at": 28.787,
+      "sameDom": true,
+      "maxChannelDifference": 21,
+      "meanChannelDifference": 0.0001982060185185185,
+      "pixelsAbove1": 4,
+      "fractionAbove1": 0.0000019290123456790124
+    },
+    {
+      "at": 28.747,
+      "sameDom": true,
+      "maxChannelDifference": 22,
+      "meanChannelDifference": 0.0003206983024691358,
+      "pixelsAbove1": 24,
+      "fractionAbove1": 0.000011574074074074073
+    },
+    {
+      "at": 26.627,
+      "sameDom": true,
+      "maxChannelDifference": 10,
+      "meanChannelDifference": 0.000006751543209876544,
+      "pixelsAbove1": 3,
+      "fractionAbove1": 0.0000014467592592592592
+    },
+    {
+      "at": 25.827,
+      "sameDom": true,
+      "maxChannelDifference": 22,
+      "meanChannelDifference": 0.0002826003086419753,
+      "pixelsAbove1": 6,
+      "fractionAbove1": 0.0000028935185185185184
+    },
+    {
+      "at": 25.047,
+      "sameDom": true,
+      "maxChannelDifference": 10,
+      "meanChannelDifference": 0.000006751543209876544,
+      "pixelsAbove1": 3,
+      "fractionAbove1": 0.0000014467592592592592
+    },
+    {
+      "at": 25.007,
+      "sameDom": true,
+      "maxChannelDifference": 2,
+      "meanChannelDifference": 0.0000019290123456790124,
+      "pixelsAbove1": 2,
+      "fractionAbove1": 9.645061728395062e-7
+    },
+    {
+      "at": 26.507,
+      "sameDom": true,
+      "maxChannelDifference": 22,
+      "meanChannelDifference": 0.0002879050925925926,
+      "pixelsAbove1": 7,
+      "fractionAbove1": 0.000003375771604938272
+    },
+    {
+      "at": 25.707,
+      "sameDom": true,
+      "maxChannelDifference": 2,
+      "meanChannelDifference": 0.0000019290123456790124,
+      "pixelsAbove1": 2,
+      "fractionAbove1": 9.645061728395062e-7
+    },
+    {
+      "at": 24.927,
+      "sameDom": true,
+      "maxChannelDifference": 22,
+      "meanChannelDifference": 0.00028935185185185184,
+      "pixelsAbove1": 7,
+      "fractionAbove1": 0.000003375771604938272
+    },
+    {
+      "at": 24.907,
+      "sameDom": true,
+      "maxChannelDifference": 22,
+      "meanChannelDifference": 0.00028404706790123455,
+      "pixelsAbove1": 6,
+      "fractionAbove1": 0.0000028935185185185184
+    },
+    {
+      "at": 35.983999999999995,
+      "sameDom": true,
+      "maxChannelDifference": 30,
+      "meanChannelDifference": 0.0006225887345679013,
+      "pixelsAbove1": 4,
+      "fractionAbove1": 0.0000019290123456790124
+    },
+    {
+      "at": 24.917,
+      "sameDom": true,
+      "maxChannelDifference": 21,
+      "meanChannelDifference": 0.00044560185185185187,
+      "pixelsAbove1": 5,
+      "fractionAbove1": 0.0000024112654320987654
+    },
+    {
+      "at": 17.398,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 9.645061728395062e-7,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 15.778,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 9.645061728395062e-7,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 16.478,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 9.645061728395062e-7,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 15.698,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 9.645061728395062e-7,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 15.678,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 4.822530864197531e-7,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 24.887,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 9.645061728395062e-7,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 15.688,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 4.822530864197531e-7,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 11.826,
+      "sameDom": true,
+      "maxChannelDifference": 21,
+      "meanChannelDifference": 0.00019868827160493828,
+      "pixelsAbove1": 17,
+      "fractionAbove1": 0.000008198302469135803
+    },
+    {
+      "at": 11.026,
+      "sameDom": true,
+      "maxChannelDifference": 21,
+      "meanChannelDifference": 0.0002816358024691358,
+      "pixelsAbove1": 28,
+      "fractionAbove1": 0.000013503086419753087
+    },
+    {
+      "at": 10.246,
+      "sameDom": true,
+      "maxChannelDifference": 21,
+      "meanChannelDifference": 0.00028549382716049385,
+      "pixelsAbove1": 28,
+      "fractionAbove1": 0.000013503086419753087
+    },
+    {
+      "at": 10.206,
+      "sameDom": true,
+      "maxChannelDifference": 21,
+      "meanChannelDifference": 0.00028404706790123455,
+      "pixelsAbove1": 28,
+      "fractionAbove1": 0.000013503086419753087
+    },
+    {
+      "at": 8.266,
+      "sameDom": true,
+      "maxChannelDifference": 21,
+      "meanChannelDifference": 0.0002594521604938272,
+      "pixelsAbove1": 16,
+      "fractionAbove1": 0.00000771604938271605
+    },
+    {
+      "at": 7.466,
+      "sameDom": true,
+      "maxChannelDifference": 21,
+      "meanChannelDifference": 0.00017939814814814815,
+      "pixelsAbove1": 2,
+      "fractionAbove1": 9.645061728395062e-7
+    },
+    {
+      "at": 6.686,
+      "sameDom": true,
+      "maxChannelDifference": 21,
+      "meanChannelDifference": 0.0001789158950617284,
+      "pixelsAbove1": 2,
+      "fractionAbove1": 9.645061728395062e-7
+    },
+    {
+      "at": 6.646,
+      "sameDom": true,
+      "maxChannelDifference": 21,
+      "meanChannelDifference": 0.00018566743827160494,
+      "pixelsAbove1": 4,
+      "fractionAbove1": 0.0000019290123456790124
+    },
+    {
+      "at": 8.146,
+      "sameDom": true,
+      "maxChannelDifference": 21,
+      "meanChannelDifference": 0.0001789158950617284,
+      "pixelsAbove1": 2,
+      "fractionAbove1": 9.645061728395062e-7
+    },
+    {
+      "at": 7.346,
+      "sameDom": true,
+      "maxChannelDifference": 21,
+      "meanChannelDifference": 0.0004923804012345679,
+      "pixelsAbove1": 5,
+      "fractionAbove1": 0.0000024112654320987654
+    },
+    {
+      "at": 6.566,
+      "sameDom": true,
+      "maxChannelDifference": 12,
+      "meanChannelDifference": 0.0003052662037037037,
+      "pixelsAbove1": 2,
+      "fractionAbove1": 9.645061728395062e-7
+    },
+    {
+      "at": 6.546,
+      "sameDom": true,
+      "maxChannelDifference": 22,
+      "meanChannelDifference": 0.00003472222222222222,
+      "pixelsAbove1": 6,
+      "fractionAbove1": 0.0000028935185185185184
+    },
+    {
+      "at": 15.658000000000001,
+      "sameDom": true,
+      "maxChannelDifference": 21,
+      "meanChannelDifference": 0.00048273533950617283,
+      "pixelsAbove1": 4,
+      "fractionAbove1": 0.0000019290123456790124
+    },
+    {
+      "at": 6.556,
+      "sameDom": true,
+      "maxChannelDifference": 21,
+      "meanChannelDifference": 0.0004885223765432098,
+      "pixelsAbove1": 5,
+      "fractionAbove1": 0.0000024112654320987654
+    }
+  ],
+  "rasterSummary": {
+    "maxChannelDifference": 30,
+    "maxPixelsAbove1": 28,
+    "maxMeanChannelDifference": 0.0006264467592592592
+  },
+  "pixelTolerance": "Exact visible DOM and SVG attributes required. Separately reported raster differences: <=1 channel intensity, or max<=32, mean<=0.001/255 and <=0.02% pixels above1. Larger differences fail. Sparse edge differences are consistent with browser rasterisation, not a changed scene state.",
+  "earlyPassSec": 8.146,
+  "auditoryReview": "Not performed: current model interface does not accept audio input; owner listening remains open. ASR is a separate technical check.",
+  "voiceSpeed": 0.82,
+  "qaChecks": 14,
+  "qaPassed": 14,
+  "viewedMp4Moments": 43,
+  "visuallyReviewed": "All 43 sampled MP4 moments, first/last, photo/cue changes, pass diagrams and result holds, feed and square cover. Footballers remain the visual protagonists; fictional hosts support nearby. No technical attribution or guide overlays in the video.",
+  "authenticPhotosUsed": 3,
+  "ownerListening": "pending",
+  "publication": "none"
+}

@@ -1,0 +1,9 @@
+episode: 1
+id: football-now-02-madrid-playmakers
+title: Кроос и Модрич — дирижёры «Реала»
+sources: sources.md
+credits: CREDITS.md
+variants:
+  - id: ru
+    spec: ru.reel.yaml
+series: football-now

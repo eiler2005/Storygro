@@ -1,0 +1,210 @@
+{
+  "files": {
+    "shots/cover.png": {
+      "prompt": "Use case: illustration-story. Create ONE full-bleed portrait1088x1920 premium family3D animated-feature background for a children's football Reel. Reference image is the exact ORIGINAL fictional cast: Matvey, small child raccoon in bright blue football shirt/shorts, white-blue socks and blue boots; Sofia, slightly taller child squirrel in plum tracksuit, white undershirt and lavender sneakers, fluffy orange ponytail/ears/tail. Preserve their specific faces, child proportions, clothing and fur exactly. No real human people or lookalikes in this image.\nModern imaginary Miami football training ground, low airy white shade canopies, soft distant palms, turquoise and rose-coral sky, vivid emerald grass, finely textured fabric/fur, beautiful feature-animation lighting and polish. Wide full-frame scene with simple readable foreground and rich softer background.\nLAYOUT for later native photo/title overlays: TOP 60% is only the beautiful continuous sky, canopies and distant soft stands, with NO heads, ears, signs or important objects there. The central region y=.40–.62 will receive actual photographs in the video editor, so keep it visually quiet. Put both hosts LOWER: Matvey at x=.27 with face near y=.70, Sofia at x=.73 with ears near y=.63 and face near y=.70. Their faces must be entirely above y=.76 and beneath y=.62; all ears/faces inside the central square ending at y=.78. Show them from head to feet with feet near y=.90.\nMatvey excitedly tries an athlete's funny low ready stance, hands forward, peeking at ONE modern black-white football between them near y=.84. Sofia smiles and points toward an open patch of grass, thoughtful teammate, not a pose for a trophy. Correct paws/hands/feet, clear separation and one football only. Natural rich grass and fine texture, no smearing. No humans, portraits, celebrity faces, text, numbers, lettering, logos, crests, sponsors, scoreboard, borders, panels or watermarks. No giant blank rectangle: the entire image is a continuous detailed environment, ready for externally composited photo cards.",
+      "seed": 0,
+      "provider": "imagegen",
+      "model": "OpenAI built-in GPT Image (identifier not exposed)",
+      "width": 944,
+      "height": 1666,
+      "steps": 0,
+      "licence": "OpenAI built-in image output; account terms apply. Seed0 is a placeholder, not reproducible.",
+      "refs": {
+        "../../series/football-legends/cast/hosts-full.png": "49c92b4bca5df88e90d529034e158fb7a48a79de4c7f98d49ccf764944d2be35"
+      },
+      "sha256": "1720f7a7000ffda492ba7c12ec2ee675e8c9d03997541c60e75a5d65a02a6963",
+      "createdAt": 1793450210128.5498,
+      "selected": false,
+      "referenceRoles": "Successful inputs contain only original fictional hosts and generated host/environment continuity. No real footballer photographs or face lookalikes in these generations."
+    },
+    "shots/cover-v2.png": {
+      "prompt": "Use case: precise-object-edit of the ORIGINAL fictional hosts only. Edit this illustration's composition. Keep the same premium family3D Matvey blue-kit raccoon and Sofia plum-tracksuit squirrel, exact identities, expressions, clothes, fur, Miami training field, palms, sky and lighting. There are no real people in this image. Move BOTH hosts and their ONE football together lower and make the hosts substantially smaller, about 65% of their present scale. Critical layout for external photo cards: TOP57% of the portrait must contain ONLY continuous sky/canopies/distant background, NO ears, hair, tails, limbs or ball. Matvey and Sofia's complete ears begin below y=.59, eyes/faces around y=.68–.72, no faces below y=.76, feet y=.88–.93. Keep both faces within central square that ends at y=.78. Hosts x=.27 and .73, ball between them y=.86. Extend the pitch/background naturally into vacated space. Do not simply crop or zoom the whole image. Preserve one coherent full-bleed portrait image, detailed grass/cloth/fur, no added text, logos, humans, portraits, panel frames or watermarks.",
+      "seed": 0,
+      "provider": "imagegen",
+      "model": "OpenAI built-in GPT Image (identifier not exposed)",
+      "width": 944,
+      "height": 1665,
+      "steps": 0,
+      "licence": "OpenAI built-in image output; account terms apply. Seed0 is a placeholder, not reproducible.",
+      "refs": {
+        "shots/cover.png": "1720f7a7000ffda492ba7c12ec2ee675e8c9d03997541c60e75a5d65a02a6963"
+      },
+      "sha256": "e85329670fff5bd622ccae46a0dcecc9a42787de9d2630e050d45c043ddb5986",
+      "createdAt": 1793450553318.5334,
+      "selected": false,
+      "referenceRoles": "Successful inputs contain only original fictional hosts and generated host/environment continuity. No real footballer photographs or face lookalikes in these generations."
+    },
+    "shots/jump.png": {
+      "prompt": "Use case: illustration-story. ONE portrait1088x1920 full-bleed premium family3D animated-feature football teaching illustration, only ORIGINAL fictional hosts. Reference1 is exact Matvey raccoon/Sofia squirrel identity and clothing; reference2 is established Miami training-ground environment. No real people, human athlete portraits or lookalikes.\nMatvey the small blue-kit raccoon performs a joyful small athletic jump to meet ONE modern black-white football with his forehead, a child-friendly skill demonstration. Correct face and fur, same blue shirt/shorts, blue-white striped socks and blue boots. His head is near x=.45,y=.49, the ball slightly ahead of forehead at x=.53,y=.49, arms naturally apart for balance, two distinct feet off turf at y=.72; no ball collision into face or injury. Sofia the plum-tracksuit orange squirrel watches encouragingly near x=.76,y=.58, ears below y=.37, hands ready to clap. Clear direction toward a small white training goal in middle distance at right, not a professional match reconstruction.\nSame airy Miami practice field: white low shade canopies, distant palms, turquoise/rose-coral sky, vivid grass, soft stadium seating. Top30% quiet sky/roof for captions and labels. All faces/ears below top third and inside central square; ball/head movement unoccluded in center. Full bodies, correct hands/legs, beautifully detailed fur/cloth/turf, cinematic family animation lighting, crisp friendly expressions and physically coherent action. No text,letters,numbers,logos,crests,watermarks,borders or panels.",
+      "seed": 0,
+      "provider": "imagegen",
+      "model": "OpenAI built-in GPT Image (identifier not exposed)",
+      "width": 944,
+      "height": 1665,
+      "steps": 0,
+      "licence": "OpenAI built-in image output; account terms apply. Seed0 is a placeholder, not reproducible.",
+      "refs": {
+        "../../series/football-legends/cast/hosts-full.png": "49c92b4bca5df88e90d529034e158fb7a48a79de4c7f98d49ccf764944d2be35",
+        "shots/cover-v2.png": "e85329670fff5bd622ccae46a0dcecc9a42787de9d2630e050d45c043ddb5986"
+      },
+      "sha256": "6bf16f7a0cadfebd6766b173c35e3d3ae4cf3788b33381af5cc03837ef67442b",
+      "createdAt": 1793450929507.0442,
+      "selected": false,
+      "referenceRoles": "Successful inputs contain only original fictional hosts and generated host/environment continuity. No real footballer photographs or face lookalikes in these generations."
+    },
+    "shots/cover-v3.png": {
+      "prompt": "Use case: precise-object-edit. This image contains only the original fictional raccoon Matvey and squirrel Sofia, no real people. Keep the same premium family3D identities, blue football kit and plum tracksuit, beautiful Miami training field, palms, white canopies and turquoise/coral sky. Make the hosts SMALLER supporting figures: about65% of their current size, move Matvey to x=.16 and Sofia to x=.84. Their eyes/faces centered y=.73, ears begin below y=.65, entire faces above y=.78; feet near y=.91. All of the central area x=.24–.76,y=.37–.68 should be clear continuous environment for externally added real photo cards. Hosts stand quietly at the side, Sofia points toward center, Matvey smiles with hands resting at sides; no athletic lead action. REMOVE the football completely and fill its old location with realistic matching grass. No other balls or objects. Preserve cloth/fur quality and warm cinematic light, no cropping or shrinking the entire canvas. One full-bleed portrait illustration, no text, numbers, labels, logos, portraits, human people, panels, borders or watermarks.",
+      "seed": 0,
+      "provider": "imagegen",
+      "model": "OpenAI built-in GPT Image (identifier not exposed)",
+      "width": 944,
+      "height": 1665,
+      "steps": 0,
+      "licence": "OpenAI built-in image output; account terms apply. Seed0 is a placeholder, not reproducible.",
+      "refs": {
+        "shots/cover-v2.png": "e85329670fff5bd622ccae46a0dcecc9a42787de9d2630e050d45c043ddb5986"
+      },
+      "sha256": "647cd4fb3ce518a9ab0eaa118b1e4e54ee596b660e19ba67112cff84b5931468",
+      "createdAt": 1793452333430.1667,
+      "selected": true,
+      "referenceRoles": "Successful inputs contain only original fictional hosts and generated host/environment continuity. No real footballer photographs or face lookalikes in these generations."
+    },
+    "shots/messi.jpg": {
+      "prompt": "Authentic licensed photograph, no AI generation or retouch. See photos.json/CREDITS.md.",
+      "seed": 0,
+      "provider": "manual",
+      "model": "Original photograph",
+      "width": 343,
+      "height": 411,
+      "steps": 0,
+      "licence": "CC BY-SA 3.0 https://creativecommons.org/licenses/by-sa/3.0",
+      "sha256": "e8557f6a08593f46babf50434935f1518c33b574e3307206fffc33a9e8408eb6",
+      "createdAt": 1793453800466.016,
+      "selected": true,
+      "source": "https://commons.wikimedia.org/wiki/File:Lionel_Messi_2018.jpg",
+      "author": "Екатерина Лаут",
+      "photoDate": "2018-06-16"
+    },
+    "shots/ronaldo.jpg": {
+      "prompt": "Authentic licensed photograph, no AI generation or retouch. See photos.json/CREDITS.md.",
+      "seed": 0,
+      "provider": "manual",
+      "model": "Original photograph",
+      "width": 440,
+      "height": 679,
+      "steps": 0,
+      "licence": "CC BY 4.0 https://creativecommons.org/licenses/by/4.0",
+      "sha256": "077cea0f44685a6e26dbabc027174d1f13c7611f38ed4e3ec197bce43e59711b",
+      "createdAt": 1793453800466.232,
+      "selected": true,
+      "source": "https://commons.wikimedia.org/wiki/File:Cristiano_Ronaldo_in_2023.jpg",
+      "author": "Mehdi Marizad",
+      "photoDate": "Taken on 19 September 2023"
+    },
+    "shots/bernabeu.jpg": {
+      "prompt": "Authentic licensed photograph, no AI generation or retouch. See photos.json/CREDITS.md.",
+      "seed": 0,
+      "provider": "manual",
+      "model": "Original photograph",
+      "width": 3264,
+      "height": 2448,
+      "steps": 0,
+      "licence": "CC BY-SA 4.0 https://creativecommons.org/licenses/by-sa/4.0",
+      "sha256": "46afb7dc70b71747e17fc09e01dd9b4a507cad6ee6d7a67969048a782131042a",
+      "createdAt": 1793453800467.348,
+      "selected": true,
+      "source": "https://commons.wikimedia.org/wiki/File:Santiago_Bernabeu_Stadium.jpg",
+      "author": "Acruz319",
+      "photoDate": "2015-01-11 17:48:27"
+    },
+    "shots/ronaldo-jump.jpg": {
+      "prompt": "Authentic licensed photograph, no AI generation or retouch. See photos.json/CREDITS.md.",
+      "seed": 0,
+      "provider": "manual",
+      "model": "Original photograph",
+      "width": 868,
+      "height": 602,
+      "steps": 0,
+      "licence": "CC BY-SA 2.0 https://creativecommons.org/licenses/by-sa/2.0",
+      "sha256": "376931f254e6cda7e52d8e24a2b63c7c570d12cf47c27f64a2f54ee77a32667c",
+      "createdAt": 1793453800467.703,
+      "selected": true,
+      "source": "https://commons.wikimedia.org/wiki/File:Salto_de_Cristiano_Ronaldo.jpg",
+      "author": "Alejandro Ramos",
+      "photoDate": "2009-09-30 21:57:46"
+    },
+    "shots/messi-duel.jpg": {
+      "prompt": "Authentic licensed photograph, no AI generation or retouch. See photos.json/CREDITS.md.",
+      "seed": 0,
+      "provider": "manual",
+      "model": "Original photograph",
+      "width": 3391,
+      "height": 3391,
+      "steps": 0,
+      "licence": "CC BY 3.0 https://creativecommons.org/licenses/by/3.0",
+      "sha256": "3590c072eda32fd8957237d3b757dfa2f2f699278350ae70ae0d57402d9e503c",
+      "createdAt": 1793453800474.697,
+      "selected": false,
+      "source": "https://commons.wikimedia.org/wiki/File:Lionel_Messi_(L),_Ricardo_Rodriguez_(R)_-_Switzerland_vs._Argentina,_29th_February_2012.jpg",
+      "author": "Fanny Schertzer",
+      "photoDate": "2012-02-29 23:31:46"
+    },
+    "shots/messi-control.jpg": {
+      "prompt": "Authentic licensed photograph, no AI generation or retouch. See photos.json/CREDITS.md.",
+      "seed": 0,
+      "provider": "manual",
+      "model": "Original photograph",
+      "width": 2460,
+      "height": 2460,
+      "steps": 0,
+      "licence": "CC BY-SA 3.0 https://creativecommons.org/licenses/by-sa/3.0",
+      "sha256": "2be9a13be4567e3428d093abe153fa149d3adb073024803bbb468b7b9c4548ac",
+      "createdAt": 1793453800477.5786,
+      "selected": true,
+      "source": "https://commons.wikimedia.org/wiki/File:Suisse_vs_Argentine_-_Granit_Xhaka_%26_Lionel_Messi.jpg",
+      "author": "Ludovic Péron",
+      "photoDate": "2012-02-29"
+    },
+    "shots/kroos.jpg": {
+      "prompt": "Authentic licensed photograph, no AI generation or retouch. See photos.json/CREDITS.md.",
+      "seed": 0,
+      "provider": "manual",
+      "model": "Original photograph",
+      "width": 744,
+      "height": 1000,
+      "steps": 0,
+      "licence": "CC BY-SA 3.0 https://creativecommons.org/licenses/by-sa/3.0",
+      "sha256": "07e0e7379bf83fa54eb551fb74ece7eec44308a8727c216e7e05b53bcf80ddee",
+      "createdAt": 1793453800478.2493,
+      "selected": true,
+      "source": "https://commons.wikimedia.org/wiki/File:CSKA-RM18_(24).jpg",
+      "author": "Антон Зайцев",
+      "photoDate": "2018-10-03 19:20:48"
+    },
+    "shots/modric.jpg": {
+      "prompt": "Authentic licensed photograph, no AI generation or retouch. See photos.json/CREDITS.md.",
+      "seed": 0,
+      "provider": "manual",
+      "model": "Original photograph",
+      "width": 784,
+      "height": 1200,
+      "steps": 0,
+      "licence": "CC BY-SA 3.0 https://creativecommons.org/licenses/by-sa/3.0",
+      "sha256": "3de49f0e823f8b1cec0dae68dd6cbda873a5ee72712d37fb48b63c8cf28cd81c",
+      "createdAt": 1793453800478.5933,
+      "selected": true,
+      "source": "https://commons.wikimedia.org/wiki/File:Luka_Modri%C4%87_in_2018.jpg",
+      "author": "Светлана Бекетова",
+      "photoDate": "2018-06-26 19:30:51"
+    }
+  },
+  "notes": "Player-led native photo presentation with supporting original hosts. Photo originals remain unchanged; explicit CSS crop/zoom is a presentation choice. Exact built-in model identifier unavailable.",
+  "rejectedAttempts": [
+    {
+      "status": "rejected-no-image",
+      "category": "public-figure input",
+      "requestId": "225cb12b-a57b-906e-9d22-13af178eca5e",
+      "resolution": "No bypass attempted. Use authentic licensed player photos; generate original fictional hosts/environment only."
+    }
+  ]
+}

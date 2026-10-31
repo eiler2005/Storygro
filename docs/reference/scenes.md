@@ -19,6 +19,28 @@ Full-frame episode art with a project/series title and optional emblem, readable
 | `reveal` | Optional story image to replace the initial artwork |
 | `revealAt` | Cue name or scene seconds; default 1.8 |
 
+## photo-pair
+
+Two authentic photographs with concise data-bound labels over full-frame artwork. Optional `project` and `title` reuse `series-cover` internally, including its frame-zero identity, emblem, subtitle and deterministic `revealAt` switch. Without identity props, it provides a simple paired photo insert. Keep the original photographic content; no AI face editing. Hosts in the background must sit below the photo cards, with faces inside the opening square. See the [modern football special](../../content/videos/football-now-01-messi-ronaldo/DIRECTION.md).
+
+| Prop | Meaning |
+|---|---|
+| `image` | Required full-frame background |
+| `portraits` | Exactly two objects with required `image` and short `label`; use nested `labelFrom` bindings |
+| `project`, `title`, `subtitle`, `emblem` | Optional shared identity; project/title required together |
+| `reveal`, `revealAt` | Optional identity/story switch; photos hide on the same cue and reappear on backward seeks |
+| `heading` | Optional data-bound heading for a photo insert without series identity |
+| `portraits[].fit`, `position`, `zoom`, `origin` | Native display crop; contain/1 is the default, originals stay unchanged |
+| `backgroundCaption` | Optional short date for a real venue background |
+
+Photos use separate cards; `contain` preserves the whole file, while explicit crop/zoom can give faces more space. Authors, licences, date/upload distinctions and file hashes remain in episode records and the delivered post. No production metadata or guides enter the children's cut.
+
+## photo-focus
+
+A player-led sequence of authentic photos over a full-frame background. Each shot has an original `image` and data-bound `caption` for its date; optional `at` switches on a narration cue. Use `titleFrom` or the usual data-bound `labels` with `at`/`until` for the story heading. Photos retain their original pixels; native `fit`, `position`, `zoom` and `origin` declare any presentation crop. Preserve source files and describe the presentation in `photos.json`.
+
+Required props: `background`, nonempty `shots` (`image`, `caption`). Optional: `title`, `labels`, `backgroundCaption` for a dated venue backdrop, and `diagram` (`kind: switch|curve`, `label`, optional cue `at`). The diagram is a simple illustrative passing example beside the real photograph, not a traced trajectory from that photo or a named-match reconstruction. All visible labels use facts. The ball position and photo selection depend only on `t`, including backward seeking. Text and dates stay inside Reels margins, above the supporting hosts and lower UI.
+
 ## archive-photo
 
 An authentic photograph inside a dated card over a full-frame background. The photo remains still while the background moves gently. Every visible label comes from data; changing the order of seeks preserves the same frame. Used by [Football Legends9](../../content/videos/football-legends-09-eusebio/DIRECTION.md) for a1963 player portrait and a clearly dated2003 stadium view. Children's episodes show a story title and a short date; authors, usernames and licence codes belong in the post and documentation. Follow the [series photo workflow](../how-to/football-series.md).

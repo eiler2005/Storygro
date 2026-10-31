@@ -171,6 +171,7 @@ words:
     source: 'ru.wiktionary, «лига»: «…Д. ли́ге ли́гам В. ли́гу ли́ги Тв. ли́гой ли́гою…» (storygro stress --lookup, 2026-10-24)'
   - word: Гюлер
     say: Гюл+ер
+    forms: [Гюлером]
     source: 'ru.wikipedia, «Гюлер, Арда»: «…Арда́ Гюле́р (тур. Arda Güler, турецкое произношение…» (storygro stress --lookup, 2026-10-24)'
   - word: Евро
     say: +Евро
@@ -565,3 +566,43 @@ words:
     forms: [пантерой, пантеры, пантеру, пантере]
     mark: false
     source: 'https://ruslang.ru/sites/default/files/doc/normativnyje_slovari/orfoepicheskij_slovar.pdf: «ПАНТЕ́РА, панте́ры, мн. панте́ры, панте́рам», hard т before stressed э. Owner found wrong stress in episode9, 2026-10-31; OmniVoice/off uses explicit пантЭрой hint there. Local vowel-reduction heuristic returned p a n t e r i; listening review remains required.'
+  - word: Лиге
+    say: Л+иге
+    mark: false
+    source: 'https://ru.wiktionary.org/wiki/лига: «Д. ли́ге»; football league. Reviewed31October2026; rejected automatic match to the unrelated French commune Лигё.'
+  - word: Росарио
+    say: Рос+арио
+    mark: false
+    source: 'ru.wikipedia, «Росарио»: «…Роса́рио (исп. Rosario) — город в Аргентине, в п…» (storygro stress --lookup, 2026-10-31)'
+  - word: Кроос
+    say: Кр+оос
+    mark: false
+    source: 'ru.wikipedia, «Кроос, Тони»: «…То́ни Кро́ос (нем. Toni Kroos, немецкое произношение…» (storygro stress --lookup, 2026-10-31)'
+  - word: Реала
+    say: Ре+ала
+    forms: { Реалу: Ре+алу }
+    mark: false
+    source: 'https://ru.wikipedia.org/wiki/Реал_Мадрид_(футбольный_клуб): «Реа́л Мадри́д»; genitive Реа́ла/dative Реа́лу. Reviewed31October2026; club context rather than the currency matched by lookup.'
+  - word: Тони
+    say: Т+они
+    mark: false
+    source: 'ru.wikipedia, «Кроос, Тони»: «…То́ни Кро́ос (нем. Toni Kroos, немецкое произ…» (storygro stress --lookup, 2026-10-31)'
+  - word: Лука
+    say: Л+ука
+    mark: false
+    source: 'ru.wikipedia, «Модрич, Лука»: «…Лу́ка Мо́дрич (хорв. Luka Modrić, хорватское…» (storygro stress --lookup, 2026-10-31)'
+  - word: Арда
+    say: Ард+а
+    forms: [Ардой]
+    mark: false
+    source: 'https://ru.wikipedia.org/wiki/Гюлер,_Арда: «Арда́ Гюле́р»; instrumental Ардо́й retains final stem stress. Reviewed31October2026; final listening remains required.'
+  - word: Джуд
+    say: Дж+уд
+    forms: [Джудом]
+    mark: false
+    source: 'https://ru.wikipedia.org/wiki/Беллингем,_Джуд: «Джуд Ви́ктор Уи́ллиам Бе́ллингем», English Jude /dʒuːd/, one syllable. Reviewed31October2026.'
+  - word: Беллингем
+    say: Б+еллингем
+    forms: [Беллингемом]
+    mark: false
+    source: 'https://ru.wikipedia.org/wiki/Беллингем,_Джуд: «Бе́ллингем», English Bellingham /ˈbɛlɪŋəm/; instrumental keeps the stem stress. Reviewed31October2026.'

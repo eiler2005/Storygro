@@ -5,26 +5,27 @@ questions:
     for: owner
     open: true
   - id: action
-    ask: Достаточно ли напряжения в ударе/спасении, подходит ли яркая атмосфера и сходство Яшина?
+    ask: Подходит ли заставка «Лев Яшин · Чёрный паук» с силуэтом паука на сетке и прежними ведущими?
     for: owner
     open: true
-notes: Owner supplied script preserved, excluding copied UEFA.com+1 and section headings. Added a short
-  illustrative action hook following request for a more suspenseful episode. Shared title/emblem at frame
-  zero. Match actions, weather and light are artistic, not claims of a particular recorded save. Same selected
-  narrator. Technical approvals only; no promise of retention uplift. Final technical version 90.19 s, 17
-  scenes, QA 15/15; full decode 2702 frames per file, 46 inspected MP4 moments and feed/cover crops; 175
-  caption samples and 98 reverse seeks with no layout failures. Truncated short keeper take replaced by a
-  complete context-preserving merged line, matched100%. 17 imagegen generations/11 selected. Owner
-  listening/editorial review remain open. No publication.
+notes: "Cover revision requested by owner, 31 October 2026: apply shared player-name/nickname/visual-metaphor
+  format to episode7. New cover adds Yashin with a separate graphic spider shadow on the goal net; human
+  anatomy remains normal. Names, series titles and golden emblem readable at frame zero. Original narration,
+  selected OmniVoice B0.90/off, cues, all remaining scene art and timing retained. Prior technical metrics are
+  historical until current rerender/QA. Technical approvals only; no owner approval or public upload. Current
+  rerender: 90.19s, 17scenes, QA15/15; both MP4 fully decode 2702frames, 46 inspected MP4 moments plus
+  feed/cover. 175 caption samples/98 reverse seeks, no failures. All 17 narration SHA256 hashes and every
+  scene start/duration equal the pre-spider version. 18 generations/11 selected art. Cover change only;
+  technical approval, owner editorial review remains open."
 approvals:
   ru:
     script:
-      hash: 01209919c4cb
-      at: 2026-10-30T19:51:24.262Z
+      hash: 5f655ceb4cf9
+      at: 2026-10-31T08:02:27.976Z
       by: agent
       role: agent
     storyboard:
-      hash: fc6fd06b8ea1
-      at: 2026-10-30T19:51:24.635Z
+      hash: 098cf189ea5f
+      at: 2026-10-31T08:02:28.348Z
       by: agent
       role: agent

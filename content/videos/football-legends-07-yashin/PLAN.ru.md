@@ -14,8 +14,8 @@
 
 | | | Кто и когда |
 |---|---|---|
-| Сценарий | ⚙️ техническое (агент) | agent 2026-10-30 |
-| Раскадровка | ⚙️ техническое (агент) | agent 2026-10-30 |
+| Сценарий | ✏️ изменено после одобрения | agent 2026-10-31 |
+| Раскадровка | ⚙️ техническое (агент) | agent 2026-10-31 |
 | Выпуск | ⏳ ждёт |   |
 
 Одобрить: `storygro approve <spec> --step script|storyboard|release` (агент — с `--agent`).
@@ -23,9 +23,9 @@
 ## Вопросы
 
 - [ ] **owner** · Подходят ли «Льву Яшину», «вратарём», «голы́» и рассказчик в готовом MP4?
-- [ ] **owner** · Достаточно ли напряжения в ударе/спасении, подходит ли яркая атмосфера и сходство Яшина?
+- [ ] **owner** · Подходит ли заставка «Лев Яшин · Чёрный паук» с силуэтом паука на сетке и прежними ведущими?
 
-**Заметки:** Owner supplied script preserved, excluding copied UEFA.com+1 and section headings. Added a short illustrative action hook following request for a more suspenseful episode. Shared title/emblem at frame zero. Match actions, weather and light are artistic, not claims of a particular recorded save. Same selected narrator. Technical approvals only; no promise of retention uplift. Final technical version 90.19 s, 17 scenes, QA 15/15; full decode 2702 frames per file, 46 inspected MP4 moments and feed/cover crops; 175 caption samples and 98 reverse seeks with no layout failures. Truncated short keeper take replaced by a complete context-preserving merged line, matched100%. 17 imagegen generations/11 selected. Owner listening/editorial review remain open. No publication.
+**Заметки:** Cover revision requested by owner, 31 October 2026: apply shared player-name/nickname/visual-metaphor format to episode7. New cover adds Yashin with a separate graphic spider shadow on the goal net; human anatomy remains normal. Names, series titles and golden emblem readable at frame zero. Original narration, selected OmniVoice B0.90/off, cues, all remaining scene art and timing retained. Prior technical metrics are historical until current rerender/QA. Technical approvals only; no owner approval or public upload. Current rerender: 90.19s, 17scenes, QA15/15; both MP4 fully decode 2702frames, 46 inspected MP4 moments plus feed/cover. 175 caption samples/98 reverse seeks, no failures. All 17 narration SHA256 hashes and every scene start/duration equal the pre-spider version. 18 generations/11 selected art. Cover change only; technical approval, owner editorial review remains open.
 
 ## Хук
 
@@ -41,11 +41,11 @@
 
 **Голос:** Удар в угол! Успеет ли вратарь?
 
-**На экране:** «Маленькие большие дела» · «Легенды футбола» · «shot»
+**На экране:** «Маленькие большие дела» · «Легенды футбола» · «shot» · «Лев Яшин · «Чёрный паук»»
 
 **Звук:** swell @0.0, whoosh @1.7
 
-**Факты:** `facts.series.project` = «Маленькие большие дела» · `facts.series.title` = «Легенды футбола»
+**Факты:** `facts.series.project` = «Маленькие большие дела» · `facts.series.title` = «Легенды футбола» · `facts.series.episode` = «Лев Яшин · «Чёрный паук»»
 
 ### 2. attack · 2.5–5.7 с · `illustration`
 
@@ -309,7 +309,7 @@
 
 | | |
 |---|---|
-| `facts.series` | Owner script and request, 30 October 2026: episode7 Lev Yashin, a more suspenseful vivid detailed video, shared project/series title and golden football emblem on frame zero. |
+| `facts.series` | Owner script and request, 30 October 2026: episode7 Lev Yashin, a more suspenseful vivid detailed video, shared project/series title and golden football emblem on frame zero. Owner request, 31 October 2026: apply the nickname/metaphor cover to episode7; nickname verified in S1 https://ballondor.com/news/posts/can-a-goalkeeper-win-the-ballon-dor-what-history-says |
 | `facts.player` | [S1] https://ballondor.com/news/posts/can-a-goalkeeper-win-the-ballon-dor-what-history-says; [S2] https://www.uefa.com/uefaeuro/history/news/0253-0d7f20bc921c-495824f652eb-1000--uefaeuro1960-team-of-the-tournament/; [S4] https://stars.fcdynamo.ru/yashin.html |
 | `facts.history` | [S2] https://www.uefa.com/uefaeuro/history/news/0253-0d7f20bc921c-495824f652eb-1000--uefaeuro1960-team-of-the-tournament/; [S1] https://ballondor.com/news/posts/can-a-goalkeeper-win-the-ballon-dor-what-history-says |
 | `facts.skill` | [S3] https://inside.fifa.com/tournaments/mens/worldcup/2018russia/news/2018-fifa-world-cup-russiatm-official-poster-unveiled-at-moscow-metro-2921534; [S2] https://www.uefa.com/uefaeuro/history/news/0253-0d7f20bc921c-495824f652eb-1000--uefaeuro1960-team-of-the-tournament/; owner script |
@@ -324,3 +324,5 @@
 > Что важнее для вратаря: смелость, реакция или умение предугадать удар?
 >
 > Выпуск 7 «Легенд футбола» проекта «Маленькие большие дела». Источники: Ballon d’Or, UEFA, FIFA, «Динамо» Москва. Иллюстрации созданы встроенным GPT Image по архивным ориентирам; игровые сцены, свет и погода художественные, не запись конкретного матча. Источник образа: Henk Lindeboom / Anefo, Nationaal Archief (CC BY-SA 3.0 NL), адаптировано в 3D-иллюстрации. Голос рассказчика синтетический (OmniVoice). Ролик не связан с футболистами, клубами или организаторами награды.
+>
+> «Чёрный паук» — прозвище Яшина. Силуэт паука на сетке в заставке — шутливая визуальная метафора его реакции; вратарь остаётся обычным человеком.

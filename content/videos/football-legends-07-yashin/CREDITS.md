@@ -1,5 +1,7 @@
 # Credits
 
+- Cover revision: owner, 31 October 2026. Name/nickname «Лев Яшин · Чёрный паук» and playful separate spider silhouette on the goal net; original hosts, kit, narration and timing retained. The new Yashin cover is an adaptation of the existing historical portrait reference and retains the attribution/share-alike terms below. The spider graphic is a metaphor, not an actual historical mascot or extra human limbs.
+
 - Body and final question: owner, 30 October 2026. Short illustrative action opening follows the request for greater suspense. Copied source labels/section headings omitted.
 - Hosts: original owner-approved Matvey/Sofia references, unchanged faces/clothes; goalkeeper gloves are a story accessory.
 - Art: built-in GPT Image, exact identifier not exposed, online and not seed-reproducible. Prompts, source roles and SHA-256 hashes in images.json; originals stay outside Git.

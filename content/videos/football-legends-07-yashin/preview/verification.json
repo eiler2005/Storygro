@@ -8,11 +8,13 @@
  "frames": 2702,
  "webFrames": 2702,
  "moments": 46,
- "masterSHA256": "c93f0af9fd5ffd98f85c8c38fcc5832ada836d5fa88616bb7954d885515619aa",
+ "masterSHA256": "3926875099ddeb78605de56996ac5c40cc2ee25fb4f200bbf5d27a8da9d617f0",
  "qa": "pass",
  "captionSamples": 175,
  "reverseSeekSamples": 98,
  "layoutFailures": 0,
+ "generations": 18,
+ "selectedImages": 11,
  "voices": [
   {
    "scene": "hook",
@@ -39,19 +41,87 @@
    "matched": 1
   },
   {
+   "scene": "club",
+   "file": "club-1f66e6b7704d.wav",
+   "sha256": "5628f78bf7363c4a239fb861040499f228731ebe6cde6368339d4ad14fc73a08",
+   "matched": 1
+  },
+  {
+   "scene": "award",
+   "file": "award-2a7c7d20774a.wav",
+   "sha256": "e8cc1f1f610c155a15a2878340fb6cfc45bbcf0fc1f86a050ebc63ab9a030853",
+   "matched": 1
+  },
+  {
+   "scene": "spider",
+   "file": "spider-44681ff61925.wav",
+   "sha256": "90c5759890b1551da5bbce7ae4074e6748a32d5b8c3584990a4de173d8f4e77f",
+   "matched": 1
+  },
+  {
+   "scene": "save",
+   "file": "save-404a1d408eb1.wav",
+   "sha256": "e83125a8c97f20a52a808ed4882146bfab06a7087dc618f720f33ebaf664d6df",
+   "matched": 1
+  },
+  {
+   "scene": "rush",
+   "file": "rush-a9bb85249125.wav",
+   "sha256": "4db8db90fd00f34d9bf4542354086fac6f6f9b2d23e47f3ecedf7076e42e83c3",
+   "matched": 1
+  },
+  {
+   "scene": "power",
+   "file": "power-ef4209d7080e.wav",
+   "sha256": "d14554f33e6c07ec4e1e71ff8712b7aa3cc03011198878a30c4d5a6088c0a781",
+   "matched": 1
+  },
+  {
    "scene": "talk",
    "file": "talk-fb73a4661c09.wav",
    "sha256": "740c6deb69093bdaf2ea54ec2a220b885d1d09c4416e5a09bbb790bce13433a4",
    "matched": 1
   },
   {
+   "scene": "euro",
+   "file": "euro-865be9c0ed4d.wav",
+   "sha256": "d98c2871e780fa0f36fcd86d39d1f9b1d750223099dcbe2131e45f49d0abb3c4",
+   "matched": 1
+  },
+  {
+   "scene": "recognition",
+   "file": "recognition-41718239cf9c.wav",
+   "sha256": "816ab5b3118f3876667652fd84d07ba9d611a16c7c083e6103a89df20291402a",
+   "matched": 1
+  },
+  {
+   "scene": "lesson",
+   "file": "lesson-4b3afe9df6d0.wav",
+   "sha256": "b2a0cd2828a361e2f7c3bbe29f04a27e38217344802539b1b9e294dfd93eb17e",
+   "matched": 0.889
+  },
+  {
    "scene": "not-goals",
    "file": "not-goals-eab2de67b9e8.wav",
    "sha256": "8284e9f7e5592c721a56a99bcb036505f3a594518184036aaec88fd2bf56ac70",
    "matched": 1
+  },
+  {
+   "scene": "read",
+   "file": "read-127734010061.wav",
+   "sha256": "e480afbd5d80b229ad72ead9cc65e02289f9b8054edfd453c6847d364ad24abe",
+   "matched": 1
+  },
+  {
+   "scene": "question",
+   "file": "question-3a4f70f9c494.wav",
+   "sha256": "4cf67b9d23214ec194465963eed88132d0e1c71e70f1ef7ac6530070b84ce406",
+   "matched": 1
   }
  ],
- "voiceListening": "Owner listening open; technical matching does not establish stress or timbre approval.",
+ "unchangedVoiceScenes": 17,
+ "timingUnchanged": true,
+ "voiceListening": "Existing narrator retained byte for byte; prior owner listening questions remain open. No agent subjective listening or owner approval claimed.",
  "checks": [
   {
    "name": "Codec and pixels",
@@ -81,7 +151,7 @@
   {
    "name": "Frame 0 is a hook",
    "status": "pass",
-   "detail": "contrast 2156 (needs content, not a black frame)"
+   "detail": "contrast 2551 (needs content, not a black frame)"
   },
   {
    "name": "No black stretches",

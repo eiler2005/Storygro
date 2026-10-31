@@ -61,6 +61,10 @@ post:
     художественные, не запись конкретного матча. Источник образа: Henk Lindeboom / Anefo, Nationaal Archief
     (CC BY-SA 3.0 NL), адаптировано в 3D-иллюстрации. Голос рассказчика синтетический (OmniVoice). Ролик не
     связан с футболистами, клубами или организаторами награды.
+
+
+    «Чёрный паук» — прозвище Яшина. Силуэт паука на сетке в заставке — шутливая визуальная метафора его
+    реакции; вратарь остаётся обычным человеком.
   tags:
     - футбол
     - детям
@@ -77,12 +81,13 @@ scenes:
       - 0.15
     energy: 0.9
     props:
-      image: shots/cover-v2.png
+      image: shots/cover-spider.png
       projectFrom: facts.series.project
       titleFrom: facts.series.title
       emblem: /rc/styles/cartoon/golden-ball.svg
       reveal: shots/threat-v2.png
       revealAt: shot
+      subtitleFrom: facts.series.episode
     sfx:
       - at: start
         kind: swell

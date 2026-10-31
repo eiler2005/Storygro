@@ -2,6 +2,8 @@
 
 Checked 30 October 2026. The owner supplied the body and final question and requested a more suspenseful, vivid episode. A short illustrative action hook was added; the body is retained, omitting copied source labels and section headings. The opening save is not attributed to a particular recorded match.
 
+Cover revision, 31 October 2026: owner requested the same nickname/metaphor principle as Law's King cover. S1 rechecked and confirms “Black Spider”. The first frame now includes the player name/nickname and Yashin with an independent graphic spider silhouette on the goal net. This is a playful visual metaphor, not an anatomical claim, actual mascot or historical event. Human arms/hands remain normal; narrative gameplay and all narration are retained. The cover uses the existing Yashin portrait reference and retains its attribution/share-alike notice.
+
 | ID | Claim | Primary source and short quotation | Caveat |
 |---|---|---|---|
 | S1 | 1963 award, Dynamo, USSR, still the only goalkeeper winner, nickname | [Ballon d'Or organiser](https://ballondor.com/news/posts/can-a-goalkeeper-win-the-ballon-dor-what-history-says): “only one goalkeeper win the Ballon d’Or: Soviet legend Lev Yashin in 1963”; “Black Spider” | Time-sensitive distinction checked on the episode date. The separate modern Yashin Trophy is not the main Ballon d'Or. No statistics from the page are added. |
@@ -18,7 +20,7 @@ The opening challenge, team-role lesson and viewer's choice of goalkeeper skills
 - Period diving pose and open terraces: [Lev Yashin 1962](https://commons.wikimedia.org/wiki/File:Lev_Yashin_1962.jpg), Vyacheslav Un Da-Sin / Moscow Main Archive, [Mos.ru](https://www.mos.ru/news/item/122488073/), 28 October 1962; [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Viewed as period research, not a source for a claimed reconstruction. This photo's venue is Luzhniki; our Moscow club action setting is an illustrative Dynamo-era stadium, not a claim that the archived match took place there.
 - Original host references: owner-approved Matvey/Sofia. No host face or clothing redesign. Beige goalkeeper gloves are a story accessory for Matvey.
 
-Moscow's classical stadium frontage, open stands, birch trees, wet pitch and sapphire/gold evening light are artistic period atmosphere. They are not weather/time claims for a named historical game. The 1960 national-team scene uses a separate old Paris stadium interpretation with cycle-track/open terraces, not modern Parc des Princes architecture; team colours are distinct from the club scene. No literal spider anatomy, modern black-and-white ball, sponsor, crest, flag or generated lettering is used. Exact prompts, variant parents, reference hashes and selected files are in images.json. Original photographs stay in ignored private/.
+Moscow's classical stadium frontage, open stands, birch trees, wet pitch and sapphire/gold evening light are artistic period atmosphere. They are not weather/time claims for a named historical game. The 1960 national-team scene uses a separate old Paris stadium interpretation with cycle-track/open terraces, not modern Parc des Princes architecture; team colours are distinct from the club scene. No altered human anatomy, modern black-and-white ball, sponsor, crest, flag or generated lettering is used. The cover's separate spider graphic is the explicitly requested nickname metaphor. Exact prompts, variant parents, reference hashes and selected files are in images.json. Original photographs stay in ignored private/.
 
 ## Pronunciation
 

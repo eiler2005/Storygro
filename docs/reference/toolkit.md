@@ -206,7 +206,7 @@ Audience, voices, the disclosure every post must carry and avoided phrases (chec
 
 Viewer promise, opening alternatives, early result, causal beats and payoff in DIRECTION.md; one-factor pilots with the exact published revision, comparable ages and distribution modes. Manual metrics separate missing values and calculate watch ratio and events per reach without inferring completion or causality.
 
-**Use when:** New or deliberately remade Reels; learn from Sivori and external references without claiming proven uplift.
+**Use when:** Required for new or deliberately remade Reels under the owner-adopted workflow of 2026-10-31; the next Football Legends episode uses FL-R1. Audience effects remain pilot hypotheses.
 
 **See:** [docs](../../docs/how-to/reels-retention.md) · [reels-growth-2026-10-31/README.md](../../content/research/reels-growth-2026-10-31/README.md)
 

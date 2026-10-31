@@ -1,6 +1,6 @@
 # Build Reels people want to finish and share
 
-**Status: production pilot, 31 October 2026.** Use for new Reels and deliberately authorised revisions. This method improves story decisions and measurement; it does not predict reach or replace editorial approval. The [Football Legends research](../../content/research/reels-growth-2026-10-31/README.md) records the observations, successful examples and limits.
+**Status: owner-adopted production workflow, 31 October 2026.** Required for new Reels and deliberately authorised revisions. The owner asked to put the research into repository rules and use it for the next episode. Adoption makes the direction and measurement process mandatory; audience effects remain unmeasured hypotheses. The [Football Legends research](../../content/research/reels-growth-2026-10-31/README.md) records the observations, successful examples and limits. Episode approvals still follow the existing content workflow.
 
 ## Write the promise before making pictures
 
@@ -48,7 +48,7 @@ Images stay text-free and use the selected built-in GPT Image tool. Record actua
 
 ## Direction worksheet
 
-Copy this into the episode's `DIRECTION.md`. It is an editorial worksheet, **not a new reel YAML schema**. Fill in real decisions before rendering; link owner questions from `review.yaml`.
+Copy this into the episode's `DIRECTION.md`. It is a required editorial worksheet, **not a new reel YAML schema**. Fill in the promise, opening choice and beat map before generating pictures or narration; complete timeline measurements and viewing checks after rendering. Link owner questions from `review.yaml`.
 
 ```markdown
 # Story direction
@@ -86,6 +86,14 @@ Confounders: topic/player, post age, audience, paid exposure:
 Result: pending / promising / inconclusive / rejected
 Evidence links and next decision:
 ```
+
+## Apply the first pilot to the next episode
+
+The next newly commissioned Football Legends episode uses **FL-R1**, the first stage of the research plan adopted by the owner on 31 October 2026. Record that ID in its `DIRECTION.md`. The treatment is readable hero/obstacle action beneath the complete identity at frame zero, with an early visible consequence; Matvey and Sofia react within the story. Keep the selected narrator, voice speed, duration band and ending approach. Choose a comparable posed-opening release as the reference and record its exact revision, duration and limitations before publication.
+
+Do not bundle the shorter-script test FL-R2 or the ending test FL-R3 into FL-R1. Historical accuracy, intelligibility, a causal story and an honest payoff remain baseline quality requirements. If other substantial changes are necessary, list them and treat the comparison as exploratory; different players and audiences already limit attribution. If the primary opening metric is unavailable, record it as missing and leave the opening result inconclusive rather than substitute views as proof.
+
+The next episode is a production commitment, not a completed experiment: its script, render, publication and results are still pending. Keep the experiment's result empty until evidence exists. The [experiment plan](../../content/research/reels-growth-2026-10-31/experiments.yaml) records the selected stage; a request for the next episode supplies its brief through the normal workflow.
 
 ## Measure the published version
 

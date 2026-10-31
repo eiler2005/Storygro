@@ -14,6 +14,10 @@ format: >-
   встроенный GPT Image (точная версия инструментом не раскрывается); библия — football-legends.md.
   Стандарт Reels 29.10.2026: полный 1080×1920/30 fps без полей, safe reels, подписи до четырёх слов;
   создание через new --target instagram-reels, рецепт — docs/how-to/instagram-without-cropping.md.
+  Правило владельца 31.10.2026: до производства заполнить DIRECTION.md по исследованию удержания;
+  действие под полным титулом, ранний результат, причинная история и ответ на хук.
+  Следующий выпуск — пилот FL-R1 из content/research/reels-growth-2026-10-31/experiments.yaml;
+  длительность, голос и подход к финалу сохраняются; сокращение — отдельный будущий тест.
 cadence: по запросу владельца
 episodes:
   - ../videos/football-legends-01-matthews/episode.yaml

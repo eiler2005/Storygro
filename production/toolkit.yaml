@@ -301,7 +301,7 @@ entries:
     stage: write
     title: Reels story direction and measured experiments
     what: Viewer promise, opening alternatives, early result, causal beats and payoff in DIRECTION.md; one-factor pilots with the exact published revision, comparable ages and distribution modes. Manual metrics separate missing values and calculate watch ratio and events per reach without inferring completion or causality.
-    when: New or deliberately remade Reels; learn from Sivori and external references without claiming proven uplift.
+    when: Required for new or deliberately remade Reels under the owner-adopted workflow of 2026-10-31; the next Football Legends episode uses FL-R1. Audience effects remain pilot hypotheses.
     status: pilot
     docs: docs/how-to/reels-retention.md
     examples: [content/research/reels-growth-2026-10-31/README.md]

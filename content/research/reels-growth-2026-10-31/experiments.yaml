@@ -1,6 +1,9 @@
 research: 1
-status: proposed-production-pilots-not-publication-approval
+status: owner-adopted-workflow-effects-unmeasured
 date: '2026-10-31'
+owner_decision: Record the research in repository rules and use it for the next episode; commit and push.
+next_episode_pilot: FL-R1
+approval_scope: Production method and next pilot only; episode script, storyboard, release and publication retain their existing workflow.
 series: football-legends
 baseline: observations.json
 principle: One primary change per stage; repeat before adopting; different players remain a confounder.
@@ -16,7 +19,8 @@ snapshots:
   comparison: Same account and distribution; preserve raw metrics; no causal conclusion from different-player pairs.
 experiments:
   - id: FL-R1
-    status: pending
+    status: selected-for-next-episode
+    execution: pending-next-episode-brief
     priority: first
     question: Does readable action beneath the required first-frame identity improve the opening?
     treatment: Hero and obstacle already acting; hosts react; early visible consequence.

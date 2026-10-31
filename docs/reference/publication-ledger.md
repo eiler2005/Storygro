@@ -103,7 +103,7 @@ Any other move is an error that names the allowed next states. `published` and `
 
 ## Commands
 
-These commands will exist. Examples use the project runner; the ledger path defaults to `content/publishing/publications.json` and the metrics path to `content/publishing/metrics.json`.
+These commands are implemented. Examples use the project runner; the ledger path defaults to `content/publishing/publications.json` and the metrics path to `content/publishing/metrics.json`.
 
 ```sh
 npm run storygro -- publish plan <release-dir> --variant ru --platform instagram --account @handle
@@ -123,7 +123,7 @@ npm run storygro -- metrics report
 | `publish list` | A table of publications with state and link |
 | `publish checklist` | Markdown for the person who uploads: platform and account, the exact files with SHA-256, the post text, and the steps |
 | `metrics add` | Records one snapshot of a published publication |
-| `metrics report` | A Markdown report with one table per platform and window |
+| `metrics report` | Markdown tables by platform, window and distribution, plus calculated Instagram diagnostics when inputs exist |
 
 A typical manual run:
 
@@ -135,28 +135,42 @@ A typical manual run:
 
 ## Metrics
 
-A snapshot is `{ publicationId, window, capturedAt, source, values }`:
+A snapshot is `{ publicationId, window, capturedAt, source, distribution?, values }`:
 
-- `window` is the measurement period the platform used: `24h`, `48h`, `7d`, `28d`, `90d` or `lifetime`.
+- `window` is the measurement period: `24h`, `48h`, `72h`, `7d`, `28d`, `90d` or `lifetime`. Record whether it is a platform date filter or cumulative results at that post age; they are not interchangeable. Retain actual age in the source. Do not label an approximate fourteen-hour observation as 24h.
 - `capturedAt` is when the numbers were read, with a time zone.
 - `source` is required free text saying where the numbers came from, for example "Instagram Insights, read by hand" or "YouTube Studio CSV export".
+- `distribution` is optional: `unknown`, `organic`, `trial`, `paid` or `mixed`. Pass `--distribution <mode>` to `metrics add`. Older records without it remain unknown, not organic. A trial later shared to everyone has mixed cumulative exposure; record that transition in the source.
 - `values` holds only the metrics that were actually reported. A missing metric stays absent and is shown as `—`; it is never filled with zero. An explicit `0` means the platform showed zero. The command line rejects `views=` (blank) for the same reason.
 
 Snapshots are accepted only for publications in the `published` state. Names are checked per platform:
 
 | Platform | Metrics |
 |---|---|
-| Instagram | `views`, `reach`, `likes`, `comments`, `shares`, `saves`, `follows`, `avgWatchSec` |
+| Instagram | `views`, `reach`, `likes`, `comments`, `shares`, `saves`, `follows`, `avgWatchSec`, `sends`, `nonFollowerReach`, `totalWatchSec`, `durationSec`, `skipRatePct`, `completionRatePct` |
 | YouTube | `views`, `likes`, `comments`, `shares`, `subscribersGained`, `avgViewDurationSec`, `avgPercentViewed` |
 | TikTok, Telegram, LinkedIn, other | `views`, `likes`, `comments`, `shares` |
 
 Any platform also accepts custom metrics whose name starts with `x-`, such as `x-profile-visits`. Values must be finite and not negative. A second snapshot with the same publication, window and `capturedAt` is rejected.
 
-The report has one table per platform **and** window. Instagram and YouTube numbers are never in one column, because the platforms define "view" and "watch time" differently, and different windows are never compared side by side. Rows are publications; when a publication has several snapshots of the same window, the latest is shown and the count of earlier ones is stated. The report ends with:
+The report has one table per platform, window **and distribution**. Instagram and YouTube numbers are never in one column, because the platforms define view and watch time differently. Rows are publications; within each group the latest snapshot is shown and earlier ones are retained. These groups alone do not make different accounts, topics, post ages or audiences comparable. The report ends with:
 
 > Snapshots are what the platform reported at capture time; compare only the same platform and window; early numbers are not evidence of cause.
 
 Treat early numbers as observations. Compare comparable releases over the same window, together with the cost of producing them, before drawing a conclusion for the next experiment.
+
+### Instagram definitions and calculated diagnostics
+
+Copy what the interface actually reports and retain its label/definition in `source` or a referenced private export. `nonFollowerReach` means reached accounts, not non-follower views. `sends` and `shares` remain different measures; never infer sends from shares. `durationSec` is the positive duration of the uploaded cut. `skipRatePct` and `completionRatePct` must be reported percentages from 0 to 100 with a documented definition; missing metrics stay absent. Arbitrary retention-curve points can use an explicitly defined `x-…` metric; the report does not infer a curve.
+
+`metrics report` adds a calculated table only if the latest snapshot has sufficient operands:
+
+| Diagnostic | Calculation | Interpretation |
+|---|---|---|
+| `watchRatioPct` | `100 × avgWatchSec / durationSec` | Time relative to length, **not completion**; may exceed 100 with replays |
+| `likesPer1kReach`, `sendsPer1kReach`, `sharesPer1kReach`, `savesPer1kReach`, `followsPer1kReach` | `1000 × event count / reach` | Events per 1,000 reached accounts, not unique-person probabilities |
+
+Both operands must be present in the **same** snapshot and the denominator positive. A zero event count stays zero; a missing value or zero reach yields no rate. No input is borrowed from another capture/window/distribution; no derived value is written back as a platform observation. The report never turns views/reach into a replay rate, reconstructs completion, or ranks a winner. Use the [experiment worksheet](../how-to/reels-retention.md) for the editorial comparison.
 
 ## Rules
 

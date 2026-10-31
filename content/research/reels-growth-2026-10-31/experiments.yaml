@@ -1,0 +1,56 @@
+research: 1
+status: proposed-production-pilots-not-publication-approval
+date: '2026-10-31'
+series: football-legends
+baseline: observations.json
+principle: One primary change per stage; repeat before adopting; different players remain a confounder.
+fixed:
+  - Native 1080x1920 at 30fps; full-frame backgrounds and crop-safe identity.
+  - Existing Matvey/Sofia references and selected OmniVoice B 0.90/off.
+  - Both series titles, golden-ball symbol, player name and sourced nickname/editorial trait at frame zero.
+  - Historical facts, period kit/venue, captions, provenance and owner approval workflow.
+snapshots:
+  windows: [24h, 72h, 7d]
+  required_context: [post-url, uploaded-release, published-at, captured-at, actual-age, distribution, duration, metric-definitions]
+  missing_values: absent-not-zero
+  comparison: Same account and distribution; preserve raw metrics; no causal conclusion from different-player pairs.
+experiments:
+  - id: FL-R1
+    status: pending
+    priority: first
+    question: Does readable action beneath the required first-frame identity improve the opening?
+    treatment: Hero and obstacle already acting; hosts react; early visible consequence.
+    reference: Comparable posed hero/hosts opening; matched duration band and narration style.
+    keep_fixed: Length, narrator, title hierarchy, topic category, ending approach and posting practice.
+    primary_metric: Platform-reported skipRatePct, or explicitly defined early retention if available.
+    secondary_metrics: [avgWatchSec, reach, sendsPer1kReach, followsPer1kReach]
+    replication: Repeat across multiple comparable future episodes; a single pair is exploratory only.
+    decision: No universal passing percentage. Seek repeated directional improvement without weaker clarity or payoff; otherwise inconclusive.
+    result: null
+  - id: FL-R2
+    status: pending
+    priority: after-opening-pilot
+    question: Can a concise complete story improve response compared with the longer format?
+    treatment: Authorised 45–60-second script retaining key facts, first result, mechanism and ending.
+    reference: Approximately 80–90-second treatment with the same chosen opening approach.
+    keep_fixed: Voice speed, visual medium, first-frame identity and story promise.
+    primary_metric: avgWatchSec considered together with calculated watchRatioPct; neither alone declares a winner.
+    secondary_metrics: [completionRatePct-if-reported, reach, sendsPer1kReach, followsPer1kReach, production-time]
+    caveat: Compression changes information selection as well as duration; document omissions and preserve voice speed.
+    decision: Adopt only if story completeness and response repeat; a higher ratio on a shorter file is insufficient.
+    result: null
+  - id: FL-R3
+    status: pending
+    priority: after-duration-pilot
+    question: Does a specific family-relevant takeaway encourage meaningful sharing?
+    treatment: One useful thought earned by the action, followed by one natural choice question.
+    reference: Generic recap and broad ending question in an otherwise comparable treatment.
+    keep_fixed: Opening approach, chosen duration band, cast and narrator.
+    primary_metric: sendsPer1kReach if explicitly available; otherwise sharesPer1kReach labelled as a different measure.
+    secondary_metrics: [followsPer1kReach, savesPer1kReach, avgWatchSec, substantive-comment-themes]
+    decision: Repeat before adopting; do not infer sharing from comments or use engagement bait.
+    result: null
+not_in_this_change:
+  - No old episode is silently remade or reposted.
+  - No result is filled from public view counts alone.
+  - No new voice, paid video provider or automatic publishing integration.

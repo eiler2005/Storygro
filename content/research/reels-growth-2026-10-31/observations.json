@@ -1,0 +1,27 @@
+{
+  "research": 1,
+  "observedOn": "2026-10-31",
+  "account": "@smart_little_toons",
+  "status": "early-observations-not-causal-evidence",
+  "sources": "sources.md",
+  "observations": [
+    {"source": "O1", "episode": "football-legends-05-sivori", "surface": "owner-screenshot-public-grid", "values": {"views": 1943}, "ownerReportedAge": "1 день", "exactAgeHours": null},
+    {"source": "O1", "episode": "football-legends-06-masopust", "surface": "owner-screenshot-public-grid", "values": {"views": 321}, "exactAgeHours": null},
+    {"source": "O1", "episode": "football-legends-07-yashin", "surface": "owner-screenshot-public-grid", "values": {"views": 260}, "exactAgeHours": null},
+    {"source": "O2", "episode": "football-legends-05-sivori", "url": "https://www.instagram.com/smart_little_toons/reel/DfIKMiABaUJ/", "surface": "public-grid-browser", "values": {"views": 1957}},
+    {"source": "O2", "episode": "football-legends-06-masopust", "url": "https://www.instagram.com/smart_little_toons/reel/DfIRWGgB1mr/", "surface": "public-grid-browser", "values": {"views": 321}},
+    {"source": "O2", "episode": "football-legends-07-yashin", "url": "https://www.instagram.com/smart_little_toons/reel/DfJkHvGNsBu/", "surface": "public-grid-browser", "values": {"views": 271}},
+    {"source": "O3", "episode": "football-legends-05-sivori", "surface": "public-post-browser", "values": {"likes": 26, "comments": 0}, "displayedAge": "14 hours ago", "player": {"durationSec": 82.76666666666667, "width": 1080, "height": 1920}, "uploadedReleaseSHA256": null}
+  ],
+  "unknown": ["reach", "nonFollowerReach", "avgWatchSec", "sends", "shares", "saves", "follows", "completionRatePct", "skipRatePct", "distribution-mode", "exact-publication-time", "uploaded-file-checksum"],
+  "localTimelines": [
+    {"episode": "football-legends-03-kopa", "durationSec": 84.369, "scenes": 13, "skillSectionStartSec": 30.2},
+    {"episode": "football-legends-04-suarez", "durationSec": 91.327, "scenes": 15, "skillSectionStartSec": 36.8},
+    {"episode": "football-legends-05-sivori", "durationSec": 81.324, "scenes": 14, "openingAnswerStartSec": 5.753, "skillSectionStartSec": 31.7},
+    {"episode": "football-legends-06-masopust", "durationSec": 88.086, "scenes": 16, "payoffSectionStartSec": 57.1},
+    {"episode": "football-legends-07-yashin", "durationSec": 90.193, "scenes": 17, "spiderSectionStartSec": 30.4},
+    {"episode": "football-legends-08-law", "durationSec": 83.03, "scenes": 13, "skillSectionStartSec": 23, "clubStatisticsStartSec": 42}
+  ],
+  "localTimingMethod": "Read current ignored .reel/ru/timeline.json files at repository d40ab31. Section times rounded to 0.1 s except Sivori opening answer; these are local revisions, not verified published versions. Scene count is not shot count.",
+  "measurementNote": "No formal 24h snapshot or publication ledger entry was invented: the uploaded release and exact capture age remain unverified. Public views are not unique reach. Separate observations are not merged into one Insights snapshot."
+}

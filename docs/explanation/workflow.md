@@ -70,6 +70,7 @@ Since 25 October 2026, new Russian scaffolds use the owner's selected OmniVoice 
 | Pick a topic worth a video | [Choose a topic](../how-to/choose-a-topic.md) | `trends`, `ideas` |
 | Make an explainer from a topic, end to end | [Tutorial](../tutorials/explainer-from-a-topic.md) | `voice`, `still`, `board`, `approve`, `render` |
 | Write or edit the script | [Write a script](../how-to/write-a-script.md) | — |
+| Improve Reels story and compare published outcomes | [Retention recipe and direction worksheet](../how-to/reels-retention.md) | `hooks:`, cues, `metrics` |
 | Review an episode, answer questions, approve step by step | [Review and approve](../how-to/review-and-approve.md) | `plan`, `approve --step`, `tracker` |
 | Ship Russian and English cuts | [Language variants](../how-to/language-variants.md) | `voice` per spec |
 | Give the narrator a voice | [Design a voice](../how-to/design-a-voice.md) | `design_voice.py` |

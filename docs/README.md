@@ -19,6 +19,7 @@
 | Pick a topic worth a video | [Choose a topic](how-to/choose-a-topic.md) · [How we find ideas](explanation/research-approach.md) |
 | Read an episode before rendering, change it, approve it; see what waits for me | [Review and approve](how-to/review-and-approve.md) · [The content workflow](explanation/content-workflow.md) · [Tracker](../content/TRACKER.md) |
 | Write or edit a script | [Write a script](how-to/write-a-script.md) |
+| Improve a Reel's opening, story and learning from results | [Retention recipe and direction worksheet](how-to/reels-retention.md) · [Sivori research and successful examples](../content/research/reels-growth-2026-10-31/README.md) |
 | Ship Russian and English cuts | [Language variants](how-to/language-variants.md) |
 | Give the narrator a voice | [Design a voice](how-to/design-a-voice.md) · [Voices](reference/voices.md) |
 | Demo a product on its real website | [Product demo from a website](how-to/product-demo-from-a-website.md) |

@@ -60,7 +60,7 @@ const HELP = `storygro — explainer videos as code
   storygro publish  plan <release-dir> --variant ru --platform instagram --account @handle
                     | approve <id> | mark <id> <state> [--url …] [--note …] | checklist <id> | list
                                              manual publication ledger: records uploads, uploads nothing
-  storygro metrics  add <id> --window 7d --source "…" views=1200 likes=80 | report
+  storygro metrics  add <id> --window 72h --distribution organic --source "…" views=1200 likes=80 | report
   storygro deliver  <reel.yaml> [dir]       copy the complete set + manifest.json to one folder
                                              (default ~/Downloads/<name>); refuses missing files
   storygro instagram-check <post link>      after an upload: did Instagram keep the 9:16 frame or crop it
@@ -81,7 +81,7 @@ const opt = (f: string) => {
   const i = argv.indexOf(f);
   return i >= 0 ? argv[i + 1] : undefined;
 };
-const VALUED = ['--blur', '--from', '--to', '--out', '--port', '--backlog', '--md', '--variant', '--platform', '--account', '--note', '--url', '--external-id', '--window', '--source', '--at', '--ledger', '--metrics', '--style', '--lang', '--title', '--target', '--only', '--inbox', '--step', '--by'];
+const VALUED = ['--blur', '--from', '--to', '--out', '--port', '--backlog', '--md', '--variant', '--platform', '--account', '--note', '--url', '--external-id', '--window', '--source', '--at', '--ledger', '--metrics', '--distribution', '--style', '--lang', '--title', '--target', '--only', '--inbox', '--step', '--by'];
 const positional = argv.filter((a, i) => !a.startsWith('--') && !VALUED.includes(argv[i - 1] ?? ''));
 const [cmd, specPath, ...rest] = positional;
 if (flag('--allow-errors')) process.env.STORYGRO_ALLOW_ERRORS = '1';
@@ -136,6 +136,7 @@ if (cmd === 'publish' || cmd === 'metrics') {
     const r = P.addSnapshot(ledger, P.loadMetrics(metricsPath), {
       publicationId: rest[0] ?? '', window: opt('--window') ?? '', capturedAt: opt('--at') ?? new Date().toISOString(),
       source: opt('--source') ?? '', values: P.parseMetricPairs(pairs),
+      ...(opt('--distribution') ? { distribution: opt('--distribution') } : {}),
     });
     P.saveMetrics(metricsPath, r.store);
     console.log(`✔ snapshot ${r.snapshot.window} for ${rest[0]}`);

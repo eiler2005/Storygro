@@ -75,7 +75,7 @@ Gates and checks: [quality](../explanation/quality.md).
 | `tracker <videos-dir> [--md f] [--ledger f]` | every episode and variant: stage, whose move, approvals, length, QA, sourced facts, open questions, publications | `content/TRACKER.md` |
 | `publish plan <release-dir> --variant ru --platform instagram --account @handle` | adds a `draft` publication for one variant and one named account | `content/publishing/publications.json` |
 | `publish approve <id>` · `mark <id> <state> [--url …] [--note …]` · `checklist <id>` · `list` | manual ledger; records uploads, uploads nothing | same ledger |
-| `metrics add <id> --window 7d --source "…" views=1200 likes=80` · `metrics report` | metric snapshots with source and window | `content/publishing/metrics.json` |
+| `metrics add <id> --window 72h --distribution organic --source "…" views=1200 likes=80` · `metrics report` | manual snapshots by source/window/distribution; Instagram diagnostics from available inputs | `content/publishing/metrics.json` |
 
 Guides: [carousel and release](../how-to/carousel-and-release.md), [brand and series](../how-to/brand-and-series.md), [publish manually](../how-to/publish-manually.md). Ledger format: [publication ledger](publication-ledger.md).
 
@@ -95,6 +95,7 @@ Guides: [carousel and release](../how-to/carousel-and-release.md), [brand and se
 | `--out <dir>` | output folder for `capture` |
 | `--port <n>` | preview server port |
 | `--ledger <f>`, `--metrics <f>` | other ledger / metrics files for `publish` and `metrics` |
+| `--distribution <mode>` | `metrics add`: `organic`, `trial`, `paid`, `mixed`, `unknown`; omitted records remain unknown |
 
 ## Environment
 

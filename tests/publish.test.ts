@@ -3,6 +3,7 @@ import { existsSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'no
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { test } from 'node:test';
+import { execFileSync } from 'node:child_process';
 import {
   addSnapshot,
   canTransition,
@@ -13,6 +14,7 @@ import {
   loadLedger,
   loadMetrics,
   metricsReport,
+  instagramDiagnostics,
   nextStates,
   parseMetricPairs,
   planPublication,
@@ -393,4 +395,67 @@ test('a hand-edited ledger is validated: published without a url, duplicate ids 
   assert.equal(publicationsMarkdown(emptyLedger()), 'No publications in the ledger.\n');
   const _typecheck: Publication = p;
   void _typecheck;
+});
+
+test('Instagram diagnostics preserve absent versus zero, separate sends from shares and allow replay watch ratios', () => {
+  assert.deepEqual(instagramDiagnostics({ views: 1943 }), {}, 'views alone cannot establish retention or rates per reach');
+  assert.deepEqual(instagramDiagnostics({ reach: 0, likes: 3, durationSec: 0, avgWatchSec: 5 }), {});
+  const values = { reach: 200, likes: 20, sends: 0, shares: 4, follows: 2, durationSec: 40, avgWatchSec: 50 };
+  assert.deepEqual(instagramDiagnostics(values), { watchRatioPct: 125, likesPer1kReach: 100, sendsPer1kReach: 0, sharesPer1kReach: 20, followsPer1kReach: 10 });
+  assert.equal('completionRatePct' in instagramDiagnostics(values), false);
+  assert.equal('sendsPer1kReach' in instagramDiagnostics({ reach: 200, shares: 4 }), false);
+  assert.deepEqual(instagramDiagnostics({ reach: Number.MIN_VALUE, likes: Number.MAX_VALUE }), {}, 'overflow never enters a report');
+});
+
+test('72-hour snapshots validate reported percentages and retain older unlabelled records', () => {
+  const { ledger, id } = ledgerIn('published');
+  const add = (values: Record<string, number>, distribution = 'organic') => addSnapshot(ledger, emptyMetrics(), snapshot(id, { window: '72h', distribution, values }));
+  assert.doesNotThrow(() => add({ durationSec: 45, avgWatchSec: 60, skipRatePct: 100, completionRatePct: 0, sends: 2, nonFollowerReach: 300 }));
+  for (const values of [{ durationSec: 0 }, { skipRatePct: 100.01 }, { completionRatePct: 101 }])
+    assert.throws(() => add(values), /invalid snapshot/);
+  assert.throws(() => add({ views: 1 }, 'viral'), /invalid snapshot/);
+  assert.equal(addSnapshot(ledger, emptyMetrics(), snapshot(id)).snapshot.distribution, undefined);
+});
+
+test('diagnostic reports keep trial and organic snapshots apart and never join missing inputs across captures', () => {
+  const { ledger, id } = ledgerIn('published');
+  let store = emptyMetrics();
+  for (const over of [
+    { distribution: 'trial', capturedAt: '2026-10-21T10:00:00Z', values: { reach: 100, shares: 4, avgWatchSec: 25, durationSec: 50 } },
+    { distribution: 'organic', capturedAt: '2026-10-21T11:00:00Z', values: { reach: 200, sends: 8 } },
+    { distribution: 'organic', capturedAt: '2026-10-21T12:00:00Z', values: { sends: 9 } },
+  ]) store = addSnapshot(ledger, store, snapshot(id, { window: '72h', ...over })).store;
+  const md = metricsReport(ledger, store);
+  const organic = md.split('## Instagram — 72h — organic')[1]!.split('## Instagram — 72h — trial')[0]!;
+  const trial = md.split('## Instagram — 72h — trial')[1]!;
+  assert.doesNotMatch(organic, /Per1kReach|watchRatioPct/, 'the latest organic snapshot cannot borrow older reach');
+  assert.match(organic, /1 earlier snapshot/);
+  assert.match(trial, /sharesPer1kReach/);
+  assert.doesNotMatch(trial, /sendsPer1kReach/);
+  assert.match(trial, /NOT completion rate/);
+  assert.match(trial, /\| 50 \| 40 \|/);
+});
+
+test('metrics CLI round-trips a 72h trial snapshot and prints diagnostics without modifying the publication', () => {
+  const dir = mkdtempSync(join(tmpdir(), 'storygro-metrics-cli-'));
+  try {
+    const ledgerPath = join(dir, 'ledger.json'), metricsPath = join(dir, 'metrics.json');
+    const { ledger, id } = ledgerIn('published');
+    saveLedger(ledgerPath, ledger);
+    const run = (...args: string[]) => execFileSync(process.execPath,
+      ['--import', 'tsx', 'production/src/cli.ts', 'metrics', ...args, '--ledger', ledgerPath, '--metrics', metricsPath],
+      { encoding: 'utf8' });
+    run('add', id, '--window', '72h', '--distribution', 'trial', '--source', 'Synthetic CLI test only',
+      '--at', '2026-10-23T10:00:00Z', 'reach=200', 'sends=4', 'durationSec=40', 'avgWatchSec=30');
+    const saved = loadMetrics(metricsPath).snapshots[0]!;
+    assert.equal(saved.distribution, 'trial');
+    assert.equal(saved.window, '72h');
+    assert.equal(saved.values.sends, 4);
+    assert.deepEqual(loadLedger(ledgerPath), ledger, 'no publication state or approval changes');
+    const md = run('report');
+    assert.match(md, /Instagram — 72h — trial/);
+    assert.match(md, /\| 75 \| 20 \|/);
+  } finally {
+    rmSync(dir, { recursive: true, force: true });
+  }
 });

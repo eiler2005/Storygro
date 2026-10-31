@@ -97,6 +97,8 @@ Every number on screen belongs in a data file with its source, and scenes receiv
 
 ## Direction
 
+For new/remade Instagram Reels, use the [retention worksheet](reels-retention.md#direction-worksheet): viewer promise, opening alternatives, early result, causal beats, payoff and one measurement hypothesis. Existing `hooks:` and narration cues support the method; no new reel schema is required. Preserve supplied text when verbatim is requested.
+
 Write `DIRECTION.md` next to the reel before scene code when several people or models build scenes: the feeling, the arc, the visual language, then per scene what is on screen at each cue. The director reviews stills (`storygro still <spec> scene@cue --guides`) and the storyboard.
 
 ## Before rendering

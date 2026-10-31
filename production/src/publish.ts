@@ -16,7 +16,8 @@ export const DEFAULT_METRICS_PATH = 'content/publishing/metrics.json';
 export const PLATFORMS = ['instagram', 'youtube', 'tiktok', 'telegram', 'linkedin', 'other'] as const;
 export const STATES = ['draft', 'approved', 'queued', 'uploading', 'processing', 'published', 'failed', 'cancelled'] as const;
 export const FILE_ROLES = ['video', 'cover', 'subtitles', 'post'] as const;
-export const WINDOWS = ['24h', '48h', '7d', '28d', '90d', 'lifetime'] as const;
+export const WINDOWS = ['24h', '48h', '72h', '7d', '28d', '90d', 'lifetime'] as const;
+export const DISTRIBUTIONS = ['unknown', 'organic', 'trial', 'paid', 'mixed'] as const;
 
 export const Platform = z.enum(PLATFORMS);
 export type Platform = z.infer<typeof Platform>;
@@ -419,7 +420,8 @@ export function saveLedger(path: string, ledger: Ledger): void {
 
 /** Metric names per platform, in report column order. Anything else needs the `x-` prefix. */
 export const METRICS: Record<Platform, readonly string[]> = {
-  instagram: ['views', 'reach', 'likes', 'comments', 'shares', 'saves', 'follows', 'avgWatchSec'],
+  instagram: ['views', 'reach', 'likes', 'comments', 'shares', 'saves', 'follows', 'avgWatchSec',
+    'sends', 'nonFollowerReach', 'totalWatchSec', 'durationSec', 'skipRatePct', 'completionRatePct'],
   youtube: ['views', 'likes', 'comments', 'shares', 'subscribersGained', 'avgViewDurationSec', 'avgPercentViewed'],
   tiktok: ['views', 'likes', 'comments', 'shares'],
   telegram: ['views', 'likes', 'comments', 'shares'],
@@ -436,8 +438,19 @@ export const Snapshot = z.strictObject({
   capturedAt: Iso,
   /** where the numbers came from, e.g. "Instagram Insights screenshot" */
   source: z.string().trim().min(1, 'say where the numbers came from'),
+  /** Omitted in older files: unknown, never silently treated as organic. */
+  distribution: z.enum(DISTRIBUTIONS).optional(),
   /** only the metrics that were actually reported; a missing metric is absent, never 0 */
-  values: z.record(z.string().min(1), z.number().min(0)).refine((v) => Object.keys(v).length > 0, 'at least one metric value'),
+  values: z.record(z.string().min(1), z.number().min(0))
+    .refine((v) => Object.keys(v).length > 0, 'at least one metric value')
+    .superRefine((v, ctx) => {
+      for (const name of ['skipRatePct', 'completionRatePct']) {
+        if (v[name] !== undefined && v[name]! > 100)
+          ctx.addIssue({ code: 'custom', path: [name], message: `${name} must be between 0 and 100` });
+      }
+      if (v.durationSec === 0)
+        ctx.addIssue({ code: 'custom', path: ['durationSec'], message: 'durationSec must be positive' });
+    }),
 });
 export type Snapshot = z.infer<typeof Snapshot>;
 
@@ -469,6 +482,7 @@ export interface SnapshotInput {
   window: string;
   capturedAt: string;
   source: string;
+  distribution?: string;
   values: Record<string, number>;
 }
 
@@ -500,9 +514,25 @@ export const REPORT_FOOTER =
 
 const number = (v: number) => v.toLocaleString('en-US');
 
+/** Diagnostics from one snapshot only. Missing operands and zero denominators stay missing. */
+export function instagramDiagnostics(values: Record<string, number>): Record<string, number> {
+  const result: Record<string, number> = {};
+  const ratio = (name: string, numerator: string, denominator: string, scale: number) => {
+    const a = values[numerator], b = values[denominator];
+    if (a !== undefined && b !== undefined && Number.isFinite(a) && a >= 0 && Number.isFinite(b) && b > 0) {
+      const value = a / b * scale;
+      if (Number.isFinite(value)) result[name] = value;
+    }
+  };
+  ratio('watchRatioPct', 'avgWatchSec', 'durationSec', 100);
+  for (const name of ['likes', 'sends', 'shares', 'saves', 'follows'])
+    ratio(`${name}Per1kReach`, name, 'reach', 1000);
+  return result;
+}
+
 /**
- * One table per platform and measurement window — Instagram and YouTube are never in one column and
- * different windows are never side by side. Rows are publications (the latest snapshot of that window),
+ * One table per platform, measurement window and distribution — incompatible cohorts stay apart.
+ * Rows are publications (the latest snapshot in that group),
  * columns the metrics that were reported; an unreported metric is shown as —.
  */
 export function metricsReport(ledger: Ledger, store: MetricsStore): string {
@@ -513,8 +543,9 @@ export function metricsReport(ledger: Ledger, store: MetricsStore): string {
   const orphans = s.snapshots.filter((x) => !byId.has(x.publicationId));
   let tables = 0;
   for (const platform of PLATFORMS) {
-    for (const window of WINDOWS) {
-      const group = s.snapshots.filter((x) => x.window === window && byId.get(x.publicationId)?.platform === platform);
+    for (const [window, distribution] of WINDOWS.flatMap((w) => DISTRIBUTIONS.map((d) => [w, d] as const))) {
+      const group = s.snapshots.filter((x) => x.window === window && byId.get(x.publicationId)?.platform === platform
+        && (x.distribution ?? 'unknown') === distribution);
       if (!group.length) continue;
       const latest = new Map<string, Snapshot>();
       for (const x of group) {
@@ -527,7 +558,7 @@ export function metricsReport(ledger: Ledger, store: MetricsStore): string {
       const present = new Set(rows.flatMap(({ x }) => Object.keys(x.values)));
       const columns = [...METRICS[platform].filter((m) => present.has(m)), ...[...present].filter((m) => !METRICS[platform].includes(m)).sort()];
       lines.push(
-        `## ${PLATFORM_NAMES[platform]} — ${window}`,
+        `## ${PLATFORM_NAMES[platform]} — ${window}${distribution === 'unknown' ? '' : ` — ${distribution}`}`,
         '',
         `| Episode | Variant | Account | Link | Captured | Source | ${columns.join(' | ')} |`,
         `|---|---|---|---|---|---|${columns.map(() => '---').join('|')}|`,
@@ -541,6 +572,20 @@ export function metricsReport(ledger: Ledger, store: MetricsStore): string {
       );
       const superseded = group.length - rows.length;
       if (superseded) lines.push(`Showing the latest snapshot per publication; ${superseded} earlier snapshot(s) of this window are kept in the metrics file.`, '');
+      lines.push(`Distribution: ${distribution}. Compare the same account, actual post age and audience context; window labels alone do not establish comparability.`, '');
+      if (platform === 'instagram') {
+        const derived = rows.map(({ x, p }) => ({ p, values: instagramDiagnostics(x.values) }));
+        const names = [...new Set(derived.flatMap((r) => Object.keys(r.values)))];
+        if (names.length) lines.push(
+          '### Instagram diagnostics (calculated)', '',
+          `| Episode | Variant | Account | Link | ${names.join(' | ')} |`,
+          `|---|---|---|---|${names.map(() => '---').join('|')}|`,
+          ...derived.map(({ p, values }) => `| ${cell(p.episode)} | ${cell(p.variant)} | ${cell(p.account)} | ${p.url ? `[open](${p.url})` : '—'} | ${names.map((n) => values[n] === undefined ? '—' : number(Number(values[n]!.toFixed(2)))).join(' | ')} |`),
+          '',
+          'watchRatioPct = average watch seconds / duration × 100; it is NOT completion rate and may exceed 100 with replays. Per1kReach columns are events per 1,000 reached accounts, not probabilities. Sends and shares remain separate; no missing inputs are borrowed from another snapshot. No ranking or causal uplift is inferred.',
+          '',
+        );
+      }
       tables++;
     }
   }

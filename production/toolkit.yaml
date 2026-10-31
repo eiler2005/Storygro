@@ -296,6 +296,16 @@ entries:
     docs: docs/how-to/football-series.md
     examples: [content/videos/football-legends-06-masopust/README.md]
 
+  - id: reels-learning-loop
+    kind: method
+    stage: write
+    title: Reels story direction and measured experiments
+    what: Viewer promise, opening alternatives, early result, causal beats and payoff in DIRECTION.md; one-factor pilots with the exact published revision, comparable ages and distribution modes. Manual metrics separate missing values and calculate watch ratio and events per reach without inferring completion or causality.
+    when: New or deliberately remade Reels; learn from Sivori and external references without claiming proven uplift.
+    status: pilot
+    docs: docs/how-to/reels-retention.md
+    examples: [content/research/reels-growth-2026-10-31/README.md]
+
   - id: scenes-series-cover
     kind: scenes
     stage: look
@@ -682,7 +692,7 @@ entries:
     kind: tool
     stage: ship
     title: Publication ledger and metrics
-    what: Records where and when a person posted a release (plan, approve, checklist, mark) and metric snapshots with source and window; uploads nothing.
+    what: Records manual publication and metric snapshots by source, window and distribution (including 72h); Instagram diagnostics use available same-snapshot operands, never infer completion, and separate trial, organic, paid, mixed and unknown exposure. Uploads nothing.
     when: After a manual upload; to compare results later.
     commands: [publish, metrics]
     how: npm run storygro -- publish plan <release-dir> --variant en --platform youtube --account @handle

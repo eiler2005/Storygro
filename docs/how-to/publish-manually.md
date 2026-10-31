@@ -1,5 +1,7 @@
 # Review and publish manually
 
+For Reels learning, record the exact uploaded revision, actual post age and original metric labels. Use [the retention recipe](reels-retention.md#measure-the-published-version) for 24h/72h/7d captures and `metrics add … --distribution organic` (or `trial`, `paid`, `mixed`, `unknown`). Reports keep these groups separate and calculate watch ratio and events per 1,000 reached accounts only when inputs exist. Views alone cannot establish retention; the watch ratio is not completion.
+
 Today the last automated step is `package`. Publishing is a person's action; Storygro keeps a ledger of what was done and uploads nothing.
 
 1. **Review.** Watch and listen on a phone with the checklist in [quality § the human review](../explanation/quality.md#the-human-review-that-no-gate-replaces). Technical QA does not replace it.

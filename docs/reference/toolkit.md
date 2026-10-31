@@ -2,7 +2,7 @@
 
 <!-- Generated from production/toolkit.yaml by `npm run docs:toolkit`. Edit the YAML, not this page. -->
 
-Every way Storygro makes content, in one bank: **25 methods**, **25 tools**, **4 styles**, **7 scene families** and **6 providers**, by production stage. Agents read [`production/toolkit.yaml`](../../production/toolkit.yaml) to pick an approach; this page is generated from it, and `npm test` fails when a command, style or scene is missing from the bank or a link is broken.
+Every way Storygro makes content, in one bank: **26 methods**, **25 tools**, **4 styles**, **7 scene families** and **6 providers**, by production stage. Agents read [`production/toolkit.yaml`](../../production/toolkit.yaml) to pick an approach; this page is generated from it, and `npm test` fails when a command, style or scene is missing from the bank or a link is broken.
 
 **Status:** *stable* — used across pieces · *pilot* — works, reviewed on one or two pieces · *planned* — not implemented.
 
@@ -10,7 +10,7 @@ Every way Storygro makes content, in one bank: **25 methods**, **25 tools**, **4
 |---|---|
 | **choose** — Pick a topic worth a piece | [Editorial ranking](#editorial-ranking) · [Trend scan and watchlist](#trend-scan-and-watchlist) · [Research scan with picks](#research-scan-with-picks) · [X digest through Grok](#x-digest-through-grok) · [Angles from a scan](#angles-from-a-scan) |
 | **research** — Find and check what is true | [Primary-source research](#primary-source-research) · [Facts as data](#facts-as-data) · [Reference analysis](#reference-analysis) · [Transcript and pace statistics](#transcript-and-pace-statistics) · [Whisper (mlx-whisper)](#whisper-mlx-whisper) |
-| **write** — Turn it into a script as data | [Script as data](#script-as-data) · [Story structures](#story-structures) · [One worked example](#one-worked-example) · [Language variants](#language-variants) · [Brand profile and series](#brand-profile-and-series) · [Children's list cartoon](#childrens-list-cartoon) |
+| **write** — Turn it into a script as data | [Script as data](#script-as-data) · [Story structures](#story-structures) · [One worked example](#one-worked-example) · [Language variants](#language-variants) · [Brand profile and series](#brand-profile-and-series) · [Reels story direction and measured experiments](#reels-story-direction-and-measured-experiments) · [Children's list cartoon](#childrens-list-cartoon) |
 | **look** — Decide how it looks | [Cartoon explainer](#cartoon-explainer) · [Cut-paper explainer](#cut-paper-explainer) · [Editorial collage](#editorial-collage) · [Cut-paper scenes](#cut-paper-scenes) · [Kinetic typography](#kinetic-typography) · [Kinetic and diagram scenes](#kinetic-and-diagram-scenes) · [Springs, beat grid and motion blur](#springs-beat-grid-and-motion-blur) · [Collage scene](#collage-scene) · [Illustration scene](#illustration-scene) · [Illustrated series identity and retention pilot](#illustrated-series-identity-and-retention-pilot) · [Series opening cover](#series-opening-cover) · [Screencast scene](#screencast-scene) · [Landscape product scenes](#landscape-product-scenes) · [Generated illustrations](#generated-illustrations) · [Z-Image-Turbo via mflux](#z-image-turbo-via-mflux) · [Recognisable caricatures, overlays off faces](#recognisable-caricatures-overlays-off-faces) · [GPT Image through the Codex CLI](#gpt-image-through-the-codex-cli) · [Recurring cast](#recurring-cast) · [Reference pictures of recurring hosts](#reference-pictures-of-recurring-hosts) · [No text in pictures](#no-text-in-pictures) · [Screen capture](#screen-capture) · [A new scene module](#a-new-scene-module) |
 | **voice** — Narration, sound and timing | [Local narration and timing](#local-narration-and-timing) · [Narrator design](#narrator-design) · [Pronunciation and say-as](#pronunciation-and-say-as) · [Russian stress and homographs](#russian-stress-and-homographs) · [Pronunciation dictionary and stress lookup](#pronunciation-dictionary-and-stress-lookup) · [Voice bench](#voice-bench) · [Chatterbox Multilingual](#chatterbox-multilingual) · [OmniVoice Russian narrator](#omnivoice-russian-narrator) · [Complete narration before scene cuts](#complete-narration-before-scene-cuts) · [Music and sound effects](#music-and-sound-effects) |
 | **make** — Storyboard, approval and rendering | [Stills and live preview](#stills-and-live-preview) · [Storyboard and approval](#storyboard-and-approval) · [Plan document and stepped approvals](#plan-document-and-stepped-approvals) · [Render](#render) · [Formats, safe areas and captions](#formats-safe-areas-and-captions) · [Carousel cards](#carousel-cards) · [Native full-frame Instagram Reels](#native-full-frame-instagram-reels) |
@@ -199,6 +199,16 @@ Audience, voices, the disclosure every post must carry and avoided phrases (chec
 **How:** `brand: ../../brand.yaml in the reel; npm run storygro -- series content/series/<id>.yaml`
 
 **See:** [docs](../../docs/how-to/brand-and-series.md) · [content/brand.yaml](../../content/brand.yaml) · [series/business-explainers.yaml](../../content/series/business-explainers.yaml)
+
+### Reels story direction and measured experiments
+
+*method · pilot*
+
+Viewer promise, opening alternatives, early result, causal beats and payoff in DIRECTION.md; one-factor pilots with the exact published revision, comparable ages and distribution modes. Manual metrics separate missing values and calculate watch ratio and events per reach without inferring completion or causality.
+
+**Use when:** New or deliberately remade Reels; learn from Sivori and external references without claiming proven uplift.
+
+**See:** [docs](../../docs/how-to/reels-retention.md) · [reels-growth-2026-10-31/README.md](../../content/research/reels-growth-2026-10-31/README.md)
 
 ### Children's list cartoon
 
@@ -750,7 +760,7 @@ All variants with MP4, subtitles, cover, stills, storyboard PDF, QA report, post
 
 *tool · stable* · commands: `publish`, `metrics`
 
-Records where and when a person posted a release (plan, approve, checklist, mark) and metric snapshots with source and window; uploads nothing.
+Records manual publication and metric snapshots by source, window and distribution (including 72h); Instagram diagnostics use available same-snapshot operands, never infer completion, and separate trial, organic, paid, mixed and unknown exposure. Uploads nothing.
 
 **Use when:** After a manual upload; to compare results later.
 

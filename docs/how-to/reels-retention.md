@@ -33,9 +33,17 @@ Write what changes at each beat and what question remains. A zoom, swell or cut 
 
 As an **editorial hypothesis**, make the situation clear in the first few seconds and offer a first reward roughly within the opening 5–8 seconds. These are review prompts, not automatic gates or Instagram thresholds. No ideal cut interval, retention percentage or duration has been established. Readability and the selected voice determine exact cues.
 
-Give children time to understand a result and inspect its picture. Hold a decisive score or reveal beyond the spoken phrase before moving on. Check this on the narrated timeline; frequent cuts alone do not establish retention. Keep the selected narrator and speed unless the owner requests a pace change, and record any such change as a confounder in an ongoing experiment. Episode9 v2 applies this after the owner found the 5:3 result too rushed.
-
 Test a complete 45–60-second script separately from the current approximately 80–90-second Football Legends format when adaptation is authorised. Keep the voice speed. Do not change length, opening, cast, music and ending together and attribute the result to one of them.
+
+## Pace for children
+
+**Owner-adopted rule, 31 October 2026, after the Eusebio revision:** use calm speech and leave time to understand each result and inspect its picture. A hook or duration target must not force faster narration or an immediate cut after an important sentence. Repeated quick cuts are not evidence of retention.
+
+Hold a decisive score or reveal after its spoken phrase before moving on. Start review at roughly 1–2 seconds of post-speech hold and adjust to the amount of information; this is not a mandatory interval for every shot or an Instagram requirement. Photos also need enough narrated screen time to recognise the person/place and read the short label. Inspect the transition before, during and after the spoken payoff on the actual timeline at phone size.
+
+Episode9 V2 is the working reference: the same OmniVoice B narrator at 0.82/off instead of 0.90/off, with the final 5:3 held 1.60 seconds after speech. Preserve explicit episode settings and the original reference recording. This reference does not silently change every Russian project's default or certify a universal best speed. Record any pace/duration changes as confounders in ongoing comparisons.
+
+Check difficult words and homographs in their actual sentence. Keep sourced norms in the shared Russian lexicon, use a targeted pronunciation repair when needed, then review that line in the final mix. ASR and phoneme checks support the review; neither establishes correct stress by itself. If listening cannot be performed, leave it explicitly pending rather than record an auditory approval.
 
 ## Direct for a small screen
 
@@ -78,6 +86,8 @@ Longest stretch without new information, and why it earns its time:
 Ending resolves opening; one optional question; no repeated summary:
 Silent opening review: situation understandable?
 Phone review: identity, faces, ball and clue readable; speech clear?
+Pacing: calm speech; photo dwell time; post-speech holds for decisive results:
+Pronunciation: difficult words checked in context; final-mix listening status:
 
 ## One experiment
 Experiment ID and one changed factor:

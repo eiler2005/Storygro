@@ -15,6 +15,7 @@ Narration drives the timeline, so the voice is chosen before the pictures are po
 | `chatterbox` | Russian, English and 21 more | `npm run setup:chatterbox` (own environment) | Whisper alignment | tempo change after synthesis | MIT (Resemble AI); outputs carry an imperceptible PerTh watermark |
 | `omnivoice` | Multilingual; Russian validated locally | `npm run setup:omnivoice` (own PyTorch environment) | Whisper alignment | tempo change after synthesis, pitch kept | Code Apache-2.0; [model weights CC-BY-NC](https://huggingface.co/k2-fsa/OmniVoice#license) |
 | `yandex` | Russian | none (cloud); `YANDEX_API_KEY` | Whisper alignment | native (`speed`) | Yandex Cloud terms, paid per request — **not yet run against the live API** |
+| `audio` | Language of the supplied transcript | normal audio environment | Whisper alignment | pitch-preserving tempo if requested | Source recording terms and consent; no synthesis model |
 | `none` | — | — | estimated (~2.6 words/s) | — | — |
 
 ```yaml
@@ -30,6 +31,36 @@ voice: { engine: qwen3, voice: assets/voice/narrator-ru.wav, stress: auto } # st
 `lang:` at the top of the spec (e.g. `ru`) is the language of the narration and captions; it selects the ASR model and the text normalisation. `voice.lang` selects the US/UK English frontend. Russian Kokoro uses a separate community checkpoint, not the official English frontend with `voice.lang: ru`.
 
 ## How a line is made
+
+### Reviewed narration clips and local pace
+
+A scene can import a reviewed narration clip with `voice.source`, or change only its pace with `voice.speed`. Other scenes retain the episode's chosen narrator. Imported clips default to speed **1**, because they are already paced; they do not receive the global synthesis speed a second time. Keep the full transcript in `say`, including cue markers. Imported clips reject `{+…}` pause directives: the recording already contains its pauses. Their byte checksums enter both the narration cache and storyboard approval; replacing a clip invalidates them. Missing clips fail explicitly. Keep source audio off Git and version its provenance, terms and checksums.
+
+```yaml
+scenes:
+  - id: corrected-name
+    scene: illustration
+    say: A reviewed line with a difficult name.
+    voice: { source: assets/voice/corrected-name.wav }
+    props: { shots: [{ image: shots/hero.png }] }
+  - id: closing
+    scene: illustration
+    say: Let the conclusion breathe.
+    voice: { speed: 0.82 }
+    props: { shots: [{ image: shots/hero.png }] }
+```
+
+Global `voice: { engine: audio, voice: assets/voice/narration.wav }` is also available for an imported line. The generated plan records scene sources and pace overrides. Text alignment and ASR still require checking the actual result; importing a clip is not editorial approval.
+
+### Pronunciation-preserving voice conversion
+
+When a selected TTS model ignores a name's stress, first obtain a correctly pronounced, reviewed synthetic clip. `production/py/voice_convert.py` uses [ChatterboxVC's official audio-to-audio interface](https://github.com/resemble-ai/chatterbox/blob/master/example_vc.py) to match an authorised target reference while retaining source content. Run it with the isolated Chatterbox Python, then listen again: conversion can change perceived emphasis. Never clone an unconsented person's voice. Source and target terms remain separate; this project used the original **synthetic** OmniVoice B target, not an athlete recording.
+
+```sh
+~/.storygro/chatterbox-venv/bin/python production/py/voice_convert.py correct.wav synthetic-narrator.wav converted.wav
+```
+
+The tool refuses to overwrite an existing output and writes a checksum/model/seed sidecar. ChatterboxVC applies its PerTh watermark; slicing or retiming excerpts can affect detectability and is not a guarantee of retained detection. Preserve the approved audio instead of silently replacing it with a new generation. The [Zlatan correction recipe](../../content/videos/football-wow-02-zlatan/prepare-narration.py) patches only the name into existing lines using the owner's accepted sample, with bounded level matching and short crossfades; its [manifest](../../content/videos/football-wow-02-zlatan/assets/voice/corrections/manifest.json) records sources and terms. Approval of that sample is not approval of the episode.
 
 ### Current Russian preference (25 October 2026)
 

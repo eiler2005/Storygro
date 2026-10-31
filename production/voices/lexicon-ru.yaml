@@ -613,7 +613,23 @@ words:
     source: 'https://ru.wikipedia.org/wiki/Беллингем,_Джуд: «Бе́ллингем», English Bellingham /ˈbɛlɪŋəm/; instrumental keeps the stem stress. Reviewed31October2026.'
   - word: Златан
     say: Зл+атан
+    # Owner rejected OmniVoice marks/Latin variants and Qwen3; accepted Kokoro IPA E and
+    # its ChatterboxVC-to-synthetic-B conversion F. The episode uses reviewed source clips:
+    # an uppercase vowel alone is not a verified pronunciation. Do not change global marking.
     source: 'ru.wikipedia, «Ибрагимович, Златан»: «…Зла́тан Ибраги́мович (швед. и босн. Zlatan Ibra…» (storygro stress --lookup, 2026-10-31)'
   - word: Ибрагимович
     say: Ибраг+имович
     source: 'ru.wikipedia, «Ибрагимович, Златан»: «…Зла́тан Ибраги́мович (швед. и босн. Zlatan Ibrahimović, швед…» (storygro stress --lookup, 2026-10-31)'
+  - word: Швеция
+    say: Шв+еция
+    forms: [Швеции]
+    source: 'https://ru.wikipedia.org/wiki/Швеция: «Шве́ция». Match identity confirmed by UEFA report, 14 November 2012. Reviewed 31 October 2026.'
+  - word: Джо
+    say: Дж+о
+    source: 'https://www.uefa.com/news/0203-0e13bacbbd84-fe67bba74113-1000--ibrahimovic-scores-four-as-sweden-beat-england/: goalkeeper Joe Hart; Russian «Джо», one syllable. Reviewed 31 October 2026.'
+  - word: Харт
+    say: Х+арт
+    source: 'https://www.uefa.com/news/0203-0e13bacbbd84-fe67bba74113-1000--ibrahimovic-scores-four-as-sweden-beat-england/: goalkeeper Joe Hart; Russian «Харт», one syllable. Reviewed 31 October 2026.'
+  - word: Роналдиньо
+    say: Роналд+иньо
+    source: 'ru.wikipedia, «Роналдиньо»: «…[…], Порту-Алегри), более известный как Роналди́ньо (порт.-браз. Ronaldinho) и Роналди́ньо…» (storygro stress --lookup, 2026-10-31)'

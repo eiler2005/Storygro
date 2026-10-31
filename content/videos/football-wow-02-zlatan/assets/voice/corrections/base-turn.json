@@ -1,0 +1,49 @@
+{
+ "duration": 2.061,
+ "words": [
+  {
+   "w": "Златан",
+   "start": 0.0,
+   "end": 0.74
+  },
+  {
+   "w": "—",
+   "start": 0.74,
+   "end": 0.94
+  },
+  {
+   "w": "спиной",
+   "start": 0.94,
+   "end": 1.38
+  },
+  {
+   "w": "к",
+   "start": 1.38,
+   "end": 1.5
+  },
+  {
+   "w": "воротам.",
+   "start": 1.5,
+   "end": 1.92
+  }
+ ],
+ "cues": {},
+ "stress": [
+  {
+   "word": "Златан",
+   "stressed": "Зл+атан",
+   "by": "author"
+  }
+ ],
+ "provider": {
+  "engine": "omnivoice",
+  "model": "k2-fsa/OmniVoice",
+  "voice": "assets/voice/narrator-ru.wav",
+  "language": "ru",
+  "device": "mps",
+  "license": "Apache-2.0 (code); CC-BY-NC (model weights)",
+  "synthetic": true,
+  "timing": "whisper-aligned",
+  "matched": 1.0
+ }
+}

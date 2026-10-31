@@ -6,10 +6,18 @@
     "episode": "Златан · Около 30 метров?!"
   },
   "story": {
-    "_source": "[S1] \"14 November 2012\", overhead after Hart headed clearance. [S2] Same match and venue. O1 fictional hosts joke, not real history.",
+    "_source": "[S1] UEFA: \"Sweden 4-2 England\", \"Wednesday, November 14, 2012\", \"Joe Hart\", final overhead after Hart headed clearance. [S2] Same match and venue. O1 fictional hosts joke, not history. [S1] \"all four goals\", \"opening game at the Friends Arena\", \"Sweden 4-2 England\". The four-goal figure concerns this match, not a career total; imagined arrival/celebration poses are not archive frames. Final assessment/short takeaway is editorial, based on the overhead goal (S1), not an athlete quotation.",
     "hero": "Златан Ибрагимович",
     "date": "Ноябрь 2012",
-    "reaction": "Вот это удар!"
+    "reaction": "Вот это удар!",
+    "match": "Швеция — Англия · 2012",
+    "keeper": "Джо Харт",
+    "keeperTag": "Англия · Джо Харт",
+    "result": "Швеция 4:2 Англия",
+    "goals": "4",
+    "finaleTitle": "Феноменальный удар!",
+    "finaleBack": "Спиной к воротам",
+    "finaleTarget": "Точно в цель!"
   },
   "archive": {
     "_source": "[P1] EURO2012 photo, June; file date17June, described match15June. Not the November goal.",

@@ -9,3 +9,9 @@ body:has(.rc-scene--hook:not([style*="display: none"])) .rc-caption {visibility:
 
 /* This shot keeps the ball clear above Zlatan. */
 body:has(.rc-scene--turn:not([style*="display: none"])) .rc-caption {top:1300px!important;}
+
+/* Keep short illustration labels stationary while they fade in. */
+.rc-scene [style*="white-space: nowrap"] {transform:translate(-50%,-50%)!important;}
+
+/* The closing takeaway uses one timed text layer. */
+body:has(.rc-scene--finale:not([style*="display: none"])) .rc-caption {visibility:hidden!important;}

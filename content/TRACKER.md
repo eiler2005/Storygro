@@ -56,7 +56,7 @@
 | [Кроос и Модрич — дирижёры «Реала»](videos/football-now-02-madrid-playmakers/PLAN.ru.md) | ru (ru) | football-now | сценарий | ждёт тебя: одобрить сценарий | ✏️ ⚙️ ⏳ | 108.3 с | pass | 7/7 | 3 | — |
 | [Звёзды футбола: собираем альбом](videos/football-stars-kids/PLAN.ru.md) | ru (ru) | kids-football | сценарий | ждёт тебя: одобрить сценарий | ⏳ ✏️ ⏳ | 117.5 с | pass | 14/14 | 3 | — |
 | [Пеле — чемпион мира в 17 лет?!](videos/football-wow-01-pele/PLAN.ru.md) | ru (ru) | football-wow | сценарий | ждёт тебя: одобрить сценарий | ⚙️ ⚙️ ⏳ | 25 с | pass | 3/3 | 3 | — |
-| [Златан — через себя почти с 30 метров?!](videos/football-wow-02-zlatan/PLAN.ru.md) | ru (ru) | football-wow | сценарий | ждёт тебя: одобрить сценарий | ⚙️ ⚙️ ⚙️ | 25 с | pass | 3/3 | 3 | — |
+| [Златан — через себя почти с 30 метров?!](videos/football-wow-02-zlatan/PLAN.ru.md) | ru (ru) | football-wow | сценарий | ждёт тебя: одобрить сценарий | ⚙️ ⚙️ ⚙️ | 30.6 с | pass | 3/3 | 3 | — |
 | [Будущее работы — кто отвечает за результат](videos/future-of-work/README.md) | ru (ru) | business-explainers | раскадровка | ждёт тебя: одобрить раскадровку | — ✏️ ⏳ | 76.8 с | pass | 2/2 | — | — |
 | [Интер Майами: финальный пас](videos/inter-miami-magic-pass/PLAN.ru.md) | ru (ru) | — | сценарий | ждёт тебя: одобрить сценарий | ⚙️ ✏️ ⏳ | 114.5 с | pass | 7/7 | 1 | — |
 | [Мимо ворот](videos/matvey-mimo-vorot/PLAN.ru.md) | ru (ru) | — | сценарий | ждёт тебя: одобрить сценарий | ⚙️ ✏️ ⏳ | 123.5 с | pass | 6/6 | — | — |

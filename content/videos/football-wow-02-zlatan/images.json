@@ -175,7 +175,7 @@
       },
       "sha256": "fe36f67ada096e793dda97358048e6e5534172167a4b2fff6a93580c0972a13e",
       "createdAt": "2026-10-31T17:44:13.207Z",
-      "selected": true,
+      "selected": false,
       "referenceRoles": "Original cartoon composition; approved fictional cast/generated continuity and, where supplied, dated CC BY 2.0 venue architecture. Authentic player photo was researched/displayed separately, not supplied to image generation. No broadcast frame tracing."
     },
     "shots/hero.png": {
@@ -276,7 +276,43 @@
       "sha256": "a2723e78cb8637ed8794c3f5422a263526dc298c48ba31bdeec8d21467b274df",
       "source": "https://commons.wikimedia.org/wiki/File:Zlatan_Ibrahimovi%C4%87_Euro_2012_vs_England.JPG",
       "selected": true
+    },
+    "shots/celebration.png": {
+      "prompt": "Use case: illustration-story. New original CELEBRATION shot for the same premium detailed family3D children's cartoon. Reference1 locks recognisable 31-year-old Zlatan's long angular face, nose, narrow moustache/goatee and slicked-back dark low ponytail; reference2 locks Sweden2012 kit and closed FriendsArena. No photo tracing, no text.\nZlatan is the clearly MAIN large central figure celebrating after the overhead goal, arms spread joyfully, broad confident smile, head aroundx.5,y.44, upper-body/three-quarter framing. Same yellow shirt with fine NAVY VERTICAL pinstripes/navy V-neck, plain navy captain armband, completely PLAIN UNPRINTED navy shorts without coloured marks, yellow socks. Two smaller Swedish teammates behind him celebrate: left teammate short fair/blond hair with rounder clean-shaven face; right teammate short dark curly hair with a different broader clean-shaven face. Their matching yellow/navy kit makes them unmistakably teammates, yet neither duplicates Zlatan. Faces all below upper28% and roughly y.40–.55, with chins ABOVE y.60. Ordinary human anatomy, natural hands, no duplicated limbs.\nSame 2012 enclosed FriendsArena pale-steel roof/trusses, crowded steep three tiers, cool silver artificial lights and saturated blue/yellow stands; vivid emerald grass. Quiet roof upper28% for narration captions, a clear chest/waist region aroundy.63 for a later data-bound score overlay. The image itself has NO scoreboard, no digits, no four balls, no trophies and no printed kit numbers or logos. The fictional hosts are not in this particular team-reaction shot; focus on the footballer. Detailed skin, hair, woven cloth and crowd; expressive cinematic cartoon, bright and warm foreground against cool arena. Original imagined celebration camera, not an exact historic photo. Full-bleed portrait9:16, NO words, letters, numbers, ads, watermark or border.",
+      "seed": 0,
+      "provider": "imagegen",
+      "model": "OpenAI built-in GPT Image (identifier not exposed)",
+      "width": 941,
+      "height": 1672,
+      "steps": 0,
+      "licence": "Built-in image output; account terms apply. Dated CC BY 2.0 venue architecture separately credited. Seed 0 is a placeholder, not reproducible.",
+      "refs": {
+        "shots/hero.png": "a1679039bb548c5644d65a588048cb3cdf4410a9bcd4c5d60388f734fb7a254d",
+        "shots/header-v2.png": "131ef286c69ddd04f9ed1eecee532612d2f3e73c6fa4f730260ca8e9f9a879fc"
+      },
+      "sha256": "b8a9b44e83ff692607abb82670d6cefdcd8f13af14f43ef4da04d83a942a50fd",
+      "createdAt": "2026-10-31T18:18:19.289Z",
+      "referenceRoles": "Original imagined entrance/celebration composition. Generated continuity references lock likeness, historical kit, fictional style and venue; no real player photo supplied or retouched. Supporting anonymous teammates/opponents are distinct editorial characters, not an exact roster depiction.",
+      "selected": true
+    },
+    "shots/arrival.png": {
+      "prompt": "Use case: illustration-story. NEW original establishing shot BEFORE the match, for a premium detailed family3D children's cartoon. Reference1 locks recognisable2012Zlatan, reference2 locks Sweden/England kits and enclosed FriendsArena. No photo tracing.\nZlatan Ibrahimovic, age31, tall athletic, long angular nose/face, slicked-back dark low ponytail, narrow moustache/goatee, is the clearly main foreground figure walking confidently out from the players' tunnel ONTO the bright emerald pitch. He is waist-to-knee-up, head around x.48,y.46; face/ears entirely below upper28%, main expression excited/ready, not celebrating yet. Sweden yellow shirt with fine NAVY VERTICAL pinstripes, navy V-neck, plain navy captain armband, completely PLAIN UNPRINTED navy shorts, yellow socks. A smaller Swedish teammate with short blond hair follows one side. On the other side, separate ENGLAND opponents in WHITE shirt/shorts/socks with small red trim, different human faces; one red-clad blond goalkeeper Joe Hart farther behind. No duplicate Zlatan faces. They are WALKING out, no shot or jump yet, no football in mid-air.\nA stadium tunnel edge frames the lower side of this new camera; grand view opens behind them to the modern2012 FriendsArena, CLOSED pale-steel roof/trusses, intense artificial silver night lighting, three crowded tiers blue/yellow flags. Modern clean architecture, a new national football arena; no older open1958Rasunda, no daylight sky/palms. Original imagined entrance staging, not an exact match photo. Rich detail in faces, fabric, tunnel and grass, clear focus on Zlatan.\nUpper28% only roof/lights for captions, no heads there. A clear band near vertical24% for a separate data-bound match label. All heads on screen, no overlays generated. Full-bleed portrait9:16. Absolutely NO words, lettering, digits, uniform numbers, logos, advertisements, watermarks or borders.",
+      "seed": 0,
+      "provider": "imagegen",
+      "model": "OpenAI built-in GPT Image (identifier not exposed)",
+      "width": 941,
+      "height": 1672,
+      "steps": 0,
+      "licence": "Built-in image output; account terms apply. Dated CC BY 2.0 venue architecture separately credited. Seed 0 is a placeholder, not reproducible.",
+      "refs": {
+        "shots/hero.png": "a1679039bb548c5644d65a588048cb3cdf4410a9bcd4c5d60388f734fb7a254d",
+        "shots/header-v2.png": "131ef286c69ddd04f9ed1eecee532612d2f3e73c6fa4f730260ca8e9f9a879fc"
+      },
+      "sha256": "e9eb04dfbc14c59da447a2d4b11dce428e939dc6797e734f4c9d685510f4e9f1",
+      "createdAt": "2026-10-31T18:20:43.550Z",
+      "referenceRoles": "Original imagined entrance/celebration composition. Generated continuity references lock likeness, historical kit, fictional style and venue; no real player photo supplied or retouched. Supporting anonymous teammates/opponents are distinct editorial characters, not an exact roster depiction.",
+      "selected": true
     }
   },
-  "note": "9 selected original cartoon frames / 15 successful built-in generations; one original player photo insert. Exact model identifier not exposed. Original media ignored, prompts/provenance/small previews versioned."
+  "note": "V3: 10 selected original cartoon frames / 17 successful built-in generations, one unchanged original player photo insert. V1 retained separately. Exact model identifier not exposed; original media ignored, prompts/provenance/small previews versioned."
 }

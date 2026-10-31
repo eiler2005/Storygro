@@ -5,9 +5,9 @@
 | | |
 |---|---|
 | Статус | **сценарий** · ждёт тебя: одобрить сценарий |
-| Длительность | 25.0 с (по озвучке) · 7 сцен |
+| Длительность | 30.6 с (по озвучке) · 9 сцен |
 | Формат | 1080×1920, 30 fps · style `cartoon` |
-| Голос | omnivoice · assets/voice/narrator-ru.wav · 0.82 |
+| Голос | omnivoice · assets/voice/narrator-ru.wav · 0.96 |
 | Серия | football-wow |
 
 ## Одобрения
@@ -22,11 +22,11 @@
 
 ## Вопросы
 
-- [ ] **owner** · Подходит ли короткая история гола через себя и финальная шутка ведущих?
+- [ ] **owner** · Понятна ли история удара и подходит ли вывод «Феноменальный удар! Спиной к воротам — но точно в цель»?
 - [ ] **owner** · Узнаваем ли Златан, понятны ли прыжок/дуга/далёкие ворота и достаточно ли рисунков?
-- [ ] **owner** · Подходят ли темп, ударения имён и паузы в готовом видео?
+- [ ] **owner** · Имя в пробе F принято. Подходит ли его звучание в цельном ролике и более спокойный финал?
 
-**Заметки:** Technical review cut 31 October 2026: 25s, 7 scenes, 9 selected detailed drawings / 15 successful built-in generations; one authentic June 2012 photo insert 3s, illustrated 22s (88%). Native 1080x1920/30, QA 14/14, ASR all scenes 100%; master/web fully decode 750 frames each, 27 final MP4 moments and feed/square cover viewed. 113 text/cue samples, 16 caption phrases, 81 reverse seeks, no layout/state/technical-text errors. Exact DOM/SVG restored, separate raster difference max 1/255. Cover recomposed to retain complete host faces in square crop. First render ASR recognised all words but timed the initial words of setup/goal across scene boundaries; moved only their lead pads, kept voice/reference/speed and total 25s, then re-rendered/reviewed. Goal post-speech hold 1.00s. Names added to shared lexicon; stress off preserved. Owner listening/stress/pace/editorial review remains open; no owner approval or publication, WOW-R2 unmeasured.
+**Заметки:** V3 30.607s: ten original drawings/17 built-in GPT Image generations, one unchanged June photo 2.411s. Body OmniVoice B0.96; conclusion B0.82 with two pauses and a final hold, 6.970s total. Owner accepted E pronunciation then F conversion to the original synthetic narrator B; accepted name waveform patched into three lines, other samples retained. This sample acceptance is not script/storyboard/release approval. QA14/14, every-scene ASR100%; master/web915 frames each,34 MP4 samples and crops inspected;174 runtime samples,122 reverse seeks,26 caption phrases without layout/state errors. Source clips and speed override are reusable features. V1/V2 retained, no publication or retention evidence. Full-film listening remains open.
 
 ## Хук
 
@@ -36,7 +36,7 @@
 
 ## Сцены
 
-### 1. hook · 0.0–3.8 с · `series-cover`
+### 1. hook · 0.0–2.7 с · `series-cover`
 
 ![hook: кадр в ключевой момент, затем картинки сцены по порядку](preview/plan/ru/hook.jpg)
 
@@ -48,23 +48,39 @@
 
 **Факты:** `facts.series.project` = «Маленькие большие дела» · `facts.series.title` = «ФУТБОЛЬНЫЙ ВАУ-ФАКТ!» · `facts.series.episode` = «Златан · Около 30 метров?!»
 
-### 2. setup · 3.8–7.6 с · `illustration`
+### 2. match · 2.7–6.2 с · `illustration`
+
+![match: кадр в ключевой момент, затем картинки сцены по порядку](preview/plan/ru/match.jpg)
+
+<sub>кадр в ключевой момент, затем картинки сцены по порядку</sub>
+
+**Голос:** Первый матч на новой арене: Швеция против Англии!
+
+**На экране:** «Швеция — Англия · 2012»
+
+**Картинки:**
+
+- shots/arrival.png — ok
+
+**Факты:** `facts.story.match` = «Швеция — Англия · 2012»
+
+### 3. setup · 6.2–9.4 с · `illustration`
 
 ![setup: кадр в ключевой момент, затем картинки сцены по порядку](preview/plan/ru/setup.jpg)
 
 <sub>кадр в ключевой момент, затем картинки сцены по порядку</sub>
 
-**Голос:** Вратарь Англии выбежал из ворот.
+**Голос:** Вратарь англичан Джо Харт выбежал из ворот.
 
-**На экране:** «Ноябрь 2012»
+**На экране:** «Англия · Джо Харт»
 
 **Картинки:**
 
 - shots/header-v2.png — ok
 
-**Факты:** `facts.story.date` = «Ноябрь 2012»
+**Факты:** `facts.story.keeperTag` = «Англия · Джо Харт»
 
-### 3. turn · 7.6–10.5 с · `illustration`
+### 4. turn · 9.4–11.6 с · `illustration`
 
 ![turn: кадр в ключевой момент, затем картинки сцены по порядку](preview/plan/ru/turn.jpg)
 
@@ -72,11 +88,13 @@
 
 **Голос:** Златан — спиной к воротам.
 
+**Источник озвучки:** `assets/voice/corrections/turn.wav`
+
 **Картинки:**
 
 - shots/turn-v3.png — ok
 
-### 4. kick · 10.5–14.1 с · `illustration`
+### 5. kick · 11.6–14.1 с · `illustration`
 
 ![kick: кадр в ключевой момент, затем картинки сцены по порядку](preview/plan/ru/kick.jpg)
 
@@ -89,9 +107,9 @@
 - shots/lift.png — ok
 - `@strike` shots/kick.png — ok
 
-**Звук:** thud @1.2
+**Звук:** thud @1.0
 
-### 5. goal · 14.1–18.3 с · `illustration`
+### 6. goal · 14.1–16.7 с · `illustration`
 
 ![goal: кадр в ключевой момент, затем картинки сцены по порядку](preview/plan/ru/goal.jpg)
 
@@ -104,50 +122,71 @@
 - shots/flight.png — ok
 - `@net` shots/net.png — ok
 
-**Звук:** swell @1.8
+**Звук:** swell @0.9
 
-### 6. archive · 18.3–21.3 с · `archive-photo`
+### 7. result · 16.7–21.2 с · `illustration`
+
+![result: кадр в ключевой момент, затем картинки сцены по порядку](preview/plan/ru/result.jpg)
+
+<sub>кадр в ключевой момент, затем картинки сцены по порядку</sub>
+
+**Голос:** Все четыре гола Швеции забил Златан! Победа — четыре:два!
+
+**Источник озвучки:** `assets/voice/corrections/result.wav`
+
+**На экране:** «Швеция 4:2 Англия»
+
+**Картинки:**
+
+- shots/celebration.png — ok
+
+**Факты:** `facts.story.result` = «Швеция 4:2 Англия»
+
+### 8. archive · 21.2–23.6 с · `archive-photo`
 
 ![archive: кадр в ключевой момент, затем картинки сцены по порядку](preview/plan/ru/archive.jpg)
 
 <sub>кадр в ключевой момент, затем картинки сцены по порядку</sub>
 
-**Голос:** Это Златан Ибрагимович!
+**Голос:** Это Златан Ибрагимович.
+
+**Источник озвучки:** `assets/voice/corrections/archive-context.wav`
 
 **На экране:** «Златан · настоящий кадр» · «Фото июня 2012» · «contain»
 
 **Факты:** `facts.archive.title` = «Златан · настоящий кадр» · `facts.archive.caption` = «Фото июня 2012»
 
-### 7. joke · 21.3–25.0 с · `illustration`
+### 9. finale · 23.6–30.6 с · `illustration`
 
-![joke: кадр в ключевой момент, затем картинки сцены по порядку](preview/plan/ru/joke.jpg)
+![finale: кадр в ключевой момент, затем картинки сцены по порядку](preview/plan/ru/finale.jpg)
 
 <sub>кадр в ключевой момент, затем картинки сцены по порядку</sub>
 
-**Голос:** Такой удар повторить непросто!
+**Голос:** Феноменальный удар! Спиной к воротам — но точно в цель.
 
-**На экране:** «Вот это удар!»
+**Темп реплики:** 0.82
+
+**На экране:** «Феноменальный удар!» · «Спиной к воротам» · «Точно в цель!»
 
 **Картинки:**
 
-- shots/cushion.png — ok
-- `@2.5` shots/hero.png — ok
+- shots/hero.png — ok
 
-**Факты:** `facts.story.reaction` = «Вот это удар!»
+**Факты:** `facts.story.finaleTitle` = «Феноменальный удар!» · `facts.story.finaleBack` = «Спиной к воротам» · `facts.story.finaleTarget` = «Точно в цель!»
 
 ## Факты и источники
 
 | | |
 |---|---|
 | `facts.series` | [O1] Exact owner rubric/name. [S1] "30 metres"; approximate, not independent measurement. |
-| `facts.story` | [S1] "14 November 2012", overhead after Hart headed clearance. [S2] Same match and venue. O1 fictional hosts joke, not real history. |
+| `facts.story` | [S1] UEFA: "Sweden 4-2 England", "Wednesday, November 14, 2012", "Joe Hart", final overhead after Hart headed clearance. [S2] Same match and venue. O1 fictional hosts joke, not history. [S1] "all four goals", "opening game at the Friends Arena", "Sweden 4-2 England". The four-goal figure concerns this match, not a career total; imagined arrival/celebration poses are not archive frames. Final assessment/short takeaway is editorial, based on the overhead goal (S1), not an athlete quotation. |
 | `facts.archive` | [P1] EURO2012 photo, June; file date17June, described match15June. Not the November goal. |
 
 → [sources.md](sources.md)
 
 ## Текст поста
 
-> В ноябре 2012 года Златан Ибрагимович забил Англии ударом через себя примерно с 30 метров. Вратарь вышел из ворот и отбил мяч головой — Златан воспользовался моментом.
+> В ноябре 2012 года в матче Швеция — Англия Златан Ибрагимович забил ударом через себя примерно с 30 метров. Вратарь англичан Джо Харт выбежал из ворот и отбил мяч головой — Златан воспользовался моментом.
 >
 > «Маленькие большие дела · ФУТБОЛЬНЫЙ ВАУ-ФАКТ!» Подробная рисованная история, новые оригинальные композиции по историческому эпизоду. Кадры и юмор ведущих — художественная постановка, не архивная видеозапись. Рисунки созданы встроенным GPT Image, голос синтетический: выбранный OmniVoice B.
 >

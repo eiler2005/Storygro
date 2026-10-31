@@ -1,0 +1,39 @@
+{
+ "duration": 2.96,
+ "words": [
+  {
+   "w": "Все",
+   "start": 0.0,
+   "end": 0.74
+  },
+  {
+   "w": "четыре",
+   "start": 0.74,
+   "end": 1.18
+  },
+  {
+   "w": "гола",
+   "start": 1.18,
+   "end": 1.52
+  },
+  {
+   "w": "забил",
+   "start": 1.52,
+   "end": 1.96
+  },
+  {
+   "w": "Златан!",
+   "start": 1.96,
+   "end": 2.48
+  }
+ ],
+ "cues": {},
+ "provider": {
+  "engine": "audio",
+  "voice": "/Users/DenisErmilov/aiprojects/storygro_proj/content/videos/football-wow-02-zlatan/assets/voice/corrections/name-reference.wav",
+  "sha256": "166ebce9f61a44cbf58ee899a1ee0026104b80eda2e048db90261a41b7e7eaaa",
+  "license": "Source recording terms apply; preserve its provenance and consent.",
+  "timing": "whisper-aligned",
+  "matched": 1.0
+ }
+}

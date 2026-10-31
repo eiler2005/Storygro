@@ -1,0 +1,34 @@
+{
+ "duration": 1.498,
+ "words": [
+  {
+   "w": "Златан",
+   "start": 0.0,
+   "end": 0.6
+  },
+  {
+   "w": "Ибрагимович.",
+   "start": 0.6,
+   "end": 1.24
+  }
+ ],
+ "cues": {},
+ "stress": [
+  {
+   "word": "Златан",
+   "stressed": "Зл+атан",
+   "by": "author"
+  }
+ ],
+ "provider": {
+  "engine": "omnivoice",
+  "model": "k2-fsa/OmniVoice",
+  "voice": "assets/voice/narrator-ru.wav",
+  "language": "ru",
+  "device": "mps",
+  "license": "Apache-2.0 (code); CC-BY-NC (model weights)",
+  "synthetic": true,
+  "timing": "whisper-aligned",
+  "matched": 1.0
+ }
+}

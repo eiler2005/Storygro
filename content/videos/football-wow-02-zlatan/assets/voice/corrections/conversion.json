@@ -1,0 +1,14 @@
+{
+  "method": "ChatterboxVC audio-to-audio, preserving content of owner-selected E",
+  "content": "/Users/DenisErmilov/Downloads/football-wow-02-zlatan-pronunciation-review/E-alternate.wav",
+  "contentSHA256": "9c2f58c723c089da84f5d74a684631ee99a2091881490444cdac0799ae2fe817",
+  "syntheticTarget": "/Users/DenisErmilov/aiprojects/storygro_proj/content/videos/football-wow-02-zlatan/assets/voice/narrator-ru.wav",
+  "targetSHA256": "28881ea9cd8050a244837853a834c462df41e7889883f0ad2c699f686719f934",
+  "output": "/Users/DenisErmilov/Downloads/football-wow-02-zlatan-pronunciation-review/F-correct-pronunciation-narrator.wav",
+  "outputSHA256": "166ebce9f61a44cbf58ee899a1ee0026104b80eda2e048db90261a41b7e7eaaa",
+  "model": "ResembleAI/chatterbox",
+  "seed": 20261031,
+  "licences": "Chatterbox MIT; source Kokoro RU weights OpenRAIL/code Apache-2.0, target original synthetic OmniVoice B with separate terms",
+  "watermark": "PerTh retained by model",
+  "ownerListening": "pending"
+}

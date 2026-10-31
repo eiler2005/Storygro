@@ -2,7 +2,7 @@
 
 <!-- Generated from production/toolkit.yaml by `npm run docs:toolkit`. Edit the YAML, not this page. -->
 
-Every way Storygro makes content, in one bank: **27 methods**, **25 tools**, **4 styles**, **10 scene families** and **6 providers**, by production stage. Agents read [`production/toolkit.yaml`](../../production/toolkit.yaml) to pick an approach; this page is generated from it, and `npm test` fails when a command, style or scene is missing from the bank or a link is broken.
+Every way Storygro makes content, in one bank: **28 methods**, **26 tools**, **4 styles**, **10 scene families** and **6 providers**, by production stage. Agents read [`production/toolkit.yaml`](../../production/toolkit.yaml) to pick an approach; this page is generated from it, and `npm test` fails when a command, style or scene is missing from the bank or a link is broken.
 
 **Status:** *stable* — used across pieces · *pilot* — works, reviewed on one or two pieces · *planned* — not implemented.
 
@@ -12,7 +12,7 @@ Every way Storygro makes content, in one bank: **27 methods**, **25 tools**, **4
 | **research** — Find and check what is true | [Primary-source research](#primary-source-research) · [Facts as data](#facts-as-data) · [Reference analysis](#reference-analysis) · [Transcript and pace statistics](#transcript-and-pace-statistics) · [Whisper (mlx-whisper)](#whisper-mlx-whisper) |
 | **write** — Turn it into a script as data | [Script as data](#script-as-data) · [Story structures](#story-structures) · [One worked example](#one-worked-example) · [Language variants](#language-variants) · [Brand profile and series](#brand-profile-and-series) · [Reels story direction and measured experiments](#reels-story-direction-and-measured-experiments) · [Children's list cartoon](#childrens-list-cartoon) |
 | **look** — Decide how it looks | [Detailed cartoon-led football shorts](#detailed-cartoon-led-football-shorts) · [Cartoon explainer](#cartoon-explainer) · [Cut-paper explainer](#cut-paper-explainer) · [Editorial collage](#editorial-collage) · [Cut-paper scenes](#cut-paper-scenes) · [Kinetic typography](#kinetic-typography) · [Kinetic and diagram scenes](#kinetic-and-diagram-scenes) · [Springs, beat grid and motion blur](#springs-beat-grid-and-motion-blur) · [Collage scene](#collage-scene) · [Illustration scene](#illustration-scene) · [Illustrated series identity and retention pilot](#illustrated-series-identity-and-retention-pilot) · [Series opening cover](#series-opening-cover) · [Dated authentic photo card](#dated-authentic-photo-card) · [Authentic photo pair with optional series identity](#authentic-photo-pair-with-optional-series-identity) · [Player-led authentic photo sequence](#player-led-authentic-photo-sequence) · [Screencast scene](#screencast-scene) · [Landscape product scenes](#landscape-product-scenes) · [Generated illustrations](#generated-illustrations) · [Z-Image-Turbo via mflux](#z-image-turbo-via-mflux) · [Recognisable caricatures, overlays off faces](#recognisable-caricatures-overlays-off-faces) · [GPT Image through the Codex CLI](#gpt-image-through-the-codex-cli) · [Recurring cast](#recurring-cast) · [Reference pictures of recurring hosts](#reference-pictures-of-recurring-hosts) · [No text in pictures](#no-text-in-pictures) · [Screen capture](#screen-capture) · [A new scene module](#a-new-scene-module) |
-| **voice** — Narration, sound and timing | [Local narration and timing](#local-narration-and-timing) · [Narrator design](#narrator-design) · [Pronunciation and say-as](#pronunciation-and-say-as) · [Russian stress and homographs](#russian-stress-and-homographs) · [Pronunciation dictionary and stress lookup](#pronunciation-dictionary-and-stress-lookup) · [Voice bench](#voice-bench) · [Chatterbox Multilingual](#chatterbox-multilingual) · [OmniVoice Russian narrator](#omnivoice-russian-narrator) · [Complete narration before scene cuts](#complete-narration-before-scene-cuts) · [Music and sound effects](#music-and-sound-effects) |
+| **voice** — Narration, sound and timing | [Reviewed narration clips and local pace](#reviewed-narration-clips-and-local-pace) · [Match reviewed pronunciation to a synthetic narrator](#match-reviewed-pronunciation-to-a-synthetic-narrator) · [Local narration and timing](#local-narration-and-timing) · [Narrator design](#narrator-design) · [Pronunciation and say-as](#pronunciation-and-say-as) · [Russian stress and homographs](#russian-stress-and-homographs) · [Pronunciation dictionary and stress lookup](#pronunciation-dictionary-and-stress-lookup) · [Voice bench](#voice-bench) · [Chatterbox Multilingual](#chatterbox-multilingual) · [OmniVoice Russian narrator](#omnivoice-russian-narrator) · [Complete narration before scene cuts](#complete-narration-before-scene-cuts) · [Music and sound effects](#music-and-sound-effects) |
 | **make** — Storyboard, approval and rendering | [Stills and live preview](#stills-and-live-preview) · [Storyboard and approval](#storyboard-and-approval) · [Plan document and stepped approvals](#plan-document-and-stepped-approvals) · [Render](#render) · [Formats, safe areas and captions](#formats-safe-areas-and-captions) · [Carousel cards](#carousel-cards) · [Native full-frame Instagram Reels](#native-full-frame-instagram-reels) |
 | **check** — Technical QA and the human review | [Technical QA](#technical-qa) · [Human review](#human-review) |
 | **ship** — Release, publication record and metrics | [Episode tracker](#episode-tracker) · [Check what Instagram stored](#check-what-instagram-stored) · [Preserve a complete video with padding](#preserve-a-complete-video-with-padding) · [Release package](#release-package) · [Publication ledger and metrics](#publication-ledger-and-metrics) · [Platform upload and analytics APIs](#platform-upload-and-analytics-apis) |
@@ -527,6 +527,28 @@ A deterministic mount() → draw(t) module when no existing scene and props can 
 **See:** [docs](../../docs/how-to/add-a-scene.md)
 
 ## 5 · Voice — Narration, sound and timing
+
+### Reviewed narration clips and local pace
+
+*method · pilot*
+
+Import a reviewed scene narration with voice.source, preserving its transcript/cues and source rights; clip bytes invalidate narration cache and storyboard approval. A local voice.speed changes only that scene, so a conclusion can slow without replacing the episode narrator.
+
+**Use when:** A stubborn pronunciation needs a reviewed correction, or one narration beat needs a different pace.
+
+**See:** [docs](../../docs/reference/voices.md#reviewed-narration-clips-and-local-pace) · [corrections/manifest.json](../../content/videos/football-wow-02-zlatan/assets/voice/corrections/manifest.json)
+
+### Match reviewed pronunciation to a synthetic narrator
+
+*tool · pilot*
+
+ChatterboxVC audio-to-audio conversion behind production/py/voice_convert.py; retain source content, match an authorised synthetic reference, write provenance and never overwrite an existing output. Listen after conversion; source and target terms remain separate.
+
+**Use when:** A correctly pronounced synthetic source needs the established narrator's timbre. Never use an unconsented real-person target.
+
+**How:** `Run production/py/voice_convert.py with the isolated Chatterbox Python, source WAV, authorised target WAV and a new output path.`
+
+**See:** [docs](../../docs/reference/voices.md#pronunciation-preserving-voice-conversion) · [football-wow-02-zlatan/prepare-narration.py](../../content/videos/football-wow-02-zlatan/prepare-narration.py)
 
 ### Local narration and timing
 

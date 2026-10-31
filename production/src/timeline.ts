@@ -112,15 +112,26 @@ export function safeArea(l: LoadedSpec): SafeArea {
 const STRESSED_ENGINES = new Set(['qwen3', 'silero', 'chatterbox', 'yandex', 'omnivoice']);
 const STRESS_VERSION = 'stress-1';
 
+/** A source clip is already paced; an explicit speed can still retime it. */
+export function sceneVoice(l: LoadedSpec, s: SceneSpec): LoadedSpec['spec']['voice'] {
+  return s.voice?.source
+    ? { ...l.spec.voice, engine: 'audio', model: undefined, voice: s.voice.source, speed: s.voice.speed ?? 1, stress: 'off' }
+    : { ...l.spec.voice, speed: s.voice?.speed ?? l.spec.voice.speed };
+}
+
 /** Narrate every scene, reusing cached lines whose text, provider and settings did not change. */
 export async function narrate(l: LoadedSpec): Promise<Map<string, { meta: VoiceMeta; wav: string | null }>> {
   const dir = join(workDir(l), 'voice');
   mkdirSync(dir, { recursive: true });
-  const v = l.spec.voice;
   const out = new Map<string, { meta: VoiceMeta; wav: string | null }>();
-  const todo: { id: string; say: string; wav: string; json: string }[] = [];
-  const lex = l.spec.lang === 'ru' && STRESSED_ENGINES.has(v.engine) ? loadLexicon() : null;
+  const jobs = new Map<string, { voice: LoadedSpec['spec']['voice']; lines: { id: string; say: string; wav: string; json: string }[] }>();
   for (const s of l.spec.scenes) {
+    const v = sceneVoice(l, s);
+    const lex = l.spec.lang === 'ru' && STRESSED_ENGINES.has(v.engine) ? loadLexicon() : null;
+    if (v.engine === 'audio') {
+      if (!s.say.trim()) throw new Error(`${s.id}: imported narration needs its transcript in say`);
+      if (/\{\+[\d.]+\}/.test(s.say)) throw new Error(`${s.id}: imported narration is already timed; remove pause directives`);
+    }
     if (!s.say.trim() || v.engine === 'none') {
       out.set(s.id, { meta: estimate(s), wav: null });
       continue;
@@ -138,17 +149,27 @@ export async function narrate(l: LoadedSpec): Promise<Map<string, { meta: VoiceM
       for (const path of [resolve(l.dir, v.voice), resolve(l.dir, v.voice.replace(/\.wav$/, '.txt'))])
         settings.push(existsSync(path) ? hash(readFileSync(path).toString('base64')) : 'missing-reference');
     }
+    if (v.engine === 'audio') {
+      const source = resolve(l.dir, v.voice);
+      if (!existsSync(source)) throw new Error(`${s.id}: narration source missing: ${v.voice}`);
+      settings.push('audio-source-1', hash(readFileSync(source).toString('base64')));
+    }
     const key = hash(JSON.stringify(settings));
     const wav = join(dir, `${s.id}-${key}.wav`);
     const json = join(dir, `${s.id}-${key}.json`);
-    if (!existsSync(json)) todo.push({ id: s.id, say: s.say, wav, json });
+    if (!existsSync(json)) {
+      const group = JSON.stringify(v);
+      if (!jobs.has(group)) jobs.set(group, { voice: v, lines: [] });
+      jobs.get(group)!.lines.push({ id: s.id, say: s.say, wav, json });
+    }
     out.set(s.id, { meta: undefined as never, wav });
   }
-  if (todo.length) {
-    const job = join(dir, 'job.json');
+  for (const [group, { voice: v, lines }] of jobs) {
+    const lex = l.spec.lang === 'ru' && STRESSED_ENGINES.has(v.engine) ? loadLexicon() : null;
+    const job = join(dir, jobs.size === 1 ? 'job.json' : `job-${hash(group)}.json`);
     writeFileSync(
       job,
-      JSON.stringify({ engine: v.engine, model: v.model, voice: v.voice, speed: v.speed, lang: v.lang, stress: v.stress, language: l.spec.lang, dir: l.dir, lines: todo, ...(lex ? { lexicon: lexiconJob(lex) } : {}) }),
+      JSON.stringify({ engine: v.engine, model: v.model, voice: v.voice, speed: v.speed, lang: v.lang, stress: v.stress, language: l.spec.lang, dir: l.dir, lines, ...(lex ? { lexicon: lexiconJob(lex) } : {}) }),
     );
     await run(python(), [join(REEL_ROOT, 'py', 'voice.py'), job]);
   }

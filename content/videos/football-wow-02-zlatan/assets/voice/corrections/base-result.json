@@ -1,0 +1,71 @@
+{
+ "duration": 3.769,
+ "words": [
+  {
+   "w": "Все",
+   "start": 0.0,
+   "end": 0.34
+  },
+  {
+   "w": "четыре",
+   "start": 0.34,
+   "end": 0.76
+  },
+  {
+   "w": "гола",
+   "start": 0.76,
+   "end": 1.06
+  },
+  {
+   "w": "Швеции",
+   "start": 1.06,
+   "end": 1.46
+  },
+  {
+   "w": "забил",
+   "start": 1.46,
+   "end": 1.86
+  },
+  {
+   "w": "Златан!",
+   "start": 1.86,
+   "end": 2.36
+  },
+  {
+   "w": "Победа",
+   "start": 2.52,
+   "end": 3.1
+  },
+  {
+   "w": "—",
+   "start": 3.1,
+   "end": 3.18
+  },
+  {
+   "w": "четыре:два!",
+   "start": 3.18,
+   "end": 3.6
+  }
+ ],
+ "cues": {
+  "win": 2.52
+ },
+ "stress": [
+  {
+   "word": "Златан",
+   "stressed": "Зл+атан",
+   "by": "author"
+  }
+ ],
+ "provider": {
+  "engine": "omnivoice",
+  "model": "k2-fsa/OmniVoice",
+  "voice": "assets/voice/narrator-ru.wav",
+  "language": "ru",
+  "device": "mps",
+  "license": "Apache-2.0 (code); CC-BY-NC (model weights)",
+  "synthetic": true,
+  "timing": "whisper-aligned",
+  "matched": 0.889
+ }
+}

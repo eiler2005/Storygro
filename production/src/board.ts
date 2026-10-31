@@ -210,7 +210,9 @@ export function specInputs(l: LoadedSpec): string[] {
   for (const p of Object.values(l.spec.data)) files.add(resolve(l.dir, p));
   if (l.spec.theme) add(resolve(l.dir, l.spec.theme));
   if (l.spec.overlay) add(resolve(l.dir, l.spec.overlay));
+  if (l.spec.voice.engine === 'audio') add(resolve(l.dir, l.spec.voice.voice));
   for (const s of l.spec.scenes) {
+    if (s.voice?.source) add(resolve(l.dir, s.voice.source));
     add(s.scene.includes('/') || s.scene.endsWith('.js') ? resolve(l.dir, s.scene) : join(REEL_ROOT, 'scenes', `${s.scene}.js`));
     const walk = (v: unknown): void => {
       if (typeof v === 'string' && /\.[a-z0-9]{2,5}$/i.test(v) && !v.includes('://')) add(resolve(l.dir, v));

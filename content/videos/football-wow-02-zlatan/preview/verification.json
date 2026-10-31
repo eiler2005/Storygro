@@ -1,321 +1,289 @@
 {
-  "duration": 25,
+  "duration": 30.607,
   "size": [
     1080,
     1920
   ],
   "fps": 30,
-  "frames": 750,
-  "webFrames": 750,
-  "moments": 27,
-  "masterSHA256": "c5941d9165b6106819eab779ed43b56c27724dd446e745e2019e0711533204d7",
+  "frames": 915,
+  "webFrames": 915,
+  "moments": 34,
+  "masterSHA256": "9246d11f001eda83ebbd4be5737a304350445b6ae9f66683e70431b4e5898440",
   "qa": "pass",
-  "scenes": 7,
-  "captionPhrases": 16,
-  "runtimeSamples": 113,
-  "reverseSeeks": 81,
+  "scenes": 9,
+  "captionPhrases": 26,
+  "runtimeSamples": 174,
+  "reverseSeeks": 122,
   "textMisses": [],
   "technicalTextMisses": [],
   "reverseMisses": [],
   "pixelRounding": [
     {
-      "at": 24.98,
+      "at": 20.857,
       "sameDom": true,
       "maxChannelDifference": 1,
-      "meanChannelDifference": 0.00015866126543209876,
+      "meanChannelDifference": 0.0001437114197530864,
       "pixelsAbove1": 0,
       "fractionAbove1": 0
     },
     {
-      "at": 16.628999999999998,
+      "at": 20.056999999999995,
       "sameDom": true,
       "maxChannelDifference": 1,
-      "meanChannelDifference": 0.00007908950617283951,
+      "meanChannelDifference": 0.0001162229938271605,
       "pixelsAbove1": 0,
       "fractionAbove1": 0
     },
     {
-      "at": 15.849,
+      "at": 19.276999999999997,
       "sameDom": true,
       "maxChannelDifference": 1,
-      "meanChannelDifference": 0.00015142746913580246,
+      "meanChannelDifference": 0.0000626929012345679,
       "pixelsAbove1": 0,
       "fractionAbove1": 0
     },
     {
-      "at": 16.509,
+      "at": 19.237,
       "sameDom": true,
       "maxChannelDifference": 1,
-      "meanChannelDifference": 0.0001253858024691358,
+      "meanChannelDifference": 0.00024787808641975307,
       "pixelsAbove1": 0,
       "fractionAbove1": 0
     },
     {
-      "at": 18.25,
+      "at": 21.205999999999996,
       "sameDom": true,
       "maxChannelDifference": 1,
-      "meanChannelDifference": 0.00008101851851851852,
+      "meanChannelDifference": 0.00008342978395061729,
       "pixelsAbove1": 0,
       "fractionAbove1": 0
     },
     {
-      "at": 13.229,
+      "at": 18.356999999999996,
       "sameDom": true,
       "maxChannelDifference": 1,
-      "meanChannelDifference": 0.00003713348765432099,
+      "meanChannelDifference": 0.0001880787037037037,
       "pixelsAbove1": 0,
       "fractionAbove1": 0
     },
     {
-      "at": 12.429,
+      "at": 17.557,
       "sameDom": true,
       "maxChannelDifference": 1,
-      "meanChannelDifference": 0.00002845293209876543,
+      "meanChannelDifference": 0.0000626929012345679,
       "pixelsAbove1": 0,
       "fractionAbove1": 0
     },
     {
-      "at": 11.649,
+      "at": 16.776999999999997,
       "sameDom": true,
       "maxChannelDifference": 1,
-      "meanChannelDifference": 0.0000308641975308642,
+      "meanChannelDifference": 0.00011670524691358024,
       "pixelsAbove1": 0,
       "fractionAbove1": 0
     },
     {
-      "at": 11.609,
+      "at": 16.737,
       "sameDom": true,
       "maxChannelDifference": 1,
-      "meanChannelDifference": 0.00000771604938271605,
+      "meanChannelDifference": 0.00011429398148148148,
       "pixelsAbove1": 0,
       "fractionAbove1": 0
     },
     {
-      "at": 12.089,
+      "at": 18.307,
       "sameDom": true,
       "maxChannelDifference": 1,
-      "meanChannelDifference": 0.000021219135802469135,
+      "meanChannelDifference": 0.00014130015432098765,
       "pixelsAbove1": 0,
       "fractionAbove1": 0
     },
     {
-      "at": 10.509,
+      "at": 17.506999999999998,
       "sameDom": true,
       "maxChannelDifference": 1,
-      "meanChannelDifference": 0.00002652391975308642,
+      "meanChannelDifference": 0.00008198302469135803,
       "pixelsAbove1": 0,
       "fractionAbove1": 0
     },
     {
-      "at": 12.059,
+      "at": 16.726999999999997,
       "sameDom": true,
       "maxChannelDifference": 1,
-      "meanChannelDifference": 0.00002845293209876543,
+      "meanChannelDifference": 0.00011429398148148148,
       "pixelsAbove1": 0,
       "fractionAbove1": 0
     },
     {
-      "at": 11.259,
+      "at": 16.706999999999997,
       "sameDom": true,
       "maxChannelDifference": 1,
-      "meanChannelDifference": 0.00000626929012345679,
+      "meanChannelDifference": 0.00011429398148148148,
       "pixelsAbove1": 0,
       "fractionAbove1": 0
     },
     {
-      "at": 10.479,
+      "at": 21.206,
       "sameDom": true,
       "maxChannelDifference": 1,
-      "meanChannelDifference": 0.000004340277777777778,
+      "meanChannelDifference": 0.00008342978395061729,
       "pixelsAbove1": 0,
       "fractionAbove1": 0
     },
     {
-      "at": 10.459,
+      "at": 16.717,
       "sameDom": true,
       "maxChannelDifference": 1,
-      "meanChannelDifference": 0.000003858024691358025,
+      "meanChannelDifference": 0.00011429398148148148,
       "pixelsAbove1": 0,
       "fractionAbove1": 0
     },
     {
-      "at": 14.039,
+      "at": 16.567999999999998,
       "sameDom": true,
       "maxChannelDifference": 1,
-      "meanChannelDifference": 0.0001345486111111111,
+      "meanChannelDifference": 0.00024787808641975307,
       "pixelsAbove1": 0,
       "fractionAbove1": 0
     },
     {
-      "at": 10.469,
+      "at": 15.767999999999997,
       "sameDom": true,
       "maxChannelDifference": 1,
-      "meanChannelDifference": 0.000037615740740740744,
+      "meanChannelDifference": 0.0004402970679012346,
       "pixelsAbove1": 0,
       "fractionAbove1": 0
     },
     {
-      "at": 9.35,
+      "at": 14.947999999999997,
       "sameDom": true,
       "maxChannelDifference": 1,
-      "meanChannelDifference": 0.00021508487654320989,
+      "meanChannelDifference": 0.00031828703703703706,
       "pixelsAbove1": 0,
       "fractionAbove1": 0
     },
     {
-      "at": 8.549999999999999,
+      "at": 14.987999999999998,
       "sameDom": true,
       "maxChannelDifference": 1,
-      "meanChannelDifference": 0.00008101851851851852,
+      "meanChannelDifference": 0.00031828703703703706,
       "pixelsAbove1": 0,
       "fractionAbove1": 0
     },
     {
-      "at": 7.77,
+      "at": 14.207999999999997,
       "sameDom": true,
       "maxChannelDifference": 1,
-      "meanChannelDifference": 0.00006076388888888889,
+      "meanChannelDifference": 0.00014467592592592592,
       "pixelsAbove1": 0,
       "fractionAbove1": 0
     },
     {
-      "at": 7.7299999999999995,
+      "at": 14.167999999999997,
       "sameDom": true,
       "maxChannelDifference": 1,
-      "meanChannelDifference": 0.00010271990740740741,
+      "meanChannelDifference": 0.0003795331790123457,
       "pixelsAbove1": 0,
       "fractionAbove1": 0
     },
     {
-      "at": 9.2,
+      "at": 15.687999999999997,
       "sameDom": true,
       "maxChannelDifference": 1,
-      "meanChannelDifference": 0.00010030864197530864,
+      "meanChannelDifference": 0.0001644483024691358,
       "pixelsAbove1": 0,
       "fractionAbove1": 0
     },
     {
-      "at": 8.4,
+      "at": 14.887999999999998,
       "sameDom": true,
       "maxChannelDifference": 1,
-      "meanChannelDifference": 0.0001171875,
+      "meanChannelDifference": 0.0003766396604938272,
       "pixelsAbove1": 0,
       "fractionAbove1": 0
     },
     {
-      "at": 7.619999999999999,
+      "at": 14.107999999999997,
       "sameDom": true,
       "maxChannelDifference": 1,
-      "meanChannelDifference": 0.00011140046296296297,
+      "meanChannelDifference": 0.0002353395061728395,
       "pixelsAbove1": 0,
       "fractionAbove1": 0
     },
     {
-      "at": 7.6,
+      "at": 14.087999999999997,
       "sameDom": true,
       "maxChannelDifference": 1,
-      "meanChannelDifference": 0.00011140046296296297,
+      "meanChannelDifference": 0.0002097800925925926,
       "pixelsAbove1": 0,
       "fractionAbove1": 0
     },
     {
-      "at": 10.439,
+      "at": 16.686999999999998,
       "sameDom": true,
       "maxChannelDifference": 1,
-      "meanChannelDifference": 0.00010464891975308641,
+      "meanChannelDifference": 0.000236304012345679,
       "pixelsAbove1": 0,
       "fractionAbove1": 0
     },
     {
-      "at": 7.609999999999999,
+      "at": 14.097999999999997,
       "sameDom": true,
       "maxChannelDifference": 1,
-      "meanChannelDifference": 0.00011140046296296297,
+      "meanChannelDifference": 0.00016830632716049383,
       "pixelsAbove1": 0,
       "fractionAbove1": 0
     },
     {
-      "at": 7.04,
+      "at": 13.467999999999998,
       "sameDom": true,
       "maxChannelDifference": 1,
-      "meanChannelDifference": 0.00005594135802469136,
+      "meanChannelDifference": 0.000275366512345679,
       "pixelsAbove1": 0,
       "fractionAbove1": 0
     },
     {
-      "at": 6.24,
+      "at": 12.687999999999999,
       "sameDom": true,
       "maxChannelDifference": 1,
-      "meanChannelDifference": 0.00021701388888888888,
+      "meanChannelDifference": 0.00014756944444444445,
       "pixelsAbove1": 0,
       "fractionAbove1": 0
     },
     {
-      "at": 5.46,
+      "at": 12.647999999999998,
       "sameDom": true,
       "maxChannelDifference": 1,
-      "meanChannelDifference": 0.00023823302469135803,
+      "meanChannelDifference": 0.0002777777777777778,
       "pixelsAbove1": 0,
       "fractionAbove1": 0
     },
     {
-      "at": 5.42,
+      "at": 13.287999999999998,
       "sameDom": true,
       "maxChannelDifference": 1,
-      "meanChannelDifference": 0.0001099537037037037,
+      "meanChannelDifference": 0.0002488425925925926,
       "pixelsAbove1": 0,
       "fractionAbove1": 0
     },
     {
-      "at": 5.7,
+      "at": 12.487999999999998,
       "sameDom": true,
       "maxChannelDifference": 1,
-      "meanChannelDifference": 0.00015817901234567902,
+      "meanChannelDifference": 0.0002589699074074074,
       "pixelsAbove1": 0,
       "fractionAbove1": 0
     },
     {
-      "at": 4.9,
+      "at": 11.707999999999998,
       "sameDom": true,
       "maxChannelDifference": 1,
-      "meanChannelDifference": 0.00018518518518518518,
+      "meanChannelDifference": 0.00008053626543209876,
       "pixelsAbove1": 0,
       "fractionAbove1": 0
     },
     {
-      "at": 4.12,
-      "sameDom": true,
-      "maxChannelDifference": 1,
-      "meanChannelDifference": 0.00018422067901234567,
-      "pixelsAbove1": 0,
-      "fractionAbove1": 0
-    },
-    {
-      "at": 4.08,
-      "sameDom": true,
-      "maxChannelDifference": 1,
-      "meanChannelDifference": 0.0002107445987654321,
-      "pixelsAbove1": 0,
-      "fractionAbove1": 0
-    },
-    {
-      "at": 5.4,
-      "sameDom": true,
-      "maxChannelDifference": 1,
-      "meanChannelDifference": 0.00009693287037037037,
-      "pixelsAbove1": 0,
-      "fractionAbove1": 0
-    },
-    {
-      "at": 4.6,
-      "sameDom": true,
-      "maxChannelDifference": 1,
-      "meanChannelDifference": 0.00006413966049382716,
-      "pixelsAbove1": 0,
-      "fractionAbove1": 0
-    },
-    {
-      "at": 3.82,
+      "at": 11.667999999999997,
       "sameDom": true,
       "maxChannelDifference": 1,
       "meanChannelDifference": 0.00013551311728395062,
@@ -323,26 +291,322 @@
       "fractionAbove1": 0
     },
     {
-      "at": 3.8,
+      "at": 13.237999999999998,
       "sameDom": true,
       "maxChannelDifference": 1,
-      "meanChannelDifference": 0.00013551311728395062,
+      "meanChannelDifference": 0.00021460262345679012,
       "pixelsAbove1": 0,
       "fractionAbove1": 0
     },
     {
-      "at": 7.58,
+      "at": 12.437999999999999,
       "sameDom": true,
       "maxChannelDifference": 1,
-      "meanChannelDifference": 0.00018132716049382717,
+      "meanChannelDifference": 0.00008777006172839507,
       "pixelsAbove1": 0,
       "fractionAbove1": 0
     },
     {
-      "at": 3.8099999999999996,
+      "at": 11.657999999999998,
       "sameDom": true,
       "maxChannelDifference": 1,
-      "meanChannelDifference": 0.00013551311728395062,
+      "meanChannelDifference": 0.00018663194444444445,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 11.637999999999998,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.00016589506172839507,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 14.067999999999998,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.0001306905864197531,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 11.647999999999998,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.00012008101851851852,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 11.027,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.00013599537037037036,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 10.226999999999999,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.00017216435185185184,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 9.447,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.00013165509259259258,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 9.406999999999998,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.00012876157407407408,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 10.976999999999999,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.00012152777777777777,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 10.177,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.00019193672839506174,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 9.396999999999998,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.00012924382716049382,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 9.376999999999999,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.00012924382716049382,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 11.617999999999999,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.00010513117283950617,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 9.386999999999999,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.00012924382716049382,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 8.831,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.00006944444444444444,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 8.051,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.00017602237654320988,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 8.011,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.00009548611111111112,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 7.891,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.00011863425925925926,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 7.091,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.00008439429012345679,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 6.311,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.00005304783950617284,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 6.271,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.00008439429012345679,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 7.791,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.00007040895061728395,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 6.991,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.00005642361111111111,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 6.210999999999999,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.00006655092592592593,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 6.191,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.00006655092592592593,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 9.357,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.00016782407407407406,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 6.201,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.00006655092592592593,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 6.170999999999999,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.00014756944444444445,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 4.38,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.0001306905864197531,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 3.58,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.00018566743827160494,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 2.8,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.0000945216049382716,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 2.76,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.00013310185185185186,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 4.33,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.00035493827160493826,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 3.5300000000000002,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.00015239197530864197,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 2.75,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.00013310185185185186,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 2.73,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.00013310185185185186,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 6.171,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.00014756944444444445,
+      "pixelsAbove1": 0,
+      "fractionAbove1": 0
+    },
+    {
+      "at": 2.7399999999999998,
+      "sameDom": true,
+      "maxChannelDifference": 1,
+      "meanChannelDifference": 0.00013310185185185186,
       "pixelsAbove1": 0,
       "fractionAbove1": 0
     },
@@ -350,7 +614,7 @@
       "at": 0.05,
       "sameDom": true,
       "maxChannelDifference": 1,
-      "meanChannelDifference": 0.00018132716049382717,
+      "meanChannelDifference": 0.0024483989197530863,
       "pixelsAbove1": 0,
       "fractionAbove1": 0
     },
@@ -358,7 +622,7 @@
       "at": 0.009999999999999998,
       "sameDom": true,
       "maxChannelDifference": 1,
-      "meanChannelDifference": 0.00018132716049382717,
+      "meanChannelDifference": 0.0024483989197530863,
       "pixelsAbove1": 0,
       "fractionAbove1": 0
     }
@@ -366,24 +630,31 @@
   "rasterSummary": {
     "maxChannelDifference": 1,
     "maxPixelsAbove1": 0,
-    "maxMeanChannelDifference": 0.00023823302469135803
+    "maxMeanChannelDifference": 0.0024483989197530863
   },
   "pixelTolerance": "Exact visible DOM and SVG attributes required. Separately reported raster differences: <=1 channel intensity, or max<=32, mean<=0.001/255 and <=0.02% pixels above1. Larger differences fail. Sparse edge differences are consistent with browser rasterisation, not a changed scene state.",
   "earlyPassSec": null,
-  "auditoryReview": "Owner listening pending: current model interface does not accept audio input. ASR/phonemes establish technical evidence only.",
+  "auditoryReview": "Owner accepted F pronunciation/timbre sample. Its name waveform is patched into three original narrator lines. Full-film subjective listening and episode approvals remain open; ASR is not stress verification.",
+  "version": "V3",
   "qaChecks": 14,
   "qaPassed": 14,
-  "uniqueDrawings": 9,
-  "successfulGenerations": 15,
+  "uniqueDrawings": 10,
+  "successfulGenerations": 17,
   "photoAssets": 1,
   "photoInserts": 1,
-  "photoSec": 3,
-  "illustratedSec": 22,
-  "illustratedShare": 0.88,
-  "firstGoalSec": 15.828999999999999,
-  "goalPostSpeechHold": 1,
-  "voiceSpeed": 0.82,
-  "viewedMp4Moments": 27,
-  "visuallyReviewed": "All sampled final MP4 moments, first/last, opening identity, nine artwork states and each shot cut, ball/keeper/empty-goal consequence, the one unchanged player photo/date, cushion joke and hero reaction. Feed crop and square cover viewed; cover recomposed after the first crop cut hosts' muzzles. Sequential illustrations/camera motion, not full skeletal animation.",
+  "photoSec": 2.411,
+  "illustratedSec": 28.195999999999998,
+  "voiceSpeed": 0.96,
+  "finaleVoiceSpeed": 0.82,
+  "finaleSec": 6.970000000000001,
+  "pronunciation": {
+    "ownerSelected": "E (Kokoro direct IPA), then F (same content converted to original synthetic narrator B)",
+    "accepted": "2026-10-31",
+    "scope": "Pronunciation/timbre sample only, not episode script/storyboard/release approval",
+    "ipa": "zlˈɑtən",
+    "reference": "name-reference.wav",
+    "finalChoice": "F accepted by owner: yes, correct"
+  },
+  "visuallyReviewed": "All 34 final MP4 samples, first/last, shot/cue changes, all ten illustrations, score, authentic June photo, three final labels, feed and square crops. Fixed-scale illustration labels fade; audit waits two paint frames. DOM/SVG restores exactly; raster differences separately reported.",
   "publication": "none"
 }

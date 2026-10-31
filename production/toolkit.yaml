@@ -20,6 +20,27 @@ stages:
   maintain: Keep the repository and its media healthy
 
 entries:
+  - id: reviewed-narration-clips
+    kind: method
+    stage: voice
+    title: Reviewed narration clips and local pace
+    what: Import a reviewed scene narration with voice.source, preserving its transcript/cues and source rights; clip bytes invalidate narration cache and storyboard approval. A local voice.speed changes only that scene, so a conclusion can slow without replacing the episode narrator.
+    when: A stubborn pronunciation needs a reviewed correction, or one narration beat needs a different pace.
+    status: pilot
+    docs: docs/reference/voices.md#reviewed-narration-clips-and-local-pace
+    examples: [content/videos/football-wow-02-zlatan/assets/voice/corrections/manifest.json]
+
+  - id: pronunciation-voice-conversion
+    kind: tool
+    stage: voice
+    title: Match reviewed pronunciation to a synthetic narrator
+    what: ChatterboxVC audio-to-audio conversion behind production/py/voice_convert.py; retain source content, match an authorised synthetic reference, write provenance and never overwrite an existing output. Listen after conversion; source and target terms remain separate.
+    when: A correctly pronounced synthetic source needs the established narrator's timbre. Never use an unconsented real-person target.
+    how: Run production/py/voice_convert.py with the isolated Chatterbox Python, source WAV, authorised target WAV and a new output path.
+    status: pilot
+    docs: docs/reference/voices.md#pronunciation-preserving-voice-conversion
+    examples: [content/videos/football-wow-02-zlatan/prepare-narration.py]
+
   - id: football-wow-shorts
     kind: method
     stage: look

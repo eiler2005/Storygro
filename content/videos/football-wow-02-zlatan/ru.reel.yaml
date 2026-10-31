@@ -12,8 +12,8 @@ voice:
   engine: omnivoice
   model: k2-fsa/OmniVoice
   voice: assets/voice/narrator-ru.wav
-  speed: 0.82
-  stress: off
+  speed: 0.96
+  stress: marks
 music:
   bpm: 112
   key: D
@@ -35,7 +35,7 @@ data:
   facts: facts.json
 stills:
   cover: hook@0
-  final: joke@3
+  final: finale@end
 images:
   provider: manual
   model: OpenAI built-in GPT Image (identifier not exposed)
@@ -52,7 +52,7 @@ hooks:
 post:
   title: Футбольный вау-факт! · Златан — удар через себя
   text: |-
-    В ноябре 2012 года Златан Ибрагимович забил Англии ударом через себя примерно с 30 метров. Вратарь вышел из ворот и отбил мяч головой — Златан воспользовался моментом.
+    В ноябре 2012 года в матче Швеция — Англия Златан Ибрагимович забил ударом через себя примерно с 30 метров. Вратарь англичан Джо Харт выбежал из ворот и отбил мяч головой — Златан воспользовался моментом.
 
     «Маленькие большие дела · ФУТБОЛЬНЫЙ ВАУ-ФАКТ!» Подробная рисованная история, новые оригинальные композиции по историческому эпизоду. Кадры и юмор ведущих — художественная постановка, не архивная видеозапись. Рисунки созданы встроенным GPT Image, голос синтетический: выбранный OmniVoice B.
 
@@ -71,20 +71,39 @@ scenes:
     say: Через себя — почти с тридцати метров?!
     pad:
       - 0.03
-      - 0.3
-    min: 3.8
+      - 0.18
+    min: 2.73
     props:
       image: shots/cover-v4.png
       projectFrom: facts.series.project
       titleFrom: facts.series.title
       subtitleFrom: facts.series.episode
+  - id: match
+    scene: illustration
+    say: "Первый матч на новой арене: Швеция против Англии!"
+    pad:
+      - 0.05
+      - 0.1
+    min: 0
+    props:
+      shots:
+        - image: shots/arrival.png
+          move: in
+          zoom: 0.02
+          focus:
+            x: 0.5
+            y: 0.58
+      labels:
+        - textFrom: facts.story.match
+          at: 0
+          y: 0.245
   - id: setup
     scene: illustration
-    say: Вратарь Англии {#head}выбежал из ворот.
+    say: Вратарь англичан Джо Харт {#head}выбежал из ворот.
     pad:
-      - 0.3
-      - 0.35
-    min: 3.8
+      - 0.1
+      - 0.15
+    min: 0
     props:
       shots:
         - image: shots/header-v2.png
@@ -94,16 +113,16 @@ scenes:
             x: 0.5
             y: 0.58
       labels:
-        - textFrom: facts.story.date
+        - textFrom: facts.story.keeperTag
           at: 0
           y: 0.245
   - id: turn
     scene: illustration
     say: Златан — спиной к воротам.
     pad:
+      - 0.05
       - 0.15
-      - 0.3
-    min: 2.3
+    min: 2
     props:
       shots:
         - image: shots/turn-v3.png
@@ -112,13 +131,15 @@ scenes:
           focus:
             x: 0.5
             y: 0.58
+    voice:
+      source: assets/voice/corrections/turn.wav
   - id: kick
     scene: illustration
     say: Прыжок — {#strike}и удар через себя!
     pad:
-      - 0.03
-      - 0.55
-    min: 3.6
+      - 0.05
+      - 0.28
+    min: 2.45
     props:
       shots:
         - image: shots/lift.png
@@ -143,9 +164,9 @@ scenes:
     scene: illustration
     say: Мяч летит {#net}в ворота! Гол!
     pad:
-      - 0.85
-      - 1
-    min: 3.5
+      - 0.1
+      - 0.5
+    min: 0
     props:
       shots:
         - image: shots/flight.png
@@ -166,13 +187,34 @@ scenes:
       - at: net
         kind: swell
         gain: 0.08
+  - id: result
+    scene: illustration
+    say: Все четыре гола Швеции забил Златан! {#win}Победа — четыре:два!
+    pad:
+      - 0.05
+      - 0.7
+    min: 0
+    props:
+      shots:
+        - image: shots/celebration.png
+          move: in
+          zoom: 0.02
+          focus:
+            x: 0.5
+            y: 0.58
+      labels:
+        - textFrom: facts.story.result
+          at: win
+          y: 0.48
+    voice:
+      source: assets/voice/corrections/result.wav
   - id: archive
     scene: archive-photo
-    say: Это Златан Ибрагимович!
+    say: Это Златан Ибрагимович.
     pad:
-      - 0.25
-      - 0.35
-    min: 3
+      - 0.15
+      - 0.2
+    min: 2
     props:
       background: shots/hero.png
       image: shots/zlatan-2012.jpg
@@ -180,30 +222,35 @@ scenes:
       captionFrom: facts.archive.caption
       fit: contain
       portrait: true
-  - id: joke
+    voice:
+      source: assets/voice/corrections/archive-context.wav
+  - id: finale
     scene: illustration
-    say: Такой удар повторить непросто!
+    say: Феноменальный удар! {#headline-end}{+.35}{#back}Спиной к воротам — {#back-end}{+.3}{#target}но точно в
+      цель.
     pad:
-      - 0.1
+      - 0.12
       - 1.1
-    min: 3.73
+    min: 0
     props:
       shots:
-        - image: shots/cushion.png
-          move: in
-          zoom: 0.02
-          focus:
-            x: 0.5
-            y: 0.58
         - image: shots/hero.png
-          at: 2.5
           move: in
-          zoom: 0.02
+          zoom: 0.012
           focus:
             x: 0.5
-            y: 0.58
-      fade: 0
+            y: 0.5
       labels:
-        - textFrom: facts.story.reaction
-          at: 2.5
+        - textFrom: facts.story.finaleTitle
+          at: 0
+          until: headline-end
           y: 0.48
+        - textFrom: facts.story.finaleBack
+          at: back
+          until: back-end
+          y: 0.48
+        - textFrom: facts.story.finaleTarget
+          at: target
+          y: 0.48
+    voice:
+      speed: 0.82

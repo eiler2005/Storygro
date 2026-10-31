@@ -1,0 +1,108 @@
+{
+  "version": 1,
+  "pronunciation": {
+    "ownerSelected": "E (Kokoro direct IPA), then F (same content converted to original synthetic narrator B)",
+    "accepted": "2026-10-31",
+    "scope": "Pronunciation/timbre sample only, not episode script/storyboard/release approval",
+    "ipa": "zlˈɑtən",
+    "reference": "name-reference.wav",
+    "finalChoice": "F accepted by owner: yes, correct"
+  },
+  "inputs": {
+    "base-turn.wav": {
+      "sha256": "044b8943067762a2f0d2894eaea08ea0c2220625020807b05c620b1d86e188d9",
+      "bytes": 98952
+    },
+    "base-turn.json": {
+      "sha256": "b6dbc015c9b8a7a4e6fc44c0c285bcc124150882ea89bbe5a162e48afa4272c2",
+      "bytes": 749
+    },
+    "base-result.wav": {
+      "sha256": "fe1bbb4f5078e31f41dedc1d2997ac2ea97467297070df7985e107f20b7fb3c4",
+      "bytes": 180950
+    },
+    "base-result.json": {
+      "sha256": "074a1db02e723e4d96e01a40e6da53e01124b83e31fd1219b7d8152509f5601b",
+      "bytes": 1034
+    },
+    "base-archive.wav": {
+      "sha256": "87ee9d14fb3d4f4278b999690596af2dfc38da344de0a4da8b101b0d037945b1",
+      "bytes": 71968
+    },
+    "base-archive.json": {
+      "sha256": "46eae84d28e0b507bc651263bd2f7ef0a065bfa5cc4332f5f6a049ecb76f36b1",
+      "bytes": 578
+    },
+    "name-reference.wav": {
+      "sha256": "166ebce9f61a44cbf58ee899a1ee0026104b80eda2e048db90261a41b7e7eaaa",
+      "bytes": 142124
+    },
+    "conversion.json": {
+      "sha256": "0fc154e342c1dead630040ae84512a2f90eb7f62bd700d68b784c9fc95670029",
+      "bytes": 984
+    },
+    "name-reference-aligned.json": {
+      "sha256": "4831e07956f0969dd4cb0044f0b25d681e5979741842c4b92de1da2163ab9180",
+      "bytes": 759
+    },
+    "base-archive-context.json": {
+      "sha256": "95f77a427934f884e152182b967decff56d0afc3b1f6c9a6f8e5dcac0dcd9396",
+      "bytes": 638
+    },
+    "base-archive-context.wav": {
+      "sha256": "93751fe9dbc7fb98c71dd492284e97aac8361575a9c6e1cd7d026aaa296bc245",
+      "bytes": 98952
+    }
+  },
+  "scenes": {
+    "turn": {
+      "base": "base-turn.wav",
+      "alignment": "base-turn.json",
+      "word": "Златан",
+      "start": 0,
+      "end": 0.74,
+      "output": "turn.wav",
+      "outputSHA256": "a111ac1075a568d22eefe6e48a900eb42761bfd8f3b39dec6a1b0df8256f5d1d",
+      "duration": 2.060583333333333,
+      "patchStart": 0.0,
+      "patchEnd": 0.765,
+      "method": "Pitch-preserving duration match, bounded RMS match, 8ms crossfades; all other samples retained"
+    },
+    "result": {
+      "base": "base-result.wav",
+      "alignment": "base-result.json",
+      "word": "Златан",
+      "start": 1.86,
+      "end": 2.36,
+      "output": "result.wav",
+      "outputSHA256": "fa3df675a5df68309e1e4149d5a0badf9ae7861d2359f0b6d61ecbaa460b529e",
+      "duration": 3.768875,
+      "patchStart": 1.835,
+      "patchEnd": 2.3849583333333335,
+      "method": "Pitch-preserving duration match, bounded RMS match, 8ms crossfades; all other samples retained"
+    },
+    "archive": {
+      "base": "base-archive-context.wav",
+      "alignment": "base-archive-context.json",
+      "word": "Златан",
+      "start": 0.4,
+      "end": 0.98,
+      "output": "archive-context.wav",
+      "note": "Complete original B0.96 phrase with Это prefix; preserve surname rather than accepting the full-mix ASR miss.",
+      "outputSHA256": "7b22eb34f8588c62c071bf16bfd3e7359bad20f76bd48dd8a9b21dcbf8bd17a1",
+      "duration": 2.060583333333333,
+      "patchStart": 0.375,
+      "patchEnd": 1.0049583333333334,
+      "method": "Pitch-preserving duration match, bounded RMS match, 8ms crossfades; all other samples retained"
+    }
+  },
+  "terms": "Base narrator: OmniVoice B, original synthetic reference. Correct pronunciation: Kokoro RU Dima (OpenRAIL weights, Apache-2.0 code); conversion to synthetic B: ChatterboxVC/MIT, PerTh watermark preserved. No real-person target voice.",
+  "recipeSHA256": "6a170cd1df875c92e2c14337c308d5ec28d6505a5fe351b9d888dc207c680cff",
+  "referenceWord": {
+    "w": "Златан!",
+    "start": 1.96,
+    "end": 2.48
+  },
+  "note": "Owner accepted E pronunciation and F synthetic-narrator conversion. This is not episode approval. Small sliced/retimed excerpts may affect watermark detectability; no watermark removal is performed.",
+  "basePace": 0.96
+}

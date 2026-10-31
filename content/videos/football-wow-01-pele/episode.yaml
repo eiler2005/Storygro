@@ -1,0 +1,9 @@
+episode: 1
+id: football-wow-01-pele
+title: Пеле — чемпион мира в 17 лет?!
+series: football-wow
+sources: sources.md
+credits: CREDITS.md
+variants:
+  - id: ru
+    spec: ru.reel.yaml

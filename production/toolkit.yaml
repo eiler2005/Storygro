@@ -20,6 +20,16 @@ stages:
   maintain: Keep the repository and its media healthy
 
 entries:
+  - id: football-wow-shorts
+    kind: method
+    stage: look
+    title: Detailed cartoon-led football shorts
+    what: A concise sourced football surprise with several connected illustrated action states, recognisable period players and supporting hosts; only 1–3 authentic photo inserts across the film.
+    when: The owner commissions a short Football Wow episode or deliberately remakes a football film under the cartoon-led rule. Keep calm speech, document original/adapted text and measure illustrated/photo screen time.
+    status: pilot
+    docs: docs/how-to/football-series.md#cartoon-led-short-stories
+    examples: [content/videos/football-wow-01-pele/DIRECTION.md]
+
   - id: editorial-ranking
     kind: tool
     stage: choose

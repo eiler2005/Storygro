@@ -1,0 +1,180 @@
+{
+  "images": 1,
+  "files": {
+    "shots/cover.png": {
+      "prompt": "Use case: illustration-story. Asset type: first frame of a detailed family football cartoon, vertical 9:16 full bleed.\nCreate an ORIGINAL cinematic premium stylized 3D illustration, recognisably the 17-year-old Brazilian footballer PELÉ in June 1958, central and clearly the main character. Reference image2 is a dated authentic photo for his youthful facial likeness, hair, build and period clothing only; do not reproduce its composition or pose. Short dense black curled hair with close sides, youthful clean-shaven brown face, wide characteristic nose and bright warm smile, slim athletic teenage build. Plain royal blue short-sleeve cotton shirt, white shorts, pale socks with dark blue bands, black leather boots; NO printed numbers or lettering. In this staged opening he controls a brown stitched 1950s leather football at his foot, smiling confidently toward the audience. Face clearly visible.\nReference image1 locks the approved fictional supporting hosts: small raccoon boy Matvey in blue kit and red squirrel girl Sofia in plum tracksuit. Put them smaller beside Pelé, Matvey looking surprised as he carefully catches a small comic replica of the 1958 Jules Rimet trophy (winged figure holding a cup, narrow blue base; NOT the modern globe trophy), Sofia amused. No new hosts.\nBackdrop: 1958 Råsunda stadium in Solna, bright Nordic June afternoon, old low open packed terraces, modest covered grandstand, period spectators in hats and jackets, crisp grass, atmospheric soft clouds. Fresh emerald, clean royal blue, warm ivory/gold; no sunset palms, modern roof ring, skyscrapers or LED boards. Rich original textures of knitted cotton, leather, fur and grass, expressive cinematic lighting, depth of field.\nComposition crucial for overlay: reserve upper 36% for calm sky/terraces, no heads there. Pelé's head at 43% height and boots near 83%, hosts' heads at 56–62%; ALL faces/ears must lie between 40% and73% height. Main face/action centered in middle70% width. Leave space around them. One football only, plausible anatomy. Absolutely NO text, words, numbers, logos, captions, badges, watermarks or frame borders. Draw this as a beautiful original cartoon frame, not a photograph/card collage.",
+      "seed": 0,
+      "provider": "imagegen",
+      "model": "OpenAI built-in GPT Image (identifier not exposed)",
+      "width": 941,
+      "height": 1672,
+      "steps": 0,
+      "licence": "Built-in image output; account terms apply. Original photographic reference has its own recorded PD bases. Seed0 is a placeholder, not reproducible.",
+      "refs": {
+        "../../series/football-legends/cast/hosts-full.png": "49c92b4bca5df88e90d529034e158fb7a48a79de4c7f98d49ccf764944d2be35",
+        "../../../private/football-wow-research/pele-1958.jpg": "4a850503b8862ff5cffdaea0460ba303d2002b0cb3a4fb09fc0beca7d134cda3"
+      },
+      "sha256": "c271a2217d886dcd0e611e36bd9f0b18d093990649a9326c5d77757ec3843103",
+      "createdAt": "2026-10-31T16:36:54.342Z",
+      "selected": false,
+      "referenceRoles": "Original cartoon composition. Approved fictional cast/generated continuity and, where named, dated archival photo used for Pelé likeness/period, not traced pose or copied frame."
+    },
+    "shots/cover-v2.png": {
+      "prompt": "Edit this original cartoon frame for a vertical video cover. Preserve the SAME young Pelé face, blue1958 kit, ball, approved raccoon Matvey/squirrel Sofia, trophy joke, original polished family3D drawing and Nordic1958 stadium. Change ONLY composition: make the three-character group about25% smaller and position it LOWER in the frame. Expand the clear blue sky and distant stands above them. The upper40% of the tall picture must contain NO heads, hair, hands or trophy, only background, because a video title will be added there later. Pelé's hairline should begin at43% of full image height, his face near48%; Matvey and Sofia faces near65%, all ears above76%; feet/ball near92%. Keep Pelé substantially larger than the two smaller hosts. Full-bleed portrait9:16; detailed grass/cotton/leather/fur; no borders. This is a composition edit, no new factual claims. NO text, letters, numbers or logos.",
+      "seed": 0,
+      "provider": "imagegen",
+      "model": "OpenAI built-in GPT Image (identifier not exposed)",
+      "width": 941,
+      "height": 1672,
+      "steps": 0,
+      "licence": "Built-in image output; account terms apply. Original photographic reference has its own recorded PD bases. Seed0 is a placeholder, not reproducible.",
+      "refs": {
+        "shots/cover.png": "c271a2217d886dcd0e611e36bd9f0b18d093990649a9326c5d77757ec3843103"
+      },
+      "sha256": "349b07aada2acff0c2fe0ae753b97fc05bd524bcd3e46e0240bd2939ea5faa3d",
+      "createdAt": "2026-10-31T16:37:48.844Z",
+      "selected": true,
+      "referenceRoles": "Composition edit of an original generated cartoon; preserve identities, no retouch of the original archival photo."
+    },
+    "shots/meet.png": {
+      "prompt": "Use case: illustration-story. Create a NEW original portrait9:16 cartoon frame for the next shot of this1958 Pelé story. Input1 locks the SAME young17-year-old Pelé face, skin, short black tight curls and plain royal-blue cotton kit, plus the approved smaller fictional hosts. Input2 is only the authentic1958 likeness/era reference, not a pose/composition to copy.\nNew shot: a medium-close low-angle view of Pelé walking onto the sunlit grass, looking determined but warmly excited, one hand lightly raised to greet the crowd. His youthful face is the central foreground, large and recognisable, no mature wrinkles. Pelé in1958 blue Brazil shirt, white shorts, pale socks with dark bands, black leather boots, no lettering/numbers. Matvey and Sofia smaller behind him to the lower sides, Matvey surprised with wide eyes, Sofia proudly introducing him. Keep their exact blue/plum costumes and childlike proportions.\nRåsunda1958 in Solna, clear bright Nordic afternoon, old open terraces and one simple covered stand, period crowd, soft white clouds; rich grass/cotton/fur, cinematic premium family3D illustration, fresh emerald/royal-blue/ivory palette. Different camera size and composition from the cover. Place top of Pelé's hair at36% height and face near46%; hosts' faces near65%; no faces/ears above32% or below76%. Upper28% is background for later captions. Hands/anatomy plausible, no trophy in this shot, no ball needed. Full bleed, no borders, no modern LED signs, NO words, text, numbers, logos or watermark.",
+      "seed": 0,
+      "provider": "imagegen",
+      "model": "OpenAI built-in GPT Image (identifier not exposed)",
+      "width": 941,
+      "height": 1672,
+      "steps": 0,
+      "licence": "Built-in image output; account terms apply. Original photographic reference has its own recorded PD bases. Seed0 is a placeholder, not reproducible.",
+      "refs": {
+        "shots/cover.png": "c271a2217d886dcd0e611e36bd9f0b18d093990649a9326c5d77757ec3843103",
+        "../../../private/football-wow-research/pele-1958.jpg": "4a850503b8862ff5cffdaea0460ba303d2002b0cb3a4fb09fc0beca7d134cda3"
+      },
+      "sha256": "515a208183d8b2ebb3fd63eac3e98e4df010242c709d5ac37f85c309248b74c4",
+      "createdAt": "2026-10-31T16:38:54.113Z",
+      "selected": true,
+      "referenceRoles": "Original cartoon composition. Approved fictional cast/generated continuity and, where named, dated archival photo used for Pelé likeness/period, not traced pose or copied frame."
+    },
+    "shots/control.png": {
+      "prompt": "Use case: historical-scene / illustration-story. NEW original full-bleed portrait9:16 action frame in the same premium family3D1958 cartoon. Input1 is the established17-year-old Pelé likeness/blue kit and style; input2 is dated historical likeness/kit only, do not trace or reproduce it.\nScene state1 of a causal action: at the edge of Sweden's penalty area, young Pelé (foreground LEFT-CENTRE) is cushioning one brown stitched leather football with his upper chest, knees bent, eyes on the ball, preparing a clever move. A distinctly different Swedish defender (RIGHT-CENTRE), tall fair-skinned blond man with a strong square face, plain yellow1958 shirt and dark blue shorts, pale socks/dark boots, closes the route. The defender watches the ball rather than posing. A simple white rectangular goal with white knotted net is visible farther RIGHT, with one goalkeeper near his line in a plain dark green long-sleeve jersey, dark shorts, bare hands. Clear spatial logic: Pelé moves LEFT to RIGHT toward that goal; only ONE ball. Ball around Pelé's chest, not at feet yet.\nSame youthful recognisable Pelé face, dense short black curls, slim build, blue cotton polo-style short-sleeve shirt, white shorts, pale socks with navy bands, black leather boots. NO lettering/numbers/modern badges. Black Brazilian teammate farther left with a different shorter hairline, not another Pelé.\n1958 Råsunda open low terraces, one modest covered grandstand, bright soft Nordic June afternoon, period spectators in hats/jackets, vivid fresh grass. Camera medium-wide at pitch level, exciting diagonal composition, detailed jersey folds/skin/leather/grass with restrained depth of field. Top28% quiet sky/stands for later captions. All faces and the ball between37% and72% of image height, action/feet above89%; nobody's face cropped. No hosts on the playing field in this action shot. No modern stadium, ads, LED screens, palm trees, text, numbers, watermark, borders. Original staging, not archival footage.",
+      "seed": 0,
+      "provider": "imagegen",
+      "model": "OpenAI built-in GPT Image (identifier not exposed)",
+      "width": 941,
+      "height": 1672,
+      "steps": 0,
+      "licence": "Built-in image output; account terms apply. Original photographic reference has its own recorded PD bases. Seed0 is a placeholder, not reproducible.",
+      "refs": {
+        "shots/cover.png": "c271a2217d886dcd0e611e36bd9f0b18d093990649a9326c5d77757ec3843103",
+        "../../../private/football-wow-research/pele-1958.jpg": "4a850503b8862ff5cffdaea0460ba303d2002b0cb3a4fb09fc0beca7d134cda3"
+      },
+      "sha256": "984e5b2993b45f69ddca5212531fae6f4b56393dad19a4a7af7f137369cb51fe",
+      "createdAt": "2026-10-31T16:40:32.029Z",
+      "selected": true,
+      "referenceRoles": "Original cartoon composition. Approved fictional cast/generated continuity and, where named, dated archival photo used for Pelé likeness/period, not traced pose or copied frame."
+    },
+    "shots/flick.png": {
+      "prompt": "Create the NEXT original cartoon state of this SAME1958 action, preserving young Pelé's recognisable face/body/blue-and-white kit, the DIFFERENT blond Swedish defender in yellow/navy, brown stitched leather ball, plain period goal/keeper and the bright Nordic Råsunda stadium. Do not copy a press photograph. Premium detailed family3D illustration, original cinematic staging.\nPelé now flicks the ONE ball upward over the defender. Medium-wide SIDE camera, Pelé remains LEFT of defender and attacks toward the goal on the RIGHT. Pelé's right foot is raised after a controlled upward touch, body balanced naturally on his left foot, determined eyes tracking the ball. The defender has stopped and leans back looking UP, surprised as the ball passes above and just beyond his head toward the right. Ball sits at about41% image height and60% width, above both men, clearly separated from heads/hands; NOT still on Pelé's chest. Pelé's face about50% height; defender face53%; players' feet near83%; no impossible extra limbs or body contact.\nKeep continuous spatial logic and same opponent/kit/sunlight as reference, but make the action genuinely advance. No host on pitch, no second football. Rich cloth creases, wet-looking grass texture without rain, leather panels, distinct faces and detailed period spectators. Top28% calm background for captions. Full-bleed9:16, no modern architecture/equipment, no lettering, numbers, logos, watermark or borders.",
+      "seed": 0,
+      "provider": "imagegen",
+      "model": "OpenAI built-in GPT Image (identifier not exposed)",
+      "width": 941,
+      "height": 1672,
+      "steps": 0,
+      "licence": "Built-in image output; account terms apply. Original photographic reference has its own recorded PD bases. Seed0 is a placeholder, not reproducible.",
+      "refs": {
+        "shots/control.png": "984e5b2993b45f69ddca5212531fae6f4b56393dad19a4a7af7f137369cb51fe",
+        "shots/cover.png": "c271a2217d886dcd0e611e36bd9f0b18d093990649a9326c5d77757ec3843103"
+      },
+      "sha256": "3f2eab26257e0166c8c81528417e63eb3bc5cb12cfc4c515a647632a910c0cb8",
+      "createdAt": "2026-10-31T16:41:38.055Z",
+      "selected": true,
+      "referenceRoles": "Original cartoon composition. Approved fictional cast/generated continuity and, where named, dated archival photo used for Pelé likeness/period, not traced pose or copied frame."
+    },
+    "shots/strike.png": {
+      "prompt": "NEW original shot3 continuing this precise family3D1958 football cartoon. Preserve young17-year-old Pelé's face/blue cotton shirt/white shorts/pale banded socks/black leather boots and the SAME blond Swedish defender/yellow shirt/navy shorts, same Råsunda crowd and daylight.\nThe clever lob has beaten the defender. Pelé is now visibly just BEYOND him, nearer the white goal on the RIGHT, striking a RIGHT-FOOT volley as the ONE brown leather ball drops. Pelé centrally foreground with athletic balanced side-on body, planted left leg and right leg extended toward the ball; keep his face visible in three-quarter profile, excited determined expression. The defender is now slightly behind him to the LEFT, turning to react. The ball has just left Pelé's right boot toward the goal on the RIGHT, around64% image height, clearly visible, NOT above the defender anymore. Goalkeeper in muted dark green jersey and dark shorts dives across the right-side white knotted net goal with bare hands outstretched. Do not show a modern mesh glove or an impossible upside-down bicycle kick. All characters have two arms/two legs and different faces.\nUse a NEW lower sideline camera angle with strong depth: Pelé foreground, defender behind LEFT, keeper/goal deeper RIGHT, preserve attack LEFT-to-RIGHT. Exciting but readable action, rich grass clippings, cloth folds, leather stitching, soft background crowd in1950s clothing. Faces at42–63% height, ball around64%, feet above85%, upper28% quiet stadium/sky for captions. Premium cinematic stylized illustration, not photorealism or a copied match frame. Full-bleed portrait9:16, no frames, no letters, numbers, badge lettering, logos, captions or watermark.",
+      "seed": 0,
+      "provider": "imagegen",
+      "model": "OpenAI built-in GPT Image (identifier not exposed)",
+      "width": 941,
+      "height": 1672,
+      "steps": 0,
+      "licence": "Built-in image output; account terms apply. Original photographic reference has its own recorded PD bases. Seed0 is a placeholder, not reproducible.",
+      "refs": {
+        "shots/flick.png": "3f2eab26257e0166c8c81528417e63eb3bc5cb12cfc4c515a647632a910c0cb8",
+        "shots/cover.png": "c271a2217d886dcd0e611e36bd9f0b18d093990649a9326c5d77757ec3843103"
+      },
+      "sha256": "6b2c3521412ff598c67857937ea5705cf08ffdaafae690d0dc6024ef3d4fc22d",
+      "createdAt": "2026-10-31T16:43:02.450Z",
+      "selected": true,
+      "referenceRoles": "Original cartoon composition. Approved fictional cast/generated continuity and, where named, dated archival photo used for Pelé likeness/period, not traced pose or copied frame."
+    },
+    "shots/net.png": {
+      "prompt": "NEW original shot4, consequence of the preceding volley in this SAME detailed premium family3D1958 Pelé story. Preserve same plain period Råsunda goal, goalkeeper in muted dark green jersey/dark shorts, blond defender yellow/navy and young Pelé blue/white kit/recognisable face.\nCamera is now a dramatic low view from beside the RIGHT goalpost, looking diagonally back LEFT toward the shooter. The ONE brown stitched1950s leather ball has crossed the white goal line and is visibly caught in the side/back white knotted net, stretching it toward the camera. Make ball/net large and crisp in the RIGHT-CENTRE foreground around60% height, with actual net cords enclosing the ball; it cannot be in front of the goal or outside the frame. The goalkeeper has landed on the grass after his unsuccessful dive, looking back toward the ball. Pelé is visible behind him toward the LEFT, now landing after the volley, smiling with one arm starting to rise, youthful face clearly distinguishable from the blond defender behind.\nThe goal's white posts, goal line, net and player arrangement make it obvious a goal has been scored. Maintain coherent pitch perspective and attack direction, natural anatomy. Show distinct1950s crowd reactions in low open terraces and covered stand, lush bright green grass, sunny Nordic June light, royal blue/yellow uniforms, rich cloth/leather/grass textures. No cheering hosts inside the goal. Faces within37–70% height and image boundaries; top28% quiet stadium/sky for captions. Cinematic original cartoon, not a photo or a copied historical frame. Portrait9:16 full bleed, absolutely no numbers, lettering, ads, logos, watermark or border.",
+      "seed": 0,
+      "provider": "imagegen",
+      "model": "OpenAI built-in GPT Image (identifier not exposed)",
+      "width": 941,
+      "height": 1672,
+      "steps": 0,
+      "licence": "Built-in image output; account terms apply. Original photographic reference has its own recorded PD bases. Seed0 is a placeholder, not reproducible.",
+      "refs": {
+        "shots/strike.png": "6b2c3521412ff598c67857937ea5705cf08ffdaafae690d0dc6024ef3d4fc22d",
+        "shots/cover.png": "c271a2217d886dcd0e611e36bd9f0b18d093990649a9326c5d77757ec3843103"
+      },
+      "sha256": "94190659d305f5d328a9b2a5d0e07ecf9b1141386cb6249a150e93661a4d15b5",
+      "createdAt": "2026-10-31T16:44:53.137Z",
+      "selected": true,
+      "referenceRoles": "Original cartoon composition. Approved fictional cast/generated continuity and, where named, dated archival photo used for Pelé likeness/period, not traced pose or copied frame."
+    },
+    "shots/celebrate.png": {
+      "prompt": "Use case: illustration-story. NEW original celebration shot in the SAME bright1958 Pelé cartoon. Reference1 locks the established youthful17-year-old Pelé likeness and supporting fictional hosts; reference2 locks the blue1958 match kit, stadium and lighting.\nA medium-wide cinematic team celebration after the final, with Pelé central and clearly foremost, beaming with disbelief and happy tears, two teammates with DISTINCT Brazilian faces and different hairlines embracing his shoulders. One taller teammate with a broader face holds the SMALL authentic1958 Jules Rimet trophy (slender golden winged figure with raised cup, narrow blue stone base), at chest height so Pelé remains the focus; do not draw the modern globe trophy or giant crown. Blue short-sleeve cotton shirts, white shorts, pale socks with navy bands, black leather boots, no letters/numbers. This is a newly imagined celebration, not a claim to reproduce the award ceremony.\nMatvey small lowerLEFT, jumping excitedly but feet safely grounded pose, Sofia small lowerRIGHT clapping with her exact plum tracksuit and red squirrel face/tail. They remain secondary and do not obscure any footballer's face. A Swedish opponent in yellow/navy walks away in distant background, distinct from teammates; no duplicate Pelé faces.\nRåsunda1958, low open full terraces, simple covered stand, sunny soft Nordic June afternoon, vivid emerald grass and blue/ivory/gold colour, richly detailed fur, cloth, leather, skin, joyful expressive premium family3D animation style. Top28% sky/stands left quiet for later titles; Pelé face at46–52% image height, other faces/ears all between38% and74%, trophy below68%, nobody's face cropped. Full-bleed portrait9:16, NO text, numbers, lettering, badges, confetti lettering, logos, watermark or borders.",
+      "seed": 0,
+      "provider": "imagegen",
+      "model": "OpenAI built-in GPT Image (identifier not exposed)",
+      "width": 941,
+      "height": 1672,
+      "steps": 0,
+      "licence": "Built-in image output; account terms apply. Original photographic reference has its own recorded PD bases. Seed0 is a placeholder, not reproducible.",
+      "refs": {
+        "shots/cover.png": "c271a2217d886dcd0e611e36bd9f0b18d093990649a9326c5d77757ec3843103",
+        "shots/control.png": "984e5b2993b45f69ddca5212531fae6f4b56393dad19a4a7af7f137369cb51fe"
+      },
+      "sha256": "e4f7067a2084991b8aa0eb614cee7609dc5fec1517c4c0b3d9a25ebbb4c28e35",
+      "createdAt": "2026-10-31T16:46:04.588Z",
+      "selected": true,
+      "referenceRoles": "Original cartoon composition. Approved fictional cast/generated continuity and, where named, dated archival photo used for Pelé likeness/period, not traced pose or copied frame."
+    },
+    "shots/champion.png": {
+      "prompt": "Use case: illustration-story. NEW original final CLOSE-UP for this1958 young Pelé family3D cartoon. Same recognisable17-year-old Pelé, slim youthful face, short tight black curls, clean-shaven warm brown skin and plain royal blue1958 cotton shirt as reference. No aging, crown, modern haircut or new celebrity.\nTighter waist-up composition: Pelé central leaning slightly toward the viewer with a brilliantly joyful modest smile, holding a small Jules Rimet trophy carefully at chest level in both hands (slender winged golden figure raising cup on blue base, NOT modern globe trophy). A small surprised Matvey raccoon on the lowerLEFT looks up at him with comic wide-open eyes; Sofia red squirrel on lowerRIGHT makes a playful thoughtful 'did you know?' gesture, same exact approved faces/blue kit/plum tracksuit. Both hosts smaller and supporting, no obstruction of Pelé's face or trophy. No extra teammates in this close shot.\nA fresh camera size and emotion, the sunny1958 Råsunda low terraces softly out of focus behind, vivid royal-blue, emerald and warm ivory/gold, rich delicate fur/cotton/leather/skin textures, cinematic premium stylized3D illustration. Place Pelé's hairline around36% of full image height, face around47%, hosts' faces around64%, trophy near66%; top28% quiet background for later captions. Keep all faces/ears inside the central square area and away from frame edges, leave lower margins for interface. Full-bleed portrait9:16. Absolutely NO lettering, words, numbers, badges, captions, watermark or border. New imagined celebration, not copied archive.",
+      "seed": 0,
+      "provider": "imagegen",
+      "model": "OpenAI built-in GPT Image (identifier not exposed)",
+      "width": 941,
+      "height": 1672,
+      "steps": 0,
+      "licence": "Built-in image output; account terms apply. Original photographic reference has its own recorded PD bases. Seed0 is a placeholder, not reproducible.",
+      "refs": {
+        "shots/cover.png": "c271a2217d886dcd0e611e36bd9f0b18d093990649a9326c5d77757ec3843103",
+        "shots/celebrate.png": "e4f7067a2084991b8aa0eb614cee7609dc5fec1517c4c0b3d9a25ebbb4c28e35"
+      },
+      "sha256": "e3fa65dcb381ec23ffabd1e014eb952459c139eeacec99d184e79d742acb3f2f",
+      "createdAt": "2026-10-31T16:47:08.533Z",
+      "selected": true,
+      "referenceRoles": "Original cartoon composition. Approved fictional cast/generated continuity and, where named, dated archival photo used for Pelé likeness/period, not traced pose or copied frame."
+    },
+    "shots/pele-1958.jpg": {
+      "prompt": "Authentic1958 photograph: one unchanged native contain insert, not a generated image.",
+      "seed": 0,
+      "provider": "manual",
+      "model": "Original photograph",
+      "width": 1140,
+      "height": 828,
+      "steps": 0,
+      "licence": "Commons file-specific PD-AR-Photo and PD-1996 (Argentina and US); not a claim of worldwide copyright clearance. Unknown photographer, El Grafico source, photo29June1958, upload25October2020.",
+      "sha256": "4a850503b8862ff5cffdaea0460ba303d2002b0cb3a4fb09fc0beca7d134cda3",
+      "source": "https://commons.wikimedia.org/wiki/File:Pele_v_sweden_1958.jpg",
+      "selected": true
+    }
+  },
+  "note": "8 selected original cartoon frames /9 successful generations, one source photo insert. Exact built-in model identifier not exposed. Original image assets are ignored; prompts, provenance and small previews are versioned."
+}

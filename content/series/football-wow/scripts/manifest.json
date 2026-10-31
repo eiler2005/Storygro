@@ -1,0 +1,60 @@
+{
+  "importedOn": "2026-10-31",
+  "sourceFile": "Вау-факт (1).docx",
+  "sourceBytes": 24180,
+  "sourceSha256": "d1f98f2cc047d7a2b6254a66c68ccb254a27981a27c4e8097a0d7b90f4685fdc",
+  "originalLocalPath": "private/football-wow-source-documents/Вау-факт (1).docx",
+  "method": "OOXML body order preserved; tables represented as Markdown rows; wording retained, no editorial or fact correction. Original DOCX remains unchanged off Git.",
+  "hyperlinks": [],
+  "files": [
+    {
+      "file": "source.md",
+      "sha256": "6e0efd0753e864b0c80f068fe1c8673fbc02da042c142a49d03253cc48f50e14"
+    },
+    {
+      "file": "common-intro.md",
+      "sha256": "09f94737818a8bb08ee7f01a06a008b27cb4300bdf7f1dde6e52f0b1c4043e31"
+    },
+    {
+      "file": "01.md",
+      "sha256": "0d61c2c8562cc7202ed48805ea1c6533378430d05b0f3d17a2d9e4e87b1a66cd"
+    },
+    {
+      "file": "02.md",
+      "sha256": "0f3989286eb5295e096c8da4e611ab5005aeec368a1d7362dfd67df19d1fdbef"
+    },
+    {
+      "file": "03.md",
+      "sha256": "4302c17f5242518a4b748625631b0c9e3d3c58ff4415d4d1c0a719cbb5efa16d"
+    },
+    {
+      "file": "04.md",
+      "sha256": "f468cbf803accd326523bc640d86a8904fd342dad1d189a15e514e52873c6c6b"
+    },
+    {
+      "file": "05.md",
+      "sha256": "3058b68a71ab57ccb9867f1d65f41c93653d3e35e119f6f98c758d521ca1a77b"
+    },
+    {
+      "file": "06.md",
+      "sha256": "c24fbe158b3df7963108375d25cc02944d8c97a23686fa3ba2b43f43bf8a9881"
+    },
+    {
+      "file": "08.md",
+      "sha256": "55236184e9ec4c77d307a3474577fe8feba9c0e95c764d09c59e4ed280a02f1d"
+    },
+    {
+      "file": "09.md",
+      "sha256": "5a223d4c6cf8b0e3af6101f3584302289cf5751699aebe1bd457c7fea201ff74"
+    },
+    {
+      "file": "10.md",
+      "sha256": "d5887212f73eaa803fcb0cf47a7d3e138acd3f7878a75871613dd08dde2d8909"
+    },
+    {
+      "file": "common-rules.md",
+      "sha256": "91be905422ef9a2dd7cfc62f2eb24bbfe88054e64cd58b1862ab60a082cc48a4"
+    }
+  ],
+  "status": "owner-source-unverified-not-release-approval"
+}

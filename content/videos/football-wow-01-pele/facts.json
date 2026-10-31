@@ -1,0 +1,22 @@
+{
+  "series": {
+    "_source": "[O1] Exact owner rubric and title. [S1] \"17 years and 249 days\"; title rounds age to17.",
+    "project": "Маленькие большие дела",
+    "title": "ФУТБОЛЬНЫЙ ВАУ-ФАКТ!",
+    "episode": "Пеле · Чемпион в 17 лет?!"
+  },
+  "hero": {
+    "_source": "[S1] \"17 years and 249 days\", youngest champion. [S2] \"Primeiro título\" in1958; final5–2. [S3] Swedish FA1958 final venue/age/two goals. [S5] First goal: chest control, flick over defender and finish. Artwork camera/celebration are imagined.",
+    "name": "Пеле",
+    "age": "17 лет?!",
+    "year": "1958",
+    "achievement": "Самый молодой чемпион мира",
+    "team": "Первый титул Бразилии",
+    "question": "А ты знал?"
+  },
+  "archive": {
+    "_source": "[P1] \"29 June 1958\" is photo date, \"25 October 2020\" upload date; unknown photographer / El Gráfico.",
+    "title": "Пеле · настоящий кадр",
+    "date": "Фото 1958 года"
+  }
+}

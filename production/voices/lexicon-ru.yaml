@@ -20,6 +20,11 @@
 # `storygro stress <spec> --lookup --write` (ru.wikipedia, ru.wiktionary), then read the diff.
 lexicon: 1
 words:
+  - word: Пеле
+    say: Пел+е
+    forms: { ПелЭ: Пел+э }
+    mark: false
+    source: 'https://ru.wikipedia.org/wiki/Пеле: «Пеле́», Portuguese Pelé /peˈlɛ/. Reviewed31October2026 for the1958 Brazilian player. OmniVoice/off pilot compared explicit final-vowel hints ПелЭ/ПелЕ; ASR is not listening approval.'
   - word: Месси
     say: М+есси
     source: 'ru.wikipedia, «Месси, Лионель»: «Лионе́ль Андре́с Ме́сси Куччитти́ни»'

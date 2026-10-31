@@ -1,0 +1,35 @@
+review: 1
+questions:
+  - id: story
+    ask: Подходит ли первый короткий сюжет с исправленным первым титулом Бразилии?
+    for: owner
+    open: true
+  - id: visual
+    ask: "Достаточно ли выразительный мультфильм: Пеле главный, ведущие рядом, одна фото-вставка?"
+    for: owner
+    open: true
+  - id: voice
+    ask: Подходят ли спокойный темп, реплики и ударения в готовом ролике?
+    for: owner
+    open: true
+notes: "Technical review cut31Oct2026: 25s,6 scenes,8 selected detailed drawings/9 successful built-in
+  generations,1 authentic photo insert3s; illustrated22s (88%). Native1080x1920/30, QA14/14; master/web fully
+  decode750/750frames,19 sampled MP4 moments and feed/cover viewed. 98 text/cue samples,14 caption phrases,69
+  reverse seeks, no layout/state/technical-text errors. Exact visible DOM/SVG restored; raster differences
+  recorded separately (max1/255). Same OmniVoice B0.82/off, calm short script, meaningful net/final holds; old
+  short intro retaken with legend context and final-vowel ПелЕ hint after ASR spelled Пелле and shifted Да
+  over a boundary. Final subjective stress/pace/editorial owner review remains open. Source DOCX unchanged,
+  first-title error corrected only in adaptation, missing episode7 preserved. No owner approval or
+  publication; WOW-R1 confounded and unmeasured."
+approvals:
+  ru:
+    script:
+      hash: 07bc0140b3e7
+      at: 2026-10-31T16:55:04.667Z
+      by: agent
+      role: agent
+    storyboard:
+      hash: 2a989080dd87
+      at: 2026-10-31T16:55:05.081Z
+      by: agent
+      role: agent

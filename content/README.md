@@ -17,6 +17,8 @@
 
 Футбол для детей: [исторические легенды](series/football-legends.md) и [современные спецвыпуски](series/football-now.md). В новых выпусках футболисты — главные герои кадра и рассказа, Матвей и София поддерживают их рядом. Собраны версии для просмотра [Месси/Роналду](videos/football-now-01-messi-ronaldo/README.md) и [Кроос/Модрич](videos/football-now-02-madrid-playmakers/README.md); Гюлер и Беллингем пока остаются будущими идеями.
 
+По последнему отзыву владельца основной футбольный формат — подробный мультфильм, максимум 1–3 фото-вставки. [«Футбольный вау-факт!»](series/football-wow.md) сохраняет девять коротких сценариев из нового DOCX и план будущих выпусков; сейчас производится [первый, про Пеле](videos/football-wow-01-pele/DIRECTION.md). Прежние современные фото-версии — черновики, не образец нового стиля.
+
 Последний выпуск — мультфильм [agents-open-door](videos/agents-open-door/README.md), первый по [контент-процессу](../docs/explanation/content-workflow.md): план `PLAN.ru.md`, вопросы и одобрения в `review.yaml`. Ранее: [ai-agent-checks](videos/ai-agent-checks/README.md) — тема выбрана по сканированию трендов; [slidecraft-demo](videos/slidecraft-demo/README.md) — демо на записи экрана. Ранее: [micro1-work-data](videos/micro1-work-data/README.md) и [future-of-work](videos/future-of-work/README.md). Исторические примеры движка находятся в `examples/`.
 
 ```sh

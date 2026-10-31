@@ -1,0 +1,40 @@
+{
+  "photos": 1,
+  "checked": "2026-10-31",
+  "items": [
+    {
+      "id": "pele-1958",
+      "sourceId": "P1",
+      "title": "File:Pele v sweden 1958.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Pele_v_sweden_1958.jpg",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Pele_v_sweden_1958.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "uploadTimestamp": "2020-10-25T14:45:20Z",
+      "width": 1140,
+      "height": 828,
+      "bytes": 205877,
+      "commonsSHA1": "96b2b7683e9526c818d55148c28c16f83c70f861",
+      "metadata": {
+        "DateTime": "2020-10-25 14:45:20",
+        "ObjectName": "Pele v sweden 1958",
+        "CommonsMetadataExtension": "1.2",
+        "Categories": "PD-AR-Photo|Matches of Sweden men's national association football team|Final of the 1958 FIFA World Cup|PD-1996|Template Unknown (author)|El Gráfico, 1958|Pelé in 1958|Matches of Brazil national association football team",
+        "Assessments": "",
+        "ImageDescription": "Pelé with the ball at the World Cup final.",
+        "DateTimeOriginal": "1958-06-29",
+        "Credit": "El Gráfico",
+        "Artist": "Unknown author Unknown author",
+        "LicenseShortName": "Public domain",
+        "UsageTerms": "Public domain",
+        "AttributionRequired": "false",
+        "Copyrighted": "False",
+        "Restrictions": "",
+        "License": "pd"
+      },
+      "local": "shots/pele-1958.jpg",
+      "sha256": "4a850503b8862ff5cffdaea0460ba303d2002b0cb3a4fb09fc0beca7d134cda3",
+      "used": true,
+      "presentation": "One dated archival insert; original pixels and file retained without AI retouch. Native contain display. Also a disclosed likeness/era reference for new original illustrations, not a composition to trace.",
+      "rightsBasis": "Commons file-specific PD-AR-Photo and PD-1996 (Argentina and US); not a claim of worldwide copyright clearance. Unknown photographer, El Grafico source, photo29June1958, upload25October2020."
+    }
+  ]
+}

@@ -1,0 +1,188 @@
+reel: 1
+style: cartoon
+title: Пеле — чемпион мира в 17 лет?!
+lang: ru
+format:
+  preset: vertical
+  width: 1080
+  height: 1920
+  fps: 30
+safe: reels
+voice:
+  engine: omnivoice
+  model: k2-fsa/OmniVoice
+  voice: assets/voice/narrator-ru.wav
+  speed: 0.82
+  stress: off
+music:
+  bpm: 112
+  key: C
+  progression:
+    - I
+    - V
+    - vi
+    - IV
+  gain: 0.075
+loudness: -14
+theme: theme.css
+captions:
+  show: true
+  maxWords: 3
+transition:
+  kind: cut
+  dur: 0
+data:
+  facts: facts.json
+stills:
+  cover: hook@0
+  final: payoff@1
+images:
+  provider: manual
+  model: OpenAI built-in GPT Image (identifier not exposed)
+  width: 1088
+  height: 1920
+  seed: 0
+  prompt: "{subject}. Original detailed family3D cartoon with researched young Pelé likeness and1958 world;
+    approved supporting Matvey/Sofia, no image text. Exact prompts/provenance in images.json."
+hooks:
+  - Чемпион мира в семнадцать лет?!
+  - Ему семнадцать. А перед ним — финал!
+  - Кто стал самым юным чемпионом мира?
+post:
+  title: Футбольный вау-факт! · Пеле — чемпион мира в 17 лет
+  text: |-
+    Пеле помог Бразилии впервые стать чемпионом мира в 1958 году. Ему было всего 17 лет — самый молодой чемпион мира. А ты знал?
+
+    «Маленькие большие дела · ФУТБОЛЬНЫЙ ВАУ-ФАКТ!» Рисованная история по историческим фактам: юный Пеле, хитрый переброс мяча, удар и радость команды. Иллюстрации — встроенный GPT Image; постановка и камера воображаемые. Голос синтетический, выбранный OmniVoice B. Ведущие вымышлены, маленький кубок у Матвея — игровая реплика.
+
+    Одна настоящая фотография: неизвестный фотограф / El Gráfico, 29 июня 1958. Wikimedia Commons, файл Pele v sweden 1958.jpg; PD-AR-Photo/PD-1996 (Аргентина/США), оригинал без AI-ретуши. Источник: https://commons.wikimedia.org/wiki/File:Pele_v_sweden_1958.jpg
+
+    Факты: FIFA, CBF, Svenska Fotboll; последовательность первого гола — AP. Полные источники и отдельные права: https://github.com/eiler2005/Storygro/blob/series/football-legends/content/videos/football-wow-01-pele/CREDITS.md
+  tags:
+    - футбол
+    - детям
+    - пеле
+    - футбольныйвауфакт
+scenes:
+  - id: hook
+    scene: series-cover
+    say: Чемпион мира в [семнадцать](=семнадцать) лет?!
+    pad:
+      - 0.03
+      - 0.25
+    min: 3.8
+    props:
+      image: shots/cover-v2.png
+      projectFrom: facts.series.project
+      titleFrom: facts.series.title
+      subtitleFrom: facts.series.episode
+  - id: meet
+    scene: illustration
+    say: Это легендарный [Пеле](=ПелЕ)!
+    pad:
+      - 0.25
+      - 0.25
+    min: 3
+    props:
+      shots:
+        - image: shots/meet.png
+          move: in
+          zoom: 0.025
+          focus:
+            x: 0.5
+            y: 0.58
+  - id: flick
+    scene: illustration
+    say: В [1958](=тысяча девятьсот пятьдесят восьмом) году {#over}он перебросил мяч через защитника
+    pad:
+      - 0.03
+      - 0.15
+    props:
+      shots:
+        - image: shots/control.png
+          move: in
+          zoom: 0.025
+          focus:
+            x: 0.5
+            y: 0.58
+        - image: shots/flick.png
+          at: over
+          move: in
+          zoom: 0.025
+          focus:
+            x: 0.5
+            y: 0.58
+      fade: 0
+  - id: goal
+    scene: illustration
+    say: "{#strike}и забил! {#team}Бразилия впервые стала чемпионом мира!"
+    pad:
+      - 0.03
+      - 1.5
+    min: 3.4
+    props:
+      shots:
+        - image: shots/strike.png
+          move: in
+          zoom: 0.025
+          focus:
+            x: 0.5
+            y: 0.58
+        - image: shots/net.png
+          at: team
+          move: in
+          zoom: 0.025
+          focus:
+            x: 0.5
+            y: 0.58
+      fade: 0
+    sfx:
+      - at: strike
+        kind: thud
+        gain: 0.13
+      - at: team
+        kind: swell
+        gain: 0.07
+  - id: archive
+    scene: archive-photo
+    say: И ему было всего семнадцать!
+    pad:
+      - 0.03
+      - 0.35
+    min: 3
+    props:
+      background: shots/celebrate.png
+      image: shots/pele-1958.jpg
+      titleFrom: facts.archive.title
+      captionFrom: facts.archive.date
+      fit: contain
+  - id: payoff
+    scene: illustration
+    say: Самый молодой чемпион мира. {#ask}А ты знал?
+    pad:
+      - 0.03
+      - 1.303
+    props:
+      shots:
+        - image: shots/celebrate.png
+          move: in
+          zoom: 0.025
+          focus:
+            x: 0.5
+            y: 0.58
+        - image: shots/champion.png
+          at: ask
+          move: in
+          zoom: 0.025
+          focus:
+            x: 0.5
+            y: 0.58
+      fade: 0
+      labels:
+        - textFrom: facts.hero.achievement
+          at: 0
+          until: ask
+          y: 0.245
+        - textFrom: facts.hero.question
+          at: ask
+          y: 0.69

@@ -1,0 +1,33 @@
+review: 1
+questions:
+  - id: story
+    for: owner
+    open: true
+    ask: Подходит ли короткая история двух голов и овации чужого стадиона, финальная реакция ведущих?
+  - id: visual
+    for: owner
+    open: true
+    ask: Узнаваем ли Роналдиньо (улыбка, кудри, повязка), понятны ли финт/удары/овация секторами и достаточно ли рисунков?
+  - id: voice
+    for: owner
+    open: true
+    ask: Подходит ли ускоренный до 0.92 темп (просьба 31.10.2026), ударение «Роналдиньо» и паузы после голов и овации?
+notes: "Technical review cut 31 October 2026: 28.12s, 8 scenes, 10 selected drawings (cover-v5 plus nine story frames; four cover versions and three regeneration passes recorded in images.json); one authentic May 2006 photo insert 3.0s, illustrated 25.1s (89%). Native 1080x1920/30, QA 14/14, ASR 100% of words in every scene; master MP4 moments 0.5/12.6/18.6/22.6/26.8s and feed/cover previews viewed. Voice OmniVoice B 0.92/off per the owner's 31.10.2026 request (~12% faster than the calm 0.82 cut); holds kept: ovation +1.1s and final +1.2s after speech. Owner likeness notes applied (leaner face, trademark front teeth); ball pattern normalised (no stars, no classic pentagons); hosts kept out of match-action shots; year badge from facts on the left. Lexicon: Роналдиньо added with a sourced norm, stress off preserved. Owner listening/editorial review remains open; no owner approval or publication; WOW-R3 unmeasured."
+approvals:
+  ru:
+    script:
+      hash: 336cfe6cfa36
+      at: 2026-10-31T19:45:16.280Z
+      by: agent
+      role: agent
+    storyboard:
+      hash: cae126e5d9e1
+      at: 2026-10-31T19:45:15.912Z
+      by: agent
+      role: agent
+    release:
+      hash: cae126e5d9e1:ed5172bbf675
+      at: 2026-10-31T19:51:25.324Z
+      by: agent
+      role: agent
+      master: ed5172bbf675

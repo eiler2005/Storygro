@@ -1,0 +1,9 @@
+episode: 1
+id: football-wow-05-ronaldinho
+title: Роналдиньо — ему аплодировал чужой стадион?!
+series: football-wow
+sources: sources.md
+credits: CREDITS.md
+variants:
+  - id: ru
+    spec: ru.reel.yaml

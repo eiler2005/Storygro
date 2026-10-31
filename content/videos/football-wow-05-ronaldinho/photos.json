@@ -1,0 +1,35 @@
+{
+  "photos": 1,
+  "checked": "2026-10-31",
+  "items": [
+    {
+      "id": "ronaldinho-2006",
+      "sourceId": "P1",
+      "title": "File:Ronaldinho-7-5-2006.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Ronaldinho-7-5-2006.jpg",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Ronaldinho-7-5-2006.jpg",
+      "uploadTimestamp": "2006-07-23T20:03:16Z",
+      "width": 693,
+      "height": 866,
+      "bytes": 91526,
+      "commonsSHA1": "6813077d74288eb95bc12d2e637a706acce8d1de",
+      "metadata": {
+        "DateTimeOriginal": "2006-05-07",
+        "ObjectName": "Ronaldinho, FC Barcelona title celebration",
+        "Artist": "Darz Mol",
+        "Credit": "Own work",
+        "LicenseShortName": "CC BY-SA 3.0 (selected; file also offers GFDL and CC BY-SA 2.5/2.0/1.0)",
+        "UsageTerms": "Creative Commons Attribution-Share Alike 3.0",
+        "AttributionRequired": "true",
+        "Attribution": "Darz Mol",
+        "LicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "Copyrighted": "True"
+      },
+      "local": "shots/ronaldinho-2006.jpg",
+      "sha256": "3430206518b8597a0eadc553ea671357430592a1c2126fddcaf007a3f6c6eb9f",
+      "used": true,
+      "presentation": "One dated native contain photo insert, about 3 s. Original retained without AI retouch, recolouring or added detail. 7 May 2006 La Liga title celebration of the same 2005-06 season, not the November 2005 match; on screen only the heading and «Фото мая 2006».",
+      "rightsBasis": "CC BY-SA 3.0 selected from the file's multi-licence offer; author Darz Mol, own work, no VRT ticket needed. Attribution in post text and CREDITS.md; licence link retained."
+    }
+  ]
+}

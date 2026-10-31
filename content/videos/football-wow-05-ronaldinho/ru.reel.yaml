@@ -1,0 +1,345 @@
+# Instagram Reels: full-frame picture, no padding; safe margins apply to text.
+# Ronaldinho, wow-fact №5: the Bernabeu applauds an opponent. Owner script kept in meaning; short production adaptation.
+# Voice speed 0.92 = owner request 2026-10-31 (~12% faster than the calm 0.82 wow cut); holds after reveals kept.
+# Length ~28 s accepted by the owner on 2026-10-31 (wow source guide is ~25 s); recorded as a WOW-R3 confounder.
+reel: 1
+style: cartoon
+title: Роналдиньо — ему аплодировал чужой стадион?!
+lang: ru
+format:
+  preset: vertical
+  width: 1080
+  height: 1920
+  fps: 30
+safe: reels
+voice:
+  engine: omnivoice
+  model: k2-fsa/OmniVoice
+  voice: assets/voice/narrator-ru.wav
+  speed: 0.92
+  stress: off
+music:
+  bpm: 112
+  key: D
+  progression:
+    - I
+    - V
+    - vi
+    - IV
+  gain: 0.075
+loudness: -14
+theme: theme.css
+captions:
+  show: true
+  maxWords: 3
+transition:
+  kind: cut
+  dur: 0
+data:
+  facts: facts.json
+stills:
+  cover: hook@0
+  final: applaud@2.2
+images:
+  provider: codex
+  width: 1088
+  height: 1920
+  seed: 0
+  cast:
+    matvey: >-
+      Matvey, small raccoon boy: grey-brown fur, dark mask, striped tail; plain royal-blue football
+      kit with white trim, blue-white socks and boots
+    sofia: >-
+      Sofia, red squirrel girl: reddish-chestnut fur, cream muzzle, fluffy tail with a lilac hair
+      tie; plum-violet tracksuit with white stripes, white-lilac sneakers
+    ronaldinho: >-
+      Ronaldinho, age 25 in November 2005: warm broad smile with prominent slightly protruding upper
+      front teeth (his trademark), long dark curly hair under a thin headband, narrow lean face with
+      light stubble, lean athletic build; plain blue-and-garnet vertical-striped shirt, blue shorts,
+      blue socks, no crest/numbers/print
+  refs:
+    matvey: ../../series/football-legends/cast/hosts-full.png
+    sofia: ../../series/football-legends/cast/hosts-full.png
+    ronaldinho: shots/cover-v4.png
+  prompt: "{subject}. Premium stylized 3D family-animation cartoon render in exactly the same medium as the
+    attached reference picture — absolutely NOT photorealistic: stylized soft skin, expressive slightly
+    exaggerated animated features, painterly cinematic light; every human and animal character in this
+    cartoon medium. The football is ONE plain white ball with dark navy angular geometric panels, NO star
+    shapes. Recognisable November-2005 Ronaldinho, approved supporting Matvey/Sofia and the Santiago
+    Bernabeu of 2005. No words/numbers/logos in art; exact prompts and reference roles in images.json."
+hooks:
+  - Почему они аплодируют футболисту другой команды?!
+  - Чужой стадион встал. И аплодирует!
+  - Два гола — и овация соперника!
+post:
+  title: Футбольный вау-факт! · Роналдиньо и овация «Бернабеу»
+  text: |-
+    19 ноября 2005 года на «Сантьяго Бернабеу» Роналдиньо забил два гола «Реалу» — и части трибун встали, чтобы аплодировать игроку соперника.
+
+    «Маленькие большие дела · ФУТБОЛЬНЫЙ ВАУ-ФАКТ!» Подробная рисованная история по историческому эпизоду; кадры и юмор ведущих — художественная постановка, не архивная запись. Рисунки созданы встроенным GPT Image, голос синтетический: выбранный OmniVoice B (скорость 0,92 по просьбе владельца).
+
+    Одна настоящая фотография: Darz Mol, 7 мая 2006, CC BY-SA 3.0 — празднование чемпионства того же сезона, не ноябрьский матч. Файл и лицензия: https://commons.wikimedia.org/wiki/File:Ronaldinho-7-5-2006.jpg ; https://creativecommons.org/licenses/by-sa/3.0/
+    Архитектурный референс (в видео не вставлялся): Footballkickit, «Сантьяго Бернабеу», 2007, CC BY 3.0. https://commons.wikimedia.org/wiki/File:Santiago_Bernab%C3%A9u_Stadium,_2007.jpg
+
+    Факты: FC Barcelona, Wikipedia El Clasico, ESPN, These Football Times. Полные источники и отдельные права: CREDITS.md выпуска.
+  tags:
+    - футбол
+    - детям
+    - роналдиньо
+    - футбольныйвауфакт
+scenes:
+  - id: hook
+    scene: series-cover
+    say: Почему они аплодируют футболисту другой команды?!
+    pad:
+      - 0.03
+      - 0.3
+    min: 3.8
+    props:
+      image: shots/cover-v5.png
+      projectFrom: facts.series.project
+      titleFrom: facts.series.title
+      subtitleFrom: facts.series.episode
+  - id: hero
+    scene: illustration
+    say: Потому что это Роналдиньо!
+    pad:
+      - 0.25
+      - 0.35
+    min: 3
+    props:
+      shots:
+        - image: shots/hero.png
+          move: in
+          zoom: 0.02
+          focus:
+            x: 0.5
+            y: 0.58
+          prompt: >-
+            New original shot: @ronaldinho's entrance. Medium-full frontal view on the Bernabeu pitch,
+            evening floodlights: recognisable Ronaldinho (age 25, warm broad smile, long dark curly hair
+            under a thin headband, light stubble) strides forward with the ONE white dark-angular-panel
+            ball at his right foot, joyful confidence; plain blue-and-garnet vertical-striped shirt,
+            blue shorts, blue socks, no crest/numbers/print. Two all-white-kit Madrid players small in
+            the mid-distance behind, different faces. @matvey at lower left and @sofia at lower right,
+            much smaller, pointing at him excitedly from the sideline; their faces/ears 66-74% height
+            inside the central 80% width. Upper 30% quiet stands/roof for a caption. Packed white-clad
+            seated crowd, cool navy/white atmosphere, emerald pitch, rich fabric/fur/grass detail,
+            cinematic family-film light. Absolutely no text, letters, numbers, logos, ads, watermark or
+            borders.
+      badge:
+        valueFrom: facts.story.year
+        label: ноябрь
+        at: 0
+        side: left
+        y: 0.245
+        size: 0.075
+  - id: run
+    scene: illustration
+    say: Мяч у Роналдиньо. {#feint}Защитники рядом!
+    pad:
+      - 0.15
+      - 0.3
+    min: 3.4
+    props:
+      shots:
+        - image: shots/run.png
+          move: in
+          zoom: 0.02
+          focus:
+            x: 0.5
+            y: 0.58
+          prompt: >-
+            New original WIDE action shot, attack direction toward RIGHT: @ronaldinho at speed with the
+            ONE white dark-angular-panel ball at his feet, body leaning forward, curly hair flowing,
+            same plain blue-garnet vertical-striped kit, blue shorts and socks; two DIFFERENT all-white
+            Madrid defenders close in from his right-front, one lunging low, faces distinct and
+            determined. Santiago Bernabeu bowl behind with seated white-clad crowd, roof ring, bright
+            floodlights, cool evening air, vivid green pitch. No hosts on the pitch. Ordinary anatomy,
+            two arms/two legs each. Upper 28% quiet roof/stands; all faces and the ball between 40% and
+            75% height, middle 80% width. The raccoon and squirrel host characters must NOT appear
+            anywhere in this frame: no animal characters or mascots, only human players and the crowd.
+            No text, numbers, logos, ads, watermark or borders.
+        - image: shots/feint.png
+          at: feint
+          move: in
+          zoom: 0.02
+          focus:
+            x: 0.5
+            y: 0.58
+          prompt: >-
+            Next original action state of the SAME run, closer medium shot: @ronaldinho's body feint — he
+            drops his shoulder and pushes the ONE ball past the lunging white defender, who is visibly
+            off-balance with arms windmilling; a SECOND different white defender steps up ahead, knees
+            bent. Ronaldinho's smiling focused face clear in 3/4 view, thin headband and long curls
+            readable, plain striped kit. Same one ball only, evening Bernabeu crowd soft behind,
+            floodlights. Ordinary human anatomy. Upper 28% quiet; faces 40-70% height, middle 80% width.
+            The raccoon and squirrel host characters must NOT appear anywhere in this frame: no animal
+            characters or mascots, only human players and the crowd. No text, numbers, logos, ads,
+            watermark or borders.
+      fade: 0
+  - id: goal1
+    scene: illustration
+    say: Удар! {#net}Первый гол!
+    pad:
+      - 0.3
+      - 0.6
+    min: 3.2
+    props:
+      shots:
+        - image: shots/shot1.png
+          move: in
+          zoom: 0.02
+          focus:
+            x: 0.5
+            y: 0.58
+          prompt: >-
+            New original shot inside the penalty area, attack toward RIGHT: @ronaldinho strikes the ONE
+            white dark-angular-panel ball with his right instep, leg swung through, body tilted, curly
+            hair and headband readable, plain blue-garnet striped kit; a sliding all-white defender late
+            behind him; the Madrid goalkeeper, a distinct man in a plain DARK GREEN keeper kit, dives to
+            his left but cannot reach; white goal with white net at right. Readable boot/ball contact
+            moment, expressive faces. Evening floodlights, packed white-clad stands blurred behind,
+            emerald grass. Upper 26% quiet; action middle 80% width. The raccoon and squirrel host
+            characters must NOT appear anywhere in this frame: no animal characters or mascots, only
+            human players and the crowd. No text, numbers, logos, ads, watermark or borders.
+        - image: shots/net1.png
+          at: net
+          move: in
+          zoom: 0.02
+          focus:
+            x: 0.5
+            y: 0.58
+          prompt: >-
+            Next original consequence shot from beside the RIGHT goal: the ONE white ball clearly inside
+            the bulging white net; the dark-green-kit goalkeeper on the grass behind the line looking
+            back; one white defender slumped nearby with hands on hips; @ronaldinho farther left beginning
+            to turn away with a grin, head in a natural relaxed three-quarter turn with ordinary neck
+            anatomy, not twisted, same plain striped kit and headband. Readable satisfying goal, no
+            duplicated balls. Bernabeu stands and evening light behind. Important ball/net in middle
+            50-73% height; upper 25% quiet roof/stands. The raccoon and squirrel host characters must
+            NOT appear anywhere in this frame: no animal characters or mascots, only human players and
+            the crowd. No text, numbers, logos, ads, watermark or borders.
+      fade: 0
+    sfx:
+      - at: 0.1
+        kind: thud
+        gain: 0.13
+      - at: net
+        kind: swell
+        gain: 0.08
+  - id: goal2
+    scene: illustration
+    say: Потом второй — {#net}и снова в сетке!
+    pad:
+      - 0.3
+      - 0.6
+    min: 3.4
+    props:
+      shots:
+        - image: shots/shot2.png
+          move: in
+          zoom: 0.02
+          focus:
+            x: 0.5
+            y: 0.58
+          prompt: >-
+            New original shot, different camera from the left sideline: @ronaldinho cuts inside from the
+            left onto his right foot and drives a low shot; hips rotated, standing leg planted, curly
+            hair swinging, thin headband, plain blue-garnet striped kit; a THIRD different all-white
+            defender trailing half a metre behind; the dark-green-kit goalkeeper stretches low to his
+            right; white goal at right beyond them. ONE white dark-angular-panel ball only, evening
+            Bernabeu, seated white-clad crowd with far sections just starting to rise. Upper 26% quiet;
+            faces and ball 40-75% height, middle 80% width. The raccoon and squirrel host characters
+            must NOT appear anywhere in this frame: no animal characters or mascots, only human players
+            and the crowd. No text, numbers, logos, ads, watermark or borders.
+        - image: shots/net2.png
+          at: net
+          move: in
+          zoom: 0.02
+          focus:
+            x: 0.5
+            y: 0.58
+          prompt: >-
+            Next original consequence shot from behind and slightly above the RIGHT goal: the ONE white
+            ball rests inside the net; the dark-green-kit goalkeeper stranded on his knees; two different
+            white defenders slump, one sitting on the grass; beyond them, through the goal frame, LARGE
+            sections of the white-clad crowd are visibly rising to their feet. @ronaldinho mid-distance
+            turning toward the crowd with arms opening, grin visible, plain striped kit. No duplicated
+            balls, no text on stands. Evening floodlights; upper 25% quiet roof. The raccoon and squirrel
+            host characters must NOT appear anywhere in this frame: no animal characters or mascots,
+            only human players and the crowd. No text, numbers, logos, ads, watermark or borders.
+      fade: 0
+    sfx:
+      - at: 0.1
+        kind: thud
+        gain: 0.13
+      - at: net
+        kind: swell
+        gain: 0.08
+  - id: ovation
+    scene: illustration
+    say: И чужой стадион встал и аплодировал!
+    pad:
+      - 0.9
+      - 1.1
+    min: 3.6
+    props:
+      shots:
+        - image: shots/ovation.png
+          move: in
+          zoom: 0.02
+          focus:
+            x: 0.5
+            y: 0.55
+          prompt: >-
+            New original WIDE payoff shot from the pitch: LARGE sections of the white-clad Bernabeu crowd
+            STAND and APPLAUD, many hands together, some leaning forward in awe; a few seated gaps remain
+            so it reads as sections, not literally every single person. Centre: recognisable @ronaldinho,
+            same plain blue-garnet striped kit and thin headband, smiling broadly and raising both open
+            hands toward the stands in thanks; the ONE white ball rests at his feet. Two all-white
+            players nearby look on amazed, distinct faces. No hosts in this shot: the raccoon and
+            squirrel host characters must NOT appear anywhere in this frame, no animal characters or
+            mascots, only human players and the crowd. Evening floodlights,
+            cool navy/white palette, emerald grass, rich crowd detail. Ronaldinho's face around 52-58%
+            height and central; upper 30% stands/roof only. No text, numbers, logos, ads, watermark or
+            borders.
+  - id: archive
+    scene: archive-photo
+    say: Это Роналдиньо. Настоящий кадр.
+    pad:
+      - 0.25
+      - 0.35
+    min: 3
+    props:
+      background: shots/hero.png
+      image: shots/ronaldinho-2006.jpg
+      titleFrom: facts.archive.title
+      captionFrom: facts.archive.caption
+      fit: contain
+      portrait: true
+  - id: applaud
+    scene: illustration
+    say: Вот что значит футбольный талант!
+    pad:
+      - 0.1
+      - 1.1
+    min: 3.7
+    props:
+      shots:
+        - image: shots/applaud.png
+          move: in
+          zoom: 0.02
+          focus:
+            x: 0.5
+            y: 0.58
+          prompt: >-
+            New original playful closing shot at the sideline: @matvey and @sofia stand and applaud with
+            delight — Matvey mid-clap so hard his ears bounce, Sofia smiling and clapping neatly — both
+            smaller at the lower sides; CENTRE foreground and clearly larger: recognisable @ronaldinho in
+            his plain blue-garnet striped kit and thin headband, laughing warmly and waving to the crowd
+            with one hand, the ONE white ball under his other arm. Behind them the standing applauding
+            white-clad crowd glows in the evening floodlight. Leave clear space around 45-52% height
+            centre for a later caption; do not draw any text. Upper 26% quiet roof/stands; hosts' faces
+            66-74% height inside central 80% width. No letters, numbers, logos, ads, watermark or
+            borders.

@@ -1,0 +1,20 @@
+{
+  "series": {
+    "_source": "[O1] Exact owner rubric/name; episode line is the owner's №5 promise shortened for the cover.",
+    "project": "Маленькие большие дела",
+    "title": "ФУТБОЛЬНЫЙ ВАУ-ФАКТ!",
+    "episode": "Роналдиньо · Овация чужего стадиона"
+  },
+  "story": {
+    "_source": "[S1] 19 November 2005, Real Madrid 0-3 Barcelona at the Santiago Bernabeu; [S2] Ronaldinho's goals 59' and 77'; [S3] sections of the home crowd rose to applaud him. O1 hosts' applause is fictional.",
+    "hero": "Роналдиньо",
+    "date": "Ноябрь 2005",
+    "year": 2005,
+    "reaction": "Вот это талант!"
+  },
+  "archive": {
+    "_source": "[P1] 7 May 2006 title-celebration photo, same 2005-06 season; not the November match.",
+    "title": "Роналдиньо · настоящий кадр",
+    "caption": "Фото мая 2006"
+  }
+}

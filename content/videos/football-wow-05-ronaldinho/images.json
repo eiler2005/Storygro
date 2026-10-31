@@ -1,0 +1,236 @@
+{
+ "images": 1,
+ "files": {
+  "shots/cover.png": {
+   "prompt": "Opening cover frame, full-bleed portrait 9:16. The Santiago Bernabeu on a November 2005 evening: large open bowl, roof ring over packed stands, mostly white-clad home crowd, bright floodlights, cool white/navy air, vivid green pitch. LARGE sections of the white-clad crowd are STANDING and APPLAUDING toward the pitch. Centre foreground: recognisable Ronaldinho (age 25, warm broad smile, long dark curly hair under a thin headband, light stubble) in a plain blue-and-garnet vertical-striped shirt, blue shorts, blue socks, turning toward the stands and raising one open hand in thanks. Two different stunned all-white-kit Madrid players farther behind. Matvey, small raccoon boy in a plain royal-blue football kit with white trim, and Sofia, red squirrel girl in a plum-violet tracksuit with white stripes, stand much smaller at the lower left and lower right sideline, looking up and applauding astonished; their faces/ears around 67-73% height, inside the central square, not obscuring Ronaldinho or the ball. Upper 36% contains only soft roof/stands/lights, NO faces/limbs/ball there; Ronaldinho's face around 55-60% height; all faces within central 80% width. ONE white football with dark angular panels at Ronaldinho's feet. Rich fabric/fur/grass detail, cinematic family-film light, original drawing not a photo collage. Original detailed family3D cartoon, recognisable November-2005 Ronaldinho, approved supporting Matvey/Sofia and the Santiago Bernabeu of 2005. No words/numbers/logos in art. Absolutely no text, letters, numbers, captions, watermarks, advertisements, badges or borders.",
+   "seed": 0,
+   "provider": "codex",
+   "model": "OpenAI built-in GPT Image (identifier not exposed) (Codex image tool)",
+   "width": 1088,
+   "height": 1920,
+   "steps": 0,
+   "licence": "GPT Image through the Codex CLI image tool; under the OpenAI terms the output belongs to the account holder",
+   "refs": {
+    "../../series/football-legends/cast/hosts-full.png": "49c92b4bca5df88e90d529034e158fb7a48a79de4c7f98d49ccf764944d2be35"
+   },
+   "sha256": "d152177e775303fd3726631130e3176b09fd5c1abca3b0788146d0a43815073e",
+   "createdAt": "2026-10-31T18:36:40Z",
+   "selected": false,
+   "referenceRoles": "Original cartoon composition; approved fictional cast reference attached. Seated crowd, star-pattern ball and a too-high waving hand were corrected in later versions."
+  },
+  "shots/cover-v2.png": {
+   "prompt": "Edit of shots/cover.png: recompose the character group about 18% lower and 12% smaller (Ronaldinho face 55-60% height, waving palm at or below 40% height, hosts faces/ears 67-73% inside central 80% width, upper 36% only roof/stands/lights); make large sections of the white-clad crowd visibly standing and applauding with a few seated gaps; replace the star-pattern ball with one plain white ball with dark angular panels; make the two Madrid players generic invented faces. Preserve faces, kits, hosts, stadium, light and style; no text/numbers/logos/watermark.",
+   "seed": 0,
+   "provider": "codex",
+   "model": "OpenAI built-in GPT Image (identifier not exposed) (Codex image tool)",
+   "width": 1088,
+   "height": 1920,
+   "steps": 0,
+   "licence": "GPT Image through the Codex CLI image tool; under the OpenAI terms the output belongs to the account holder",
+   "refs": {
+    "shots/cover.png": "d152177e775303fd3726631130e3176b09fd5c1abca3b0788146d0a43815073e"
+   },
+   "sha256": "8ddb4629668f3e690b8c8307a6fa6ac7247d9deaacf16fb54e61303d65c30c9d",
+   "createdAt": "2026-10-31T18:41:20Z",
+   "selected": false,
+   "referenceRoles": "Targeted edit of an original generated cartoon; the ball replacement did not take effect, corrected in v3."
+  },
+  "shots/cover-v3.png": {
+   "prompt": "Edit of shots/cover-v2.png: change ONLY the football at Ronaldinho's feet, replacing the star-pattern ball with ONE plain white football decorated only with dark navy angular geometric panels (no stars, no logos, no letters); keep everything else identical; full-bleed portrait 9:16; no text or watermark.",
+   "seed": 0,
+   "provider": "codex",
+   "model": "OpenAI built-in GPT Image (identifier not exposed) (Codex image tool)",
+   "width": 1088,
+   "height": 1920,
+   "steps": 0,
+   "licence": "GPT Image through the Codex CLI image tool; under the OpenAI terms the output belongs to the account holder",
+   "refs": {
+    "shots/cover-v2.png": "8ddb4629668f3e690b8c8307a6fa6ac7247d9deaacf16fb54e61303d65c30c9d"
+   },
+   "sha256": "cf630b00606106a347db8d3492a9edaccd628c5243ec08c6261a72c5f4a27b12",
+   "createdAt": "2026-10-31T18:44:30Z",
+   "selected": false,
+   "referenceRoles": "Was selected; superseded by cover-v4 after the owner's likeness note."
+  },
+  "shots/cover-v4.png": {
+   "prompt": "Edit of shots/cover-v3.png: change ONLY the face of the central footballer (Ronaldinho): narrower and leaner with slightly hollow cheeks, trademark prominent slightly protruding upper front teeth in his open warm smile; keep his long dark curls, thin headband, light stubble and joyful expression; keep everything else identical; full-bleed portrait 9:16; no text or watermark.",
+   "seed": 0,
+   "provider": "codex",
+   "model": "OpenAI built-in GPT Image (identifier not exposed) (Codex image tool)",
+   "width": 1088,
+   "height": 1920,
+   "steps": 0,
+   "licence": "GPT Image through the Codex CLI image tool; under the OpenAI terms the output belongs to the account holder",
+   "refs": {
+    "shots/cover-v3.png": "cf630b00606106a347db8d3492a9edaccd628c5243ec08c6261a72c5f4a27b12"
+   },
+   "sha256": "21a30ff9316dadbe08718777f5f73a6a9531b438fc20862656527f52196f0ebf",
+   "createdAt": "2026-10-31T19:01:30Z",
+   "selected": false,
+   "referenceRoles": "Locked portrait reference for all story shots after the owner's likeness note. Was the displayed cover; its star-pattern ball was corrected in cover-v5."
+  },
+  "shots/cover-v5.png": {
+   "prompt": "Edit of shots/cover-v4.png: change ONLY the football at the central footballer's feet to a plain white football with dark navy curved angular panels (no stars, no black pentagons, no logos); keep size, position, shading, boot contact and everything else identical; full-bleed portrait 9:16; no text or watermark.",
+   "seed": 0,
+   "provider": "codex",
+   "model": "OpenAI built-in GPT Image (identifier not exposed) (Codex image tool)",
+   "width": 1088,
+   "height": 1920,
+   "steps": 0,
+   "licence": "GPT Image through the Codex CLI image tool; under the OpenAI terms the output belongs to the account holder",
+   "refs": {
+    "shots/cover-v4.png": "21a30ff9316dadbe08718777f5f73a6a9531b438fc20862656527f52196f0ebf"
+   },
+   "sha256": "52f850859e2d8b8508029761061f85af94f6c0d45bb6afe8154f05b9b1a9fafa",
+   "createdAt": "2026-10-31T19:36:30Z",
+   "selected": true,
+   "referenceRoles": "Selected series-cover background (frame zero). Portrait reference for story shots remains cover-v4, identical except the ball."
+  },
+  "shots/hero.png": {
+   "prompt": "New original shot: Ronaldinho, age 25 in November 2005: warm broad smile with prominent slightly protruding upper front teeth (his trademark), long dark curly hair under a thin headband, narrow lean face with light stubble, lean athletic build; plain blue-and-garnet vertical-striped shirt, blue shorts, blue socks, no crest/numbers/print's entrance. Medium-full frontal view on the Bernabeu pitch, evening floodlights: recognisable Ronaldinho (age 25, warm broad smile, long dark curly hair under a thin headband, light stubble) strides forward with the ONE white dark-angular-panel ball at his right foot, joyful confidence; plain blue-and-garnet vertical-striped shirt, blue shorts, blue socks, no crest/numbers/print. Two all-white-kit Madrid players small in the mid-distance behind, different faces. Matvey, small raccoon boy: grey-brown fur, dark mask, striped tail; plain royal-blue football kit with white trim, blue-white socks and boots at lower left and Sofia, red squirrel girl: reddish-chestnut fur, cream muzzle, fluffy tail with a lilac hair tie; plum-violet tracksuit with white stripes, white-lilac sneakers at lower right, much smaller, pointing at him excitedly from the sideline; their faces/ears 66-74% height inside the central 80% width. Upper 30% quiet stands/roof for a caption. Packed white-clad seated crowd, cool navy/white atmosphere, emerald pitch, rich fabric/fur/grass detail, cinematic family-film light. Absolutely no text, letters, numbers, logos, ads, watermark or borders.. Premium stylized 3D family-animation cartoon render in exactly the same medium as the attached reference picture — absolutely NOT photorealistic: stylized soft skin, expressive slightly exaggerated animated features, painterly cinematic light; every human and animal character in this cartoon medium. The football is ONE plain white ball with dark navy angular geometric panels, NO star shapes. Recognisable November-2005 Ronaldinho, approved supporting Matvey/Sofia and the Santiago Bernabeu of 2005. No words/numbers/logos in art; exact prompts and reference roles in images.json.",
+   "seed": 66398,
+   "provider": "codex",
+   "model": "Codex image tool",
+   "width": 1088,
+   "height": 1920,
+   "steps": 0,
+   "licence": "GPT Image through the Codex CLI image tool; under the OpenAI terms the output belongs to the account holder",
+   "refs": {
+    "shots/cover-v4.png": "21a30ff9316dadbe08718777f5f73a6a9531b438fc20862656527f52196f0ebf",
+    "../../series/football-legends/cast/hosts-full.png": "49c92b4bca5df88e90d529034e158fb7a48a79de4c7f98d49ccf764944d2be35"
+   },
+   "sha256": "62725f0d839fe5b933794ecaa4689311667538e3ee329ebce8630b1718d041cf",
+   "createdAt": "2026-10-31T19:13:15.421Z",
+   "postEdit": "2026-10-31: ball surface pattern replaced (no stars/pentagons) by a pixel-localised composite of an image-tool variant; everything else unchanged."
+  },
+  "shots/net2.png": {
+   "prompt": "Next original consequence shot from behind and slightly above the RIGHT goal: the ONE white ball rests inside the net; the dark-green-kit goalkeeper stranded on his knees; two different white defenders slump, one sitting on the grass; beyond them, through the goal frame, LARGE sections of the white-clad crowd are visibly rising to their feet. Ronaldinho, age 25 in November 2005: warm broad smile with prominent slightly protruding upper front teeth (his trademark), long dark curly hair under a thin headband, narrow lean face with light stubble, lean athletic build; plain blue-and-garnet vertical-striped shirt, blue shorts, blue socks, no crest/numbers/print mid-distance turning toward the crowd with arms opening, grin visible, plain striped kit. No duplicated balls, no text on stands. Evening floodlights; upper 25% quiet roof. The raccoon and squirrel host characters must NOT appear anywhere in this frame: no animal characters or mascots, only human players and the crowd. No text, numbers, logos, ads, watermark or borders.. Premium stylized 3D family-animation cartoon render in exactly the same medium as the attached reference picture — absolutely NOT photorealistic: stylized soft skin, expressive slightly exaggerated animated features, painterly cinematic light; every human and animal character in this cartoon medium. The football is ONE plain white ball with dark navy angular geometric panels, NO star shapes. Recognisable November-2005 Ronaldinho, approved supporting Matvey/Sofia and the Santiago Bernabeu of 2005. No words/numbers/logos in art; exact prompts and reference roles in images.json.",
+   "seed": 53348,
+   "provider": "codex",
+   "model": "Codex image tool",
+   "width": 1088,
+   "height": 1920,
+   "steps": 0,
+   "licence": "GPT Image through the Codex CLI image tool; under the OpenAI terms the output belongs to the account holder",
+   "refs": {
+    "shots/cover-v4.png": "21a30ff9316dadbe08718777f5f73a6a9531b438fc20862656527f52196f0ebf"
+   },
+   "sha256": "fe9462de9ef83d311ae08cda155563597518964c9ac1099355c45054fb5c7965",
+   "createdAt": "2026-10-31T19:15:24.138Z",
+   "postEdit": "2026-10-31: ball surface pattern replaced (no stars/pentagons) by a pixel-localised composite of an image-tool variant; everything else unchanged."
+  },
+  "shots/ovation.png": {
+   "prompt": "New original WIDE payoff shot from the pitch: LARGE sections of the white-clad Bernabeu crowd STAND and APPLAUD, many hands together, some leaning forward in awe; a few seated gaps remain so it reads as sections, not literally every single person. Centre: recognisable Ronaldinho, age 25 in November 2005: warm broad smile with prominent slightly protruding upper front teeth (his trademark), long dark curly hair under a thin headband, narrow lean face with light stubble, lean athletic build; plain blue-and-garnet vertical-striped shirt, blue shorts, blue socks, no crest/numbers/print, same plain blue-garnet striped kit and thin headband, smiling broadly and raising both open hands toward the stands in thanks; the ONE white ball rests at his feet. Two all-white players nearby look on amazed, distinct faces. No hosts in this shot: the raccoon and squirrel host characters must NOT appear anywhere in this frame, no animal characters or mascots, only human players and the crowd. Evening floodlights, cool navy/white palette, emerald grass, rich crowd detail. Ronaldinho's face around 52-58% height and central; upper 30% stands/roof only. No text, numbers, logos, ads, watermark or borders.. Premium stylized 3D family-animation cartoon render in exactly the same medium as the attached reference picture — absolutely NOT photorealistic: stylized soft skin, expressive slightly exaggerated animated features, painterly cinematic light; every human and animal character in this cartoon medium. The football is ONE plain white ball with dark navy angular geometric panels, NO star shapes. Recognisable November-2005 Ronaldinho, approved supporting Matvey/Sofia and the Santiago Bernabeu of 2005. No words/numbers/logos in art; exact prompts and reference roles in images.json.",
+   "seed": 91544,
+   "provider": "codex",
+   "model": "Codex image tool",
+   "width": 1088,
+   "height": 1920,
+   "steps": 0,
+   "licence": "GPT Image through the Codex CLI image tool; under the OpenAI terms the output belongs to the account holder",
+   "refs": {
+    "shots/cover-v4.png": "21a30ff9316dadbe08718777f5f73a6a9531b438fc20862656527f52196f0ebf"
+   },
+   "sha256": "d1cbbb6b1a43b8e5d30aab265d00a3eda527d4a43be47aa9964f39412984a48d",
+   "createdAt": "2026-10-31T19:15:24.304Z",
+   "postEdit": "2026-10-31: ball surface pattern replaced (no stars/pentagons) by a pixel-localised composite of an image-tool variant; everything else unchanged."
+  },
+  "shots/run.png": {
+   "prompt": "New original WIDE action shot, attack direction toward RIGHT: Ronaldinho, age 25 in November 2005: warm broad smile with prominent slightly protruding upper front teeth (his trademark), long dark curly hair under a thin headband, narrow lean face with light stubble, lean athletic build; plain blue-and-garnet vertical-striped shirt, blue shorts, blue socks, no crest/numbers/print at speed with the ONE white dark-angular-panel ball at his feet, body leaning forward, curly hair flowing, same plain blue-garnet vertical-striped kit, blue shorts and socks; two DIFFERENT all-white Madrid defenders close in from his right-front, one lunging low, faces distinct and determined. Santiago Bernabeu bowl behind with seated white-clad crowd, roof ring, bright floodlights, cool evening air, vivid green pitch. No hosts on the pitch. Ordinary anatomy, two arms/two legs each. Upper 28% quiet roof/stands; all faces and the ball between 40% and 75% height, middle 80% width. The raccoon and squirrel host characters must NOT appear anywhere in this frame: no animal characters or mascots, only human players and the crowd. No text, numbers, logos, ads, watermark or borders.. Premium stylized 3D family-animation cartoon render in exactly the same medium as the attached reference picture — absolutely NOT photorealistic: stylized soft skin, expressive slightly exaggerated animated features, painterly cinematic light; every human and animal character in this cartoon medium. The football is ONE plain white ball with dark navy angular geometric panels, NO star shapes. Recognisable November-2005 Ronaldinho, approved supporting Matvey/Sofia and the Santiago Bernabeu of 2005. No words/numbers/logos in art; exact prompts and reference roles in images.json.",
+   "seed": 32863,
+   "provider": "codex",
+   "model": "Codex image tool",
+   "width": 1088,
+   "height": 1920,
+   "steps": 0,
+   "licence": "GPT Image through the Codex CLI image tool; under the OpenAI terms the output belongs to the account holder",
+   "refs": {
+    "shots/cover-v4.png": "21a30ff9316dadbe08718777f5f73a6a9531b438fc20862656527f52196f0ebf"
+   },
+   "sha256": "c5c5b305b1a724b214d774abcc14b4f82aeb04f386ef5551871b403cfed10a7d",
+   "createdAt": "2026-10-31T19:18:55.364Z",
+   "postEdit": "2026-10-31: ball surface pattern replaced (no stars/pentagons) by a pixel-localised composite of an image-tool variant; everything else unchanged."
+  },
+  "shots/feint.png": {
+   "prompt": "Next original action state of the SAME run, closer medium shot: Ronaldinho, age 25 in November 2005: warm broad smile with prominent slightly protruding upper front teeth (his trademark), long dark curly hair under a thin headband, narrow lean face with light stubble, lean athletic build; plain blue-and-garnet vertical-striped shirt, blue shorts, blue socks, no crest/numbers/print's body feint — he drops his shoulder and pushes the ONE ball past the lunging white defender, who is visibly off-balance with arms windmilling; a SECOND different white defender steps up ahead, knees bent. Ronaldinho's smiling focused face clear in 3/4 view, thin headband and long curls readable, plain striped kit. Same one ball only, evening Bernabeu crowd soft behind, floodlights. Ordinary human anatomy. Upper 28% quiet; faces 40-70% height, middle 80% width. The raccoon and squirrel host characters must NOT appear anywhere in this frame: no animal characters or mascots, only human players and the crowd. No text, numbers, logos, ads, watermark or borders.. Premium stylized 3D family-animation cartoon render in exactly the same medium as the attached reference picture — absolutely NOT photorealistic: stylized soft skin, expressive slightly exaggerated animated features, painterly cinematic light; every human and animal character in this cartoon medium. The football is ONE plain white ball with dark navy angular geometric panels, NO star shapes. Recognisable November-2005 Ronaldinho, approved supporting Matvey/Sofia and the Santiago Bernabeu of 2005. No words/numbers/logos in art; exact prompts and reference roles in images.json.",
+   "seed": 43499,
+   "provider": "codex",
+   "model": "Codex image tool",
+   "width": 1088,
+   "height": 1920,
+   "steps": 0,
+   "licence": "GPT Image through the Codex CLI image tool; under the OpenAI terms the output belongs to the account holder",
+   "refs": {
+    "shots/cover-v4.png": "21a30ff9316dadbe08718777f5f73a6a9531b438fc20862656527f52196f0ebf"
+   },
+   "sha256": "e94fbe8546f454bfcd1ff7d870e441ee73c7edc4a7b43e68a461b9ceef6df775",
+   "createdAt": "2026-10-31T19:18:55.535Z",
+   "postEdit": "2026-10-31: ball surface pattern replaced (no stars/pentagons) by a pixel-localised composite of an image-tool variant; everything else unchanged."
+  },
+  "shots/shot1.png": {
+   "prompt": "New original shot inside the penalty area, attack toward RIGHT: Ronaldinho, age 25 in November 2005: warm broad smile with prominent slightly protruding upper front teeth (his trademark), long dark curly hair under a thin headband, narrow lean face with light stubble, lean athletic build; plain blue-and-garnet vertical-striped shirt, blue shorts, blue socks, no crest/numbers/print strikes the ONE white dark-angular-panel ball with his right instep, leg swung through, body tilted, curly hair and headband readable, plain blue-garnet striped kit; a sliding all-white defender late behind him; the Madrid goalkeeper, a distinct man in a plain DARK GREEN keeper kit, dives to his left but cannot reach; white goal with white net at right. Readable boot/ball contact moment, expressive faces. Evening floodlights, packed white-clad stands blurred behind, emerald grass. Upper 26% quiet; action middle 80% width. The raccoon and squirrel host characters must NOT appear anywhere in this frame: no animal characters or mascots, only human players and the crowd. No text, numbers, logos, ads, watermark or borders.. Premium stylized 3D family-animation cartoon render in exactly the same medium as the attached reference picture — absolutely NOT photorealistic: stylized soft skin, expressive slightly exaggerated animated features, painterly cinematic light; every human and animal character in this cartoon medium. The football is ONE plain white ball with dark navy angular geometric panels, NO star shapes. Recognisable November-2005 Ronaldinho, approved supporting Matvey/Sofia and the Santiago Bernabeu of 2005. No words/numbers/logos in art; exact prompts and reference roles in images.json.",
+   "seed": 68702,
+   "provider": "codex",
+   "model": "Codex image tool",
+   "width": 1088,
+   "height": 1920,
+   "steps": 0,
+   "licence": "GPT Image through the Codex CLI image tool; under the OpenAI terms the output belongs to the account holder",
+   "refs": {
+    "shots/cover-v4.png": "21a30ff9316dadbe08718777f5f73a6a9531b438fc20862656527f52196f0ebf"
+   },
+   "sha256": "5c3b05dfba7f3a660ec419d8192efe950c6c1f8e341c891ec9ae71b567fa0ca3",
+   "createdAt": "2026-10-31T19:18:55.725Z",
+   "postEdit": "2026-10-31: ball surface pattern replaced (no stars/pentagons) by a pixel-localised composite of an image-tool variant; everything else unchanged."
+  },
+  "shots/net1.png": {
+   "prompt": "Next original consequence shot from beside the RIGHT goal: the ONE white ball clearly inside the bulging white net; the dark-green-kit goalkeeper on the grass behind the line looking back; one white defender slumped nearby with hands on hips; Ronaldinho, age 25 in November 2005: warm broad smile with prominent slightly protruding upper front teeth (his trademark), long dark curly hair under a thin headband, narrow lean face with light stubble, lean athletic build; plain blue-and-garnet vertical-striped shirt, blue shorts, blue socks, no crest/numbers/print farther left beginning to turn away with a grin, head in a natural relaxed three-quarter turn with ordinary neck anatomy, not twisted, same plain striped kit and headband. Readable satisfying goal, no duplicated balls. Bernabeu stands and evening light behind. Important ball/net in middle 50-73% height; upper 25% quiet roof/stands. The raccoon and squirrel host characters must NOT appear anywhere in this frame: no animal characters or mascots, only human players and the crowd. No text, numbers, logos, ads, watermark or borders.. Premium stylized 3D family-animation cartoon render in exactly the same medium as the attached reference picture — absolutely NOT photorealistic: stylized soft skin, expressive slightly exaggerated animated features, painterly cinematic light; every human and animal character in this cartoon medium. The football is ONE plain white ball with dark navy angular geometric panels, NO star shapes. Recognisable November-2005 Ronaldinho, approved supporting Matvey/Sofia and the Santiago Bernabeu of 2005. No words/numbers/logos in art; exact prompts and reference roles in images.json.",
+   "seed": 22353,
+   "provider": "codex",
+   "model": "Codex image tool",
+   "width": 1088,
+   "height": 1920,
+   "steps": 0,
+   "licence": "GPT Image through the Codex CLI image tool; under the OpenAI terms the output belongs to the account holder",
+   "refs": {
+    "shots/cover-v4.png": "21a30ff9316dadbe08718777f5f73a6a9531b438fc20862656527f52196f0ebf"
+   },
+   "sha256": "369d4564c15c3d535a5376785bb436ff1976dc6c98d2041947dd50d902624429",
+   "createdAt": "2026-10-31T19:18:55.890Z",
+   "postEdit": "2026-10-31: ball surface pattern replaced (no stars/pentagons) by a pixel-localised composite of an image-tool variant; everything else unchanged."
+  },
+  "shots/shot2.png": {
+   "prompt": "New original shot, different camera from the left sideline: Ronaldinho, age 25 in November 2005: warm broad smile with prominent slightly protruding upper front teeth (his trademark), long dark curly hair under a thin headband, narrow lean face with light stubble, lean athletic build; plain blue-and-garnet vertical-striped shirt, blue shorts, blue socks, no crest/numbers/print cuts inside from the left onto his right foot and drives a low shot; hips rotated, standing leg planted, curly hair swinging, thin headband, plain blue-garnet striped kit; a THIRD different all-white defender trailing half a metre behind; the dark-green-kit goalkeeper stretches low to his right; white goal at right beyond them. ONE white dark-angular-panel ball only, evening Bernabeu, seated white-clad crowd with far sections just starting to rise. Upper 26% quiet; faces and ball 40-75% height, middle 80% width. The raccoon and squirrel host characters must NOT appear anywhere in this frame: no animal characters or mascots, only human players and the crowd. No text, numbers, logos, ads, watermark or borders.. Premium stylized 3D family-animation cartoon render in exactly the same medium as the attached reference picture — absolutely NOT photorealistic: stylized soft skin, expressive slightly exaggerated animated features, painterly cinematic light; every human and animal character in this cartoon medium. The football is ONE plain white ball with dark navy angular geometric panels, NO star shapes. Recognisable November-2005 Ronaldinho, approved supporting Matvey/Sofia and the Santiago Bernabeu of 2005. No words/numbers/logos in art; exact prompts and reference roles in images.json.",
+   "seed": 35644,
+   "provider": "codex",
+   "model": "Codex image tool",
+   "width": 1088,
+   "height": 1920,
+   "steps": 0,
+   "licence": "GPT Image through the Codex CLI image tool; under the OpenAI terms the output belongs to the account holder",
+   "refs": {
+    "shots/cover-v4.png": "21a30ff9316dadbe08718777f5f73a6a9531b438fc20862656527f52196f0ebf"
+   },
+   "sha256": "5db2554a1ba8b3e65cb975c5dee935b07f1bebd6c6f61325650037c42cc6f789",
+   "createdAt": "2026-10-31T19:18:56.065Z",
+   "postEdit": "2026-10-31: ball surface pattern replaced (no stars/pentagons) by a pixel-localised composite of an image-tool variant; everything else unchanged."
+  },
+  "shots/applaud.png": {
+   "prompt": "New original playful closing shot at the sideline: Matvey, small raccoon boy: grey-brown fur, dark mask, striped tail; plain royal-blue football kit with white trim, blue-white socks and boots and Sofia, red squirrel girl: reddish-chestnut fur, cream muzzle, fluffy tail with a lilac hair tie; plum-violet tracksuit with white stripes, white-lilac sneakers stand and applaud with delight — Matvey mid-clap so hard his ears bounce, Sofia smiling and clapping neatly — both smaller at the lower sides; CENTRE foreground and clearly larger: recognisable Ronaldinho, age 25 in November 2005: warm broad smile with prominent slightly protruding upper front teeth (his trademark), long dark curly hair under a thin headband, narrow lean face with light stubble, lean athletic build; plain blue-and-garnet vertical-striped shirt, blue shorts, blue socks, no crest/numbers/print in his plain blue-garnet striped kit and thin headband, laughing warmly and waving to the crowd with one hand, the ONE white ball under his other arm. Behind them the standing applauding white-clad crowd glows in the evening floodlight. Leave clear space around 45-52% height centre for a later caption; do not draw any text. Upper 26% quiet roof/stands; hosts' faces 66-74% height inside central 80% width. No letters, numbers, logos, ads, watermark or borders.. Premium stylized 3D family-animation cartoon render in exactly the same medium as the attached reference picture — absolutely NOT photorealistic: stylized soft skin, expressive slightly exaggerated animated features, painterly cinematic light; every human and animal character in this cartoon medium. The football is ONE plain white ball with dark navy angular geometric panels, NO star shapes. Recognisable November-2005 Ronaldinho, approved supporting Matvey/Sofia and the Santiago Bernabeu of 2005. No words/numbers/logos in art; exact prompts and reference roles in images.json.",
+   "seed": 68563,
+   "provider": "codex",
+   "model": "Codex image tool",
+   "width": 1088,
+   "height": 1920,
+   "steps": 0,
+   "licence": "GPT Image through the Codex CLI image tool; under the OpenAI terms the output belongs to the account holder",
+   "refs": {
+    "../../series/football-legends/cast/hosts-full.png": "49c92b4bca5df88e90d529034e158fb7a48a79de4c7f98d49ccf764944d2be35",
+    "shots/cover-v4.png": "21a30ff9316dadbe08718777f5f73a6a9531b438fc20862656527f52196f0ebf"
+   },
+   "sha256": "d355b14928dd9c2cf3e17887d62f8d4fe6b698023f0d9e16c4c99f06a4ef3a3e",
+   "createdAt": "2026-10-31T19:20:03.865Z",
+   "postEdit": "2026-10-31: ball surface pattern replaced (no stars/pentagons) by a pixel-localised composite of an image-tool variant; everything else unchanged."
+  }
+ }
+}

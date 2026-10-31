@@ -1,0 +1,16 @@
+# Sources — Ronaldinho and the Bernabeu applause
+
+Checked 31 October 2026; the owner screenplay is preserved at [scripts/05.md](../../series/football-wow/scripts/05.md). The cartoon is an original staged interpretation of a dated episode, not a reconstruction of broadcast frames.
+
+| # | On screen / used for | Source and quote | Caveats |
+|---|---|---|---|
+| O1 | Rubric, hosts, story beats | [Owner script 05](../../series/football-wow/scripts/05.md): «В 2005 году он забил дважды в матче против “Реала” и настолько впечатлил зрителей, что даже болельщики соперника ему аплодировали!» | Production adapts wording to ~25 s; meaning kept. Hosts' applause is fictional. |
+| S1 | Date, venue, 0-3, ovation | [FC Barcelona, “On this day: standing ovation for Ronaldinho at Santiago Bernabeu”](https://www.fcbarcelona.com/en/news/1147476/on-this-day-standing-ovation-for-ronaldinho-at-santiago-bernabeu), 19 November 2005, Real Madrid 0-3 Barcelona | Club page; corroborated by S2/S3. |
+| S2 | Scorers and minutes | [Wikipedia, List of El Clásico matches](https://en.wikipedia.org/wiki/List_of_El_Cl%C3%A1sico_matches) and [ESPN match summary](https://www.espn.com/soccer/match/_/gameId/188521/barcelona-real-madrid): Eto'o 14', Ronaldinho 59' and 77' | Minor minute variants (14/15', 59/60', 77/78') across logs; we show no minutes on screen. |
+| S3 | Ovation wording | [These Football Times, 29.11.2018](https://thesefootballtimes.co/2018/11/29/the-night-ronaldinho-entered-legend-as-the-bernabeu-afforded-him-a-standing-ovation/): sections of the Bernabeu rose to applaud Ronaldinho, as earlier for Maradona | Some commentary mixes awe with irony at Madrid's night; the children's cut keeps only the applause-for-greatness framing and never says “all fans”. |
+| S4 | Barça kit of the match | [footballkitarchive, Barcelona 2005-06 home](https://www.footballkitarchive.com/fc-barcelona-kits-2005-06-t6/): blaugrana vertical stripes (Nike T90); [away kit](https://www.footballkitarchive.com/fc-barcelona-2005-06-away-kit-520/) was volt yellow | Barça wore the striped home shirt at the Bernabeu: no colour clash with Real's white; match photography agrees. No crest/numbers/sponsors drawn. |
+| S5 | Real kit | [footballkitarchive, Real Madrid kits](https://www.footballkitarchive.com/real-madrid-kits-t16/): 2005-06 home all white | Keeper kit colour is editorial (plain dark green), not sourced. |
+| P1 | One photo insert | [File:Ronaldinho-7-5-2006.jpg](https://commons.wikimedia.org/wiki/File:Ronaldinho-7-5-2006.jpg), Darz Mol, 7 May 2006, CC BY-SA 3.0 (selected from the file's multi-licence offer) | Title celebration of the same 2005-06 season, not the November match; shown dated «Фото мая 2006», unchanged pixels. Provenance/hash: photos.json. |
+| P2 | Venue observation only | [File:Santiago Bernabéu Stadium, 2007.jpg](https://commons.wikimedia.org/wiki/File:Santiago_Bernab%C3%A9u_Stadium,_2007.jpg), Footballkickit, 2007, CC BY 3.0 | Pre-reconstruction bowl close to the 2005 state; studied as architecture/light, never displayed and not traced. |
+
+No real player's voice is cloned; no invented athlete quotation. The hosts' closing applause is editorial, not a historical incident. Evening floodlight atmosphere is an artistic choice; no on-screen claim about kick-off time.

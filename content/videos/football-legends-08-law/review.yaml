@@ -1,30 +1,32 @@
 review: 1
 questions:
   - id: voice
-    ask: Подходят ли имена Денис Лоу, Бобби Чарльтон, Джордж Бест и произношение чисел в готовом MP4?
+    ask: Подходит ли произношение «эти мастера́ с разными умениями» в новой версии?
     for: owner
     open: true
   - id: visual
-    ask: Подходят ли сходство футболистов, атмосфера старого «Олд Траффорд» и имя героя на первом кадре?
+    ask: Подходят ли прозвище «Король» и шутливая корона на заставке?
     for: owner
     open: true
-notes: "Owner script retained verbatim, except pasted source placeholders and section headings; numbers use
-  pronunciation hints with unchanged captions. Frame zero adds the player name to the shared identity.
-  Technical checks do not establish owner editorial or listening approval. Technical final: 82.26s, 13scenes,
-  QA 15/15; both MP4 fully decoded (2466frames each), 36 inspected moments, feed/cover reviewed, 161 caption
-  samples and 76 reverse seeks without geometry failures. 20 imagegen generations, 12 selected.
-  Historical-detail pass, separate period club/national kits, distinct Trinity faces, old Stretford End,
-  player name at frame zero; shifted action captions/statistics and moved clipped ball inside frame. Owner
-  listening/editorial approval remains open. No publication."
+notes: "Revision after owner listening/cover feedback, 31 October 2026: frame zero adds verified nickname The
+  King/«Король» with a playful crown, same hosts and historical backdrop. The supplied body is retained except
+  the team sentence: replace три разных мастера by эти мастера с разными умениями so plural мастера́ is
+  unambiguous; explicit hint мастерА, same OmniVoice B0.90/off. Original counted form три ма́стера was
+  grammatically valid; do not force plural stress onto count/singular forms globally. Prior V1 verification is
+  historical; rerender and regenerate current metrics. Owner listening of revised line remains open. No
+  publication. Current verification: 83.03s, QA15/15, both files decode 2488frames, 36 MP4 moments inspected,
+  163 caption samples/76 reverse seeks without failures. Only team narration changed; other12 voice file
+  hashes match V1. 21 image generations/12 selected. Current crown cover/feed preview checked. Owner listening
+  still open."
 approvals:
   ru:
     script:
-      hash: 9e4e53a4ae20
-      at: 2026-10-31T07:27:25.336Z
+      hash: 4736a059b922
+      at: 2026-10-31T07:45:46.628Z
       by: agent
       role: agent
     storyboard:
-      hash: 80388f181d7d
-      at: 2026-10-31T07:27:25.707Z
+      hash: d9a19eab2c93
+      at: 2026-10-31T07:45:46.997Z
       by: agent
       role: agent

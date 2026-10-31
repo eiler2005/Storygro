@@ -8,10 +8,10 @@ File: `.reel/ru/football-legends-08-law-ru.mp4` (relative to the spec)
 |---|---|---|
 | Codec and pixels | pass | h264, yuv420p |
 | Size | pass | 1080×1920 |
-| Audio track | pass | Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 198 kb/s (default) |
-| Length | pass | 82.26 s (planned 82.26 s) |
+| Audio track | pass | Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 199 kb/s (default) |
+| Length | pass | 83.03 s (planned 83.03 s) |
 | Loudness | pass | -14 LUFS integrated (target -14), true peak -1.1 dBFS |
-| Frame 0 is a hook | pass | contrast 3506 (needs content, not a black frame) |
+| Frame 0 is a hook | pass | contrast 3488 (needs content, not a black frame) |
 | No black stretches | pass | none ≥ 0.4 s |
 | Scenes render without errors | pass | 13 scenes, missing images/fonts included |
 | Numbers come from the facts | pass | 13 scenes read |

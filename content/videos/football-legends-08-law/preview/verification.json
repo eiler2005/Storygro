@@ -1,19 +1,19 @@
 {
- "duration": 82.26400000000001,
+ "duration": 83.03,
  "size": [
   1080,
   1920
  ],
  "fps": 30,
- "frames": 2466,
- "webFrames": 2466,
+ "frames": 2488,
+ "webFrames": 2488,
  "moments": 36,
- "masterSHA256": "1247b44454b1ffb124193bbe93abe0eae863767da440fb56129f977eaa0d6bfc",
+ "masterSHA256": "b0ebf6573a4b2089bbe872313c1bef05a170a42d62494c2b64d23c0b954392a9",
  "qa": "pass",
- "captionSamples": 161,
+ "captionSamples": 163,
  "reverseSeekSamples": 76,
  "layoutFailures": 0,
- "generations": 20,
+ "generations": 21,
  "selectedImages": 12,
  "voices": [
   {
@@ -84,8 +84,8 @@
   },
   {
    "scene": "team",
-   "file": "team-8af07790488a.wav",
-   "sha256": "62975b75bcccee5a493d47fa74310e77dc10a4263a09367fb690201143da46dc",
+   "file": "team-77d7926477e3.wav",
+   "sha256": "f248e6744b27ec1bfcb731b947f0cc1c589f3489582f85f28113c0b0d4096aa7",
    "matched": 1
   },
   {
@@ -95,7 +95,10 @@
    "matched": 1
   }
  ],
- "voiceListening": "Owner listening open; technical word matching does not establish stress or timbre approval.",
+ "changedVoiceScenes": [
+  "team"
+ ],
+ "voiceListening": "Owner listening of the revised line remains open. ASR and phoneme recognition alone are not stress approval.",
  "checks": [
   {
    "name": "Codec and pixels",
@@ -110,12 +113,12 @@
   {
    "name": "Audio track",
    "status": "pass",
-   "detail": "Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 198 kb/s (default)"
+   "detail": "Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 199 kb/s (default)"
   },
   {
    "name": "Length",
    "status": "pass",
-   "detail": "82.26 s (planned 82.26 s)"
+   "detail": "83.03 s (planned 83.03 s)"
   },
   {
    "name": "Loudness",
@@ -125,7 +128,7 @@
   {
    "name": "Frame 0 is a hook",
    "status": "pass",
-   "detail": "contrast 3506 (needs content, not a black frame)"
+   "detail": "contrast 3488 (needs content, not a black frame)"
   },
   {
    "name": "No black stretches",

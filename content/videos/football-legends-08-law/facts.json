@@ -1,19 +1,19 @@
 {
  "_about": "All displayed text and numbers are sourced data. See sources.md for quotations and scope.",
  "series": {
-  "_source": "Owner supplied episode8 script and first-frame player-name requirement, 31 October 2026.",
+  "_source": "Owner supplied episode8 script and first-frame player-name requirement, 31 October 2026. Owner nickname/metaphor cover request, 31 October 2026; nickname S5 https://www.denislawlegacytrust.org/printfield10/stop-9-manchester-united",
   "project": "Маленькие большие дела",
   "title": "Легенды футбола",
-  "episode": "Денис Лоу"
+  "episode": "Денис Лоу · «Король»"
  },
  "player": {
-  "_source": "[S1] https://app.francefootball.fr/ballon-d-or/palmares/; [S2] https://www.manutd.com/en/mutv/videos/detail/video-obituary-of-man-utd-icon-denis-law; [S4] https://www.premierleague.com/en/news/4115640",
+  "_source": "[S1] https://app.francefootball.fr/ballon-d-or/palmares/; [S2] https://www.manutd.com/en/mutv/videos/detail/video-obituary-of-man-utd-icon-denis-law; [S4] https://www.premierleague.com/en/news/4115640; [S5] https://www.denislawlegacytrust.org/printfield10/stop-9-manchester-united",
   "name": "Денис Лоу",
   "card": "1964 · Шотландия · Нападающий",
   "club": "«Манчестер Юнайтед»",
   "award": "«Золотой мяч» · 1964",
   "country": "Шотландия",
-  "nickname": "Король голов"
+  "nickname": "«Король»"
  },
  "stats": {
   "_source": "[S2] https://www.manutd.com/en/mutv/videos/detail/video-obituary-of-man-utd-icon-denis-law; all first-team Manchester United appearances, not league-only or entire career",

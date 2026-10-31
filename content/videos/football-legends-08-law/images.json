@@ -121,7 +121,7 @@
    },
    "sha256": "e75b9d6a632ae2db5f68b4c30bd0b845ff885de0e442ddc4ae4eaa5dae2b7c34",
    "createdAt": 1793431331556,
-   "selected": true,
+   "selected": false,
    "referenceRoles": "Young player identity/style; archival references only for period kit and specified older stadium detail. Source dates/limits in sources.md. Host reference, when present, locks fictional cast.",
    "revision": "Historical-detail pass after owner clarification: remove fantasy skyline; old Stretford End/period kit, grey northern atmosphere. Earlier draft retained in ledger only."
   },
@@ -364,6 +364,24 @@
    "createdAt": 1793431638179,
    "selected": true,
    "revision": "Move the single ball inside the central width; preserve period action and background."
+  },
+  "shots/cover-king.png": {
+   "prompt": "Use case: identity-preserve / precise-object-edit. First image is edit target, second locks original host faces and clothes. Create the recognizable comic COVER of Denis Law nicknamed THE KING: add a playful slightly oversized polished golden medieval paper-party-style crown, tilted a little on his blond hair. Warm good-natured humour: Law smiling bashfully as if surprised by being king; Matvey raccoonboy in original bluewhite football kit and BLUE white boots, Sofia squirrelgirl in original plumtracksuit laugh affectionately toward him. Keep Law's period plain scarlet crewneck shirt white cuffs/white shorts/blackwhite socks, no royal robe, keep same brown leather ball. Preserve actual old Stretford End covered terrace, low white picket railing, grey northern light, muddy turf, detailed 3D family animation, no fantasy palace. Move the entire three-character group slightly DOWN so the ENTIRE crown including top tip starts BELOW y43% of canvas; faces between y52% and y67%, central70%width; all faces/ears/crown unobscured. Upper42% remains sky/architecture for later code titlecard. Do NOT add any text, numbers, logos, badges, watermark or border. Full-bleed vertical9:16. ONE crown on Law only, anatomically correct separate hands/paws. It is an explicitly playful metaphor, not a historical coronation.",
+   "seed": 0,
+   "provider": "imagegen",
+   "model": "OpenAI built-in image generation (identifier not exposed)",
+   "width": 941,
+   "height": 1671,
+   "steps": 0,
+   "licence": "OpenAI image tool output; account terms apply. Seed 0 is a placeholder, not reproducible.",
+   "refs": {
+    "shots/cover-v2.png": "e75b9d6a632ae2db5f68b4c30bd0b845ff885de0e442ddc4ae4eaa5dae2b7c34",
+    "../../series/football-legends/cast/hosts-full.png": "49c92b4bca5df88e90d529034e158fb7a48a79de4c7f98d49ccf764944d2be35"
+   },
+   "sha256": "b6c8158b61347be91c9fecc6993874005a6b048c2420e623089227558dbf2daf",
+   "createdAt": 1793432639579,
+   "selected": true,
+   "revision": "Owner-requested playful nickname cover: symbolic tilted crown, same hosts/kit/historical backdrop; not a historical coronation."
   }
  }
 }

@@ -524,3 +524,10 @@ words:
   - word: Дэнис
     say: Д+энис
     source: 'https://ru.wikipedia.org/wiki/Лоу,_Денис: Де́нис Ло́у. Phonetic alias for this Scottish player, distinct from Russian Денис (Дени́с); use a display/pronunciation hint with stress off. Listening review remains required.'
+  - word: мастера
+    say: мастер+а
+    mark: false
+    # Plural nominative мастера́; singular genitive ма́стера (also after два/три/четыре).
+    # Context-dependent: record the norm, never globally force plural stress onto singular/count forms.
+    # OmniVoice/off uses an explicit pronunciation hint only in an unambiguous plural sentence.
+    source: 'https://gramota.ru/meta/master: nominative plural мастера́, genitive singular ма́стера; owner review and grammatical check, 31 October 2026. Episode8 rephrases три разных мастера as эти мастера с разными умениями before hinting мастерА.'

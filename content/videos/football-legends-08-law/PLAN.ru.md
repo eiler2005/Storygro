@@ -5,7 +5,7 @@
 | | |
 |---|---|
 | Статус | **сценарий** · ждёт тебя: одобрить сценарий |
-| Длительность | 82.3 с (по озвучке) · 13 сцен |
+| Длительность | 83.0 с (по озвучке) · 13 сцен |
 | Формат | 1080×1920, 30 fps · style `cartoon` |
 | Голос | omnivoice · assets/voice/narrator-ru.wav · 0.9 |
 | Серия | football-legends |
@@ -14,7 +14,7 @@
 
 | | | Кто и когда |
 |---|---|---|
-| Сценарий | ⚙️ техническое (агент) | agent 2026-10-31 |
+| Сценарий | ✏️ изменено после одобрения | agent 2026-10-31 |
 | Раскадровка | ⚙️ техническое (агент) | agent 2026-10-31 |
 | Выпуск | ⏳ ждёт |   |
 
@@ -22,10 +22,10 @@
 
 ## Вопросы
 
-- [ ] **owner** · Подходят ли имена Денис Лоу, Бобби Чарльтон, Джордж Бест и произношение чисел в готовом MP4?
-- [ ] **owner** · Подходят ли сходство футболистов, атмосфера старого «Олд Траффорд» и имя героя на первом кадре?
+- [ ] **owner** · Подходит ли произношение «эти мастера́ с разными умениями» в новой версии?
+- [ ] **owner** · Подходят ли прозвище «Король» и шутливая корона на заставке?
 
-**Заметки:** Owner script retained verbatim, except pasted source placeholders and section headings; numbers use pronunciation hints with unchanged captions. Frame zero adds the player name to the shared identity. Technical checks do not establish owner editorial or listening approval. Technical final: 82.26s, 13scenes, QA 15/15; both MP4 fully decoded (2466frames each), 36 inspected moments, feed/cover reviewed, 161 caption samples and 76 reverse seeks without geometry failures. 20 imagegen generations, 12 selected. Historical-detail pass, separate period club/national kits, distinct Trinity faces, old Stretford End, player name at frame zero; shifted action captions/statistics and moved clipped ball inside frame. Owner listening/editorial approval remains open. No publication.
+**Заметки:** Revision after owner listening/cover feedback, 31 October 2026: frame zero adds verified nickname The King/«Король» with a playful crown, same hosts and historical backdrop. The supplied body is retained except the team sentence: replace три разных мастера by эти мастера с разными умениями so plural мастера́ is unambiguous; explicit hint мастерА, same OmniVoice B0.90/off. Original counted form три ма́стера was grammatically valid; do not force plural stress onto count/singular forms globally. Prior V1 verification is historical; rerender and regenerate current metrics. Owner listening of revised line remains open. No publication. Current verification: 83.03s, QA15/15, both files decode 2488frames, 36 MP4 moments inspected, 163 caption samples/76 reverse seeks without failures. Only team narration changed; other12 voice file hashes match V1. 21 image generations/12 selected. Current crown cover/feed preview checked. Owner listening still open.
 
 ## Хук
 
@@ -41,11 +41,11 @@
 
 **Голос:** Представьте нападающего, который за карьеру в одном клубе забил больше двухсот голов.
 
-**На экране:** «Маленькие большие дела» · «Легенды футбола» · «Денис Лоу» · «shot»
+**На экране:** «Маленькие большие дела» · «Легенды футбола» · «Денис Лоу · «Король»» · «shot»
 
 **Звук:** swell @0.0, whoosh @3.0
 
-**Факты:** `facts.series.project` = «Маленькие большие дела» · `facts.series.title` = «Легенды футбола» · `facts.series.episode` = «Денис Лоу»
+**Факты:** `facts.series.project` = «Маленькие большие дела» · `facts.series.title` = «Легенды футбола» · `facts.series.episode` = «Денис Лоу · «Король»»
 
 ### 2. identity · 6.3–11.5 с · `illustration`
 
@@ -210,13 +210,13 @@
 
 **Факты:** `facts.skill.charlton` = «Чарльтон — дальний удар» · `facts.skill.best` = «Бест — дриблинг» · `facts.skill.law` = «Лоу — голевое чутьё»
 
-### 12. team · 68.7–74.9 с · `illustration`
+### 12. team · 68.7–75.7 с · `illustration`
 
 ![team: кадр в ключевой момент, затем картинки сцены по порядку](preview/plan/ru/team.jpg)
 
 <sub>кадр в ключевой момент, затем картинки сцены по порядку</sub>
 
-**Голос:** Вот почему футбол — командная игра: три разных мастера могли усиливать друг друга.
+**Голос:** Вот почему футбол — командная игра: эти мастера с разными умениями могли усиливать друг друга.
 
 **На экране:** «Разные умения — одна команда»
 
@@ -226,7 +226,7 @@
 
 **Факты:** `facts.skill.team` = «Разные умения — одна команда»
 
-### 13. question · 74.9–82.3 с · `illustration`
+### 13. question · 75.7–83.0 с · `illustration`
 
 ![question: кадр в ключевой момент, затем картинки сцены по порядку](preview/plan/ru/question.jpg)
 
@@ -248,8 +248,8 @@
 
 | | |
 |---|---|
-| `facts.series` | Owner supplied episode8 script and first-frame player-name requirement, 31 October 2026. |
-| `facts.player` | [S1] https://app.francefootball.fr/ballon-d-or/palmares/; [S2] https://www.manutd.com/en/mutv/videos/detail/video-obituary-of-man-utd-icon-denis-law; [S4] https://www.premierleague.com/en/news/4115640 |
+| `facts.series` | Owner supplied episode8 script and first-frame player-name requirement, 31 October 2026. Owner nickname/metaphor cover request, 31 October 2026; nickname S5 https://www.denislawlegacytrust.org/printfield10/stop-9-manchester-united |
+| `facts.player` | [S1] https://app.francefootball.fr/ballon-d-or/palmares/; [S2] https://www.manutd.com/en/mutv/videos/detail/video-obituary-of-man-utd-icon-denis-law; [S4] https://www.premierleague.com/en/news/4115640; [S5] https://www.denislawlegacytrust.org/printfield10/stop-9-manchester-united |
 | `facts.stats` | [S2] https://www.manutd.com/en/mutv/videos/detail/video-obituary-of-man-utd-icon-denis-law; all first-team Manchester United appearances, not league-only or entire career |
 | `facts.skill` | [S3] https://www.tottenhamhotspur.com/news/1060505/cliffs-united-memories-the-united-trinity; owner script |
 | `facts.story` | Owner supplied episode8 script and first-frame player-name requirement, 31 October 2026. |
@@ -263,3 +263,5 @@
 > Чарльтон, Бест и Лоу: разные умения помогают одной команде. А что выбрал бы ты?
 >
 > Выпуск 8 проекта «Маленькие большие дела · Легенды футбола». Источники: France Football, Manchester United, Premier League, Tottenham Hotspur (воспоминания Клиффа Джонса). Иллюстрации созданы встроенным GPT Image; игровые действия, свет и атмосфера — художественная интерпретация, не запись конкретного матча. Архивный ориентир: Hugo van Gelderen / Anefo, Nationaal Archief, CC0. Голос рассказчика синтетический (OmniVoice).
+>
+> Прозвище Лоу — «Король» (The King); корона на заставке — шутливая метафора, а не исторический факт о костюме.

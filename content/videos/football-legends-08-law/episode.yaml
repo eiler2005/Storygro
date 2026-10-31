@@ -1,0 +1,9 @@
+episode: 1
+id: football-legends-08-law
+title: Денис Лоу — король голов
+series: football-legends
+sources: sources.md
+credits: CREDITS.md
+variants:
+  - id: ru
+    spec: ru.reel.yaml

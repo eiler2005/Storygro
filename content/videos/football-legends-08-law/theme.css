@@ -1,0 +1,6 @@
+@import url('/rc/styles/cartoon/football-legends.css');
+/* Old Trafford: scarlet, brick, petrol sky and ivory northern light. */
+:root { --fl-ink:#263d49; --fl-paper:#fff4dd; --fl-gold:#efc655; --fl-caption-bottom:490px; --ct-ink:#263d49; --ct-band:#fff4dd; --ct-navy:#263d49; --ct-accent:#cd493b; --kt-ink:#fff4dd; --kt-accent:#efc655; --kt-accent2:#9fd7d5; }
+/* Keep action captions above the boot/ball; the opening identity retains its lower caption. */
+body:has(.rc-scene--moment:not([style*="display: none"]), .rc-scene--position:not([style*="display: none"]), .rc-scene--second:not([style*="display: none"]), .rc-scene--talents:not([style*="display: none"])) .rc-caption,
+body:has(.rc-scene--hook:not([style*="display: none"]) .fl-series-cover[style*="visibility: hidden"]) .rc-caption { top:450px !important; bottom:auto !important; }

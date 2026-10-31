@@ -1,0 +1,400 @@
+reel: 1
+style: cartoon
+title: Денис Лоу — король голов
+lang: ru
+format:
+  preset: vertical
+  width: 1080
+  height: 1920
+  fps: 30
+safe: reels
+voice:
+  engine: omnivoice
+  model: k2-fsa/OmniVoice
+  voice: assets/voice/narrator-ru.wav
+  speed: 0.9
+  stress: off
+music:
+  bpm: 122
+  key: C
+  progression:
+    - I
+    - V
+    - vi
+    - IV
+  gain: 0.1
+  drop: position
+loudness: -14
+theme: theme.css
+captions:
+  show: true
+  maxWords: 3
+transition:
+  kind: cut
+  dur: 0
+data:
+  facts: facts.json
+stills:
+  cover: hook@0
+  final: award@1
+  hosts: question@1
+images:
+  provider: manual
+  model: OpenAI built-in GPT Image (identifier not exposed)
+  seed: 0
+  width: 1088
+  height: 1920
+  prompt: "{subject}. Detailed family3D historical football art. Exact prompts and reference hashes in
+    images.json. No generated text, numerals or logos."
+post:
+  title: Легенды футбола · Денис Лоу
+  text: >-
+    Сильный удар или вовремя оказаться в нужном месте? Матвей и София знакомятся с Денисом Лоу — обладателем
+    «Золотого мяча» 1964 года. За «Манчестер Юнайтед» он забил 237 голов в 404 матчах во всех турнирах.
+
+
+    Чарльтон, Бест и Лоу: разные умения помогают одной команде. А что выбрал бы ты?
+
+
+    Выпуск 8 проекта «Маленькие большие дела · Легенды футбола». Источники: France Football, Manchester
+    United, Premier League, Tottenham Hotspur (воспоминания Клиффа Джонса). Иллюстрации созданы встроенным GPT
+    Image; игровые действия, свет и атмосфера — художественная интерпретация, не запись конкретного матча.
+    Архивный ориентир: Hugo van Gelderen / Anefo, Nationaal Archief, CC0. Голос рассказчика синтетический
+    (OmniVoice).
+  tags:
+    - футбол
+    - детям
+    - легендыфутбола
+    - денислоу
+    - манчестерюнайтед
+    - золотоймяч
+scenes:
+  - id: hook
+    scene: series-cover
+    say: Представьте нападающего, который за карьеру {#shot}в одном клубе забил больше двухсот голов.
+    pad:
+      - 0.05
+      - 0.28
+    energy: 0.85
+    props:
+      image: shots/cover-v2.png
+      projectFrom: facts.series.project
+      titleFrom: facts.series.title
+      subtitleFrom: facts.series.episode
+      emblem: /rc/styles/cartoon/golden-ball.svg
+      reveal: shots/rebound-v2.png
+      revealAt: shot
+    sfx:
+      - at: start
+        kind: swell
+        gain: 0.18
+      - at: shot
+        kind: whoosh
+        gain: 0.12
+  - id: identity
+    scene: illustration
+    say: Так играл [Денис](=дЭнис) Лоу — один из самых знаменитых футболистов «Манчестер Юнайтед»!
+    pad:
+      - 0.12
+      - 0.28
+    energy: 0.75
+    props:
+      shots:
+        - image: shots/portrait-v2.png
+          move: in
+          zoom: 0.018
+          focus:
+            x: 0.5
+            y: 0.5
+      labels:
+        - textFrom: facts.player.name
+          x: 0.46
+          y: 0.19
+          at: -1
+          tone: navy
+  - id: scotland
+    scene: illustration
+    say: Он родился в Шотландии и представлял шотландскую сборную.
+    pad:
+      - 0.12
+      - 0.28
+    energy: 0.75
+    props:
+      shots:
+        - image: shots/scotland-v2.png
+          move: in
+          zoom: 0.018
+          focus:
+            x: 0.5
+            y: 0.5
+      labels:
+        - textFrom: facts.player.country
+          x: 0.46
+          y: 0.19
+          at: -1
+          tone: navy
+  - id: award
+    scene: illustration
+    say: В [1964](=тысяча девятьсот шестьдесят четвёртом) году Лоу получил «Золотой мяч», выступая за «Манчестер
+      Юнайтед».
+    pad:
+      - 0.12
+      - 0.28
+    energy: 0.75
+    props:
+      shots:
+        - image: shots/award-v2.png
+          move: in
+          zoom: 0.018
+          focus:
+            x: 0.5
+            y: 0.5
+      labels:
+        - textFrom: facts.player.award
+          x: 0.46
+          y: 0.19
+          at: -1
+          tone: navy
+    sfx:
+      - at: start
+        kind: chime
+        gain: 0.16
+  - id: moment
+    scene: illustration
+    say: Лоу был нападающим, который умел быстро находить момент для удара.
+    pad:
+      - 0.12
+      - 0.28
+    energy: 0.75
+    props:
+      shots:
+        - image: shots/strike-v3.png
+          move: in
+          zoom: 0.018
+          focus:
+            x: 0.5
+            y: 0.5
+      labels:
+        - textFrom: facts.skill.moment
+          x: 0.46
+          y: 0.19
+          at: -1
+          tone: navy
+  - id: position
+    scene: illustration
+    say: Он мог оказаться рядом с воротами, когда защитники отвлеклись, {#rebound}или первым добежать до мяча
+      после отскока.
+    pad:
+      - 0.12
+      - 0.28
+    energy: 0.75
+    props:
+      shots:
+        - image: shots/run.png
+          move: in
+          zoom: 0.018
+          focus:
+            x: 0.5
+            y: 0.5
+        - image: shots/rebound-v2.png
+          at: rebound
+          move: in
+          zoom: 0.018
+          focus:
+            x: 0.5
+            y: 0.5
+      labels:
+        - textFrom: facts.skill.rebound
+          x: 0.46
+          y: 0.19
+          at: rebound
+          tone: navy
+    sfx:
+      - at: rebound
+        kind: whoosh
+        gain: 0.12
+  - id: second
+    scene: illustration
+    say: "В футболе такое умение очень важно: иногда на размышления остаётся всего одна секунда!"
+    pad:
+      - 0.12
+      - 0.28
+    energy: 0.75
+    props:
+      shots:
+        - image: shots/strike-v3.png
+          move: in
+          zoom: 0.018
+          focus:
+            x: 0.5
+            y: 0.5
+      labels:
+        - textFrom: facts.story.second
+          x: 0.46
+          y: 0.19
+          at: -1
+          tone: navy
+  - id: club
+    scene: illustration
+    say: За время игры за «Манчестер Юнайтед» Лоу забил [237](=двести тридцать семь) голов в [404](=четырёхстах
+      четырёх) матчах. Это впечатляющий результат!
+    pad:
+      - 0.12
+      - 0.28
+    energy: 0.75
+    props:
+      shots:
+        - image: shots/celebration.png
+          move: in
+          zoom: 0.018
+          focus:
+            x: 0.5
+            y: 0.5
+      labels:
+        - textFrom: facts.stats.total
+          x: 0.46
+          y: 0.55
+          at: -1
+          tone: navy
+    sfx:
+      - at: start
+        kind: pop
+        gain: 0.13
+  - id: trinity
+    scene: illustration
+    say: Вместе с Бобби Чарльтоном и Джорджем Бестом он вошёл в знаменитую атакующую тройку клуба.
+    pad:
+      - 0.12
+      - 0.28
+    energy: 0.75
+    props:
+      shots:
+        - image: shots/trinity.png
+          move: in
+          zoom: 0.018
+          focus:
+            x: 0.5
+            y: 0.5
+      labels: []
+  - id: different
+    scene: illustration
+    say: У каждого из этой троицы было своё особенное качество.
+    pad:
+      - 0.12
+      - 0.28
+    energy: 0.75
+    props:
+      shots:
+        - image: shots/trinity.png
+          move: left
+          zoom: 0.018
+          focus:
+            x: 0.5
+            y: 0.5
+      labels: []
+  - id: talents
+    scene: illustration
+    say: Чарльтон отлично бил издалека, {#best}Бест славился дриблингом, {#law}а Лоу умел находить путь к воротам.
+    pad:
+      - 0.12
+      - 0.28
+    energy: 0.75
+    props:
+      shots:
+        - image: shots/charlton.png
+          move: in
+          zoom: 0.018
+          focus:
+            x: 0.5
+            y: 0.5
+        - image: shots/best.png
+          at: best
+          move: in
+          zoom: 0.018
+          focus:
+            x: 0.5
+            y: 0.5
+        - image: shots/strike-v3.png
+          at: law
+          move: in
+          zoom: 0.018
+          focus:
+            x: 0.5
+            y: 0.5
+      labels:
+        - textFrom: facts.skill.charlton
+          x: 0.46
+          y: 0.19
+          at: -1
+          tone: navy
+          until: best
+        - textFrom: facts.skill.best
+          x: 0.46
+          y: 0.19
+          at: best
+          tone: navy
+          until: law
+        - textFrom: facts.skill.law
+          x: 0.46
+          y: 0.19
+          at: law
+          tone: navy
+  - id: team
+    scene: illustration
+    say: "Вот почему футбол — командная игра: три разных мастера могли усиливать друг друга."
+    pad:
+      - 0.12
+      - 0.28
+    energy: 0.75
+    props:
+      shots:
+        - image: shots/trinity.png
+          move: in
+          zoom: 0.018
+          focus:
+            x: 0.5
+            y: 0.5
+      labels:
+        - textFrom: facts.skill.team
+          x: 0.46
+          y: 0.19
+          at: -1
+          tone: navy
+  - id: question
+    scene: illustration
+    say: "Что помогает забивать больше: {#power}сильный удар или {#position}умение вовремя оказаться в нужном
+      месте?"
+    pad:
+      - 0.15
+      - 1.2
+    energy: 0.75
+    props:
+      shots:
+        - image: shots/question-v2.png
+          move: in
+          zoom: 0.018
+          focus:
+            x: 0.5
+            y: 0.5
+      labels:
+        - textFrom: facts.story.question
+          x: 0.46
+          y: 0.19
+          at: -1
+          tone: navy
+          until: power
+        - textFrom: facts.story.power
+          x: 0.46
+          y: 0.19
+          at: power
+          tone: navy
+          until: position
+        - textFrom: facts.story.position
+          x: 0.46
+          y: 0.19
+          at: position
+          tone: navy
+    sfx:
+      - at: start
+        kind: chime
+        gain: 0.12

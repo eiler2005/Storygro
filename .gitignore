@@ -20,6 +20,7 @@ latest_silero_models.yml
 
 # local-only notes (never committed)
 /private/
+/content/videos/*/private/
 
 # Generated media/exports never belong in public Git; use local .reel or release/object storage.
 *.[mM][pP]4

@@ -496,3 +496,31 @@ words:
   - word: Яшина
     say: +Яшина
     source: 'ru.wiktionary, «Яшин»: «…м. ж. Им. Я́шин Я́шина Я́шины Р. Я́шина Я́шиной…» (storygro stress --lookup, 2026-10-30)'
+  - word: Лоу
+    say: Л+оу
+    source: 'ru.wikipedia, «Лоу, Денис»: «…Де́нис Ло́у (англ. Denis Law; 24 февраля 1940, Абер…» (storygro stress --lookup, 2026-10-31)'
+  - word: Манчестер
+    say: Манч+естер
+    source: 'ru.wikipedia, «Манчестер Юнайтед»: «…«Манче́стер Юна́йтед» (полное название — Футбольный…» (storygro stress --lookup, 2026-10-31)'
+  - word: Юнайтед
+    say: Юн+айтед
+    source: 'ru.wikipedia, «Манчестер Юнайтед»: «…«Манче́стер Юна́йтед» (полное название — Футбольный клуб «Ма…» (storygro stress --lookup, 2026-10-31)'
+  - word: Шотландии
+    say: Шотл+андии
+    source: 'ru.wiktionary, «Шотландия»: «…Им. Шотла́ндия — Р. Шотла́ндии — Д. Шотла́ндии —…» (storygro stress --lookup, 2026-10-31)'
+  - word: Бобби
+    say: Б+обби
+    source: 'ru.wikipedia, «Чарльтон, Бобби»: «…— 21 октября 2023), более известный как Бо́бби Ча́рльтон (англ. Bobby Charlton) — англ…» (storygro stress --lookup, 2026-10-31)'
+  - word: Джорджем
+    say: Дж+орджем
+    source: 'ru.wiktionary, «Джордж»: «…Джо́рджа Джо́рджей Тв. Джо́рджем Джо́рджами Пр. Джо́рдже…» (storygro stress --lookup, 2026-10-31)'
+  - word: Бестом
+    say: Б+естом
+    source: 'George Best, monosyllabic surname; https://ru.wikipedia.org/wiki/Бест,_Джордж (31 October 2026). Replaces lookup of the unrelated common noun бест.'
+  - word: Чарльтон
+    say: Ч+арльтон
+    forms: [Чарльтоном]
+    source: 'https://ru.wikipedia.org/wiki/Чарльтон,_Бобби: Бо́бби Ча́рльтон; checked lookup 31 October 2026.'
+  - word: Дэнис
+    say: Д+энис
+    source: 'https://ru.wikipedia.org/wiki/Лоу,_Денис: Де́нис Ло́у. Phonetic alias for this Scottish player, distinct from Russian Денис (Дени́с); use a display/pronunciation hint with stress off. Listening review remains required.'

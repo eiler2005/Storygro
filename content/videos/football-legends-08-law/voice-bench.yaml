@@ -1,0 +1,17 @@
+bench: 1
+language: ru
+candidates:
+  - id: selected
+    engine: omnivoice
+    model: k2-fsa/OmniVoice
+    voice: assets/voice/narrator-ru.wav
+    speed: 0.90
+    stress: off
+    stress_style: none
+sentences:
+  - id: player
+    text: Так играл дЭнис Лоу — один из самых знаменитых футболистов Манчестер Юнайтед.
+  - id: trinity
+    text: Вместе с Бобби Чарльтоном и Джорджем Бестом он вошёл в знаменитую атакующую тройку клуба.
+  - id: totals
+    text: За время игры за Манчестер Юнайтед Лоу забил двести тридцать семь голов в четырёхстах четырёх матчах.

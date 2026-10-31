@@ -1,0 +1,369 @@
+{
+ "files": {
+  "shots/portrait.png": {
+   "prompt": "Use case: historical-scene. Asset: premium family 3D animated-film illustration, vertical 9:16. Young Scottish footballer DENIS LAW in Manchester United around 1964, authentic angular narrow face, blond swept tousled forelock, long straight nose, slightly prominent ears, lean athletic adult, NOT modern player. First reference is archival period kit and appearance guide (fair-haired crouching United man near right); second is visual style guide only, no animals in this portrait. Early1960s plain scarlet long-sleeve shirt white crew neck and cuffs, white shorts, black socks with white turnover, old black leather boots. Three-quarter standing portrait waist up, clutching plain brown stitched leather football, warm irreverent smile. Face centered x48% y49%, entire head below y35%, enough uncluttered cool sky and low corrugated stand in upper35% for later data overlays. Old Trafford in the early1960s: low steel-column covered terraces, red brick, no modern huge stadium, no modern signage, industrial Manchester mist. Palette scarlet, warm brick, petrol blue, ivory daylight, rich green turf. Extremely detailed textiles and skin yet clearly stylized animation. No generated text, numbers, letters, badges, crests, logos, watermarks or borders. Full-bleed background.",
+   "seed": 0,
+   "provider": "imagegen",
+   "model": "OpenAI built-in image generation (identifier not exposed)",
+   "width": 941,
+   "height": 1672,
+   "steps": 0,
+   "licence": "OpenAI image tool output; account terms apply. Seed 0 is a placeholder, not reproducible.",
+   "refs": {
+    "private/united-1963.jpg": "f94a030c93d7587c3959350305f846e9a5ef0d566486136163f290a0d15fe190",
+    "../../series/football-legends/cast/hosts-full.png": "49c92b4bca5df88e90d529034e158fb7a48a79de4c7f98d49ccf764944d2be35"
+   },
+   "sha256": "d1d94ecfab39d31962f7ded2c5319ff4660fd9985d7e2c8670bd18ddfe48c881",
+   "createdAt": 1793431331507,
+   "selected": false,
+   "referenceRoles": "Young player identity/style; archival references only for period kit and specified older stadium detail. Source dates/limits in sources.md. Host reference, when present, locks fictional cast."
+  },
+  "shots/cover.png": {
+   "prompt": "Use case: illustration-story / historical-scene. Premium highly detailed family 3D animated-film illustration, vertical 9:16 full bleed, no lettering numerals logos badges watermark borders. Reference1 locks young Denis Law's face and blond hair, reference2 locks original hosts Matvey blue/white raccoon boy and Sofia plum tracksuit squirrel girl; keep exact cast. 1960s Old Trafford with low corrugated steel terrace roofs and redbrick, no modern huge stands, period plain scarlet shirt white neck/cuffs, white shorts black socks with white turnover, brown stitched leather ball, black leather boots. Rich scarlet, brick, petrol sky, emerald turf, luminous ivory daylight. First-frame cover background ONLY with no text. ALL characters placed ONLY in lower middle: their entire heads AND ear tips between y44% and y64% canvas (this is critical, leave upper43% sky and empty architecture); three waist-up friends form a warm triangular composition: Denis Law x48% y52% face, raccoon Matvey x23% y60% face, Sofia x73% y59% face. Their faces fit central square crop. Denis holding a brown leather ball at y74%, hosts astonished at his story. Slightly wide camera, bodies cropped at bottom naturally. Upper43% completely unobstructed stadium sky reserved for an external titlecard. No trophy in this cover, emblem added by code.",
+   "seed": 0,
+   "provider": "imagegen",
+   "model": "OpenAI built-in image generation (identifier not exposed)",
+   "width": 941,
+   "height": 1672,
+   "steps": 0,
+   "licence": "OpenAI image tool output; account terms apply. Seed 0 is a placeholder, not reproducible.",
+   "refs": {
+    "../../../../../.codex/generated_images/01a188e1-81ca-7ce1-8a50-36bd8d134d29/exec-712ae546-b599-46af-a269-cd3d33265eb6.png": "d1d94ecfab39d31962f7ded2c5319ff4660fd9985d7e2c8670bd18ddfe48c881",
+    "../../series/football-legends/cast/hosts-full.png": "49c92b4bca5df88e90d529034e158fb7a48a79de4c7f98d49ccf764944d2be35"
+   },
+   "sha256": "94258fce5021fe3cb0a78a43d1d726ad33c9a8bc5c3df63a2a70d3f4dc859692",
+   "createdAt": 1793431331518,
+   "selected": false,
+   "referenceRoles": "Young player identity/style; archival references only for period kit and specified older stadium detail. Source dates/limits in sources.md. Host reference, when present, locks fictional cast."
+  },
+  "shots/rebound.png": {
+   "prompt": "Use case: illustration-story / historical-scene. Premium highly detailed family 3D animated-film illustration, vertical 9:16 full bleed, no lettering numerals logos badges watermark borders. Reference1 locks young Denis Law's face and blond hair, reference2 locks original hosts Matvey blue/white raccoon boy and Sofia plum tracksuit squirrel girl; keep exact cast. 1960s Old Trafford with low corrugated steel terrace roofs and redbrick, no modern huge stands, period plain scarlet shirt white neck/cuffs, white shorts black socks with white turnover, brown stitched leather ball, black leather boots. Rich scarlet, brick, petrol sky, emerald turf, luminous ivory daylight. Dramatic ground-level view of a loose brown stitched leather ball bouncing off damp turf at x43% y68%, Denis Law at x48% head y43% surging forward beyond two DISTINCT defenders in plain white shirts navy shorts. Everyone has separate bodies and correct two arms/two legs, no animal hosts in this shot. White goal and green-clad goalkeeper in background on RIGHT, direction of attack clear. Ball between Law and goal, not already in net. Dynamic splashes and anticipation. Keep upper25% uncluttered sky, all full heads below25% and central70% width. Action in middle y40–75%, lower20% turf.",
+   "seed": 0,
+   "provider": "imagegen",
+   "model": "OpenAI built-in image generation (identifier not exposed)",
+   "width": 941,
+   "height": 1672,
+   "steps": 0,
+   "licence": "OpenAI image tool output; account terms apply. Seed 0 is a placeholder, not reproducible.",
+   "refs": {
+    "../../../../../.codex/generated_images/01a188e1-81ca-7ce1-8a50-36bd8d134d29/exec-712ae546-b599-46af-a269-cd3d33265eb6.png": "d1d94ecfab39d31962f7ded2c5319ff4660fd9985d7e2c8670bd18ddfe48c881",
+    "../../series/football-legends/cast/hosts-full.png": "49c92b4bca5df88e90d529034e158fb7a48a79de4c7f98d49ccf764944d2be35"
+   },
+   "sha256": "c007c154e2d0b5f57663d37b12f19cfae3d565329abd242c3afa5e2e15fa34c2",
+   "createdAt": 1793431331528,
+   "selected": false,
+   "referenceRoles": "Young player identity/style; archival references only for period kit and specified older stadium detail. Source dates/limits in sources.md. Host reference, when present, locks fictional cast."
+  },
+  "shots/strike.png": {
+   "prompt": "Use case: historical-scene. Premium detailed family3D animated-film art, vertical 9:16 full-bleed. Reference locks young Denis Law's distinctive angular face, prominent ears and tousled straw blond hair. Authentic adult slim footballer, no beard. 1960s low-roof Old Trafford with steel pillars brick terraces (not modern), scarlet long sleeve white crewneck and cuffs, white shorts, black socks white turnover, plain black boots, brown stitched leather ball. Rich scarlet brick green turf and petrol sky, luminous northern daylight. Keep ALL heads below y27% and within central70% width, upper24% clear sky for external overlays. NO text numerals lettering sponsor crest logos watermark or borders. Dramatic side-on medium-wide action: Law just striking the ball with his RIGHT instep toward goal at right; supporting LEFT foot planted, two arms balanced, both legs clearly distinct, accurate human anatomy. Brown leather ball separate just after impact at x65% y65%, Law head x40% y38%. Goal visible right, keeper diving toward ball in distant background, two white/navy opposing defenders left behind. Mud and blades of grass frozen in air. Show space to goal, no cut feet. Lower22% mostly turf.",
+   "seed": 0,
+   "provider": "imagegen",
+   "model": "OpenAI built-in image generation (identifier not exposed)",
+   "width": 941,
+   "height": 1672,
+   "steps": 0,
+   "licence": "OpenAI image tool output; account terms apply. Seed 0 is a placeholder, not reproducible.",
+   "refs": {
+    "../../../../../.codex/generated_images/01a188e1-81ca-7ce1-8a50-36bd8d134d29/exec-712ae546-b599-46af-a269-cd3d33265eb6.png": "d1d94ecfab39d31962f7ded2c5319ff4660fd9985d7e2c8670bd18ddfe48c881"
+   },
+   "sha256": "09e776fa4c8a4f0346e3b39efa6bc6be0693fbcd908f79ac05003d480fadab4d",
+   "createdAt": 1793431331536,
+   "selected": false,
+   "referenceRoles": "Young player identity/style; archival references only for period kit and specified older stadium detail. Source dates/limits in sources.md. Host reference, when present, locks fictional cast."
+  },
+  "shots/scotland.png": {
+   "prompt": "Use case: historical-scene. Premium detailed family3D animated-film art, vertical 9:16 full-bleed. Reference locks young Denis Law's distinctive angular face, prominent ears and tousled straw blond hair. Authentic adult slim footballer, no beard. 1960s low-roof Old Trafford with steel pillars brick terraces (not modern), scarlet long sleeve white crewneck and cuffs, white shorts, black socks white turnover, plain black boots, brown stitched leather ball. Rich scarlet brick green turf and petrol sky, luminous northern daylight. Keep ALL heads below y27% and within central70% width, upper24% clear sky for external overlays. NO text numerals lettering sponsor crest logos watermark or borders. National-team scene INSTEAD OF red club kit: Denis Law wearing plain DARK NAVY long-sleeve white crewneck shirt and WHITE shorts for SCOTLAND, brown leather ball at hip, looks resolute. Background old Scottish ground brick terraces and distant sandstone architecture, blue flag with a white diagonal cross but absolutely no other lettering. Waist-up, head x48% y43%, upper30% clear sky. No club red, no animals.",
+   "seed": 0,
+   "provider": "imagegen",
+   "model": "OpenAI built-in image generation (identifier not exposed)",
+   "width": 941,
+   "height": 1672,
+   "steps": 0,
+   "licence": "OpenAI image tool output; account terms apply. Seed 0 is a placeholder, not reproducible.",
+   "refs": {
+    "../../../../../.codex/generated_images/01a188e1-81ca-7ce1-8a50-36bd8d134d29/exec-712ae546-b599-46af-a269-cd3d33265eb6.png": "d1d94ecfab39d31962f7ded2c5319ff4660fd9985d7e2c8670bd18ddfe48c881"
+   },
+   "sha256": "b67f3888bcac74597597f1c9fa1eb4d890c8f74a88ead8eff097b3ba213a865f",
+   "createdAt": 1793431331543,
+   "selected": false,
+   "referenceRoles": "Young player identity/style; archival references only for period kit and specified older stadium detail. Source dates/limits in sources.md. Host reference, when present, locks fictional cast."
+  },
+  "shots/award.png": {
+   "prompt": "Use case: historical-scene. Premium detailed family3D animated-film art, vertical 9:16 full-bleed. Reference locks young Denis Law's distinctive angular face, prominent ears and tousled straw blond hair. Authentic adult slim footballer, no beard. 1960s low-roof Old Trafford with steel pillars brick terraces (not modern), scarlet long sleeve white crewneck and cuffs, white shorts, black socks white turnover, plain black boots, brown stitched leather ball. Rich scarlet brick green turf and petrol sky, luminous northern daylight. Keep ALL heads below y27% and within central70% width, upper24% clear sky for external overlays. NO text numerals lettering sponsor crest logos watermark or borders. Period intimate award portrait: Law in scarlet shirt white crewneck holding a golden textured football on a rough rock-shaped base at x48% y66%, face at x48% y43%. Softly lit redbrick Old Trafford corridor opening onto vintage pitch behind, warm ivory light from left, petrol blue shadows. Hair entirely below30% canvas. One trophy, two anatomically correct hands, no animal hosts, no wording on trophy, no famous official logo. Lower20% dark clear fabric/background for captions.",
+   "seed": 0,
+   "provider": "imagegen",
+   "model": "OpenAI built-in image generation (identifier not exposed)",
+   "width": 941,
+   "height": 1672,
+   "steps": 0,
+   "licence": "OpenAI image tool output; account terms apply. Seed 0 is a placeholder, not reproducible.",
+   "refs": {
+    "../../../../../.codex/generated_images/01a188e1-81ca-7ce1-8a50-36bd8d134d29/exec-712ae546-b599-46af-a269-cd3d33265eb6.png": "d1d94ecfab39d31962f7ded2c5319ff4660fd9985d7e2c8670bd18ddfe48c881"
+   },
+   "sha256": "575d57792b569cb0df9f3c350e1da0f40494753749a63023744d8922fe31208a",
+   "createdAt": 1793431331550,
+   "selected": false,
+   "referenceRoles": "Young player identity/style; archival references only for period kit and specified older stadium detail. Source dates/limits in sources.md. Host reference, when present, locks fictional cast."
+  },
+  "shots/cover-v2.png": {
+   "prompt": "Use case: historical-scene / illustration-story. Premium detailed family3D animation, vertical9:16 full bleed. Reference1 Denis Law young face/lean adult/blond forelock; reference2 ARCHITECTURE reference only (Old Trafford aerial1966: use the LOWER NEAR END, the old Stretford End covered terrace; do NOT use later cantilever side stand). Set scene1964: flat shallow sloping single-tier gray corrugated Stretford End roof with widely spaced thin steel supports, dense standing crowd in dark wool coats and caps, pale low pitch perimeter picket railing, muddy goalmouth, pale gray northern sky, one distant lattice floodlight mast. No tall decorative apartment blocks directly behind roof, no repeated chimneys or churches, no modern stands/LED displays. MU plain scarlet long sleeves white crewneck/cuffs, white shorts, black socks broad white turnover, black leather boots; period brown stitched rectangular-panel leather football. Keep heads fully below25% canvas, center70%width. Muted authentic atmosphere with luminous scarlet accents; fine mud wool cotton details, stylized faces. NO text letters numbers crests sponsor logos watermarks borders. Recompose cover background: hosts from reference3 (exact blue-kit Matvey raccoon and plum-tracksuit Sofia squirrel) seated with smiling Law on pitch edge. ALL head tops and ear tips below44% canvas, faces in central square y50–66%; Law x48%, Matvey x23%, Sofia x74%. Upper43% open overcast sky reserved for external titlecard. Brown ball held at y76%. Atmospheric covered Stretford End behind at y40–58%. No lettering. Keep hosts hands/paws anatomically distinct.",
+   "seed": 0,
+   "provider": "imagegen",
+   "model": "OpenAI built-in image generation (identifier not exposed)",
+   "width": 941,
+   "height": 1672,
+   "steps": 0,
+   "licence": "OpenAI image tool output; account terms apply. Seed 0 is a placeholder, not reproducible.",
+   "refs": {
+    "shots/portrait.png": "d1d94ecfab39d31962f7ded2c5319ff4660fd9985d7e2c8670bd18ddfe48c881",
+    "private/old-trafford-1966.jpg": "4264cb1e6eb7d0cb1d9063c6ba3ebaa15b24a1d6d1cc9153588a98013c1fa84b",
+    "../../series/football-legends/cast/hosts-full.png": "49c92b4bca5df88e90d529034e158fb7a48a79de4c7f98d49ccf764944d2be35"
+   },
+   "sha256": "e75b9d6a632ae2db5f68b4c30bd0b845ff885de0e442ddc4ae4eaa5dae2b7c34",
+   "createdAt": 1793431331556,
+   "selected": true,
+   "referenceRoles": "Young player identity/style; archival references only for period kit and specified older stadium detail. Source dates/limits in sources.md. Host reference, when present, locks fictional cast.",
+   "revision": "Historical-detail pass after owner clarification: remove fantasy skyline; old Stretford End/period kit, grey northern atmosphere. Earlier draft retained in ledger only."
+  },
+  "shots/portrait-v2.png": {
+   "prompt": "Use case: historical-scene / illustration-story. Premium detailed family3D animation, vertical9:16 full bleed. Reference1 Denis Law young face/lean adult/blond forelock; reference2 ARCHITECTURE reference only (Old Trafford aerial1966: use the LOWER NEAR END, the old Stretford End covered terrace; do NOT use later cantilever side stand). Set scene1964: flat shallow sloping single-tier gray corrugated Stretford End roof with widely spaced thin steel supports, dense standing crowd in dark wool coats and caps, pale low pitch perimeter picket railing, muddy goalmouth, pale gray northern sky, one distant lattice floodlight mast. No tall decorative apartment blocks directly behind roof, no repeated chimneys or churches, no modern stands/LED displays. MU plain scarlet long sleeves white crewneck/cuffs, white shorts, black socks broad white turnover, black leather boots; period brown stitched rectangular-panel leather football. Keep heads fully below25% canvas, center70%width. Muted authentic atmosphere with luminous scarlet accents; fine mud wool cotton details, stylized faces. NO text letters numbers crests sponsor logos watermarks borders. Waist-up Law portrait at pitch edge: head centered x48% y46%, entire hair below29% canvas; face subtle realistic stylized narrower jaw and prominent ears, confident smile. Brown ball held at hip y72%. Upper25% pale gray sky, Stretford End roof in distance around y40%. No hosts. All face inside central square.",
+   "seed": 0,
+   "provider": "imagegen",
+   "model": "OpenAI built-in image generation (identifier not exposed)",
+   "width": 941,
+   "height": 1672,
+   "steps": 0,
+   "licence": "OpenAI image tool output; account terms apply. Seed 0 is a placeholder, not reproducible.",
+   "refs": {
+    "shots/portrait.png": "d1d94ecfab39d31962f7ded2c5319ff4660fd9985d7e2c8670bd18ddfe48c881",
+    "private/old-trafford-1966.jpg": "4264cb1e6eb7d0cb1d9063c6ba3ebaa15b24a1d6d1cc9153588a98013c1fa84b"
+   },
+   "sha256": "b6cdaed233bd1227cb024a6121dd7787e68a1b6be4d0178e2ccfcd888f5bee66",
+   "createdAt": 1793431331561,
+   "selected": true,
+   "referenceRoles": "Young player identity/style; archival references only for period kit and specified older stadium detail. Source dates/limits in sources.md. Host reference, when present, locks fictional cast.",
+   "revision": "Historical-detail pass after owner clarification: remove fantasy skyline; old Stretford End/period kit, grey northern atmosphere. Earlier draft retained in ledger only."
+  },
+  "shots/rebound-v2.png": {
+   "prompt": "Use case: historical-scene / illustration-story. Premium detailed family3D animation, vertical9:16 full bleed. Reference1 Denis Law young face/lean adult/blond forelock; reference2 ARCHITECTURE reference only (Old Trafford aerial1966: use the LOWER NEAR END, the old Stretford End covered terrace; do NOT use later cantilever side stand). Set scene1964: flat shallow sloping single-tier gray corrugated Stretford End roof with widely spaced thin steel supports, dense standing crowd in dark wool coats and caps, pale low pitch perimeter picket railing, muddy goalmouth, pale gray northern sky, one distant lattice floodlight mast. No tall decorative apartment blocks directly behind roof, no repeated chimneys or churches, no modern stands/LED displays. MU plain scarlet long sleeves white crewneck/cuffs, white shorts, black socks broad white turnover, black leather boots; period brown stitched rectangular-panel leather football. Keep heads fully below25% canvas, center70%width. Muted authentic atmosphere with luminous scarlet accents; fine mud wool cotton details, stylized faces. NO text letters numbers crests sponsor logos watermarks borders. Tense 3/4 side view: loose brown ball bouncing at x55% y65%, Law x40% head y38% sprints toward it RIGHT and toward white goal on right background. Two DIFFERENT opponents chasing in white shirts/navy shorts: one taller with cropped dark hair square jaw, one stocky with light brown hair broad nose; never identical faces. Goalkeeper dark green jersey waits in goal. Feet and ball clearly separate, no cloned limbs, action in central60% width, lower20% muddy turf. No animal hosts.",
+   "seed": 0,
+   "provider": "imagegen",
+   "model": "OpenAI built-in image generation (identifier not exposed)",
+   "width": 941,
+   "height": 1672,
+   "steps": 0,
+   "licence": "OpenAI image tool output; account terms apply. Seed 0 is a placeholder, not reproducible.",
+   "refs": {
+    "shots/portrait.png": "d1d94ecfab39d31962f7ded2c5319ff4660fd9985d7e2c8670bd18ddfe48c881",
+    "private/old-trafford-1966.jpg": "4264cb1e6eb7d0cb1d9063c6ba3ebaa15b24a1d6d1cc9153588a98013c1fa84b"
+   },
+   "sha256": "6ac6259067b96a65bdfb33b9263c330ea972e806b30ac01aeedb14229dc92ee1",
+   "createdAt": 1793431331565,
+   "selected": true,
+   "referenceRoles": "Young player identity/style; archival references only for period kit and specified older stadium detail. Source dates/limits in sources.md. Host reference, when present, locks fictional cast.",
+   "revision": "Historical-detail pass after owner clarification: remove fantasy skyline; old Stretford End/period kit, grey northern atmosphere. Earlier draft retained in ledger only."
+  },
+  "shots/trinity.png": {
+   "prompt": "Use case: historical-scene. Premium detailed family3D animation, vertical9:16 fullbleed. Ref1 young DENIS LAW blond distinct angular face, ref2 ARCHITECTURE ONLY old covered Stretford End (lower near end of aerial1966) with gray shallow sloping corrugated roof/thin steel columns/standing woolcoat crowd, pale low picket barrier, gray northern sky, lattice floodlight, worn turf. No modern giant stands, no fantasy streets/chimneys/churches. 1964–1967 generic period club scenes, no named match reconstruction. ManchesterUnited scarlet longsleeve white crewneck/cuffs white shorts black socks broad white turnover black boots; brown rectangular-panel stitched leather football. Heads below27%, central70%width, lower22% quiet turf. Different individuals and correct anatomy. No text numbers crests badges sponsors watermark borders. THE UNITED TRINITY: three DISTINCT recognizable adult men from thigh up facing viewer. Left BOBBY CHARLTON slightly older face, high receding hairline, fine light brown hair combed sideways, broad forehead, rounder strong features; center DENIS LAW reference1 fair windswept hair lean long face prominent ears; right GEORGE BEST, young handsome oval face, straight dark brown medium-short mop hair, thick dark eyebrows, clean shaven (no1970s beard). Their heads x27/49/71% y43%, similar scale, arms around shoulders, all same correct red United kit. Not three copies of Denis. Ball only held by Law waist at y70%, no animals.",
+   "seed": 0,
+   "provider": "imagegen",
+   "model": "OpenAI built-in image generation (identifier not exposed)",
+   "width": 941,
+   "height": 1672,
+   "steps": 0,
+   "licence": "OpenAI image tool output; account terms apply. Seed 0 is a placeholder, not reproducible.",
+   "refs": {
+    "../../../../../.codex/generated_images/01a188e1-81ca-7ce1-8a50-36bd8d134d29/exec-740e1c89-5334-4fc8-af62-23e5b2d57083.png": "b6cdaed233bd1227cb024a6121dd7787e68a1b6be4d0178e2ccfcd888f5bee66",
+    "private/old-trafford-1966.jpg": "4264cb1e6eb7d0cb1d9063c6ba3ebaa15b24a1d6d1cc9153588a98013c1fa84b"
+   },
+   "sha256": "8c5f0c2415630b2d725cd01f8aed68ef2e5c7d1c9109914baf0b1ddcad53c6e0",
+   "createdAt": 1793431331571,
+   "selected": true,
+   "referenceRoles": "Young player identity/style; archival references only for period kit and specified older stadium detail. Source dates/limits in sources.md. Host reference, when present, locks fictional cast."
+  },
+  "shots/run.png": {
+   "prompt": "Use case: historical-scene. Premium detailed family3D animation, vertical9:16 fullbleed. Ref1 young DENIS LAW blond distinct angular face, ref2 ARCHITECTURE ONLY old covered Stretford End (lower near end of aerial1966) with gray shallow sloping corrugated roof/thin steel columns/standing woolcoat crowd, pale low picket barrier, gray northern sky, lattice floodlight, worn turf. No modern giant stands, no fantasy streets/chimneys/churches. 1964–1967 generic period club scenes, no named match reconstruction. ManchesterUnited scarlet longsleeve white crewneck/cuffs white shorts black socks broad white turnover black boots; brown rectangular-panel stitched leather football. Heads below27%, central70%width, lower22% quiet turf. Different individuals and correct anatomy. No text numbers crests badges sponsors watermark borders. Wide tactical-feeling overhead3/4 action: Law slips into space near far goal, head around y42%, two white-shirt navy-short defenders looking the other way toward brown leather ball on left; red-shirt darkhaired teammate onleft sending pass toward Law. Clear separate figures, pitch-lines and goal readable, no drawn arrows or symbols. Show the empty pocket of space around Law, goal upperright in middle of frame. No animal hosts.",
+   "seed": 0,
+   "provider": "imagegen",
+   "model": "OpenAI built-in image generation (identifier not exposed)",
+   "width": 941,
+   "height": 1672,
+   "steps": 0,
+   "licence": "OpenAI image tool output; account terms apply. Seed 0 is a placeholder, not reproducible.",
+   "refs": {
+    "../../../../../.codex/generated_images/01a188e1-81ca-7ce1-8a50-36bd8d134d29/exec-740e1c89-5334-4fc8-af62-23e5b2d57083.png": "b6cdaed233bd1227cb024a6121dd7787e68a1b6be4d0178e2ccfcd888f5bee66",
+    "private/old-trafford-1966.jpg": "4264cb1e6eb7d0cb1d9063c6ba3ebaa15b24a1d6d1cc9153588a98013c1fa84b"
+   },
+   "sha256": "ce93681273a0ec5b4536422c4ed31e83617a7145eecfa94b4aae498466dbbff3",
+   "createdAt": 1793431331576,
+   "selected": true,
+   "referenceRoles": "Young player identity/style; archival references only for period kit and specified older stadium detail. Source dates/limits in sources.md. Host reference, when present, locks fictional cast."
+  },
+  "shots/question.png": {
+   "prompt": "Use case: historical-scene. Premium detailed family3D animation, vertical9:16 fullbleed. Ref1 young DENIS LAW blond distinct angular face, ref2 ARCHITECTURE ONLY old covered Stretford End (lower near end of aerial1966) with gray shallow sloping corrugated roof/thin steel columns/standing woolcoat crowd, pale low picket barrier, gray northern sky, lattice floodlight, worn turf. No modern giant stands, no fantasy streets/chimneys/churches. 1964–1967 generic period club scenes, no named match reconstruction. ManchesterUnited scarlet longsleeve white crewneck/cuffs white shorts black socks broad white turnover black boots; brown rectangular-panel stitched leather football. Heads below27%, central70%width, lower22% quiet turf. Different individuals and correct anatomy. No text numbers crests badges sponsors watermark borders. Two unchanged original hosts from ref3 only: Matvey raccoonboy bluewhite football kit stands left x30%, Sofia squirrelgirl plumtracksuit stands right x68%, head/ear tops below29%, faces y48%. They look thoughtfully at each other, one plain brown leather ball between them at y73%. Matvey points toward an empty patch near goal while Sofia considers a kicking stance; two distinct friendly options without symbols or lettering. Old Stretford End pitch sidelines, entire host bodies visible. No human players in foreground.",
+   "seed": 0,
+   "provider": "imagegen",
+   "model": "OpenAI built-in image generation (identifier not exposed)",
+   "width": 941,
+   "height": 1672,
+   "steps": 0,
+   "licence": "OpenAI image tool output; account terms apply. Seed 0 is a placeholder, not reproducible.",
+   "refs": {
+    "../../../../../.codex/generated_images/01a188e1-81ca-7ce1-8a50-36bd8d134d29/exec-740e1c89-5334-4fc8-af62-23e5b2d57083.png": "b6cdaed233bd1227cb024a6121dd7787e68a1b6be4d0178e2ccfcd888f5bee66",
+    "private/old-trafford-1966.jpg": "4264cb1e6eb7d0cb1d9063c6ba3ebaa15b24a1d6d1cc9153588a98013c1fa84b",
+    "../../series/football-legends/cast/hosts-full.png": "49c92b4bca5df88e90d529034e158fb7a48a79de4c7f98d49ccf764944d2be35"
+   },
+   "sha256": "5fc4187233b0aea8166154463705428ccdf0adef3a8db8acc72a05e57bbfc53c",
+   "createdAt": 1793431331583,
+   "selected": false,
+   "referenceRoles": "Young player identity/style; archival references only for period kit and specified older stadium detail. Source dates/limits in sources.md. Host reference, when present, locks fictional cast."
+  },
+  "shots/charlton.png": {
+   "prompt": "Use case: historical-scene. Premium family3D animation illustration vertical9:16 fullbleed, detailed, period1960s OldTrafford Stretford End low gray roof thin steel pillars standing crowd in wool coats, low white picket railing, gray northern sky, lattice floodlight mast, muddy green turf. Ref1 identity of United Trinity left Bobby Charlton receding fine lightbrown comb-over, center Denis Law blond angular face, right George Best straight dark hair; ref2 stadium only unchanged OLD END not later cantilever side. Plain scarlet longsleeves white crewneck/cuffs, white shorts black socks white turnover black boots. ONE brown stitched rectangular-panel leather football. No text numerals sponsor crests badges modern structures fantasy skyline borders watermarks. All head tops below27% frame, action center70%width, lower20% quiet turf. Correct distinct bodies limbs. Bobby CHARLTON (LEFT man in reference1) alone in foreground, strong rounder mature face high receding lightbrown hairline, executes a long-range shot, left foot planted/right leg followthrough, ball airborne x64% y65%, his face x40% y40%. Goal DISTANT right, two generic white/navy defenders far behind, no Law double. Accurate anatomically readable kicking action.",
+   "seed": 0,
+   "provider": "imagegen",
+   "model": "OpenAI built-in image generation (identifier not exposed)",
+   "width": 941,
+   "height": 1672,
+   "steps": 0,
+   "licence": "OpenAI image tool output; account terms apply. Seed 0 is a placeholder, not reproducible.",
+   "refs": {
+    "../../../../../.codex/generated_images/01a188e1-81ca-7ce1-8a50-36bd8d134d29/exec-ac580f5b-d585-4b1f-817c-90e0c0865a42.png": "8c5f0c2415630b2d725cd01f8aed68ef2e5c7d1c9109914baf0b1ddcad53c6e0",
+    "private/old-trafford-1966.jpg": "4264cb1e6eb7d0cb1d9063c6ba3ebaa15b24a1d6d1cc9153588a98013c1fa84b"
+   },
+   "sha256": "3930098f1d803005875dabd6cb30ff9faeb74a95b03f7fc8dd0c8c71956211b4",
+   "createdAt": 1793431331588,
+   "selected": true,
+   "referenceRoles": "Young player identity/style; archival references only for period kit and specified older stadium detail. Source dates/limits in sources.md. Host reference, when present, locks fictional cast."
+  },
+  "shots/best.png": {
+   "prompt": "Use case: historical-scene. Premium family3D animation illustration vertical9:16 fullbleed, detailed, period1960s OldTrafford Stretford End low gray roof thin steel pillars standing crowd in wool coats, low white picket railing, gray northern sky, lattice floodlight mast, muddy green turf. Ref1 identity of United Trinity left Bobby Charlton receding fine lightbrown comb-over, center Denis Law blond angular face, right George Best straight dark hair; ref2 stadium only unchanged OLD END not later cantilever side. Plain scarlet longsleeves white crewneck/cuffs, white shorts black socks white turnover black boots. ONE brown stitched rectangular-panel leather football. No text numerals sponsor crests badges modern structures fantasy skyline borders watermarks. All head tops below27% frame, action center70%width, lower20% quiet turf. Correct distinct bodies limbs. George BEST (RIGHT man in reference1) dribbles tightly past one stocky pale red-haired defender in plain white shirt navy shorts. Best youthful oval face dark straight mop hair dark eyebrows clean shaven, face x47% y40%, looks toward ball just beside right foot at x52% y69%, close low center of gravity, both legs and arms distinct. Different player from blond Law. Shallow ground camera lateral view, sense of clever change of direction.",
+   "seed": 0,
+   "provider": "imagegen",
+   "model": "OpenAI built-in image generation (identifier not exposed)",
+   "width": 941,
+   "height": 1672,
+   "steps": 0,
+   "licence": "OpenAI image tool output; account terms apply. Seed 0 is a placeholder, not reproducible.",
+   "refs": {
+    "../../../../../.codex/generated_images/01a188e1-81ca-7ce1-8a50-36bd8d134d29/exec-ac580f5b-d585-4b1f-817c-90e0c0865a42.png": "8c5f0c2415630b2d725cd01f8aed68ef2e5c7d1c9109914baf0b1ddcad53c6e0",
+    "private/old-trafford-1966.jpg": "4264cb1e6eb7d0cb1d9063c6ba3ebaa15b24a1d6d1cc9153588a98013c1fa84b"
+   },
+   "sha256": "00b9a910289bef525b0fe1a1955e3994243567324e2c9d6b43cc2ec8b12af0c5",
+   "createdAt": 1793431331594,
+   "selected": true,
+   "referenceRoles": "Young player identity/style; archival references only for period kit and specified older stadium detail. Source dates/limits in sources.md. Host reference, when present, locks fictional cast."
+  },
+  "shots/celebration.png": {
+   "prompt": "Use case: historical-scene. Premium family3D animation illustration vertical9:16 fullbleed, detailed, period1960s OldTrafford Stretford End low gray roof thin steel pillars standing crowd in wool coats, low white picket railing, gray northern sky, lattice floodlight mast, muddy green turf. Ref1 identity of United Trinity left Bobby Charlton receding fine lightbrown comb-over, center Denis Law blond angular face, right George Best straight dark hair; ref2 stadium only unchanged OLD END not later cantilever side. Plain scarlet longsleeves white crewneck/cuffs, white shorts black socks white turnover black boots. ONE brown stitched rectangular-panel leather football. No text numerals sponsor crests badges modern structures fantasy skyline borders watermarks. All head tops below27% frame, action center70%width, lower20% quiet turf. Correct distinct bodies limbs. Denis LAW (CENTER man in reference1) iconic single right arm raised in goal celebration, broad delighted smile blond tousled hair, head x48% y40%, torso center. Brown leather ball visible settled INSIDE goal behind, two DIFFERENT United teammates in red running toward him at a distance. Wide enough for complete raised HAND below28% canvas, no cropped fingers. Old Stretford End crowd cheering redwhite scarves without writing. No animal hosts.",
+   "seed": 0,
+   "provider": "imagegen",
+   "model": "OpenAI built-in image generation (identifier not exposed)",
+   "width": 941,
+   "height": 1672,
+   "steps": 0,
+   "licence": "OpenAI image tool output; account terms apply. Seed 0 is a placeholder, not reproducible.",
+   "refs": {
+    "../../../../../.codex/generated_images/01a188e1-81ca-7ce1-8a50-36bd8d134d29/exec-ac580f5b-d585-4b1f-817c-90e0c0865a42.png": "8c5f0c2415630b2d725cd01f8aed68ef2e5c7d1c9109914baf0b1ddcad53c6e0",
+    "private/old-trafford-1966.jpg": "4264cb1e6eb7d0cb1d9063c6ba3ebaa15b24a1d6d1cc9153588a98013c1fa84b"
+   },
+   "sha256": "834882738ba2201541c9cfaf2e2ad299ffaa8a7e9de4e5f49430398ed33877b8",
+   "createdAt": 1793431331599,
+   "selected": true,
+   "referenceRoles": "Young player identity/style; archival references only for period kit and specified older stadium detail. Source dates/limits in sources.md. Host reference, when present, locks fictional cast."
+  },
+  "shots/question-v2.png": {
+   "prompt": "Use case: precise-object-edit. Edit target image1. Change ONLY Matvey raccoonboy's black boots into his original saturated royal blue football boots with white stripes/trim shown in reference2. Keep the same soles and placement on ground. Preserve ALL other pixels as closely as possible: same hosts faces/fur/clothes, brown leather ball, Sofia, poses, stadium, historical atmosphere, composition, lighting, no text or numbers. Vertical9:16 fullbleed.",
+   "seed": 0,
+   "provider": "imagegen",
+   "model": "OpenAI built-in image generation (identifier not exposed)",
+   "width": 941,
+   "height": 1672,
+   "steps": 0,
+   "licence": "OpenAI image tool output; account terms apply. Seed 0 is a placeholder, not reproducible.",
+   "refs": {
+    "../../../../../.codex/generated_images/01a188e1-81ca-7ce1-8a50-36bd8d134d29/exec-19446ab6-1a3b-4638-b63f-c0a0f7c9d1ed.png": "5fc4187233b0aea8166154463705428ccdf0adef3a8db8acc72a05e57bbfc53c",
+    "../../series/football-legends/cast/hosts-full.png": "49c92b4bca5df88e90d529034e158fb7a48a79de4c7f98d49ccf764944d2be35"
+   },
+   "sha256": "bc1b41bcedb186ae8c3c7cf8e913caf21ac0df271b2b9eec2c75f3373e35ccc2",
+   "createdAt": 1793431331605,
+   "selected": true,
+   "referenceRoles": "Young player identity/style; archival references only for period kit and specified older stadium detail. Source dates/limits in sources.md. Host reference, when present, locks fictional cast.",
+   "revision": "Historical-detail pass after owner clarification: remove fantasy skyline; old Stretford End/period kit, grey northern atmosphere. Earlier draft retained in ledger only."
+  },
+  "shots/strike-v2.png": {
+   "prompt": "Use case: historical-scene. Detailed premium family3D animation illustration, vertical9:16 full bleed. Ref1 locks young Denis Law blond forelock angular slim face/prominent ears; ref2 Old Trafford aerial1966 architecture study ONLY of LOWER NEAR END old covered Stretford End, not later cantilever side. Set club scenes1964: low gray shallow sloped corrugated roof, thin steel supports, crowded standing terrace dark wool coats/caps, low pale perimeter picket fence, one lattice floodlight mast, gray overcast northern daylight, worn muddy green turf. No tall streetscape immediately behind roof, no endless chimneys/churches, no modern stands. MU scarlet long sleeves white crewneck/cuffs white shorts black socks broad white turnover black leather boots. Period brown stitched rectangular-panel leather football. Entire hair/heads BELOW y27%, middle70%width, lower20% quieter for captions. Authentic subdued atmosphere with rich scarlet accents. NO text numbers crests logos sponsors watermarks borders. Side-on action, Law right boot has just struck brown ball toward goal to right. Left support foot planted, right leg extended, two correct arms balance, distinct anatomical limbs. Ball in air x66% y65%, face x42% y40%, goal with dark green-shirt keeper right background. Two DIFFERENT pursuing white-shirt navy-shorts opponents: squarejaw dark short hair and roundface ginger cropped hair, plain kits no badges. Mud at impact, full ball in frame.",
+   "seed": 0,
+   "provider": "imagegen",
+   "model": "OpenAI built-in image generation (identifier not exposed)",
+   "width": 941,
+   "height": 1672,
+   "steps": 0,
+   "licence": "OpenAI image tool output; account terms apply. Seed 0 is a placeholder, not reproducible.",
+   "refs": {
+    "../../../../../.codex/generated_images/01a188e1-81ca-7ce1-8a50-36bd8d134d29/exec-740e1c89-5334-4fc8-af62-23e5b2d57083.png": "b6cdaed233bd1227cb024a6121dd7787e68a1b6be4d0178e2ccfcd888f5bee66",
+    "private/old-trafford-1966.jpg": "4264cb1e6eb7d0cb1d9063c6ba3ebaa15b24a1d6d1cc9153588a98013c1fa84b"
+   },
+   "sha256": "07e4f5bdec6d0d63fd8c28f973a38085920951ccbcea1beae3ca27026d410595",
+   "createdAt": 1793431331610,
+   "selected": false,
+   "referenceRoles": "Young player identity/style; archival references only for period kit and specified older stadium detail. Source dates/limits in sources.md. Host reference, when present, locks fictional cast.",
+   "revision": "Historical-detail pass after owner clarification: remove fantasy skyline; old Stretford End/period kit, grey northern atmosphere. Earlier draft retained in ledger only."
+  },
+  "shots/award-v2.png": {
+   "prompt": "Use case: historical-scene. Detailed premium family3D animation illustration, vertical9:16 full bleed. Ref1 locks young Denis Law blond forelock angular slim face/prominent ears; ref2 Old Trafford aerial1966 architecture study ONLY of LOWER NEAR END old covered Stretford End, not later cantilever side. Set club scenes1964: low gray shallow sloped corrugated roof, thin steel supports, crowded standing terrace dark wool coats/caps, low pale perimeter picket fence, one lattice floodlight mast, gray overcast northern daylight, worn muddy green turf. No tall streetscape immediately behind roof, no endless chimneys/churches, no modern stands. MU scarlet long sleeves white crewneck/cuffs white shorts black socks broad white turnover black leather boots. Period brown stitched rectangular-panel leather football. Entire hair/heads BELOW y27%, middle70%width, lower20% quieter for captions. Authentic subdued atmosphere with rich scarlet accents. NO text numbers crests logos sponsors watermarks borders. At pitch edge Law smiling face x48% y44%, whole head below29%, holds one golden textured football on rough dark stone base, trophy x48% y67%, both hands clear correct. Upper25% gray sky and distant end terrace, quiet lower20% shorts/dark background. Simple early award silhouette without lettering, no official branding. No hosts.",
+   "seed": 0,
+   "provider": "imagegen",
+   "model": "OpenAI built-in image generation (identifier not exposed)",
+   "width": 941,
+   "height": 1672,
+   "steps": 0,
+   "licence": "OpenAI image tool output; account terms apply. Seed 0 is a placeholder, not reproducible.",
+   "refs": {
+    "../../../../../.codex/generated_images/01a188e1-81ca-7ce1-8a50-36bd8d134d29/exec-740e1c89-5334-4fc8-af62-23e5b2d57083.png": "b6cdaed233bd1227cb024a6121dd7787e68a1b6be4d0178e2ccfcd888f5bee66",
+    "private/old-trafford-1966.jpg": "4264cb1e6eb7d0cb1d9063c6ba3ebaa15b24a1d6d1cc9153588a98013c1fa84b"
+   },
+   "sha256": "b2040f4deb97ef1bc02e4a8b4f0ea49117e34b9c544b6a9fe88c0b95e1d9d5f8",
+   "createdAt": 1793431331614,
+   "selected": true,
+   "referenceRoles": "Young player identity/style; archival references only for period kit and specified older stadium detail. Source dates/limits in sources.md. Host reference, when present, locks fictional cast.",
+   "revision": "Historical-detail pass after owner clarification: remove fantasy skyline; old Stretford End/period kit, grey northern atmosphere. Earlier draft retained in ledger only."
+  },
+  "shots/scotland-v2.png": {
+   "prompt": "Use case: historical-scene. Detailed premium family3D animation illustration, vertical9:16 full bleed. Ref1 locks young Denis Law blond forelock angular slim face/prominent ears; ref2 Old Trafford aerial1966 architecture study ONLY of LOWER NEAR END old covered Stretford End, not later cantilever side. Set club scenes1964: low gray shallow sloped corrugated roof, thin steel supports, crowded standing terrace dark wool coats/caps, low pale perimeter picket fence, one lattice floodlight mast, gray overcast northern daylight, worn muddy green turf. No tall streetscape immediately behind roof, no endless chimneys/churches, no modern stands. MU scarlet long sleeves white crewneck/cuffs white shorts black socks broad white turnover black leather boots. Period brown stitched rectangular-panel leather football. Entire hair/heads BELOW y27%, middle70%width, lower20% quieter for captions. Authentic subdued atmosphere with rich scarlet accents. NO text numbers crests logos sponsors watermarks borders. SCOTLAND portrait instead of club: Law in plain DARK NAVY shirt WHITE CREWNECK, no folded1970s collar, white cuffs, white shorts. Brown ball at hip. Waistup head x48% y46%, whole hair below29%. Setting anonymous blurred Scottish football terraces/low stand, pale overcast sky, wool-coated crowd and tiny blue white-diagonal-cross flag. NO recognizable city skyline, NO churches/castles, NO invented named stadium, no scarlet club shirt. Early1960s Scotland kit shape verified by period shirt records; do not copy red kit from ref2.",
+   "seed": 0,
+   "provider": "imagegen",
+   "model": "OpenAI built-in image generation (identifier not exposed)",
+   "width": 941,
+   "height": 1672,
+   "steps": 0,
+   "licence": "OpenAI image tool output; account terms apply. Seed 0 is a placeholder, not reproducible.",
+   "refs": {
+    "../../../../../.codex/generated_images/01a188e1-81ca-7ce1-8a50-36bd8d134d29/exec-740e1c89-5334-4fc8-af62-23e5b2d57083.png": "b6cdaed233bd1227cb024a6121dd7787e68a1b6be4d0178e2ccfcd888f5bee66",
+    "private/united-1963.jpg": "f94a030c93d7587c3959350305f846e9a5ef0d566486136163f290a0d15fe190"
+   },
+   "sha256": "1672b421b8a4d588a3c3c7782c0a9c48a9a2ea33304fbdaf4170d1e339f95bd9",
+   "createdAt": 1793431331620,
+   "selected": true,
+   "referenceRoles": "Young player identity/style; archival references only for period kit and specified older stadium detail. Source dates/limits in sources.md. Host reference, when present, locks fictional cast.",
+   "revision": "Historical-detail pass after owner clarification: remove fantasy skyline; old Stretford End/period kit, grey northern atmosphere. Earlier draft retained in ledger only."
+  },
+  "shots/strike-v3.png": {
+   "prompt": "Use case: precise-object-edit. Edit this football illustration. Change ONLY the flying brown leather ball: move it clearly LEFT into the safe middle of the frame, center at x67% of image width and y63% of image height, reduce size 15% if needed; ENTIRE ball must be visible with at least20% image width empty space between its right edge and image right border. Remove the old ball at far right completely, leaving reconstructed background; ONE BALL only. Keep Law's foot, limbs, face, kit, all other people, stadium roof/terraces/floodlight, gray northern light, muddy turf, style and composition identical. No lettering or numerals. Vertical9:16 full bleed.",
+   "seed": 0,
+   "provider": "imagegen",
+   "model": "OpenAI built-in image generation (identifier not exposed)",
+   "width": 941,
+   "height": 1672,
+   "steps": 0,
+   "licence": "OpenAI image tool output; account terms apply. Seed 0 is a placeholder, not reproducible.",
+   "refs": {
+    "shots/strike-v2.png": "07e4f5bdec6d0d63fd8c28f973a38085920951ccbcea1beae3ca27026d410595"
+   },
+   "sha256": "b1bc4f1d477d270c40c82b064e15264187070774cbd67d8778c2ba4f313a5b84",
+   "createdAt": 1793431638179,
+   "selected": true,
+   "revision": "Move the single ball inside the central width; preserve period action and background."
+  }
+ }
+}

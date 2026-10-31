@@ -1,0 +1,176 @@
+{
+ "duration": 82.26400000000001,
+ "size": [
+  1080,
+  1920
+ ],
+ "fps": 30,
+ "frames": 2466,
+ "webFrames": 2466,
+ "moments": 36,
+ "masterSHA256": "1247b44454b1ffb124193bbe93abe0eae863767da440fb56129f977eaa0d6bfc",
+ "qa": "pass",
+ "captionSamples": 161,
+ "reverseSeekSamples": 76,
+ "layoutFailures": 0,
+ "generations": 20,
+ "selectedImages": 12,
+ "voices": [
+  {
+   "scene": "hook",
+   "file": "hook-25134387b7fd.wav",
+   "sha256": "b0b48189fad2fc4a0ab1cb9370209a383664817b834aee83dcdc32e4f17cd31d",
+   "matched": 1
+  },
+  {
+   "scene": "identity",
+   "file": "identity-3a47dce60216.wav",
+   "sha256": "f88e4e5da87ef5209e3aca2c3564e248cb44baf36d03e7f9ccfce23c77e6e7cc",
+   "matched": 1
+  },
+  {
+   "scene": "scotland",
+   "file": "scotland-842ab37d607d.wav",
+   "sha256": "26a637b50b7d50412cf30b4aa2384f67ad58478f536a109ac74503ec8e1e200b",
+   "matched": 1
+  },
+  {
+   "scene": "award",
+   "file": "award-9e728f503887.wav",
+   "sha256": "dbd880ad19fc044d09bd7ef275dd25bf66bc56d5f2505c62d9194f715e2fbc22",
+   "matched": 1
+  },
+  {
+   "scene": "moment",
+   "file": "moment-1bc15f87ae32.wav",
+   "sha256": "db31d566cd3ec8c55fe7702389b7b09f063afc804f43c04dbe2699bed26ed9e8",
+   "matched": 1
+  },
+  {
+   "scene": "position",
+   "file": "position-09e0efc40a2f.wav",
+   "sha256": "868bced750e14d03fa9a1e8eccb0bf71a0fe6b33a4e881f4a706d25f1301aa27",
+   "matched": 1
+  },
+  {
+   "scene": "second",
+   "file": "second-c5c5d5b838f3.wav",
+   "sha256": "e237af39fd0f6ce524a4f0e7659576523df64e11ef289503d9cd02243f204a0d",
+   "matched": 1
+  },
+  {
+   "scene": "club",
+   "file": "club-106af9cd94f7.wav",
+   "sha256": "6cf6323530b9f6a214ab874b0cb2f110dc73cb2d91f38da4621e7137683e100b",
+   "matched": 1
+  },
+  {
+   "scene": "trinity",
+   "file": "trinity-a0dcd344f89f.wav",
+   "sha256": "d1ae4620eb8280fa35dc2da9614eed90069c8e8e00a49fde44d7618895ca5425",
+   "matched": 1
+  },
+  {
+   "scene": "different",
+   "file": "different-6c8c0ad0320c.wav",
+   "sha256": "86f0fd575066b229192c1eeb19c442b8a8716d0ae376ad57e6f909f2a7991c39",
+   "matched": 1
+  },
+  {
+   "scene": "talents",
+   "file": "talents-dd5920b601e1.wav",
+   "sha256": "f5c4ae9737376a2da71274a71f2ed6758581c6cab23aca20451d17648abad90d",
+   "matched": 1
+  },
+  {
+   "scene": "team",
+   "file": "team-8af07790488a.wav",
+   "sha256": "62975b75bcccee5a493d47fa74310e77dc10a4263a09367fb690201143da46dc",
+   "matched": 1
+  },
+  {
+   "scene": "question",
+   "file": "question-8ab4f50349d5.wav",
+   "sha256": "8e146d96b153d146507a32ac1a3b47b237a17b99725f11ecbab6b2a87754cad0",
+   "matched": 1
+  }
+ ],
+ "voiceListening": "Owner listening open; technical word matching does not establish stress or timbre approval.",
+ "checks": [
+  {
+   "name": "Codec and pixels",
+   "status": "pass",
+   "detail": "h264, yuv420p"
+  },
+  {
+   "name": "Size",
+   "status": "pass",
+   "detail": "1080×1920"
+  },
+  {
+   "name": "Audio track",
+   "status": "pass",
+   "detail": "Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 198 kb/s (default)"
+  },
+  {
+   "name": "Length",
+   "status": "pass",
+   "detail": "82.26 s (planned 82.26 s)"
+  },
+  {
+   "name": "Loudness",
+   "status": "pass",
+   "detail": "-14 LUFS integrated (target -14), true peak -1.1 dBFS"
+  },
+  {
+   "name": "Frame 0 is a hook",
+   "status": "pass",
+   "detail": "contrast 3506 (needs content, not a black frame)"
+  },
+  {
+   "name": "No black stretches",
+   "status": "pass",
+   "detail": "none ≥ 0.4 s"
+  },
+  {
+   "name": "Scenes render without errors",
+   "status": "pass",
+   "detail": "13 scenes, missing images/fonts included"
+  },
+  {
+   "name": "Numbers come from the facts",
+   "status": "pass",
+   "detail": "13 scenes read"
+  },
+  {
+   "name": "Text clear of platform UI (reels)",
+   "status": "pass",
+   "detail": "every cue checked"
+  },
+  {
+   "name": "Text fits its box",
+   "status": "pass",
+   "detail": "every card, band and label at every cue"
+  },
+  {
+   "name": "Cover text inside the 1:1 preview",
+   "status": "pass",
+   "detail": "cover at 0.0 s"
+  },
+  {
+   "name": "Feed and cover views",
+   "status": "pass",
+   "detail": "look at feed-preview.jpg and cover-preview.jpg: heads inside the crop, captions off faces"
+  },
+  {
+   "name": "Whisper hears the script",
+   "status": "pass",
+   "detail": "every scene ≥ 85% of its words (lowest 88%)"
+  },
+  {
+   "name": "Dictionary words keep their stress",
+   "status": "pass",
+   "detail": "1 of 1 heard right"
+  }
+ ]
+}
